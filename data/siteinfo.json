@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "name": "第一个站点",
+        "cover": "https://tailwindcomponents.com/storage/4073/conversions/temp82822-thumb.jpg",
+        "description": "第一个测试站点"
+    },
+    {
+        "id": "2",
+        "name": "第一个站点",
+        "cover": "https://tailwindcomponents.com/storage/4073/conversions/temp82822-thumb.jpg",
+        "description": "第一个测试站点"
+    },
+    {
+        "id": "3",
+        "name": "第一个站点",
+        "cover": "https://tailwindcomponents.com/storage/4073/conversions/temp82822-thumb.jpg",
+        "description": "第一个测试站点"
+    },
+    {
+        "id": "4",
+        "name": "第一个站点",
+        "cover": "https://tailwindcomponents.com/storage/4073/conversions/temp82822-thumb.jpg",
+        "description": "第一个测试站点"
+    },
+    {
+        "id": "5",
+        "name": "第一个站点",
+        "cover": "https://tailwindcomponents.com/storage/4073/conversions/temp82822-thumb.jpg",
+        "description": "第一个测试站点"
+    },
+    {
+        "id": "6",
+        "name": "第一个站点",
+        "cover": "https://tailwindcomponents.com/storage/4073/conversions/temp82822-thumb.jpg",
+        "description": "第一个测试站点"
+    },
+    {
+        "id": "7",
+        "name": "第一个站点",
+        "cover": "https://tailwindcomponents.com/storage/4073/conversions/temp82822-thumb.jpg",
+        "description": "第一个测试站点"
+    }
+]
