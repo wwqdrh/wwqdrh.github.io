@@ -1,0 +1,4 @@
+[question]
+数据库分表的方法
+[answer]
+

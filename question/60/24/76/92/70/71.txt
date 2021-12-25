@@ -1,0 +1,4 @@
+[question]
+tcp 最后等待2ML是为什么,tcp最后一个收到服务器 FIN 后的状态时什么？
+[answer]
+

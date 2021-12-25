@@ -1,0 +1,4 @@
+[question]
+golang面试题：拷贝大切片一定比小切片代价大吗？
+[answer]
+

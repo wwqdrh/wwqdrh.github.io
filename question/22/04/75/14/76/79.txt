@@ -1,0 +1,4 @@
+[question]
+普通map如何不用锁解决协程安全问题
+[answer]
+

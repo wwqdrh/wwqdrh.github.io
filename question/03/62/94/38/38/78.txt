@@ -1,0 +1,30 @@
+[question]
+查看端口占用，cpu负载，内存占用，如何发送信号给一个进程
+[answer]
+查看端口占用：
+
+isof -i XXXX（端口号）
+netstat -anp|grep 9001
+2.1 netstat命令解释:
+netstat -ntlp // 查看当前所有tcp端口
+netstat -ntulp | grep 80 // 查看所有80端口使用情况
+netstat -an | grep 3306 // 查看所有3306端口使用情况
+参数说明：
+-t （tcp）仅显示tcp相关选项
+-u （udp）仅显示udp相关选项
+-n 拒绝显示别名，能显示数据的全部转化为数字
+-l 仅列出在Listen（监听）的服务状态
+-p 显示建立相关链接的程序名
+查看cpu负载：
+
+atop
+top
+uptime
+查看内存占用：
+
+top
+free
+cat 、proc/meminfo
+
+如何发送信号给一个进程
+kill

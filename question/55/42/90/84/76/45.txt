@@ -1,0 +1,4 @@
+[question]
+array和slice的区别
+[answer]
+

@@ -1,0 +1,4 @@
+[question]
+go栈扩容和栈缩容，连续栈的缺点
+[answer]
+

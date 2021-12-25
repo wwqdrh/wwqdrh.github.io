@@ -1,0 +1,4 @@
+[question]
+Mysql的索引有几种，时间复杂度
+[answer]
+

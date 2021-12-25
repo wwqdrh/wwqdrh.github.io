@@ -1,0 +1,4 @@
+[question]
+给大家丢脸了，用了三年golang，我还是没答对这道内存泄漏题
+[answer]
+

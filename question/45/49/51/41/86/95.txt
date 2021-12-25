@@ -1,0 +1,4 @@
+[question]
+利用golang特性，设计一个QPS为500的服务器
+[answer]
+

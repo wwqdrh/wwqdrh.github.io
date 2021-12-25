@@ -1,0 +1,4 @@
+[question]
+golang 实际应用中为什么使用空struct？
+[answer]
+

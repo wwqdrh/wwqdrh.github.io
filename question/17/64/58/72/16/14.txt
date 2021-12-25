@@ -1,0 +1,4 @@
+[question]
+设计http协议，A端发送 AAAA，至少让B端知道AAAA已发送完成
+[answer]
+

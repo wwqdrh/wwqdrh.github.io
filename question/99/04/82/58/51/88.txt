@@ -1,0 +1,4 @@
+[question]
+k8s 不同 node 上的 pod 是如何通信的，说一下流程
+[answer]
+

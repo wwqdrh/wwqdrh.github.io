@@ -1,0 +1,4 @@
+[question]
+k8s controller manager 的种类
+[answer]
+

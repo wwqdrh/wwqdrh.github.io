@@ -1,0 +1,6 @@
+[question]
+context包的用途？
+[answer]
+context包的用途Context通常被译作上下文，它是一个比较抽象的概念，其本质，是存在上下层的传递，上层会把内容传递给下层。在Go语言中，程序单元也就指的是Goroutine。
+
+

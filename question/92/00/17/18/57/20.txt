@@ -1,0 +1,13 @@
+[question]
+Redis基本数据结构
+[answer]
+redis最简单的数据结构；动态字符串，采用与分配冗余空间的方法
+hash——字典
+hashmap，哈希
+list——列表
+其实就是链表；Redis 还提供了操作 List 中某一段元素的 API，你可以直接查询，删除 List 中某一段的元素
+set——集合
+集合就是一堆不重复值的组合
+sorted list——有序集合
+比普通set多了一个权重score，使集合中的元素能够按照score进行有序排序
+

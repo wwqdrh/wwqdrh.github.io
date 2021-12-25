@@ -1,0 +1,4 @@
+[question]
+map不初始化长度和初始化长度的区别
+[answer]
+

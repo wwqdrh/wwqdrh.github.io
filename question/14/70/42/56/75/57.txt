@@ -1,0 +1,4 @@
+[question]
+假如一个业务依赖单点redis，此redis故障将导致业务不可用，如何改进
+[answer]
+

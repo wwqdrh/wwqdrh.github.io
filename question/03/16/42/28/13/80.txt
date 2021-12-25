@@ -1,0 +1,4 @@
+[question]
+mysql 四种隔离级别，MVCC 实现方法，bin_log,undo_log,redo_log 关系和区别
+[answer]
+

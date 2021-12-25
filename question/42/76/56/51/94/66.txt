@@ -1,0 +1,4 @@
+[question]
+golang面试题：怎么避免内存逃逸？
+[answer]
+

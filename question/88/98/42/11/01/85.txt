@@ -1,0 +1,4 @@
+[question]
+用过哪些设计模式
+[answer]
+

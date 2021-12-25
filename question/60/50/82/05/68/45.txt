@@ -1,0 +1,4 @@
+[question]
+make和new什么区别
+[answer]
+

@@ -1,0 +1,4 @@
+[question]
+map的iterator是否安全？能不能一边delete一边遍历？
+[answer]
+

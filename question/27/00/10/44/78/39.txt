@@ -1,0 +1,4 @@
+[question]
+两个interface{} 能不能比较
+[answer]
+

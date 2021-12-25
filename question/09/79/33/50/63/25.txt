@@ -1,0 +1,4 @@
+[question]
+进程和线程区别
+[answer]
+

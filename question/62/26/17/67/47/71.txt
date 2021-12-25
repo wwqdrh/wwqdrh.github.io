@@ -1,0 +1,4 @@
+[question]
+slice ，map，chanel创建的时候的几个参数什么含义
+[answer]
+

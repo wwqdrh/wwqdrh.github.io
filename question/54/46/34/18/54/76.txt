@@ -1,0 +1,4 @@
+[question]
+defer 的使用方法？在 return 前执行还是 return 后？
+[answer]
+

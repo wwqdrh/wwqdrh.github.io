@@ -1,0 +1,4 @@
+[question]
+myisam innodb 引擎对比
+[answer]
+

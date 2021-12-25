@@ -1,0 +1,4 @@
+[question]
+说一下 PMG 模型
+[answer]
+

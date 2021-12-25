@@ -1,0 +1,4 @@
+[question]
+线程安全的map怎么实现
+[answer]
+

@@ -1,0 +1,4 @@
+[question]
+mysql高可用的方案
+[answer]
+

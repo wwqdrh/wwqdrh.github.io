@@ -1,0 +1,4 @@
+[question]
+为什么gc会让程序变慢
+[answer]
+

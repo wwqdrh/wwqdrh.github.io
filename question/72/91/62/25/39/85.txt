@@ -1,0 +1,4 @@
+[question]
+数据库三范式
+[answer]
+

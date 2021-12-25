@@ -1,0 +1,4 @@
+[question]
+golang面试官：for select时，如果通道已经关闭会怎么样？如果只有一个case呢？
+[answer]
+

@@ -1,0 +1,4 @@
+[question]
+go1.13sync.Pool对比go1.12版本优化点
+[answer]
+

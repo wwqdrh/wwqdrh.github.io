@@ -1,0 +1,4 @@
+[question]
+golang IO 是同步的吗？如果 CPU 只有一核会不会阻塞？
+[answer]
+

@@ -1,0 +1,4 @@
+[question]
+主协程如何等其余协程完再操作
+[answer]
+使用channel进行通信，context,select

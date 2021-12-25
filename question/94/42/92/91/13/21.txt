@@ -1,0 +1,9 @@
+[question]
+Redis的List用过吗？底层怎么实现的？
+[answer]
+底层是通过链表（双向和压缩）来实现的
+链表与数组最大的区别就是链表是链式存储，数组是连续存储的
+redis的list底层是通过list和listnode两个结构体来实现的
+listnode是一个双向链表节点，多个listnode通过prev和next指针来组成双端链表
+使用list结构体来持有链表，list结构体为链表提供了表头指针head和标为指针tail，以及链表节点的数量len
+

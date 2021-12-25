@@ -1,0 +1,50 @@
+[question]
+Golang接口接收规则
+[answer]
+实体类型以值接收者实现接口的时候，不管是实体类型的值，还是实体类型值的指针，都实现了该接口。
+
+实体类型以指针接收者实现接口的时候，只有指向这个类型的指针才被认为实现了该接口
+
+Methods Receivers	Values
+(t T)	T and *T
+(t *T)	*T
+10. Context
+11. wait / waitGroup / wait.Until
+12. Goroutine / chan
+13. defer
+向 defer 关键字传入的函数会在函数返回之前运行。假设我们在 for 循环中多次调用 defer 关键字,会倒序执行所有向 defer 关键字中传入的表达式。
+
+defer 传入的函数不是在退出代码块的作用域时执行的，它只会在当前函数和方法返回之前被调用。
+
+预计算参数
+Go 语言中所有的函数调用都是传值的，defer 虽然是关键字，但是也继承了这个特性。假设我们想要计算 main 函数运行的时间，可能会写出以下的代码：
+
+func main() {
+startedAt := time.Now()
+defer fmt.Println(time.Since(startedAt))
+
+time.Sleep(time.Second)
+}
+然而上述代码的运行结果并不符合我们的预期，这个现象背后的原因是什么呢？经过分析，我们会发现调用 defer 关键字会立刻对函数中引用的外部参数进行拷贝，所以 time.Since(startedAt) 的结果不是在 main 函数退出之前计算的，而是在 defer 关键字调用时计算的，最终导致上述代码输出 0s。
+
+想要解决这个问题的方法非常简单，我们只需要向 defer 关键字传入匿名函数.
+
+底层实现
+runtime._defer 结构体是延迟调用链表上的一个元素，所有的结构体都会通过 link 字段串联成链表。
+
+defer 关键字的实现主要依靠编译器和运行时的协作：
+
+编译期；
+将 defer 关键字被转换 runtime.deferproc；
+在调用 defer 关键字的函数返回之前插入 runtime.deferreturn；
+运行时：
+runtime.deferproc 会将一个新的 runtime._defer 结构体追加到当前 Goroutine 的链表头；
+runtime.deferreturn 会从 Goroutine 的链表中取出 runtime._defer 结构并依次执行；
+我们在前面提到的两个现象在这里也可以解释清楚了：
+
+后调用的 defer 函数会先执行：
+后调用的 defer 函数会被追加到 Goroutine _defer 链表的最前面；
+运行 runtime._defer 时是从前到后依次执行；
+函数的参数会被预先计算；
+调用 runtime.deferproc 函数创建新的延迟调用时就会立刻拷贝函数的参数，函数的参数不会等到真正执行时计算；
+

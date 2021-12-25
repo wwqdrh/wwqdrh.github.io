@@ -1,0 +1,4 @@
+[question]
+redis 的五种数据格式
+[answer]
+

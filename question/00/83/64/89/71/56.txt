@@ -1,0 +1,4 @@
+[question]
+golang面试题：字符串转成byte数组，会发生内存拷贝吗？
+[answer]
+

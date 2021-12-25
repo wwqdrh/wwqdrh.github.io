@@ -1,0 +1,4 @@
+[question]
+说一下你熟悉的 MQ,比如 kafka 等
+[answer]
+消息队列

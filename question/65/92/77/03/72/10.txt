@@ -1,0 +1,4 @@
+[question]
+使用int 做primary key和使用string 有什么优劣
+[answer]
+

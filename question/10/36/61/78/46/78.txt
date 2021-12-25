@@ -1,0 +1,5 @@
+[question]
+HTTP能不能一次连接多次请求，不等后端返回
+[answer]
+HTTP本质上是使用socket链接，因此发送请求，接写入tcp缓冲，是可以多次进行的，这也是HTTP是无状态的原因
+

@@ -1,0 +1,4 @@
+[question]
+golang 如何实现乐观锁，CAS 原理和实现
+[answer]
+

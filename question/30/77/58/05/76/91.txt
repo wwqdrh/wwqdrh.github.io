@@ -1,0 +1,33 @@
+[question]
+Golang导入包时，为什么可能使用’_’/’.'导入? 举例说明
+[answer]
+包前是下划线_
+当导入一个包时，该包下的文件里所有init函数都会被执行，但是有时我们仅仅需要使用init函数而已并不希望把整个包导入（不使用包里的其他函数）
+
+每个包都可以有任意多个init函数，这些init函数都会在main函数之前执行。init函数通常用来做初始化变量、设置包或者其他需要在程序执行前的引导工作。比如上面我们讲的需要使用_空标志符来导入一个包的目的，就是想执行这个包里的init函数。
+
+我们以数据库的驱动为例，Go语言为了统一关于数据库的访问，使用databases/sql抽象了一层数据库的操作，可以满足我们操作MYSQL、Postgre等数据库，这样不管我们使用这些数据库的哪个驱动，编码操作都是一样的，想换驱动的时候，就可以直接换掉，而不用修改具体的代码。
+
+这些数据库驱动的实现，就是具体的，可以由任何人实现的，它的原理就是定义了init函数，在程序运行之前，把实现好的驱动注册到sql包里，这样我们就使用使用它操作数据库了。
+
+package mysql
+
+import (
+"database/sql"
+)
+
+func init() {
+sql.Register("mysql", &MySQLDriver{})
+}
+
+因为我们只是想执行这个mysql包的init方法，并不想使用这个包，所以我们在导入这个包的时候，需要使用_重命名包名，避免编译错误。
+
+import "database/sql"
+import _ "github.com/go-sql-driver/mysql"
+
+db, err := sql.Open("mysql", "user:password@/dbname")
+
+包前是点.
+import（.“fmt”）
+这个点操作的含义就是这个包导入之后在你调用这个包的函数时，你可以省略前缀的包名，也就是前面你调用的fmt.Println(“hello world”)可以省略的写成Println(“hello world”)
+

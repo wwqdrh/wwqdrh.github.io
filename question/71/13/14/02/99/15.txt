@@ -1,0 +1,4 @@
+[question]
+gin 的 handler 底层数据结构
+[answer]
+struct结构体

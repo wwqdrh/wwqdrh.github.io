@@ -1,0 +1,4 @@
+[question]
+map触发扩容的时机，满足什么条件时扩容？
+[answer]
+
