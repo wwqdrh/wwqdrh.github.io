@@ -1,0 +1,44 @@
+package leet688
+
+import (
+	"fmt"
+)
+
+/*
+ * @lc app=leetcode.cn id=688 lang=golang
+ *
+ * [688] “马”在棋盘上的概率
+ */
+
+// @lc code=start
+var directions = [][]int{{-2, -1}, {-2, 1}, {2, -1}, {2, 1}, {-1, -2}, {-1, 2}, {1, -2}, {1, 2}}
+
+func knightProbability(n int, k int, row int, column int) float64 {
+	memo := map[string]float64{} // 记忆化搜索
+
+	var dfs func(K, r, c int) float64
+	dfs = func(K, r, c int) float64 {
+		if r < 0 || c < 0 || r >= n || c >= n {
+			return 0
+		}
+		if K == 0 {
+			return 1
+		}
+
+		key := fmt.Sprintf("%d-%d-%d", K, r, c) // 使用使用次数-行数-列数共同组成key而不是单一的内容
+		if value, ok := memo[key]; ok {
+			return value
+		}
+		p := 0.0
+		for _, v := range directions {
+			p += dfs(K-1, r+v[0], c+v[1]) // 概率可以相加 是因为后面会/=8.0这样相当于分母的也是持续累乘的
+		}
+		p /= 8.0
+		memo[key] = p
+		return p
+	}
+
+	return dfs(k, row, column)
+}
+
+// @lc code=end
