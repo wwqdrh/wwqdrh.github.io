@@ -1,0 +1,325 @@
+syntax = "proto3";
+option go_package = "worker/server/pb";
+
+service AppRuntimeSync {
+  // Deprecated: -
+  rpc GetAppStatusDeprecated (ServicesRequest) returns (StatusMessage) {}
+  rpc GetAppStatus (AppStatusReq) returns (AppStatus) {}
+  rpc GetAppPods (ServiceRequest) returns (ServiceAppPodList) {}
+  rpc GetMultiAppPods (ServicesRequest) returns (MultiServiceAppPodList) {}
+  rpc GetComponentPodNums (ServicesRequest) returns (ComponentPodNums) {}
+  rpc GetDeployInfo (ServiceRequest) returns (DeployInfo) {}
+  rpc GetTenantResource (TenantRequest) returns (TenantResource) {}
+  rpc GetTenantResources (Empty) returns (TenantResourceList) {}
+  rpc ListThirdPartyEndpoints (ServiceRequest) returns (ThirdPartyEndpoints) {}
+  rpc AddThirdPartyEndpoint (AddThirdPartyEndpointsReq) returns (Empty) {}
+  rpc UpdThirdPartyEndpoint (UpdThirdPartyEndpointsReq) returns (Empty) {}
+  rpc DelThirdPartyEndpoint (DelThirdPartyEndpointsReq) returns (Empty) {}
+  rpc GetPodDetail(GetPodDetailReq) returns (PodDetail) {}
+  rpc GetStorageClasses(Empty) returns (StorageClasses) {}
+  rpc GetAppVolumeStatus(ServiceRequest) returns(ServiceVolumeStatusMessage){}
+  rpc ListAppServices(AppReq) returns(AppServices){}
+  rpc ListHelmAppRelease(AppReq) returns(HelmAppReleases){}
+  rpc ListAppStatuses(AppStatusesReq) returns(AppStatuses){}
+}
+
+message Empty {}
+
+message AppReq {
+  string app_id = 1;
+}
+
+message AppStatusReq {
+  string app_id = 1;
+}
+
+message ServiceRequest {
+  string service_id = 1;
+}
+message ServicesRequest {
+  string service_ids = 1;
+}
+message TenantRequest {
+  string tenant_id = 1;
+}
+
+message StatusMessage {
+  map<string, string> status = 1;
+}
+
+message DiskMessage {
+  map<string, double> disks = 1;
+}
+
+message ServiceAppPodList {
+  repeated ServiceAppPod oldPods = 1;
+  repeated ServiceAppPod newPods = 2;
+}
+
+message MultiServiceAppPodList {
+  map<string, ServiceAppPodList> servicePods = 1;
+}
+
+message ComponentPodNums {
+  map<string, int32> podNums = 1;
+}
+
+message ServiceAppPod {
+  string service_id = 1;
+  string deploy_id = 2;
+  string deploy_type = 3;
+  string pod_name = 4;
+  string pod_ip = 5;
+  string pod_status = 6;
+  map<string, Container> containers = 7;
+  repeated string pod_volumes = 8;
+}
+
+message Container {
+  string container_name = 1;
+  int64 memory_limit = 2;
+  int64 cpu_request = 3;
+  int64 memory_request = 4;
+}
+
+message DeployInfo {
+  string namespace = 1;
+  string statefuleset = 2;
+  string deployment = 3;
+  string start_time = 4;
+  map<string, string> pods = 5;
+  map<string, string> services = 6;
+  map<string, string> endpoints = 7;
+  map<string, string> secrets = 8;
+  map<string, string> ingresses = 9;
+  map<string, string> replicatset = 10;
+  string status = 11;
+}
+
+message TenantResource {
+  int64 cpu_request = 1;
+  int64 cpu_limit = 2;
+  int64 memory_request = 3;
+  int64 memory_limit = 4;
+  int64 running_app_num = 5;
+  int64 running_app_third_num = 10;
+  int64 running_app_internal_num = 11;
+}
+
+message TenantResourceList {
+  map<string, TenantResource> resources = 1;
+}
+
+message AddThirdPartyEndpointsReq {
+  string uuid = 1;
+  string sid = 2;
+  string ip = 3;
+  int32 port = 4;
+  bool is_online = 5;
+}
+
+message UpdThirdPartyEndpointsReq {
+  string uuid = 1;
+  string sid = 2;
+  string ip = 3;
+  int32 port = 4;
+  bool is_online = 5;
+}
+
+message DelThirdPartyEndpointsReq {
+  string uuid = 1;
+  string sid = 2;
+  string ip = 3;
+  int32 port = 4;
+}
+
+message ThirdPartyEndpoint {
+  string name = 1;
+  string componentID = 2;
+  string address = 3;
+  string status = 4;
+}
+
+message ThirdPartyEndpoints {
+  repeated ThirdPartyEndpoint items = 1;
+}
+
+message ListPodsBySIDReq {
+  string sid = 1;
+}
+
+message GetPodDetailReq {
+  string sid = 1;
+  string pod_name = 2;
+}
+
+message PodEvent {
+  string type = 1;
+  string reason = 2;
+  string age = 3;
+  string message = 5;
+}
+
+message PodStatus {
+  enum Type {
+    // PENDING means the pod has been accepted by the system, but one or more of the containers
+    // has not been started. This includes time before being bound to a node, as well as time spent
+    // pulling images onto the host.
+    PENDING = 0;
+    // RUNNING means the pod has been bound to a node and all of the containers have been started.
+    // At least one container is still running or is in the process of being restarted.
+    RUNNING = 1;
+    // SUCCEEDED means that all containers in the pod have voluntarily terminated
+    // with a container exit code of 0, and the system is not going to restart any of these containers.
+    SUCCEEDED = 2;
+    // FAILED means that all containers in the pod have terminated, and at least one container has
+    // terminated in a failure (exited with a non-zero exit code or was stopped by the system).
+    FAILED = 3;
+    // UNKNOWN means that for some reason the state of the pod could not be obtained, typically due
+    // to an error in communicating with the host of the pod.
+    UNKNOWN = 4;
+    TEMINATING = 5;
+    ABNORMAL = 6;
+    INITIATING = 7;
+    SCHEDULING = 8;
+    NOTREADY = 9;
+    UNHEALTHY = 10;
+  }
+
+  Type type = 1;
+  string reason = 2;
+  string message = 3;
+  string advice = 4;
+  string type_str = 5;
+}
+
+message PodContainer {
+  string image = 1;
+  string state = 2;
+  string reason = 3;
+  string started = 4;
+  string limit_memory = 5;
+  string limit_cpu = 6;
+  string request_memory = 7;
+  string request_cpu = 8;
+}
+
+message PodDetail {
+  string name = 1;
+  string node = 2;
+  string start_time = 3;
+  PodStatus status = 4;
+  string ip = 5;
+  string node_ip = 6;
+  string version = 7;
+  repeated PodContainer init_containers = 8;
+  repeated PodContainer containers = 9;
+  repeated PodEvent events = 10;
+  string namespace = 11;
+}
+
+message StorageClasses {
+  repeated StorageClassDetail list = 1;
+}
+
+message StorageClassDetail{
+  string name = 1;
+  string provisioner = 2;
+  map<string, string> parameters = 3;
+  string reclaim_policy = 4;
+  bool allow_volume_expansion = 5;
+  string volume_binding_mode = 6;
+  repeated TopologySelectorTerm allowed_topologies = 7;
+}
+
+message TopologySelectorTerm {
+repeated TopologySelectorLabelRequirement match_label_expressions = 1;
+}
+
+message TopologySelectorLabelRequirement {
+  string key = 1;
+  repeated string values = 2;
+}
+
+enum ServiceVolumeStatus {
+    READY = 0;
+    NOT_READY = 1;
+}
+
+message ServiceVolumeStatusMessage {
+  map<string, ServiceVolumeStatus> status = 1;
+}
+
+message AppStatus {
+  enum Status {
+      NIL = 0;
+      RUNNING = 1;
+      CLOSED = 2;
+      ABNORMAL = 3;
+      STARTING = 4;
+      STOPPING = 5;
+  }
+
+  string status = 1;
+  int64  cpu = 2;
+  int64  memory = 3;
+  bool setCPU = 4;
+  bool setMemory = 5;
+  string phase = 6;
+  repeated string overrides = 7;
+  string version = 8;
+  repeated AppStatusCondition conditions=9;
+  int64 gpu = 10;
+  string app_id = 11;
+  string app_name = 12;
+}
+
+message AppStatusCondition {
+    string type = 1;
+    bool status = 2;
+    string reason = 3;
+    string message = 4;
+}
+
+message AppService {
+    message Pod {
+        string name=1;
+        string status=2;
+    }
+
+    message Port {
+        int32 port=1;
+        string protocol=2;
+    }
+
+    string name=1;
+    string address=2;
+    repeated Port ports=3;
+    repeated Pod pods=4;
+    repeated Pod oldPods=5;
+}
+
+message AppServices {
+  repeated AppService services=1;
+}
+
+message HelmAppReleases {
+  repeated HelmAppRelease helmAppRelease=1;
+}
+
+message HelmAppRelease {
+  int32 revision=1;
+  string updated=2;
+  string status=3;
+  string chart=4;
+  string appVersion=5;
+  string description=6;
+}
+
+message AppStatusesReq {
+  repeated string app_ids = 1;
+}
+
+message AppStatuses {
+  repeated AppStatus app_statuses = 1;
+}

@@ -1,0 +1,31 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: application-sample
+  namespace: default
+spec:
+  components:
+    - name: "server1"
+      type: "singleton-server"
+      properties:
+        version: 1.14.2
+    - name: "server2"
+      type: "singleton-server"
+      properties:
+        version: 1.14.2
+  workflow:
+    steps:
+      - name: deploy-server1
+        type: custom-apply-component
+        properties:
+          component: "server1"
+        outputs:
+        - name: server1IP
+          valueFrom: "myIP"
+      - name: deploy-server2
+        type: apply-with-ip
+        inputs:
+        - from: server1IP
+          parameterKey: prefixIP
+        properties:
+          component: "server2"

@@ -1,0 +1,77 @@
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: canary-test
+  namespace: default
+spec:
+  components:
+    - name: canarydemo
+      type: webservice
+      properties:
+        image: docker.io/barnett/canarydemo:v2
+        port: 8090
+
+      traits:
+        - type: canary-traffic
+          properties:
+            port:
+              - 8090
+
+        - type: rollout
+          properties:
+            targetSize: 2
+            # This means to rollout two more replicas in two batches.
+            rolloutBatches:
+              - replicas: 1
+              - replicas: 1
+
+    - name: gateway
+      type: webservice
+      properties:
+        image: docker.io/barnett/canarydemo-gateway:v2
+        port: 8091
+
+      traits:
+        - type: expose
+          properties:
+            port:
+              - 8091
+
+        - type: istio-gateway
+          properties:
+            hosts:
+              - "*"
+            gateway: ingressgateway
+            match:
+              - exact: /server
+            port: 8091
+
+
+
+  workflow:
+    steps:
+      - name: rollout-1st-batch
+        type: canary-rollout
+        properties:
+          # just upgrade first batch of component
+          batchPartition: 0
+          traffic:
+            weightedTargets:
+              - revision: canarydemo-v1
+                weight: 90 # 90% shift to new version
+              - revision: canarydemo-v2
+                weight: 10 # 10% shift to new version
+
+      # give user time to verify part of traffic shifting to newRevision
+      - name: manual-approval
+        type: suspend
+
+      - name: rollout-rest
+        type: canary-rollout
+        properties:
+          # upgrade all batches of component
+          batchPartition: 1
+          traffic:
+            weightedTargets:
+              - revision: canarydemo-v2
+                weight: 100 # 100% shift to new version

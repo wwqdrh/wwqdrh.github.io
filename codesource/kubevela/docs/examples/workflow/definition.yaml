@@ -1,0 +1,94 @@
+apiVersion: core.oam.dev/v1beta1
+kind: WorkflowStepDefinition
+metadata:
+  name: apply-with-ip
+spec:
+  schematic:
+    cue:
+      template: |
+        import ("vela/op")
+        parameter: {
+           component: string
+           prefixIP: string
+        }
+
+        // load component from application
+        load: op.#Load
+
+        // apply workload to kubernetes cluster
+        apply: op.#ApplyComponent & {
+           value: load.value[parameter.component] & {
+                properties: serverIP: parameter.prefixIP
+           }
+        }
+
+        // wait until workload.status equal "Running"
+        wait: op.#ConditionalWait & {
+           continue: apply.output.status.phase =="Running"
+        }
+---
+apiVersion: core.oam.dev/v1beta1
+kind: WorkflowStepDefinition
+metadata:
+  name: custom-apply-component
+spec:
+  schematic:
+    cue:
+      template: |
+        import ("vela/op")
+        parameter: {
+           component: string
+        }
+
+        // load component from application
+        load: op.#Load
+
+        // apply workload to kubernetes cluster
+        apply: op.#ApplyComponent & {
+            value: load.value[parameter.component]
+        }
+
+        // wait until workload.status equal "Running"
+        wait: op.#ConditionalWait & {
+           continue: apply.output.status.phase =="Running"
+        }
+
+        // export podIP
+        myIP: apply.output.status.podIP
+---
+apiVersion: core.oam.dev/v1beta1
+kind: ComponentDefinition
+metadata:
+  name: singleton-server
+  annotations:
+    definition.oam.dev/description: "singleton-server is Pod"
+spec:
+  workload:
+    definition:
+      apiVersion: v1
+      kind: Pod
+  schematic:
+    cue:
+      template: |
+        parameter: {
+          version: *"1.14.2" | string
+          serverIP?: string
+        }
+        output: {
+          apiVersion: "v1"
+          kind: "Pod"
+          metadata: {
+            labels: app: "nginx"
+            name: context.name
+          }
+          spec:{
+            containers:[{
+                name: "nginx"
+                image: "nginx:"+parameter.version
+                ports: [{containerPort: 80}]
+                if parameter.serverIP!=_|_{
+                    env: [{name: "PrefixIP",value: parameter.serverIP}]
+                }
+            }]
+          }
+        }
