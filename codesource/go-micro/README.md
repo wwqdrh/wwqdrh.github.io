@@ -1,105 +1,93 @@
-# Go Micro [![License](https://img.shields.io/:license-apache-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Go.Dev reference](https://img.shields.io/badge/go.dev-reference-007d9c?logo=go&logoColor=white&style=flat-square)](https://pkg.go.dev/go-micro.dev/v4?tab=doc)
+# go-micro
 
-Go Micro is a framework for distributed systems development.
+## 简介
 
-<img src="go-micro.png" style="border: 1px solid black;" />
+认证：Auth 内置为一等公民。 身份验证和授权通过为每项服务提供身份和证书来实现安全的零信任网络。 这还包括基于规则的访问控制。
 
-## Overview
 
-Go Micro provides the core requirements for distributed systems development including RPC and Event driven communication.
-The Go Micro philosophy is sane defaults with a pluggable architecture. We provide defaults to get you started quickly
-but everything can be easily swapped out.
+动态配置：从任何地方加载和热重载动态配置。 配置接口提供了一种从任何来源（例如 env vars、文件、etcd）加载应用程序级别配置的方法。 您可以合并源，甚至定义回退。
 
-## Features
 
-Go Micro abstracts away the details of distributed systems. Here are the main features.
+数据存储：一个简单的数据存储接口，用于读取、写入和删除记录。它默认支持内存、文件和CockroachDB。状态和持久性成为原型之外的核心需求，Micro希望将其构建到框架中。
 
-- **Authentication** - Auth is built in as a first class citizen. Authentication and authorization enable secure
-  zero trust networking by providing every service an identity and certificates. This additionally includes rule
-  based access control.
 
-- **Dynamic Config** - Load and hot reload dynamic config from anywhere. The config interface provides a way to load application
-  level config from any source such as env vars, file, etcd. You can merge the sources and even define fallbacks.
+服务发现：自动服务注册和名称解析。 服务发现是微服务开发的核心。 当服务 A 需要与服务 B 通话时，它需要该服务的位置。 默认发现机制是多播 DNS (mdns)，一个 zeroconf 系统。
 
-- **Data Storage** - A simple data store interface to read, write and delete records. It includes support for memory, file and
-  CockroachDB by default. State and persistence becomes a core requirement beyond prototyping and Micro looks to build that into the framework.
 
-- **Service Discovery** - Automatic service registration and name resolution. Service discovery is at the core of micro service
-  development. When service A needs to speak to service B it needs the location of that service. The default discovery mechanism is
-  multicast DNS (mdns), a zeroconf system.
+负载均衡：基于服务发现的客户端负载平衡。 一旦我们获得了任意数量的服务实例的地址，我们现在需要一种方法来决定路由到哪个节点。 我们使用随机散列负载平衡来提供跨服务的均匀分布，并在出现问题时重试不同的节点。
 
-- **Load Balancing** - Client side load balancing built on service discovery. Once we have the addresses of any number of instances
-  of a service we now need a way to decide which node to route to. We use random hashed load balancing to provide even distribution
-  across the services and retry a different node if there's a problem.
 
-- **Message Encoding** - Dynamic message encoding based on content-type. The client and server will use codecs along with content-type
-  to seamlessly encode and decode Go types for you. Any variety of messages could be encoded and sent from different clients. The client
-  and server handle this by default. This includes protobuf and json by default.
+消息编码：基于内容类型的动态消息编码。 客户端和服务器将使用编解码器和内容类型为您无缝编码和解码 Go 类型。 任何种类的消息都可以被编码并从不同的客户端发送。 客户端和服务器默认处理这个。 默认情况下，这包括 protobuf 和 json。
 
-- **RPC Client/Server** - RPC based request/response with support for bidirectional streaming. We provide an abstraction for synchronous
-  communication. A request made to a service will be automatically resolved, load balanced, dialled and streamed.
 
-- **Async Messaging** - PubSub is built in as a first class citizen for asynchronous communication and event driven architectures.
-  Event notifications are a core pattern in micro service development. The default messaging system is a HTTP event message broker.
+RPC 客户端/服务器：基于 RPC 的请求/响应，支持双向流。 我们为同步通信提供了一个抽象。 对服务提出的请求将被自动解析、负载平衡、拨号和流式传输。
 
-- **Event Streaming** - PubSub is great for async notifications but for more advanced use cases event streaming is preferred. Offering
-  persistent storage, consuming from offsets and acking. Go Micro includes support for NATS Jetstream and Redis streams.
 
-- **Synchronization** - Distributed systems are often built in an eventually consistent manner. Support for distributed locking and
-  leadership are built in as a Sync interface. When using an eventually consistent database or scheduling use the Sync interface.
+异步消息：PubSub 内置为异步通信和事件驱动架构的一等公民。 事件通知是微服务开发的核心模式。 默认消息系统是 HTTP 事件消息代理。
 
-- **Pluggable Interfaces** - Go Micro makes use of Go interfaces for each distributed system abstraction. Because of this these interfaces
-  are pluggable and allows Go Micro to be runtime agnostic. You can plugin any underlying technology.
 
-## Getting Started
+同步：分布式系统通常以最终一致的方式构建。 对分布式锁定和领导的支持作为同步接口内置。 使用最终一致的数据库或调度时，请使用 Sync 接口。
 
-To make use of Go Micro
 
-```golang
-import "go-micro.dev/v4"
+可插拔接口：Go Micro 为每个分布式系统抽象使用 Go 接口。 因此，这些接口是可插拔的，并允许 Go Micro 与运行时无关。 您可以插入任何底层技术
 
-// create a new service
-service := micro.NewService(
-    micro.Name("helloworld"),
-)
+## 执行流程
 
-// initialise flags
-service.Init()
+主入口文件，在初始化server的时候会执行下文的一些初始工作
 
-// start the service
-service.Run()
+service其实包装了service目录下的结构体，设置name、handler等也都是处理service下面的结构体
+
+cmd中包含一些启动命令
+
+``` Golang
+if err := s.opts.Cmd.Init(
+        cmd.Auth(&s.opts.Auth),
+        cmd.Broker(&s.opts.Broker),
+        cmd.Registry(&s.opts.Registry),
+        cmd.Runtime(&s.opts.Runtime),
+        cmd.Transport(&s.opts.Transport),
+        cmd.Client(&s.opts.Client),
+        cmd.Config(&s.opts.Config),
+        cmd.Server(&s.opts.Server),
+        cmd.Store(&s.opts.Store),
+        cmd.Profile(&s.opts.Profile),
+    ); err != nil {
+        logger.Fatal(err)
+    }
+
 ```
 
-See the [examples](https://github.com/micro/go-micro/tree/master/examples) for detailed information on usage.
+执行Run函数
 
-## Command Line Interface
+开启profile
 
-See [cmd/micro](https://github.com/asim/go-micro/tree/master/cmd/micro) for the command line interface.
+执行opts中设置的service的start函数
 
-## Code Generation
+newOptions定义了初始配置
 
-See [cmd/protoc-gen-micro](https://github.com/micro/go-micro/tree/master/cmd/protoc-gen-micro) for protobuf code generation.
+``` Golang
+func newOptions(opts ...Option) Options {
+    opt := Options{
+        Auth:      auth.DefaultAuth,
+        Broker:    broker.DefaultBroker,
+        Cache:     cache.DefaultCache,
+        Cmd:       cmd.DefaultCmd,
+        Config:    config.DefaultConfig,
+        Client:    client.DefaultClient,
+        Server:    server.DefaultServer,
+        Store:     store.DefaultStore,
+        Registry:  registry.DefaultRegistry,
+        Runtime:   runtime.DefaultRuntime,
+        Transport: transport.DefaultTransport,
+        Context:   context.Background(),
+        Signal:    true,
+    }
 
-## Dashboard
+    for _, o := range opts {
+        o(&opt)
+    }
 
-See [cmd/dashboard](https://github.com/micro/go-micro/tree/master/cmd/dashboard) for go micro dashboard.
+    return opt
+}
 
-## Example Usage
-
-See [examples](https://github.com/micro/go-micro/tree/master/examples) directory for usage examples.
-
-## Plugins
-
-See [plugins](https://github.com/micro/go-micro/tree/master/plugins) directory for all the plugins.
-
-## Services
-
-See [services](https://github.com/micro/go-micro/tree/master/services) directory for third party services.
-
-## Changelogs
-
-See [CHANGELOG.md](https://github.com/micro/go-micro/tree/master/CHANGELOG.md) for release history.
-
-## License
-
-Go Micro is Apache 2.0 licensed.
+```
