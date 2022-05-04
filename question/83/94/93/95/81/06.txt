@@ -1,4 +1,0 @@
-[question]
-golang 如何内存对齐？
-[answer]
-

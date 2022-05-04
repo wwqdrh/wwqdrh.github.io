@@ -1,4 +1,0 @@
-[question]
-sync.map 的优缺点和使用场景
-[answer]
-

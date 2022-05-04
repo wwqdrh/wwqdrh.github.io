@@ -1,4 +1,0 @@
-[question]
-golang面试题：json包变量不加tag会怎么样？
-[answer]
-

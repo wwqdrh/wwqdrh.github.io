@@ -1,4 +1,0 @@
-[question]
-golang面试题：能说说uintptr和unsafe.Pointer的区别吗？
-[answer]
-

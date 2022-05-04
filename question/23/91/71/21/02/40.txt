@@ -1,4 +1,0 @@
-[question]
-kubectl create -f file 执行后发生了什么
-[answer]
-

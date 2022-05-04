@@ -1,4 +1,0 @@
-[question]
-chan相关的goroutine泄露的问题
-[answer]
-

@@ -1,4 +1,0 @@
-[question]
-GMP模型
-[answer]
-

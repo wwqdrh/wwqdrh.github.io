@@ -1,4 +1,0 @@
-[question]
-golang怎么做代码优化
-[answer]
-

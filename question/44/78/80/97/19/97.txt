@@ -1,4 +1,0 @@
-[question]
-go mod包管理
-[answer]
-

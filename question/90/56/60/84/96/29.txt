@@ -1,4 +1,0 @@
-[question]
-k8s master,slave 各组件
-[answer]
-

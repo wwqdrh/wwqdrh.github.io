@@ -1,4 +1,0 @@
-[question]
-redis AOF 和 RDB
-[answer]
-

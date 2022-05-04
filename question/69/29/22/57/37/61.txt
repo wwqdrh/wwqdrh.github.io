@@ -1,4 +1,0 @@
-[question]
-开源库里会有一些类似下面这种奇怪的用法：var _ io.Writer = (*myWriter)(nil)，是为什么？
-[answer]
-

@@ -1,4 +1,0 @@
-[question]
-如何预估一个mysql语句的性能
-[answer]
-

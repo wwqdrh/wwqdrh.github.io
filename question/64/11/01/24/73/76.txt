@@ -1,4 +1,0 @@
-[question]
-退出程序时怎么防止channel没有消费完
-[answer]
-

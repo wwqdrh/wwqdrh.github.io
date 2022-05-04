@@ -1,4 +1,0 @@
-[question]
-http req和resp的中数据有哪些
-[answer]
-

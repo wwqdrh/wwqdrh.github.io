@@ -1,4 +1,0 @@
-[question]
-etcd 的作用
-[answer]
-

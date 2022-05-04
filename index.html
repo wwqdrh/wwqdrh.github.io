@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>个人首页</title>
-  <meta name="description" content="个人首页">
-  <meta name="keywords" content="个人首页 home">
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <meta http-equiv="X-UA-Compatible" content ="IE=edge"/>
-  <script type="module" crossorigin src="/assets/index.cbd64011.js"></script>
-  <link rel="modulepreload" href="/assets/vue-router.esm-bundler.3bdd89fa.js">
-  <link rel="modulepreload" href="/assets/plugin-vue_export-helper.21dcd24c.js">
-  <link rel="modulepreload" href="/assets/_commonjsHelpers.294d03c4.js">
-  <link rel="modulepreload" href="/assets/state.4c11b6e0.js">
-  <link rel="stylesheet" href="/assets/vue-router.esm-bundler.06f4f829.css">
-  <link rel="stylesheet" href="/assets/materialdesignicons.5d97ecda.css">
-</head>
-
-<body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/pwa-192x192.png">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00aba9">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="theme-color" content="#ffffff">
+  <script>
+    (function () {
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+      const setting = localStorage.getItem('vueuse-color-scheme') || 'auto'
+      if (setting === 'dark' || (prefersDark && setting !== 'light'))
+        document.documentElement.classList.toggle('dark', true)
+    })()
+  </script>
+  <script type="module" crossorigin src="/assets/index.8f32ef1e.js"></script>
+  <link rel="stylesheet" href="/assets/index.e8a5fe48.css">
+<link rel="manifest" href="/manifest.webmanifest"></head>
+<body class="font-sans">
   <div id="app"></div>
-  <script src="/js/loading.js"></script>
-  <script src="/js/d3.v3.js"></script>
+  <!-- <script src="/js/loading.js"></script> -->
+  <!-- <script src="/js/d3.v3.js"></script> -->
   
 </body>
-
 </html>

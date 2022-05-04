@@ -1,5 +1,0 @@
-[question]
-TCP和UDP的区别，UDP有点，适用场景
-[answer]
-tcp传输的是数据流，而UDP是数据包，tcp会经过三次握手，udp不需要
-

@@ -1,4 +1,0 @@
-[question]
-golang 的内存管理机制？详细描述 GC 过程？
-[answer]
-

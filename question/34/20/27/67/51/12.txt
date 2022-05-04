@@ -1,4 +1,0 @@
-[question]
-goroutine调度用了什么系统调用
-[answer]
-

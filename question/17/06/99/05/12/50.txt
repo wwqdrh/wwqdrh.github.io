@@ -1,5 +1,0 @@
-[question]
-简要描述go中的main和init函数的区别
-[answer]
-首先，这两个函数应用位置不同，init函数可以应用于所有的package，main只能应用于 package main，需要注意的是虽然一个package中可以写任意多个init,但是无论是从可读性还是可维护性来说，都是不推荐的； 其次，这两个函数定义时都不能有任何的参数和返回值， 最后，个人理解，init函数为初始化操作，main函数为程序入口。
-

@@ -1,4 +1,0 @@
-[question]
-golang 面试题：reflect（反射包）如何获取字段 tag？为什么 json 包不能导出私有变量的 tag？
-[answer]
-

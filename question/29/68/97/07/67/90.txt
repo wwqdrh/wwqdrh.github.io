@@ -1,4 +1,0 @@
-[question]
-建立索引要注意什么
-[answer]
-

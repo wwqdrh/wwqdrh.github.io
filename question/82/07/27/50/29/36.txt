@@ -1,4 +1,0 @@
-[question]
-写一个 golang 的单例实现？
-[answer]
-

@@ -1,4 +1,0 @@
-[question]
-free -h，buffers 和cached有什么不同
-[answer]
-

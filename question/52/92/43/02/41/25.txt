@@ -1,4 +1,0 @@
-[question]
-如何保证redis和数据库数据的一致性。比如用户名既保存在数据库，又保存在redis做缓存。有如下操作 update_db(username); update_redis(username)。但是执行update_db后故障，update_redis没有执行。有什么简单办法解决这个问题。
-[answer]
-

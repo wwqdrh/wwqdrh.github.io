@@ -1,4 +1,0 @@
-[question]
-GRPC 相对于 RESTFUL 有什么优势，为什么选择 GRPC,Grcp 为什么使用 http2.0 而不是 TCP
-[answer]
-

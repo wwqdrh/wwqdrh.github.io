@@ -1,4 +1,0 @@
-[question]
-sync.Pool的适用场景
-[answer]
-

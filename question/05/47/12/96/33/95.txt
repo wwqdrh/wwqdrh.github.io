@@ -1,4 +1,0 @@
-[question]
-孤儿进程是什么
-[answer]
-

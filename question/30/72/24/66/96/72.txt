@@ -1,4 +1,0 @@
-[question]
-golang隐藏技能:怎么访问私有成员
-[answer]
-

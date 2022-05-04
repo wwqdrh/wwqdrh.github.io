@@ -1,4 +1,0 @@
-[question]
-昨天那个在for循环里append元素的同事，今天还在么？
-[answer]
-

@@ -1,4 +1,0 @@
-[question]
-golang面试题：简单聊聊内存逃逸？
-[answer]
-

@@ -1,4 +1,0 @@
-[question]
-client如何实现长连接
-[answer]
-server是设置超时时间，for循环遍历的

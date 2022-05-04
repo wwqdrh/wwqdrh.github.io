@@ -1,4 +1,0 @@
-[question]
-close wait和time wait是什么？如何排查？有什么意义？
-[answer]
-
