@@ -1,1 +1,0 @@
-import t from"./index.92a132de.js";import{d as r,h as c,J as f,o as s,K as p,D as n}from"./index.997a8f6a.js";const m=r({props:{name:null},setup(a){const o=a,e=c();return f(()=>{e.value.openGame&&o.name==="pandarun"&&e.value.openGame()}),(i,l)=>(s(),p(t,{ref_key:"index",ref:e},null,512))}});typeof n=="function"&&n(m);export{m as default};
