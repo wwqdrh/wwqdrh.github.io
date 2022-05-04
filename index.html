@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,10 +20,19 @@
   <script type="module" crossorigin src="/assets/index.3b043d6d.js"></script>
   <link rel="stylesheet" href="/assets/index.e8a5fe48.css">
 <link rel="manifest" href="/manifest.webmanifest"></head>
+
 <body class="font-sans">
   <div id="app"></div>
-  <!-- <script src="/js/loading.js"></script> -->
-  <!-- <script src="/js/d3.v3.js"></script> -->
+  <script src="/js/loading.js"></script>
   
+  <script type="text/javascript">
+    document.getElementById('mainscript').onload = function () {
+      const loading = document.getElementById('Loading')
+      if (loading)
+        loading.classList.add('hidden')
+      // document.body.removeChild(loading);
+    }
+  </script>
 </body>
+
 </html>
