@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="海外兔|求职课程|高频题|系统设计|经验采访|文章分享">
+    <title>Overseas Rabbit | 海外兔</title>
+    <link rel="shortcut icon" type="image/png" href="https://cdn.jsdelivr.net/gh/OSJobs/osjobs-base/img/rabbit-32.png"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFNKRJN2E7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-GFNKRJN2E7');
+    </script>
+  </head>
+  <body>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <strong>Overseas Rabbit | 海外兔</strong>
+        </a>
+        <a role="button" class="navbar-burger" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+          <a target="_blank" href="https://osjobs.net/co/" class="navbar-item">求职课程</a>
+          <a target="_blank" href="https://osjobs.net/topk/" class="navbar-item">高频面试题</a>
+          <a target="_blank" href="https://osjobs.net/interview/" class="navbar-item">经验采访</a>
+          <a target="_blank" href="https://www.zhihu.com/people/Windson_Yang/posts?page=1" class="navbar-item">文章分享</a>
+        </div>
+      </div>
+    </nav>
+  <section class="hero is-bold has-text-centered">
+    <div class="hero-body">
+      <div class="container">
+        <img width="100" height="100" style="margin-bottom: 1rem;" src="https://cdn.jsdelivr.net/gh/OSJobs/osjobs-base/img/rabbit-256.png" alt="osjobs" />
+        <h1 class="title" style="font-size: 1.8rem">
+          Overseas Rabbit | 海外兔
+        </h1>
+        <h2 class="subtitle">
+          海内外工作的经验交流，信息分享
+        </h2>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="four-div container">
+      <div class="columns is-multiline">
+        <!-- start 求职课程 -->
+        <div class="column is-4">
+          <a target="_blank" href="https://osjobs.net/co/">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="img/co.jpg" alt="co">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4"><a href="https://osjobs.net/co/">求职课程</a></p>
+                    <p class="subtitle is-6">导师提供公司一对一入职套餐，<b>入职不成功不收费</b><p>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- end card -->
+          </a>
+        </div>
+        <!-- end 求职课程 -->
+        <!-- start 求职指南 -->
+        <div class="column is-4">
+          <a target="_blank" href="https://interview-science.org/">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="img/blog.jpg" alt="tool">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4"><a target="_blank" href="https://interview-science.org/">求职指南</a></p>
+                    <p class="subtitle is-6">导师共同撰写的 Big Five 求职指南，如何从零开始准备程序员面试</p>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- end card -->
+          </a>
+        </div>
+        <!-- end 求职指南 -->
+
+        <!-- start 高频面试题 -->
+        <div class="column is-4">
+          <a target="_blank" href="https://osjobs.net/topk/">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="img/forum.jpg" alt="forum"/>
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4"><a target="_blank" href="https://osjobs.net/topk/">高频面试题</a></p>
+                    <p class="subtitle is-6">统计超过 2000 篇面经的高频面试题，包括谷歌，脸书，亚马逊等</p>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- end card -->
+          </a>
+        </div>
+        <!-- end 高频面试题 -->
+
+        <!-- start 经验采访 -->
+        <div class="column is-4">
+          <a target="_blank" href="https://osjobs.net/interview/">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="img/info.jpg" alt="info">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4"><a target="_blank" href="https://osjobs.net/interview/">经验采访</a></p>
+                    <p class="subtitle is-6">编程艺术家 Lee215 的算法旅程，从汽车工程师转变为软件工程师</p>
+                  </div>
+                </div> <!-- end media -->
+              </div> <!-- end card-content -->
+            </div><!-- end card -->
+          </a>
+        </div>
+        <!-- end 经验采访 -->
+
+        <!-- start 系统设计 -->
+        <div class="column is-4">
+          <a target="_blank" href="https://osjobs.net/system/">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="img/system.jpg" alt="info">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4"><a target="_blank" href="https://osjobs.net/system/">系统设计课程</a></p>
+                    <p class="subtitle is-6">多个项目实际开发的架构设计，包括Facebook 是如何设计 Facebook live 的</p>
+                  </div>
+                </div> <!-- end media -->
+              </div> <!-- end card-content -->
+            </div><!-- end card -->
+          </a>
+        </div>
+        <!-- end 系统设计 -->
+
+        <!-- start 黑名单 -->
+        <div class="column is-4">
+          <a target="_blank" href="https://osjobs.net/blacklist/">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-16by9">
+                  <img src="img/blacklist.jpg" alt="info">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-content">
+                    <p class="title is-4"><a target="_blank" href="https://osjobs.net/blacklist/">失信学员名单</a></p>
+                    <p class="subtitle is-6">参加海外兔入职套餐，但是长时间失联或者完成课程后没有付款的学员名单</p>
+                  </div>
+                </div> <!-- end media -->
+              </div> <!-- end card-content -->
+            </div><!-- end card -->
+          </a>
+        </div>
+        <!-- end 黑名单 -->
+
+      </div> <!-- end columns -->
+    </div> <!-- end container -->
+  </section>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>© 2021 Overseas Rabbit Team All Rights Reserved</strong>
+      </p>
+      <p>
+        <strong><a href="mailto:contact@osjobs.net?subject=你好">联系我们</a></strong>
+      </p>
+    </div>
+  </footer>
+  <script>
+    window.addEventListener('load', function () {
+      var userAgent = window.navigator.userAgent.toLowerCase();
+      safari = /safari/.test(userAgent);
+      ios = /iphone|ipod|ipad|zhihuhybrid/.test(userAgent);
+      if(ios) {
+          if (!safari) {
+            var outDiv = document.createElement("div");
+            outDiv.classList.add("notification");
+            outDiv.classList.add("is-warning");
+            var btn = document.createElement("button");
+            btn.classList.add("delete");
+            outDiv.innerHTML += "请点击右上角的 ··· 使用 Safari 打开本页面";
+            outDiv.appendChild(btn);
+            var container = document.getElementsByClassName("four-div")[0];
+            container.prepend(outDiv);
+          };
+      };
+    });
+  </script>
+
+  </body>
+</html>
