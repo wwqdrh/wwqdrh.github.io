@@ -1,1 +1,0 @@
-{"properties":{"cmd":{"title":"cmd","type":"string"},"name":{"description":"Which image would you like to use for your service","title":"name","type":"string"}},"type":"object"}
