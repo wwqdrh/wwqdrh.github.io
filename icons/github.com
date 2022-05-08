@@ -1,24 +1,1907 @@
-<!doctype html>
-<html data-n-head-ssr lang="zh" data-n-head="%7B%22lang%22:%7B%22ssr%22:%22zh%22%7D%7D">
-  <head >
-    <title>找不到页面</title><meta data-n-head="ssr" charset="utf-8"><meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover"><meta data-n-head="ssr" name="apple-itunes-app" content="app-id=987739104"><meta data-n-head="ssr" name="theme-color" content="#ffffff"><meta data-n-head="ssr" name="msapplication-TileColor" content="#da532c"><link data-n-head="ssr" rel="preconnect" href="//lf3-cdn-tos.bytescm.com" crossorigin="anonymous"><link data-n-head="ssr" rel="preconnect" href="//mcs.snssdk.com" crossorigin="anonymous"><link data-n-head="ssr" rel="preconnect" href="//i.snssdk.com" crossorigin="anonymous"><link data-n-head="ssr" rel="dns-prefetch" href="//lf3-cdn-tos.bytescm.com"><link data-n-head="ssr" rel="dns-prefetch" href="//api.juejin.cn"><link data-n-head="ssr" rel="dns-prefetch" href="//lf-cdn-tos.bytescm.com"><link data-n-head="ssr" rel="dns-prefetch" href="//unpkg.byted-static.com"><link data-n-head="ssr" rel="dns-prefetch" href="//p1-juejin.byteimg.com"><link data-n-head="ssr" rel="dns-prefetch" href="//p3-juejin.byteimg.com"><link data-n-head="ssr" rel="dns-prefetch" href="//p6-juejin.byteimg.com"><link data-n-head="ssr" rel="dns-prefetch" href="//p9-juejin.byteimg.com"><link data-n-head="ssr" rel="dns-prefetch" href="//p1-jj.byteimg.com"><link data-n-head="ssr" rel="dns-prefetch" href="//mcs.snssdk.com"><link data-n-head="ssr" rel="dns-prefetch" href="//i.snssdk.com"><link data-n-head="ssr" rel="apple-touch-icon" sizes="180x180" href="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web//static/favicons/apple-touch-icon.png"><link data-n-head="ssr" rel="icon" type="image/png" sizes="32x32" href="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web//static/favicons/favicon-32x32.png"><link data-n-head="ssr" rel="icon" type="image/png" sizes="16x16" href="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web//static/favicons/favicon-16x16.png"><link data-n-head="ssr" rel="mask-icon" href="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web//static/favicons/safari-pinned-tab.svg" color="#1E80FF"><link data-n-head="ssr" rel="manifest" href="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web//static/favicons/site.webmanifest"><link data-n-head="ssr" rel="search" title="掘金" href="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web//static/search.xml" type="application/opensearchdescription+xml"><link data-n-head="ssr" rel="stylesheet" href="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web//static/ionicons/css/ionicons.min.css"><link data-n-head="ssr" rel="stylesheet" href="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web//static/iconfont/index.css"><link data-n-head="ssr" rel="stylesheet" href="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web//static/ionicons/iconfont.css"><link data-n-head="ssr" rel="stylesheet" href="https://lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web//static/bytedesign.min.css"><script data-n-head="ssr" type="text/javascript" src="https://lf3-cdn-tos.bytescm.com/obj/rc-web-sdk/acrawler.js"></script><link rel="preload" href="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/bd1e656.js" as="script"><link rel="preload" href="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/8c90871.js" as="script"><link rel="preload" href="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/bbf4234.js" as="script"><link rel="preload" href="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/c94831a.js" as="script"><link rel="preload" href="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/2b78cee.js" as="script"><link rel="preload" href="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/2f68871.js" as="script"><style data-vue-ssr-id="6d4e8b07:0 dc62fca8:0 113205ea:0 39cb6854:0 373aa6d5:0 17b10f90:0">html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0}progress{vertical-align:baseline}[hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}button,input,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}.markdown-body embed,.markdown-body iframe,.markdown-body img:not(.equation),.markdown-body video{max-width:100%!important;margin:0}.markdown-body li{list-style:inherit}.markdown-body img.equation{margin:0 .1em;max-width:100%!important;vertical-align:middle}.markdown-body pre{position:relative}.markdown-body pre>code.hljs[lang]:before{content:attr(lang);position:absolute;right:15px;top:2px;color:hsla(0,0%,54.9%,.8)}.markdown-body pre>code.hljs[lang][lang=bash]:before{content:""}.markdown-body pre>code.copyable .copy-code-btn{position:absolute;top:6px;right:15px;font-size:12px;line-height:1;cursor:pointer;color:hsla(0,0%,54.9%,.8);transition:color .1s}.markdown-body pre>code.copyable .copy-code-btn:hover{color:#8c8c8c}.markdown-body pre>code.copyable.hljs[lang]:before{right:70px}.markdown-body pre pre>code .copy-code-btn{display:none}.markdown-body pre pre>code.hljs[lang]:before{top:2px;right:15px}#nprogress{pointer-events:none}#nprogress .bar{background:#007fff;position:fixed;z-index:1031;top:0;left:0;width:100%;height:2px}#nprogress .peg{display:block;position:absolute;right:0;width:100px;height:100%;box-shadow:0 0 10px #007fff,0 0 5px #007fff;opacity:1;transform:rotate(3deg) translateY(-4px)}.nprogress-custom-parent{overflow:hidden;position:relative}.nprogress-custom-parent #nprogress .bar,.nprogress-custom-parent #nprogress .spinner{position:absolute}@-webkit-keyframes nprogress-spinner{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes nprogress-spinner{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}body{font-size:12px;line-height:normal}a,button,input{margin:initial}img{width:auto;height:auto}#juejin{overflow-x:visible;overflow-x:initial}html{font-size:12px;word-break:break-word;text-rendering:optimizeLegibility;color:#333;background-color:#f4f5f5}html.white{background-color:#fff}body,html{-webkit-font-smoothing:unset!important;font-family:-apple-system,system-ui,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial!important}body{word-break:break-word;overflow-y:scroll}a{text-decoration:none;cursor:pointer;color:#909090}a:hover{color:#007fff}button{list-style:1}button:disabled{cursor:not-allowed}button.disabled,button.disabled:hover{background-color:#d2d2d2;cursor:not-allowed}ul{padding:0;margin:0}li{list-style:none}#juejin-seo-meta{display:none}.container{position:relative;margin:0 auto;width:100%;max-width:960px}.container:after{display:table;content:"";clear:both}.hidden{display:none}.root-view-bg{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:-1}.shadow{box-shadow:0 1px 2px 0 rgba(0,0,0,.05)}.align-center{text-align:center}.align-right{text-align:right}.align-middle{vertical-align:middle}.center{margin-left:auto;margin-right:auto}.text-normal{color:#333}.text-muted{color:#666}.text-muted1{color:#909090}.text-muted2{color:#838383}.text-gray{color:#909090}.text-light{color:#d2d2d2}.text-blue{color:#007fff}.text-blue-hover{color:#0371df}.text-green{color:#37c700}.text-green-hover{color:#3cb40e}.text-orange{color:#ff8900}.text-red{color:#e22323}.text-a,.text-link{cursor:pointer;color:#333}@include transition(color $speed-normal);.text-a:active,.text-a:hover,.text-link:active,.text-link:hover{color:#275b8c}.text-link{color:#259}.text-pointer{cursor:pointer}.line-wrap{white-space:pre-wrap;word-break:break-all}.ellipsis{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.text-bold,b,strong{font-weight:700}.view-nav{position:fixed;top:5rem;width:100%;height:3.833rem;z-index:100;box-shadow:0 1px 2px 0 rgba(0,0,0,.05);transition:all .2s;transform:translateZ(0)}.view-nav,.view-nav:before{left:0;background-color:#fff}.view-nav:before{content:"";position:absolute;right:0;bottom:0;height:200%;z-index:-1}.view-nav.top{transform:translate3d(0,-5rem,0)}.view-nav .nav-list{max-width:960px;height:100%;margin:auto;display:flex;align-items:center;line-height:1}.view-nav .nav-list .nav-item{height:100%;align-items:center;display:flex;flex-shrink:0;font-size:1.16rem;color:#71777c;padding:0 1rem}.view-nav .nav-list .nav-item:first-child{padding:0 1rem 0 0}.view-nav .nav-list .nav-item:last-child{padding:0 0 0 1rem}.view-nav .nav-list .nav-item.active,.view-nav .nav-list .nav-item:hover{color:#007fff}.view-nav .nav-list .nav-item a{color:inherit}.nav-item{position:relative;cursor:pointer}.nav-item>a:before{content:"";position:absolute;top:0;right:0;bottom:0;left:0}@media (max-width:980px){.view-nav .nav-list{width:auto;overflow-x:auto}.view-nav .nav-list .nav-item:first-child,.view-nav .nav-list .nav-item:last-child{padding:0 1.5rem}}.list-header{padding:1.3rem 1rem;border-bottom:1px solid hsla(0,0%,59.2%,.1)}.list-header .list-nav,.list-header .nav-list{display:flex;justify-content:space-between}.list-header .nav-list{align-items:center;line-height:1}.list-header .nav-list .nav-item.active a,.list-header .nav-list .nav-item a:hover{color:#007fff}.list-header .left .nav-item{padding:0 1.2rem;font-size:1.16rem;border-right:1px solid hsla(0,0%,59.2%,.2)}.list-header .left .nav-item:last-child{border:none}.list-header .right .nav-item{font-size:1.16rem;padding:0 .7rem;position:relative}.list-header .right .nav-item:not(:last-child):after{width:2px;height:2px;border-radius:50%;transform:translate(-50%,-50%);content:"";position:absolute;left:100%;top:50%;background-color:#2b445d;transform:translateY(-50%);opacity:.5}@media (max-width:600px){.list-header .right{display:none}}.button,button{-webkit-appearance:none;-moz-appearance:none;appearance:none;background-color:#007fff;color:#fff;border-radius:2px;border:none;padding:.5rem 1.3rem;outline:none;transition:background-color .3s,color .3s;cursor:pointer}.button:hover,button:hover{background-color:#0371df;color:#fff}i+span{margin-left:.6rem}button+button{margin-left:.8rem}.subscribe-btn{border:1px solid #37c700;background-color:#fff;color:#37c700;margin:1rem auto;font-size:1.1rem}.subscribe-btn:hover{background-color:#fff;color:#3cb40e;border-color:#3cb40e}.subscribe-btn.subscribed{background-color:#37c700;color:#fff}.subscribe-btn.subscribed:hover{background-color:#3cb40e}.radio-group{cursor:pointer;display:flex;align-items:center;font-size:14px}.radio-group .radio-label{margin-left:6px}input[type=radio]{width:16px;height:16px;border:1px solid #bfcbd9;border-radius:50%;background-color:#fff;cursor:pointer;box-sizing:border-box;position:relative;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none}input[type=radio]:after{width:6px;height:6px;border-radius:50%;background-color:#fff;content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(0);transition:transform .15s cubic-bezier(.71,-.46,.88,.6)}input[type=radio]:checked{border-color:#20a0ff;background:#3a9afc}input[type=radio]:checked:after{transform:translate(-50%,-50%) scale(1)}input[type=radio]:disabled{background-color:#eef1f6;border-color:#d1dbe5;cursor:not-allowed}input[type=radio]:disabled:checked{border-color:#d1dbe5;background-color:#d1dbe5}input[name=registerSmsCode]::-webkit-contacts-auto-fill-button{display:none;visibility:hidden}.editable,input[type=password],input[type=text],input[type=url],textarea{resize:none;outline:none;width:100%;display:block;box-shadow:none;border:1px solid #ddd;border-radius:2px;transition:border .3s;background-color:#fff;box-sizing:border-box}.aside-top-section{background-color:#fff;box-shadow:0 1px 2px 0 rgba(0,0,0,.05);border-radius:2px;margin-bottom:1.3rem;font-size:1.16rem;line-height:1.29;color:#333}.aside-top-section .aside-header{padding:1rem 1.3rem;border-bottom:1px solid hsla(0,0%,59.2%,.1);color:#333;font-size:1.16rem}.aside-top-section .aside-list{padding:1rem 1.3rem}.aside-top-section .aside-list .item{margin-bottom:1.5rem}.busy-icon:before{-webkit-animation:busy-ani 1s linear infinite;animation:busy-ani 1s linear infinite}@-webkit-keyframes busy-ani{to{transform:rotate(1turn)}}@keyframes busy-ani{to{transform:rotate(1turn)}}
-@-webkit-keyframes skeleton-keyframes{0%{background-position:0 0}to{background-position:480px 0}}div.byte-notification-message{top:80px!important}div.byte-notification-message .byte-message--success,div.byte-notification-message .byte-message--warning{border:1px solid #e4e6eb;box-shadow:0 4px 10px rgba(0,0,0,.1)}div.byte-message{box-sizing:border-box;font-size:14px;color:#252933}div.byte-message .byte-message__content{margin:0}div.byte-message .byte-message__content a{color:#1e80ff}div.byte-tooltip{padding:12px;border-radius:4px;font-size:12px;line-height:20px}div.byte-tooltip--dark{background:#000;opacity:.8;box-shadow:0 4px 8px rgba(0,0,0,.16)}.byte-tab-nav--active:hover,div.byte-tab-nav .byte-tab-nav__item.byte-tab-nav--active{color:#1d7dfa;font-weight:500}div.byte-tab-nav .byte-tab-nav__item:hover{color:#1d7dfa;font-weight:400}div.byte-tab-nav div.byte-tab-nav__item{color:#86909c}div .byte-pagination{text-align:center}ul .byte-pagination__item[disabled]{background-color:#fff}ul .byte-pagination__item{background-color:#fff;padding:0;margin-left:8px}ul .byte-pagination__item--active,ul .byte-pagination__item:hover{color:#1e80ff;background-color:#eaf2ff}.byte-menu .byte-menu-item--active{font-weight:400}.byte-menu .byte-menu-item--active,.byte-menu .byte-submenu--active{color:#1d7dfa}.byte-menu .byte-menu-item--active .icon path[fill],.byte-menu .byte-menu-item--active .icon rect,.byte-menu .byte-submenu--active .icon path[fill],.byte-menu .byte-submenu--active .icon rect{fill:#1d7dfa}.byte-menu .byte-menu-item--active .byte-submenu__title,.byte-menu .byte-menu-item--active .title:not(.fake-menu),.byte-menu .byte-submenu--active .byte-submenu__title,.byte-menu .byte-submenu--active .title:not(.fake-menu){color:#1d7dfa}.byte-menu .byte-menu-item--active .byte-submenu__title .icon path[fill],.byte-menu .byte-menu-item--active .byte-submenu__title .icon rect,.byte-menu .byte-menu-item--active .title:not(.fake-menu) .icon path[fill],.byte-menu .byte-menu-item--active .title:not(.fake-menu) .icon rect,.byte-menu .byte-submenu--active .byte-submenu__title .icon path[fill],.byte-menu .byte-submenu--active .byte-submenu__title .icon rect,.byte-menu .byte-submenu--active .title:not(.fake-menu) .icon path[fill],.byte-menu .byte-submenu--active .title:not(.fake-menu) .icon rect{fill:#1d7dfa}.byte-menu .byte-submenu__title{border:none;margin:0 8px}.byte-menu .byte-menu-item:hover,.byte-menu .byte-submenu__title:hover{color:#1d7dfa}.byte-menu .byte-menu-item:hover .icon path[fill],.byte-menu .byte-menu-item:hover .icon rect,.byte-menu .byte-submenu__title:hover .icon path[fill],.byte-menu .byte-submenu__title:hover .icon rect{fill:#1d7dfa}.byte-menu .byte-submenu .byte-menu-item:hover,.byte-menu .byte-submenu .byte-submenu__title:hover{color:#1d7dfa;background-color:#fafafa}.byte-menu .byte-menu-item,.byte-menu .byte-submenu .item.byte-menu-item,.byte-menu .byte-submenu .item.byte-submenu__title{margin:0 8px;border:none;text-indent:-1px}.byte-menu .byte-menu-item--active,.byte-menu .byte-submenu .item.byte-menu-item--active{font-weight:400;color:#1d7dfa;background-color:#e8f3ff;border:none}div.byte-modal .byte-modal__content{padding:0;overflow:auto;width:400px;border-radius:4px}div.byte-modal .byte-modal__content .byte-modal__header{padding:16px 20px;border-bottom:1px solid #e4e6eb}div.byte-modal .byte-modal__content .byte-modal__body,div.byte-modal .byte-modal__content .byte-modal__footer{padding:0 20px}div.byte-modal .byte-modal__content .byte-modal__footer{margin-bottom:16px}div.byte-modal .byte-modal__content .byte-modal-confirm{display:flex;flex-direction:column;align-items:center}div.byte-modal .byte-modal__content .byte-modal-confirm .byte-modal-confirm__head{display:flex;align-items:center;padding:24px 0;margin:0}div.byte-modal .byte-modal__content .byte-modal-confirm .byte-modal-confirm__head i{height:17.5px;width:17.5px;color:#1e80ff}div.byte-modal .byte-modal__content .byte-modal-confirm .byte-modal-confirm__head .byte-modal-confirm__head--title{font-weight:500;font-size:16px;line-height:24px;color:#252933;padding-left:9px;width:auto}div.byte-modal .byte-modal__content .byte-modal-confirm .byte-modal-confirm__body{font-size:14px;line-height:22px;text-align:center;color:#252933}div.byte-modal .byte-modal__content .byte-modal-confirm .byte-modal-confirm__footer{padding-top:24px;padding-bottom:32px;margin:0}div.byte-modal .byte-modal__content .byte-modal-confirm .byte-modal-confirm__footer button+button{margin-left:12px}div.byte-modal .byte-modal__content .byte-modal-confirm .byte-modal-confirm__footer button{padding:0 19px;height:34px}div.byte-modal .byte-modal__content .byte-modal-confirm .byte-modal-confirm__footer .byte-btn--primary{background:#1e80ff!important}body{--gray-0:#fff;--gray-1-1:#e4e6eb;--gray-1-2:rgba(#e4e6eb,0.5);--gray-1-3:#e4e6eb;--gray-2:#f2f3f5;--gray-3:#f7f8fa;--background:#f2f3f5;--layer-1:#fff;--layer-2-1:#f7f8fa;--layer-2-2:rgba(#f7f8fa,0.7);--layer-3-fill:#f2f3f5;--layer-3-border:#e4e6eb;--layer-4-dropdown:#fff;--layer-5:#fff;--brand-1-normal:#1e80ff;--brand-2-hover:#1171ee;--brand-3-click:#0060dd;--brand-4-disable:#abcdff;--brand-5-light:#eaf2ff;--mask-1:rgba(#000,0.4);--mask-2:#fff;--mask-3:none;--font-1:#252933;--font-2:#515767;--font-3:#8a919f;--font-4:#c2c8d1;--font-brand1-normal:#1e80ff;--font-brand2-hover:#1171ee;--font-brand3-click:#0060dd;--font-brand4-disable:#abcdff;--font-success:#2bb91b;--font-warning:#ff8412;--font-danger:#ff5132;--font-white-disable:#fff;--font-white:#fff;--success-1-normal:#00b453;--success-2-deep:#00964e;--success-3-light:#e2faed;--warning-1-normal:#ff7426;--warning-2-deep:#e05e00;--warning-3-light:#fff3e5;--danger-1-normal:#f64242;--danger-2-deep:#cb2634;--danger-3-light:#fff2ff;--sub-1-purple:#9f54ff;--sub-2-blue:#57a0ff;--sub-3-cyan:#5ad7ff;--sub-4-green:#33d790;--sub-5-yellow:#ffcc15;--sub-6-orange:#ff834e;--sub-7-red:#ff5e54;--navigation:#fff;--shade-1:rgba(#000,0.4);--shade-2:rgba(#000,0.6);--popup:#fff;--popover:rgba(#000,0.8);--sheets:#f7f8fa}@keyframes skeleton-keyframes{0%{background-position:0 0}to{background-position:480px 0}}body[data-theme=dark]{--gray-0:#000;--gray-1-1:rgba(#fff,0.2);--gray-1-2:rgba(#fff,0.1);--gray-1-3:#464646;--gray-2:rgba(#fff,0.12);--gray-3:rgba(#fff,0.08);--background:#000;--layer-1:#181818;--layer-2-1:rgba(#fff,0.08);--layer-2-2:rgba(#fff,0.08);--layer-3-fill:rgba(#fff,0.08);--layer-3-border:rgba(#fff,0.2);--layer-4-dropdown:#2f2f2f;--layer-5:rgba(#fff,0.12);--brand-1-normal:#2986ff;--brand-2-hover:#1473ed;--brand-3-click:#0563dd;--brand-4-disable:rgba(#2986ff,0.4);--brand-5-light:rgba(#1e80ff,0.2);--mask-1:rgba(#fff,0.4);--mask-2:#282828;--mask-3:rgba(#000,0.05);--font-1:rgba(#fff,0.9);--font-2:rgba(#fff,0.7);--font-3:rgba(#fff,0.55);--font-4:rgba(#fff,0.45);--font-brand1-normal:#4495ff;--font-brand2-hover:#2b88ff;--font-brand3-click:#1371ec;--font-brand4-disable:rgba(#1371ec,0.2);--font-success:#40c17b;--font-warning:#ff8541;--font-danger:#c62633;--font-white-disable:rgba(#fff,0.6);--font-white:#fff;--success-1-normal:#40c17b;--success-2-deep:#008445;--success-3-light:rgba(#40c17b,0.2);--warning-1-normal:#ff8541;--warning-2-deep:#d85c02;--warning-3-light:rgba(#ff8541,0.2);--danger-1-normal:#c62633;--danger-2-deep:#c62633;--danger-3-light:rgba(#f85959,0.2);--sub-1-purple:#a965ff;--sub-2-blue:#68a9ff;--sub-3-cyan:#74f4ed;--sub-4-green:#50e68c;--sub-5-yellow:#ffd748;--sub-6-orange:#ff8f60;--sub-7-red:#ff6e65;--navigation:#181818;--shade-1:rgba(#000,0.6);--shade-2:rgba(#000,0.7);--popup:#282828;--popover:#323232;--sheets:#222}.emoji.old{transform:scale(.9)}@media (max-width:600px){.web-only{display:none}}.popup.byte-modal{position:absolute;left:0;top:0}
-.root-view-bg[data-v-140c989a]{background-color:#fff}.not-found-view[data-v-140c989a]{display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:4rem}.index-link[data-v-140c989a]{display:block;padding:8px 16px;font-size:16px;color:#1e80ff;border-radius:2px;border:1px solid;line-height:24px}
-.btn-enter-active[data-v-4fa4e5da],.btn-leave-active[data-v-4fa4e5da]{transition:opacity .5s}.btn-enter[data-v-4fa4e5da],.btn-leave-to[data-v-4fa4e5da]{opacity:0}.main-header-box[data-v-4fa4e5da]{position:relative;height:5rem}.app-open-button[data-v-4fa4e5da]{position:fixed;bottom:64px;left:50%;transform:translate(-50%);z-index:5;margin-bottom:env(safe-area-inset-bottom)}.main-header[data-v-4fa4e5da]{position:fixed;top:0;left:0;right:0;transition:all .2s;transform:translate3d(0,-100%,0)}.main-header.visible[data-v-4fa4e5da]{transform:translateZ(0)}.main-container>.view[data-v-4fa4e5da]{margin-top:1.767rem}.main-container.with-view-nav>.view[data-v-4fa4e5da]{margin-top:4.67rem}.main-container.tight>.view[data-v-4fa4e5da]{margin-top:0}.main-container.tight.with-view-nav>.view[data-v-4fa4e5da]{margin-top:3.833rem}
-@-webkit-keyframes skeleton-keyframes-data-v-1655393c{0%{background-position:0 0}to{background-position:480px 0}}body[data-v-1655393c]{--gray-0:#fff;--gray-1-1:#e4e6eb;--gray-1-2:rgba(#e4e6eb,0.5);--gray-1-3:#e4e6eb;--gray-2:#f2f3f5;--gray-3:#f7f8fa;--background:#f2f3f5;--layer-1:#fff;--layer-2-1:#f7f8fa;--layer-2-2:rgba(#f7f8fa,0.7);--layer-3-fill:#f2f3f5;--layer-3-border:#e4e6eb;--layer-4-dropdown:#fff;--layer-5:#fff;--brand-1-normal:#1e80ff;--brand-2-hover:#1171ee;--brand-3-click:#0060dd;--brand-4-disable:#abcdff;--brand-5-light:#eaf2ff;--mask-1:rgba(#000,0.4);--mask-2:#fff;--mask-3:none;--font-1:#252933;--font-2:#515767;--font-3:#8a919f;--font-4:#c2c8d1;--font-brand1-normal:#1e80ff;--font-brand2-hover:#1171ee;--font-brand3-click:#0060dd;--font-brand4-disable:#abcdff;--font-success:#2bb91b;--font-warning:#ff8412;--font-danger:#ff5132;--font-white-disable:#fff;--font-white:#fff;--success-1-normal:#00b453;--success-2-deep:#00964e;--success-3-light:#e2faed;--warning-1-normal:#ff7426;--warning-2-deep:#e05e00;--warning-3-light:#fff3e5;--danger-1-normal:#f64242;--danger-2-deep:#cb2634;--danger-3-light:#fff2ff;--sub-1-purple:#9f54ff;--sub-2-blue:#57a0ff;--sub-3-cyan:#5ad7ff;--sub-4-green:#33d790;--sub-5-yellow:#ffcc15;--sub-6-orange:#ff834e;--sub-7-red:#ff5e54;--navigation:#fff;--shade-1:rgba(#000,0.4);--shade-2:rgba(#000,0.6);--popup:#fff;--popover:rgba(#000,0.8);--sheets:#f7f8fa}@keyframes skeleton-keyframes-data-v-1655393c{0%{background-position:0 0}to{background-position:480px 0}}body[data-theme=dark][data-v-1655393c]{--gray-0:#000;--gray-1-1:rgba(#fff,0.2);--gray-1-2:rgba(#fff,0.1);--gray-1-3:#464646;--gray-2:rgba(#fff,0.12);--gray-3:rgba(#fff,0.08);--background:#000;--layer-1:#181818;--layer-2-1:rgba(#fff,0.08);--layer-2-2:rgba(#fff,0.08);--layer-3-fill:rgba(#fff,0.08);--layer-3-border:rgba(#fff,0.2);--layer-4-dropdown:#2f2f2f;--layer-5:rgba(#fff,0.12);--brand-1-normal:#2986ff;--brand-2-hover:#1473ed;--brand-3-click:#0563dd;--brand-4-disable:rgba(#2986ff,0.4);--brand-5-light:rgba(#1e80ff,0.2);--mask-1:rgba(#fff,0.4);--mask-2:#282828;--mask-3:rgba(#000,0.05);--font-1:rgba(#fff,0.9);--font-2:rgba(#fff,0.7);--font-3:rgba(#fff,0.55);--font-4:rgba(#fff,0.45);--font-brand1-normal:#4495ff;--font-brand2-hover:#2b88ff;--font-brand3-click:#1371ec;--font-brand4-disable:rgba(#1371ec,0.2);--font-success:#40c17b;--font-warning:#ff8541;--font-danger:#c62633;--font-white-disable:rgba(#fff,0.6);--font-white:#fff;--success-1-normal:#40c17b;--success-2-deep:#008445;--success-3-light:rgba(#40c17b,0.2);--warning-1-normal:#ff8541;--warning-2-deep:#d85c02;--warning-3-light:rgba(#ff8541,0.2);--danger-1-normal:#c62633;--danger-2-deep:#c62633;--danger-3-light:rgba(#f85959,0.2);--sub-1-purple:#a965ff;--sub-2-blue:#68a9ff;--sub-3-cyan:#74f4ed;--sub-4-green:#50e68c;--sub-5-yellow:#ffd748;--sub-6-orange:#ff8f60;--sub-7-red:#ff6e65;--navigation:#181818;--shade-1:rgba(#000,0.6);--shade-2:rgba(#000,0.7);--popup:#282828;--popover:#323232;--sheets:#222}.emoji.old[data-v-1655393c]{transform:scale(.9)}@media (max-width:600px){.web-only[data-v-1655393c]{display:none}}.search-annual[data-v-1655393c]{padding:.5rem 1rem;display:flex;flex-wrap:nowrap;white-space:nowrap}.search-annual .search-annual-img[data-v-1655393c]{width:24px;height:24px}.search-annual .search-annual-txt[data-v-1655393c]{color:#252933;font-size:14px;display:inline-block;padding-left:6px;line-height:24px}.search-annual[data-v-1655393c]:hover{cursor:pointer;background:#eff2f5}.search-annual:hover .search-annual-txt[data-v-1655393c]{color:#1e80ff}.recommend button[data-v-1655393c]{height:32px;font-size:14px}.logo[data-v-1655393c]{margin-right:1rem;margin-left:24px;display:inline-block;height:22px;width:auto}.creator-logo[data-v-1655393c]{margin-right:0}.header-span[data-v-1655393c],.header-span-tanslate[data-v-1655393c]{color:#1d7dfa;font-weight:500;font-size:18px;font-family:PingFang SC;line-height:28px;display:flex;align-items:center;position:relative;margin-left:16px;margin-bottom:16px;margin-top:20px}.header-span-tanslate[data-v-1655393c]{margin-left:0}.right-side-nav[data-v-1655393c]{display:flex;align-items:center;justify-content:flex-end;position:relative;height:100%;margin:0;order:0}.nav-item a[data-v-1655393c]{color:var(--font-2);position:relative}.nav-item a .new-badge[data-v-1655393c]{position:absolute;top:7px;left:42px}.nav-item.active>.icon[data-v-1655393c],.nav-item.active>a[data-v-1655393c]{color:#1e80ff;font-weight:500}.nav-item.discount[data-v-1655393c]:after{content:"";position:absolute;width:35px;height:28px;background:url(//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/img/half_discount.3daad5d.gif);background-size:35px 28px;right:-14px;top:10px}.nav-menu-item>a[data-v-1655393c]{display:block;color:#4e5969}.avatar[data-v-1655393c]{width:3rem;height:3rem;position:relative;margin-right:2rem}.avatar[data-v-1655393c],.badge[data-v-1655393c]{border-radius:50%}.badge[data-v-1655393c]{position:absolute;top:10px;right:-5px;width:11px;height:11px;background-color:#2f74e9}.shadowed[data-v-1655393c]{box-shadow:0 2px 5px rgba(0,0,0,.1)}.main-header[data-v-1655393c]{background:var(--navigation);border-bottom:1px solid #f1f1f1;color:#909090;height:5rem;z-index:250}.main-header .container[data-v-1655393c]{margin:auto;max-width:1440px}.container[data-v-1655393c]{display:flex;align-items:center;height:100%}.main-nav[data-v-1655393c]{height:100%;flex:1 0 auto}.notification-icon[data-v-1655393c]{fill:#8a919f;stroke:#8a919f}.notification-icon[data-v-1655393c]:hover{fill:#515767;stroke:#515767}.nav-item.notification .app-link.notification-a[data-v-1655393c]:before{content:none}.main-nav-list[data-v-1655393c]{display:flex;order:99}.phone-show-menu[data-v-1655393c]{cursor:pointer;display:none}.phone-hide[data-v-1655393c]{display:flex}.phone-hide .nav-item.link-item a[data-v-1655393c]:not(.no-hover){display:inline-block;height:5rem;margin:0 1rem;line-height:5rem}.phone-hide .nav-item.link-item a[data-v-1655393c]:not(.no-hover):hover:not(.no-border):before{content:"";position:absolute;top:auto;right:0;bottom:0;left:0;height:2px;background-color:#1e80ff}.phone-hide .nav-item.link-item .community-list .youth-camp-icon[data-v-1655393c]:before{content:"";display:inline-block;position:relative;background-image:url(//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/a9690087e9669b910d70a9886c96bc8a.svg);background-size:19.26px 23.53px;height:23.53px;width:19.26px;top:7px;margin:0 16px 0 2px;background-color:transparent}.phone-hide .nav-item.link-item .special-activity[data-v-1655393c]{margin:0 1rem}.phone-hide .nav-item.link-item .special-activity[data-v-1655393c]:hover:before{content:none}.nav-list[data-v-1655393c]{display:flex;align-items:center;justify-content:space-between;position:relative;flex-direction:row-reverse;height:100%;margin:0}div.lead-tip[data-v-1655393c]{position:absolute;top:61px;transform:translateX(-105px)}.search-add[data-v-1655393c]{flex:1 1 auto;height:5rem;display:flex;justify-content:flex-end}.search-add-ul[data-v-1655393c]{display:flex;justify-content:flex-start}@media screen and (min-width:1431px){.search-add-ul[data-v-1655393c]{width:42.833rem}.search-add-ul.isResourceVisible[data-v-1655393c]{width:34.334rem}}@media screen and (max-width:1430px){.search-add-ul[data-v-1655393c]{width:34.334rem}}@media screen and (max-width:1270px) and (min-width:1150px){.search-add-ul[data-v-1655393c]{width:34.334rem}.search-add-ul.isResourceVisible[data-v-1655393c]{width:42.833rem}}@media screen and (max-width:1149px){.search-add-ul[data-v-1655393c]{width:32.667rem}}@media screen and (max-width:799px){.search-add-ul[data-v-1655393c]{width:29.334rem!important}}@media screen and (max-width:640px){.search-add-ul[data-v-1655393c]{width:22.667rem!important}}.unfold16-icon[data-v-1655393c]{fill:#515767;transform:rotate(0deg);transition:transform .2s ease-in-out}.unfold16-icon.active[data-v-1655393c]{fill:#1e80ff;transform:rotate(-180deg)}.nav-item[data-v-1655393c]{color:#86909c;padding:0 1rem;font-size:1.167rem;margin:0;height:100%;display:flex;justify-content:center;align-items:center;cursor:pointer}.nav-item.activities .tip[data-v-1655393c]{z-index:2;cursor:auto;width:17rem;background:#fff;padding:1rem;display:flex;justify-content:flex-start;position:absolute;top:4.5rem;left:-50%;margin-left:-3.7rem;color:#17181a;font-size:15px;border-radius:2px;box-shadow:0 2px 20px 0 rgba(0,0,0,.12)}.nav-item.activities .tip .panfish[data-v-1655393c]{height:63px;width:57px;flex:0 0 auto;background-repeat:no-repeat;background-size:contain}.nav-item.activities .tip .content[data-v-1655393c]{display:flex;flex-direction:column;padding:.5rem 0 0 .5rem;color:#17181a}.nav-item.activities .tip .content button[data-v-1655393c]{padding:0;width:6.41rem;height:2rem;color:#fff;font-size:13px;border-radius:12px;margin-top:.5rem}.nav-item.activities .tip .triangle[data-v-1655393c]{display:block;position:absolute;top:0;left:50%;width:1rem;height:1rem;transform:translate(-50%,-50%) rotate(45deg);background:#fff;border-top:1px solid #f4f5f5;border-left:1px solid #f4f5f5}.nav-item.activities .tip .close[data-v-1655393c]{cursor:pointer;width:1rem;height:1rem;position:absolute;top:.5rem;right:.5rem;border-radius:50%;background:#fff;transform:rotate(45deg)}.nav-item.activities .tip .close[data-v-1655393c]:after,.nav-item.activities .tip .close[data-v-1655393c]:before{content:"";width:.8rem;height:2px;display:block;position:absolute;background:#c5c5c5;left:50%;top:50%;transform:translate(-50%,-50%)}.nav-item.activities .tip .close[data-v-1655393c]:after{transform:translate(-50%,-50%) rotate(90deg)}.nav-item.activities .tip .close[data-v-1655393c]:hover{opacity:.8}.nav-item .login-button[data-v-1655393c]{background:rgba(30,128,255,.05);border:1px solid rgba(30,128,255,.3);border-radius:4px;padding:.3rem 1.5rem;color:#007fff;line-height:1.9rem;font-size:14px;font-weight:400;margin-right:2rem;height:3rem}.nav-item:hover>a[data-v-1655393c]{color:var(--font-1)}.nav-item:hover.link-item>.community[data-v-1655393c]{color:#1e80ff;font-weight:500}.nav-item[data-v-1655393c]:last-child{padding-right:0}.nav-item.link-item[data-v-1655393c]{padding:0;height:5rem}.nav-item.book.new-year a[data-v-1655393c]:after{left:0;top:0;position:absolute;content:"";background-position:50%;background-repeat:no-repeat;background-size:60px auto;width:100%;height:100%}.nav-item.conference:hover .conference-svg g:first-child path[data-v-1655393c]{fill:#388eff}.nav-item.conference a .conference-svg[data-v-1655393c]{vertical-align:-3px}.nav-item.conference a:active .conference-svg g:first-child path[data-v-1655393c]{fill:#1c78f0}.nav-item.search[data-v-1655393c]{cursor:auto;padding-left:0}.nav-item.add[data-v-1655393c]{cursor:default;width:25rem;transition:width .3s;overflow:hidden;padding-left:0}.nav-item.add.hide[data-v-1655393c]{width:0;padding:0;overflow:hidden!important}.nav-item.add.cancelOverflow[data-v-1655393c]{overflow:visible}.nav-item.notification:hover .icon[data-v-1655393c]{color:#007fff}.nav-item.menu[data-v-1655393c]{position:relative;padding-left:0;background-color:var(--navigation)}.nav-item.submit[data-v-1655393c]{color:#007fff;position:relative}.nav-item.submit[data-v-1655393c]:hover{color:#0371df}.nav-item.submit[data-v-1655393c]:after{content:"|";position:absolute;top:20px;left:100%;color:hsla(0,0%,59.2%,.4)}.nav-item.submit .submit-panel[data-v-1655393c]{position:absolute;top:101%;left:-123px;width:326px;box-sizing:border-box;padding:2.5rem 2rem;border-radius:2px;color:#909090;font-size:1.1rem;background-color:#fff;box-shadow:0 1px 2px 0 rgba(0,0,0,.1);border:1px solid rgba(178,181,187,.5);cursor:default;z-index:11}.nav-item.submit .submit-panel[data-v-1655393c]:before{content:"";position:absolute;top:0;left:50%;width:1rem;height:1rem;border-top:1px solid rgba(178,181,187,.5);border-left:1px solid rgba(178,181,187,.5);background-color:#fff;transform:rotate(45deg) translate(-50%,-50%);transform-origin:0 0}.nav-item.submit .submit-panel .title[data-v-1655393c]{font-size:1.4rem;line-height:1;font-weight:700;color:#000;text-align:center;margin-bottom:2rem}.nav-item.submit .submit-panel .benefit-list[data-v-1655393c]{margin-left:2rem}.nav-item.submit .submit-panel .item[data-v-1655393c]{list-style:disc outside none;list-style:initial;margin-bottom:1rem}.nav-item.submit .submit-panel .link[data-v-1655393c]{color:#6cbd45;text-decoration:underline}.nav-item.submit .submit-panel button[data-v-1655393c]{display:block;margin:2rem auto 0;background-color:#83c73a;font-size:1.2rem;padding:1rem 4rem}.nav-item.auth[data-v-1655393c]{color:#007fff;padding:0 0 0 .833rem}.nav-item.auth span[data-v-1655393c]:hover{color:#0371df}.nav-item.auth .login[data-v-1655393c]:after{content:"·";margin:0 .4rem}.nav-item .icon[data-v-1655393c]{font-size:2rem;color:#86909c}.nav-item .icon[data-v-1655393c]:hover{color:#007fff}.submit-fixed-bg[data-v-1655393c]{position:fixed;top:0;left:0;right:0;bottom:0;opacity:0;z-index:10}.nav-item.add.creator-item[data-v-1655393c]{overflow:visible;width:11rem;padding-left:5px}.search-form[data-v-1655393c]{background-color:#fff;display:flex;align-items:center;justify-content:space-between;border-radius:4px;position:relative;height:2.834rem;border:1px solid #c2c8d1;transition:width .2s}.search-form[data-v-1655393c]:hover{border:1px solid #8a919f}@media screen and (min-width:1431px){.search-form[data-v-1655393c]{width:360px}.search-form.isResourceVisible[data-v-1655393c]{width:260px}}@media screen and (max-width:1430px){.search-form[data-v-1655393c]{width:260px}}@media screen and (max-width:1270px) and (min-width:1150px){.search-form[data-v-1655393c]{width:260px}.search-form.isResourceVisible[data-v-1655393c]{width:360px}}@media screen and (max-width:1149px){.search-form[data-v-1655393c]{width:240px}}@media screen and (max-width:799px){.search-form[data-v-1655393c]{width:220px}}@media screen and (max-width:640px){.search-form[data-v-1655393c]{width:140px}}.search-form.active[data-v-1655393c]{background-color:#fff}.search-form .seach-icon-container[data-v-1655393c]{position:relative;left:-2px;width:44px;height:30px;background:var(--background);border-radius:2px}.search-form .seach-icon-container.active[data-v-1655393c]{background:#eaf2ff}.search-form .search-icon[data-v-1655393c]{display:inline-block;width:1.33rem;padding:0 .8333rem 0 0;cursor:pointer;margin:7px 15px}.search-form .search-input[data-v-1655393c]{border:none;width:calc(100% - 44px);padding:.6rem 0 .6rem 1rem;box-shadow:none;outline:none;font-size:1.1rem;color:#8a919f;background-color:transparent;transition:width .3s}.search-form.active[data-v-1655393c]{border:1px solid #1e80ff}@media screen and (min-width:1431px){.search-form.isResourceVisible.active[data-v-1655393c]{width:33.5rem}.search-form.active[data-v-1655393c]{width:42rem}}@media screen and (max-width:1430px){.search-form.active[data-v-1655393c]{width:33.667rem}}@media screen and (max-width:1270px) and (min-width:1150px){.search-form.isResourceVisible.active[data-v-1655393c]{width:42rem}.search-form.active[data-v-1655393c]{width:33.5rem}}@media screen and (max-width:1149px){.search-form.active[data-v-1655393c]{width:31.833rem}}@media screen and (max-width:799px){.search-form.active[data-v-1655393c]{width:26.833rem}}@media screen and (max-width:640px){.search-form.active[data-v-1655393c]{width:23.166rem}}.new-font[data-v-1655393c]{position:absolute;font-size:16px;transform:scale(.5);top:4px;left:20px;padding:0 6px;background:#f64242;border:1px solid #fff;border-radius:50px;height:20px;color:#fff;white-space:nowrap}@media screen and (max-width:1270px){.new-font.isResourceVisible[data-v-1655393c]{top:2px;left:80px}}@media screen and (max-width:1149px){.new-font[data-v-1655393c]{top:2px;left:80px}}.add .creator-link[data-v-1655393c]{position:relative;margin-right:24px}.add .creator-link button.creator-btn[data-v-1655393c]{background-color:#e8f3ff;color:#1e80ff}.add .creator-link button.creator-btn[data-v-1655393c]:active,.add .creator-link button.creator-btn[data-v-1655393c]:hover{color:#1c78f0;background-color:#e8f3ff}.add-group[data-v-1655393c]{display:flex;align-items:center;position:relative;height:2.5rem;cursor:pointer;width:115px;height:3rem}.add-group.active .more-list[data-v-1655393c]{display:block}.add-group .add-btn[data-v-1655393c],.add-group .more[data-v-1655393c]{height:100%;color:var(--font-white);background-color:var(--brand-1-normal);border-radius:3px;transition:background-color .1s linear .05s}.add-group .add-btn.active[data-v-1655393c],.add-group .add-btn[data-v-1655393c]:hover,.add-group .more.active[data-v-1655393c],.add-group .more[data-v-1655393c]:hover{background-color:var(--brand-2-hover)}.add-group .add-btn.visible[data-v-1655393c],.add-group .more.visible[data-v-1655393c]{background-color:transparent}.add-group .add-btn[data-v-1655393c]{padding:0 1rem;font-size:1.167rem;border-top-right-radius:0;border-bottom-right-radius:0;white-space:nowrap}.add-group .more[data-v-1655393c]{flex:0 0 auto;display:flex;align-items:center;justify-content:center;width:1.667rem;border-left:1px solid hsla(0,0%,100%,.1);border-top-left-radius:0;border-bottom-left-radius:0;box-sizing:border-box}.add-group .more .unfold12-icon.active[data-v-1655393c]{transform:rotate(180deg)}.add-group .more-list[data-v-1655393c]{position:absolute;top:120%;left:-7px;right:0;padding:.417rem 0;font-size:1.167rem;color:var(--font-2);background-color:#fff;display:none;z-index:1;box-shadow:0 0 24px rgba(81,87,103,.16);border-radius:6px;width:10rem}.add-group .more-list .item[data-v-1655393c]{margin:0 8px;padding:6px 5px 5px .8rem;line-height:1.9;border-radius:4px}.add-group .more-list .item span[data-v-1655393c]{display:inline-block}.add-group .more-list .item[data-v-1655393c]:hover{background-color:#f9f9f9}.add-group .more-list .write-article[data-v-1655393c]{font-size:14px;line-height:24px;font-weight:400}.add-group .more-list .write-article[data-v-1655393c]:before{content:"";display:inline-block;position:relative;background-image:url(//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/a0c8073862f04c2925249fd397763fd3.svg);background-size:18px 18px;height:18px;width:18px;top:4px;margin:0 12px 0 2px}.add-group .more-list .issue-points[data-v-1655393c]{font-size:14px;line-height:24px;font-weight:400}.add-group .more-list .issue-points[data-v-1655393c]:before{background-image:url(//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/e5381c85b5939d984a4b0c0edf102122.svg)}.add-group .more-list .issue-points[data-v-1655393c]:before,.add-group .more-list .write-book[data-v-1655393c]:before{content:"";display:inline-block;position:relative;background-size:18px 18px;height:18px;width:18px;top:4px;margin:0 12px 0 2px}.add-group .more-list .write-book[data-v-1655393c]:before{background-image:url(//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/4079e4a799fe0a00fca8fa236c532d1d.svg)}.add-group .more-list .issue-news[data-v-1655393c]:before{background-image:url(//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/178d7b77d8131ccd981172427c914901.svg)}.add-group .more-list .issue-news[data-v-1655393c]:before,.add-group .more-list .issue-video[data-v-1655393c]:before{content:"";display:inline-block;position:relative;background-size:18px 18px;height:18px;width:18px;top:4px;margin:0 12px 0 2px}.add-group .more-list .issue-video[data-v-1655393c]:before{background-image:url(//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/87c0675253229a899ca029969edaa5de.svg)}.add-group .new-user-modal[data-v-1655393c]{cursor:default;position:absolute;left:-118px;top:50px;z-index:auto}.nav-item.link-item.community.active[data-v-1655393c]{color:#1e80ff!important;font-weight:500}.nav-item.link-item.community.active[data-v-1655393c]:after{background-image:url(//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/dad01615c8290b337ce7fa9e332038ad.svg);top:-5px;transition:all .4s linear;transform:rotate(-180deg)}.nav-item.link-item.community.active[data-v-1655393c]:after,.nav-item.link-item.community[data-v-1655393c]:after{content:"";display:inline-block;position:relative;background-size:8.5px 5px;height:5px;width:8.5px}.nav-item.link-item.community[data-v-1655393c]:after{background-image:url(//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/e700f44c0c9ddafb97f655043d1c135a.svg);top:-3px}.community-list[data-v-1655393c]{position:absolute;top:85%;left:0;right:0;padding:.667rem 0;font-size:1.167rem;color:#3b76c5;background-color:#fff;border:1px solid #ebebeb;border-radius:2px;box-shadow:0 1px 2px 0 rgba(0,0,0,.05);width:200px;z-index:1;background:#fff;box-shadow:0 0 24px rgba(81,87,103,.16);border-radius:6px}.community-list[data-v-1655393c]:before{content:"";display:inline-block;position:absolute;width:49px;height:65px;background-color:transparent;top:0;left:-50px}.community-list span[data-v-1655393c]{font-size:16px;font-weight:400;line-height:24px}.community-list .community-list-item[data-v-1655393c]{padding:0 0 0 .8rem;margin:0 .667rem;line-height:1.9;border-radius:4px}.community-list .community-list-item[data-v-1655393c]:hover{background-color:#f7f8fa}.community-list a[data-v-1655393c]:active{color:#1e80ff}.community-list .community-a[data-v-1655393c]{height:4rem!important;padding:0!important;line-height:4rem!important;margin:0!important}.community-list .community-a li[data-v-1655393c]{color:#3b76c5}.red-point[data-v-1655393c]{left:80px;top:15px;width:8px;border-radius:4px}.new-conummity-badge[data-v-1655393c],.red-point[data-v-1655393c]{position:absolute;height:8px;background-color:#f64242}.new-conummity-badge[data-v-1655393c]{width:20px;border:1px solid #fff;top:2px;left:116px;border-radius:50px;text-align:center;padding:1px 3px}.new-conummity-badge .new-font[data-v-1655393c]{top:-8px;left:-10px;font-size:16px;line-height:10px;color:#fff;position:relative;display:inline-block;width:40px;transform:scale(.5)}.notification[data-v-1655393c]{position:relative;padding-right:2rem;background-color:var(--navigation)}.notification.active .icon[data-v-1655393c]{color:#1e80ff}.notification .count[data-v-1655393c]{position:absolute;left:15px;bottom:65%;margin:0;line-height:11px;text-align:center;border-radius:3rem;word-break:normal;display:inline-block;color:#f1f1f1;transform:scale(.8);font-size:1rem;font-weight:500;padding:3px 5px;background:#f03535;border-radius:50px;border:1px solid #fff}.notification .count.More[data-v-1655393c]{left:12px}.fengwei[data-v-1655393c]{display:inline-block;width:1.33rem;height:1.33rem;margin-right:.8rem;font-size:1.2em;vertical-align:middle;color:#b2bac2}.signin[data-v-1655393c]{height:34px;display:flex;align-items:center;position:relative;color:#4e5969}.signin .signin-icon[data-v-1655393c]{width:16px;height:16px;margin-left:12px;margin-right:9.5px}.signin .new-badge[data-v-1655393c]{position:absolute;bottom:18px;right:8px;display:block;width:34px;height:16px;border:2px solid #fff;background-color:#f53f3f;border-radius:10px;font-size:12px;color:#fff;line-height:16px;text-align:center}.fix-bg[data-v-1655393c]{position:fixed;top:0;left:0;bottom:0;right:0;opacity:0}.mobile[data-v-1655393c]{display:none;width:31px}.logo-img[data-v-1655393c]{display:block;width:107px;height:22px}@media screen and (max-width:1430px){.broswer-extension.isResourceVisible[data-v-1655393c],.download-app.isResourceVisible[data-v-1655393c]{display:none!important}}@media screen and (max-width:1270px) and (min-width:1150px){.broswer-extension[data-v-1655393c],.download-app[data-v-1655393c]{display:none!important}.phone-show-menu.isResourceVisible[data-v-1655393c]{height:5rem;display:flex;align-items:center;color:#1e80ff;font-size:1.33rem;justify-content:center;padding:0;width:5.66rem}.phone-show-menu.isResourceVisible span[data-v-1655393c]{margin-right:.333rem}.phone-hide.isResourceVisible[data-v-1655393c]{display:none;background-color:#fff;box-shadow:0 8px 24px rgba(81,87,103,.16);border:1px solid #ebebeb;border-radius:4px;font-size:1.2rem}.phone-hide.isResourceVisible.show[data-v-1655393c]{display:block;position:absolute;right:-4rem;left:-4.3rem;padding:.667rem;width:11.9rem;top:52px}}@media (max-width:1149px){.right-side-nav[data-v-1655393c]{margin-right:1.667rem}.nav-list[data-v-1655393c]{flex-direction:row}.container[data-v-1655393c]{width:97%;margin:0 2rem!important}.nav-item .login-button[data-v-1655393c]{margin-right:0}.nav-item.link-item.community[data-v-1655393c]:hover:before{content:none!important}.nav-list[data-v-1655393c]{justify-content:flex-end}.avatar[data-v-1655393c]{margin-right:0}.download-icon[data-v-1655393c],.extension-icon[data-v-1655393c]{display:none}.community-list[data-v-1655393c]{top:7px;left:159px}.red-point[data-v-1655393c]{left:112px;top:9px}.main-nav-list[data-v-1655393c]{display:block;position:absolute;left:0;top:0;background-color:#fff;z-index:1}.nav-item:hover>a[data-v-1655393c]{border-bottom:none}.phone-show-menu[data-v-1655393c]{height:5rem;display:flex;align-items:center;color:#1e80ff;font-size:1.33rem;justify-content:center;padding:0;width:5.66rem}.phone-show-menu span[data-v-1655393c]{margin-right:.333rem}.phone-hide[data-v-1655393c]{display:none;background-color:#fff;box-shadow:0 8px 24px rgba(81,87,103,.16);border:1px solid #ebebeb;border-radius:4px;font-size:1.2rem}.phone-hide.show[data-v-1655393c]{display:block;position:absolute;right:-4rem;left:-4.3rem;padding:.667rem;width:11.9rem;top:52px}.nav-item.link-item[data-v-1655393c]{height:4rem}.nav-item:hover>.link-item.community[data-v-1655393c]{color:#515767;font-weight:400;border-bottom:none}.pinTip[data-v-1655393c]{display:none}.tip[data-v-1655393c]{display:none!important}.nav-menu .nav-menu-item .icon-2018[data-v-1655393c]{width:35px;margin-left:0}.logo[data-v-1655393c]{margin-left:0}.nav-item.link-item.community.active[data-v-1655393c]:after{background-image:url(//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/c3b4d72af3f7d18bbd49542376933638.svg);transition:all 0s linear;transform:rotate(0deg)}.nav-item.link-item.community.active[data-v-1655393c]:after,.nav-item.link-item.community[data-v-1655393c]:after{content:"";display:inline-block;position:relative;background-size:12px 12px;height:12px;width:12px;top:0;left:-4px;margin:0 0 0 2px}.nav-item.link-item.community[data-v-1655393c]:after{background-image:url(//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/00b8d6119ba0d83638737f0778031e91.svg)}.nav-item.link-item.community[data-v-1655393c]:hover{border-bottom:none}.search-add[data-v-1655393c]{margin-right:.292rem}}@media (max-width:799px){.nav-item.add[data-v-1655393c]{display:none}.nav-item.search[data-v-1655393c]{padding-left:4.133rem}.search-form[data-v-1655393c]{transition:width .2s ease-in}.search-add[data-v-1655393c]{justify-content:flex-start;width:270px;margin-left:1rem}.right-side-nav[data-v-1655393c]{width:383px;margin-right:2rem}.avatar[data-v-1655393c]{margin-right:0}.nav-item.auth.hide[data-v-1655393c],.nav-item.menu.hide[data-v-1655393c],.nav-item.notification.hide[data-v-1655393c]{width:0;padding:0;overflow:hidden!important}.nav-item .login-button[data-v-1655393c]{background:rgba(30,128,255,.05);border:1px solid rgba(30,128,255,.3);margin-right:0}}@media (max-width:800px){.right-side-nav[data-v-1655393c]{margin-right:2rem}.nav-item .login-button[data-v-1655393c]{margin-right:0}}@media (max-width:640px){.nav-item .login-button[data-v-1655393c]{margin-right:1rem}.right-side-nav[data-v-1655393c]{margin-right:2rem;margin-left:0;width:365px}.search-add[data-v-1655393c]{margin-left:0}}@media (max-width:640px){.nav-item .login-button[data-v-1655393c]{margin-right:2rem;width:70px}.right-side-nav[data-v-1655393c]{width:322px;margin-right:0}.main-header[data-v-1655393c]{height:4.333rem}.nav-item.search[data-v-1655393c]{padding-left:10.667rem}.nav-item.search.active[data-v-1655393c]{padding-right:1.333rem;padding-left:6.133rem}.nav-item .search-form[data-v-1655393c]{height:32px;transition:width .1s linear 0s}.nav-item .search-form.active[data-v-1655393c]{width:18rem}.nav-item .search-form .search-input[data-v-1655393c]{height:32px}.community-list[data-v-1655393c]{width:160px}.search-add-ul.active[data-v-1655393c]{width:315px}.search-add.active[data-v-1655393c]{margin-right:2rem}.logo-img[data-v-1655393c]{display:none}.mobile[data-v-1655393c]{display:block;height:2rem}.logo[data-v-1655393c]{margin-right:0}.phone-show-menu[data-v-1655393c]{height:4.333rem}.nav-item[data-v-1655393c]{padding:0 1.667rem 0 1rem}.nav-item .auth[data-v-1655393c]{padding:0 .833rem 0 0}.search-add-ul[data-v-1655393c]{width:220px}.phone-hide .nav-item.link-item .community-list .youth-camp-icon[data-v-1655393c]:before{content:none}.new-conummity-badge[data-v-1655393c]{left:80px}.container[data-v-1655393c]{margin:0 .917rem 0 1.333rem!important}.avatar[data-v-1655393c]{margin-right:1.333rem}}@media (max-width:376px){.nav-item .login-button[data-v-1655393c]{background:#fff;color:#1e80ff;border:1px solid #1e80ff}}@media (max-width:345px){.nav-item.search[data-v-1655393c]{display:none}.nav-item.search .search-form .search-input[data-v-1655393c]{width:5rem}}.tip-fade-enter-active[data-v-1655393c],.tip-fade-leave-active[data-v-1655393c]{transition:.3s}.tip-fade-enter[data-v-1655393c],.tip-fade-leave-to[data-v-1655393c]{transform:translateY(-10px);opacity:0}.typehead[data-v-1655393c]{width:100%;position:absolute;top:105%;line-height:2rem;left:0;z-index:1000;min-width:6rem;font-size:1rem;color:#869aab;list-style:none;text-align:left;border-radius:.17rem;box-shadow:0 1px 2px 0 rgba(0,0,0,.05);border:1px solid #ebebeb;background-color:#fff}.typehead .title[data-v-1655393c]{border-bottom:1px solid #ebebeb;padding:.5rem 1rem;display:flex;justify-content:space-between}.typehead .title .clear[data-v-1655393c]{cursor:pointer;color:#1e80ff}.typehead .list[data-v-1655393c]{cursor:pointer;color:#5e6369}.typehead .list div[data-v-1655393c]{padding:.5rem 1rem}.typehead .list div[data-v-1655393c]:hover{background:#eff2f5}.tablead[data-v-1655393c]{position:absolute;top:5px;left:-9px;white-space:nowrap;padding:2px 7px;background-color:#ee502f;border-radius:50px;text-align:center;font-weight:500;font-size:16px;transform:scale(.5);line-height:18px;color:#fff}
-.extension[data-v-4db03e38]{position:fixed;bottom:0;left:0;z-index:1000;width:100%;height:180px;cursor:pointer;display:none}.extension[data-v-4db03e38]:before{display:flex;width:100%;position:absolute;bottom:0;z-index:0;height:148px;z-index:-1;content:"";background-color:#fff}.extension .link[data-v-4db03e38]{width:100%;height:100%;color:#000;background-repeat:no-repeat;background-image:url(//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/img/extension.c9aff10.png);background-position:bottom;background-size:auto 180px;image-rendering:-webkit-optimize-contrast}.extension .link .price[data-v-4db03e38]{margin-left:5px;margin-right:5px;color:#007fff}.extension .link .description[data-v-4db03e38],.extension .link .title[data-v-4db03e38]{font-size:26px;padding-top:50px;box-sizing:border-box;width:960px;margin:0 auto;padding-left:22px}.extension .link .description[data-v-4db03e38]{color:rgba(0,0,0,.7);font-size:13px;padding-top:8px}.extension .ion-close[data-v-4db03e38]{position:absolute;top:35px;right:0;padding:10px;font-size:16px;color:#bbb}.extension .ion-close[data-v-4db03e38]:hover{color:#999}.books[data-v-4db03e38]{display:none;left:15px;right:15px;position:fixed;bottom:15px;z-index:900}.books.book--mobile[data-v-4db03e38]{bottom:55px}.books .book-inner[data-v-4db03e38]{width:100%;height:50px;padding-left:15px;padding-right:15px;display:flex;justify-content:center;align-items:center;background:#fd4243;box-sizing:border-box;border-radius:2px;background:linear-gradient(108deg,#f87554,#f0232f);background:-webkit-linear-gradient(-12deg,#f87554,#f0232f)}.books .book-inner .icon[data-v-4db03e38]{width:38px}.books .book-inner .icon img[data-v-4db03e38]{width:100%;display:block}.books .book-inner .title[data-v-4db03e38]{flex-grow:1;padding-left:15px;color:#fff;font-size:15px}.books .book-inner .btn-get[data-v-4db03e38]{padding-left:15px;padding-right:15px;height:26px;line-height:26px;border-radius:2px;border:1px solid #fff;color:#fff}@media (max-width:960px){.books[data-v-4db03e38]{display:block}}@media (min-width:960px){.extension[data-v-4db03e38]{display:block}}</style>
+<!DOCTYPE html>
+<html class="glue-flexbox" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+      <title>Analytics Tools &amp; Solutions for Your Business - Google Analytics</title>
+  <meta name="description" content="Google Analytics gives you the tools you need to better understand your customers. You can then use those business insights to take action, such as improving your website, creating tailored audience lists, and more." />
+  <link rel="canonical" href="https://marketingplatform.google.com/about/analytics/"/>
+
+
+  <script type="application/ld+json">{"@context": "http://schema.org","@type": "Webpage","name": "Analytics","description": "Google Analytics gives you the tools you need to better understand your customers. You can then use those business insights to take action, such as improving your website, creating tailored audience lists, and more.","url": "https://marketingplatform.google.com/about/analytics/","@id": "https://marketingplatform.google.com/about/analytics/#webpage","inLanguage": "English","headline": "Get to know your customers.","image": {"@type": "ImageObject","url": "https://lh3.googleusercontent.com/oz5bCMIFGBqul5z56AbXXgjTcrJQmtYeXJRijeeobpk3qP9CMLrJtkh1LUKkj5fr2pfXxnRu10R0zeFiyCB5dYRWqqvhwSGfTJktKg","isFamilyFriendly":"yes"},"publisher": {"@type": "Organization","url": "https://www.google.com/","@id": "https://www.google.com/#organization","logo": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","sameAs": ["https://twitter.com/Google", "https://www.instagram.com/google/", "https://www.facebook.com/Google/", "https://www.youtube.com/user/Google", "https://www.linkedin.com/company/google", "https://www.wikidata.org/wiki/Q95", "https://en.wikipedia.org/wiki/Google"]},"copyrightHolder": {"@type": "Organization","name": "Google","url": "https://www.google.com/","@id": "https://www.google.com/#organization","logo": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png","sameAs": ["https://twitter.com/Google", "https://www.instagram.com/google/", "https://www.facebook.com/Google/", "https://www.youtube.com/user/Google", "https://www.linkedin.com/company/google", "https://www.wikidata.org/wiki/Q95", "https://en.wikipedia.org/wiki/Google"]},"breadcrumb": {"@type": "BreadcrumbList","itemListElement": [{"@type": "ListItem","position":"1","item": {"@id": "https://marketingplatform.google.com/about/","name": "Google Marketing Platform"}},{"@type": "ListItem","position":"2","item": {"@id": " https://marketingplatform.google.com/about/analytics/","name": "Analytics"}}]}}</script><!-- Open graph for facebook -->
+  <meta property="og:type" content="Website">
+  <meta property="og:url" content="https://marketingplatform.google.com/about/analytics/">
+  <meta property="og:title" content="Analytics Tools &amp; Solutions for Your Business - Google Analytics">
+  <meta property="og:site_name" content="Google Marketing Platform">
+    <meta property="og:description" content="Google Analytics gives you the tools you need to better understand your customers. You can then use those business insights to take action, such as improving your website, creating tailored audience lists, and more.">
+            <meta property="og:image" content="https://lh3.googleusercontent.com/oz5bCMIFGBqul5z56AbXXgjTcrJQmtYeXJRijeeobpk3qP9CMLrJtkh1LUKkj5fr2pfXxnRu10R0zeFiyCB5dYRWqqvhwSGfTJktKg">
+
+
+<!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@GMktgPlatform">
+  <meta name="twitter:title" content="Analytics Tools &amp; Solutions for Your Business - Google Analytics">
+    <meta name="twitter:description" content="Google Analytics gives you the tools you need to better understand your customers. You can then use those business insights to take action, such as improving your website, creating tailored audience lists, and more.">
+            <meta property="twitter:image" content="https://lh3.googleusercontent.com/oz5bCMIFGBqul5z56AbXXgjTcrJQmtYeXJRijeeobpk3qP9CMLrJtkh1LUKkj5fr2pfXxnRu10R0zeFiyCB5dYRWqqvhwSGfTJktKg">
+
+
+    <meta name="referrer" content="no-referrer" />
+<base href="/about/">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://storage.googleapis.com/operating-anagram-8280/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://storage.googleapis.com/operating-anagram-8280/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://storage.googleapis.com/operating-anagram-8280/favicon-16x16.png">
+    <link rel="shortcut icon" href="https://storage.googleapis.com/operating-anagram-8280/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700|Google+Sans:400,500|Product+Sans:400&amp;lang=en" rel="stylesheet">
+    <link href="static/css/index.min.css" rel="stylesheet">
+    <script src="static/js/detect.min.js"></script>
+    <script>window.dataLayer = [{
+          'siteName': 'gmp',
+          'pageName': 'product: analytics: overview',
+          'country': 'us',
+          'region': 'noram',
+          'language': 'en'
+          }];</script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MPHTW35');
+      window.dataLayer.push({'gtm.blacklist': ['customScripts']});
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
-  <body >
-    <div data-server-rendered="true" id="__nuxt"><div id="__layout"><div id="juejin"><!----> <div class="view-container" data-v-4fa4e5da data-v-140c989a><div class="main-header-box" data-v-4fa4e5da><header data-fetch-key="0" class="main-header main-header unauthorized visible" data-v-1655393c data-v-4fa4e5da><div class="container" data-v-1655393c><a href="/" class="logo" data-v-1655393c><img src="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/e08da34488b114bd4c665ba2fa520a31.svg" alt="稀土掘金" class="logo-img" data-v-1655393c> <img src="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/6c61ae65d1c41ae8221a670fa32d05aa.svg" alt="稀土掘金" class="mobile" data-v-1655393c></a> <!----> <!----> <nav role="navigation" class="main-nav" data-v-1655393c><ul class="nav-list" data-v-1655393c><!----> <li class="main-nav-list" data-v-1655393c><div class="phone-show-menu isResourceVisible" data-v-1655393c><span data-v-1655393c>首页</span> <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="unfold16-icon" data-v-1655393c data-v-1655393c><path d="M2.45025 4.82431C2.17422 4.49957 2.40501 4.00049 2.83122 4.00049H9.16878C9.59498 4.00049 9.82578 4.49957 9.54975 4.82431L6.38097 8.55229C6.1813 8.78719 5.8187 8.78719 5.61903 8.55229L2.45025 4.82431Z" data-v-1655393c data-v-1655393c></path></svg></div> <ul class="phone-hide isResourceVisible" data-v-1655393c><li class="nav-item link-item route-active" data-v-1655393c><a href="/" data-v-1655393c>首页</a></li> <li class="nav-item link-item activities" data-v-1655393c><a href="/pins" data-v-1655393c><span class="text" data-v-1655393c>
-                  沸点
-                  <!----></span></a></li> <li class="nav-item link-item book" data-v-1655393c><a href="/course" data-v-1655393c>
-                课程
-                <!----></a></li> <li class="nav-item link-item" data-v-1655393c><a href="/live" data-v-1655393c>直播</a></li> <li class="nav-item link-item activities" data-v-1655393c><a href="/news" data-v-1655393c>资讯</a></li> <li class="nav-item link-item" data-v-1655393c><a href="/events/all" data-v-1655393c>活动</a></li> <nav class="nav-item link-item" data-v-1655393c><a class="nav-item link-item community no-border" data-v-1655393c>
-                开放社区
-              </a> <!----></nav> <nav class="nav-item link-item" data-v-1655393c><a href="https://detail.youzan.com/show/goods/newest?kdt_id=104340304" target="_blank" rel="nofollow noopener noreferrer" class="nav-item link-item no-border" data-v-1655393c><span data-v-1655393c>商城</span></a> <!----></nav> <nav class="nav-item link-item download-icon" data-v-1655393c><a href="https://juejin.cn/app?utm_source=jj_nav" target="_blank" rel="nofollow noopener noreferrer" class="download-app no-border isResourceVisible" data-v-1655393c><span data-v-1655393c>APP</span></a></nav> <nav class="nav-item link-item extension-icon" data-v-1655393c><a href="https://juejin.cn/extension?utm_source=jj_nav" target="_blank" rel="nofollow noopener noreferrer" class="broswer-extension no-border isResourceVisible" data-v-1655393c><span data-v-1655393c>插件</span></a></nav> <!----> <li tag="li" class="nav-item link-item" data-v-1655393c><a target="_blank" href="https://hackathon2022.juejin.cn?source=pc" class="activity no-hover special-activity" data-v-1655393c><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fd0f3b510bc14f6faed6e7a049a63e3d~tplv-k3u1fbpfcp-zoom-1.image" style="max-width: 115px; vertical-align: middle" data-v-1655393c></a></li></ul></li> <ul class="right-side-nav" data-v-1655393c><li class="search-add" data-v-1655393c><ul class="search-add-ul isResourceVisible" data-v-1655393c><li class="nav-item search" data-v-1655393c><form role="search" class="search-form isResourceVisible" data-v-1655393c><input type="search" maxlength="32" placeholder="" value="" class="search-input isResourceVisible" data-v-1655393c> <div class="seach-icon-container" data-v-1655393c><img src="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/1e8ab9a22f0ddc36349f60b38900d0bd.svg" alt="搜索" class="search-icon" data-v-1655393c></div> <div class="typehead" style="display:none;" data-v-1655393c><!----> <div class="title" data-v-1655393c><span data-v-1655393c>搜索历史</span> <span class="clear" data-v-1655393c>
-                        清空
-                      </span></div> <div class="list" data-v-1655393c></div></div></form></li> <li class="nav-item add creator-item" data-v-1655393c><div class="add-group" data-v-1655393c><button class="add-btn" data-v-1655393c>
-                    创作者中心
-                  </button> <div class="more" data-v-1655393c><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" class="unfold12-icon" data-v-1655393c data-v-1655393c><path d="M2.45025 4.82383C2.17422 4.49908 2.40501 4 2.83122 4H9.16878C9.59499 4 9.82578 4.49908 9.54975 4.82382L6.38097 8.5518C6.1813 8.7867 5.8187 8.7867 5.61903 8.5518L2.45025 4.82383Z" fill="white" data-v-1655393c data-v-1655393c></path></svg></div> <ul class="more-list" data-v-1655393c><li class="item" data-v-1655393c><span class="write-article" data-v-1655393c>写文章</span></li> <li class="item" data-v-1655393c><span class="issue-points" data-v-1655393c>发沸点</span></li> <!----> <!----> <!----></ul> <!----></div></li></ul></li> <!----> <!----> <!----> <li class="nav-item auth" data-v-1655393c><button class="login-button" data-v-1655393c>登录</button></li></ul></ul></nav></div></header></div>  <main class="container main-container" data-v-4fa4e5da><div class="root-view-bg" data-v-4fa4e5da data-v-140c989a></div> <div class="view not-found-view" data-v-4fa4e5da data-v-140c989a><img src="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/ca1e08b7f30860aecb1b7bb31ae18e50.svg" style="margin:50px 0px;" data-v-4fa4e5da data-v-140c989a> <a href="/" class="index-link" data-v-4fa4e5da data-v-140c989a>回到首页</a></div></main> <!----></div> <!----> <div class="global-component-box"><!----> <!----> <!----> <!----> <!----> <!----> <!----></div> <!----> <!----></div></div></div><script>window.__NUXT__=(function(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,A,B){return {layout:"default",data:[{}],fetch:[{AuthorTaskTypeArticle:g,isCloseArticleTask:a,isShowTaskModal:a,bdPageUrlForNav:"https:\u002F\u002Fbd.juejin.cn?utm_campaign=bd&utm_source=web&utm_medium=nav",queryString:e,isShowUserDropdownList:a,isShowAddMoreList:a,isFocus:a,isPhoneMenuShow:a,visibleBadge:a,placeholder:e,hiddenProperty:"hidden",searchHistoryVisible:a,searchHistoryItems:[],tabBadge:c,showCommunityList:a,showDownloadExtension:a,isChangePlaceholder:b,hoverTimeId:d,showMallBridge:a}],error:c,state:{view:{activityIndex:{activityList:[],pageInfo:{hasNextPage:a,endCursor:e},afterPosition:e,activityListIsLoading:b,activityListIsError:a,userActivityList:[],placeholder:e,actionType:{FETCH:"@\u002Fview\u002Factivity-index\u002FFETCH",FETCH_RECOMMEND_LIST:"@\u002Fview\u002Factivity-index\u002FFETCH_RECOMMEND_LIST",RESET_ACTIVITY_LIST:"@\u002Fview\u002Factivity-index\u002FRESET_ACTIVITY_LIST",FETCH_USER_ACTIVITY_LIST:"@\u002Fview\u002Factivity-index\u002FFETCH_USER_ACTIVITY_LIST",FETCH_NEW_COUNT:"@\u002Fview\u002Factivity-index\u002FFETCH_NEW_COUNT",DELETE_ACTIVITY:"@\u002Fview\u002Factivity-index\u002FDELETE_ACTIVITY",TOGGLE_FOLLOW_USER:"@\u002Fview\u002Factivity-index\u002FTOGGLE_FOLLOW_USER",FETCH_ENTRY_COMMENT_LIST:"@\u002Fview\u002Factivity-index\u002FFETCH_ENTRY_COMMENT_LIST",UPDATE_LIST_LOADING:"@\u002Fview\u002Factivity-index\u002FUPDATE_LIST_LOADING",RESET:"@\u002Fview\u002Factivity-index\u002FRESET"},hotList:{list:[],after:e,loading:a,hasNextPage:a,actionType:{UPDATE_STATE:"@\u002Fview\u002Factivity-index\u002Fhot-list\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Factivity-index\u002Fhot-list\u002FFETCH_MORE",FETCH:"@\u002Fview\u002Factivity-index\u002Fhot-list\u002FFETCH",RESET:"@\u002Fview\u002Factivity-index\u002Fhot-list\u002FRESET"}},sidebar:{bannerList:[],actionType:{RESET:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002FRESET",UPDATE_STATE:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002FUPDATE_STATE",FETCH_BANNER:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002FFETCH_BANNER"},recommend:{pageSize:h,page:d,total:d,pointer:c,lastPointer:c,list:[],loading:a,error:c,canPrev:b,canNext:b,linkList:[],lastFetchOnServer:a,actionType:{UPDATE:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002Frecommend-topic-list\u002FUPDATE",FETCH:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002Frecommend-topic-list\u002FFETCH",FORCE_FETCH:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002Frecommend-topic-list\u002FFORCE_FETCH",FETCH_MORE:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002Frecommend-topic-list\u002FFETCH_MORE",RESET:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002Frecommend-topic-list\u002FRESET"},after:d},followed:{pageSize:h,page:d,total:d,pointer:c,lastPointer:c,list:[],loading:a,error:c,canPrev:b,canNext:b,linkList:[],lastFetchOnServer:a,actionType:{UPDATE:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002Ffollowed-topic-list\u002FUPDATE",FETCH:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002Ffollowed-topic-list\u002FFETCH",FORCE_FETCH:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002Ffollowed-topic-list\u002FFORCE_FETCH",FETCH_MORE:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002Ffollowed-topic-list\u002FFETCH_MORE",RESET:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002Ffollowed-topic-list\u002FRESET"},after:d},recommendPin:{list:[],after:e,loading:a,hasNextPage:b,actionType:{UPDATE_STATE:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002Frecommend-pin-list\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002Frecommend-pin-list\u002FFETCH_MORE",FETCH:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002Frecommend-pin-list\u002FFETCH",RESET:"@\u002Fview\u002Factivity-index\u002Fsidebar\u002Frecommend-pin-list\u002FRESET"}}},topicPinList:{pageSize:h,page:g,total:d,pointer:c,lastPointer:c,list:[],loading:a,error:c,canPrev:b,canNext:b,linkList:[],lastFetchOnServer:a,actionType:{UPDATE:"@\u002Fview\u002Factivity-index\u002Ftopic-pin-list\u002FUPDATE",FETCH:"@\u002Fview\u002Factivity-index\u002Ftopic-pin-list\u002FFETCH",FORCE_FETCH:"@\u002Fview\u002Factivity-index\u002Ftopic-pin-list\u002FFORCE_FETCH",FETCH_MORE:"@\u002Fview\u002Factivity-index\u002Ftopic-pin-list\u002FFETCH_MORE",RESET:"@\u002Fview\u002Factivity-index\u002Ftopic-pin-list\u002FRESET"},topicId:e,navList:[{type:k,name:k,title:"推荐 ",id:k},{type:l,name:l,title:"热门 ",id:l},{type:o,name:o,title:"关注 ",id:o},{type:i,name:"opensource",title:"开源推荐 ",id:"5c09ea2b092dcb42c740fe73"},{type:i,name:"recruitment",title:"内推招聘",id:"5abb61e1092dcb4620ca3322"},{type:i,name:"dating",title:"掘金相亲",id:"5abcaa67092dcb4620ca335c"},{type:i,name:"slacking",title:"上班摸鱼",id:"5c106be9092dcb2cc5de7257"},{type:i,name:"app",title:"应用安利",id:"5b514af1092dcb61bd72800d"},{type:i,name:"tool",title:"开发工具",id:"5abb67d2092dcb4620ca3324"},{type:i,name:"news",title:"New资讯",id:"5c46a17f092dcb4737217152"}],sortType:p}},search:{search_result_from:d,query:e,list:[],linkList:[],loading:a,skeleton:b,actionType:{FETCH:"@\u002Fview\u002Fsearch\u002FFETCH",FETCH_MORE:"@\u002Fview\u002Fsearch\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fsearch\u002FRESET"}},columnIndex:{list:{pageSize:h,page:g,total:d,pointer:c,lastPointer:c,list:[],loading:a,error:c,canPrev:b,canNext:b,linkList:[],lastFetchOnServer:a,actionType:{UPDATE:"@\u002Fview\u002FcolumnIndex\u002Flist\u002FUPDATE",FETCH:"@\u002Fview\u002FcolumnIndex\u002Flist\u002FFETCH",FORCE_FETCH:"@\u002Fview\u002FcolumnIndex\u002Flist\u002FFORCE_FETCH",FETCH_MORE:"@\u002Fview\u002FcolumnIndex\u002Flist\u002FFETCH_MORE",RESET:"@\u002Fview\u002FcolumnIndex\u002Flist\u002FRESET"},sort:m,category:"all"},hotList:{pageSize:h,page:g,total:d,pointer:c,lastPointer:c,list:[],loading:a,error:c,canPrev:b,canNext:b,linkList:[],lastFetchOnServer:a,actionType:{UPDATE:"@\u002Fview\u002FcolumnIndex\u002FhotList\u002FUPDATE",FETCH:"@\u002Fview\u002FcolumnIndex\u002FhotList\u002FFETCH",FORCE_FETCH:"@\u002Fview\u002FcolumnIndex\u002FhotList\u002FFORCE_FETCH",FETCH_MORE:"@\u002Fview\u002FcolumnIndex\u002FhotList\u002FFETCH_MORE",RESET:"@\u002Fview\u002FcolumnIndex\u002FhotList\u002FRESET"}}},timelineIndex:{tdkTemplates:[],categoryNavList:[],tagNavList:[],splitTagList:[],timelineAdList:[],list:[],sort:p,category:k,categoryId:e,tagId:e,tag:"全部",actionType:{FETCH_TIMELINE_LIST:"@\u002Fview\u002FtimelineIndex\u002FFETCH_TIMELINE_LIST",FETCH_CATEGORY_LIST:"@\u002Fview\u002FtimelineIndex\u002FFETCH_CATEGORY_LIST",FETCH_TAG_LIST:"@\u002Fview\u002FtimelineIndex\u002FFETCH_TAG_LIST",DELETE_ENTRY:"@\u002Fview\u002FtimelineIndex\u002FDELETE_ENTRY",DELETE_USER_ENTRIES:"@\u002Fview\u002FtimelineIndex\u002FDELETE_USER_ENTRIES",DELETE_TAG_ENTRIES:"@\u002Fview\u002FtimelineIndex\u002FDELETE_TAG_ENTRIES",FETCH_MORE:"@\u002Fview\u002FtimelineIndex\u002FFETCH_MORE",FETCH:"@\u002Fview\u002FtimelineIndex\u002FFETCH",RESET:"@\u002Fview\u002FtimelineIndex\u002FRESET"},serverRenderTimelineList:a,timelineList:{list:[],cursor:f,skeleton:b,loading:a,hasMore:b,categoryId:e,tagId:e,sort:e,actionType:{UPDATE_STATE:"timeline-list\u002FUPDATE_STATE",FETCH_MORE:"timeline-list\u002FFETCH_MORE",FETCH:"timeline-list\u002FFETCH",RESET:"timeline-list\u002FRESET"}},recommendList:{list:[],cursor:f,loading:a,skeleton:b,hasMore:b,actionType:{UPDATE_STATE:"recommend-list\u002FUPDATE_STATE",FETCH_MORE:"recommend-list\u002FFETCH_MORE",FETCH:"recommend-list\u002FFETCH",RESET:"recommend-list\u002FRESET"}},followingList:{list:[],cursor:f,skeleton:b,loading:a,hasMore:b,actionType:{UPDATE_STATE:"following-list\u002FUPDATE_STATE",FETCH_MORE:"following-list\u002FFETCH_MORE",FETCH:"following-list\u002FFETCH",RESET:"following-list\u002FRESET"}}},subscribe:{subscribed:{list:[],cursor:f,skeleton:b,loading:a,hasMore:a,actionType:{UPDATE_STATE:"view\u002Fsubscribe\u002Fsubscribed\u002Flist\u002FUPDATE_STATE",FETCH_MORE:"view\u002Fsubscribe\u002Fsubscribed\u002Flist\u002FFETCH_MORE",FETCH:"view\u002Fsubscribe\u002Fsubscribed\u002Flist\u002FFETCH",RESET:"view\u002Fsubscribe\u002Fsubscribed\u002Flist\u002FRESET"}},all:{list:[],cursor:f,loading:a,skeleton:b,hasMore:a,linkList:e,actionType:{UPDATE_STATE:"view\u002Fsubscribe\u002Fall\u002Flist\u002FUPDATE_STATE",FETCH_MORE:"view\u002Fsubscribe\u002Fall\u002Flist\u002FFETCH_MORE",FETCH:"view\u002Fsubscribe\u002Fall\u002Flist\u002FFETCH",RESET:"view\u002Fsubscribe\u002Fall\u002Flist\u002FRESET"}}},entryPublic:{entry:{user:{}},relatedEntryList:[],relatedCollectionList:[],actionType:{FETCH:"@\u002Fview\u002FentryPublic\u002FFETCH",RESET:"@\u002Fview\u002FentryPublic\u002FRESET"}},user:{user:{},serverRendered:a,userAnnuals:[],actionType:{FETCH:"@\u002Fview\u002Fuser\u002FFETCH",RESET:"@\u002Fview\u002Fuser\u002FRESET",UPDATE:"@\u002Fview\u002Fuser\u002FUPDATE",FETCH_ANNUALS:"@\u002Fview\u002Fuser\u002FFETCH_ANNUALS"},detailList:{actionType:{RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FRESET"},likeList:{list:[],cursor:f,hasMore:a,loading:a,skeleton:b,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002FlikePostList\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002FlikePostList\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002FlikePostList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FlikePostList\u002FRESET"}},postList:{list:[],hasMore:a,skeleton:a,loading:a,sort:m,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002FpostList\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002FpostList\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002FpostList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FpostList\u002FRESET"}},searchList:{list:[],hasMore:a,skeleton:a,loading:a,key_word:e,search_type:d,cursor:f,isPostSearch:a,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002FsearchList\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002FsearchList\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002FsearchList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FsearchList\u002FRESET"}},tagList:{list:[],loading:a,skeleton:b,hasMore:a,cursor:f,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002FtagList\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002FtagList\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002FtagList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FtagList\u002FRESET"}},collectionList:{list:[],userId:e,skeleton:b,hasMore:a,cursor:f,type:"created",loading:a,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002FcollectionList\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002FcollectionList\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002FcollectionList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FcollectionList\u002FRESET",TOGGLE_FOLLOW_COLLECTION:"@\u002Fview\u002Fuser\u002FdetailList\u002FcollectionList\u002FTOGGLE_FOLLOW_COLLECTION",FOLLOW_COLLECTION:"@\u002Fview\u002Fuser\u002FdetailList\u002FcollectionList\u002FFOLLOW_COLLECTION",UNFOLLOW_COLLECTION:"@\u002Fview\u002Fuser\u002FdetailList\u002FcollectionList\u002FUNFOLLOW_COLLECTION",DELELTE_COLLECTION:"@\u002Fview\u002Fuser\u002FdetailList\u002FcollectionList\u002FDELELTE_COLLECTION",ADD_COLLECTION:"@\u002Fview\u002Fuser\u002FdetailList\u002FcollectionList\u002FADD_COLLECTION",EDIT_COLLECTION:"@\u002Fview\u002Fuser\u002FdetailList\u002FcollectionList\u002FEDIT_COLLECTION"}},followerList:{list:[],cursor:f,hasMore:a,loading:a,skeleton:a,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002FfollowerList\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002FfollowerList\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002FfollowerList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FfollowerList\u002FRESET"}},followingList:{list:[],cursor:f,hasMore:a,skeleton:a,loading:a,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002FfollowingList\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002FfollowingList\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002FfollowingList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FfollowingList\u002FRESET"}},followingTeamsList:{list:[],cursor:f,hasMore:a,skeleton:a,loading:a,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002FfollowingTeamsList\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002FfollowingTeamsList\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002FfollowingTeamsList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FfollowingTeamsList\u002FRESET"}},activityList:{list:[],cursor:f,hasMore:a,loading:a,skeleton:a,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002FactivityList\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002FactivityList\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002FactivityList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FactivityList\u002FRESET"}},bookList:{list:[],cursor:f,skeleton:b,hasMore:a,loading:a,type:"bought",actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002FbookList\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002FbookList\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002FbookList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FbookList\u002FRESET"}},pinList:{list:[],hasMore:a,loading:a,skeleton:b,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002FpinList\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002FpinList\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002FpinList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FpinList\u002FRESET"}},courseList:{list:[],hasMore:a,loading:a,skeleton:b,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002FcourseList\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002FcourseList\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002FcourseList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FcourseList\u002FRESET"}},pinPraisedList:{list:[],cursor:f,hasMore:a,loading:a,skeleton:b,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002FpinPraisedList\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002FpinPraisedList\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002FpinPraisedList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FpinPraisedList\u002FRESET"}},eventList:{list:[],cursor:f,hasMore:a,loading:a,skeleton:a,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002FeventList\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002FeventList\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002FeventList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FeventList\u002FRESET"}},selfColumnList:{list:[],hasMore:a,skeleton:a,loading:a,cursor:f,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002FcolumnList\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002FcolumnList\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002FcolumnList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FcolumnList\u002FRESET"}},columnFollowedList:{list:[],hasMore:a,skeleton:a,loading:a,cursor:f,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002FcolumnFollowedList\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002FcolumnFollowedList\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002FcolumnFollowedList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002FcolumnFollowedList\u002FRESET",FILTER:"@\u002Fview\u002Fuser\u002FdetailList\u002FcolumnFollowedList\u002FFILTER"}},realtimes:{list:[],cursor:f,hasMore:a,loading:a,skeleton:a,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002Frealtimes\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002Frealtimes\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002Frealtimes\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002Frealtimes\u002FRESET",DELETE:"@\u002Fview\u002Fuser\u002FdetailList\u002Frealtimes\u002FDELETE"}},realtimeliked:{list:[],cursor:f,hasMore:a,loading:a,skeleton:a,actionType:{FETCH:"@\u002Fview\u002Fuser\u002FdetailList\u002Frealtimeliked\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fuser\u002FdetailList\u002Frealtimeliked\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fuser\u002FdetailList\u002Frealtimeliked\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fuser\u002FdetailList\u002Frealtimeliked\u002FRESET",DELETE:"@\u002Fview\u002Fuser\u002FdetailList\u002Frealtimeliked\u002FDELETE"}}}},tag:{tag:{},actionType:{FETCH:"@\u002Fview\u002Ftag\u002FFETCH",FETCH_LIST:"@\u002Fview\u002Ftag\u002FFETCH_LIST",RESET:"@\u002Fview\u002Ftag\u002FRESET"},list:{list:[],cursor:f,loading:a,skeleton:a,hasMore:a,actionType:{UPDATE_STATE:"@\u002Fview\u002Ftag\u002Flist\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Ftag\u002Flist\u002FFETCH_MORE",FETCH:"@\u002Fview\u002Ftag\u002Flist\u002FFETCH",RESET:"@\u002Fview\u002Ftag\u002Flist\u002FRESET"}}},notification:{user:{actionType:{READ_ALL:"@\u002Fview\u002Fnotification\u002Fuser\u002FREAD_ALL",RESET:"@\u002Fview\u002Fnotification\u002Fuser\u002FRESET"},listState:{list:[],cursor:f,hasMore:a,isLoading:a,messageType:3,msgTotal:d,msgSubMap:{"1":d,"2":d,"3":d,"4":d}},list:{pageSize:h,page:g,total:d,pointer:c,lastPointer:c,list:[],loading:a,error:c,canPrev:b,canNext:b,linkList:[],lastFetchOnServer:a,actionType:{UPDATE:"@\u002Fview\u002Fnotification\u002Fuser\u002Flist\u002FUPDATE",FETCH:"@\u002Fview\u002Fnotification\u002Fuser\u002Flist\u002FFETCH",FORCE_FETCH:"@\u002Fview\u002Fnotification\u002Fuser\u002Flist\u002FFORCE_FETCH",FETCH_MORE:"@\u002Fview\u002Fnotification\u002Fuser\u002Flist\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fnotification\u002Fuser\u002Flist\u002FRESET"}}},system:{actionType:{READ_ALL:"@\u002Fview\u002Fnotification\u002Fsystem\u002FREAD_ALL",RESET:"@\u002Fview\u002Fnotification\u002Fsystem\u002FRESET"},list:{pageSize:h,page:g,total:d,pointer:c,lastPointer:c,list:[],loading:a,error:c,canPrev:b,canNext:b,linkList:[],lastFetchOnServer:a,actionType:{UPDATE:"@\u002Fview\u002Fnotification\u002Fsystem\u002Flist\u002FUPDATE",FETCH:"@\u002Fview\u002Fnotification\u002Fsystem\u002Flist\u002FFETCH",FORCE_FETCH:"@\u002Fview\u002Fnotification\u002Fsystem\u002Flist\u002FFORCE_FETCH",FETCH_MORE:"@\u002Fview\u002Fnotification\u002Fsystem\u002Flist\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fnotification\u002Fsystem\u002Flist\u002FRESET"}}}},column:{renderPost:b,serverRenderList:a,column:{},entry:{},entryView:{},author:{},adEntryList:[],relatedEntryList:[],cachedHtml:e,showSidebar:a,actionType:{FETCH:"view\u002Fcolumn\u002FFETCH",FETCH_ADDITIONAL:"view\u002Fcolumn\u002FFETCH_ADDITIONAL",FETCH_SIDEBAR_ADENTRY:"view\u002Fcolumn\u002FFETCH_SIDEBAR_ADENTRY",RESET:"view\u002Fcolumn\u002FRESET"},recommendedArticleList:{list:[],cursor:f,loading:a,skeleton:a,hasMore:a,articleId:e,actionType:{UPDATE_STATE:"view\u002Fcolumn\u002Frecommend-List\u002FUPDATE_STATE",FETCH_MORE:"view\u002Fcolumn\u002Frecommend-List\u002FFETCH_MORE",FETCH:"view\u002Fcolumn\u002Frecommend-List\u002FFETCH",RESET:"view\u002Fcolumn\u002Frecommend-List\u002FRESET"}}},collection:{collection:{author:{}},actionType:{FETCH:"@\u002Fview\u002Fcollection\u002FFETCH",REFRESH:"@\u002Fview\u002Fcollection\u002FREFRESH",RESET:"@\u002Fview\u002Fcollection\u002FRESET"},list:{pageSize:h,page:g,total:d,pointer:c,lastPointer:c,list:[],loading:a,error:c,canPrev:b,canNext:b,linkList:[],lastFetchOnServer:a,actionType:{UPDATE:"@\u002Fview\u002Fcollection\u002Flist\u002FUPDATE",FETCH:"@\u002Fview\u002Fcollection\u002Flist\u002FFETCH",FORCE_FETCH:"@\u002Fview\u002Fcollection\u002Flist\u002FFORCE_FETCH",FETCH_MORE:"@\u002Fview\u002Fcollection\u002Flist\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fcollection\u002Flist\u002FRESET"},id:e,sort:m}},gettingStarted:{category:{},actionType:{UPDATE_STATE:"@\u002Fview\u002FgettingStarted\u002FUPDATE_STATE",FOLLOW:"@\u002Fview\u002FgettingStarted\u002FFOLLOW",RESET:"@\u002Fview\u002FgettingStarted\u002FRESET",UPDATE_CATEGORY:"@\u002Fview\u002FgettingStarted\u002FUPDATE_CATEGORY"}},pin:{pin:{user:{},imageUrlList:[]},pinList:[],actionType:{FETCH:"@\u002Fview\u002Fpin\u002FFETCH",RESET:"@\u002Fview\u002Fpin\u002FRESET"},sidebar:{list:[],after:e,loading:a,isRecommend:a,hasNextPage:b,actionType:{UPDATE_STATE:"@\u002Fview\u002Fpin\u002Fsidebar\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fpin\u002Fsidebar\u002FFETCH_MORE",FETCH:"@\u002Fview\u002Fpin\u002Fsidebar\u002FFETCH",RESET:"@\u002Fview\u002Fpin\u002Fsidebar\u002FRESET"}},commentList:{pageSize:h,page:g,total:d,pointer:c,lastPointer:c,list:[],loading:a,error:c,canPrev:b,canNext:b,linkList:[],lastFetchOnServer:a,actionType:{UPDATE:"@\u002Fview\u002Fpin\u002FcommentList\u002FUPDATE",FETCH:"@\u002Fview\u002Fpin\u002FcommentList\u002FFETCH",FORCE_FETCH:"@\u002Fview\u002Fpin\u002FcommentList\u002FFORCE_FETCH",FETCH_MORE:"@\u002Fview\u002Fpin\u002FcommentList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fpin\u002FcommentList\u002FRESET"},pinId:c},subCommentList:{pageSize:h,page:g,total:d,pointer:c,lastPointer:c,list:[],loading:a,error:c,canPrev:b,canNext:b,linkList:[],lastFetchOnServer:a,actionType:{UPDATE:"@\u002Fview\u002Fpin\u002FsubCommentList\u002FUPDATE",FETCH:"@\u002Fview\u002Fpin\u002FsubCommentList\u002FFETCH",FORCE_FETCH:"@\u002Fview\u002Fpin\u002FsubCommentList\u002FFORCE_FETCH",FETCH_MORE:"@\u002Fview\u002Fpin\u002FsubCommentList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fpin\u002FsubCommentList\u002FRESET"},commentId:c}},topic:{topic:e,followedTopicList:[],actionType:{FETCH:"@\u002Fview\u002Ftopic\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Ftopic\u002FUPDATE_STATE",RESET:"@\u002Fview\u002Ftopic\u002FRESET"},allTopicList:{pageSize:w,page:d,total:d,pointer:c,lastPointer:c,list:[],loading:a,error:c,canPrev:b,canNext:b,linkList:[],lastFetchOnServer:a,actionType:{UPDATE:"@\u002Fview\u002Ftopic\u002FallTopicList\u002FUPDATE",FETCH:"@\u002Fview\u002Ftopic\u002FallTopicList\u002FFETCH",FORCE_FETCH:"@\u002Fview\u002Ftopic\u002FallTopicList\u002FFORCE_FETCH",FETCH_MORE:"@\u002Fview\u002Ftopic\u002FallTopicList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Ftopic\u002FallTopicList\u002FRESET"},sortType:l},pinlist:{pageSize:h,page:g,total:d,pointer:c,lastPointer:c,list:[],loading:a,error:c,canPrev:b,canNext:b,linkList:[],lastFetchOnServer:a,actionType:{UPDATE:"@\u002Fview\u002Ftopic\u002FpinList\u002FUPDATE",FETCH:"@\u002Fview\u002Ftopic\u002FpinList\u002FFETCH",FORCE_FETCH:"@\u002Fview\u002Ftopic\u002FpinList\u002FFORCE_FETCH",FETCH_MORE:"@\u002Fview\u002Ftopic\u002FpinList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Ftopic\u002FpinList\u002FRESET"},sortType:p},sidebar:{actionType:{RESET:"@\u002Fview\u002Ftopic\u002Fsidebar\u002FRESET",UPDATE_STATE:"@\u002Fview\u002Ftopic\u002Fsidebar\u002FUPDATE_STATE"},attender:{pageSize:h,page:g,total:d,pointer:c,lastPointer:c,list:[],loading:a,error:c,canPrev:b,canNext:b,linkList:[],lastFetchOnServer:a,actionType:{UPDATE:"@\u002Fview\u002Ftopic\u002Fsidebar\u002Fattender\u002FUPDATE",FETCH:"@\u002Fview\u002Ftopic\u002Fsidebar\u002Fattender\u002FFETCH",FORCE_FETCH:"@\u002Fview\u002Ftopic\u002Fsidebar\u002Fattender\u002FFORCE_FETCH",FETCH_MORE:"@\u002Fview\u002Ftopic\u002Fsidebar\u002Fattender\u002FFETCH_MORE",RESET:"@\u002Fview\u002Ftopic\u002Fsidebar\u002Fattender\u002FRESET"},topicId:c}},followedList:{pageSize:w,page:d,total:d,pointer:c,lastPointer:c,list:[],loading:a,error:c,canPrev:b,canNext:b,linkList:[],lastFetchOnServer:a,actionType:{UPDATE:"@\u002Fview\u002Ftopic\u002FfollowedList\u002FUPDATE",FETCH:"@\u002Fview\u002Ftopic\u002FfollowedList\u002FFETCH",FORCE_FETCH:"@\u002Fview\u002Ftopic\u002FfollowedList\u002FFORCE_FETCH",FETCH_MORE:"@\u002Fview\u002Ftopic\u002FfollowedList\u002FFETCH_MORE",RESET:"@\u002Fview\u002Ftopic\u002FfollowedList\u002FRESET"},after:d}},recommendationIndex:{actionType:{FETCH_USER:"@\u002Fview\u002Frecommendation\u002FFETCH_USER",FETCH_MORE:"@\u002Fview\u002Frecommendation\u002FFETCH_MORE",RESET:"@\u002Fview\u002Frecommendation\u002FRESET",FETCH:"@\u002Fview\u002Frecommendation\u002FFETCH"},cursor:e,hasMore:e,userList:[],loading:a,skeleton:b,category:k,categoryNavList:[],serverRenderUserList:a},event:{event:{},loading:a,user:{},actionType:{FETCH:"view\u002Fevent\u002FFETCH",RESET:"view\u002Fevent\u002FRESET"}},academyIndex:{academy:{},bannerList:[],qualitiedList:[],latestList:[],offlineList:[],loading:a,user:{},actionType:{FETCH:"view\u002Facademy\u002FFETCH",RESET:"view\u002Facademy\u002FRESET"}},coursesIndex:{loading:a,list:[],sort:"online",actionType:{FETCH:"view\u002Fcourses\u002FFETCH",RESET:"view\u002Fcourses\u002FRESET",FETCH_MORE:"view\u002Fcourses\u002FFETCH_MORE"}},team:{team:{},loading:b,actionType:{FETCH:"@\u002Fview\u002Fteam\u002FFETCH",RESET:"@\u002Fview\u002Fteam\u002FRESET",UPDATE:"@\u002Fview\u002Fteam\u002FUPDATE",FOLLOW:"@\u002Fview\u002Fteam\u002FFOLLOW"},detailList:{actionType:{RESET:"@\u002Fview\u002Fteam\u002FdetailList\u002FRESET"},posts:{list:[],hasMore:a,skeleton:a,loading:a,sort:m,actionType:{FETCH:"@\u002Fview\u002Fteam\u002FdetailList\u002Fposts\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fteam\u002FdetailList\u002Fposts\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fteam\u002FdetailList\u002Fposts\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fteam\u002FdetailList\u002Fposts\u002FRESET"}},pins:{list:[],hasMore:a,loading:a,skeleton:b,actionType:{FETCH:"@\u002Fview\u002Fteam\u002FdetailList\u002Fpins\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fteam\u002FdetailList\u002Fpins\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fteam\u002FdetailList\u002Fpins\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fteam\u002FdetailList\u002Fpins\u002FRESET"}},hire:{list:[],hasMore:a,cursor:f,loading:a,skeleton:b,actionType:{FETCH:"@\u002Fview\u002Fteam\u002FdetailList\u002Fhire\u002FFETCH",UPDATE_STATE:"@\u002Fview\u002Fteam\u002FdetailList\u002Fhire\u002FUPDATE_STATE",FETCH_MORE:"@\u002Fview\u002Fteam\u002FdetailList\u002Fhire\u002FFETCH_MORE",RESET:"@\u002Fview\u002Fteam\u002FdetailList\u002Fhire\u002FRESET"}}}}},component:{indexAside:{bannerList:[],userList:[],actionType:{FETCH_BANNER:"@\u002Fcomponent\u002Faside\u002FFETCH_BANNER",FETCH_USER:"@\u002Fcomponent\u002Faside\u002FFETCH_USER",CLOSE_BANNER:"@\u002Fcomponent\u002Faside\u002FCLOSE_BANNER"}}},env:{ua:"python-httpx\u002F0.22.0"},auth:{user:c,clientId:e,token:e},tag:{subscribedTagList:[]},entry:{isLikeLoading:a},collection:{},comment:{},bookComment:{},repoComment:{},category:{list:[]},user:{subscribedTagList:[]},notification:{unreadCount:{user:d,system:d,total:d}},follow:{subscribedTagList:[]},error:{location:c,errorView:c,statusCode:404},abTest:{info:{}},suspensionPanel:{needSuspension:b},pinComment:{},pin:{deleteDialogVisible:a,reportDialogVisible:a,targetPin:c,isOnFocus:a},topic:{visible:a},activity:{"2020":{},offer:{is_show:d,start_time:d},voteData:{err_no:d,err_msg:"success",data:{face:{title:e,activity_id:j,start_time:q,end_time:r,status:s,image:"https:\u002F\u002Fp3-juejin.byteimg.com\u002Ftos-cn-i-k3u1fbpfcp\u002F61a9b27036cf4ddd8387f4de94afb649~tplv-k3u1fbpfcp-image.image",close_image:"https:\u002F\u002Fp3-juejin.byteimg.com\u002Ftos-cn-i-k3u1fbpfcp\u002F882fc263e36347ffbf6d598de520870e~tplv-k3u1fbpfcp-image.image",url:"https:\u002F\u002Fjuejin.cn\u002Freport2021\u002Fmobile?utm_campaign=report_2021&utm_medium=app_window&share_title=2021%E6%8E%98%E5%8F%8B%E5%B9%B4%E5%BA%A6%E6%8A%A5%E5%91%8A&share_desc=%E8%A7%A3%E9%94%81%E5%B9%B4%E5%BA%A6%E6%8A%A5%E5%91%8A%EF%BC%8C%E9%A2%86%E5%8F%96%E4%B8%93%E5%B1%9E%E5%BE%BD%E7%AB%A0&share_image=https%3A%2F%2Fp9-juejin.byteimg.com%2Ftos-cn-i-k3u1fbpfcp%2F26a9012785e643a6a520ed63b513c57e~tplv-k3u1fbpfcp-image.image",is_show:d},top:{title:e,activity_id:j,start_time:t,end_time:u,status:g,image:"https:\u002F\u002Fp9-juejin.byteimg.com\u002Ftos-cn-i-k3u1fbpfcp\u002F594cb16bf5274f8da45264c77e2ca1c7~tplv-k3u1fbpfcp-zoom-1.image",close_image:v,url:"https:\u002F\u002Fhackathon2022.juejin.cn?source=app",is_show:g},web_top:{title:e,activity_id:j,start_time:t,end_time:u,status:g,image:x,close_image:v,url:"https:\u002F\u002Fhackathon2022.juejin.cn?source=pc",is_show:g},plugin_top:{title:e,activity_id:j,start_time:t,end_time:u,status:g,image:x,close_image:v,url:"https:\u002F\u002Fhackathon2022.juejin.cn?source=extension",is_show:g},search_top:{title:y,activity_id:j,start_time:q,end_time:r,status:s,image:z,close_image:A,url:"https:\u002F\u002Fjuejin.cn\u002Freport2021\u002Fmobile?utm_campaign=report_2021&utm_medium=app_search&share_title=2021%E6%8E%98%E5%8F%8B%E5%B9%B4%E5%BA%A6%E6%8A%A5%E5%91%8A&share_desc=%E8%A7%A3%E9%94%81%E5%B9%B4%E5%BA%A6%E6%8A%A5%E5%91%8A%EF%BC%8C%E9%A2%86%E5%8F%96%E4%B8%93%E5%B1%9E%E5%BE%BD%E7%AB%A0&share_image=https%3A%2F%2Fp9-juejin.byteimg.com%2Ftos-cn-i-k3u1fbpfcp%2F26a9012785e643a6a520ed63b513c57e~tplv-k3u1fbpfcp-image.image",is_show:d},web_search:{title:y,activity_id:j,start_time:q,end_time:r,status:s,image:z,close_image:A,url:"https:\u002F\u002Fjuejin.cn\u002Freport2021?utm_campaign=report_2021&utm_medium=web_search",is_show:d}}}},header:{leadStep:d,isPopupZlink:a},route:{name:"notFound",path:n,hash:e,query:{},params:{pathMatch:n},fullPath:n,meta:{},from:{name:c,path:B,hash:e,query:{},params:{},fullPath:B,meta:{}}}},serverRendered:b,routePath:n,config:{API_HOST:"api.juejin.cn",CAPTCHA_HOST:"verify.snssdk.com",PLATFORM_APPID:{wechat:1277,weibo:1276,github:1045,wechatApp:1070},http:{}},globalRefs:{}}}(false,true,null,0,"","0",1,20,"topic","2021","recommended","hot","newest","\u002F\u002F\u002Flf3-cdn-tos.bytescm.com","following","popular",1641780000,1642348799,2,1648051200,1656604799,"https:\u002F\u002Fp9-juejin.byteimg.com\u002Ftos-cn-i-k3u1fbpfcp\u002Fe5199830276c4a85bc7c8cb8edecd54d~tplv-k3u1fbpfcp-zoom-1.image",100,"https:\u002F\u002Fp3-juejin.byteimg.com\u002Ftos-cn-i-k3u1fbpfcp\u002Ffd0f3b510bc14f6faed6e7a049a63e3d~tplv-k3u1fbpfcp-zoom-1.image","我的2021年度报告","https:\u002F\u002Fp3-juejin.byteimg.com\u002Ftos-cn-i-k3u1fbpfcp\u002Fa06289e83d9640c4b8504d2626cfbbee~tplv-k3u1fbpfcp-image.image","https:\u002F\u002Fp9-juejin.byteimg.com\u002Ftos-cn-i-k3u1fbpfcp\u002Fe5199830276c4a85bc7c8cb8edecd54d~tplv-k3u1fbpfcp-image.image","\u002F"));</script><script src="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/bd1e656.js" defer></script><script src="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/2b78cee.js" defer></script><script src="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/2f68871.js" defer></script><script src="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/8c90871.js" defer></script><script src="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/bbf4234.js" defer></script><script src="//lf3-cdn-tos.bytescm.com/obj/static/xitu_juejin_web/c94831a.js" defer></script>
+  <body data-ng-controller="MainController as ctrl"
+        class="">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe class="gmp-noscript-iframe"
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MPHTW35"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+      <!-- Google Cookie Consent Bar -->
+      <script data-autoload-cookie-consent-bar="true"
+              src="https://www.gstatic.com/brandstudio/kato/cookie_choice_component/cookie_consent_bar.v3.js"></script>
+      <!-- End Google Cookie Consent Bar -->
+
+
+<div class="hercules-header h-c-header gmp-header h-c-header--product-initiative">
+<div class="h-c-header__bar gmp-header__bar" dropdown>
+  <div class="h-c-header__hamburger h-c-header__hamburger--first-tier">
+    <div class="h-c-header__hamburger-wrapper">
+      <button type="button"
+              data-g-event="product: analytics: overview"
+    data-g-action="mobile: open global nav"
+    data-g-label="global nav"
+
+          class="h-js-header__hamburger-link h-c-header__hamburger-link"
+          aria-controls="h-js-header__drawer"
+          aria-expanded="false"
+          aria-label="Open the navigation drawer">
+        <svg alt="" role="img" class="h-c-header__hamburger-img
+            h-c-header__hamburger-img--standard">
+          <use xlink:href="#h-burger"></use>
+        </svg>
+
+        <svg alt="" role="img" class="h-c-header__hamburger-img
+            h-c-header__hamburger-img--reversed">
+          <use xlink:href="#h-burger"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="h-c-header__lockup">
+    <div class="h-c-header__company-logo">
+      <a     data-g-event="product: analytics: overview"
+    data-g-action="logo"
+    data-g-label="global nav"
+
+          href="/about/"
+          class="h-c-header__company-logo-link" title="Google">
+        <svg alt="Google" role="img" class="h-c-header__company-logo-img
+            h-c-header__company-logo-img--standard">
+          <use xlink:href="#h-color-google-logo"></use>
+        </svg>
+
+        <svg alt="Google" role="img" class="h-c-header__company-logo-img
+            h-c-header__company-logo-img--reversed">
+          <use xlink:href="#h-white-google-logo"></use>
+        </svg>
+      </a>
+    </div>
+
+    <div class="h-c-header__product-logo">
+      <a     data-g-event="product: analytics: overview"
+    data-g-action="logo"
+    data-g-label="global nav"
+
+          href="/about/"
+          class="h-c-header__product-logo-link">
+        <span class="h-c-header__product-logo-text gmp-logo-text">Marketing Platform</span>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="h-c-header__hamburger h-c-header__hamburger--second-tier">
+    <div class="h-c-header__hamburger-wrapper">
+      <button type="button"
+          class="h-js-header__hamburger-link h-c-header__hamburger-link"
+          aria-controls="h-js-header__drawer"
+          aria-expanded="false"
+          aria-label="Open the navigation drawer">
+        <svg alt="" role="img" class="h-c-header__hamburger-img
+            h-c-header__hamburger-img--standard">
+          <use xlink:href="#h-burger"></use>
+        </svg>
+
+        <svg alt="" role="img" class="h-c-header__hamburger-img
+            h-c-header__hamburger-img--reversed">
+          <use xlink:href="#h-burger"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <nav class="h-c-header__nav">
+    <ul class="h-c-header__nav-list">
+
+
+
+          <li class="h-c-header__nav-li" aria-level="1">
+            <a     data-g-event="product: analytics: overview"
+    data-g-action="for small businesses"
+    data-g-label="global nav"
+
+                href="/about/small-business/"
+                
+                class="h-c-header__nav-li-link h-is-highlighted"
+                  aria-expanded="true"
+ data-dropdown-target="smb-subnav" >
+              For Small Businesses
+            </a>
+          </li>
+
+
+
+          <li class="h-c-header__nav-li" aria-level="1">
+            <a     data-g-event="product: analytics: overview"
+    data-g-action="for enterprises"
+    data-g-label="global nav"
+
+                href="/about/enterprise/"
+                
+                class="h-c-header__nav-li-link"
+ data-dropdown-target="enterprise-subnav" >
+              For Enterprises
+            </a>
+          </li>
+
+
+
+          <li class="h-c-header__nav-li" aria-level="1">
+            <a     data-g-event="product: analytics: overview"
+    data-g-action="resources"
+    data-g-label="global nav"
+
+                href="/about/resources/"
+                
+                class="h-c-header__nav-li-link"
+>
+              Resources
+            </a>
+          </li>
+
+
+
+          <li class="h-c-header__nav-li" aria-level="1">
+            <a     data-g-event="product: analytics: overview"
+    data-g-action="blog"
+    data-g-label="global nav"
+
+                href="https://www.blog.google/products/marketingplatform/"
+                    target="_self"
+
+                class="h-c-header__nav-li-link"
+>
+              Blog
+            </a>
+          </li>
+    </ul>
+  </nav>
+
+  <div class="h-c-header__cta h-c-header__cta--top-tier">
+    <ul class="h-c-header__cta-list">
+        <li class="h-c-header__cta-li h-c-header__cta-li--secondary">
+
+              <a     data-g-event="product: analytics: overview"
+    data-g-action="partners"
+    data-g-label="global nav"
+
+        href="/about/partners/"
+        title="Partners"
+        class="h-c-header__cta-li-link h-c-header__cta-li-link--secondary"
+         >Partners</a>
+        </li>
+        <li class="h-c-header__cta-li h-c-header__cta-li--secondary">
+
+              <a     data-g-event="product: analytics: overview"
+    data-g-action="support"
+    data-g-label="global nav"
+
+        href="/about/support/"
+        title="Support"
+        class="h-c-header__cta-li-link h-c-header__cta-li-link--secondary"
+         >Support</a>
+        </li>
+    </ul>
+  </div>
+
+<div class="h-c-header__initiative-logo">
+  <a     data-g-event="product: analytics: overview"
+    data-g-action="logo"
+    data-g-label="sub nav"
+
+      href="/about/analytics/"
+      class="h-c-header__initiative-logo-link">
+    <span class="h-c-header__initiative-logo-text">Analytics</span>
+  </a>
+</div>
+
+<nav class="h-c-header__nav gmp-product-nav">
+  <ul class="h-c-header__nav-list">
+
+        <li class="h-c-header__nav-li" aria-level="1">
+          <a     data-g-event="product: analytics: overview"
+    data-g-action="overview"
+    data-g-label="sub nav"
+
+              href="/about/analytics/"
+              
+              class="h-c-header__nav-li-link
+ h-is-active">
+            Overview
+          </a>
+        </li>
+        <li class="h-c-header__nav-li" aria-level="1">
+          <a     data-g-event="product: analytics: overview"
+    data-g-action="benefits"
+    data-g-label="sub nav"
+
+              href="/about/analytics/benefits/"
+              
+              class="h-c-header__nav-li-link
+">
+            Benefits
+          </a>
+        </li>
+        <li class="h-c-header__nav-li" aria-level="1">
+          <a     data-g-event="product: analytics: overview"
+    data-g-action="features"
+    data-g-label="sub nav"
+
+              href="/about/analytics/features/"
+              
+              class="h-c-header__nav-li-link
+">
+            Features
+          </a>
+        </li>
+  </ul>
+</nav>
+
+<div class="h-c-header__cta">
+  <ul class="h-c-header__cta-list">
+    <li class="h-c-header__cta-li h-c-header__cta-li--secondary">
+        <a     data-g-event="product: analytics: overview"
+    data-g-action="sign in cta"
+    data-g-label="sub nav"
+
+            href="https://analytics.google.com/analytics/web/?utm_source=marketingplatform.google.com&amp;utm_medium=et&amp;utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics%2F"
+                target="_blank" rel="nofollow noreferrer noopener"
+
+            class="h-c-header__cta-li-link
+            h-c-header__cta-li-link--secondary"
+            rel=nofollow>
+          Sign in to Analytics
+        </a>
+      </li>
+    <li class="h-c-header__cta-li h-c-header__cta-li--primary">
+        <a     data-g-event="product: analytics: overview"
+    data-g-action="sign up cta"
+    data-g-label="sub nav"
+
+            href="https://analytics.google.com/analytics/?utm_source=marketingplatform.google.com&amp;utm_medium=et&amp;utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics-360%2F"
+                target="_blank" rel="nofollow noreferrer noopener"
+
+            class="h-c-header__cta-li-link
+            h-c-header__cta-li-link--primary"
+            >
+          Get started today
+        </a>
+      </li>
+  </ul>
+</div>
+  <div class="h-c-header__bar-underside"></div>
+<div class="dd-menu">
+  <nav class="dd-menu__nav">
+    <div class="dd-menu__section dd-menu__section--hero">
+      <div class="dd-menu__banner" data-dropdown-item="smb-subnav">
+        <span class="dd-menu__banner__header">For Small Businesses</span>
+        <p class="dd-menu__banner__text">Free and easy-to-use solutions for businesses of every size.</p>
+        <a     data-g-event="product: analytics: overview"
+    data-g-action="for small businesses: learn more"
+    data-g-label="global nav"
+
+            href="/about/small-business/"
+            class="h-c-button h-c-button--primary h-c-button--reversed">
+          Learn more
+        </a>
+      </div>
+      <div class="dd-menu__banner" data-dropdown-item="enterprise-subnav">
+        <span class="dd-menu__banner__header">For Enterprises</span>
+        <p class="dd-menu__banner__text">A single platform that integrates your advertising and analytics, so you can act on customer insights faster.</p>
+        <a     data-g-event="product: analytics: overview"
+    data-g-action="for enterprise: learn more"
+    data-g-label="global nav"
+
+            href="/about/enterprise/"
+            class="h-c-button h-c-button--primary h-c-button--reversed">
+          Learn more
+        </a>
+      </div>
+    </div>
+    <div class="dd-menu__section dd-menu__section--nav">
+      <div class="dd-menu__nav-list-ctr" data-dropdown-item="smb-subnav">
+        <ul class="dd-menu__nav-list">
+              <li class="dd-menu__nav-item" aria-level="2">
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="for small businesses: analytics"
+    data-g-label="global nav"
+
+                    href="/about/analytics/"
+                    class="dd-menu__nav-item__link ">
+                  <span class="dd-menu__nav-item__title">Analytics</span>
+                  <p class="dd-menu__nav-item__desc">Understand your customers so you can deliver better experiences.</p>
+                </a>
+              </li>
+              <li class="dd-menu__nav-item" aria-level="2">
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="for small businesses: data studio"
+    data-g-label="global nav"
+
+                    href="/about/data-studio/"
+                    class="dd-menu__nav-item__link ">
+                  <span class="dd-menu__nav-item__title">Data Studio</span>
+                  <p class="dd-menu__nav-item__desc">Bring your data to life with engaging, customizable reports.</p>
+                </a>
+              </li>
+              <li class="dd-menu__nav-item" aria-level="2">
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="for small businesses: optimize"
+    data-g-label="global nav"
+
+                    href="/about/optimize/"
+                    class="dd-menu__nav-item__link ">
+                  <span class="dd-menu__nav-item__title">Optimize</span>
+                  <p class="dd-menu__nav-item__desc">Test variations of your sites and apps.</p>
+                </a>
+              </li>
+              <li class="dd-menu__nav-item" aria-level="2">
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="for small businesses: surveys"
+    data-g-label="global nav"
+
+                    href="/about/surveys/"
+                    class="dd-menu__nav-item__link ">
+                  <span class="dd-menu__nav-item__title">Surveys</span>
+                  <p class="dd-menu__nav-item__desc">Get fast, reliable opinions from real people.</p>
+                </a>
+              </li>
+              <li class="dd-menu__nav-item" aria-level="2">
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="for small businesses: tag manager"
+    data-g-label="global nav"
+
+                    href="/about/tag-manager/"
+                    class="dd-menu__nav-item__link ">
+                  <span class="dd-menu__nav-item__title">Tag Manager</span>
+                  <p class="dd-menu__nav-item__desc">Manage all your tags without editing code.</p>
+                </a>
+              </li>
+        </ul>
+      </div>
+      <div class="dd-menu__nav-list-ctr" data-dropdown-item="enterprise-subnav">
+<span class="dd-menu__eyebrow">advertising</span>        <ul class="dd-menu__nav-list">
+              <li class="dd-menu__nav-item" aria-level="2">
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="for enterprises: campaign manager 360"
+    data-g-label="global nav"
+
+                    href="/about/campaign-manager-360/"
+                    class="dd-menu__nav-item__link ">
+                  <span class="dd-menu__nav-item__title">Campaign Manager 360</span>
+                  <p class="dd-menu__nav-item__desc">Get a complete view of all your digital media campaigns.</p>
+                </a>
+              </li>
+              <li class="dd-menu__nav-item" aria-level="2">
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="for enterprises: display and video 360"
+    data-g-label="global nav"
+
+                    href="/about/display-video-360/"
+                    class="dd-menu__nav-item__link ">
+                  <span class="dd-menu__nav-item__title">Display &amp; Video 360</span>
+                  <p class="dd-menu__nav-item__desc">Reach today’s always-connected audiences wherever they are.</p>
+                </a>
+              </li>
+              <li class="dd-menu__nav-item" aria-level="2">
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="for enterprises: search ads 360"
+    data-g-label="global nav"
+
+                    href="/about/search-ads-360/"
+                    class="dd-menu__nav-item__link ">
+                  <span class="dd-menu__nav-item__title">Search Ads 360</span>
+                  <p class="dd-menu__nav-item__desc">Get real-time data and unified insights for your search campaigns.</p>
+                </a>
+              </li>
+        </ul>
+      </div>
+      <div class="dd-menu__nav-list-ctr" data-dropdown-item="enterprise-subnav">
+<span class="dd-menu__eyebrow">analytics</span>        <ul class="dd-menu__nav-list">
+              <li class="dd-menu__nav-item" aria-level="2">
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="for enterprises: analytics 360"
+    data-g-label="global nav"
+
+                    href="/about/analytics-360/"
+                    class="dd-menu__nav-item__link ">
+                  <span class="dd-menu__nav-item__title">Analytics 360</span>
+                  <p class="dd-menu__nav-item__desc">Use advanced tools to get a deeper understanding of your customers so you can deliver better experiences.</p>
+                </a>
+              </li>
+              <li class="dd-menu__nav-item" aria-level="2">
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="for enterprises: data studio"
+    data-g-label="global nav"
+
+                    href="/about/data-studio/"
+                    class="dd-menu__nav-item__link ">
+                  <span class="dd-menu__nav-item__title">Data Studio</span>
+                  <p class="dd-menu__nav-item__desc">Unlock insights from your data with engaging, customizable reports.</p>
+                </a>
+              </li>
+              <li class="dd-menu__nav-item" aria-level="2">
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="for enterprises: optimize 360"
+    data-g-label="global nav"
+
+                    href="/about/optimize-360/"
+                    class="dd-menu__nav-item__link ">
+                  <span class="dd-menu__nav-item__title">Optimize 360</span>
+                  <p class="dd-menu__nav-item__desc">Test variations of your sites and apps with advanced tools for enterprise marketers.</p>
+                </a>
+              </li>
+              <li class="dd-menu__nav-item" aria-level="2">
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="for enterprises: surveys 360"
+    data-g-label="global nav"
+
+                    href="/about/surveys-360/"
+                    class="dd-menu__nav-item__link ">
+                  <span class="dd-menu__nav-item__title">Surveys 360</span>
+                  <p class="dd-menu__nav-item__desc">Get fast, reliable market research from real people.</p>
+                </a>
+              </li>
+              <li class="dd-menu__nav-item" aria-level="2">
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="for enterprises: tag manager 360"
+    data-g-label="global nav"
+
+                    href="/about/tag-manager-360/"
+                    class="dd-menu__nav-item__link ">
+                  <span class="dd-menu__nav-item__title">Tag Manager 360</span>
+                  <p class="dd-menu__nav-item__desc">Manage all your tags in one place for a smarter, simpler way to oversee your marketing.</p>
+                </a>
+              </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div></div>
+
+
+<div id="h-js-header__drawer" role="navigation" class="h-c-header__drawer" tabindex="0"
+    aria-label="Navigation drawer">
+  <div class="h-c-header__drawer-content">
+    <div class="h-c-header__drawer-bar h-c-header__drawer-bar--inline">
+      <div class="h-c-header__drawer-lockup">
+        <div class="h-c-header__drawer-company-logo">
+          <div class="h-c-header__drawer-company-logo-link" title="Google">
+            <svg alt="Google" role="img" class="h-c-header__drawer-company-logo-img">
+              <use xlink:href="#h-color-google-logo"></use>
+            </svg>
+          </div>
+        </div>
+
+        <div class="h-c-header__drawer-product-logo">
+          <div class="h-c-header__drawer-product-logo-link">
+            <span class="h-c-header__drawer-product-logo-text h-c-header__drawer-product-logo-text--gmp">
+              <a     data-g-event="product: analytics: overview"
+    data-g-action="logo"
+    data-g-label="global nav"
+
+                  href="/about/"
+                  class="h-c-header__product-logo-link">
+                <span class="h-c-header__product-logo-text gmp-logo-text">Marketing Platform</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+        <div class="h-c-header__drawer-initiative-logo">
+          <div class="h-c-header__drawer-initiative-logo-link">
+            <span class="h-c-header__drawer-initiative-logo-text">Analytics</span>
+          </div>
+        </div>
+    </div>
+
+    <nav class="h-c-header__drawer-nav">
+      <ul class="h-c-header__drawer-nav-list">
+
+    <li class="h-c-header__drawer-nav-li" aria-level="1">
+      <a     data-g-event="product: analytics: overview"
+    data-g-action="overview"
+    data-g-label="sub nav"
+
+          href="/about/analytics/"
+          
+          class="h-c-header__drawer-nav-li-link
+ h-is-active">
+        Overview
+      </a>
+    </li>
+    <li class="h-c-header__drawer-nav-li" aria-level="1">
+      <a     data-g-event="product: analytics: overview"
+    data-g-action="benefits"
+    data-g-label="sub nav"
+
+          href="/about/analytics/benefits/"
+          
+          class="h-c-header__drawer-nav-li-link
+">
+        Benefits
+      </a>
+    </li>
+    <li class="h-c-header__drawer-nav-li" aria-level="1">
+      <a     data-g-event="product: analytics: overview"
+    data-g-action="features"
+    data-g-label="sub nav"
+
+          href="/about/analytics/features/"
+          
+          class="h-c-header__drawer-nav-li-link
+">
+        Features
+      </a>
+    </li>
+
+      </ul>
+    </nav>
+  </div>
+
+  <div class="h-c-header__drawer-cta">
+    <ul class="h-c-header__drawer-cta-list">
+          <li class="h-c-header__drawer-cta-li h-c-header__drawer-cta-li--secondary">
+
+              <a     data-g-event="product: analytics: overview"
+    data-g-action="sign in cta"
+    data-g-label="global nav"
+
+                  href="https://analytics.google.com/analytics/web/?utm_source=marketingplatform.google.com&amp;utm_medium=et&amp;utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics%2F"
+                  title="Sign in to Analytics"
+                  class="h-c-header__drawer-cta-li-link h-c-header__drawer-cta-li-link--secondary"
+                      target="_blank" rel="nofollow noreferrer noopener"
+
+                  rel=nofollow>
+                  Sign in to Analytics
+              </a>
+          </li>
+          <li class="h-c-header__drawer-cta-li h-c-header__drawer-cta-li--primary">
+
+              <a     data-g-event="product: analytics: overview"
+    data-g-action="sign up cta"
+    data-g-label="global nav"
+
+                  href="https://analytics.google.com/analytics/?utm_source=marketingplatform.google.com&amp;utm_medium=et&amp;utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics-360%2F"
+                  title="Get started today"
+                  class="h-c-header__drawer-cta-li-link h-c-header__drawer-cta-li-link--primary"
+                      target="_blank" rel="nofollow noreferrer noopener"
+
+                  >
+                  Get started today
+              </a>
+          </li>
+    </ul>
+  </div>
+</div>
+
+<div id="h-js-header__drawer-backdrop" class="h-c-header__drawer-backdrop"></div></div>
+    <main class="gmp-page gmp-page--no-newsletter">
+
+  <section class="gmp-section gmp-mb-l">
+<div class="secondary-hero">
+    <div class="secondary-hero__frame">
+
+  <div class="secondary-hero__background">
+          <div class="gmp-banner">
+        <picture>
+          <source media="(max-width: 640px)" srcset="https://lh3.googleusercontent.com/2o24mdgamPtiZftQj8jcAYn4BBXwoLX-yQ7CifxjJleqJRL0JUykzo7C8-aHgJ3EhUYBuRM-e4QiQ-hiFd0ZznAg0CLkSIOBzVIERAY=s480 1x, https://lh3.googleusercontent.com/YKMw2PiX3aTy1oCL6_X6lX6N_c-rn3ztRD6Fr-dha4qsIDSR9B9tcMMqyFpea7LsquUrY1Wop49bF9rIm03T9__vzyjO3su196lzMA=s960 2x">
+          <source media="(min-width: 641px)" srcset="https://lh3.googleusercontent.com/fDFCCVX0tcVp2wvSUOUlTo6hEOQWjqundwGcxS3qxfMBsB5zwXEywZOuLHNdfClyfxiVxrIP3RAFa7zOahEMERBIqEr1n4uMyCuS1A=s1500 1x, https://lh3.googleusercontent.com/JjewRHousCsko0Q3ZgeYV63GurlKuHv_m7eCMSjTOeQIs_M4CEINyAsc9qmh4P04Bg8gOlDRa9LjaHDT8IvjSWmoZGZ0ny8S5aAAweM=s3000 2x">
+          <img src="https://lh3.googleusercontent.com/fDFCCVX0tcVp2wvSUOUlTo6hEOQWjqundwGcxS3qxfMBsB5zwXEywZOuLHNdfClyfxiVxrIP3RAFa7zOahEMERBIqEr1n4uMyCuS1A=s1500" alt="Get essential customer insights." class="gmp-no-grab secondary-hero__image">
+        </picture>
+      </div>
+
+  </div>
+
+    <div class="secondary-hero__content">
+      <div class="h-c-page">
+        <div class="h-c-grid">
+          <div class="h-c-grid__col h-c-grid__col--8 h-c-grid__col-l--6 h-c-grid__col-l--offset-1 h-c-grid__col-xl--5">
+
+            <div class="secondary-hero__text-box">
+              <h1 class="h-c-headline secondary-hero__headline h-has-bottom-margin">
+                Get essential customer insights.
+              </h1>
+              <h2 class="h-c-description secondary-hero__description"><p>Get a complete understanding of your customers across devices and platforms. Google Analytics gives you the tools, free of charge, to understand the customer journey and improve marketing ROI.</p></h2>
+                    <a     data-g-event="product: analytics: overview"
+    data-g-action="sign up cta"
+    data-g-label="hero"
+
+      href="https://analytics.google.com/analytics/web/?authuser=0#/provision/SignUp"
+      class="h-c-button h-c-button--primary"
+      title="Get started today"
+          target="_blank" rel="nofollow noreferrer noopener"
+ >Get started today</a>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>  </section>
+
+  <section class="gmp-section gmp-mb-l">
+<div class="highlights-module">
+  <div class="h-c-page">
+
+    <div class="h-c-grid highlights-module__sticky-wrapper">
+
+      <div class="h-c-grid__col h-c-grid__col-l--6">
+        <div class="highlights-module__sticky-el">
+                <img alt="See&amp;nbsp;what’s&amp;nbsp;in&amp;nbsp;it for&amp;nbsp;you." srcset="https://lh3.googleusercontent.com/DonyYGiwP0gZLRox-47nXwteiGGAmhi9f9VlygOqqk3ATRRcd56jtYBoAWiAGHS7d00oId4TXPPwp_diOkJHWK9CQQPGv9sf-USSmISqtp8LUjRGF9o=s768 1x, https://lh3.googleusercontent.com/2bXrKqnyKb5FOD4PEq8GDA7jNZdVHgiaaM6KnewZF66t-FJqZVmTKTBC5i21Cme_Yv_c4vrKjvqMqU1EpzJs1verWILO5mBF1bUplklxV3xPaJD16Vx_=s1536 2x" src="https://lh3.googleusercontent.com/DonyYGiwP0gZLRox-47nXwteiGGAmhi9f9VlygOqqk3ATRRcd56jtYBoAWiAGHS7d00oId4TXPPwp_diOkJHWK9CQQPGv9sf-USSmISqtp8LUjRGF9o=s768" class="gmp-no-grab highlights-module__image-desktop">
+
+        </div>
+      </div>
+
+
+      <div class="h-c-grid__col h-c-grid__col-l--5 highlights-module__content">
+        <h3 class="h-c-headline h-c-headline--one h-has-bottom-margin">See&nbsp;what’s&nbsp;in&nbsp;it for&nbsp;you.</h3>
+        <p></p>
+            <picture>
+      <source media="(max-width: 767px)" srcset="https://lh3.googleusercontent.com/vWjZkZfPn2kRlDIydNkCcRWNCBqomdcNIbhfgJOI_2wZmi7ts8wJm_D0WxXMNONUPrfVjqwozWVCFjRC0osQfGsfxgQh5dm-oVLmoglP2p3x-h8ESZs=s480 1x, https://lh3.googleusercontent.com/ynuKEpklhILgTib4fmRg-7PP7SbDeU9iZyRnUlbQgZAh8JceE4mSVUGNmgmHdueQO0Q21cD4I8YRO2DSYADkcJBRY8msj59L3THQo85m0mLztjILB4Q=s960 2x">
+      <source media="(min-width: 768px)" srcset="https://lh3.googleusercontent.com/DonyYGiwP0gZLRox-47nXwteiGGAmhi9f9VlygOqqk3ATRRcd56jtYBoAWiAGHS7d00oId4TXPPwp_diOkJHWK9CQQPGv9sf-USSmISqtp8LUjRGF9o=s1500 1x, https://lh3.googleusercontent.com/2bXrKqnyKb5FOD4PEq8GDA7jNZdVHgiaaM6KnewZF66t-FJqZVmTKTBC5i21Cme_Yv_c4vrKjvqMqU1EpzJs1verWILO5mBF1bUplklxV3xPaJD16Vx_=s3000 2x">
+      <img src="https://lh3.googleusercontent.com/DonyYGiwP0gZLRox-47nXwteiGGAmhi9f9VlygOqqk3ATRRcd56jtYBoAWiAGHS7d00oId4TXPPwp_diOkJHWK9CQQPGv9sf-USSmISqtp8LUjRGF9o=s1500" alt="See&amp;nbsp;what’s&amp;nbsp;in&amp;nbsp;it for&amp;nbsp;you." class='gmp-no-grab highlights-module__image-mobile'>
+    </picture>
+
+        <div class="highlights-module__listing">
+          <ul class="highlights-module__highlights">
+                <li class="highlights-module__highlight">
+                  <picture>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" alt="" role="img" aria-label="people icon" class="gmp-circle-icon gmp-circle-icon--yellow highlights-module__icon">
+    <title>people icon</title>
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+      <path d="m26.75 21.5a3 3 0 1 0 -3-3 3 3 0 0 0 3 3zm-8 0a3 3 0 1 0 -3-3 3 3 0 0 0 3 3zm0 2c-2.33 0-7 1.17-7 3.5v2.5h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62 0-1 .05a4.22 4.22 0 0 1 2 3.45v2.5h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="#fff"/>
+   </svg>
+ </picture>
+                  <h4 class="h-c-headline h-c-headline--four h-has-bottom-margin">
+                    Unlock customer-centric measurement.
+                  </h4>
+                  <p>Understand how your customers interact across your sites and apps, throughout their entire lifecycle.</p>
+                </li>
+                <li class="highlights-module__highlight">
+                  <picture>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" alt="" role="img" aria-label="bulb icon" class="gmp-circle-icon gmp-circle-icon--yellow highlights-module__icon">
+    <title>bulb icon</title>
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+      <path d="m18.74 33a1.26 1.26 0 0 0 1.26 1.21h5a1.26 1.26 0 0 0 1.26-1.21v-1.29h-7.52zm3.76-23.84a8.71 8.71 0 0 0 -8.77 8.77 8.55 8.55 0 0 0 3.76 7.14v2.93a1.26 1.26 0 0 0 1.25 1.25h7.52a1.26 1.26 0 0 0 1.25-1.25v-2.93a8.9 8.9 0 0 0 3.76-7.14 8.71 8.71 0 0 0 -8.77-8.77z" fill="#fff"/>
+   </svg>
+ </picture>
+                  <h4 class="h-c-headline h-c-headline--four h-has-bottom-margin">
+                    Get smarter insights to improve ROI.
+                  </h4>
+                  <p>Uncover new insights and anticipate future customer actions with Google’s machine learning to get more value out of your data.</p>
+                </li>
+                <li class="highlights-module__highlight">
+                  <picture>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" alt="" role="img" aria-label="restart icon" class="gmp-circle-icon gmp-circle-icon--yellow highlights-module__icon">
+    <title>restart icon</title>
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+      <path d="m22.5 14.22v4l5.36-5.36-5.36-5.34v4a10.7 10.7 0 0 0 -9.06 16.48l2-2a7.87 7.87 0 0 1 -.94-3.75 8 8 0 0 1 8-8.03zm9.06 2.33-2 2a8 8 0 0 1 -7.06 11.75v-4l-5.36 5.36 5.36 5.34v-4a10.7 10.7 0 0 0 9.06-16.43z" fill="#fff"/>
+   </svg>
+ </picture>
+                  <h4 class="h-c-headline h-c-headline--four h-has-bottom-margin">
+                    Connect your insights to results.
+                  </h4>
+                  <p>Take action to optimize marketing performance with integrations across Google’s advertising and publisher tools.</p>
+                </li>
+                <li class="highlights-module__highlight">
+                  <picture>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" alt="" role="img" aria-label="checklist icon" class="gmp-circle-icon gmp-circle-icon--yellow highlights-module__icon">
+    <title>checklist icon</title>
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+      <path d="m25 20h-16v2.67h16zm0-5.34h-16v2.67h16zm-16 13.34h10.68v-2.66h-10.68zm26-6 2 2-9.3 9.35-6-6 2-2 4 4z" fill="#fff"/>
+   </svg>
+ </picture>
+                  <h4 class="h-c-headline h-c-headline--four h-has-bottom-margin">
+                    Make your data work for you.
+                  </h4>
+                  <p>Quickly analyze your data and collaborate with an easy-to-use interface and shareable reports.</p>
+                </li>
+          </ul>
+
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="see all benefits"
+    data-g-label="see whats in it for you"
+
+        href="/about/analytics/benefits/"
+        title="See all benefits"
+        class="h-c-link gmp-link"
+         >See all benefits</a>
+        </div>
+      </div>    </div>
+    <div class="highlights-module__carousel highlights-module__carousel--horizontal">
+      <div class="glue-pagination h-c-carousel h-c-carousel--simple">
+        <div class="h-c-carousel__wrap">
+
+          <ul class="glue-carousel" data-glue-carousel data-glue-pagination="demo-cyclical" data-glue-carousel-breakpoints="['x-small','small']">
+                <li class="h-c-carousel__item">
+                  <picture>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" alt="" role="img" aria-label="people icon" class="gmp-circle-icon gmp-circle-icon--yellow highlights-module__icon">
+    <title>people icon</title>
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+      <path d="m26.75 21.5a3 3 0 1 0 -3-3 3 3 0 0 0 3 3zm-8 0a3 3 0 1 0 -3-3 3 3 0 0 0 3 3zm0 2c-2.33 0-7 1.17-7 3.5v2.5h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62 0-1 .05a4.22 4.22 0 0 1 2 3.45v2.5h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="#fff"/>
+   </svg>
+ </picture>
+                  <h4 class="h-c-headline h-c-headline--four highlights-module__subhead">Unlock customer-centric measurement.</h4>
+                    <div class="highlights-module__description"><p>Understand how your customers interact across your sites and apps, throughout their entire lifecycle.</p></div>
+                </li>
+                <li class="h-c-carousel__item">
+                  <picture>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" alt="" role="img" aria-label="bulb icon" class="gmp-circle-icon gmp-circle-icon--yellow highlights-module__icon">
+    <title>bulb icon</title>
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+      <path d="m18.74 33a1.26 1.26 0 0 0 1.26 1.21h5a1.26 1.26 0 0 0 1.26-1.21v-1.29h-7.52zm3.76-23.84a8.71 8.71 0 0 0 -8.77 8.77 8.55 8.55 0 0 0 3.76 7.14v2.93a1.26 1.26 0 0 0 1.25 1.25h7.52a1.26 1.26 0 0 0 1.25-1.25v-2.93a8.9 8.9 0 0 0 3.76-7.14 8.71 8.71 0 0 0 -8.77-8.77z" fill="#fff"/>
+   </svg>
+ </picture>
+                  <h4 class="h-c-headline h-c-headline--four highlights-module__subhead">Get smarter insights to improve ROI.</h4>
+                    <div class="highlights-module__description"><p>Uncover new insights and anticipate future customer actions with Google’s machine learning to get more value out of your data.</p></div>
+                </li>
+                <li class="h-c-carousel__item">
+                  <picture>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" alt="" role="img" aria-label="restart icon" class="gmp-circle-icon gmp-circle-icon--yellow highlights-module__icon">
+    <title>restart icon</title>
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+      <path d="m22.5 14.22v4l5.36-5.36-5.36-5.34v4a10.7 10.7 0 0 0 -9.06 16.48l2-2a7.87 7.87 0 0 1 -.94-3.75 8 8 0 0 1 8-8.03zm9.06 2.33-2 2a8 8 0 0 1 -7.06 11.75v-4l-5.36 5.36 5.36 5.34v-4a10.7 10.7 0 0 0 9.06-16.43z" fill="#fff"/>
+   </svg>
+ </picture>
+                  <h4 class="h-c-headline h-c-headline--four highlights-module__subhead">Connect your insights to results.</h4>
+                    <div class="highlights-module__description"><p>Take action to optimize marketing performance with integrations across Google’s advertising and publisher tools.</p></div>
+                </li>
+                <li class="h-c-carousel__item">
+                  <picture>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" alt="" role="img" aria-label="checklist icon" class="gmp-circle-icon gmp-circle-icon--yellow highlights-module__icon">
+    <title>checklist icon</title>
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+      <path d="m25 20h-16v2.67h16zm0-5.34h-16v2.67h16zm-16 13.34h10.68v-2.66h-10.68zm26-6 2 2-9.3 9.35-6-6 2-2 4 4z" fill="#fff"/>
+   </svg>
+ </picture>
+                  <h4 class="h-c-headline h-c-headline--four highlights-module__subhead">Make your data work for you.</h4>
+                    <div class="highlights-module__description"><p>Quickly analyze your data and collaborate with an easy-to-use interface and shareable reports.</p></div>
+                </li>
+          </ul>
+
+        </div>
+
+          <div class="h-c-carousel__navigation">
+            <ul class="glue-pagination-page-list" data-glue-pagination-page-list data-glue-pagination="demo-cyclical" role="tablist">
+                  <li class="glue-o-pagination__button-container glue-o-pagination__page-list-button-container">
+                    <button type="button" class="glue-o-pagination__button glue-o-pagination__page-list-button" role="tab" data-glue-pagination-page="2">2</button>
+                  </li>
+                  <li class="glue-o-pagination__button-container glue-o-pagination__page-list-button-container">
+                    <button type="button" class="glue-o-pagination__button glue-o-pagination__page-list-button" role="tab" data-glue-pagination-page="3">3</button>
+                  </li>
+                  <li class="glue-o-pagination__button-container glue-o-pagination__page-list-button-container">
+                    <button type="button" class="glue-o-pagination__button glue-o-pagination__page-list-button" role="tab" data-glue-pagination-page="4">4</button>
+                  </li>
+                  <li class="glue-o-pagination__button-container glue-o-pagination__page-list-button-container">
+                    <button type="button" class="glue-o-pagination__button glue-o-pagination__page-list-button" role="tab" data-glue-pagination-page="5">5</button>
+                  </li>
+            </ul>
+          </div>
+      </div>
+        <div class="highlights-module__cta highlights-module__cta--mobile">
+              <a     data-g-event="product: analytics: overview"
+    data-g-action="see all benefits"
+    data-g-label="see whats in it for you"
+
+        href="/about/analytics/benefits/"
+        title="See all benefits"
+        class="h-c-link gmp-link"
+         >See all benefits</a>
+        </div>
+
+    </div>
+
+  </div></div>  </section>
+
+
+    <section class="gmp-section gmp-mb-l">
+
+<div class="color-bar">
+
+    <div class="h-c-page">
+      <div class="h-c-grid">
+        <div class="h-c-grid__col h-c-grid__col-l--8 h-c-grid__col-l--offset-2 h-c-grid__col--align-middle">
+
+        <div class="color-bar__icon color-bar__icon--green "></div>
+        <h3 class="h-c-headline h-c-headline--two color-bar__quote">
+            <span>Google Analytics allows us to look at our data across platforms — web and app — to understand the full journey of our users. We’ve been able to </span>
+<span class="color-bar__highlight color-bar__highlight--green">cut our reporting time by 50%.</span>        </h3>
+        <p class="color-bar__credit">
+          <span class="color-bar__author">Sara Swaney</span>,
+          Director of Advancement,
+              412 Food Rescue
+        </p>
+        
+
+        </div>
+      </div>
+    </div>
+</div>
+
+
+    </section>
+
+    <section class="gmp-section gmp-mb-xl">
+
+<div class="two-column-tout">
+  <div class="h-c-page">
+
+
+      <div class="h-c-grid">
+
+        <div class="h-c-grid__col h-c-grid__col-xl--offset-1 h-c-grid__col-l--6
+            h-c-grid__col-xl--5  h-c-grid__col--align-middle
+            two-column-tout__content">
+          
+          <h3 class="h-c-headline h-c-headline--one">
+            Dive into the details.
+          </h3>
+          <div class="h-u-mb-std two-column-tout__description">
+            <p>Get a reliable measurement foundation with built-in automation, intuitive and flexible reporting, cross-platform attribution, and so much more.</p>
+          </div>
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="see all features"
+    data-g-label="dive into the details"
+
+        href="/about/analytics/features/"
+        title="See all features"
+        class="h-c-link h-c-link--internal gmp-link"
+         >See all features</a>
+        </div>
+
+        <div class="h-c-grid__col
+          h-c-grid__col-l--6  h-c-grid__col--align-middle">
+          <div class="two-column-tout__image two-column-tout__image--right text-center">
+                <picture>
+      <source media="(max-width: 767px)" srcset="https://lh3.googleusercontent.com/pEKAiriCU8ATQ1tYEfGIAjORLzno26vrLwaMu5aA3Pyk1AqjOLg2qcmP4BmBHSKBfK8K-ZFzAXd9PblDKddlQn_mlN6jY_5JD8TvOJVYm56WFRY8OCY=s480 1x, https://lh3.googleusercontent.com/uyw87SmUntC8oS7vnZrjJeNsC_65188eOVnwbiNvcmAH3EevrRzEh_PkedRYVsfliR9_GoComtbi2HwtegwKd-hkTLGUqDuyvpMyetaE7eGXsKKdLAY=s960 2x">
+      <source media="(min-width: 768px)" srcset="https://lh3.googleusercontent.com/ZlRZeSGxjZgtGK0nRTPKjg0TQUxouLsOgHKw2n69_mKEUNSqey8StIGcjkkzL1HFFyKA_ptSKkb6i51qwMeWLW3g_FR22iK6K3-_ygUee1OAii6FAvo=s1500 1x, https://lh3.googleusercontent.com/N4mTdMe6WtsluY8sVY-nFOAk-alj409W_9I41BX9cc55NpWyvSkd2lFYA-vhn_2sFARBQ6hJmEmmuX6xWEkilW3_PBEtn0SnMyBK-90TTJqYgG9O4A=s3000 2x">
+      <img src="https://lh3.googleusercontent.com/ZlRZeSGxjZgtGK0nRTPKjg0TQUxouLsOgHKw2n69_mKEUNSqey8StIGcjkkzL1HFFyKA_ptSKkb6i51qwMeWLW3g_FR22iK6K3-_ygUee1OAii6FAvo=s1500" alt="Dive into the details." class='gmp-no-grab '>
+    </picture>
+          </div>
+        </div>
+
+      </div>
+
+  </div>
+</div>    </section>
+
+  <section class="gmp-section gmp-mb-l">
+<div class="highlights-module">
+  <div class="h-c-page">
+
+    <div class="h-c-grid highlights-module__sticky-wrapper">
+
+      <div class="h-c-grid__col h-c-grid__col-l--6">
+        <div class="highlights-module__sticky-el">
+                <img alt="Designed to work together." srcset="https://lh3.googleusercontent.com/886LNm9rZXs_jXtALs29EXMbMlrxBM3CcJtVBs4hrkrEJtV-bUTc7yE2gi_4KxPsI7COlPVXVi9Jr5eo9KbTPvckf6BQfJGdRbpq3xsZ6T-hF3ayCVk=s768 1x, https://lh3.googleusercontent.com/55CFY12lknKe5gCNU2OCYO1hwCRrZ-ya5l2x5FVNix0KK8iv95mp1EAF5ZBszhaWoyXhqj_mCbNHsx5Q-ZkVOuU51OIOf1vgEeDMHj-Ss2IICIJlEHg=s1536 2x" src="https://lh3.googleusercontent.com/886LNm9rZXs_jXtALs29EXMbMlrxBM3CcJtVBs4hrkrEJtV-bUTc7yE2gi_4KxPsI7COlPVXVi9Jr5eo9KbTPvckf6BQfJGdRbpq3xsZ6T-hF3ayCVk=s768" class="gmp-no-grab highlights-module__image-desktop">
+
+        </div>
+      </div>
+
+
+      <div class="h-c-grid__col h-c-grid__col-l--5 highlights-module__content">
+        <h3 class="h-c-headline h-c-headline--one h-has-bottom-margin">Designed to work together.</h3>
+        <p>Use Analytics with other Google solutions to get a complete understanding of your marketing efforts and enhance performance.</p>
+            <picture>
+      <source media="(max-width: 767px)" srcset="https://lh3.googleusercontent.com/px1OOpFcVR-h9zvJqkX5O5UmNsX8z5ajHaQDjC-VhLLkaKFuPhdDoe0CZ7qY3KzCQ1q_DdieYhA3RSSW7CSEXDDxNuyW8aS2FQN_nY7FsVJT0f-tgX0=s480 1x, https://lh3.googleusercontent.com/Vm-318wd-ruvQZRSNXbOw8URj483mrk8pSkI1kDMAJqpcqk3PnuQpWOoNKl5YGYsHpt1Bi6fbOlBtVziyONnc9_6KRXPaoRqSaD4okH-o9f3wxieEoY=s960 2x">
+      <source media="(min-width: 768px)" srcset="https://lh3.googleusercontent.com/886LNm9rZXs_jXtALs29EXMbMlrxBM3CcJtVBs4hrkrEJtV-bUTc7yE2gi_4KxPsI7COlPVXVi9Jr5eo9KbTPvckf6BQfJGdRbpq3xsZ6T-hF3ayCVk=s1500 1x, https://lh3.googleusercontent.com/55CFY12lknKe5gCNU2OCYO1hwCRrZ-ya5l2x5FVNix0KK8iv95mp1EAF5ZBszhaWoyXhqj_mCbNHsx5Q-ZkVOuU51OIOf1vgEeDMHj-Ss2IICIJlEHg=s3000 2x">
+      <img src="https://lh3.googleusercontent.com/886LNm9rZXs_jXtALs29EXMbMlrxBM3CcJtVBs4hrkrEJtV-bUTc7yE2gi_4KxPsI7COlPVXVi9Jr5eo9KbTPvckf6BQfJGdRbpq3xsZ6T-hF3ayCVk=s1500" alt="Designed to work together." class='gmp-no-grab highlights-module__image-mobile'>
+    </picture>
+
+        <div class="highlights-module__listing">
+          <ul class="highlights-module__highlights">
+                <li class="highlights-module__highlight">
+                  <picture>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" alt="" role="img" aria-label="googleads icon" class="gmp-circle-icon gmp-circle-icon--white highlights-module__icon">
+    <title>googleads icon</title>
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+      <rect width="45" height="45" fill="#ffffff"/><g transform="matrix(1.18, 0, 0, 1.18, -10, 1)"><path d="m9.28 16.03h17.59v8.8h-17.59z" fill="#fbbc04" transform="matrix(.5 -.8660254 .8660254 .5 -8.65 25.87)"/><path d="m35.09 25.85-8.8-15.24a4.4 4.4 0 1 0 -7.62 4.39l8.8 15.24a4.4 4.4 0 1 0 7.62-4.4z" fill="#4285f4"/><circle cx="13.68" cy="28.05" fill="#34a853" r="4.4"/></g>
+   </svg>
+ </picture>
+                  <h4 class="h-c-headline h-c-headline--four h-has-bottom-margin">
+                    Google Ads
+                  </h4>
+                  
+                </li>
+                <li class="highlights-module__highlight">
+                  <picture>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -8 70 70" alt="" role="img" aria-label="search-ads icon" class="gmp-circle-icon gmp-circle-icon--white highlights-module__icon">
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+    <rect width="45" height="45" fill="#ffffff"/><g transform="matrix(1.18, 0, 0, 1.18, -13, 1)"><path class="blue-1" d="M45.34,37.54l-6.92-7-7.89,8,6.92,7a5.55,5.55,0,0,0,7.89,0A5.66,5.66,0,0,0,45.34,37.54Z"/><path class="blue-2" d="M35.57,6.86A20.23,20.23,0,0,0,7,6.86H7A20.23,20.23,0,0,0,35.57,35.47h0A20.23,20.23,0,0,0,35.57,6.86ZM27.62,27.52h0A9,9,0,0,1,14.9,14.81h0A9,9,0,0,1,27.62,27.52Z"/></g> </picture>
+                  <h4 class="h-c-headline h-c-headline--four h-has-bottom-margin">
+                    Search Ads 360
+                  </h4>
+                  
+                </li>
+                <li class="highlights-module__highlight">
+                  <picture>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" alt="" role="img" aria-label="display-video-360 icon" class="gmp-circle-icon gmp-circle-icon--white highlights-module__icon">
+    <title>display-video-360 icon</title>
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+      <rect width="45" height="45" fill="#ffffff"/><g transform="matrix(1.18, 0, 0, 1.18, -13, 1)"><path d="m32.65 18.83a3.59 3.59 0 0 1 3.73 6.17l-.14.08-18.68 10.72a3.59 3.59 0 0 1 -3.72-6.13l.14-.08z" fill="#81c995"/><path d="m19.23 11.16a3.58 3.58 0 0 0 -4.32-3.52 3.7 3.7 0 0 0 -2.82 3.65v21.37l7.14.13z" fill="#34a853"/><path d="m32.73 25.05a3.75 3.75 0 0 0 4.9-1.32 3.56 3.56 0 0 0 -1.24-4.87l-18.85-10.8a3.54 3.54 0 0 0 -4.87 1.2l-.07.13a3.57 3.57 0 0 0 1.28 4.88z" fill="#5bb974"/><path d="m36.23 25.08-17 9.5v-8.16l13.49-7.52a3.7 3.7 0 0 1 5.27 2 3.58 3.58 0 0 1 -1.76 4.18z" fill="#81c995"/><circle cx="15.66" cy="32.84" fill="#1e8e3e" r="3.57"/></g>
+   </svg>
+ </picture>
+                  <h4 class="h-c-headline h-c-headline--four h-has-bottom-margin">
+                    Display &amp; Video 360
+                  </h4>
+                  
+                </li>
+                <li class="highlights-module__highlight">
+                  <picture>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" alt="" role="img" aria-label="logo-google-cloud icon" class="gmp-circle-icon gmp-circle-icon--white highlights-module__icon">
+    <title>logo-google-cloud icon</title>
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+      <svg width="45" height="45" viewBox="0 0 38 38" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.9695 12.047L25.1352 12.0688L28.3038 8.90016L28.4582 7.55829C25.9407 5.31787 22.6276 3.95422 18.9998 3.95422C12.4309 3.95422 6.89124 8.4212 5.24854 14.4775C5.59489 14.238 6.33312 14.4161 6.33312 14.4161L12.6665 13.3751C12.6665 13.3751 12.995 12.8367 13.1553 12.8704C14.6041 11.2851 16.6881 10.2876 18.9998 10.2876C20.88 10.2876 22.6098 10.9486 23.9695 12.047Z" fill="#EA4335"/>
+        <path d="M32.7549 14.4855C32.0206 11.7701 30.5006 9.37531 28.4561 7.55646L23.9674 12.0452C25.7645 13.4979 26.9163 15.7185 26.9163 18.2044V18.996C29.0994 18.996 30.8747 20.7714 30.8747 22.9544C30.8747 25.1374 29.0994 26.9127 26.9163 26.9127H18.9997L18.208 27.7083V32.4583L18.9997 33.246H26.9163C32.5906 33.246 37.208 28.6286 37.208 22.9544C37.208 19.4453 35.4426 16.344 32.7549 14.4855Z" fill="#4285F4"/>
+        <path d="M11.0828 33.246H18.9935V26.9127H11.0828C10.5009 26.9127 9.95072 26.7841 9.45197 26.5565L8.31197 26.9068L5.14134 30.0774L4.86426 31.1481C6.59207 32.4623 8.74738 33.246 11.0828 33.246Z" fill="#34A853"/>
+        <path d="M11.0832 12.6625C5.4089 12.6625 0.791504 17.2799 0.791504 22.9542C0.791504 26.295 2.39265 29.2697 4.86859 31.1499L9.45828 26.5602C8.08473 25.9388 7.12484 24.5573 7.12484 22.9542C7.12484 20.7712 8.90015 18.9959 11.0832 18.9959C12.6863 18.9959 14.0678 19.9558 14.6892 21.3293L19.2789 16.7396C17.3987 14.2637 14.424 12.6625 11.0832 12.6625Z" fill="#FBBC05"/>
+      </svg>
+   </svg>
+ </picture>
+                  <h4 class="h-c-headline h-c-headline--four h-has-bottom-margin">
+                    Google Cloud
+                  </h4>
+                  
+                </li>
+                <li class="highlights-module__highlight">
+                  <picture>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" alt="" role="img" aria-label="logo-search-console icon" class="gmp-circle-icon gmp-circle-icon--white highlights-module__icon">
+    <title>logo-search-console icon</title>
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 250 250" style="enable-background:new 0 0 250 250" xml:space="preserve"><style>.st7{fill:#e6e6e6}</style><path style="fill:#737373" d="M153.9 38.4H96.1L81.7 52.9v14.4h14.4V52.9h57.8v14.4h14.4V52.9z"/><defs><path id="SVGID_1_" d="M96.1 38.4h57.7v14.4H96.1z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#bfbfbf" d="M96.1 38.4v14.5h57.8V38.4z"/><defs><path id="SVGID_3_" d="M55.3 67.3 27.6 95v102.1c0 8 6.5 14.4 14.4 14.4h166c8 0 14.4-6.5 14.4-14.4v-102l-27.8-27.8H55.3zm139.3 0z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><radialGradient id="SVGID_5_" cx="-715.537" cy="648.691" r="1" gradientTransform="scale(236.4022 -236.4022) rotate(-45 -1141.09 -539.674)" gradientUnits="userSpaceOnUse"><stop offset="0" style="stop-color:#f1f2f2"/><stop offset="1" style="stop-color:#e6e7e8"/></radialGradient><path style="clip-path:url(#SVGID_4_);fill:url(#SVGID_5_)" d="m125-30.1 169.5 169.5L125 309-44.5 139.4z"/><path style="fill:#fff" d="M49.3 121.4h151.5v90.2H49.3z"/><defs><path id="SVGID_6_" d="M27.6 67.3h194.8v54.1H27.6z"/></defs><clipPath id="SVGID_7_"><use xlink:href="#SVGID_6_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_7_);fill:#e0e0e0" d="M55.3 67.3 27.6 95v26.4h194.8V95.1l-27.8-27.8z"/><g><defs><path id="SVGID_8_" d="M60.1 200.7H125v10.8H60.1z"/></defs><clipPath id="SVGID_9_"><use xlink:href="#SVGID_8_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_9_);fill:#d1d1d1" d="M60.1 200.7H125v10.8H60.1z"/></g><path d="M49.3 104.6c0-6.2 5-11.2 11.2-11.2h129c6.2 0 11.2 5 11.2 11.2v16.8H49.3v-16.8z" style="fill:#4285f4"/><path class="st7" d="M70.9 107c0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4 0-3 2.4-5.4 5.4-5.4 3 0 5.4 2.4 5.4 5.4M88.9 107c0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4 0-3 2.4-5.4 5.4-5.4 3 0 5.4 2.4 5.4 5.4"/><g><defs><path id="SVGID_10_" d="M138.5 134h62.2v77.5h-62.2z"/></defs><clipPath id="SVGID_11_"><use xlink:href="#SVGID_10_" style="overflow:visible"/></clipPath><g style="clip-path:url(#SVGID_11_)"><defs><path id="SVGID_12_" d="M138.5 134h62.2v77.5h-62.2z"/></defs><clipPath id="SVGID_13_"><use xlink:href="#SVGID_12_" style="overflow:visible"/></clipPath><path d="M200.7 164.1 178 141.4l-7.6 23.5-31-30.9-.9 47.7 11.5 18c1.7-.3-8.6 11.8-8.6 11.8h59.3v-47.4z" style="clip-path:url(#SVGID_13_);fill:#bababa"/></g></g><path d="M186.5 163.2c0-12.8-7.5-23.8-18.2-29.1v30.4l-14.3 7.7-14.5-7.7V134c-10.7 5.3-18 16.4-18 29.1 0 12.8 7.4 23.8 18.1 29.1v19.3h28.8v-19.3c10.6-5.2 18.1-16.3 18.1-29" style="fill:#4d4d4d"/><g><defs><path id="SVGID_14_" d="M60.1 132.2h50.5v57.7H60.1z"/></defs><clipPath id="SVGID_15_"><use xlink:href="#SVGID_14_" style="overflow:visible"/></clipPath><g style="clip-path:url(#SVGID_15_)"><defs><path id="SVGID_16_" d="M60.1 132.2h50.5v57.7H60.1z"/></defs><clipPath id="SVGID_17_"><use xlink:href="#SVGID_16_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_17_);fill:#d1d1d1" d="M60.1 132.2h50.5v57.7H60.1z"/></g></g></svg>
+   </svg>
+ </picture>
+                  <h4 class="h-c-headline h-c-headline--four h-has-bottom-margin">
+                    Google Search Console
+                  </h4>
+                  
+                </li>
+          </ul>
+
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="see all integrations"
+    data-g-label="designed to work together"
+
+        href="/about/analytics-360/features/#integrations"
+        title="See all integrations"
+        class="h-c-link gmp-link"
+         >See all integrations</a>
+        </div>
+      </div>    </div>
+    <div class="highlights-module__carousel highlights-module__carousel--horizontal">
+      <div class="glue-pagination h-c-carousel h-c-carousel--simple">
+        <div class="h-c-carousel__wrap">
+
+          <ul class="glue-carousel" data-glue-carousel data-glue-pagination="demo-cyclical" data-glue-carousel-breakpoints="['x-small','small']">
+                <li class="h-c-carousel__item highlights-module__list">
+                  <picture>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" alt="" role="img" aria-label="googleads icon" class="gmp-circle-icon gmp-circle-icon--white highlights-module__icon">
+    <title>googleads icon</title>
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+      <rect width="45" height="45" fill="#ffffff"/><g transform="matrix(1.18, 0, 0, 1.18, -10, 1)"><path d="m9.28 16.03h17.59v8.8h-17.59z" fill="#fbbc04" transform="matrix(.5 -.8660254 .8660254 .5 -8.65 25.87)"/><path d="m35.09 25.85-8.8-15.24a4.4 4.4 0 1 0 -7.62 4.39l8.8 15.24a4.4 4.4 0 1 0 7.62-4.4z" fill="#4285f4"/><circle cx="13.68" cy="28.05" fill="#34a853" r="4.4"/></g>
+   </svg>
+ </picture>
+                  <h4 class="h-c-headline h-c-headline--four highlights-module__subhead">Google Ads</h4>
+                </li>
+                <li class="h-c-carousel__item highlights-module__list">
+                  <picture>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -8 70 70" alt="" role="img" aria-label="search-ads icon" class="gmp-circle-icon gmp-circle-icon--white highlights-module__icon">
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+    <rect width="45" height="45" fill="#ffffff"/><g transform="matrix(1.18, 0, 0, 1.18, -13, 1)"><path class="blue-1" d="M45.34,37.54l-6.92-7-7.89,8,6.92,7a5.55,5.55,0,0,0,7.89,0A5.66,5.66,0,0,0,45.34,37.54Z"/><path class="blue-2" d="M35.57,6.86A20.23,20.23,0,0,0,7,6.86H7A20.23,20.23,0,0,0,35.57,35.47h0A20.23,20.23,0,0,0,35.57,6.86ZM27.62,27.52h0A9,9,0,0,1,14.9,14.81h0A9,9,0,0,1,27.62,27.52Z"/></g> </picture>
+                  <h4 class="h-c-headline h-c-headline--four highlights-module__subhead">Search Ads 360</h4>
+                </li>
+                <li class="h-c-carousel__item highlights-module__list">
+                  <picture>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" alt="" role="img" aria-label="display-video-360 icon" class="gmp-circle-icon gmp-circle-icon--white highlights-module__icon">
+    <title>display-video-360 icon</title>
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+      <rect width="45" height="45" fill="#ffffff"/><g transform="matrix(1.18, 0, 0, 1.18, -13, 1)"><path d="m32.65 18.83a3.59 3.59 0 0 1 3.73 6.17l-.14.08-18.68 10.72a3.59 3.59 0 0 1 -3.72-6.13l.14-.08z" fill="#81c995"/><path d="m19.23 11.16a3.58 3.58 0 0 0 -4.32-3.52 3.7 3.7 0 0 0 -2.82 3.65v21.37l7.14.13z" fill="#34a853"/><path d="m32.73 25.05a3.75 3.75 0 0 0 4.9-1.32 3.56 3.56 0 0 0 -1.24-4.87l-18.85-10.8a3.54 3.54 0 0 0 -4.87 1.2l-.07.13a3.57 3.57 0 0 0 1.28 4.88z" fill="#5bb974"/><path d="m36.23 25.08-17 9.5v-8.16l13.49-7.52a3.7 3.7 0 0 1 5.27 2 3.58 3.58 0 0 1 -1.76 4.18z" fill="#81c995"/><circle cx="15.66" cy="32.84" fill="#1e8e3e" r="3.57"/></g>
+   </svg>
+ </picture>
+                  <h4 class="h-c-headline h-c-headline--four highlights-module__subhead">Display &amp; Video 360</h4>
+                </li>
+                <li class="h-c-carousel__item highlights-module__list">
+                  <picture>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" alt="" role="img" aria-label="logo-google-cloud icon" class="gmp-circle-icon gmp-circle-icon--white highlights-module__icon">
+    <title>logo-google-cloud icon</title>
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+      <svg width="45" height="45" viewBox="0 0 38 38" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+        <path d="M23.9695 12.047L25.1352 12.0688L28.3038 8.90016L28.4582 7.55829C25.9407 5.31787 22.6276 3.95422 18.9998 3.95422C12.4309 3.95422 6.89124 8.4212 5.24854 14.4775C5.59489 14.238 6.33312 14.4161 6.33312 14.4161L12.6665 13.3751C12.6665 13.3751 12.995 12.8367 13.1553 12.8704C14.6041 11.2851 16.6881 10.2876 18.9998 10.2876C20.88 10.2876 22.6098 10.9486 23.9695 12.047Z" fill="#EA4335"/>
+        <path d="M32.7549 14.4855C32.0206 11.7701 30.5006 9.37531 28.4561 7.55646L23.9674 12.0452C25.7645 13.4979 26.9163 15.7185 26.9163 18.2044V18.996C29.0994 18.996 30.8747 20.7714 30.8747 22.9544C30.8747 25.1374 29.0994 26.9127 26.9163 26.9127H18.9997L18.208 27.7083V32.4583L18.9997 33.246H26.9163C32.5906 33.246 37.208 28.6286 37.208 22.9544C37.208 19.4453 35.4426 16.344 32.7549 14.4855Z" fill="#4285F4"/>
+        <path d="M11.0828 33.246H18.9935V26.9127H11.0828C10.5009 26.9127 9.95072 26.7841 9.45197 26.5565L8.31197 26.9068L5.14134 30.0774L4.86426 31.1481C6.59207 32.4623 8.74738 33.246 11.0828 33.246Z" fill="#34A853"/>
+        <path d="M11.0832 12.6625C5.4089 12.6625 0.791504 17.2799 0.791504 22.9542C0.791504 26.295 2.39265 29.2697 4.86859 31.1499L9.45828 26.5602C8.08473 25.9388 7.12484 24.5573 7.12484 22.9542C7.12484 20.7712 8.90015 18.9959 11.0832 18.9959C12.6863 18.9959 14.0678 19.9558 14.6892 21.3293L19.2789 16.7396C17.3987 14.2637 14.424 12.6625 11.0832 12.6625Z" fill="#FBBC05"/>
+      </svg>
+   </svg>
+ </picture>
+                  <h4 class="h-c-headline h-c-headline--four highlights-module__subhead">Google Cloud</h4>
+                </li>
+                <li class="h-c-carousel__item highlights-module__list">
+                  <picture>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 45" alt="" role="img" aria-label="logo-search-console icon" class="gmp-circle-icon gmp-circle-icon--white highlights-module__icon">
+    <title>logo-search-console icon</title>
+    <circle class="gmp-icon--accent" cx="22.5" cy="22.5" r="22.5"/>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 250 250" style="enable-background:new 0 0 250 250" xml:space="preserve"><style>.st7{fill:#e6e6e6}</style><path style="fill:#737373" d="M153.9 38.4H96.1L81.7 52.9v14.4h14.4V52.9h57.8v14.4h14.4V52.9z"/><defs><path id="SVGID_1_" d="M96.1 38.4h57.7v14.4H96.1z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#bfbfbf" d="M96.1 38.4v14.5h57.8V38.4z"/><defs><path id="SVGID_3_" d="M55.3 67.3 27.6 95v102.1c0 8 6.5 14.4 14.4 14.4h166c8 0 14.4-6.5 14.4-14.4v-102l-27.8-27.8H55.3zm139.3 0z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><radialGradient id="SVGID_5_" cx="-715.537" cy="648.691" r="1" gradientTransform="scale(236.4022 -236.4022) rotate(-45 -1141.09 -539.674)" gradientUnits="userSpaceOnUse"><stop offset="0" style="stop-color:#f1f2f2"/><stop offset="1" style="stop-color:#e6e7e8"/></radialGradient><path style="clip-path:url(#SVGID_4_);fill:url(#SVGID_5_)" d="m125-30.1 169.5 169.5L125 309-44.5 139.4z"/><path style="fill:#fff" d="M49.3 121.4h151.5v90.2H49.3z"/><defs><path id="SVGID_6_" d="M27.6 67.3h194.8v54.1H27.6z"/></defs><clipPath id="SVGID_7_"><use xlink:href="#SVGID_6_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_7_);fill:#e0e0e0" d="M55.3 67.3 27.6 95v26.4h194.8V95.1l-27.8-27.8z"/><g><defs><path id="SVGID_8_" d="M60.1 200.7H125v10.8H60.1z"/></defs><clipPath id="SVGID_9_"><use xlink:href="#SVGID_8_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_9_);fill:#d1d1d1" d="M60.1 200.7H125v10.8H60.1z"/></g><path d="M49.3 104.6c0-6.2 5-11.2 11.2-11.2h129c6.2 0 11.2 5 11.2 11.2v16.8H49.3v-16.8z" style="fill:#4285f4"/><path class="st7" d="M70.9 107c0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4 0-3 2.4-5.4 5.4-5.4 3 0 5.4 2.4 5.4 5.4M88.9 107c0 3-2.4 5.4-5.4 5.4-3 0-5.4-2.4-5.4-5.4 0-3 2.4-5.4 5.4-5.4 3 0 5.4 2.4 5.4 5.4"/><g><defs><path id="SVGID_10_" d="M138.5 134h62.2v77.5h-62.2z"/></defs><clipPath id="SVGID_11_"><use xlink:href="#SVGID_10_" style="overflow:visible"/></clipPath><g style="clip-path:url(#SVGID_11_)"><defs><path id="SVGID_12_" d="M138.5 134h62.2v77.5h-62.2z"/></defs><clipPath id="SVGID_13_"><use xlink:href="#SVGID_12_" style="overflow:visible"/></clipPath><path d="M200.7 164.1 178 141.4l-7.6 23.5-31-30.9-.9 47.7 11.5 18c1.7-.3-8.6 11.8-8.6 11.8h59.3v-47.4z" style="clip-path:url(#SVGID_13_);fill:#bababa"/></g></g><path d="M186.5 163.2c0-12.8-7.5-23.8-18.2-29.1v30.4l-14.3 7.7-14.5-7.7V134c-10.7 5.3-18 16.4-18 29.1 0 12.8 7.4 23.8 18.1 29.1v19.3h28.8v-19.3c10.6-5.2 18.1-16.3 18.1-29" style="fill:#4d4d4d"/><g><defs><path id="SVGID_14_" d="M60.1 132.2h50.5v57.7H60.1z"/></defs><clipPath id="SVGID_15_"><use xlink:href="#SVGID_14_" style="overflow:visible"/></clipPath><g style="clip-path:url(#SVGID_15_)"><defs><path id="SVGID_16_" d="M60.1 132.2h50.5v57.7H60.1z"/></defs><clipPath id="SVGID_17_"><use xlink:href="#SVGID_16_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_17_);fill:#d1d1d1" d="M60.1 132.2h50.5v57.7H60.1z"/></g></g></svg>
+   </svg>
+ </picture>
+                  <h4 class="h-c-headline h-c-headline--four highlights-module__subhead">Google Search Console</h4>
+                </li>
+          </ul>
+
+        </div>
+
+          <div class="h-c-carousel__navigation">
+            <ul class="glue-pagination-page-list" data-glue-pagination-page-list data-glue-pagination="demo-cyclical" role="tablist">
+                  <li class="glue-o-pagination__button-container glue-o-pagination__page-list-button-container">
+                    <button type="button" class="glue-o-pagination__button glue-o-pagination__page-list-button" role="tab" data-glue-pagination-page="2">2</button>
+                  </li>
+                  <li class="glue-o-pagination__button-container glue-o-pagination__page-list-button-container">
+                    <button type="button" class="glue-o-pagination__button glue-o-pagination__page-list-button" role="tab" data-glue-pagination-page="3">3</button>
+                  </li>
+                  <li class="glue-o-pagination__button-container glue-o-pagination__page-list-button-container">
+                    <button type="button" class="glue-o-pagination__button glue-o-pagination__page-list-button" role="tab" data-glue-pagination-page="4">4</button>
+                  </li>
+                  <li class="glue-o-pagination__button-container glue-o-pagination__page-list-button-container">
+                    <button type="button" class="glue-o-pagination__button glue-o-pagination__page-list-button" role="tab" data-glue-pagination-page="5">5</button>
+                  </li>
+                  <li class="glue-o-pagination__button-container glue-o-pagination__page-list-button-container">
+                    <button type="button" class="glue-o-pagination__button glue-o-pagination__page-list-button" role="tab" data-glue-pagination-page="6">6</button>
+                  </li>
+            </ul>
+          </div>
+      </div>
+        <div class="highlights-module__cta highlights-module__cta--mobile">
+              <a     data-g-event="product: analytics: overview"
+    data-g-action="see all integrations"
+    data-g-label="designed to work together"
+
+        href="/about/analytics-360/features/#integrations"
+        title="See all integrations"
+        class="h-c-link gmp-link"
+         >See all integrations</a>
+        </div>
+
+    </div>
+
+  </div></div>  </section>
+
+
+    <section class="gmp-section gmp-mb-l">
+
+<div class="two-column-tout">
+  <div class="h-c-page">
+
+
+      <div class="h-c-grid">
+
+        <div class="h-c-grid__col h-c-grid__col-xl--offset-1 h-c-grid__col-l--6
+            h-c-grid__col-xl--5  h-c-grid__col--align-middle
+            two-column-tout__content">
+          
+          <h3 class="h-c-headline h-c-headline--one">
+            Lider increases conversion rate 18X with Google Analytics.
+          </h3>
+          <div class="h-u-mb-std two-column-tout__description">
+            <p>Lider used Analytics for a single measurement source of truth across its website and app to re-engage users and find new users most likely to purchase. The result was an 85% decrease in CPA and 18X conversion rate improvement.</p>
+          </div>
+                <a     data-g-event="product: analytics: overview"
+    data-g-action="resource featured: case study"
+    data-g-label="resource: lider increases conversion rate 18x with google analytics"
+    data-g-restype="case study"      data-g-resproduct="analytics" 
+        href="/about/resources/lider-drives-in-app-purchases-at-a-lower-cpa-with-google-analytics/"
+        title="Read more"
+        class="h-c-link h-c-link--internal gmp-link"
+         >Read more</a>
+        </div>
+
+        <div class="h-c-grid__col
+          h-c-grid__col-l--6  h-c-grid__col--align-middle">
+          <div class="two-column-tout__image text-center">
+                <picture>
+      <source media="(max-width: 767px)" srcset="https://lh3.googleusercontent.com/3ZxTD36Scy4GGUdSNz-3wZZsdbTbowR6mPZpotUIBpbyfY5VbKIM46yM16v_BGEpCsj8B3-b01fWDpUedeWN2qA19uODW1rRUs3sfzw=s480 1x, https://lh3.googleusercontent.com/ivo3vpR4iQ9cjPgcR5529Watw4WujZE3fD0-EazLAXUrvCDVpQW7KaG_N6orMNIWDQOGLzbGZgPpvw6mYmUKpYtmEHjE3ThuPCAj4Q=s960 2x">
+      <source media="(min-width: 768px)" srcset="https://lh3.googleusercontent.com/JNEkXojKB0w2lmlrR2rteKdexLXbciKiNnJax-vcPWiUGb1u9KOmgNE6yPk_0ujFPnQcWniNfv3OY4pFvfOK7zS9SQY4Up42R8f3lRI=s1500 1x, https://lh3.googleusercontent.com/VwKQU1NYBGc7CL0uQKzGu00GL-7qqEbSK-rSoF1wb6BvMNZXjfhQqd2ddXuki_e_iLjJSbOvfQ50FfmznRcf6aY1LwAK4v2NqJZDFg=s3000 2x">
+      <img src="https://lh3.googleusercontent.com/JNEkXojKB0w2lmlrR2rteKdexLXbciKiNnJax-vcPWiUGb1u9KOmgNE6yPk_0ujFPnQcWniNfv3OY4pFvfOK7zS9SQY4Up42R8f3lRI=s1500" alt="Lider increases conversion rate 18X with Google Analytics." class='gmp-no-grab '>
+    </picture>
+          </div>
+        </div>
+
+      </div>
+
+  </div>
+</div>    </section>
+
+
+    <section class="gmp-section gmp-mb-l">
+    <div class="gmp-section-header">
+      <div class="h-c-page">
+        <div class="h-c-grid">
+          <div class="h-c-grid__col">
+            <h3 class="h-c-headline h-c-headline--one gmp-section-header--center">Resources</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="resource-card-grid">
+  <div class="h-c-page">
+
+    <div class="glue-pagination h-c-carousel h-c-carousel--tile h-c-carousel--tile-small-only h-u-mt-std">
+      <div class="h-c-carousel__wrap">
+
+        <ul class="resource-card-set glue-carousel" data-glue-carousel data-glue-pagination="resource-carousel" data-glue-carousel-breakpoints="['x-small']">
+
+
+  <li class="h-c-carousel__item resource-card"
+    data-glue-filter-result-attrs="{
+      'product': ['analytics'],
+      'type': ['feature brief']
+      }">
+    <a     data-g-event="product: analytics: overview"
+    data-g-action="resource tile: feature brief"
+    data-g-label="resource: get deeper insights with enhanced ecommerce"
+    data-g-restype="feature brief"      data-g-resproduct="analytics"  class="h-c-tile h-c-tile--border h-c-tile--hoverable" href="/about/resources/analytics-enhanced-ecommerce-feature-brief/">
+
+      <div class="h-c-tile__header">
+           <img alt="Get deeper insights with Enhanced Ecommerce" srcset="https://lh3.googleusercontent.com/lOT05b6-vi9vVYIXy9npLd8OGsu4PFoYvlV0lznVffVsCDx4expZbB_ynYMdGgu64lTE7rLECf1Ddyp0X82K69FonWxDdtaGjEpYfMs=w298-h170-p-nu-pa 1x, https://lh3.googleusercontent.com/lOT05b6-vi9vVYIXy9npLd8OGsu4PFoYvlV0lznVffVsCDx4expZbB_ynYMdGgu64lTE7rLECf1Ddyp0X82K69FonWxDdtaGjEpYfMs=w596-h340-p-nu-pa 2x" src="https://lh3.googleusercontent.com/lOT05b6-vi9vVYIXy9npLd8OGsu4PFoYvlV0lznVffVsCDx4expZbB_ynYMdGgu64lTE7rLECf1Ddyp0X82K69FonWxDdtaGjEpYfMs=w298-h170-p-nu-pa" class="gmp-no-grab resource-card__image">
+
+      </div>
+
+      <div class="h-c-tile__body">
+        <div class="h-c-eyebrow resource-card__eyebrow">Feature Brief</div>
+        <h3 class="h-c-tile__headline">Get deeper insights with Enhanced Ecommerce</h3>
+        <ul class="h-c-tile__links resource-card__links">
+          <li class="h-c-tile__link h-c-link gmp-link resource-card__link">
+            Read more
+          </li>
+         </ul>
+      </div>
+
+    </a>
+  </li>
+
+  <li class="h-c-carousel__item resource-card"
+    data-glue-filter-result-attrs="{
+      'product': ['analytics'],
+      'type': ['product overview']
+      }">
+    <a     data-g-event="product: analytics: overview"
+    data-g-action="resource tile: product overview"
+    data-g-label="resource: analytics"
+    data-g-restype="product overview"      data-g-resproduct="analytics"  class="h-c-tile h-c-tile--border h-c-tile--hoverable" href="/about/resources/analytics-product-overview/">
+
+      <div class="h-c-tile__header">
+           <img alt="Analytics" srcset="https://lh3.googleusercontent.com/wGY-w8WCH7Q_1MlnMio-yjwOr2wJV2EP-wjML1R2G7zNXXmyiej7zAXk0vhjP965phBxAyIe_IvqiZCgtYvv_WDkLQ_IO8PqeSO03w=w298-h170-p-nu-pa 1x, https://lh3.googleusercontent.com/wGY-w8WCH7Q_1MlnMio-yjwOr2wJV2EP-wjML1R2G7zNXXmyiej7zAXk0vhjP965phBxAyIe_IvqiZCgtYvv_WDkLQ_IO8PqeSO03w=w596-h340-p-nu-pa 2x" src="https://lh3.googleusercontent.com/wGY-w8WCH7Q_1MlnMio-yjwOr2wJV2EP-wjML1R2G7zNXXmyiej7zAXk0vhjP965phBxAyIe_IvqiZCgtYvv_WDkLQ_IO8PqeSO03w=w298-h170-p-nu-pa" class="gmp-no-grab resource-card__image">
+
+      </div>
+
+      <div class="h-c-tile__body">
+        <div class="h-c-eyebrow resource-card__eyebrow">Product Overview</div>
+        <h3 class="h-c-tile__headline">Analytics</h3>
+        <ul class="h-c-tile__links resource-card__links">
+          <li class="h-c-tile__link h-c-link gmp-link resource-card__link">
+            Read more
+          </li>
+         </ul>
+      </div>
+
+    </a>
+  </li>
+
+  <li class="h-c-carousel__item resource-card"
+    data-glue-filter-result-attrs="{
+      'product': ['analytics-360', 'optimize-360', 'surveys-360', 'tag-manager-360', 'data-studio'],
+      'type': ['report']
+      }">
+    <a     data-g-event="product: analytics: overview"
+    data-g-action="resource tile: report"
+    data-g-label="resource: data driven transformations: using insights to rethink the customer journey"
+    data-g-restype="report"      data-g-resproduct="analytics 360, optimize 360, surveys 360, tag manager 360, data studio"  class="h-c-tile h-c-tile--border h-c-tile--hoverable" href="/about/resources/data-driven-transformations-rethink-the-customer-journey/">
+
+      <div class="h-c-tile__header">
+           <img alt="Data-driven transformations: Using insights to rethink the customer journey" srcset="https://lh3.googleusercontent.com/BsIa50X5t5J7mj4KUhfIrcdJkYtzJy5sn7LZVX1_ET128r9_IqXWxfd6swcaCEDWP_r2MglSr3HMmz7wCTqO07STJbFHX56MiZFXsw=w298-h170-p-nu-pa 1x, https://lh3.googleusercontent.com/BsIa50X5t5J7mj4KUhfIrcdJkYtzJy5sn7LZVX1_ET128r9_IqXWxfd6swcaCEDWP_r2MglSr3HMmz7wCTqO07STJbFHX56MiZFXsw=w596-h340-p-nu-pa 2x" src="https://lh3.googleusercontent.com/BsIa50X5t5J7mj4KUhfIrcdJkYtzJy5sn7LZVX1_ET128r9_IqXWxfd6swcaCEDWP_r2MglSr3HMmz7wCTqO07STJbFHX56MiZFXsw=w298-h170-p-nu-pa" class="gmp-no-grab resource-card__image">
+
+      </div>
+
+      <div class="h-c-tile__body">
+        <div class="h-c-eyebrow resource-card__eyebrow">Report</div>
+        <h3 class="h-c-tile__headline">Data-driven transformations: Using insights to rethink the customer journey</h3>
+        <ul class="h-c-tile__links resource-card__links">
+          <li class="h-c-tile__link h-c-link gmp-link resource-card__link">
+            Read more
+          </li>
+         </ul>
+      </div>
+
+    </a>
+  </li>
+        </ul>
+
+        <div class="h-c-carousel__paginate glue-pagination-previous">
+          <button type="button" class="glue-o-pagination__button" data-glue-pagination-previous data-glue-pagination="carousel-tile" data-glue-pagination-update-model="false">
+            <div class="h-c-carousel__paginate-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="h-c-icon h-c-icon--keyboard-arrow-left" alt>
+                <use xlink:href="#mi-keyboard-arrow-right"></use>
+              </svg>
+            </div>
+          </button>
+        </div>
+
+        <div class="h-c-carousel__paginate glue-pagination-next">
+          <button type="button" class="glue-o-pagination__button" data-glue-pagination-next data-glue-pagination="carousel-tile" data-glue-pagination-update-model="false">
+            <div class="h-c-carousel__paginate-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="h-c-icon h-c-icon--keyboard-arrow-right" alt>
+                <use xlink:href="#mi-keyboard-arrow-right"></use>
+              </svg>
+            </div>
+          </button>
+        </div>
+
+      </div>        <div class="h-c-carousel__navigation resource-card-grid__navigation">
+          <ul class="glue-pagination-page-list" data-glue-pagination-page-list data-glue-pagination="carousel-tile" role="tablist">
+          </ul>
+        </div>
+    </div>
+      <div class="resource-card-grid__bottom-link">
+            <a     data-g-event="product: analytics: overview"
+    data-g-action="see all resources"
+    data-g-label="resources"
+
+        href="/about/resources/"
+        title="See all resources"
+        class="h-c-link h-c-link--internal gmp-link"
+         >See all resources</a>
+      </div>
+
+  </div>
+</div>    </section>
+
+</main>
+
+<footer class="h-c-footer h-c-footer--robust h-has-social">
+<section class="h-c-footer__upper">
+    <section class="h-c-social">
+<div class="h-c-social__group">
+        <p class="h-c-social__title h-c-social__title--inline">Follow us</p>
+        <ul class="h-c-social__list h-no-bullet">
+            <li class="h-c-social__item">
+              <a     data-g-event="product: analytics: overview"
+    data-g-action="social follow us: blogger"
+    data-g-label="global footer"
+
+                  class="h-c-social__link"
+                  href="https://www.blog.google/products/marketingplatform/"
+                  aria-label="Share to Blogger"
+                  target="_blank"     rel="nofollow noreferrer noopener"
+>
+                <svg alt="" role="img" aria-hidden="true" class="h-c-icon h-c-icon--20px h-c-icon--social h-c-icon--no-padding">
+                  <use xlink:href="#social-blogger"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="h-c-social__item">
+              <a     data-g-event="product: analytics: overview"
+    data-g-action="social follow us: twitter"
+    data-g-label="global footer"
+
+                  class="h-c-social__link"
+                  href="https://twitter.com/GMktgPlatform"
+                  aria-label="Share to Twitter"
+                  target="_blank"     rel="nofollow noreferrer noopener"
+>
+                <svg alt="" role="img" aria-hidden="true" class="h-c-icon h-c-icon--20px h-c-icon--social h-c-icon--no-padding">
+                  <use xlink:href="#social-twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="h-c-social__item">
+              <a     data-g-event="product: analytics: overview"
+    data-g-action="social follow us: youtube"
+    data-g-label="global footer"
+
+                  class="h-c-social__link"
+                  href="https://www.youtube.com/c/googlemarketingplatform"
+                  aria-label="Share to YouTube"
+                  target="_blank"     rel="nofollow noreferrer noopener"
+>
+                <svg alt="" role="img" aria-hidden="true" class="h-c-icon h-c-icon--20px h-c-icon--social h-c-icon--no-padding">
+                  <use xlink:href="#social-youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="h-c-social__item">
+              <a     data-g-event="product: analytics: overview"
+    data-g-action="social follow us: linkedin"
+    data-g-label="global footer"
+
+                  class="h-c-social__link"
+                  href="https://www.linkedin.com/showcase/googlemarketingplatform"
+                  aria-label="Share to LinkedIn"
+                  target="_blank"     rel="nofollow noreferrer noopener"
+>
+                <svg alt="" role="img" aria-hidden="true" class="h-c-icon h-c-icon--20px h-c-icon--social h-c-icon--no-padding">
+                  <use xlink:href="#social-linkedin"></use>
+                </svg>
+              </a>
+            </li>
+        </ul>
+      </div>    </section>
+  </section>  <nav class="h-c-footer__site-links">
+    <div data-glue-responsive-accordion-static data-ng-cloak
+        data-glue-responsive-accordion-static-breakpoints="'x-small'">
+      <div class="h-c-footer__site-links-grid">
+          <div class="h-c-footer__site-links-column glue-a-zippy--v-smooth-expand" id="column-1">
+              <h4 class="h-c-footer__site-links-header ">
+                  About Google Marketing Platform
+                <svg alt="" role="img" aria-hidden="true" class="h-c-icon h-c-icon--32px h-c-icon--footer h-c-footer__expand">
+                  <use xlink:href="#mi-expand"></use>
+                </svg>
+              </h4>
+              <div>
+                <ul class="h-c-footer__site-links-list h-no-bullet">
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="marketing platform: overview"
+    data-g-label="global footer"
+
+        href="/about/"
+        title="Overview"
+        class="h-c-footer__link"
+         >Overview</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="marketing platform: for small businesses"
+    data-g-label="global footer"
+
+        href="/about/small-business/"
+        title="For Small Businesses"
+        class="h-c-footer__link h-is-highlighted"
+         >For Small Businesses</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="marketing platform: for enterprise"
+    data-g-label="global footer"
+
+        href="/about/enterprise/"
+        title="For Enterprise"
+        class="h-c-footer__link"
+         >For Enterprise</a>
+                      </li>
+                </ul>
+              </div>
+          </div>
+          <div class="h-c-footer__site-links-column glue-a-zippy--v-smooth-expand" id="column-2">
+              <h4 class="h-c-footer__site-links-header ">
+                  Learning &amp; support
+                <svg alt="" role="img" aria-hidden="true" class="h-c-icon h-c-icon--32px h-c-icon--footer h-c-footer__expand">
+                  <use xlink:href="#mi-expand"></use>
+                </svg>
+              </h4>
+              <div>
+                <ul class="h-c-footer__site-links-list h-no-bullet">
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="learning and support: support"
+    data-g-label="global footer"
+
+        href="/about/support/"
+        title="Support"
+        class="h-c-footer__link"
+         >Support</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="learning and support: blog"
+    data-g-label="global footer"
+
+        href="https://www.blog.google/products/marketingplatform/"
+        title="Blog"
+        class="h-c-footer__link"
+            target="_self"
+ >Blog</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="learning and support: analytics academy"
+    data-g-label="global footer"
+
+        href="https://analytics.google.com/analytics/academy/?utm_source=marketingplatform.google.com&utm_medium=et&utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics%2F"
+        title="Analytics Academy"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Analytics Academy</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="learning and support: skillshop"
+    data-g-label="global footer"
+
+        href="https://skillshop.withgoogle.com/"
+        title="Skillshop"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Skillshop</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="learning and support: google primer"
+    data-g-label="global footer"
+
+        href="https://www.yourprimer.com/?utm_source=marketingplatform.google.com&utm_medium=et&utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics%2F"
+        title="Google Primer"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Google Primer</a>
+                      </li>
+                </ul>
+              </div>
+          </div>
+          <div class="h-c-footer__site-links-column glue-a-zippy--v-smooth-expand" id="column-3">
+              <h4 class="h-c-footer__site-links-header ">
+                  Developers &amp; partners
+                <svg alt="" role="img" aria-hidden="true" class="h-c-icon h-c-icon--32px h-c-icon--footer h-c-footer__expand">
+                  <use xlink:href="#mi-expand"></use>
+                </svg>
+              </h4>
+              <div>
+                <ul class="h-c-footer__site-links-list h-no-bullet">
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="developers and partners: google marketing platform partners"
+    data-g-label="global footer"
+
+        href="/about/partners/"
+        title="Google Marketing Platform Partners"
+        class="h-c-footer__link"
+         >Google Marketing Platform Partners</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="developers and partners: google measurement partners"
+    data-g-label="global footer"
+
+        href="https://measurementpartners.google.com/"
+        title="Google Measurement Partners"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Google Measurement Partners</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="developers and partners: analytics for developers"
+    data-g-label="global footer"
+
+        href="https://developers.google.com/analytics/?utm_source=marketingplatform.google.com&utm_medium=et&utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics%2F"
+        title="Analytics for developers"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Analytics for developers</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="developers and partners: tag manager for developers"
+    data-g-label="global footer"
+
+        href="https://developers.google.com/tag-manager/?utm_source=marketingplatform.google.com&utm_medium=et&utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics%2F"
+        title="Tag Manager for developers"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Tag Manager for developers</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="developers and partners: surveys for developers"
+    data-g-label="global footer"
+
+        href="https://developers.google.com/surveys/?utm_source=marketingplatform.google.com&utm_medium=et&utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics%2F"
+        title="Surveys for developers"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Surveys for developers</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="developers and partners: camapign manager 360 for developers"
+    data-g-label="global footer"
+
+        href="https://developers.google.com/doubleclick-advertisers/?utm_source=marketingplatform.google.com&utm_medium=et&utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics%2F"
+        title="Campaign Manager 360 for developers"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Campaign Manager 360 for developers</a>
+                      </li>
+                </ul>
+              </div>
+          </div>
+          <div class="h-c-footer__site-links-column glue-a-zippy--v-smooth-expand" id="column-4">
+              <h4 class="h-c-footer__site-links-header ">
+                  Related products
+                <svg alt="" role="img" aria-hidden="true" class="h-c-icon h-c-icon--32px h-c-icon--footer h-c-footer__expand">
+                  <use xlink:href="#mi-expand"></use>
+                </svg>
+              </h4>
+              <div>
+                <ul class="h-c-footer__site-links-list h-no-bullet">
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="related products: google ads"
+    data-g-label="global footer"
+
+        href="https://ads.google.com/home/?utm_source=marketingplatform.google.com&utm_medium=et&utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics%2F"
+        title="Google Ads"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Google Ads</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="related products: google adsense"
+    data-g-label="global footer"
+
+        href="https://www.google.com/adsense/start/?utm_source=marketingplatform.google.com&utm_medium=et&utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics%2F"
+        title="Google AdSense"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Google AdSense</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="related products: google ad manager"
+    data-g-label="global footer"
+
+        href="https://admanager.google.com/home/"
+        title="Google Ad Manager"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Google Ad Manager</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="related products: google cloud"
+    data-g-label="global footer"
+
+        href="https://cloud.google.com/?utm_source=marketingplatform.google.com&utm_medium=et&utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics%2F"
+        title="Google Cloud"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Google Cloud</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="related products: firebase"
+    data-g-label="global footer"
+
+        href="https://firebase.google.com/?utm_source=marketingplatform.google.com&utm_medium=et&utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics%2F"
+        title="Firebase"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Firebase</a>
+                      </li>
+                </ul>
+              </div>
+          </div>
+          <div class="h-c-footer__site-links-column glue-a-zippy--v-smooth-expand" id="column-5">
+              <h4 class="h-c-footer__site-links-header ">
+                  More from Google
+                <svg alt="" role="img" aria-hidden="true" class="h-c-icon h-c-icon--32px h-c-icon--footer h-c-footer__expand">
+                  <use xlink:href="#mi-expand"></use>
+                </svg>
+              </h4>
+              <div>
+                <ul class="h-c-footer__site-links-list h-no-bullet">
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="more from google: think with google"
+    data-g-label="global footer"
+
+        href="https://www.thinkwithgoogle.com/?utm_source=marketingplatform.google.com&utm_medium=et&utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics%2F"
+        title="Think with Google"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Think with Google</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="more from google: business solutions"
+    data-g-label="global footer"
+
+        href="https://www.google.com/services/?utm_source=marketingplatform.google.com&utm_medium=et&utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics%2F"
+        title="Business Solutions"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Business Solutions</a>
+                      </li>
+                      <li class="h-c-footer__site-links-list-item">
+                            <a     data-g-event="product: analytics: overview"
+    data-g-action="more from google: google workspace"
+    data-g-label="global footer"
+
+        href="https://workspace.google.com/?utm_source=marketingplatform.google.com&utm_medium=et&utm_campaign=marketingplatform.google.com%2Fabout%2Fanalytics%2F"
+        title="Google Workspace"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Google Workspace</a>
+                      </li>
+                </ul>
+              </div>
+          </div>
+      </div>
+    </div>
+  </nav>
+  <section class="h-c-footer__global">
+    <div class="h-c-footer__logo">
+      <a href="https://www.google.com" aria-label="Google"
+              data-g-event="product: analytics: overview"
+    data-g-action="logo"
+    data-g-label="global footer"
+
+          target="_blank" rel="nofollow noreferrer noopener">
+        <svg alt="" role="img" aria-hidden="true" class="h-c-footer__logo-img">
+          <use xlink:href="#google-logo"></use>
+        </svg>
+      </a>
+    </div>
+    <ul class="h-c-footer__global-links h-no-bullet">
+        <li class="h-c-footer__global-links-list-item">
+              <a     data-g-event="product: analytics: overview"
+    data-g-action="privacy"
+    data-g-label="global footer"
+
+        href="https://www.google.com/intl/en/policies/privacy/"
+        title="Privacy"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Privacy</a>
+        </li>
+        <li class="h-c-footer__global-links-list-item">
+              <a     data-g-event="product: analytics: overview"
+    data-g-action="terms"
+    data-g-label="global footer"
+
+        href="https://www.google.com/intl/en/policies/terms/"
+        title="Terms"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Terms</a>
+        </li>
+        <li class="h-c-footer__global-links-list-item">
+              <a     data-g-event="product: analytics: overview"
+    data-g-action="about google"
+    data-g-label="global footer"
+
+        href="https://about.google/"
+        title="About Google"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >About Google</a>
+        </li>
+        <li class="h-c-footer__global-links-list-item">
+              <a     data-g-event="product: analytics: overview"
+    data-g-action="google products"
+    data-g-label="global footer"
+
+        href="https://about.google/products/"
+        title="Google Products"
+        class="h-c-footer__link"
+            target="_blank" rel="nofollow noreferrer noopener"
+ >Google Products</a>
+        </li>
+    </ul>
+    <ul class="h-c-footer__global-links h-c-footer__global-links--extra h-no-bullet">
+      <li class="h-c-footer__global-links-list-item h-c-footer__global-links-list-item--extra">
+        <a     data-g-event="product: analytics: overview"
+    data-g-action="help"
+    data-g-label="global footer"
+
+            class="h-c-footer__link " href="https://support.google.com/marketingplatform">
+          <svg alt="" role="img" aria-hidden="true" class="h-c-icon h-c-icon--24px h-c-icon--footer">
+            <use xlink:href="#mi-help"></use>
+          </svg>
+          Help
+        </a>
+      </li>
+<li class="h-c-footer__global-links-list-item h-c-footer__global-links-list-item--extra">
+          <label for="lang-selector" class="h-u-visually-hidden">Change language or region</label>
+          <select name="lang-selector"
+                  id="lang-selector"
+                  class="h-c-form__dropdown h-c-footer__lang-dropdown">
+<option value="/intl/zh-CN_cn/about/analytics/">中文（简体中文)</option><option value="/intl/de/about/analytics/">Deutsch</option><option value="/intl/en_uk/about/analytics/">English (UK)</option><option value="/about/analytics/" selected>English (US)</option><option value="/intl/es/about/analytics/">Español</option><option value="/intl/fr/about/analytics/">Français</option><option value="/intl/it/about/analytics/">Italiano</option><option value="/intl/ja/about/analytics/">日本語</option><option value="/intl/ko/about/analytics/">한국어</option><option value="/intl/nl/about/analytics/">Nederlands</option><option value="/intl/pt-BR_br/about/analytics/">Português (Brasil)</option>          </select>
+        </li>    </ul>
+  </section>
+</footer>
+    <div class="b-demo-u-d-n">
+<svg class="svg-assets" xmlns="http://www.w3.org/2000/svg">
+  <!-- material design icons -->
+  <symbol id="mi-arrow-forward" viewBox="0 0 18 18">
+    <path d="M9,1.5C4.8,1.5,1.5,4.8,1.5,9s3.3,7.5,7.5,7.5s7.5-3.3,7.5-7.5S13.2,1.5,9,1.5z M9,14.5l-1-1
+  l3.8-3.8H3.5V8.3h8.4L8.1,4.5L9,3.5L14.5,9L9,14.5z"></path>
+  </symbol>
+
+  <symbol id="mi-help" viewBox="0 0 48 48">
+    <path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4zm2 34h-4v-4h4v4zm4.13-15.49l-1.79 1.84C26.9 25.79 26 27 26 30h-4v-1c0-2.21.9-4.21 2.34-5.66l2.49-2.52C27.55 20.1 28 19.1 28 18c0-2.21-1.79-4-4-4s-4 1.79-4 4h-4c0-4.42 3.58-8 8-8s8 3.58 8 8c0 1.76-.71 3.35-1.87 4.51z"></path>
+  </symbol>
+
+  <symbol id="mi-arrow-sort" viewBox="0 0 24 24">
+    <path d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"></path>
+  </symbol>
+
+  <symbol id="mi-arrow-forward-no-bg" viewBox="0 0 32 32">
+    <polygon points="16,0 13.2,2.8 24.3,14 0,14 0,18 24.3,18 13.2,29.2 16,32 32,16"></polygon>
+  </symbol>
+
+  <symbol id="mi-arrow-circle" viewBox="0 0 16 16">
+    <path d="M0,8c0,4.4,3.6,8,8,8s8-3.6,8-8s-3.6-8-8-8S0,3.6,0,8z M4.2,6.1L8,9.9l3.8-3.8L13,7.3 l-5,5l-5-5L4.2,6.1z"></path>
+  </symbol>
+
+  <symbol id="mi-arrow-item" viewBox="0 0 16 10">
+    <polygon points="1.8,0 7.8,5.9 13.7,0 15.5,1.8 7.8,9.6 0,1.8"></polygon>
+  </symbol>
+
+  <symbol id="mi-keyboard-arrow-right" viewBox="0 0 24 24">
+    <path d="M9.546 6.5l5.443 5.532L9.5 17.5"></path>
+  </symbol>
+
+  <symbol id="mi-chevron" viewBox="0 0 12 8">
+    <path d="M10.6,8L6,3.4L1.4,8L0,6.6l6-6l6,6L10.6,8z"></path>
+  </symbol>
+
+  <symbol id="mi-youtube-icon" viewBox="0 0 28 20">
+    <path d="M11.2,14.1V5.9l7.5,4.3L11.2,14.1z M27.7,4.2c0,0-0.3-1.9-1.1-2.8c-1.1-1.1-2.3-1.1-2.8-1.2 C19.9,0,14,0,14,0S8.1,0,4.2,0.2C3.7,0.3,2.5,0.3,1.4,1.4C0.6,2.3,0.3,4.2,0.3,4.2S0,6.5,0,8.8v2.4c0,2.3,0.3,4.6,0.3,4.6 s0.3,1.9,1.1,2.8c1.1,1.1,2.5,1.1,3.1,1.2C6.7,20,13.8,20,14,20c0,0,5.9,0,9.8-0.3c0.5-0.1,1.7-0.1,2.8-1.2c0.8-0.8,1.1-2.8,1.1-2.8 s0.3-2.3,0.3-4.6V8.8C28,6.5,27.7,4.2,27.7,4.2L27.7,4.2z"></path>
+  </symbol>
+
+  <symbol id="mi-pdf-icon" viewBox="0 0 24 24">
+    <path d="M7 11.5h1v-1H7v1zM19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9.5 8.5c0 .83-.67 1.5-1.5 1.5H7v2H5.5V9H8c.83 0 1.5.67 1.5 1.5v1zm10-1H17v1h1.5V13H17v2h-1.5V9h4v1.5zm-5 3c0 .83-.67 1.5-1.5 1.5h-2.5V9H13c.83 0 1.5.67 1.5 1.5v3zm-2.5 0h1v-3h-1v3z"></path>
+  </symbol>
+
+  <symbol id="mi-arrow-dropdown" viewBox="0 0 24 24">
+    <path d="M7 10l5 5 5-5z"></path>
+  </symbol>
+
+  <symbol id="mi-search" viewBox="0 0 24 22">
+    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+  </symbol>
+
+  <symbol id="mi-expand" viewBox="0 0 24 24">
+    <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"></path>
+  </symbol>
+
+  <symbol id="mi-mail" viewBox="0 0 24 24">
+    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"></path>
+  </symbol>
+
+  <!-- Social icons -->
+  <symbol id="social-blogger" viewBox="2 2 20 20">
+    <path d="M20,2 L4,2 C2.895,2 2.01,2.895 2.01,4 L2,20 C2,21.105 2.895,22 4,22 L20,22 C21.105,22 22,21.105 22,20 L22,4 C22,2.895 21.105,2 20,2 L20,2 Z M16,9 L16,10 C16,10.555 16.445,11 17,11 C17.555,11 18,11.445 18,12 L18,15 C18,16.655 16.655,18 15,18 L9,18 C7.345,18 6,16.655 6,15 L6,8 C6,6.345 7.345,5 9,5 L13,5 C14.655,5 16,6.345 16,8 L16,9 L16,9 Z M9.95,10 L12.55,10 C13.105,10 13.55,9.555 13.55,9 C13.55,8.445 13.105,8 12.55,8 L9.95,8 C9.395,8 8.95,8.445 8.95,9 C8.95,9.555 9.4,10 9.95,10 L9.95,10 Z M14,13 L9.95,13 C9.395,13 8.95,13.445 8.95,14 C8.95,14.555 9.395,15 9.95,15 L14,15 C14.555,15 15,14.555 15,14 C15,13.445 14.555,13 14,13 L14,13 Z"></path>
+  </symbol>
+
+  <symbol id="social-facebook" viewBox="0 0 20 21">
+    <path d="M18.9,0H1.1C0.5,0,0,0.5,0,1.1v17.8C0,19.5,0.5,20,1.1,20h9.6v-7.7H8.1v-3h2.6V7c0-2.6,1.6-4,3.9-4c1.1,0,2.1,0.1,2.3,0.1 v2.7l-1.6,0c-1.3,0-1.5,0.6-1.5,1.5v1.9h3l-0.4,3h-2.6V20h5.1c0.6,0,1.1-0.5,1.1-1.1V1.1C20,0.5,19.5,0,18.9,0z">
+    </path>
+  </symbol>
+
+  <symbol id="social-instagram" viewBox="2 2 20 20">
+    <path d="M12,3.80440476 C14.6692857,3.80440476 14.9854365,3.81456349 16.0395635,3.86265873 C17.014246,3.90714286 17.5435714,4.07 17.895873,4.20686508 C18.3624603,4.38821429 18.6955159,4.60488095 19.0453175,4.95468254 C19.395119,5.30448413 19.6117857,5.63753968 19.7930952,6.10412698 C19.93,6.45642857 20.0928571,6.98575397 20.1373413,7.96039683 C20.1854365,9.01456349 20.1955952,9.33071429 20.1955952,12 C20.1955952,14.6692857 20.1854365,14.9854365 20.1373413,16.0395635 C20.0928571,17.014246 19.93,17.5435714 19.7930952,17.895873 C19.6117857,18.3624603 19.395119,18.6955159 19.0453175,19.0453175 C18.6955159,19.395119 18.3624603,19.6117857 17.895873,19.7930952 C17.5435714,19.93 17.014246,20.0928571 16.0395635,20.1373413 C14.9855952,20.1854365 14.6694444,20.1955952 12,20.1955952 C9.33055556,20.1955952 9.01440476,20.1854365 7.96043651,20.1373413 C6.98575397,20.0928571 6.45642857,19.93 6.10416667,19.7930952 C5.63753968,19.6117857 5.30448413,19.395119 4.95468254,19.0453175 C4.60488095,18.6955159 4.38821429,18.3624603 4.20690476,17.895873 C4.07,17.5435714 3.90714286,17.014246 3.86265873,16.0396032 C3.81456349,14.9854365 3.80440476,14.6692857 3.80440476,12 C3.80440476,9.33071429 3.81456349,9.01456349 3.86265873,7.96043651 C3.90714286,6.98575397 4.07,6.45642857 4.20690476,6.10412698 C4.38821429,5.63753968 4.60488095,5.30448413 4.95468254,4.95468254 C5.30448413,4.60488095 5.63753968,4.38821429 6.10416667,4.20686508 C6.45642857,4.07 6.98575397,3.90714286 7.96039683,3.86265873 C9.01456349,3.81456349 9.33071429,3.80440476 12,3.80440476 M12,2.00313492 C9.285,2.00313492 8.94460317,2.01464286 7.87833333,2.06329365 C6.81424603,2.11186508 6.08757937,2.28083333 5.45166667,2.52797619 C4.79428571,2.78345238 4.23678571,3.12527778 3.68103175,3.68103175 C3.12527778,4.23678571 2.78345238,4.79428571 2.52797619,5.45166667 C2.28083333,6.08757937 2.11186508,6.81424603 2.06329365,7.87833333 C2.01464286,8.94456349 2.0031746,9.285 2.0031746,12 C2.0031746,14.715 2.01464286,15.0554365 2.06329365,16.1216667 C2.11186508,17.185754 2.28083333,17.9124206 2.52797619,18.5483333 C2.78345238,19.2056746 3.12527778,19.7632143 3.68103175,20.3189683 C4.23678571,20.8747222 4.79428571,21.2165476 5.45166667,21.4720238 C6.08757937,21.7191667 6.81424603,21.8881349 7.87833333,21.9367063 C8.94460317,21.9853571 9.285,21.9968254 12,21.9968254 C14.715,21.9968254 15.0554365,21.9853571 16.1216667,21.9367063 C17.185754,21.8881349 17.9124206,21.7191667 18.5483333,21.4720238 C19.2057143,21.2165476 19.7632143,20.8747222 20.3189683,20.3189683 C20.8747222,19.7632143 21.2165476,19.2057143 21.4720238,18.5483333 C21.7191667,17.9124206 21.8881349,17.185754 21.9367063,16.1216667 C21.9853571,15.0554365 21.9968651,14.715 21.9968651,12 C21.9968651,9.285 21.9853571,8.94456349 21.9367063,7.87833333 C21.8881349,6.81424603 21.7191667,6.08757937 21.4720238,5.45166667 C21.2165476,4.79428571 20.8747222,4.23678571 20.3189683,3.68103175 C19.7632143,3.12527778 19.2057143,2.78345238 18.5483333,2.52797619 C17.9124206,2.28083333 17.185754,2.11186508 16.1216667,2.06329365 C15.0554365,2.01464286 14.715,2.00313492 12,2.00313492"></path>
+    <path d="M12,6.86646825 C9.16484127,6.86646825 6.86646825,9.16484127 6.86646825,12 C6.86646825,14.8351587 9.16484127,17.1335317 12,17.1335317 C14.8351587,17.1335317 17.1335317,14.8351587 17.1335317,12 C17.1335317,9.16484127 14.8351587,6.86646825 12,6.86646825 Z M12,15.3323016 C10.1596429,15.3323016 8.66769841,13.8403571 8.66769841,12 C8.66769841,10.1596429 10.1596429,8.66769841 12,8.66769841 C13.8403571,8.66769841 15.3323016,10.1596429 15.3323016,12 C15.3323016,13.8403571 13.8403571,15.3323016 12,15.3323016 L12,15.3323016 Z"></path>
+    <path d="M18.5359524,6.66365079 C18.5359524,7.32619048 17.9988889,7.86329365 17.3363492,7.86329365 C16.6738095,7.86329365 16.1367063,7.32619048 16.1367063,6.66365079 C16.1367063,6.00111111 16.6738095,5.46404762 17.3363492,5.46404762 C17.9988889,5.46404762 18.5359524,6.00111111 18.5359524,6.66365079"></path>
+  </symbol>
+
+  <symbol id="social-link" viewBox="2 7 20 11">
+    <path d="M3.9,12 C3.9,10.29 5.29,8.9 7,8.9 L11,8.9 L11,7 L7,7 C4.24,7 2,9.24 2,12 C2,14.76 4.24,17 7,17 L11,17 L11,15.1 L7,15.1 C5.29,15.1 3.9,13.71 3.9,12 L3.9,12 Z M8,13 L16,13 L16,11 L8,11 L8,13 L8,13 Z M17,7 L13,7 L13,8.9 L17,8.9 C18.71,8.9 20.1,10.29 20.1,12 C20.1,13.71 18.71,15.1 17,15.1 L13,15.1 L13,17 L17,17 C19.76,17 22,14.76 22,12 C22,9.24 19.76,7 17,7 L17,7 Z">
+    </path>
+  </symbol>
+
+  <symbol id="social-linkedin" viewBox="0 0 20 20">
+    <path d="M17.3247508,17.0422222 L14.3116279,17.0422222 L14.3116279,12.4011111 C14.3116279,11.2944444 14.2901661,9.87055556 12.7443522,9.87055556 C11.1748173,9.87055556 10.9353488,11.0755556 10.9353488,12.3211111 L10.9353488,17.0422222 L7.92335548,17.0422222 L7.92335548,7.49833333 L10.8139203,7.49833333 L10.8139203,8.80222222 L10.8557143,8.80222222 C11.2578405,8.05166667 12.2422591,7.26055556 13.7090033,7.26055556 C16.7605316,7.26055556 17.3247508,9.23666667 17.3247508,11.8072222 L17.3247508,17.0422222 L17.3247508,17.0422222 Z M4.52335548,6.19277778 C3.55418605,6.19277778 2.77365449,5.42222222 2.77365449,4.47277778 C2.77365449,3.52444444 3.55418605,2.75333333 4.52335548,2.75333333 C5.48800664,2.75333333 6.27136213,3.52444444 6.27136213,4.47277778 C6.27136213,5.42222222 5.48800664,6.19277778 4.52335548,6.19277778 L4.52335548,6.19277778 Z M3.01312292,7.49833333 L6.03189369,7.49833333 L6.03189369,17.0422222 L3.01312292,17.0422222 L3.01312292,7.49833333 Z M18.5183745,0 L1.47495903,0 C0.661092747,0 0,0.645555556 0,1.44111111 L0,18.5566667 C0,19.3533333 0.661092747,20 1.47495903,20 L18.5183745,20 C19.3339074,20 20,19.3533333 20,18.5566667 L20,1.44111111 C20,0.645555556 19.3339074,0 18.5183745,0 L18.5183745,0 Z"></path>
+  </symbol>
+
+  <symbol id="social-mail" viewBox="2 4 20 16">
+    <path d="M20,4 L4,4 C2.9,4 2.01,4.9 2.01,6 L2,18 C2,19.1 2.9,20 4,20 L20,20 C21.1,20 22,19.1 22,18 L22,6 C22,4.9 21.1,4 20,4 Z M20,18 L4,18 L4,8 L12,13 L20,8 L20,18 Z M12,11 L4,6 L20,6 L12,11 Z"></path>
+  </symbol>
+
+  <symbol id="social-twitter" viewBox="2 4 20 17">
+    <path d="M21.9998024,5.94850271 C21.2639378,6.27899473 20.4732072,6.50243431 19.6431192,6.60281913 C20.4903254,6.08859695 21.1409646,5.27418342 21.4472639,4.3038956 C20.6544849,4.7801123 19.7764073,5.12586577 18.8417079,5.31226298 C18.0932607,4.50466524 17.0268825,4 15.8467486,4 C13.5805579,4 11.7434203,5.86056413 11.7434203,8.15526483 C11.7434203,8.48101542 11.7797051,8.7980981 11.8496412,9.10221596 C8.43952817,8.92893175 5.41611168,7.27461954 3.39235612,4.76062801 C3.03916454,5.37434599 2.83681824,6.08815245 2.83681824,6.84966948 C2.83681824,8.29128441 3.5611975,9.5631712 4.66217788,10.3083896 C3.98959225,10.2868309 3.35687602,10.099841 2.8036791,9.78861106 C2.80338648,9.80594689 2.80331333,9.8233568 2.80331333,9.8408408 C2.80331333,11.8541677 4.21768905,13.5336687 6.09476916,13.9154273 C5.75042931,14.0103299 5.38794707,14.0610779 5.01376005,14.0610779 C4.74930529,14.0610779 4.49231233,14.0350742 4.241757,13.9865487 C4.76393626,15.637453 6.27926567,16.8388111 8.07477813,16.8724456 C6.67042461,17.9869023 4.9012479,18.6511461 2.97881179,18.6511461 C2.64763982,18.6511461 2.32100345,18.6315136 2,18.5931378 C3.81592266,19.7721223 5.97267373,20.4599991 8.28985336,20.4599991 C15.8371653,20.4599991 19.9642689,14.1282728 19.9642689,8.63711197 C19.9642689,8.45693788 19.9602454,8.2777269 19.9524178,8.0995531 C20.7540486,7.51369099 21.449678,6.78180786 21.9998024,5.94850271"></path>
+  </symbol>
+
+  <symbol id="social-youtube" viewBox="0 4 24 18">
+    <path d="M23.74,7.6062 C23.74,7.6062 23.51,5.9562 22.79,5.2362 C21.88,4.2762 20.86,4.2762 20.39,4.2162 C17.04,3.9712 12,4.0012 12,4.0012 C12,4.0012 6.98,3.9712 3.63,4.2112 C3.17,4.2712 2.15,4.2712 1.24,5.2312 C0.52,5.9512 0.28,7.6012 0.28,7.6012 C0.28,7.6012 0.04,9.5462 0,11.4812 L0,13.5062 C0.04,15.4462 0.28,17.3812 0.28,17.3812 C0.28,17.3812 0.52,19.0312 1.24,19.7612 C2.15,20.7112 3.34,20.6812 3.88,20.7812 C5.76,20.9612 11.79,21.0012 12,21.0012 C12,21.0012 17.05,21.0112 20.4,20.7712 C20.86,20.7112 21.88,20.7112 22.79,19.7512 C23.51,19.0312 23.75,17.3812 23.75,17.3812 C23.75,17.3812 23.99,15.4412 24,13.5062 L24,11.4812 C23.98,9.5462 23.74,7.6062 23.74,7.6062 L23.74,7.6062 Z M9.57,16.0012 L9.57,8.9912 L16,12.6312 L9.57,16.0012 L9.57,16.0012 Z"></path>
+  </symbol>
+
+  <symbol id="google-logo" viewBox="0 0 396 130">
+    <path d="M51.0745265,101.038701 C23.3283097,101.038701 9.65724009e-07,78.4212338 9.65724009e-07,50.645974 C-0.00548030982,22.8707143 23.3228284,0.253246753 51.0745265,0.253246753 C66.4220981,0.253246753 77.3517615,6.27798701 85.5736748,14.1408766 L75.8718171,23.8528896 C69.9794459,18.3219805 61.9987087,14.0201623 51.0690452,14.0201623 C30.8102508,14.0201623 14.9693645,30.365974 14.9693645,50.645974 C14.9693645,70.925974 30.8102508,87.2717857 51.0690452,87.2717857 C64.2076627,87.2717857 71.6950851,81.9877922 76.48572,77.1921429 C80.4157945,73.2579545 82.991994,67.6063312 83.9731424,59.8641558 L51.0745265,59.8641558 L51.0745265,46.1027273 L97.3638985,46.1027273 C97.8572133,48.5609091 98.0983894,51.5129221 98.0983894,54.7063636 C98.0983894,65.0329221 95.2755325,77.8121753 86.1875777,86.9096429 C77.3462802,96.1223377 66.0548526,101.038701 51.0745265,101.038701 L51.0745265,101.038701 Z"></path>
+    <path d="M167.573556,68.369026 C167.573556,87.0523052 152.965957,100.813734 135.036704,100.813734 C117.112933,100.813734 102.499853,87.0468182 102.499853,68.369026 C102.499853,49.5650325 117.112933,35.9188312 135.036704,35.9188312 C152.965957,35.9188312 167.573556,49.5650325 167.573556,68.369026 L167.573556,68.369026 Z M153.333202,68.369026 C153.333202,56.6926623 144.85915,48.7035714 135.036704,48.7035714 C125.214259,48.7035714 116.740207,56.6926623 116.740207,68.369026 C116.740207,79.9191883 125.214259,88.0344805 135.036704,88.0344805 C144.85915,88.0344805 153.333202,79.9191883 153.333202,68.369026 L153.333202,68.369026 Z"></path>
+    <path d="M238.282011,68.369026 C238.282011,87.0523052 223.674411,100.813734 205.745159,100.813734 C187.821388,100.813734 173.208307,87.0468182 173.208307,68.369026 C173.208307,49.5650325 187.821388,35.9188312 205.745159,35.9188312 C223.674411,35.9188312 238.282011,49.5650325 238.282011,68.369026 L238.282011,68.369026 Z M224.041657,68.369026 C224.041657,56.6926623 215.567605,48.7035714 205.745159,48.7035714 C195.922713,48.7035714 187.448661,56.6926623 187.448661,68.369026 C187.448661,79.9191883 195.922713,88.0344805 205.745159,88.0344805 C215.567605,88.0344805 224.041657,79.9191883 224.041657,68.369026 L224.041657,68.369026 Z"></path>
+    <path d="M306.04702,37.943539 L306.04702,96.1442857 C306.04702,120.111558 291.927254,129.944286 275.231289,129.944286 C259.516472,129.944286 250.061272,119.376299 246.498443,110.772662 L258.897088,105.609383 C261.106042,110.893377 266.51058,117.159545 275.225808,117.159545 C285.908814,117.159545 292.535676,110.52026 292.535676,98.1086364 L292.535676,93.4391883 L292.047842,93.4391883 C288.85774,97.3733766 282.71323,100.813734 274.97915,100.813734 C258.771019,100.813734 243.916762,86.6791883 243.916762,68.4897403 C243.916762,50.1740909 258.771019,35.9188312 274.97915,35.9188312 C282.71323,35.9188312 288.852259,39.3591883 292.047842,43.1726623 L292.535676,43.1726623 L292.535676,37.943539 L306.04702,37.943539 L306.04702,37.943539 Z M293.522306,68.4897403 C293.522306,57.0602922 285.908814,48.7035714 276.212437,48.7035714 C266.389992,48.7035714 258.162597,57.0602922 258.162597,68.4897403 C258.162597,79.798474 266.389992,88.0344805 276.212437,88.0344805 C285.908814,88.0344805 293.522306,79.798474 293.522306,68.4897403 L293.522306,68.4897403 Z"></path>
+    <path d="M329.961825,3.54545455 L329.961825,98.9207143 L315.721472,98.9207143 L315.721472,3.54545455 L329.961825,3.54545455 L329.961825,3.54545455 Z"></path>
+    <path d="M383.755064,79.0577273 L394.805315,86.4322727 C391.242486,91.7162662 382.647846,100.813734 367.793589,100.813734 C349.376503,100.813734 336.002191,86.558474 336.002191,68.369026 C336.002191,49.0712013 349.497091,35.9188312 366.198538,35.9188312 C383.020573,35.9188312 391.247967,49.3181169 393.944755,56.566461 L395.419218,60.2537338 L352.078772,78.1962662 C355.394944,84.7093506 360.552824,88.0289935 367.793589,88.0289935 C375.039836,88.0289935 380.071647,84.4624351 383.755064,79.0577273 L383.755064,79.0577273 Z M349.743749,67.3813636 L378.717771,55.3373701 C377.12272,51.2824675 372.332085,48.4566558 366.686372,48.4566558 C359.445607,48.4511688 349.376503,54.843539 349.743749,67.3813636 L349.743749,67.3813636 Z"></path>
+  </symbol>
+
+  <symbol id="social-share-triangle" viewBox="0 0 24 24">
+    <path d="M18,16.08 C17.24,16.08 16.56,16.38 16.04,16.85 L8.91,12.7 C8.96,12.47 9,12.24 9,12 C9,11.76 8.96,11.53 8.91,11.3 L15.96,7.19 C16.5,7.69 17.21,8 18,8 C19.66,8 21,6.66 21,5 C21,3.34 19.66,2 18,2 C16.34,2 15,3.34 15,5 C15,5.24 15.04,5.47 15.09,5.7 L8.04,9.81 C7.5,9.31 6.79,9 6,9 C4.34,9 3,10.34 3,12 C3,13.66 4.34,15 6,15 C6.79,15 7.5,14.69 8.04,14.19 L15.16,18.35 C15.11,18.56 15.08,18.78 15.08,19 C15.08,20.61 16.39,21.92 18,21.92 C19.61,21.92 20.92,20.61 20.92,19 C20.92,17.39 19.61,16.08 18,16.08 L18,16.08 Z"></path>
+  </symbol>
+
+  <!-- hercules icons -->
+  <symbol id="h-color-google-logo" width="74" height="24" viewBox="0 0 74 24">
+    <path fill="#4285F4" d="M9.24 8.19v2.46h5.88c-.18 1.38-.64 2.39-1.34 3.1-.86.86-2.2 1.8-4.54 1.8-3.62 0-6.45-2.92-6.45-6.54s2.83-6.54 6.45-6.54c1.95 0 3.38.77 4.43 1.76L15.4 2.5C13.94 1.08 11.98 0 9.24 0 4.28 0 .11 4.04.11 9s4.17 9 9.13 9c2.68 0 4.7-.88 6.28-2.52 1.62-1.62 2.13-3.91 2.13-5.75 0-.57-.04-1.1-.13-1.54H9.24z"></path>
+    <path fill="#EA4335" d="M25 6.19c-3.21 0-5.83 2.44-5.83 5.81 0 3.34 2.62 5.81 5.83 5.81s5.83-2.46 5.83-5.81c0-3.37-2.62-5.81-5.83-5.81zm0 9.33c-1.76 0-3.28-1.45-3.28-3.52 0-2.09 1.52-3.52 3.28-3.52s3.28 1.43 3.28 3.52c0 2.07-1.52 3.52-3.28 3.52z"></path>
+    <path fill="#4285F4" d="M53.58 7.49h-.09c-.57-.68-1.67-1.3-3.06-1.3C47.53 6.19 45 8.72 45 12c0 3.26 2.53 5.81 5.43 5.81 1.39 0 2.49-.62 3.06-1.32h.09v.81c0 2.22-1.19 3.41-3.1 3.41-1.56 0-2.53-1.12-2.93-2.07l-2.22.92c.64 1.54 2.33 3.43 5.15 3.43 2.99 0 5.52-1.76 5.52-6.05V6.49h-2.42v1zm-2.93 8.03c-1.76 0-3.1-1.5-3.1-3.52 0-2.05 1.34-3.52 3.1-3.52 1.74 0 3.1 1.5 3.1 3.54.01 2.03-1.36 3.5-3.1 3.5z"></path>
+    <path fill="#FBBC05" d="M38 6.19c-3.21 0-5.83 2.44-5.83 5.81 0 3.34 2.62 5.81 5.83 5.81s5.83-2.46 5.83-5.81c0-3.37-2.62-5.81-5.83-5.81zm0 9.33c-1.76 0-3.28-1.45-3.28-3.52 0-2.09 1.52-3.52 3.28-3.52s3.28 1.43 3.28 3.52c0 2.07-1.52 3.52-3.28 3.52z"></path>
+    <path fill="#34A853" d="M58 .24h2.51v17.57H58z"></path>
+    <path fill="#EA4335" d="M68.26 15.52c-1.3 0-2.22-.59-2.82-1.76l7.77-3.21-.26-.66c-.48-1.3-1.96-3.7-4.97-3.7-2.99 0-5.48 2.35-5.48 5.81 0 3.26 2.46 5.81 5.76 5.81 2.66 0 4.2-1.63 4.84-2.57l-1.98-1.32c-.66.96-1.56 1.6-2.86 1.6zm-.18-7.15c1.03 0 1.91.53 2.2 1.28l-5.25 2.17c0-2.44 1.73-3.45 3.05-3.45z"></path>
+  </symbol>
+
+  <symbol id="h-white-google-logo" width="74" height="24" viewBox="0 0 74 24">
+    <path d="M9.24 8.19v2.46h5.88c-.18 1.38-.64 2.39-1.34 3.1-.86.86-2.2 1.8-4.54 1.8-3.62 0-6.45-2.92-6.45-6.54s2.83-6.54 6.45-6.54c1.95 0 3.38.77 4.43 1.76L15.4 2.5C13.94 1.08 11.98 0 9.24 0 4.28 0 .11 4.04.11 9s4.17 9 9.13 9c2.68 0 4.7-.88 6.28-2.52 1.62-1.62 2.13-3.91 2.13-5.75 0-.57-.04-1.1-.13-1.54H9.24zm15.76-2c-3.21 0-5.83 2.44-5.83 5.81 0 3.34 2.62 5.81 5.83 5.81s5.83-2.46 5.83-5.81c0-3.37-2.62-5.81-5.83-5.81zm0 9.33c-1.76 0-3.28-1.45-3.28-3.52 0-2.09 1.52-3.52 3.28-3.52s3.28 1.43 3.28 3.52c0 2.07-1.52 3.52-3.28 3.52zm28.58-8.03h-.09c-.57-.68-1.67-1.3-3.06-1.3C47.53 6.19 45 8.72 45 12c0 3.26 2.53 5.81 5.43 5.81 1.39 0 2.49-.62 3.06-1.32h.09v.81c0 2.22-1.19 3.41-3.1 3.41-1.56 0-2.53-1.12-2.93-2.07l-2.22.92c.64 1.54 2.33 3.43 5.15 3.43 2.99 0 5.52-1.76 5.52-6.05V6.49h-2.42v1zm-2.93 8.03c-1.76 0-3.1-1.5-3.1-3.52 0-2.05 1.34-3.52 3.1-3.52 1.74 0 3.1 1.5 3.1 3.54.01 2.03-1.36 3.5-3.1 3.5zM38 6.19c-3.21 0-5.83 2.44-5.83 5.81 0 3.34 2.62 5.81 5.83 5.81s5.83-2.46 5.83-5.81c0-3.37-2.62-5.81-5.83-5.81zm0 9.33c-1.76 0-3.28-1.45-3.28-3.52 0-2.09 1.52-3.52 3.28-3.52s3.28 1.43 3.28 3.52c0 2.07-1.52 3.52-3.28 3.52zM58 .24h2.51v17.57H58zm10.26 15.28c-1.3 0-2.22-.59-2.82-1.76l7.77-3.21-.26-.66c-.48-1.3-1.96-3.7-4.97-3.7-2.99 0-5.48 2.35-5.48 5.81 0 3.26 2.46 5.81 5.76 5.81 2.66 0 4.2-1.63 4.84-2.57l-1.98-1.32c-.66.96-1.56 1.6-2.86 1.6zm-.18-7.15c1.03 0 1.91.53 2.2 1.28l-5.25 2.17c0-2.44 1.73-3.45 3.05-3.45z"></path>
+  </symbol>
+
+  <symbol id="h-burger" width="24" height="24" viewBox="0 0 24 24">
+    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
+  </symbol>
+</svg>    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-touch.min.js"></script>
+    <script src="static/js/index.min.js"></script>
+    <script src="static/js/analytics.min.js"></script>
+
+
+
   </body>
 </html>
