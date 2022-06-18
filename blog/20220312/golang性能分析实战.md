@@ -1,5 +1,6 @@
 ===tag=Golang
 ===description=golang性能分析实战
+===pinned=true
 
 # Golang性能分析实战
 
