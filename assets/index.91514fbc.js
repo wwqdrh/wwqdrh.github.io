@@ -1,1 +1,0 @@
-import{d as o,u as t,o as r,c,D as e}from"./index.61f9d75b.js";const n=o({setup(s){return t().push("/tool/etcd/table"),(a,l)=>(r(),c("div",null,"h"))}});typeof e=="function"&&e(n);export{n as default};
