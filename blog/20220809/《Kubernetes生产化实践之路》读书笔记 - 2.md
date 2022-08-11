@@ -1,5 +1,5 @@
 ===tag=《Kubernetes生产化实践之路》
-===description=Kubernetes生产化实践之路-第5-6章
+===description=Kubernetes生产化实践之路-第4-5章
 
 # 构建企业级镜像仓库
 
