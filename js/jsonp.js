@@ -12,7 +12,7 @@ window.getComment = (() => {
 
     var osscript = document.createElement("script")
     osscript.src = `http://43.142.26.74:10281/api/v1/comment/list?callback=saveComment`
-    // osscript.src = `http://localhost:8000/api/v1/comment/list?callback=saveComment`
+    // osscript.src = `https://localhost:8000/api/v1/comment/list?callback=saveComment`
     osscript.type = "text/javascript"
     // osscript.onload = done
 
