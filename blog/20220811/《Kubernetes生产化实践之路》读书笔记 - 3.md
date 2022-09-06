@@ -1,4 +1,4 @@
-===tag=《Kubernetes生产化实践之路》
+===tag=读书笔记
 ===description=Kubernetes生产化实践之路-第6-7章
 
 # 网络接入方案

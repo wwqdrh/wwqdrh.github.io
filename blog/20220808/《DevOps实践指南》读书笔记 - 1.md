@@ -1,4 +1,4 @@
-===tag=《DevOps实践指南》
+===tag=读书笔记
 ===description=Devops实践指南-第1-2章
 
 # DevOps介绍

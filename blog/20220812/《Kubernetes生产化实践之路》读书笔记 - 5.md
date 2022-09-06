@@ -1,4 +1,4 @@
-===tag=《Kubernetes生产化实践之路》
+===tag=读书笔记
 ===description=Kubernetes生产化实践之路-第10-11-12章
 
 # 应用落地
