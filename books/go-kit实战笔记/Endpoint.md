@@ -1,0 +1,1 @@
+Endpoint层主要负责request／response格式的转换，以及公用拦截器相关的逻辑；
