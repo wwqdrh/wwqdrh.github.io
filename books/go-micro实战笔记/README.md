@@ -1,5 +1,7 @@
 # 简介
 
+go-micro核心包只提供核心的接口，额外的各类扩展实现在plugin中
+
 go-micro的核心功能
 
 - Authentication - 一等公民， 为网络中的服务提供身份认证. 支持配置访问规则
