@@ -82,3 +82,104 @@ service.Init()
 // start the service
 service.Run()
 ```
+
+# 传输层
+
+使用http协议, route handler层用gin的示例
+
+```go
+package main
+
+import (
+	"log"
+
+	httpServer "github.com/go-micro/plugins/v4/server/http"
+	"go-micro.dev/v4"
+
+	"github.com/gin-gonic/gin"
+	"go-micro.dev/v4/registry"
+	"go-micro.dev/v4/server"
+)
+
+const (
+	SERVER_NAME = "demo-http" // server name
+)
+
+func main() {
+
+	srv := httpServer.NewServer(
+		server.Name(SERVER_NAME),
+		server.Address(":8080"),
+	)
+
+	gin.SetMode(gin.ReleaseMode)
+	router := gin.New()
+	router.Use(gin.Recovery())
+
+	// register router
+	demo := newDemo()
+	demo.InitRouter(router)
+
+	hd := srv.NewHandler(router)
+	if err := srv.Handle(hd); err != nil {
+		log.Fatalln(err)
+	}
+
+	service := micro.NewService(
+		micro.Server(srv),
+		micro.Registry(registry.NewRegistry()),
+	)
+	service.Init()
+	service.Run()
+}
+
+//demo
+type demo struct{}
+
+func newDemo() *demo {
+	return &demo{}
+}
+
+func (a *demo) InitRouter(router *gin.Engine) {
+	router.POST("/demo", a.demo)
+}
+
+func (a *demo) demo(c *gin.Context) {
+	c.JSON(200, gin.H{"msg": "call go-micro v3 http server success"})
+}
+```
+
+客户端同样也不能直接调用，使用go-micro包装的客户端获取服务发现、负载平衡和流式传输
+
+> 默认是post请求，还没找到在哪改成其他请求😒
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+
+	"github.com/go-micro/plugins/v4/client/http"
+	"go-micro.dev/v4/client"
+)
+
+func main() {
+	// new client
+	c := http.NewClient(
+		client.ContentType("application/json"),
+	)
+
+	// create request/response
+	request := c.NewRequest("testapp", "/", nil)
+
+	// call service
+	res := map[string]interface{}{}
+	err := client.Call(context.TODO(), request, &res)
+	if err != nil {
+		fmt.Println(err.Error())
+	} else {
+		fmt.Println(res)
+	}
+}
+```
