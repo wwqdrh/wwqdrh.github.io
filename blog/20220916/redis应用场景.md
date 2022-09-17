@@ -1,6 +1,6 @@
 ===tag=架构
 ===description=redis的使用场景
-===pinned=true
+===pinned=false
 
 # 简介
 
