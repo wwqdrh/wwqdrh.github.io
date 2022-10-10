@@ -42,11 +42,23 @@ macos、windows: 进入desktop界面 general中启用docker-compose v2
 
 
 { 
-"dns" : [ 
-"114.114.114.114", 
-"8.8.8.8" 
-]
+    "registry-mirrors": ["https://registry.docker-cn.com"],
+    "dns" : [ 
+        "114.114.114.114", 
+        "8.8.8.8" 
+    ]
 }
 ```
 
 然后systemctl restart docker
+
+2、用户组添加
+
+将需要的用户添加到docker用户组里面
+
+```bash
+sudo gpasswd -a $USER docker 
+
+# 进入到docker群组
+newgrp docker
+```

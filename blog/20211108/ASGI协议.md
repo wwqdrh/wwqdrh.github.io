@@ -1,4 +1,4 @@
-===tag=Python
+===tag=编程语言
 ===description=Python的异步ASGI协议
 
 # ASGI协议

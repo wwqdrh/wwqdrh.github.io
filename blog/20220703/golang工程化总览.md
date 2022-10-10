@@ -1,4 +1,4 @@
-===tag=Golang
+===tag=编程语言
 ===description=golang工程化所用到的工具概览
 ===pinned=true
 
@@ -166,7 +166,6 @@ func TestExec(t *testing.T) {
 	assert.Equal(t, outputExpect, output)
 }
 ```
-
 ## http测试
 
 在 web 项目中，大多接口是处理 http 请求（post、get 之类的），在测试环境中，是访问不到它发起的 get 请求的 url 的，此时就可以模拟 http 请求来写测试。可以利用官方自带的 http 包来进行模拟请求。
@@ -213,6 +212,34 @@ go tool pprof http://localhost:6060/debug/pprof/block     # goroutine blocking p
 # 下载mutex profile
 go tool pprof http://localhost:6060/debug/pprof/mutex
 ```
+
+## trace
+
+-   View trace：查看跟踪，能看到一段时间内 goroutine 的调度执行情况，包括事件触发链；
+-   Goroutine analysis：Goroutine 分析，能看到这段时间所有 goroutine 执行的一个情况，执行堆栈，执行时间；
+-   Network blocking profile：网络阻塞概况（分析网络的一些消耗）
+-   Synchronization blocking profile：同步阻塞概况（分析同步锁的一些情况）
+-   Syscall blocking profile：系统调用阻塞概况（分析系统调用的消耗）
+-   Scheduler latency profile：调度延迟概况（函数的延迟占比）
+-   User defined tasks：自定义任务
+-   User defined regions：自定义区域
+-   Minimum mutator utilization：Mutator 利用率使用情况
+
+
+## pyroscope
+
+基于pprof数据的可视化工具，提供上报和拉取两种模式
+
+支持多种语言
+
+可以将各个服务的运行数据集中起来，更利于管理
+
+不过只能获取到当前时间点的内存分配情况、当前使用的内存情况，以及CPU耗时等
+
+~另外，除了无法对协程数、mutex等进行分析~, 又错怪了😹，pyroscope支持的分析维度包括(cpu、inuse_objects、alloc_objects、inuse_space，alloc_space, goroutines、mutex_duration、block_count、block_duration，这里面除了pprof，应该还用了trace包里面的数据)
+
+~绘制的时间曲线没有具体的数值，也无法查看具体时间点下的数据情况~(错怪了，时间区间选择可以用鼠标滑动选择，无法点击某个特定的柱形结构)
+
 
 ## 排查CPU占用过高
 

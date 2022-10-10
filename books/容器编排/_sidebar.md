@@ -1,6 +1,7 @@
 <!-- docs/_sidebar.md -->
 
 * [首页](/ "简介")
+* [kubernetes](./kubernetes/_sidebar "k8s架构")
 * [集群管理](./集群管理.md "集群管理")
 * [容器调度](./容器调度.md "容器调度")
 * [网络](./网络.md "网络")
