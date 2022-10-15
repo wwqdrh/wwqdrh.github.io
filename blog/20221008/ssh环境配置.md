@@ -16,3 +16,17 @@ systemctl start sshd.service # 启动sshd
 
 systemctl enable sshd.service  # 设置为开机自启动
 ```
+
+保存git pull账号密码
+
+```bash
+git config --global credential.helper store
+// git pull 输入账号密码后面就不需要了
+
+如果要清除用户名和密码
+
+运行一下命令缓存输入的用户名和密码
+
+git config --global credential.helper wincred
+```
+

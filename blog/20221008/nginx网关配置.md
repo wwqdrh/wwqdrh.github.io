@@ -91,3 +91,39 @@ server {
         return 301 https://43.142.26.74$request_uri;
 }
 ```
+
+## 配置限流与后端转发
+
+ngx_http_limit_req_module模块通过漏桶原理来限制单位时间内的请求数，一旦单位时间内请求数超过限制，就会返回503错误
+
+```conf
+limit_req_zone $binary_remote_addr zone=selfcardreq:10m rate=100r/s; # 触发条件，所有访问ip 限制每秒10个请求
+limit_conn_zone $binary_remote_addr zone=selfcardconn:10m; # 触发条件
+
+server {
+  listen 8000;
+  server_name ~^(?<user>.+)\.selfcard\.com$;
+  
+  location / {
+    limit_req zone=selfcardreq burst=5 nodelay;   # 执行的动作,通过zone名字对应
+    limit_conn selfcardconn 100;    # 限制同一时间内1个连接，超出的连接返回503
+
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header User $user;
+    proxy_hide_header X-Application-Context;
+
+    set $is_matched 0;
+    if ($user != "") {
+        set $is_matched 1;
+        proxy_pass http://0.0.0.0:3000;
+    }
+
+    # 没有匹配到，跳转到默认页面
+    if ($is_matched = 0) {
+        return 301 http://www.selfcard.com:8000;
+    }
+  }
+}
+```

@@ -62,3 +62,37 @@ sudo gpasswd -a $USER docker
 # 进入到docker群组
 newgrp docker
 ```
+
+## 全局配置
+
+daemon.json
+
+```json
+{ 
+    "registry-mirrors": ["https://registry.docker-cn.com"],
+    "dns" : [ 
+        "114.114.114.114", 
+        "8.8.8.8" 
+    ],
+    // 容器日志的驱动，以及最大大小，避免将机器磁盘空间占满了
+    "log-driver":"json-file",
+    "log-opts":{
+        "max-size" :"50m",
+        "max-file":"3"
+    }
+}
+```
+
+### 日志
+
+只有使用了 local 、json-file、journald 日志驱动的容器才可以使用 docker logs 捕获日志，使用其他日志驱动无法使用 docker logs。
+
+### swarm模式
+
+如果出现docker service logs无法捕获日志的情况
+
+> The problem can be here " RPC ERROR" ; Cli cannot communicate with one of the swarm node.
+> 
+> Try a "docker swarm ca --rotate" on a swarm manager, to regenerate the local certificate and help to encode/decode any stream after a network problem.
+
+`docker swarm ca --rotate`
