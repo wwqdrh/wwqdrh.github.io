@@ -1,7 +1,6 @@
 ===tag=网络
 ===description=iptables规则
 ===pinned=true
-===time=2022-10-18
 
 ## 简介
 
