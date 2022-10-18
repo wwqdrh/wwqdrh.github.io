@@ -1,0 +1,735 @@
+===tag=云原生
+===description=k8s中资源对象类型
+===pinned=false
+===time=2022-10-18
+
+# 工作负载
+
+## pod
+
+- apiVersion
+- kind
+- metadata
+  - name
+- spec
+  - initContainers
+  - containers
+    - name
+    - image
+    - ports
+      - containerPort
+    - restartPolicy
+    - volumeMounts
+      - name
+      - mountPath
+      - subPath
+      - subPathExpr
+  - volumes
+    - name
+    - [*]configMap
+      - name
+      - items
+        - key
+        - path
+    - [*]emptyDir: 一般直接设置成`{}`, 当 Pod 分派到某个节点上时，emptyDir 卷会被创建，并且在 Pod 在该节点上运行期间，卷一直存在。 就像其名称表示的那样，卷最初是空的。 尽管 Pod 中的容器挂载 emptyDir 卷的路径可能相同也可能不同，这些容器都可以读写 emptyDir 卷中相同的文件。 当 Pod 因为某些原因被从节点上删除时，emptyDir 卷中的数据也会被永久删除。
+    - [*]hostPath
+      - path
+      - type
+    - [*]nfs: nfs 卷能将 NFS (网络文件系统) 挂载到你的 Pod 中。 不像 emptyDir 那样会在删除 Pod 的同时也会被删除，nfs 卷的内容在删除 Pod 时会被保存，卷只是被卸载。 这意味着 nfs 卷可以被预先填充数据，并且这些数据可以在 Pod 之间共享。
+      - server
+      - path
+      - readonly
+    - [*]persistentVolumeClaim:
+      - claimName
+    - [*]downwardAPI
+      - items
+        - path
+        - fieldRef
+          - fieldPath
+  
+
+Pod 通常不是直接创建的，而是使用工作负载资源创建的, 诸如 Deployment 或 Job 这类工作负载资源来创建 Pod。 如果 Pod 需要跟踪状态，可以考虑 StatefulSet 资源。
+
+工作负载的控制器会使用负载对象中的 PodTemplate 来生成实际的 Pod。 PodTemplate 是你用来运行应用时指定的负载资源的目标状态的一部分。
+
+每个工作负载资源都实现了自己的规则，用来处理对 Pod 模板的更新
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+        - containerPort: 80
+    volumeMounts:
+        - name: config-vol
+          mountPath: /etc/config
+  volumes:
+    - name: config-vol
+      configMap:
+        name: log-config
+        items:
+          - key: log_level
+            path: log_level
+    - name: podinfo
+      downwardAPI:
+        items:
+          - path: "labels"
+            fieldRef:
+              fieldPath: metadata.labels
+          - path: "annotations"
+            fieldRef:
+              fieldPath: metadata.annotations
+```
+
+## Deploment
+
+- apiVersion
+- kind
+- metadata
+  - name
+  - labels
+- spec
+  - replicas
+  - selector
+    - matchLabels
+  - template
+    - metadata
+      - labels
+    - spec
+      - containes
+        - name
+        - image
+        - ports
+          - containerPorts
+
+Deployment 为 Pod 和 ReplicaSet 提供声明式的更新能力
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80s
+```
+
+> 不需要直接操作Replicaset，当然要操作也是可以的
+
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: frontend
+  labels:
+    app: guestbook
+    tier: frontend
+spec:
+  # 按你的实际情况修改副本数
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      - name: php-redis
+        image: gcr.io/google_samples/gb-frontend:v3
+```
+
+## StatefulSet
+
+管理有状态应用，为这些 Pod 提供持久存储和持久标识符，StatefulSet 为它们的每个 Pod 维护了一个有粘性的 ID。这些 Pod 是基于相同的规约来创建的， 但是不能相互替换：无论怎么调度，每个 Pod 都有一个永久不变的 ID。
+
+- apiVersion
+- kind
+- metadata
+  - name
+- spec
+  - selector
+    - matchLabels
+  - serviceName
+  - replicas
+  - minReadySeconds
+  - template
+    - metadata
+      - labels
+    - spec
+      - terminationGracePeriodSeconds
+      - containers
+        - name
+        - image
+        - ports
+          - containerPort
+          - name
+        - volumeMounts
+          - name
+          - mountPath
+  - volumeClaimTemplates
+    - metadata
+      - name
+    - spec
+      - accessModes
+      - storageClassName
+      - resources
+        - requests
+          - storage
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  ports:
+  - port: 80
+    name: web
+  clusterIP: None
+  selector:
+    app: nginx
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: web
+spec:
+  selector:
+    matchLabels:
+      app: nginx # 必须匹配 .spec.template.metadata.labels
+  serviceName: "nginx"
+  replicas: 3 # 默认值是 1
+  minReadySeconds: 10 # 默认值是 0
+  template:
+    metadata:
+      labels:
+        app: nginx # 必须匹配 .spec.selector.matchLabels
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: nginx
+        image: registry.k8s.io/nginx-slim:0.8
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+  - metadata:
+      name: www
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "my-storage-class"
+      resources:
+        requests:
+          storage: 1Gi
+```
+
+## DaemonSet
+
+DaemonSet 确保全部（或者某些）节点上运行一个 Pod 的副本。 当有节点加入集群时， 也会为他们新增一个 Pod 。 当有节点从集群移除时，这些 Pod 也会被回收。删除 DaemonSet 将会删除它创建的所有 Pod。
+
+- apiVersion
+- kind
+- metadata
+  - name
+  - namespace
+  - labels
+- spec
+  - selector
+    - matchLabels
+      - name
+  - template
+    - metadata
+      - labels
+    - spec 
+      - terminationGracePeriodSeconds
+      - volumes
+        - name
+        - hostPath
+          - path
+      - tolerations
+        - key
+        - operator
+        - effect
+      - containers
+        - name
+        - image
+        - resources
+          - limits
+            - memory
+          - requests
+            - cpu
+            - memory
+        - volumeMounts
+          - name
+          - mountPath
+
+```yaml
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: fluentd-elasticsearch
+  namespace: kube-system
+  labels:
+    k8s-app: fluentd-logging
+spec:
+  selector:
+    matchLabels:
+      name: fluentd-elasticsearch
+  template:
+    metadata:
+      labels:
+        name: fluentd-elasticsearch
+    spec:
+      tolerations:
+      # 这些容忍度设置是为了让该守护进程集在控制平面节点上运行
+      # 如果你不希望自己的控制平面节点运行 Pod，可以删除它们
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
+      - key: node-role.kubernetes.io/master
+        operator: Exists
+        effect: NoSchedule
+      containers:
+      - name: fluentd-elasticsearch
+        image: quay.io/fluentd_elasticsearch/fluentd:v2.5.2
+        resources:
+          limits:
+            memory: 200Mi
+          requests:
+            cpu: 100m
+            memory: 200Mi
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: varlog
+        hostPath:
+          path: /var/log
+```
+
+## Job
+
+- apiVersion
+- kind
+- metadata
+  - name
+- spec
+  - template
+    - spec
+      - containers
+        - name
+        - image
+        - command
+      - restartPolicy
+  - backoffLimit
+
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pi
+spec:
+  template:
+    spec:
+      containers:
+      - name: pi
+        image: perl:5.34.0
+        command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
+      restartPolicy: Never
+  backoffLimit: 4
+```
+
+## CronJob
+
+CronJob 创建基于时隔重复调度的 Jobs。
+
+所有 CronJob 的 schedule: 时间都是基于 kube-controller-manager. 的时区。
+
+如果你的控制平面在 Pod 或是裸容器中运行了 kube-controller-manager， 那么为该容器所设置的时区将会决定 Cron Job 的控制器所使用的时区。Kubernetes 项目官方并不支持设置如 CRON_TZ 或者 TZ 等变量。 CRON_TZ 或者 TZ 是用于解析和计算下一个 Job 创建时间所使用的内部库中一个实现细节。 不建议在生产集群中使用它。
+
+- apiVersion
+- kind
+- metadata
+  - name
+- spec
+  - schedule
+  - jobTemplate
+    - spec
+      - template
+        - spec
+          - containers
+            - name
+            - image
+            - imagePullPolicy
+            - command
+          - restartPolicy
+
+```yaml
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: hello
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: busybox:1.28
+            imagePullPolicy: IfNotPresent
+            command:
+            - /bin/sh
+            - -c
+            - date; echo Hello from the Kubernetes cluster
+          restartPolicy: OnFailure
+```
+
+## ReplicationController
+
+ReplicationController 确保在任何时候都有特定数量的 Pod 副本处于运行状态。 
+
+现在推荐使用配置 ReplicaSet 的 Deployment 来建立副本管理机制。
+
+```yaml
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: nginx
+spec:
+  replicas: 3
+  selector:
+    app: nginx
+  template:
+    metadata:
+      name: nginx
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+```
+
+# 服务
+
+## Service
+
+当每个 Service 创建时，会被分配一个唯一的 IP 地址（也称为 clusterIP）。 这个 IP 地址与 Service 的生命周期绑定在一起，只要 Service 存在，它就不会改变。
+
+- apiVersion
+- kind
+- metadata
+  - name
+  - labels
+- spec
+  - type: (ClusterIP | NodePort | LoadBalancer | ExternalName)
+  - ports
+    - port
+    - name
+    - protocol
+    - targetPort: 默认情况下，targetPort 将被设置为与 port 字段相同的值。可以使用与pod中定义的containerPort的名字
+  - selector
+  - clusterIP
+  - externalName
+  - externalIPs
+- status
+  - loadBalancer
+    - ingress
+      - ip
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+spec:
+  ports:
+  - port: 80
+    name: web
+  clusterIP: None
+  selector:
+    app: nginx
+```
+
+定义没有选择算符的 Service,不会自动创建相应的 Endpoints 对象。 你可以通过手动添加 Endpoints 对象，将服务手动映射到运行该服务的网络地址和端口
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9376
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  # 这里的 name 要与 Service 的名字相同
+  name: my-service
+subsets:
+  - addresses:
+      - ip: 192.0.2.42
+    ports:
+      - port: 9376
+```
+
+## Ingress
+
+为了让 Ingress 资源工作，集群必须有一个正在运行的 Ingress 控制器。Kubernetes 作为一个项目，目前支持和维护 AWS、 GCE 和 Nginx Ingress 控制器。
+
+- apiVersion
+- kind
+- metadata
+  - name
+  - annotations
+- spec
+  - ingressClassName
+  - rules
+    - host
+    - http
+      - paths
+        - path
+        - pathType: (ImplementationSpecific | Exact | Prefix)
+        - backend
+          - service
+            - name
+            - port
+              - number
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: minimal-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx-example
+  rules:
+  - http:
+      paths:
+      - path: /testpath
+        pathType: Prefix
+        backend:
+          service:
+            name: test
+            port:
+              number: 80
+```
+
+Ingress 可以由不同的控制器实现，通常使用不同的配置。 每个 Ingress 应当指定一个类，也就是一个对 IngressClass 资源的引用。 IngressClass 资源包含额外的配置，其中包括应当实现该类的控制器名称。
+
+- apiVersion
+- kind
+- metadata
+  - name
+- spec
+  - controller
+  - parameters
+    - apiGroup
+    - kind
+    - name
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: external-lb
+spec:
+  controller: example.com/ingress-controller
+  parameters:
+    apiGroup: k8s.example.com
+    kind: IngressParameters
+    name: external-lb
+```
+
+# 存储
+
+一个 projected 卷可以将若干现有的卷源映射到同一个目录之上。
+
+## ConfigMap
+
+## Secret
+
+- apiVersion
+- kind
+- metadata
+  - name
+  - namespace
+- data
+  - tls.crt
+  - tls.key
+- type
+
+例如用于自签证书
+
+```bash
+make keys KEY=/tmp/nginx.key CERT=/tmp/nginx.crt
+# 创建公钥和相对应的私钥
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /d/tmp/nginx.key -out /d/tmp/nginx.crt -subj "/CN=my-nginx/O=my-nginx"
+# 对密钥实施 base64 编码
+cat /d/tmp/nginx.crt | base64
+cat /d/tmp/nginx.key | base64
+
+kubectl create secret tls nginxsecret --key /tmp/nginx.key --cert /tmp/nginx.crt
+```
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: testsecret-tls
+  namespace: default
+data:
+  tls.crt: base64 编码的证书
+  tls.key: base64 编码的私钥
+type: kubernetes.io/tls
+```
+
+## serviceAccountToken
+
+## downwardAPI
+
+downwardAPI 卷用于为应用提供 downward API 数据。 在这类卷中，所公开的数据以纯文本格式的只读文件形式存在。
+
+## PV
+
+静态持久卷
+
+- apiVersion
+- kind
+- metadata
+  - name
+- spec
+  - capacity
+    - storage
+  - volumeMode
+  - accessModes
+  - persistentVolumeReclaimPolicy
+  - storageClassName
+  - mountOptions
+  - [*]nfs
+    - path
+    - server
+  - [*]local
+    - path
+  - nodeAffinity
+    - required
+      - nodeSelectorTerms
+        - matchExpressions
+          - key
+          - operator
+          - values
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv0003
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: slow
+  mountOptions:
+    - hard
+    - nfsvers=4.1
+  [*]nfs:
+    path: /tmp
+    server: 172.17.0.2
+  [*]local:
+    path: /mnt/disks/ssd1
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - example-node
+```
+
+## PVC
+
+如果管理员所创建的所有静态 PV 卷都无法与用户的 PersistentVolumeClaim 匹配， 集群可以尝试为该 PVC 申领动态制备一个存储卷。 这一制备操作是基于 StorageClass 来实现的：PVC 申领必须请求某个 存储类， 同时集群管理员必须已经创建并配置了该类，这样动态制备卷的动作才会发生。 如果 PVC 申领指定存储类为 ""，则相当于为自身禁止使用动态制备的卷。
+
+- apiVersion
+- kind
+- metadata
+  - name
+- spec
+  - accessModes
+  - volumeMode
+  - storageClassName
+  - resources
+    - requests
+      - storage
+  - selector
+    - matchLabels
+    - matchExpressions
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: myclaim
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 8Gi
+  storageClassName: slow
+  selector:
+    matchLabels:
+      release: "stable"
+    matchExpressions:
+      - {key: environment, operator: In, values: [dev]}
+```
+
+# 插件
+
+## CNI
+
+## CRI
+
+## CSI
+
