@@ -2,3 +2,5 @@
 
 * [首页](/ "简介")
 * [solidity](/solidity/_sidebar )
+* [ipfs](/ipfs/_sidebar )
+

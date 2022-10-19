@@ -1,4 +1,4 @@
-===tag=架构
+===tag=中间件
 ===description=数据库设计，MySQL原理
 ===pinned=false
 

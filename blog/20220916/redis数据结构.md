@@ -1,4 +1,4 @@
-===tag=架构
+===tag=中间件
 ===description=redis的内部数据结构概览
 ===pinned=false
 

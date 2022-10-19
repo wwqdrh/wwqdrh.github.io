@@ -1,4 +1,4 @@
-===tag=架构
+===tag=中间件
 ===description=redis的集群搭建以及注意事项
 ===pinned=false
 

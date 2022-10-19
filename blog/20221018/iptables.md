@@ -21,7 +21,20 @@
 - PREROUTING（路由前过滤）
 - POSTROUTING（路由后过滤）
 
+### netfilter
+
+iptables依赖于netfilter内核模块实现，同样的firewalld也是
+
+```bash
+firewall-cmd --zone=public --add-port=80/tcp --permanent //开放80
+firewall-cmd --zone=public --add-port=443/tcp --permanent //开放443
+firewall-cmd --reload //重启防火墙
+firewall-cmd --list-ports // 当前开放的端口列表
+```
+
 ## 规则
+
+> iptables -t 表名 <-A/I/D/R> 规则链名 [规则号] <-i/o 网卡名> -p 协议名 <-s 源IP/源子网> --sport 源端口 <-d 目标IP/目标子网> --dport 目标端口 -j 动作
 
 动作包括:
 

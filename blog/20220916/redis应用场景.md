@@ -1,4 +1,4 @@
-===tag=架构
+===tag=中间件
 ===description=redis的使用场景
 ===pinned=false
 

@@ -583,9 +583,8 @@ type Association
 
 gorm的配置对象
 
-func (c *Config) AfterInitialize(db *DB) error
-
-func (c *Config) Apply(config *Config) error
+- func (c *Config) AfterInitialize(db *DB) error
+- func (c *Config) Apply(config *Config) error
 
 ## DB
 
@@ -597,6 +596,7 @@ gorm核心对象
 
 gorm.DB的构造函数
 
+```go
 func (db *DB) AddError(err error) error
 func (db *DB) Assign(attrs ...interface{}) (tx *DB)
 func (db *DB) Association(column string) *Association
@@ -663,8 +663,11 @@ func (db *DB) Updates(values interface{}) (tx *DB)
 func (db *DB) Use(plugin Plugin) error
 func (db *DB) Where(query interface{}, args ...interface{}) (tx *DB)
 func (db *DB) WithContext(ctx context.Context) *DB
+```
 
 ## DeleteAt
+
+```go
 type DeletedAt
 func (DeletedAt) DeleteClauses(f *schema.Field) []clause.Interface
 func (n DeletedAt) MarshalJSON() ([]byte, error)
@@ -679,8 +682,11 @@ type Migrator
 type Model
 type Option
 type Plugin
+```
 
 ## PreparedStmtDB
+
+```go
 type PreparedStmtDB
 func (db *PreparedStmtDB) BeginTx(ctx context.Context, opt *sql.TxOptions) (ConnPool, error)
 func (db *PreparedStmtDB) Close()
@@ -688,8 +694,11 @@ func (db *PreparedStmtDB) ExecContext(ctx context.Context, query string, args ..
 func (db *PreparedStmtDB) GetDBConn() (*sql.DB, error)
 func (db *PreparedStmtDB) QueryContext(ctx context.Context, query string, args ...interface{}) (rows *sql.Rows, err error)
 func (db *PreparedStmtDB) QueryRowContext(ctx context.Context, query string, args ...interface{}) *sql.Row
+```
 
 ## PreparedStmtTX
+
+```go
 type PreparedStmtTX
 func (tx *PreparedStmtTX) Commit() error
 func (tx *PreparedStmtTX) ExecContext(ctx context.Context, query string, args ...interface{}) (result sql.Result, err error)
@@ -700,8 +709,11 @@ type Rows
 type SavePointerDialectorInterface
 type ScanMode
 type Session
+```
 
 ## Clause
+
+```go
 type SoftDeleteDeleteClause
 func (sd SoftDeleteDeleteClause) Build(clause.Builder)
 func (sd SoftDeleteDeleteClause) MergeClause(*clause.Clause)
@@ -717,8 +729,11 @@ func (sd SoftDeleteUpdateClause) Build(clause.Builder)
 func (sd SoftDeleteUpdateClause) MergeClause(*clause.Clause)
 func (sd SoftDeleteUpdateClause) ModifyStatement(stmt *Statement)
 func (sd SoftDeleteUpdateClause) Name() string
+```
 
 ## Statement
+
+```go
 type Statement
 func (stmt *Statement) AddClause(v clause.Interface)
 func (stmt *Statement) AddClauseIfNotExists(v clause.Interface)
@@ -742,3 +757,44 @@ type TxBeginner
 type TxCommitter
 type Valuer
 type ViewOption
+```
+
+# 实例
+
+> Postgresql DSN: postgres://[user]:[password]@[host]/[db]?sslmode=disable
+
+1、查询数组
+
+> postgres特有
+
+```go
+// 数组查询
+// Get ...
+func (GoogleAdwordsAccount) GetBySlave(slave string) (*GoogleAdwordsAccount, error) {
+    if slave == "" {
+        return nil, errors.New("请指定账号")
+    }
+    var v GoogleAdwordsAccount
+    err := db.Where("slave_id @> ARRAY[?]", slave).Preload("GoogleToken").First(&v).Error
+    if err != nil {
+        return nil, err
+    }
+    return &v, nil
+}
+```
+
+2、动态指定表名
+
+```go
+func UserTable(user User) func(tx *gorm.DB)*gorm.DB{
+  return func(tx *gorm.DB)*gorm.DB{
+    if user.Admin {
+      return tx.Table("admin_users")
+    }
+
+    return tx.Table("users")
+  }
+}
+
+db.Scopes(UserTable(user)).Create(&user)
+```

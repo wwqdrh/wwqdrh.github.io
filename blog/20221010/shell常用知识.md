@@ -14,11 +14,138 @@
 `@` 表示不显示命令本身，而只显示它的结果
 
 
-# Bash
-
 `bash -e pipefail`
 
 pipeline中的命令出错了，把这个非零返回值往后传递，作为整行命令的返回值
+
+# Bash
+
+## 全局变量
+
+```bash
+第一个参数 : $1，第二个参数 :$2
+
+$? 之前的命令是否运行成功
+
+$! 最近执行命令的 PID
+
+$$ 当前shell的pid
+
+$# 参数个数
+
+$* 以一个字符串形式输出所有传递到脚本的参数
+
+$@ 以 $IFS 为分隔符列出所有传递到脚本中的参数
+```
+
+## 数据结构
+
+```bash
+echo ${variable:x:y} # 获取字符串变量的一部分 v[x:y]
+
+
+echo '$PATH' # ' 当我们不希望把变量转换为值的时候使用它。
+echo "$PATH" # " 会计算所有变量的值并用值代替。
+
+${#variable} # 获取变量长度
+
+echo ${variable: -5} # 变量的最后5个字符
+
+
+echo ${variable//pattern/replacement} # 字符串替换
+
+
+# 计算字符串中的单词个数
+string='hello world aaa hhh !'
+set ${string}
+echo $# # 5
+echo $string|tr -d " " # 去除字符串中的空格
+
+# 数值计算
+c=$((a+b))
+
+c=`expr $a + $b`
+
+c=`echo "$a+$b"|bc`
+
+# 数组
+array=("Hi" "my" "name" "is")
+echo ${array[0]}
+echo ${array[@]} # 打印数组的所有元素
+echo ${!array[@]} # 输出元素的索引
+```
+
+## 流程控制
+
+```bash
+# for 循环 :
+for i in $(ls);do 
+echo item:$i
+done
+
+#while 循环 :
+#!/bin/bash
+COUNTER=0
+while [ $COUNTER -lt 10 ]; do
+echo The counter is $COUNTER
+let COUNTER=COUNTER+1
+done
+
+#until 循环 :
+#!/bin/bash
+COUNTER=20
+until [ $COUNTER -lt 10 ]; do
+echo COUNTER $COUNTER
+let COUNTER-=1
+done
+
+
+nohup command & # 后台运行脚本
+
+
+# 循环0 3 6 9 ...
+for i in {0..100..3}; do echo $i; done
+
+for (( i=0; i<=100; i=i+3 )); do echo"Welcome $i times"; done
+
+# 获取用户输入
+read -p "Destination backup Server :" desthost
+```
+
+判断
+
+```bash
+# 是否存在某个文件
+if [ -f /var/log/messages ]
+then
+echo "File exists"
+fi
+
+[ $a == $b ] # 用于字符串比较
+
+[[ $string == abc* ]] # 检查字符串是否以字母"abc" 开头
+
+[ $a -eq $b ] # 用于数字比较
+
+[ $a -gt 12 ]
+```
+
+## 文本操作
+
+```bash
+head -10 file|tail -1 # 获取文本文件的第 10 行
+
+
+awk'{ if ($1 == "FIND") print$2}' # 如果第一个元素是FIND，获取第二个元素
+
+awk -F: '$3<100' /etc/passwd # 列出 UID 小于 100 的用户 
+
+cat /etc/passwd|wc -l # 计算本地用户数
+
+ls -d ?[ab]* # 列出第二个字母是 a 或 b 的文件
+
+egrep "^ab|^wwq" /etc/passwd|cut -d: -f1 # 列出以 ab 或 wwq 开头的用户名
+```
 
 # 常见例子
 
@@ -37,62 +164,10 @@ pipeline中的命令出错了，把这个非零返回值往后传递，作为整
 for i in *.go; do mv "$i" "${i%.go}.md"; done
 ```
 
+下载整个页面
 
-## 性能分析相关
+`wget -l 1 -p -np -k http://www.baidu.com`
 
-### top
+下载整站
 
-可以查看进程状态(正在运行、睡眠、停止的)，用户空间占比，内存使用情况(物理内存总量、交换区总量等)
-
-第一行是任务队列信息：当前时间、系统运行时间、当前登录用户数，系统负载(任务队列的平均长度)
-
-- 2500 毫秒刷新一次 TOP 内容，总共 5 次，输出内容存放到 performace.txt 文件中: `top -b -d 2.5 -n 5 > performace.txt`
-- TOP 默认排序为倒序，如果确实需要升序排序，可以使用大写字母按键：R
-
-### vmstat
-
-可以用于查看进程(运行队列中进程数量，等待IO的进程数量)、内存、IO等系统的整体运行状态
-
-si、so为交换区与内存之间的换入换出，如果长期大于0说明经常发生内存交换，硬盘io和CPU都会消耗，这个时候需要扩大内存
-
-in: 每秒中断数包括时钟中断，cs: 每秒上下文切换数。这两个数值越大，内核消耗的CPU时间越大
-
-wa高说明IO等待比较严重，这可能是由于磁盘大量作随机访问造成，也有可能磁盘出现瓶颈(块操作)
-
-us: 用户进程执行时间百分比(user time)。us的值比较高时，说明用户进程消耗的CPU时间多，但是如果长期超50%的使用，那么我们就该考虑优化程序算法或者进行加速。
-
-sy: 内核系统进程执行时间百分比。sy的值高时，说明系统内核消耗的CPU资源多，这并不是良性表现，我们应该检查原因。
-
-```shell
-vmstat 3
-procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu------
- r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
- 0  0    320  42188 167332 1534368    0    0     4     7    1    0  0  0 99  0  0
- 0  0    320  42188 167332 1534392    0    0     0     0 1002   39  0  0 100  0  0
- 0  0    320  42188 167336 1534392    0    0     0    19 1002   44  0  0 100  0  0
- 0  0    320  42188 167336 1534392    0    0     0     0 1002   41  0  0 100  0  0
- 0  0    320  42188 167336 1534392    0    0     0     0 1002   41  0  0 100  0  0
-```
-
-### pidstat
-
--   -u：默认的参数，显示各个进程的cpu使用统计
--   -r：显示各个进程的内存使用统计
--   -d：显示各个进程的IO使用情况
--   -p：指定进程号
--   -w：显示每个进程的上下文切换情况
--   -t：显示选择任务的线程的统计信息外的额外信息
-
-`pidstat -u 5 1`： 查看哪个进程占用了大量的CPU或者io
-
-`pidstat -u -p ALL`: 查看所有进程的CPU使用情况
-
-`pidstat -r -p [pid] [时间间隔] [收集次数]`
-
-### lsof
-
-lsof中`-P`是禁止将端口转成别名(例如`8000 -> irdmi`, `8001 -> vcom-tunnel`)
-
-1、通过端口获取pid: `lsof -i:[端口] -P -t`
-
-2、通过pid获取端口占用情况`lsof -i -P | grep [pid]`
+`wget -c -r -nd -np -K -L -p http://www.baidu.com`
