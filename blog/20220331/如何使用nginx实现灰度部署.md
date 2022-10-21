@@ -1,6 +1,6 @@
-===tag=云原生
+===tag=实践
 ===description=灰度部署
-===pinned=true
+===pinned=false
 
 # 如何使用nginx实现灰度部署
 

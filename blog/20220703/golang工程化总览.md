@@ -1,6 +1,6 @@
 ===tag=编程语言
 ===description=golang工程化所用到的工具概览
-===pinned=true
+===pinned=false
 
 # fmt
 

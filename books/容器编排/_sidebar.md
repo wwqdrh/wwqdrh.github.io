@@ -2,8 +2,5 @@
 
 * [首页](/ "简介")
 * [kubernetes](./kubernetes/_sidebar "k8s架构")
-* [集群管理](./集群管理.md "集群管理")
-* [容器调度](./容器调度.md "容器调度")
-* [网络](./网络.md "网络")
-* [存储](./存储.md "存储")
-* [安全](./安全.md "安全")
+* [dockerswarm](./dockerswarm/_sidebar "docker-swarm")
+

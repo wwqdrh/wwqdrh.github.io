@@ -1,6 +1,6 @@
-===tag=云原生
+===tag=API
 ===description=微服务简介以及go-zero如何落地
-===pinned=true
+===pinned=false
 
 # 简介
 
