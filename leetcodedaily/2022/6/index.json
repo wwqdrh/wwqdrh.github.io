@@ -1,0 +1,122 @@
+[
+  {
+    "name": "473. 火柴拼正方形",
+    "desc": "你将得到一个整数数组 matchsticks ，其中 matchsticks[i] 是第 i 个火柴棒的长度。你要用 所有的火柴棍 拼成一个正方形。你 不能折断 任何一根火柴棒，但你可以把它们连在一起，而且每根火柴棒必须 使用一次 。\n\n如果你能使这个正方形，则返回 true ，否则返回 false 。\n\n \n\n示例 1:\n\n输入: matchsticks = [1,1,2,2,2]\n输出: true\n解释: 能拼成一个边长为2的正方形，每边两根火柴。\n\n\n示例 2:\n\n输入: matchsticks = [3,3,3,3,4]\n输出: false\n解释: 不能用所有火柴拼成一个正方形。\n\n\n \n\n提示:\n\n1 <= matchsticks.length <= 15\n1 <= matchsticks[i] <= 108"
+  },
+  {
+    "name": "450. 删除二叉搜索树中的节点",
+    "desc": "给定一个二叉搜索树的根节点 root 和一个值 key，删除二叉搜索树中的 key 对应的节点，并保证二叉搜索树的性质不变。返回二叉搜索树（有可能被更新）的根节点的引用。\n\n一般来说，删除节点可分为两个步骤：\n\n首先找到需要删除的节点；\n如果找到了，删除它。\n\n \n\n示例 1:\n\n输入：root = [5,3,6,2,4,null,7], key = 3\n输出：[5,4,6,2,null,null,7]\n解释：给定需要删除的节点值是 3，所以我们首先找到 3 这个节点，然后删除它。\n一个正确的答案是 [5,4,6,2,null,null,7], 如下图所示。\n另一个正确答案是 [5,2,6,null,4,null,7]。\n\n\n\n\n示例 2:\n\n输入: root = [5,3,6,2,4,null,7], key = 0\n输出: [5,3,6,2,4,null,7]\n解释: 二叉树不包含值为 0 的节点\n\n\n示例 3:\n\n输入: root = [], key = 0\n输出: []\n\n \n\n提示:\n\n节点数的范围 [0, 104].\n-105 <= Node.val <= 105\n节点值唯一\nroot 是合法的二叉搜索树\n-105 <= key <= 105\n\n \n\n进阶： 要求算法时间复杂度为 O(h)，h 为树的高度。"
+  },
+  {
+    "name": "829. 连续整数求和",
+    "desc": "给定一个正整数 n，返回 连续正整数满足所有数字之和为 n 的组数 。 \n\n \n\n示例 1:\n\n输入: n = 5\n输出: 2\n解释: 5 = 2 + 3，共有两组连续整数([5],[2,3])求和后为 5。\n\n示例 2:\n\n输入: n = 9\n输出: 3\n解释: 9 = 4 + 5 = 2 + 3 + 4\n\n示例 3:\n\n输入: n = 15\n输出: 4\n解释: 15 = 8 + 7 = 4 + 5 + 6 = 1 + 2 + 3 + 4 + 5\n\n \n\n提示:\n\n1 <= n <= 109​​​​​​​"
+  },
+  {
+    "name": "929. 独特的电子邮件地址",
+    "desc": "每个 有效电子邮件地址 都由一个 本地名 和一个 域名 组成，以 '@' 符号分隔。除小写字母之外，电子邮件地址还可以含有一个或多个 '.' 或 '+' 。\n\n例如，在 alice@leetcode.com中， alice 是 本地名 ，而 leetcode.com 是 域名 。\n\n如果在电子邮件地址的 本地名 部分中的某些字符之间添加句点（'.'），则发往那里的邮件将会转发到本地名中没有点的同一地址。请注意，此规则 不适用于域名 。\n\n例如，\"alice.z@leetcode.com” 和 “alicez@leetcode.com” 会转发到同一电子邮件地址。\n\n如果在 本地名 中添加加号（'+'），则会忽略第一个加号后面的所有内容。这允许过滤某些电子邮件。同样，此规则 不适用于域名 。\n\n例如 m.y+name@email.com 将转发到 my@email.com。\n\n可以同时使用这两个规则。\n\n给你一个字符串数组 emails，我们会向每个 emails[i] 发送一封电子邮件。返回实际收到邮件的不同地址数目。\n\n \n\n示例 1：\n\n输入：emails = [\"test.email+alex@leetcode.com\",\"test.e.mail+bob.cathy@leetcode.com\",\"testemail+david@lee.tcode.com\"]\n输出：2\n解释：实际收到邮件的是 \"testemail@leetcode.com\" 和 \"testemail@lee.tcode.com\"。\n\n\n示例 2：\n\n输入：emails = [\"a@leetcode.com\",\"b@leetcode.com\",\"c@leetcode.com\"]\n输出：3\n\n\n\n提示：\n\n1 <= emails.length <= 100\n1 <= emails[i].length <= 100\nemails[i] 由小写英文字母、'+'、'.' 和 '@' 组成\n每个 emails[i] 都包含有且仅有一个 '@' 字符\n所有本地名和域名都不为空\n本地名不会以 '+' 字符作为开头"
+  },
+  {
+    "name": "478. 在圆内随机生成点",
+    "desc": "给定圆的半径和圆心的位置，实现函数 randPoint ，在圆中产生均匀随机点。\n\n实现 Solution 类:\n\nSolution(double radius, double x_center, double y_center) 用圆的半径 radius 和圆心的位置 (x_center, y_center) 初始化对象\nrandPoint() 返回圆内的一个随机点。圆周上的一点被认为在圆内。答案作为数组返回 [x, y] 。\n\n \n\n示例 1：\n\n输入: \n[\"Solution\",\"randPoint\",\"randPoint\",\"randPoint\"]\n[[1.0, 0.0, 0.0], [], [], []]\n输出: [null, [-0.02493, -0.38077], [0.82314, 0.38945], [0.36572, 0.17248]]\n解释:\nSolution solution = new Solution(1.0, 0.0, 0.0);\nsolution.randPoint ();//返回[-0.02493，-0.38077]\nsolution.randPoint ();//返回[0.82314,0.38945]\nsolution.randPoint ();//返回[0.36572,0.17248]\n\n \n\n提示：\n\n0 < radius <= 108\n-107 <= x_center, y_center <= 107\nrandPoint 最多被调用 3 * 104 次"
+  },
+  {
+    "name": "732. 我的日程安排表 III",
+    "desc": "当 k 个日程安排有一些时间上的交叉时（例如 k 个日程安排都在同一时间内），就会产生 k 次预订。\n\n给你一些日程安排 [start, end) ，请你在每个日程安排添加后，返回一个整数 k ，表示所有先前日程安排会产生的最大 k 次预订。\n\n实现一个 MyCalendarThree 类来存放你的日程安排，你可以一直添加新的日程安排。\n\nMyCalendarThree() 初始化对象。\nint book(int start, int end) 返回一个整数 k ，表示日历中存在的 k 次预订的最大值。\n\n \n\n示例：\n\n输入：\n[\"MyCalendarThree\", \"book\", \"book\", \"book\", \"book\", \"book\", \"book\"]\n[[], [10, 20], [50, 60], [10, 40], [5, 15], [5, 10], [25, 55]]\n输出：\n[null, 1, 1, 2, 3, 3, 3]\n\n解释：\nMyCalendarThree myCalendarThree = new MyCalendarThree();\nmyCalendarThree.book(10, 20); // 返回 1 ，第一个日程安排可以预订并且不存在相交，所以最大 k 次预订是 1 次预订。\nmyCalendarThree.book(50, 60); // 返回 1 ，第二个日程安排可以预订并且不存在相交，所以最大 k 次预订是 1 次预订。\nmyCalendarThree.book(10, 40); // 返回 2 ，第三个日程安排 [10, 40) 与第一个日程安排相交，所以最大 k 次预订是 2 次预订。\nmyCalendarThree.book(5, 15); // 返回 3 ，剩下的日程安排的最大 k 次预订是 3 次预订。\nmyCalendarThree.book(5, 10); // 返回 3\nmyCalendarThree.book(25, 55); // 返回 3\n\n\n \n\n提示：\n\n0 <= start < end <= 109\n每个测试用例，调用 book 函数最多不超过 400次"
+  },
+  {
+    "name": "875. 爱吃香蕉的珂珂",
+    "desc": "珂珂喜欢吃香蕉。这里有 n 堆香蕉，第 i 堆中有 piles[i] 根香蕉。警卫已经离开了，将在 h 小时后回来。\n\n珂珂可以决定她吃香蕉的速度 k （单位：根/小时）。每个小时，她将会选择一堆香蕉，从中吃掉 k 根。如果这堆香蕉少于 k 根，她将吃掉这堆的所有香蕉，然后这一小时内不会再吃更多的香蕉。  \n\n珂珂喜欢慢慢吃，但仍然想在警卫回来前吃掉所有的香蕉。\n\n返回她可以在 h 小时内吃掉所有香蕉的最小速度 k（k 为整数）。\n\n \n\n示例 1：\n\n输入：piles = [3,6,7,11], h = 8\n输出：4\n\n\n示例 2：\n\n输入：piles = [30,11,23,4,20], h = 5\n输出：30\n\n\n示例 3：\n\n输入：piles = [30,11,23,4,20], h = 6\n输出：23\n\n\n \n\n提示：\n\n1 <= piles.length <= 104\npiles.length <= h <= 109\n1 <= piles[i] <= 109"
+  },
+  {
+    "name": "1037. 有效的回旋镖",
+    "desc": "给定一个数组 points ，其中 points[i] = [xi, yi] 表示 X-Y 平面上的一个点，如果这些点构成一个 回旋镖 则返回 true 。\n\n回旋镖 定义为一组三个点，这些点 各不相同 且 不在一条直线上 。\n\n \n\n示例 1：\n\n输入：points = [[1,1],[2,3],[3,2]]\n输出：true\n\n\n示例 2：\n\n输入：points = [[1,1],[2,2],[3,3]]\n输出：false\n\n \n\n提示：\n\npoints.length == 3\npoints[i].length == 2\n0 <= xi, yi <= 100"
+  },
+  {
+    "name": "497. 非重叠矩形中的随机点",
+    "desc": "给定一个由非重叠的轴对齐矩形的数组 rects ，其中 rects[i] = [ai, bi, xi, yi] 表示 (ai, bi) 是第 i 个矩形的左下角点，(xi, yi) 是第 i 个矩形的右上角点。设计一个算法来随机挑选一个被某一矩形覆盖的整数点。矩形周长上的点也算做是被矩形覆盖。所有满足要求的点必须等概率被返回。\n\n在给定的矩形覆盖的空间内的任何整数点都有可能被返回。\n\n请注意 ，整数点是具有整数坐标的点。\n\n实现 Solution 类:\n\nSolution(int[][] rects) 用给定的矩形数组 rects 初始化对象。\nint[] pick() 返回一个随机的整数点 [u, v] 在给定的矩形所覆盖的空间内。\n\n \n\n示例 1：\n\n输入: \n[\"Solution\", \"pick\", \"pick\", \"pick\", \"pick\", \"pick\"]\n[[[[-2, -2, 1, 1], [2, 2, 4, 6]]], [], [], [], [], []]\n输出: \n[null, [1, -2], [1, -1], [-1, -2], [-2, -2], [0, 0]]\n\n解释：\nSolution solution = new Solution([[-2, -2, 1, 1], [2, 2, 4, 6]]);\nsolution.pick(); // 返回 [1, -2]\nsolution.pick(); // 返回 [1, -1]\nsolution.pick(); // 返回 [-1, -2]\nsolution.pick(); // 返回 [-2, -2]\nsolution.pick(); // 返回 [0, 0]\n\n \n\n提示：\n\n1 <= rects.length <= 100\nrects[i].length == 4\n-109 <= ai < xi <= 109\n-109 <= bi < yi <= 109\nxi - ai <= 2000\nyi - bi <= 2000\n所有的矩形不重叠。\npick 最多被调用 104 次。"
+  },
+  {
+    "name": "730. 统计不同回文子序列",
+    "desc": "给定一个字符串 s，返回 s 中不同的非空「回文子序列」个数 。\n\n通过从 s 中删除 0 个或多个字符来获得子序列。\n\n如果一个字符序列与它反转后的字符序列一致，那么它是「回文字符序列」。\n\n如果有某个 i , 满足 ai != bi ，则两个序列 a1, a2, ... 和 b1, b2, ... 不同。\n\n注意：\n\n结果可能很大，你需要对 109 + 7 取模 。\n\n \n\n示例 1：\n\n输入：s = 'bccb'\n输出：6\n解释：6 个不同的非空回文子字符序列分别为：'b', 'c', 'bb', 'cc', 'bcb', 'bccb'。\n注意：'bcb' 虽然出现两次但仅计数一次。\n\n\n示例 2：\n\n输入：s = 'abcdabcdabcdabcdabcdabcdabcdabcddcbadcbadcbadcbadcbadcbadcbadcba'\n输出：104860361\n解释：共有 3104860382 个不同的非空回文子序列，104860361 对 109 + 7 取模后的值。\n\n\n \n\n提示：\n\n1 <= s.length <= 1000\ns[i] 仅包含 'a', 'b', 'c' 或 'd' "
+  },
+  {
+    "name": "926. 将字符串翻转到单调递增",
+    "desc": "如果一个二进制字符串，是以一些 0（可能没有 0）后面跟着一些 1（也可能没有 1）的形式组成的，那么该字符串是 单调递增 的。\n\n给你一个二进制字符串 s，你可以将任何 0 翻转为 1 或者将 1 翻转为 0 。\n\n返回使 s 单调递增的最小翻转次数。\n\n \n\n示例 1：\n\n输入：s = \"00110\"\n输出：1\n解释：翻转最后一位得到 00111.\n\n\n示例 2：\n\n输入：s = \"010110\"\n输出：2\n解释：翻转得到 011111，或者是 000111。\n\n\n示例 3：\n\n输入：s = \"00011000\"\n输出：2\n解释：翻转得到 00000000。\n\n\n \n\n提示：\n\n1 <= s.length <= 105\ns[i] 为 '0' 或 '1'"
+  },
+  {
+    "name": "890. 查找和替换模式",
+    "desc": "你有一个单词列表 words 和一个模式  pattern，你想知道 words 中的哪些单词与模式匹配。\n\n如果存在字母的排列 p ，使得将模式中的每个字母 x 替换为 p(x) 之后，我们就得到了所需的单词，那么单词与模式是匹配的。\n\n（回想一下，字母的排列是从字母到字母的双射：每个字母映射到另一个字母，没有两个字母映射到同一个字母。）\n\n返回 words 中与给定模式匹配的单词列表。\n\n你可以按任何顺序返回答案。\n\n \n\n示例：\n\n输入：words = [\"abc\",\"deq\",\"mee\",\"aqq\",\"dkd\",\"ccc\"], pattern = \"abb\"\n输出：[\"mee\",\"aqq\"]\n解释：\n\"mee\" 与模式匹配，因为存在排列 {a -> m, b -> e, ...}。\n\"ccc\" 与模式不匹配，因为 {a -> c, b -> c, ...} 不是排列。\n因为 a 和 b 映射到同一个字母。\n\n \n\n提示：\n\n1 <= words.length <= 50\n1 <= pattern.length = words[i].length <= 20"
+  },
+  {
+    "name": "1051. 高度检查器",
+    "desc": "学校打算为全体学生拍一张年度纪念照。根据要求，学生需要按照 非递减 的高度顺序排成一行。\n\n排序后的高度情况用整数数组 expected 表示，其中 expected[i] 是预计排在这一行中第 i 位的学生的高度（下标从 0 开始）。\n\n给你一个整数数组 heights ，表示 当前学生站位 的高度情况。heights[i] 是这一行中第 i 位学生的高度（下标从 0 开始）。\n\n返回满足 heights[i] != expected[i] 的 下标数量 。\n\n \n\n示例：\n\n输入：heights = [1,1,4,2,1,3]\n输出：3 \n解释：\n高度：[1,1,4,2,1,3]\n预期：[1,1,1,2,3,4]\n下标 2 、4 、5 处的学生高度不匹配。\n\n示例 2：\n\n输入：heights = [5,1,2,3,4]\n输出：5\n解释：\n高度：[5,1,2,3,4]\n预期：[1,2,3,4,5]\n所有下标的对应学生高度都不匹配。\n\n示例 3：\n\n输入：heights = [1,2,3,4,5]\n输出：0\n解释：\n高度：[1,2,3,4,5]\n预期：[1,2,3,4,5]\n所有下标的对应学生高度都匹配。\n\n \n\n提示：\n\n1 <= heights.length <= 100\n1 <= heights[i] <= 100"
+  },
+  {
+    "name": "498. 对角线遍历",
+    "desc": "给你一个大小为 m x n 的矩阵 mat ，请以对角线遍历的顺序，用一个数组返回这个矩阵中的所有元素。\n\n \n\n示例 1：\n\n输入：mat = [[1,2,3],[4,5,6],[7,8,9]]\n输出：[1,2,4,7,5,3,6,8,9]\n\n\n示例 2：\n\n输入：mat = [[1,2],[3,4]]\n输出：[1,2,3,4]\n\n\n \n\n提示：\n\nm == mat.length\nn == mat[i].length\n1 <= m, n <= 104\n1 <= m * n <= 104\n-105 <= mat[i][j] <= 105"
+  },
+  {
+    "name": "719. 找出第 K 小的数对距离",
+    "desc": "数对 (a,b) 由整数 a 和 b 组成，其数对距离定义为 a 和 b 的绝对差值。\n\n给你一个整数数组 nums 和一个整数 k ，数对由 nums[i] 和 nums[j] 组成且满足 0 <= i < j < nums.length 。返回 所有数对距离中 第 k 小的数对距离。\n\n \n\n示例 1：\n\n输入：nums = [1,3,1], k = 1\n输出：0\n解释：数对和对应的距离如下：\n(1,3) -> 2\n(1,1) -> 0\n(3,1) -> 2\n距离第 1 小的数对是 (1,1) ，距离为 0 。\n\n\n示例 2：\n\n输入：nums = [1,1,1], k = 2\n输出：0\n\n\n示例 3：\n\n输入：nums = [1,6,1], k = 3\n输出：5\n\n\n \n\n提示：\n\nn == nums.length\n2 <= n <= 104\n0 <= nums[i] <= 106\n1 <= k <= n * (n - 1) / 2"
+  },
+  {
+    "name": "532. 数组中的 k-diff 数对",
+    "desc": "给你一个整数数组 nums 和一个整数 k，请你在数组中找出 不同的 k-diff 数对，并返回不同的 k-diff 数对 的数目。\n\nk-diff 数对定义为一个整数对 (nums[i], nums[j]) ，并满足下述全部条件：\n\n0 <= i, j < nums.length\ni != j\nnums[i] - nums[j] == k\n\n注意，|val| 表示 val 的绝对值。\n\n \n\n示例 1：\n\n输入：nums = [3, 1, 4, 1, 5], k = 2\n输出：2\n解释：数组中有两个 2-diff 数对, (1, 3) 和 (3, 5)。\n尽管数组中有两个 1 ，但我们只应返回不同的数对的数量。\n\n\n示例 2：\n\n输入：nums = [1, 2, 3, 4, 5], k = 1\n输出：4\n解释：数组中有四个 1-diff 数对, (1, 2), (2, 3), (3, 4) 和 (4, 5) 。\n\n\n示例 3：\n\n输入：nums = [1, 3, 1, 5, 4], k = 0\n输出：1\n解释：数组中只有一个 0-diff 数对，(1, 1) 。\n\n\n \n\n提示：\n\n1 <= nums.length <= 104\n-107 <= nums[i] <= 107\n0 <= k <= 107"
+  },
+  {
+    "name": "1089. 复写零",
+    "desc": "给你一个长度固定的整数数组 arr ，请你将该数组中出现的每个零都复写一遍，并将其余的元素向右平移。\n\n注意：请不要在超过该数组长度的位置写入元素。请对输入的数组 就地 进行上述修改，不要从函数返回任何东西。\n\n \n\n示例 1：\n\n输入：arr = [1,0,2,3,0,4,5,0]\n输出：[1,0,0,2,3,0,0,4]\n解释：调用函数后，输入的数组将被修改为：[1,0,0,2,3,0,0,4]\n\n示例 2：\n\n输入：arr = [1,2,3]\n输出：[1,2,3]\n解释：调用函数后，输入的数组将被修改为：[1,2,3]\n\n\n \n\n提示：\n\n1 <= arr.length <= 104\n0 <= arr[i] <= 9"
+  },
+  {
+    "name": "剑指 Offer II 029. 排序的循环链表",
+    "desc": "给定循环单调非递减列表中的一个点，写一个函数向这个列表中插入一个新元素 insertVal ，使这个列表仍然是循环升序的。\n\n给定的可以是这个列表中任意一个顶点的指针，并不一定是这个列表中最小元素的指针。\n\n如果有多个满足条件的插入位置，可以选择任意一个位置插入新的值，插入后整个列表仍然保持有序。\n\n如果列表为空（给定的节点是 null），需要创建一个循环有序列表并返回这个节点。否则。请返回原先给定的节点。\n\n \n\n示例 1：\n\n\n \n\n输入：head = [3,4,1], insertVal = 2\n输出：[3,4,1,2]\n解释：在上图中，有一个包含三个元素的循环有序列表，你获得值为 3 的节点的指针，我们需要向表中插入元素 2 。新插入的节点应该在 1 和 3 之间，插入之后，整个列表如上图所示，最后返回节点 3 。\n\n\n\n\n示例 2：\n\n输入：head = [], insertVal = 1\n输出：[1]\n解释：列表为空（给定的节点是 null），创建一个循环有序列表并返回这个节点。\n\n\n示例 3：\n\n输入：head = [1], insertVal = 0\n输出：[1,0]\n\n\n \n\n提示：\n\n0 <= Number of Nodes <= 5 * 10^4\n-10^6 <= Node.val <= 10^6\n-10^6 <= insertVal <= 10^6\n\n \n\n注意：本题与主站 708 题相同： https://leetcode-cn.com/problems/insert-into-a-sorted-circular-linked-list/"
+  },
+  {
+    "name": "508. 出现次数最多的子树元素和",
+    "desc": "给你一个二叉树的根结点 root ，请返回出现次数最多的子树元素和。如果有多个元素出现的次数相同，返回所有出现次数最多的子树元素和（不限顺序）。\n\n一个结点的 「子树元素和」 定义为以该结点为根的二叉树上所有结点的元素之和（包括结点本身）。\n\n \n\n示例 1：\n\n输入: root = [5,2,-3]\n输出: [2,-3,4]\n\n\n示例 2：\n\n输入: root = [5,2,-5]\n输出: [2]\n\n\n \n\n提示:\n\n节点数在 [1, 104] 范围内\n-105 <= Node.val <= 105"
+  },
+  {
+    "name": "715. Range 模块",
+    "desc": "Range模块是跟踪数字范围的模块。设计一个数据结构来跟踪表示为 半开区间 的范围并查询它们。\n\n半开区间 [left, right) 表示所有 left <= x < right 的实数 x 。\n\n实现 RangeModule 类:\n\nRangeModule() 初始化数据结构的对象。\nvoid addRange(int left, int right) 添加 半开区间 [left, right)，跟踪该区间中的每个实数。添加与当前跟踪的数字部分重叠的区间时，应当添加在区间 [left, right) 中尚未跟踪的任何数字到该区间中。\nboolean queryRange(int left, int right) 只有在当前正在跟踪区间 [left, right) 中的每一个实数时，才返回 true ，否则返回 false 。\nvoid removeRange(int left, int right) 停止跟踪 半开区间 [left, right) 中当前正在跟踪的每个实数。\n\n \n\n示例 1：\n\n输入\n[\"RangeModule\", \"addRange\", \"removeRange\", \"queryRange\", \"queryRange\", \"queryRange\"]\n[[], [10, 20], [14, 16], [10, 14], [13, 15], [16, 17]]\n输出\n[null, null, null, true, false, true]\n\n解释\nRangeModule rangeModule = new RangeModule();\nrangeModule.addRange(10, 20);\nrangeModule.removeRange(14, 16);\nrangeModule.queryRange(10, 14); 返回 true （区间 [10, 14) 中的每个数都正在被跟踪）\nrangeModule.queryRange(13, 15); 返回 false（未跟踪区间 [13, 15) 中像 14, 14.03, 14.17 这样的数字）\nrangeModule.queryRange(16, 17); 返回 true （尽管执行了删除操作，区间 [16, 17) 中的数字 16 仍然会被跟踪）\n\n\n \n\n提示：\n\n1 <= left < right <= 109\n在单个测试用例中，对 addRange 、  queryRange 和 removeRange 的调用总数不超过 104 次"
+  },
+  {
+    "name": "1108. IP 地址无效化",
+    "desc": "给你一个有效的 IPv4 地址 address，返回这个 IP 地址的无效化版本。\n\n所谓无效化 IP 地址，其实就是用 \"[.]\" 代替了每个 \".\"。\n\n \n\n示例 1：\n\n输入：address = \"1.1.1.1\"\n输出：\"1[.]1[.]1[.]1\"\n\n\n示例 2：\n\n输入：address = \"255.100.50.0\"\n输出：\"255[.]100[.]50[.]0\"\n\n\n \n\n提示：\n\n给出的 address 是一个有效的 IPv4 地址"
+  },
+  {
+    "name": "513. 找树左下角的值",
+    "desc": "给定一个二叉树的 根节点 root，请找出该二叉树的 最底层 最左边 节点的值。\n\n假设二叉树中至少有一个节点。\n\n \n\n示例 1:\n\n输入: root = [2,1,3]\n输出: 1\n\n\n示例 2:\n\n输入: [1,2,3,4,null,5,6,null,null,7]\n输出: 7\n\n\n \n\n提示:\n\n二叉树的节点个数的范围是 [1,104]\n-231 <= Node.val <= 231 - 1 "
+  },
+  {
+    "name": "30. 串联所有单词的子串",
+    "desc": "给定一个字符串 s 和一个字符串数组 words。 words 中所有字符串 长度相同。\n\n s 中的 串联子串 是指一个包含  words 中所有字符串以任意顺序排列连接起来的子串。\n\n例如，如果 words = [\"ab\",\"cd\",\"ef\"]， 那么 \"abcdef\"， \"abefcd\"，\"cdabef\"， \"cdefab\"，\"efabcd\"， 和 \"efcdab\" 都是串联子串。 \"acdbef\" 不是串联子串，因为他不是任何 words 排列的连接。\n\n返回所有串联字串在 s 中的开始索引。你可以以 任意顺序 返回答案。\n\n \n\n示例 1：\n\n输入：s = \"barfoothefoobarman\", words = [\"foo\",\"bar\"]\n输出：[0,9]\n解释：因为 words.length == 2 同时 words[i].length == 3，连接的子字符串的长度必须为 6。\n子串 \"barfoo\" 开始位置是 0。它是 words 中以 [\"bar\",\"foo\"] 顺序排列的连接。\n子串 \"foobar\" 开始位置是 9。它是 words 中以 [\"foo\",\"bar\"] 顺序排列的连接。\n输出顺序无关紧要。返回 [9,0] 也是可以的。\n\n\n示例 2：\n\n输入：s = \"wordgoodgoodgoodbestword\", words = [\"word\",\"good\",\"best\",\"word\"]\n输出：[]\n解释：因为 words.length == 4 并且 words[i].length == 4，所以串联子串的长度必须为 16。\ns 中没有子串长度为 16 并且等于 words 的任何顺序排列的连接。\n所以我们返回一个空数组。\n\n\n示例 3：\n\n输入：s = \"barfoofoobarthefoobarman\", words = [\"bar\",\"foo\",\"the\"]\n输出：[6,9,12]\n解释：因为 words.length == 3 并且 words[i].length == 3，所以串联子串的长度必须为 9。\n子串 \"foobarthe\" 开始位置是 6。它是 words 中以 [\"foo\",\"bar\",\"the\"] 顺序排列的连接。\n子串 \"barthefoo\" 开始位置是 9。它是 words 中以 [\"bar\",\"the\",\"foo\"] 顺序排列的连接。\n子串 \"thefoobar\" 开始位置是 12。它是 words 中以 [\"the\",\"foo\",\"bar\"] 顺序排列的连接。\n\n \n\n提示：\n\n1 <= s.length <= 104\n1 <= words.length <= 5000\n1 <= words[i].length <= 30\nwords[i] 和 s 由小写英文字母组成"
+  },
+  {
+    "name": "515. 在每个树行中找最大值",
+    "desc": "给定一棵二叉树的根节点 root ，请找出该二叉树中每一层的最大值。\n\n \n\n示例1：\n\n输入: root = [1,3,2,5,3,null,9]\n输出: [1,3,9]\n\n\n示例2：\n\n输入: root = [1,2,3]\n输出: [1,3]\n\n\n \n\n提示：\n\n二叉树的节点个数的范围是 [0,104]\n-231 <= Node.val <= 231 - 1\n\n "
+  },
+  {
+    "name": "剑指 Offer II 091. 粉刷房子",
+    "desc": "假如有一排房子，共 n 个，每个房子可以被粉刷成红色、蓝色或者绿色这三种颜色中的一种，你需要粉刷所有的房子并且使其相邻的两个房子颜色不能相同。\n\n当然，因为市场上不同颜色油漆的价格不同，所以房子粉刷成不同颜色的花费成本也是不同的。每个房子粉刷成不同颜色的花费是以一个 n x 3 的正整数矩阵 costs 来表示的。\n\n例如，costs[0][0] 表示第 0 号房子粉刷成红色的成本花费；costs[1][2] 表示第 1 号房子粉刷成绿色的花费，以此类推。\n\n请计算出粉刷完所有房子最少的花费成本。\n\n \n\n示例 1：\n\n输入: costs = [[17,2,17],[16,16,5],[14,3,19]]\n输出: 10\n解释: 将 0 号房子粉刷成蓝色，1 号房子粉刷成绿色，2 号房子粉刷成蓝色。\n     最少花费: 2 + 5 + 3 = 10。\n\n\n示例 2：\n\n输入: costs = [[7,6,2]]\n输出: 2\n\n\n \n\n提示:\n\ncosts.length == n\ncosts[i].length == 3\n1 <= n <= 100\n1 <= costs[i][j] <= 20\n\n \n\n注意：本题与主站 256 题相同：https://leetcode-cn.com/problems/paint-house/"
+  },
+  {
+    "name": "710. 黑名单中的随机数",
+    "desc": "给定一个整数 n 和一个 无重复 黑名单整数数组 blacklist 。设计一种算法，从 [0, n - 1] 范围内的任意整数中选取一个 未加入 黑名单 blacklist 的整数。任何在上述范围内且不在黑名单 blacklist 中的整数都应该有 同等的可能性 被返回。\n\n优化你的算法，使它最小化调用语言 内置 随机函数的次数。\n\n实现 Solution 类:\n\nSolution(int n, int[] blacklist) 初始化整数 n 和被加入黑名单 blacklist 的整数\nint pick() 返回一个范围为 [0, n - 1] 且不在黑名单 blacklist 中的随机整数\n\n \n\n示例 1：\n\n输入\n[\"Solution\", \"pick\", \"pick\", \"pick\", \"pick\", \"pick\", \"pick\", \"pick\"]\n[[7, [2, 3, 5]], [], [], [], [], [], [], []]\n输出\n[null, 0, 4, 1, 6, 1, 0, 4]\n\n解释\nSolution solution = new Solution(7, [2, 3, 5]);\nsolution.pick(); // 返回0，任何[0,1,4,6]的整数都可以。注意，对于每一个pick的调用，\n                 // 0、1、4和6的返回概率必须相等(即概率为1/4)。\nsolution.pick(); // 返回 4\nsolution.pick(); // 返回 1\nsolution.pick(); // 返回 6\nsolution.pick(); // 返回 1\nsolution.pick(); // 返回 0\nsolution.pick(); // 返回 4\n\n\n \n\n提示:\n\n1 <= n <= 109\n0 <= blacklist.length <= min(105, n - 1)\n0 <= blacklist[i] < n\nblacklist 中所有值都 不同\n pick 最多被调用 2 * 104 次"
+  },
+  {
+    "name": "522. 最长特殊序列 II",
+    "desc": "给定字符串列表 strs ，返回其中 最长的特殊序列 的长度。如果最长特殊序列不存在，返回 -1 。\n\n特殊序列 定义如下：该序列为某字符串 独有的子序列（即不能是其他字符串的子序列）。\n\n s 的 子序列可以通过删去字符串 s 中的某些字符实现。\n\n例如，\"abc\" 是 \"aebdc\" 的子序列，因为您可以删除\"aebdc\"中的下划线字符来得到 \"abc\" 。\"aebdc\"的子序列还包括\"aebdc\"、 \"aeb\" 和 \"\" (空字符串)。\n\n \n\n示例 1：\n\n输入: strs = [\"aba\",\"cdc\",\"eae\"]\n输出: 3\n\n\n示例 2:\n\n输入: strs = [\"aaa\",\"aaa\",\"aa\"]\n输出: -1\n\n\n \n\n提示:\n\n2 <= strs.length <= 50\n1 <= strs[i].length <= 10\nstrs[i] 只包含小写英文字母"
+  },
+  {
+    "name": "324. 摆动排序 II",
+    "desc": "给你一个整数数组 nums，将它重新排列成 nums[0] < nums[1] > nums[2] < nums[3]... 的顺序。\n\n你可以假设所有输入数组都可以得到满足题目要求的结果。\n\n \n\n示例 1：\n\n输入：nums = [1,5,1,1,6,4]\n输出：[1,6,1,5,1,4]\n解释：[1,4,1,5,1,6] 同样是符合题目要求的结果，可以被判题程序接受。\n\n\n示例 2：\n\n输入：nums = [1,3,2,2,3,1]\n输出：[2,3,1,3,1,2]\n\n\n \n\n提示：\n\n1 <= nums.length <= 5 * 104\n0 <= nums[i] <= 5000\n题目数据保证，对于给定的输入 nums ，总能产生满足题目要求的结果\n\n \n\n进阶：你能用 O(n) 时间复杂度和 / 或原地 O(1) 额外空间来实现吗？"
+  },
+  {
+    "name": "535. TinyURL 的加密与解密",
+    "desc": "TinyURL 是一种 URL 简化服务， 比如：当你输入一个 URL https://leetcode.com/problems/design-tinyurl 时，它将返回一个简化的URL http://tinyurl.com/4e9iAk 。请你设计一个类来加密与解密 TinyURL 。\n\n加密和解密算法如何设计和运作是没有限制的，你只需要保证一个 URL 可以被加密成一个 TinyURL ，并且这个 TinyURL 可以用解密方法恢复成原本的 URL 。\n\n实现 Solution 类：\n\nSolution() 初始化 TinyURL 系统对象。\nString encode(String longUrl) 返回 longUrl 对应的 TinyURL 。\nString decode(String shortUrl) 返回 shortUrl 原本的 URL 。题目数据保证给定的 shortUrl 是由同一个系统对象加密的。\n\n \n\n示例：\n\n输入：url = \"https://leetcode.com/problems/design-tinyurl\"\n输出：\"https://leetcode.com/problems/design-tinyurl\"\n\n解释：\nSolution obj = new Solution();\nstring tiny = obj.encode(url); // 返回加密后得到的 TinyURL 。\nstring ans = obj.decode(tiny); // 返回解密后得到的原本的 URL 。\n\n\n \n\n提示：\n\n1 <= url.length <= 104\n题目数据保证 url 是一个有效的 URL"
+  },
+  {
+    "name": "1175. 质数排列",
+    "desc": "请你帮忙给从 1 到 n 的数设计排列方案，使得所有的「质数」都应该被放在「质数索引」（索引从 1 开始）上；你需要返回可能的方案总数。\n\n让我们一起来回顾一下「质数」：质数一定是大于 1 的，并且不能用两个小于它的正整数的乘积来表示。\n\n由于答案可能会很大，所以请你返回答案 模 mod 10^9 + 7 之后的结果即可。\n\n \n\n示例 1：\n\n输入：n = 5\n输出：12\n解释：举个例子，[1,2,5,4,3] 是一个有效的排列，但 [5,2,3,4,1] 不是，因为在第二种情况里质数 5 被错误地放在索引为 1 的位置上。\n\n\n示例 2：\n\n输入：n = 100\n输出：682289015\n\n\n \n\n提示：\n\n1 <= n <= 100"
+  }
+]
