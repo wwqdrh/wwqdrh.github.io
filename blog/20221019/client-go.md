@@ -2,6 +2,31 @@
 ===description=kubernetes的go语言客户端库
 ===pinned=false
 
+## 工具简介
+
+
+ k8s.io/client-go 提供了对k8s原生资源的informer和clientset等等，但对于自定义资源的操作则相对低效，需要使用 rest api 和 dynamic client 来操作，并自己实现反序列化等功能。
+
+code-generator 提供了以下工具用于为k8s中的资源生成相关代码，可以更加方便的操作自定义资源：
+	• deepcopy-gen: 生成深度拷贝对象方法
+	• client-gen: 为资源生成标准的操作方法(get;list;watch;create;update;patch;delete)
+	• informer-gen: 生成informer，提供事件机制(AddFunc,UpdateFunc,DeleteFunc)来响应kubernetes的event
+	• lister-gen: 为get和list方法提供只读缓存层
+
+Kubebuilder是用于使用自定义资源定义（CRD）构建Kubernetes API的框架。
+类似于Ruby on Rails和SpringBoot之类的Web开发框架，Kubebuilder可以提高速度并降低开发人员管理的复杂性，以便在Go中快速构建和发布Kubernetes API。它建立在用于构建核心Kubernetes API的规范技术的基础之上，以提供减少样板和麻烦的简单抽象。
+
+
+ Kubebuilder 与 code-generator 都可以为CRD生成Kubernetes API相关代码，从代码生成层面来讲， 两者的区别在于：
+	• Kubebuilder不会生成informers、listers、clientsets，而code-generator会。
+	• Kubebuilder会生成Controller、Admission Webhooks，而code-generator不会。
+	• Kubebuilder会生成manifests yaml，而code-generator不会。
+	• Kubebuilder还带有一些其他便利性设施。
+使用Kubebuilder可以快捷生成CRD以及相关的控制器框架，然而由于Kubebuilder不会生成clientset等包，当别的服务想要操作CRD时将会很麻烦。
+两者结合后可以使用Kubebuilder生成CRD和一整套控制器架构，再使用code-generator生成informers、listers、clientsets等。
+
+Controller-tools应该是控制集群中的控制器相关工具
+
 操作集群的核心client
 
 k8s.io/client-go 提供了对k8s原生资源的informer和clientset等等，但对于自定义资源的操作则相对低效，需要使用 rest api 和 dynamic client 来操作，并自己实现反序列化等功能。
