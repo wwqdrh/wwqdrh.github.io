@@ -470,15 +470,34 @@ go tool pprof http://localhost:6060/debug/pprof/mutex
 
 ## trace
 
--   View trace：查看跟踪，能看到一段时间内 goroutine 的调度执行情况，包括事件触发链；
--   Goroutine analysis：Goroutine 分析，能看到这段时间所有 goroutine 执行的一个情况，执行堆栈，执行时间；
--   Network blocking profile：网络阻塞概况（分析网络的一些消耗）
--   Synchronization blocking profile：同步阻塞概况（分析同步锁的一些情况）
--   Syscall blocking profile：系统调用阻塞概况（分析系统调用的消耗）
--   Scheduler latency profile：调度延迟概况（函数的延迟占比）
--   User defined tasks：自定义任务
--   User defined regions：自定义区域
--   Minimum mutator utilization：Mutator 利用率使用情况
+trace工具，用于查看整个周期内发生的事件，指定的Goroutines何时执行、执行 了多长时间、什么时候陷入了堵塞、什么时候解除了堵塞、GC如何影 响单个Goroutine的执行、STW中断花费的时间是否太长等 。
+
+- 协程的创建、开始和结束
+- 协程的堵塞-系统调用、通道、锁
+- 网络I/O相关事件
+- 系统调用事件
+- 垃圾回收相关事件
+
+```go
+import "runtime/trace"
+
+trace.Start(f)
+
+defer trace.Stop()
+
+// or use net/pprof
+// curl -o trace.out http.../debug/pprof/trace?second=20
+
+// 然后使用go tool trace trace.out进行分析
+```
+
+在trace的初始阶段需要首先STW，然后获取协程的快照、状态、栈帧信息，然后开启GC重新启动所有协程。go源码中对于关键事件都加了判断是否开启了trace，开启后，触发这些事件时都会写入。
+
+关键的事件包括协程的生命周期、协程堵塞、网络I/O、系统 调用、垃圾回收等，根据事件的不同，可能保存和此事件相关的不同 数量的参数及栈追踪数据。每个逻辑处理器P都有一个缓存 (p.tracebuf)，用于存储已经被序列化为字节的事件(Event) 。每个p的tracebuf都有限度，超过之后会转移到全局链表。
+
+trace工具会新开一个协程专门用于读取全局trace上的信息， 此时全局的事件对象已经是序列化之后的字节数组，直接添加到文件 中即可。另外，访问全局trace缓存需要加锁，当没有可以访问的对象 时，读取协程会陷入休眠状态 。
+
+当指定的事件到期后结束trace任务程序再次进入STW，刷新逻辑处理器P上的tracebuf缓存
 
 
 ## pyroscope
