@@ -1,6 +1,7 @@
 ===tag=网络
 ===description=socket套接字
 ===pinned=false
+===create=2022-10-19
 
 创建套接字
 socket.socket 参数讲解

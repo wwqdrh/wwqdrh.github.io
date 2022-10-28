@@ -1,5 +1,6 @@
 ===tag=API
 ===description=gorm的API文档，是golang技术栈中的数据库orm工具，支持postgresql、mysql、sqlite3
+===create=2022-06-13
 
 # 模型定义
 

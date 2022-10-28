@@ -1,6 +1,7 @@
 ===tag=云原生
 ===description=k8s中资源对象类型
 ===pinned=false
+===create=2022-10-18
 
 # 工作负载
 

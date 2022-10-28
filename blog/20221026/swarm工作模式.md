@@ -1,6 +1,7 @@
 ===tag=云原生
 ===description=docker-swarm的工作原理
 ===pinned=false
+===create=2022-10-26
 
 # node
 

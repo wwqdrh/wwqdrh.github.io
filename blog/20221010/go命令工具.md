@@ -1,6 +1,8 @@
 ===tag=编程语言
 ===description=golang命令工具
 ===pinned=false
+===create=2022-10-10
+
 
 > 参考: https://hyper0x.github.io/go_command_tutorial/#/0.1
 

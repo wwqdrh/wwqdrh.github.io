@@ -1,6 +1,7 @@
 ===tag=实践
 ===description=ssh环境配置
 ===pinned=false
+===create=2022-10-08
 
 
 ```bash

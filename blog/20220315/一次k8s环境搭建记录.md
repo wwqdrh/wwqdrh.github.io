@@ -1,6 +1,7 @@
 ===tag=实践
 ===description=kubernetes环境搭建记录
 ===pinned=false
+===create=2022-03-15
 
 # 环境安装
 

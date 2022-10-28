@@ -1,6 +1,8 @@
 ===tag=云原生
 ===description=cgroupv1和v2的变化
 ===pinned=false
+===create=2022-10-10
+
 
 cgroupv1和v2有所区别，groupv2各项指标是混在一个group下的，而不是在具体的指标下再分组
 

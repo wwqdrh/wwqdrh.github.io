@@ -1,6 +1,8 @@
 ===tag=实践
 ===description=nginx网关的常用配置
 ===pinned=false
+===create=2022-10-08
+
 
 ## 配置静态文件服务
 
