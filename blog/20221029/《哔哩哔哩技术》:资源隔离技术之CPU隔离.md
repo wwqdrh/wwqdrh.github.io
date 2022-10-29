@@ -3,7 +3,7 @@
 ===pinned=false
 ===create=2022-10-29
 
-> [原文链接]:(https://mp.weixin.qq.com/s/q-O2L-6_DMwhjCjGVAvmrg)
+> 原文链接:https://mp.weixin.qq.com/s/q-O2L-6_DMwhjCjGVAvmrg
 
 # CFS模型
 
