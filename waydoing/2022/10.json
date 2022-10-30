@@ -33,6 +33,14 @@
                 "cover": "",
                 "desc": "实践下《容器实战高手课专栏》内存限制这一章节",
                 "detail": "/blog/20221030/内存限制实践.md"
+            },
+            {
+                "id": 5,
+                "titile": "开发",
+                "time": "18:20---19:15",
+                "cover": "",
+                "desc": "seveltkit+storybook(storybook 是一个 JS 库，可以在已有项目，在无需修改业务逻辑的情況下，给组件自动形成文档，可很好的展示属性和功能。), 模板项目试用https://github.com/YogliB/svelte-component-template, 服了，新版推荐使用vite作为打包工具，试试这个:https://github.com/mattlehrer/sveltekit-vite-tailwind.git",
+                "detail": ""
             }
         ]
     }
