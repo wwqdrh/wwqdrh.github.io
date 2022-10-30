@@ -1,0 +1,1 @@
+import{r as e}from"./index.851417fa.js";function o(t){return e({url:`/blog/${t.dirTime}/${t.name}.md`,method:"get"})}function m(t){return e({url:t,method:"get"})}function n(t){return e({url:`${t}.md`,method:"get"})}export{m as G,o as a,n as b};

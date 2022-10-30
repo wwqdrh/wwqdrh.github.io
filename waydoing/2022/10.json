@@ -3,10 +3,28 @@
         "day": "10-30",
         "things": [
             {
+                "id": 1,
                 "titile": "开发",
                 "time": "08:54---09:30",
                 "cover": "/image/waydoing/2022-10-30-way组件.png",
-                "desc": "gitpage开发上线w-a-y-doing页面(就是这个), timeline组件, 记录你的时间到底去哪了"
+                "desc": "gitpage开发上线w-a-y-doing页面(就是这个), timeline组件, 记录你的时间到底去哪了",
+                "detail": ""
+            },
+            {
+                "id": 2,
+                "titile": "专栏",
+                "time": "10:22---11:30",
+                "cover": "",
+                "desc": "复习下《容器实战高手课专栏》cpu限制这一章节",
+                "detail": "/blog/20221030/CPU限制实践.md"
+            },
+            {
+                "id": 2,
+                "titile": "算法",
+                "time": "11:30---11:45",
+                "cover": "",
+                "desc": "leetcode每日一题，简单回溯，唯一需要注意的是在递归结构中不需要进入判断的应该最开始就跳过，而不是在后面循环的时候再处理，否则会造成重复值",
+                "detail": ""
             }
         ]
     }
