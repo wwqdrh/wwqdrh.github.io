@@ -1,5 +1,18 @@
 [
     {
+        "day": "10-31",
+        "things": [
+            {
+                "id": 1,
+                "titile": "算法",
+                "time": "02:47---03:35",
+                "cover": "/image/waydoing/2022-10-31-dailymonth.png",
+                "desc": "leetcode2022-10每日一题复习整理",
+                "detail": ""
+            }
+        ]
+    },
+    {
         "day": "10-30",
         "things": [
             {
