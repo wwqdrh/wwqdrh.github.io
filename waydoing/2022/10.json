@@ -36,10 +36,26 @@
             },
             {
                 "id": 5,
-                "titile": "开发",
+                "titile": "生活",
                 "time": "10:55---11:36",
                 "cover": [],
                 "desc": "个人简历修改，投一投（投了蚂蚁，做好石沉大海的准备），u1s1, 想进云原生岗领域真难啊😭",
+                "detail": ""
+            },
+            {
+                "id": 6,
+                "titile": "开发",
+                "time": "14:40---15:45",
+                "cover": [],
+                "desc": "namespace-network实践，从docker的network=none开始配置网络",
+                "detail": "/blog/20221031/从none网络实践容器的网络配置.md"
+            },
+            {
+                "id": 7,
+                "titile": "开发",
+                "time": "15:45---16:40",
+                "cover": ["/image/waydoing/micserver1.png"],
+                "desc": "个人项目micserver初期架构设计",
                 "detail": ""
             }
         ]
