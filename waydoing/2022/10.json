@@ -17,6 +17,22 @@
                 "cover": [],
                 "desc": "gallery组件开发, 做到多img能够自适应，以及随机高度了，不过点击full carousel还有一点问题",
                 "detail": ""
+            },
+            {
+                "id": 3,
+                "titile": "开发",
+                "time": "06:30---06:50",
+                "cover": [],
+                "desc": "github主页美化实践",
+                "detail": ""
+            },
+            {
+                "id": 4,
+                "titile": "开发",
+                "time": "10:17---10:50",
+                "cover": [],
+                "desc": "个人博客首页清理，把一些基础文档移动到实战手册中",
+                "detail": ""
             }
         ]
     },
