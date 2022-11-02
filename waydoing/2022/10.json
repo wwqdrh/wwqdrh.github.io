@@ -7,7 +7,7 @@
                 "titile": "算法",
                 "time": "02:47---03:35",
                 "cover": ["/image/waydoing/2022-10-31-dailymonth.png"],
-                "desc": "leetcode2022-10每日一题复习整理",
+                "desc": ["leetcode2022-10每日一题复习整理"],
                 "detail": ""
             },
             {
@@ -15,7 +15,7 @@
                 "titile": "开发",
                 "time": "05:35---06:25",
                 "cover": [],
-                "desc": "gallery组件开发, 做到多img能够自适应，以及随机高度了，不过点击full carousel还有一点问题",
+                "desc": ["gallery组件开发, 做到多img能够自适应，以及随机高度了，不过点击full carousel还有一点问题"],
                 "detail": ""
             },
             {
@@ -23,7 +23,7 @@
                 "titile": "开发",
                 "time": "06:30---06:50",
                 "cover": [],
-                "desc": "github主页美化实践",
+                "desc": ["github主页美化实践"],
                 "detail": ""
             },
             {
@@ -31,7 +31,7 @@
                 "titile": "开发",
                 "time": "10:17---10:50",
                 "cover": [],
-                "desc": "个人博客首页清理，把一些基础文档移动到实战手册中",
+                "desc": ["个人博客首页清理，把一些基础文档移动到实战手册中"],
                 "detail": ""
             },
             {
@@ -39,7 +39,7 @@
                 "titile": "生活",
                 "time": "10:55---11:36",
                 "cover": [],
-                "desc": "个人简历修改，投一投（投了蚂蚁，做好石沉大海的准备），u1s1, 想进云原生岗领域真难啊😭",
+                "desc": ["个人简历修改，投一投（投了蚂蚁，做好石沉大海的准备），u1s1, 想进云原生岗领域真难啊😭"],
                 "detail": ""
             },
             {
@@ -47,7 +47,7 @@
                 "titile": "开发",
                 "time": "14:40---15:45",
                 "cover": [],
-                "desc": "namespace-network实践，从docker的network=none开始配置网络",
+                "desc": ["namespace-network实践，从docker的network=none开始配置网络"],
                 "detail": "/blog/20221031/从none网络实践容器的网络配置.md"
             },
             {
@@ -55,7 +55,7 @@
                 "titile": "开发",
                 "time": "15:45---16:40",
                 "cover": ["/image/waydoing/micserver1.png"],
-                "desc": "个人项目micserver初期架构设计",
+                "desc": ["个人项目micserver初期架构设计"],
                 "detail": ""
             }
         ]
@@ -68,7 +68,7 @@
                 "titile": "开发",
                 "time": "08:54---09:30",
                 "cover": ["/image/waydoing/2022-10-30-way组件.png"],
-                "desc": "gitpage开发上线w-a-y-doing页面(就是这个), timeline组件, 记录你的时间到底去哪了",
+                "desc": ["gitpage开发上线w-a-y-doing页面(就是这个), timeline组件, 记录你的时间到底去哪了"],
                 "detail": ""
             },
             {
@@ -76,7 +76,7 @@
                 "titile": "专栏",
                 "time": "10:22---11:30",
                 "cover": [],
-                "desc": "实践下《容器实战高手课专栏》cpu限制这一章节",
+                "desc": ["实践下《容器实战高手课专栏》cpu限制这一章节"],
                 "detail": "/blog/20221030/CPU限制实践.md"
             },
             {
@@ -84,7 +84,7 @@
                 "titile": "算法",
                 "time": "11:30---11:45",
                 "cover": [],
-                "desc": "leetcode每日一题，简单回溯，唯一需要注意的是在递归结构中不需要进入判断的应该最开始就跳过，而不是在后面循环的时候再处理，否则会造成重复值",
+                "desc": ["leetcode每日一题，简单回溯，唯一需要注意的是在递归结构中不需要进入判断的应该最开始就跳过，而不是在后面循环的时候再处理，否则会造成重复值"],
                 "detail": ""
             },
             {
@@ -92,7 +92,7 @@
                 "titile": "专栏",
                 "time": "13:30---15:45",
                 "cover": [],
-                "desc": "实践下《容器实战高手课专栏》内存限制这一章节",
+                "desc": ["实践下《容器实战高手课专栏》内存限制这一章节"],
                 "detail": "/blog/20221030/内存限制实践.md"
             },
             {
@@ -100,7 +100,7 @@
                 "titile": "开发",
                 "time": "18:20---19:15",
                 "cover": [],
-                "desc": "seveltkit+storybook(storybook 是一个 JS 库，可以在已有项目，在无需修改业务逻辑的情況下，给组件自动形成文档，可很好的展示属性和功能。), 模板项目试用https://github.com/YogliB/svelte-component-template, 服了，新版推荐使用vite作为打包工具，试试这个:https://github.com/mattlehrer/sveltekit-vite-tailwind.git",
+                "desc": ["seveltkit+storybook(storybook 是一个 JS 库，可以在已有项目，在无需修改业务逻辑的情況下，给组件自动形成文档，可很好的展示属性和功能。), 模板项目试用https://github.com/YogliB/svelte-component-template, 服了，新版推荐使用vite作为打包工具，试试这个:https://github.com/mattlehrer/sveltekit-vite-tailwind.git"],
                 "detail": ""
             },
             {
@@ -108,7 +108,7 @@
                 "titile": "生活",
                 "time": "？？？",
                 "cover": ["/image/waydoing/2022-10-30-badday.png"],
-                "desc": "bad day，虽然心里有结果了，但去看了周三投的云原生岗简历没过就已经结束流程，连上场展现的机会都没给还是有点空落落的。",
+                "desc": ["bad day，虽然心里有结果了，但去看了周三投的云原生岗简历没过就已经结束流程，连上场展现的机会都没给还是有点空落落的。"],
                 "detail": ""
             }
         ]
