@@ -1,5 +1,35 @@
 [
     {
+        "day": "11-03",
+        "things": [
+            {
+                "id": 1,
+                "titile": "开发",
+                "time": "08:40---11:00",
+                "cover": [],
+                "desc": [
+                    "## svelte组件库开发\n",
+                    "试用了各种模板，终于找到了基于rollup打包成框架无关的库\n",
+                    "为了引入tailwindcss，趟了一堆坑，最开始是svelte默认全局无法污染组件，组件无法污染全局，那么tailwindcss单独打包然后引入就失效了\n",
+                    "尝试直接在svelte组件里面引入tailwindcss，发现会报`@ ... not a javascript`错误\n",
+                    "翻遍了github，终于找到解决方法，参考: https://github.com/jerriclynsjohn/svelte-storybook-tailwind\n"
+                ],
+                "detail": ""
+            },
+            {
+                "id": 2,
+                "titile": "开发",
+                "time": "14:30---15:30",
+                "cover": [],
+                "desc": [
+                    "## 添加了cncf相关的基础页面\n",
+                    "想着督促自己多了解些cncf组件吧\n"
+                ],
+                "detail": ""
+            }
+        ]
+    },
+    {
         "day": "11-02",
         "things": [
             {
