@@ -1,0 +1,1 @@
+import{h as n,i as s}from"./index.b1a4596a.js";const f=n("homeleft",()=>{const e=s(2);function t(o){e.value=o}function a(){e.value===2?e.value=1:e.value=2}return{panelState:e,setState:t,switchState:a}});export{f as u};
