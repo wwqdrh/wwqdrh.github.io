@@ -1,0 +1,1 @@
+import{d as e,u as s,J as o}from"./index.667e333f.js";const t=e({setup(n){return s().push("/home/blog"),()=>{}}});typeof o=="function"&&o(t);export{t as default};

@@ -1,0 +1,1 @@
+import{d as e,o,c as s,e as t}from"./index.667e333f.js";const l={class:"w-full h-full flex"},a=t("div",{class:"h-full duration-300 ease-out overflow-x-hidden"},null,-1),c=[a],i=e({setup(n){return(d,r)=>(o(),s("div",l,c))}});export{i as default};
