@@ -1,0 +1,34 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>wwqdrh&#39;tech home</title>
+      <link>https://wwqdrh.github.io/blog</link>
+      <description>blog...</description>
+      <language>en-us</language>
+      <managingEditor>huiloademail@163.com (wwqdrh)</managingEditor>
+      <webMaster>huiloademail@163.com (wwqdrh)</webMaster>
+      <lastBuildDate>Wed, 19 Oct 2022 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://wwqdrh.github.io/tags/api/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://wwqdrh.github.io/blog/20221019/client-go</guid>
+    <title>kubernetes的go语言客户端库</title>
+    <link>https://wwqdrh.github.io/blog/20221019/client-go</link>
+    <description>kubernetes的go语言客户端库</description>
+    <pubDate>Wed, 19 Oct 2022 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    <category>api</category>
+  </item>
+
+  <item>
+    <guid>https://wwqdrh.github.io/blog/20220613/gorm</guid>
+    <title>gorm使用手册</title>
+    <link>https://wwqdrh.github.io/blog/20220613/gorm</link>
+    <description>gorm的API文档，是golang技术栈中的数据库orm工具，支持postgresql、mysql、sqlite3</description>
+    <pubDate>Mon, 13 Jun 2022 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    <category>api</category>
+  </item>
+
+    </channel>
+  </rss>
