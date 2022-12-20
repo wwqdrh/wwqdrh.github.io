@@ -311,11 +311,11 @@
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/tags/网络</loc>
+    <loc>https://wwqdrh.github.io/blog/tags/读书笔记</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/tags/读书笔记</loc>
+    <loc>https://wwqdrh.github.io/blog/tags/网络</loc>
   </url>
 
   <url>
@@ -323,11 +323,11 @@
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/mall/detail/1/index.html</loc>
+    <loc>https://wwqdrh.github.io/mall/detail/10/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/mall/detail/10/index.html</loc>
+    <loc>https://wwqdrh.github.io/mall/detail/1/index.html</loc>
   </url>
 
   <url>
@@ -376,5 +376,13 @@
 
   <url>
     <loc>https://wwqdrh.github.io/mall/home/软件大全/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/apps/index</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/apps/detail/1/index.html</loc>
   </url>
 </urlset>
