@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fcate\u002F[name]","\u002Fdetails\u002F[id]","\u002Fdetails\u002F[id]\u002F[...path]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
