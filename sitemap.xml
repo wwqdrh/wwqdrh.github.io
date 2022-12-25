@@ -439,6 +439,10 @@
   </url>
 
   <url>
+    <loc>https://wwqdrh.github.io/books/details/4/index.html</loc>
+  </url>
+
+  <url>
     <loc>https://wwqdrh.github.io/books/details/2/享元模式/index.html</loc>
   </url>
 
@@ -820,5 +824,121 @@
 
   <url>
     <loc>https://wwqdrh.github.io/books/details/1/语法/模块机制/index.html</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/01-基本语法/反射/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/01-基本语法/数学运算/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/01-基本语法/数据结构/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/01-基本语法/时间操作/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/01-基本语法/输入输出/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/01-基本语法/随机数/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/02-并发编程/context/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/02-并发编程/pool/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/02-并发编程/协程/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/02-并发编程/基础结构增强/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/02-并发编程/通道/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/02-并发编程/锁/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/03-进阶知识/栈扩容/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/04-工程化/benchmark/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/04-工程化/gowork/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/04-工程化/pprof/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/04-工程化/单元测试/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/books/details/4/05-三方库/rpc/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/books/details/4/05-三方库/zap/index.html</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/06-系统设计/流量桶设计/index.html</loc
+    >
   </url>
 </urlset>
