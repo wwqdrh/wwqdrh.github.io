@@ -443,6 +443,10 @@
   </url>
 
   <url>
+    <loc>https://wwqdrh.github.io/books/details/2/中介者模式/index.html</loc>
+  </url>
+
+  <url>
     <loc>https://wwqdrh.github.io/books/details/2/享元模式/index.html</loc>
   </url>
 
@@ -467,6 +471,10 @@
   </url>
 
   <url>
+    <loc>https://wwqdrh.github.io/books/details/2/备忘录模式/index.html</loc>
+  </url>
+
+  <url>
     <loc>https://wwqdrh.github.io/books/details/2/外观模式/index.html</loc>
   </url>
 
@@ -479,6 +487,10 @@
   </url>
 
   <url>
+    <loc>https://wwqdrh.github.io/books/details/2/桥接模式/index.html</loc>
+  </url>
+
+  <url>
     <loc>https://wwqdrh.github.io/books/details/2/模版方法模式/index.html</loc>
   </url>
 
@@ -488,6 +500,10 @@
 
   <url>
     <loc>https://wwqdrh.github.io/books/details/2/策略模式/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/books/details/2/组合模式/index.html</loc>
   </url>
 
   <url>
@@ -516,6 +532,10 @@
 
   <url>
     <loc>https://wwqdrh.github.io/books/details/2/适配器模式/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/books/details/2/门面模式/index.html</loc>
   </url>
 
   <url>
@@ -906,6 +926,12 @@
 
   <url>
     <loc
+      >https://wwqdrh.github.io/books/details/4/03-进阶知识/逃逸分析/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://wwqdrh.github.io/books/details/4/04-工程化/benchmark/index.html</loc
     >
   </url>
@@ -929,6 +955,12 @@
   </url>
 
   <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/05-三方库/grpc开发/index.html</loc
+    >
+  </url>
+
+  <url>
     <loc>https://wwqdrh.github.io/books/details/4/05-三方库/rpc/index.html</loc>
   </url>
 
@@ -938,7 +970,25 @@
 
   <url>
     <loc
+      >https://wwqdrh.github.io/books/details/4/05-三方库/分布式系统/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/05-三方库/数据收集/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://wwqdrh.github.io/books/details/4/06-系统设计/流量桶设计/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/06-系统设计/缓存设计/index.html</loc
     >
   </url>
 </urlset>
