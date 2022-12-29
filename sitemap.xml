@@ -447,6 +447,10 @@
   </url>
 
   <url>
+    <loc>https://wwqdrh.github.io/books/details/5/index.html</loc>
+  </url>
+
+  <url>
     <loc>https://wwqdrh.github.io/books/details/2/中介者模式/index.html</loc>
   </url>
 
@@ -993,6 +997,36 @@
   <url>
     <loc
       >https://wwqdrh.github.io/books/details/4/06-系统设计/缓存设计/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/5/01-基础语法/01-数据结构/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/5/01-基础语法/02-流程控制/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/5/01-基础语法/03-面向对象/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/5/01-基础语法/04-并发编程/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/5/02-标准库/rand/index.html</loc
     >
   </url>
 </urlset>
