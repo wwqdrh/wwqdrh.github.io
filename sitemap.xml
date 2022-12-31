@@ -415,6 +415,14 @@
   </url>
 
   <url>
+    <loc>https://wwqdrh.github.io/apps/detail/getwifi/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/apps/detail/simplegray/index.html</loc>
+  </url>
+
+  <url>
     <loc>https://wwqdrh.github.io/apps/detail/taskmanager/index.html</loc>
   </url>
 
@@ -1026,7 +1034,37 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/5/02-标准库/rand/index.html</loc
+      >https://wwqdrh.github.io/books/details/5/02-数据结构/枚举类型/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/5/02-数据结构/树/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/5/02-数据结构/结构体/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/5/03-标准库/rand/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/5/04-网络开发/http服务/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/5/05-应用示例/ipsniffer/index.html</loc
     >
   </url>
 </urlset>
