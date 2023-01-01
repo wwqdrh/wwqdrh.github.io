@@ -1,4 +1,4 @@
-import dataclasses
+import typing
 
 import requests
 
@@ -6,8 +6,7 @@ LEETCODE_DOMAIN = "https://leetcode.com"
 LEETCODE_ALL_PROBLEM_URL = LEETCODE_DOMAIN + "/problemset/all/"
 
 
-@dataclasses.dataclass
-class IQuestion:
+class IQuestion(typing.TypedDict):
     id: int
     title: str
     url: str
@@ -75,3 +74,8 @@ def get_question_of_today() -> IQuestion:
         raise Exception(f"Failed to decode JSON, API response: {response.text}")
     except BaseException as error:
         raise Exception(f"Unexpected {error=}, {type(error)=}")
+
+if __name__ == "__main__":
+    import json
+
+    print(json.dumps(get_question_of_today(), ensure_ascii=False))
