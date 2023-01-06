@@ -12,6 +12,11 @@ class handler(BaseHTTPRequestHandler):
             args[key] = list(map(parse.unquote, val))
         return args
 
+    def do_OPTIONS(self):
+        self.send_response(204)
+        self.end_headers()
+        self.wfile.close()
+
     def do_GET(self):
         try:
             args = self.query()
