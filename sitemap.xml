@@ -443,6 +443,10 @@
   </url>
 
   <url>
+    <loc>https://wwqdrh.github.io/books/cate/私有/index.html</loc>
+  </url>
+
+  <url>
     <loc>https://wwqdrh.github.io/books/cate/编程/index.html</loc>
   </url>
 
@@ -452,6 +456,10 @@
 
   <url>
     <loc>https://wwqdrh.github.io/books/details/10/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/books/details/11/index.html</loc>
   </url>
 
   <url>
@@ -488,6 +496,10 @@
 
   <url>
     <loc>https://wwqdrh.github.io/books/details/10/01-简介/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/books/details/10/02-seo优化/index.html</loc>
   </url>
 
   <url>
@@ -1080,6 +1092,60 @@
 
   <url>
     <loc>https://wwqdrh.github.io/books/details/1/语法/模块机制/index.html</loc>
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/动态规划/背包问题/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/图形结构/单源最短路径/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/图形结构/并查集/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/图形结构/最小生成树/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/图形结构/遍历/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/字符串/字串判断/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/排序算法/基本排序/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/映射结构/哈希表/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/结构设计/缓存/index.html</loc
+    >
   </url>
 
   <url>
