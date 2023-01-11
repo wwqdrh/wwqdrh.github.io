@@ -87,15 +87,15 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/blog/blog/20220808/《DevOps实践指南》读书笔记 -
-      1.html</loc
+      >https://wwqdrh.github.io/blog/blog/20220807/《微服务设计》读书笔记 -
+      4.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/blog/blog/20220807/《微服务设计》读书笔记 -
-      4.html</loc
+      >https://wwqdrh.github.io/blog/blog/20220808/《DevOps实践指南》读书笔记 -
+      1.html</loc
     >
   </url>
 
@@ -500,14 +500,6 @@
 
   <url>
     <loc>https://wwqdrh.github.io/books/details/9/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/10/01-简介/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/10/02-seo优化/index.html</loc>
   </url>
 
   <url>
@@ -1110,13 +1102,31 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/11/图形结构/单源最短路径/index.html</loc
+      >https://wwqdrh.github.io/books/details/10/01-基础/01-简介/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/01-基础/02-seo优化/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/02-网络/01-网络协议总览/index.html</loc
     >
   </url>
 
   <url>
     <loc
       >https://wwqdrh.github.io/books/details/11/动态规划/背包问题/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/图形结构/单源最短路径/index.html</loc
     >
   </url>
 
