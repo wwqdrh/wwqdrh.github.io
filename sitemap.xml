@@ -1318,7 +1318,19 @@
 
   <url>
     <loc
+      >https://wwqdrh.github.io/books/details/4/04-工程化/sqlmock/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://wwqdrh.github.io/books/details/4/04-工程化/单元测试/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/4/04-工程化/接口测试/index.html</loc
     >
   </url>
 
