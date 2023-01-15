@@ -267,11 +267,11 @@
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/tags/next-js</loc>
+    <loc>https://wwqdrh.github.io/blog/tags/ols</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/tags/ols</loc>
+    <loc>https://wwqdrh.github.io/blog/tags/next-js</loc>
   </url>
 
   <url>
@@ -451,6 +451,14 @@
   </url>
 
   <url>
+    <loc>https://wwqdrh.github.io/books/cate/项目/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/books/details/0/index.html</loc>
+  </url>
+
+  <url>
     <loc>https://wwqdrh.github.io/books/details/1/index.html</loc>
   </url>
 
@@ -468,6 +476,10 @@
 
   <url>
     <loc>https://wwqdrh.github.io/books/details/13/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/books/details/14/index.html</loc>
   </url>
 
   <url>
@@ -506,6 +518,22 @@
     <loc
       >https://wwqdrh.github.io/books/details/13/01-常用服务列表/index.html</loc
     >
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/books/details/14/01-简介/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/books/details/14/02-中间件/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/books/details/14/03-数据库/index.html</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/books/details/14/04-服务定义/index.html</loc>
   </url>
 
   <url>
@@ -1026,6 +1054,30 @@
 
   <url>
     <loc
+      >https://wwqdrh.github.io/books/details/0/00-计算机/02-题库/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/0/00-计算机/03-面经/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/0/01-行业分析报告/校园助手/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/0/01-行业分析报告/菜鸟驿站/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://wwqdrh.github.io/books/details/1/工程化/性能分析/index.html</loc
     >
   </url>
@@ -1115,6 +1167,30 @@
   <url>
     <loc
       >https://wwqdrh.github.io/books/details/10/02-网络/01-网络协议总览/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/03-算法/01-剑指offer-1/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/03-算法/02-剑指offer-2/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/03-算法/03-剑指offer-3/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/03-算法/04-剑指offer-4/index.html</loc
     >
   </url>
 
