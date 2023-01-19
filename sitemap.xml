@@ -439,11 +439,11 @@
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/books/cate/哲学/index.html</loc>
+    <loc>https://wwqdrh.github.io/books/cate/私有/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/books/cate/私有/index.html</loc>
+    <loc>https://wwqdrh.github.io/books/cate/哲学/index.html</loc>
   </url>
 
   <url>
@@ -1552,25 +1552,49 @@
 
   <url>
     <loc
+      >https://wwqdrh.github.io/books/details/10/04-操作系统/01-运行机制/02-内存/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://wwqdrh.github.io/books/details/10/04-操作系统/01-运行机制/02-用户/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/10/04-操作系统/09-常用工具/01-任务管理/index.html</loc
+      >https://wwqdrh.github.io/books/details/10/04-操作系统/01-运行机制/03-磁盘/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/10/04-操作系统/09-常用工具/shell脚本/index.html</loc
+      >https://wwqdrh.github.io/books/details/10/04-操作系统/02-常用工具/01-任务管理/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/10/04-操作系统/09-常用工具/网络管理/index.html</loc
+      >https://wwqdrh.github.io/books/details/10/04-操作系统/02-常用工具/02-网络管理/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/04-操作系统/02-常用工具/03-shell脚本/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/04-操作系统/02-常用工具/04-文件管理/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/04-操作系统/02-常用工具/05-用户管理/index.html</loc
     >
   </url>
 </urlset>
