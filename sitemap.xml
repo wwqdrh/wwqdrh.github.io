@@ -1304,6 +1304,30 @@
 
   <url>
     <loc
+      >https://wwqdrh.github.io/books/details/14/01-ds语法/01-简介/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/14/01-ds语法/02-数据结构/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/14/01-ds语法/03-流程控制/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/14/01-ds语法/04-面向对象/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://wwqdrh.github.io/books/details/4/01-基本语法/反射/index.html</loc
     >
   </url>
@@ -1517,6 +1541,36 @@
   <url>
     <loc
       >https://wwqdrh.github.io/books/details/5/05-应用示例/ipsniffer/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/04-操作系统/01-运行机制/01-进程/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/04-操作系统/01-运行机制/02-用户/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/04-操作系统/09-常用工具/01-任务管理/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/04-操作系统/09-常用工具/shell脚本/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/04-操作系统/09-常用工具/网络管理/index.html</loc
     >
   </url>
 </urlset>
