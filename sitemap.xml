@@ -439,11 +439,11 @@
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/books/cate/私有/index.html</loc>
+    <loc>https://wwqdrh.github.io/books/cate/哲学/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/books/cate/哲学/index.html</loc>
+    <loc>https://wwqdrh.github.io/books/cate/私有/index.html</loc>
   </url>
 
   <url>
@@ -529,11 +529,11 @@
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/books/details/14/03-数据库/index.html</loc>
+    <loc>https://wwqdrh.github.io/books/details/14/03-状态服务/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/books/details/14/04-服务定义/index.html</loc>
+    <loc>https://wwqdrh.github.io/books/details/14/04-接口定义/index.html</loc>
   </url>
 
   <url>
@@ -1208,6 +1208,24 @@
 
   <url>
     <loc
+      >https://wwqdrh.github.io/books/details/10/05-数据库/01-索引/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/05-数据库/02-数据流程/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/05-数据库/03-事务/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://wwqdrh.github.io/books/details/11/动态规划/背包问题/index.html</loc
     >
   </url>
@@ -1304,25 +1322,25 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/14/01-ds语法/01-简介/index.html</loc
+      >https://wwqdrh.github.io/books/details/14/05-ds语法/01-简介/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/14/01-ds语法/02-数据结构/index.html</loc
+      >https://wwqdrh.github.io/books/details/14/05-ds语法/02-数据结构/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/14/01-ds语法/03-流程控制/index.html</loc
+      >https://wwqdrh.github.io/books/details/14/05-ds语法/03-流程控制/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/14/01-ds语法/04-面向对象/index.html</loc
+      >https://wwqdrh.github.io/books/details/14/05-ds语法/04-面向对象/index.html</loc
     >
   </url>
 
