@@ -283,11 +283,11 @@
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/tags/tailwind</loc>
+    <loc>https://wwqdrh.github.io/blog/tags/reflection</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/tags/reflection</loc>
+    <loc>https://wwqdrh.github.io/blog/tags/tailwind</loc>
   </url>
 
   <url>
@@ -479,14 +479,6 @@
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/books/details/2/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/3/index.html</loc>
-  </url>
-
-  <url>
     <loc>https://wwqdrh.github.io/books/details/4/index.html</loc>
   </url>
 
@@ -511,6 +503,10 @@
   </url>
 
   <url>
+    <loc>https://wwqdrh.github.io/books/details/11/02-排序算法/index.html</loc>
+  </url>
+
+  <url>
     <loc>https://wwqdrh.github.io/books/details/13/01-简介/index.html</loc>
   </url>
 
@@ -524,334 +520,6 @@
 
   <url>
     <loc>https://wwqdrh.github.io/books/details/13/04-接口定义/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/中介者模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/享元模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/代理模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/单例模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/原型模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/发布订阅模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/命令模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/备忘录模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/外观模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/工厂模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/建造者模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/桥接模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/模版方法模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/状态模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/策略模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/组合模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/装饰器模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/观察者模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/解释器模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/访问者模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/责任链模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/迭代器模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/适配器模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/门面模式/index.html</loc>
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/01-超越宗教的大智慧/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/3/02-实相般若/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/3/03-境界般若/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/3/04-文字般若/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/3/05-方便般若/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/3/06-眷属般若/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/3/07-无坚不摧/index.html</loc>
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/08-鸠摩罗什和武则天/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/09-法会因由分第一/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/10-善现启请分第二/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/11-大乘正宗分第三/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/12-妙行无住分第四/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/13-如理实见分第五/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/14-正信希有分第六/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/15-无得无说分第七/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/16-依法出生分第八/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/17-一相无相分第九/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/18-庄严净土分第十/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/19-无为福胜分第十一/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/20-尊重正教分第十二/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/21-如法受持分第十三/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/22-离相寂灭分第十四/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/23-持经功德分第十五/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/24-能净业障分第十六/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/25-究竟无我分第十七/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/26-一体同观分第十八/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/27-法界通化分第十九/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/28-离色离相分第二十/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/29-非说所说分第二十一/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/30-无法可得分第二十二/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/31-净心行善分第二十三/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/32-福智无比分第二十四/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/33-化无所化分第二十五/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/34-法身非相分第二十六/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/35-无断无灭分第二十七/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/36-不受不贪分第二十八/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/37-威仪寂静分第二十九/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/38-一合理相分第三十/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/39-知见不生分第三十一/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/40-应化非真分第三十二/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/3/41-后记/index.html</loc>
   </url>
 
   <url>
@@ -1162,12 +830,6 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/10/02-网络/01-网络协议总览/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
       >https://wwqdrh.github.io/books/details/10/02-网络/02-数据传输流程/index.html</loc
     >
   </url>
@@ -1240,6 +902,150 @@
 
   <url>
     <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/中介者模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/享元模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/代理模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/单例模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/原型模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/发布订阅模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/命令模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/备忘录模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/外观模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/工厂模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/建造者模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/桥接模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/模版方法模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/状态模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/策略模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/组合模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/装饰器模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/观察者模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/解释器模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/访问者模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/责任链模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/迭代器模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/适配器模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/11/02-设计模式/门面模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://wwqdrh.github.io/books/details/11/动态规划/背包问题/index.html</loc
     >
   </url>
@@ -1271,12 +1077,6 @@
   <url>
     <loc
       >https://wwqdrh.github.io/books/details/11/字符串/字串判断/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/11/排序算法/基本排序/index.html</loc
     >
   </url>
 
@@ -1608,6 +1408,24 @@
 
   <url>
     <loc
+      >https://wwqdrh.github.io/books/details/10/02-网络/01-网络协议/01-总览/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/02-网络/01-网络协议/02-http协议/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/02-网络/01-网络协议/03-ws协议/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://wwqdrh.github.io/books/details/10/03-操作系统/01-运行机制/01-进程/index.html</loc
     >
   </url>
@@ -1681,6 +1499,12 @@
   <url>
     <loc
       >https://wwqdrh.github.io/books/details/10/04-有状态应用/01-mysql/04-配置文件/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/04-有状态应用/01-mysql/05-锁/index.html</loc
     >
   </url>
 
