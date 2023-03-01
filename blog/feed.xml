@@ -7,9 +7,19 @@
       <language>en-us</language>
       <managingEditor>huiloademail@163.com (wwqdrh)</managingEditor>
       <webMaster>huiloademail@163.com (wwqdrh)</webMaster>
-      <lastBuildDate>Tue, 28 Feb 2023 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Wed, 01 Mar 2023 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://wwqdrh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://wwqdrh.github.io/blog/20230301/gmp模型</guid>
+    <title>gmp模型</title>
+    <link>https://wwqdrh.github.io/blog/20230301/gmp模型</link>
+    <description>gmp模型</description>
+    <pubDate>Wed, 01 Mar 2023 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    <category>Golang</category>
+  </item>
+
   <item>
     <guid>https://wwqdrh.github.io/blog/20230228/什么是进程</guid>
     <title>什么是进程</title>
