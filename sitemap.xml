@@ -219,6 +219,13 @@
   </url>
 
   <url>
+    <loc
+      >https://wwqdrh.github.io/blog/blog/开发工具/[chat with
+      chatgpt]什么是redis.html</loc
+    >
+  </url>
+
+  <url>
     <loc>https://wwqdrh.github.io/blog/tags/api</loc>
   </url>
 
@@ -228,6 +235,10 @@
 
   <url>
     <loc>https://wwqdrh.github.io/blog/tags/canada</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/blog/tags/chat-with-chatgpt</loc>
   </url>
 
   <url>
@@ -288,6 +299,10 @@
 
   <url>
     <loc>https://wwqdrh.github.io/blog/tags/quiz</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/blog/tags/redis</loc>
   </url>
 
   <url>

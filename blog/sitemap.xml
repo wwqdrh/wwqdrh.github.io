@@ -41,11 +41,11 @@
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/20220620/go-zero微服务实践</loc>
+    <loc>https://wwqdrh.github.io/blog/20220606/缓存一致性问题</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/20220606/缓存一致性问题</loc>
+    <loc>https://wwqdrh.github.io/blog/20220620/go-zero微服务实践</loc>
   </url>
 
   <url>
@@ -173,6 +173,10 @@
   </url>
 
   <url>
+    <loc>https://wwqdrh.github.io/blog/开发工具/[chat with chatgpt]什么是redis</loc>
+  </url>
+
+  <url>
     <loc>https://wwqdrh.github.io/tags/api</loc>
   </url>
 
@@ -182,6 +186,10 @@
 
   <url>
     <loc>https://wwqdrh.github.io/tags/canada</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/tags/chat-with-chatgpt</loc>
   </url>
 
   <url>
@@ -242,6 +250,10 @@
 
   <url>
     <loc>https://wwqdrh.github.io/tags/quiz</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/tags/redis</loc>
   </url>
 
   <url>
