@@ -739,18 +739,6 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/1/00-计算机/02-题库/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/1/00-计算机/03-面经/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
       >https://wwqdrh.github.io/books/details/1/01-行业分析报告/校园助手/index.html</loc
     >
   </url>
@@ -1447,7 +1435,67 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/01-230208/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-Etcd/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-Golang/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-MySQL/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-Nginx/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-Redis/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-容器/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-微服务/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-操作系统/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-算法/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-网络/index.html</loc
     >
   </url>
 
@@ -1598,6 +1646,12 @@
   <url>
     <loc
       >https://wwqdrh.github.io/books/details/9/05-容器技术/swarm/01-工作模式/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/01-面经/01-230208/index.html</loc
     >
   </url>
 </urlset>
