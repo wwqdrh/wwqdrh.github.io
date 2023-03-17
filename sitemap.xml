@@ -931,6 +931,42 @@
 
   <url>
     <loc
+      >https://wwqdrh.github.io/books/details/10/04-题型/01-动态规划/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/04-题型/02-深度优先搜索/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/04-题型/03-广度优先搜索/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/04-题型/04-二分查找/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/04-题型/05-滑动窗口/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/04-题型/06-贪心/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://wwqdrh.github.io/books/details/10/动态规划/背包问题/index.html</loc
     >
   </url>
@@ -1212,6 +1248,18 @@
   <url>
     <loc
       >https://wwqdrh.github.io/books/details/3/03-进阶知识/01-内存管理/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/3/03-进阶知识/02-垃圾回收/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/3/03-进阶知识/03-执行流程/index.html</loc
     >
   </url>
 
@@ -1754,6 +1802,12 @@
   <url>
     <loc
       >https://wwqdrh.github.io/books/details/9/06-interview/01-面经/01-230208/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/01-面经/02-230314/index.html</loc
     >
   </url>
 </urlset>
