@@ -430,11 +430,11 @@
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/apps/detail/apipanel/index.html</loc>
+    <loc>https://wwqdrh.github.io/apps/detail/bookmark/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/apps/detail/bookmark/index.html</loc>
+    <loc>https://wwqdrh.github.io/apps/detail/apipanel/index.html</loc>
   </url>
 
   <url>
@@ -1169,6 +1169,12 @@
 
   <url>
     <loc
+      >https://wwqdrh.github.io/books/details/3/01-基本语法/03-常见问题/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://wwqdrh.github.io/books/details/3/01-基本语法/反射/index.html</loc
     >
   </url>
@@ -1259,7 +1265,13 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/3/03-进阶知识/03-执行流程/index.html</loc
+      >https://wwqdrh.github.io/books/details/3/03-进阶知识/03-gmp模型/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/3/03-进阶知识/04-执行流程/index.html</loc
     >
   </url>
 
