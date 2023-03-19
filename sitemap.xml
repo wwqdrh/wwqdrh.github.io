@@ -430,11 +430,11 @@
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/apps/detail/bookmark/index.html</loc>
+    <loc>https://wwqdrh.github.io/apps/detail/apipanel/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/apps/detail/apipanel/index.html</loc>
+    <loc>https://wwqdrh.github.io/apps/detail/bookmark/index.html</loc>
   </url>
 
   <url>
@@ -1004,6 +1004,12 @@
   <url>
     <loc
       >https://wwqdrh.github.io/books/details/10/映射结构/哈希表/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/10/结构设计/红黑树/index.html</loc
     >
   </url>
 
