@@ -1453,6 +1453,12 @@
 
   <url>
     <loc
+      >https://wwqdrh.github.io/books/details/9/02-网络/00-简介/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://wwqdrh.github.io/books/details/9/02-网络/02-数据传输流程/index.html</loc
     >
   </url>
@@ -1460,6 +1466,12 @@
   <url>
     <loc
       >https://wwqdrh.github.io/books/details/9/02-网络/03-socket编程/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/9/03-操作系统/00-简介/index.html</loc
     >
   </url>
 
@@ -1670,6 +1682,12 @@
   <url>
     <loc
       >https://wwqdrh.github.io/books/details/9/02-网络/01-网络协议/02-http协议/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/9/02-网络/01-网络协议/02-传输层协议/index.html</loc
     >
   </url>
 
