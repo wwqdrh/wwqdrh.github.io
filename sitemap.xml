@@ -1167,6 +1167,30 @@
 
   <url>
     <loc
+      >https://wwqdrh.github.io/books/details/3/01-基本语法/00-简介/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/3/01-基本语法/01-切片/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/3/01-基本语法/01-哈希表/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/3/01-基本语法/01-接口/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://wwqdrh.github.io/books/details/3/01-基本语法/01-数据结构/index.html</loc
     >
   </url>
@@ -1293,13 +1317,13 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/3/03-进阶知识/栈扩容/index.html</loc
+      >https://wwqdrh.github.io/books/details/3/03-进阶知识/05-逃逸分析/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/3/03-进阶知识/逃逸分析/index.html</loc
+      >https://wwqdrh.github.io/books/details/3/03-进阶知识/栈扩容/index.html</loc
     >
   </url>
 
@@ -1535,13 +1559,13 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-Etcd/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-Etcd/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库/index.html</loc
     >
   </url>
 
@@ -1577,13 +1601,13 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-微服务/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-操作系统/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-操作系统/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-微服务/index.html</loc
     >
   </url>
 
@@ -1595,13 +1619,13 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-网络/index.html</loc
+      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/01/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/01/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-网络/index.html</loc
     >
   </url>
 
@@ -1637,13 +1661,13 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/07/index.html</loc
+      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/08/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/08/index.html</loc
+      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/07/index.html</loc
     >
   </url>
 
@@ -1655,13 +1679,13 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/10/index.html</loc
+      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/11/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/11/index.html</loc
+      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/10/index.html</loc
     >
   </url>
 
@@ -1697,13 +1721,13 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/02-网络/01-网络协议/02-http协议/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/02-网络/01-网络协议/02-传输层协议/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/02-网络/01-网络协议/02-传输层协议/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/02-网络/01-网络协议/02-http协议/index.html</loc
     >
   </url>
 
@@ -1715,13 +1739,13 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/03-操作系统/01-硬件/01-cpu/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/03-操作系统/01-运行机制/01-进程/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/03-操作系统/01-运行机制/01-进程/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/03-操作系统/01-硬件/01-cpu/index.html</loc
     >
   </url>
 
@@ -1757,13 +1781,13 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/03-操作系统/02-常用工具/03-shell脚本/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/03-操作系统/02-常用工具/04-文件管理/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/03-操作系统/02-常用工具/04-文件管理/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/03-操作系统/02-常用工具/03-shell脚本/index.html</loc
     >
   </url>
 
@@ -1775,13 +1799,13 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/01-mysql/01-索引/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/04-有状态应用/01-mysql/02-数据流程/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/01-mysql/02-数据流程/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/04-有状态应用/01-mysql/01-索引/index.html</loc
     >
   </url>
 
@@ -1817,13 +1841,13 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/02-redis/02-应用场景/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/04-有状态应用/02-redis/03-数据结构/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/02-redis/03-数据结构/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/04-有状态应用/02-redis/02-应用场景/index.html</loc
     >
   </url>
 
@@ -1835,13 +1859,13 @@
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/02-redis/05-缓存策略/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/04-有状态应用/02-redis/06-命令手册/index.html</loc
     >
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/02-redis/06-命令手册/index.html</loc
+      >https://wwqdrh.github.io/books/details/9/04-有状态应用/02-redis/05-缓存策略/index.html</loc
     >
   </url>
 
