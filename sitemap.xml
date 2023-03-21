@@ -530,6 +530,10 @@
   </url>
 
   <url>
+    <loc>https://wwqdrh.github.io/books/details/10/00-目录/index.html</loc>
+  </url>
+
+  <url>
     <loc>https://wwqdrh.github.io/books/details/10/02-排序算法/index.html</loc>
   </url>
 
@@ -1235,6 +1239,12 @@
 
   <url>
     <loc
+      >https://wwqdrh.github.io/books/details/3/02-并发编程/waitgroup/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://wwqdrh.github.io/books/details/3/02-并发编程/协程/index.html</loc
     >
   </url>
@@ -1459,6 +1469,12 @@
 
   <url>
     <loc
+      >https://wwqdrh.github.io/books/details/9/02-网络/01-一文读懂计算机网络/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
       >https://wwqdrh.github.io/books/details/9/02-网络/02-数据传输流程/index.html</loc
     >
   </url>
@@ -1472,6 +1488,12 @@
   <url>
     <loc
       >https://wwqdrh.github.io/books/details/9/03-操作系统/00-简介/index.html</loc
+    >
+  </url>
+
+  <url>
+    <loc
+      >https://wwqdrh.github.io/books/details/9/03-操作系统/01-一文读懂操作系统/index.html</loc
     >
   </url>
 
@@ -1574,12 +1596,6 @@
   <url>
     <loc
       >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-网络/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/00-简介/index.html</loc
     >
   </url>
 
