@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel='stylesheet' href='static/mall_bundle.css'>
+    <script defer src="static/mall_bundle.js"></script>
+    <script src="static/mall_bundle.js.map"></script>
+
+    <link href="static/css/cashier.css" rel="stylesheet">
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/base.js"></script>
+</head>
+
+<body style="padding-left: 60px; padding-right: 60px;">
+    <mall-header loginurl="login.html"></mall-header>
+    <div class="tastesdk-box">
+        <div class="typedemo" style="height: 600px;">
+            <div class="demo-pc">
+                <div class="pay-jd">
+                    <form action="#" method="post" autocomplete="off">
+                        <input type="text" style="display: none" name="orderid" value="10000002">
+                        <input type="text" style="display: none" name="shopName" value="笔记本电脑">
+                        <input type="text" style="display: none" name="productName" value="笔记本电脑">
+
+                        <div class="two-step">
+                            <p><strong>请您及时付款，以便订单尽快处理！</strong></p>
+                            <ul class="pay-infor">
+                                <li>商城：商城</li>
+                                <li>商品名称：笔记本电脑</li>
+                                <li>订单编号：<span>10000001</span></li>
+                                <li>商品数量：2</li>
+                                <li>商品单价：200</li>
+                            </ul>
+                            <h4>扫码支付：</h4>
+                            <ul class="pay-label type">
+                                <li>
+                                    <input value="SCAN_YL" name="SCAN" id="SCAN_YL" type="radio" checked>
+                                    <label for="SCAN_YL"><img src="./static/img/yinlian.jpg" alt="银联扫码"
+                                            style="height: 35px;"><span></span></label>
+                                </li>
+                                <li>
+                                    <input value="SCAN_QQ" name="SCAN" id="SCAN_QQ" type="radio">
+                                    <label for="SCAN_QQ"><img src="./static/img/qqq.jpg" alt="QQ扫码支付"
+                                            style="height: 35px;"><span></span></label>
+                                </li>
+                            </ul>
+                            <ul class="pay-infor">
+                                <li>支付金额：<strong><input style="border: 0px;width: 34px;color: red;" value="400"
+                                            id="amount" name="amount" />
+                                        <span>元</span></strong></li>
+                                <li class="" style="float: left;">
+                                    <button type="submit" class="pcdemo-btn sbpay-btn">立即支付</button>
+                                </li>
+                            </ul>
+                            <input value="CCB" name="bankCode" type="hidden">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <mall-footer></mall-footer>
+    <script>
+
+    </script>
+</body>
+
+</html>

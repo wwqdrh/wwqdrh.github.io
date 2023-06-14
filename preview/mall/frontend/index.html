@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel='stylesheet' href='./static/mall_bundle.css'>
+    <script defer src="./static/mall_bundle.js"></script>
+    <script src="./static/mall_bundle.js.map"></script>
+</head>
+
+<body style="padding-left: 60px; padding-right: 60px;">
+    <mall-header loginurl="login.html" checkouturl="checkout.html"></mall-header>
+    <div style="height: 460px; margin: 60px 40px;">
+        <mall-banner></mall-banner>
+    </div>
+    <div id="mall-grid">
+        <mall-product-grid click_product="click_product"></mall-product-grid>
+        <mall-product-grid click_product="click_product"></mall-product-grid>
+        <mall-product-detail id="detail-panel"></mall-product-detail>
+    </div>
+    <mall-footer></mall-footer>
+    <script>
+        window.click_product = (e, data) => {
+            console.log(data)
+            console.log(document.querySelector("#detail-panel").doopen())
+        }
+    </script>
+</body>
+
+</html>

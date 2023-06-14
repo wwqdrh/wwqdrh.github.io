@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+    <link rel='stylesheet' href='static/mall_bundle.css'>
+    <script defer src="static/mall_bundle.js"></script>
+    <script src="static/mall_bundle.js.map"></script>
+    <link rel="stylesheet" type="text/css" href="static/css/hy_basic.css">
+    <link href="static/css/cashier.css" rel="stylesheet">
+</head>
+
+<body style="padding-left: 60px; padding-right: 60px;">
+    <mall-header loginurl="login.html" checkouturl="checkout.html"></mall-header>
+    <div class="typedemo" style="height: 600px;">
+        <div style="z-index:100;background:#000000;position:absolute;left:0px;top:0px;display:none;" id="cover">
+        </div>
+        <div class="container">
+            <div class="c-box1 clearfix">
+                <div class="bt_border-green">
+                    <div class="hy-hd0815 vip20130401 c30 clearfix">
+                        <div class="pay_box fl">
+                            <h3><img src="./static/img/pay_ok1.png">支付成功!</h3>
+                            <ul class="disc">
+                                <li>交易订单号：100000</li>
+                                <li>付款金额：100 元</li>
+                                <li>交易时间：2020-02-29</li>
+                                <li><button type="button" onclick="javascript:window.location.href='/'"
+                                        class="pcdemo-btn sbpay-btn">返回商城</button></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <mall-footer></mall-footer>
+    <script>
+    </script>
+</body>
+
+</html>
