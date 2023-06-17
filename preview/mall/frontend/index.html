@@ -12,7 +12,8 @@
 </head>
 
 <body style="padding-left: 60px; padding-right: 60px;">
-    <mall-header loginurl="login.html" checkouturl="checkout.html"></mall-header>
+    <mall-header id="mall-header" settingurl="/preview/mall/frontend/setting.html" loginurl="/preview/mall/frontend/login.html" checkouturl="/preview/mall/frontend/checkout.html">
+    </mall-header>
     <div style="height: 460px; margin: 60px 40px;">
         <mall-banner></mall-banner>
     </div>
@@ -23,9 +24,18 @@
     </div>
     <mall-footer></mall-footer>
     <script>
+        window.onload = () => {
+            let url = window.location.href;
+            // 创建一个URL对象
+            let urlObj = new URL(url);
+            // 创建一个URLSearchParams对象
+            let params = new URLSearchParams(urlObj.search);
+            if (params.has("islogin")) {
+                document.querySelector("#mall-header").login()
+            }
+        }
         window.click_product = (e, data) => {
-            console.log(data)
-            console.log(document.querySelector("#detail-panel").doopen())
+            document.querySelector("#detail-panel").doopen()
         }
     </script>
 </body>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +10,14 @@
     <script defer src="./static/mall_bundle.js"></script>
     <script src="./static/mall_bundle.js.map"></script>
 </head>
+
 <body>
-    <mall-header></mall-header>
-    <mall-register></mall-register>
+    <mall-header id="mall-header" settingurl="/preview/mall/frontend/setting.html" loginurl="/preview/mall/frontend/login.html" checkouturl="/preview/mall/frontend/checkout.html">
+    </mall-header>
+    <div style="width: 80%;padding: 30px 0;margin: auto;">
+        <mall-register></mall-register>
+    </div>
     <mall-footer></mall-footer>
 </body>
+
 </html>

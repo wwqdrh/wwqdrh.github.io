@@ -14,7 +14,8 @@
 </head>
 
 <body style="padding-left: 60px; padding-right: 60px;">
-    <mall-header loginurl="login.html" checkouturl="checkout.html"></mall-header>
+    <mall-header id="mall-header" settingurl="/preview/mall/frontend/setting.html" loginurl="/preview/mall/frontend/login.html" checkouturl="/preview/mall/frontend/checkout.html">
+    </mall-header>
     <div class="typedemo" style="height: 600px;">
         <div style="z-index:100;background:#000000;position:absolute;left:0px;top:0px;display:none;" id="cover"></div>
         <div class="container">
@@ -22,7 +23,7 @@
                 <div class="bt_border-green">
                     <div class="hy-hd0815 vip20130401 c30 clearfix">
                         <div class="pay_box fl">
-                            <h3><img src="./static/img/pay_fail.png">支付失败!</h3>
+                            <h3><img src="static/img/pay_fail.png">支付失败!</h3>
                             <ul class="disc">
                                 <li>
                                     银行卡已扣款
@@ -34,7 +35,6 @@
                                     </p>
                                 </li>
                             </ul>
-
                         </div>
                     </div>
                 </div>
