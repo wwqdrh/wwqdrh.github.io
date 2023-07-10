@@ -28,6 +28,7 @@ Ok(())
 fn createFolder() -> std::io::Result<()> {
 fs::create_dir("bar")?;
 fs::create_dir_all("a/b/c")?;
+Ok(())
 }
 ```
 ## title 删除文件夹
