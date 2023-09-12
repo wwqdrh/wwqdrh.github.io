@@ -1,1 +1,1 @@
-some code
+rust编码手册
