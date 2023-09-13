@@ -1,0 +1,44 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>wwqdrh&#39;tech home</title>
+      <link>https://wwqdrh.github.io/blog</link>
+      <description>blog...</description>
+      <language>en-us</language>
+      <managingEditor>huiloademail@163.com (wwqdrh)</managingEditor>
+      <webMaster>huiloademail@163.com (wwqdrh)</webMaster>
+      <lastBuildDate>Tue, 08 Nov 2022 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://wwqdrh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://wwqdrh.github.io/blog/fssync</guid>
+    <title>大文件同步工具</title>
+    <link>https://wwqdrh.github.io/blog/fssync</link>
+    undefined
+    <pubDate>Tue, 08 Nov 2022 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    undefined
+  </item>
+
+  <item>
+    <guid>https://wwqdrh.github.io/blog/geticon</guid>
+    <title>获取网站的图标脚本分享</title>
+    <link>https://wwqdrh.github.io/blog/geticon</link>
+    undefined
+    <pubDate>Tue, 08 Nov 2022 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    undefined
+  </item>
+
+  <item>
+    <guid>https://wwqdrh.github.io/blog/wifipass</guid>
+    <title>获取wifi密码</title>
+    <link>https://wwqdrh.github.io/blog/wifipass</link>
+    undefined
+    <pubDate>Tue, 08 Nov 2022 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    undefined
+  </item>
+
+    </channel>
+  </rss>

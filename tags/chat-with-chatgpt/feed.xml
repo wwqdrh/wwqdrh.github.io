@@ -1,0 +1,24 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>wwqdrh&#39;tech home</title>
+      <link>https://wwqdrh.github.io/blog</link>
+      <description>blog...</description>
+      <language>en-us</language>
+      <managingEditor>huiloademail@163.com (wwqdrh)</managingEditor>
+      <webMaster>huiloademail@163.com (wwqdrh)</webMaster>
+      <lastBuildDate>Mon, 06 Mar 2023 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://wwqdrh.github.io/tags/chat-with-chatgpt/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://wwqdrh.github.io/blog/开发工具/[chat with chatgpt]什么是redis</guid>
+    <title>什么是redis</title>
+    <link>https://wwqdrh.github.io/blog/开发工具/[chat with chatgpt]什么是redis</link>
+    <description>什么是redis</description>
+    <pubDate>Mon, 06 Mar 2023 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    <category>chat with chatgpt</category><category>redis</category>
+  </item>
+
+    </channel>
+  </rss>
