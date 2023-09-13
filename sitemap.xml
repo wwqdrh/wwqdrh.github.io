@@ -1,227 +1,200 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/index.html</loc>
+    <loc>https://wwqdrh.github.io/blog/index</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/quiz.html</loc>
+    <loc>https://wwqdrh.github.io/blog/quiz</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/tags.html</loc>
+    <loc>https://wwqdrh.github.io/blog/tags</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/quiz/第一期.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/quiz/第一期</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20211108/认证机制.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20220115/数据变更记录工具</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20220115/数据变更记录工具.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20211108/认证机制</loc>
   </url>
 
   <url>
-    <loc
-      >https://wwqdrh.github.io/blog/blog/20220315/一次k8s环境搭建记录.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/blog/blog/20220331/如何使用nginx实现灰度部署.html</loc
-    >
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20220520/tekton使用示例.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20220606/缓存一致性问题.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20220315/一次k8s环境搭建记录</loc>
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/blog/blog/20220620/go-zero微服务实践.html</loc
+      >https://wwqdrh.github.io/blog/blog/20220331/如何使用nginx实现灰度部署</loc
     >
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20220703/golang工程化总览.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20220520/tekton使用示例</loc>
   </url>
 
   <url>
-    <loc
-      >https://wwqdrh.github.io/blog/blog/20220704/容器之间的网络模式.html</loc
-    >
+    <loc>https://wwqdrh.github.io/blog/blog/20220606/缓存一致性问题</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/blog/blog/20220620/go-zero微服务实践</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/blog/blog/20220703/golang工程化总览</loc>
+  </url>
+
+  <url>
+    <loc>https://wwqdrh.github.io/blog/blog/20220704/容器之间的网络模式</loc>
   </url>
 
   <url>
     <loc
       >https://wwqdrh.github.io/blog/blog/20220731/《微服务设计》读书笔记 -
-      1.html</loc
+      1</loc
     >
   </url>
 
   <url>
     <loc
       >https://wwqdrh.github.io/blog/blog/20220802/《微服务设计》读书笔记 -
-      2.html</loc
+      2</loc
     >
   </url>
 
   <url>
     <loc
       >https://wwqdrh.github.io/blog/blog/20220805/《微服务设计》读书笔记 -
-      3.html</loc
+      3</loc
     >
   </url>
 
   <url>
     <loc
       >https://wwqdrh.github.io/blog/blog/20220807/《微服务设计》读书笔记 -
-      4.html</loc
+      4</loc
     >
   </url>
 
   <url>
     <loc
       >https://wwqdrh.github.io/blog/blog/20220808/《DevOps实践指南》读书笔记 -
-      1.html</loc
+      1</loc
     >
   </url>
 
   <url>
     <loc
       >https://wwqdrh.github.io/blog/blog/20220809/《Kubernetes生产化实践之路》读书笔记
-      - 1.html</loc
+      - 1</loc
     >
   </url>
 
   <url>
     <loc
       >https://wwqdrh.github.io/blog/blog/20220809/《Kubernetes生产化实践之路》读书笔记
-      - 2.html</loc
+      - 2</loc
     >
   </url>
 
   <url>
     <loc
       >https://wwqdrh.github.io/blog/blog/20220811/《Kubernetes生产化实践之路》读书笔记
-      - 3.html</loc
+      - 3</loc
     >
   </url>
 
   <url>
     <loc
       >https://wwqdrh.github.io/blog/blog/20220812/《Kubernetes生产化实践之路》读书笔记
-      - 4.html</loc
+      - 4</loc
     >
   </url>
 
   <url>
     <loc
       >https://wwqdrh.github.io/blog/blog/20220812/《Kubernetes生产化实践之路》读书笔记
-      - 5.html</loc
+      - 5</loc
     >
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20220913/grpc手册.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20220913/grpc手册</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20220929/容器核心点概览.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20220929/容器核心点概览</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20221008/git服务器搭建.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20221008/git服务器搭建</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20221008/nginx网关配置.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20221008/nginx网关配置</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20221008/ssh环境配置.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20221008/ssh环境配置</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20221010/Go的编译原理.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20221010/Go的编译原理</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20221010/go命令工具.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20221010/go命令工具</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20221010/常见编码问题.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20221010/常见编码问题</loc>
   </url>
 
   <url>
-    <loc
-      >https://wwqdrh.github.io/blog/blog/20221010/操作系统性能分析工具.html</loc
-    >
+    <loc>https://wwqdrh.github.io/blog/blog/20221010/操作系统性能分析工具</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20221010/时间格式.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20221010/时间格式</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20221017/容器操作指南.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20221017/容器操作指南</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20221026/swarm工作模式.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20221026/swarm工作模式</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20221030/CPU限制实践.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20221030/CPU限制实践</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20221030/内存限制实践.html</loc>
+    <loc>https://wwqdrh.github.io/blog/blog/20221030/内存限制实践</loc>
   </url>
 
   <url>
-    <loc
-      >https://wwqdrh.github.io/blog/blog/20221031/从none网络实践容器的网络配置.html</loc
-    >
+    <loc>https://wwqdrh.github.io/blog/blog/20221101/overlay文件系统实验</loc>
   </url>
 
   <url>
-    <loc
-      >https://wwqdrh.github.io/blog/blog/20221101/overlay文件系统实验.html</loc
-    >
+    <loc>https://wwqdrh.github.io/blog/blog/20221102/容器中磁盘容量限制</loc>
   </url>
 
   <url>
     <loc
-      >https://wwqdrh.github.io/blog/blog/20221102/容器中磁盘容量限制.html</loc
-    >
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20230228/什么是进程.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/blog/blog/20230301/gmp模型.html</loc>
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/blog/blog/开发工具/[chat with
-      chatgpt]什么是redis.html</loc
+      >https://wwqdrh.github.io/blog/blog/20221031/从none网络实践容器的网络配置</loc
     >
   </url>
 
@@ -235,10 +208,6 @@
 
   <url>
     <loc>https://wwqdrh.github.io/blog/tags/canada</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/blog/tags/chat-with-chatgpt</loc>
   </url>
 
   <url>
@@ -302,10 +271,6 @@
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/tags/redis</loc>
-  </url>
-
-  <url>
     <loc>https://wwqdrh.github.io/blog/tags/reflection</loc>
   </url>
 
@@ -350,1480 +315,66 @@
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/blog/tags/计算机原理</loc>
-  </url>
-
-  <url>
     <loc>https://wwqdrh.github.io/blog/tags/读书笔记</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/apps/_app.html</loc>
+    <loc>https://wwqdrh.github.io/mall/index</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/apps/_document.html</loc>
+    <loc>https://wwqdrh.github.io/mall/detail/1/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/apps/index.html</loc>
+    <loc>https://wwqdrh.github.io/mall/detail/10/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/apps/detail/apipanel/index.html</loc>
+    <loc>https://wwqdrh.github.io/mall/detail/11/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/apps/detail/bookmark/index.html</loc>
+    <loc>https://wwqdrh.github.io/mall/detail/2/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/apps/detail/dailyleetcode/index.html</loc>
+    <loc>https://wwqdrh.github.io/mall/detail/3/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/apps/detail/fssync/index.html</loc>
+    <loc>https://wwqdrh.github.io/mall/detail/4/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/apps/detail/geticon/index.html</loc>
+    <loc>https://wwqdrh.github.io/mall/detail/5/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/apps/detail/getwifi/index.html</loc>
+    <loc>https://wwqdrh.github.io/mall/detail/6/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/apps/detail/simplegray/index.html</loc>
+    <loc>https://wwqdrh.github.io/mall/detail/7/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/apps/detail/taskmanager/index.html</loc>
+    <loc>https://wwqdrh.github.io/mall/detail/8/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/books/index.html</loc>
+    <loc>https://wwqdrh.github.io/mall/detail/9/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/books/cate/哲学/index.html</loc>
+    <loc>https://wwqdrh.github.io/mall/home/影视剪辑/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/books/cate/私有/index.html</loc>
+    <loc>https://wwqdrh.github.io/mall/home/编程系列/index.html</loc>
   </url>
 
   <url>
-    <loc>https://wwqdrh.github.io/books/cate/编程/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/cate/项目/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/1/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/10/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/11/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/14/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/3/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/4/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/5/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/6/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/7/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/8/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/9/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/10/00-目录/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/10/02-排序算法/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/14/01-简介/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/14/02-中间件/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/14/03-状态服务/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/14/04-接口定义/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/5/01-捭阖/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/5/02-反应/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/5/03-内楗/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/5/04-抵巇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/5/05-飞箝/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/5/06-忤合/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/5/07-揣篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/5/08-摩篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/5/09-权篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/5/10-谋篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/5/11-决篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/5/12-符言/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/5/13-转丸/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/5/14-却乱/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/6/01-始计篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/6/02-作战篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/6/03-谋攻篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/6/04-军形篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/6/05-兵势篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/6/06-虚实篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/6/07-军争篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/6/08-九变篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/6/09-行军篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/6/10-地形篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/6/11-九地篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/6/12-火攻篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/6/13-用间篇/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/7/01/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/7/02/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/7/03/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/7/04/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/7/05/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/7/06/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/7/07/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/7/08/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/7/09/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/8/01-五行总论/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/8/02-甲木总论/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/8/03-乙木总论/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/8/04-丙火总论/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/8/05-丁火总论/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/8/06-戊土总论/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/8/07-己土总论/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/8/08-庚金总论/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/8/09-辛金总论/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/8/10-壬水总论/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/8/11-癸水总论/index.html</loc>
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/1/01-行业分析报告/校园助手/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/1/01-行业分析报告/职业列表/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/1/01-行业分析报告/菜鸟驿站/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/1/02-人生笔记/01/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/01-剑指offer/01-剑指offer-1/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/01-剑指offer/02-剑指offer-2/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/01-剑指offer/03-剑指offer-3/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/01-剑指offer/04-剑指offer-4/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/中介者模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/享元模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/代理模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/单例模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/原型模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/发布订阅模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/命令模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/备忘录模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/外观模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/工厂模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/建造者模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/桥接模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/模版方法模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/状态模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/策略模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/组合模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/装饰器模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/观察者模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/解释器模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/访问者模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/责任链模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/迭代器模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/适配器模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/02-设计模式/门面模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/04-题型/01-动态规划/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/04-题型/02-深度优先搜索/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/04-题型/03-广度优先搜索/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/04-题型/04-二分查找/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/04-题型/05-滑动窗口/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/04-题型/06-贪心/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/动态规划/背包问题/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/图形结构/单源最短路径/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/图形结构/并查集/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/图形结构/最小生成树/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/图形结构/遍历/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/字符串/字串判断/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/映射结构/哈希表/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/结构设计/红黑树/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/结构设计/缓存/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/11/内篇/01-逍遥游/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/11/内篇/02-齐物论/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/11/内篇/03-养生主/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/11/内篇/04-人间世/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/11/内篇/05-德充符/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/11/内篇/06-大宗师/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/11/内篇/07-应帝王/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/14/05-ds语法/01-简介/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/14/05-ds语法/02-数据结构/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/14/05-ds语法/03-流程控制/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/14/05-ds语法/04-面向对象/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/2/工程化/性能分析/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/2/并发编程/基本用法/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/2/数据结构/二进制/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/2/系统相关/文件系统/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/2/系统相关/日志处理/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/2/系统相关/系统信息/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/2/系统相关/输入输出/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/2/系统相关/配置管理/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/2/网络编程/http服务开发/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/2/网络编程/socket编程/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/语法/元类编程/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/语法/字符串/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/语法/数组/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/2/语法/模块机制/index.html</loc>
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/01-基本语法/00-简介/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/01-基本语法/01-切片/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/01-基本语法/01-哈希表/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/01-基本语法/01-接口/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/01-基本语法/01-数据结构/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/01-基本语法/02-流程控制/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/01-基本语法/03-常见问题/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/01-基本语法/反射/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/01-基本语法/数学运算/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/01-基本语法/数据结构/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/01-基本语法/时间操作/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/01-基本语法/输入输出/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/01-基本语法/随机数/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/02-并发编程/01-简介/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/02-并发编程/context/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/02-并发编程/pool/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/02-并发编程/waitgroup/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/02-并发编程/协程/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/02-并发编程/基础结构增强/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/02-并发编程/通道/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/02-并发编程/锁/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/03-进阶知识/01-内存管理/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/03-进阶知识/02-垃圾回收/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/03-进阶知识/03-gmp模型/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/03-进阶知识/04-执行流程/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/03-进阶知识/05-逃逸分析/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/03-进阶知识/06-性能指标/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/03-进阶知识/栈扩容/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/04-工程化/benchmark/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/04-工程化/gowork/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/04-工程化/sqlmock/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/04-工程化/单元测试/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/04-工程化/接口测试/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/05-代码库/01-官方包/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/05-代码库/grpc开发/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/3/05-代码库/rpc/index.html</loc>
-  </url>
-
-  <url>
-    <loc>https://wwqdrh.github.io/books/details/3/05-代码库/zap/index.html</loc>
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/05-代码库/分布式系统/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/05-代码库/数据收集/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/05-代码库/网络/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/06-系统设计/流量桶设计/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/3/06-系统设计/缓存设计/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/4/01-基础语法/01-数据结构/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/4/01-基础语法/02-流程控制/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/4/01-基础语法/03-面向对象/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/4/01-基础语法/04-并发编程/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/4/02-数据结构/枚举类型/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/4/02-数据结构/树/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/4/02-数据结构/结构体/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/4/03-标准库/rand/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/4/04-网络开发/http服务/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/4/05-应用示例/ipsniffer/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/01-基础/01-简介/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/01-基础/02-seo优化/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/02-网络/00-简介/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/02-网络/01-一文读懂计算机网络/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/02-网络/02-数据传输流程/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/02-网络/03-socket编程/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/03-操作系统/00-简介/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/03-操作系统/01-一文读懂操作系统/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/05-容器技术/00-常用服务列表/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/05-容器技术/01-磁盘/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/05-容器技术/02-文件系统/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/05-容器技术/03-网络/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/05-容器技术/04-内存/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/05-容器技术/05-cpu/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-Etcd/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-Golang/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-MySQL/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-Nginx/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-Redis/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-容器/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-微服务/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-操作系统/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-算法/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/02-题库-网络/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/01/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/02/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/03/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/04/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/05/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/06/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/07/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/08/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/09/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/10/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/11/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/12/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/13/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/14/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/10/03-机试/hw-od/15/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/02-网络/01-网络协议/01-总览/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/02-网络/01-网络协议/02-http协议/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/02-网络/01-网络协议/02-传输层协议/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/02-网络/01-网络协议/03-ws协议/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/03-操作系统/01-硬件/01-cpu/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/03-操作系统/01-运行机制/01-进程/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/03-操作系统/01-运行机制/02-内存/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/03-操作系统/01-运行机制/02-用户/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/03-操作系统/01-运行机制/03-磁盘/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/03-操作系统/02-常用工具/01-任务管理/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/03-操作系统/02-常用工具/02-网络管理/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/03-操作系统/02-常用工具/03-shell脚本/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/03-操作系统/02-常用工具/04-文件管理/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/03-操作系统/02-常用工具/05-用户管理/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/01-mysql/01-索引/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/01-mysql/02-数据流程/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/01-mysql/03-事务/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/01-mysql/04-配置文件/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/01-mysql/05-锁/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/02-redis/00-简介/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/02-redis/01-配置文件/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/02-redis/02-应用场景/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/02-redis/03-数据结构/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/02-redis/04-集群搭建/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/02-redis/05-缓存策略/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/04-有状态应用/02-redis/06-命令手册/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/05-容器技术/swarm/01-工作模式/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/01-面经/01-230208/index.html</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://wwqdrh.github.io/books/details/9/06-interview/01-面经/02-230314/index.html</loc
-    >
+    <loc>https://wwqdrh.github.io/mall/home/软件大全/index.html</loc>
   </url>
 </urlset>

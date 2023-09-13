@@ -1,0 +1,24 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>wwqdrh&#39;tech home</title>
+      <link>https://wwqdrh.github.io/blog</link>
+      <description>blog...</description>
+      <language>en-us</language>
+      <managingEditor>huiloademail@163.com (wwqdrh)</managingEditor>
+      <webMaster>huiloademail@163.com (wwqdrh)</webMaster>
+      <lastBuildDate>Tue, 18 Oct 2022 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://wwqdrh.github.io/tags/网络/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://wwqdrh.github.io/blog/20221018/iptables</guid>
+    <title>iptables规则</title>
+    <link>https://wwqdrh.github.io/blog/20221018/iptables</link>
+    <description>iptables规则</description>
+    <pubDate>Tue, 18 Oct 2022 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    <category>网络</category>
+  </item>
+
+    </channel>
+  </rss>

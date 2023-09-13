@@ -1,0 +1,44 @@
+
+  <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+      <title>wwqdrh&#39;tech home</title>
+      <link>https://wwqdrh.github.io/blog</link>
+      <description>blog...</description>
+      <language>en-us</language>
+      <managingEditor>huiloademail@163.com (wwqdrh)</managingEditor>
+      <webMaster>huiloademail@163.com (wwqdrh)</webMaster>
+      <lastBuildDate>Sat, 13 Aug 2022 00:00:00 GMT</lastBuildDate>
+      <atom:link href="https://wwqdrh.github.io/tags/中间件/feed.xml" rel="self" type="application/rss+xml"/>
+      
+  <item>
+    <guid>https://wwqdrh.github.io/blog/20220913/grpc手册</guid>
+    <title>grpc手册</title>
+    <link>https://wwqdrh.github.io/blog/20220913/grpc手册</link>
+    <description>grpc介绍以及使用</description>
+    <pubDate>Sat, 13 Aug 2022 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    <category>中间件</category>
+  </item>
+
+  <item>
+    <guid>https://wwqdrh.github.io/blog/20220606/缓存一致性问题</guid>
+    <title>tekton使用示例</title>
+    <link>https://wwqdrh.github.io/blog/20220606/缓存一致性问题</link>
+    <description>缓存一致性的解决方法与思路</description>
+    <pubDate>Mon, 06 Jun 2022 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    <category>中间件</category>
+  </item>
+
+  <item>
+    <guid>https://wwqdrh.github.io/blog/20220115/数据变更记录工具</guid>
+    <title>数据变更记录工具</title>
+    <link>https://wwqdrh.github.io/blog/20220115/数据变更记录工具</link>
+    <description>接到个工作，需要为应用提供通用的数据变更日志功能</description>
+    <pubDate>Sat, 15 Jan 2022 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    <category>中间件</category>
+  </item>
+
+    </channel>
+  </rss>
