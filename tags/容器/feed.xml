@@ -11,9 +11,9 @@
       <atom:link href="https://wwqdrh.github.io/tags/容器/feed.xml" rel="self" type="application/rss+xml"/>
       
   <item>
-    <guid>https://wwqdrh.github.io/blog/20221017/容器操作指南</guid>
+    <guid>https://wwqdrh.github.io/blog/blog/容器操作指南</guid>
     <title>容器的操作指南</title>
-    <link>https://wwqdrh.github.io/blog/20221017/容器操作指南</link>
+    <link>https://wwqdrh.github.io/blog/blog/容器操作指南</link>
     <description>容器的操作指南</description>
     <pubDate>Mon, 17 Oct 2022 00:00:00 GMT</pubDate>
     <author>huiloademail@163.com (wwqdrh)</author>
@@ -21,9 +21,9 @@
   </item>
 
   <item>
-    <guid>https://wwqdrh.github.io/blog/20220929/容器核心点概览</guid>
+    <guid>https://wwqdrh.github.io/blog/blog/容器核心点概览</guid>
     <title>容器核心点</title>
-    <link>https://wwqdrh.github.io/blog/20220929/容器核心点概览</link>
+    <link>https://wwqdrh.github.io/blog/blog/容器核心点概览</link>
     <description>容器使用与主机的区别</description>
     <pubDate>Sun, 14 Aug 2022 00:00:00 GMT</pubDate>
     <author>huiloademail@163.com (wwqdrh)</author>
@@ -31,9 +31,9 @@
   </item>
 
   <item>
-    <guid>https://wwqdrh.github.io/blog/20220704/容器之间的网络模式</guid>
+    <guid>https://wwqdrh.github.io/blog/blog/容器之间的网络模式</guid>
     <title>容器之间的网络模式</title>
-    <link>https://wwqdrh.github.io/blog/20220704/容器之间的网络模式</link>
+    <link>https://wwqdrh.github.io/blog/blog/容器之间的网络模式</link>
     <description>容器之间的网络模式简介</description>
     <pubDate>Mon, 04 Jul 2022 00:00:00 GMT</pubDate>
     <author>huiloademail@163.com (wwqdrh)</author>

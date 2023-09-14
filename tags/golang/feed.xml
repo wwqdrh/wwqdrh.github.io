@@ -11,9 +11,9 @@
       <atom:link href="https://wwqdrh.github.io/tags/golang/feed.xml" rel="self" type="application/rss+xml"/>
       
   <item>
-    <guid>https://wwqdrh.github.io/blog/20230301/gmp模型</guid>
+    <guid>https://wwqdrh.github.io/blog/blog/gmp模型</guid>
     <title>gmp模型</title>
-    <link>https://wwqdrh.github.io/blog/20230301/gmp模型</link>
+    <link>https://wwqdrh.github.io/blog/blog/gmp模型</link>
     <description>gmp模型</description>
     <pubDate>Wed, 01 Mar 2023 00:00:00 GMT</pubDate>
     <author>huiloademail@163.com (wwqdrh)</author>
@@ -31,9 +31,9 @@
   </item>
 
   <item>
-    <guid>https://wwqdrh.github.io/blog/20221010/Go的编译原理</guid>
+    <guid>https://wwqdrh.github.io/blog/blog/Go的编译原理</guid>
     <title>golang编译原理</title>
-    <link>https://wwqdrh.github.io/blog/20221010/Go的编译原理</link>
+    <link>https://wwqdrh.github.io/blog/blog/Go的编译原理</link>
     <description>golang编译原理</description>
     <pubDate>Mon, 10 Oct 2022 00:00:00 GMT</pubDate>
     <author>huiloademail@163.com (wwqdrh)</author>
@@ -41,9 +41,9 @@
   </item>
 
   <item>
-    <guid>https://wwqdrh.github.io/blog/20221010/go命令工具</guid>
+    <guid>https://wwqdrh.github.io/blog/blog/go命令工具</guid>
     <title>golang命令工具</title>
-    <link>https://wwqdrh.github.io/blog/20221010/go命令工具</link>
+    <link>https://wwqdrh.github.io/blog/blog/go命令工具</link>
     <description>golang命令工具</description>
     <pubDate>Mon, 10 Oct 2022 00:00:00 GMT</pubDate>
     <author>huiloademail@163.com (wwqdrh)</author>
@@ -51,9 +51,9 @@
   </item>
 
   <item>
-    <guid>https://wwqdrh.github.io/blog/20221010/常见编码问题</guid>
+    <guid>https://wwqdrh.github.io/blog/blog/常见编码问题</guid>
     <title>golang编程中常见的问题</title>
-    <link>https://wwqdrh.github.io/blog/20221010/常见编码问题</link>
+    <link>https://wwqdrh.github.io/blog/blog/常见编码问题</link>
     <description>golang编程中常见的问题</description>
     <pubDate>Mon, 10 Oct 2022 00:00:00 GMT</pubDate>
     <author>huiloademail@163.com (wwqdrh)</author>
@@ -61,9 +61,9 @@
   </item>
 
   <item>
-    <guid>https://wwqdrh.github.io/blog/20220703/golang工程化总览</guid>
+    <guid>https://wwqdrh.github.io/blog/blog/golang工程化总览</guid>
     <title>golang工程化纵览</title>
-    <link>https://wwqdrh.github.io/blog/20220703/golang工程化总览</link>
+    <link>https://wwqdrh.github.io/blog/blog/golang工程化总览</link>
     <description>golang工程化所用到的工具概览</description>
     <pubDate>Sun, 03 Jul 2022 00:00:00 GMT</pubDate>
     <author>huiloademail@163.com (wwqdrh)</author>

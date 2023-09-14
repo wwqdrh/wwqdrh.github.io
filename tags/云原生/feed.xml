@@ -11,9 +11,9 @@
       <atom:link href="https://wwqdrh.github.io/tags/云原生/feed.xml" rel="self" type="application/rss+xml"/>
       
   <item>
-    <guid>https://wwqdrh.github.io/blog/20221026/swarm工作模式</guid>
+    <guid>https://wwqdrh.github.io/blog/blog/swarm工作模式</guid>
     <title>docker-swarm的工作原理</title>
-    <link>https://wwqdrh.github.io/blog/20221026/swarm工作模式</link>
+    <link>https://wwqdrh.github.io/blog/blog/swarm工作模式</link>
     <description>docker-swarm的工作原理</description>
     <pubDate>Wed, 26 Oct 2022 00:00:00 GMT</pubDate>
     <author>huiloademail@163.com (wwqdrh)</author>
@@ -21,9 +21,9 @@
   </item>
 
   <item>
-    <guid>https://wwqdrh.github.io/blog/20220620/go-zero微服务实践</guid>
+    <guid>https://wwqdrh.github.io/blog/blog/go-zero微服务实践</guid>
     <title>go-zero微服务实践</title>
-    <link>https://wwqdrh.github.io/blog/20220620/go-zero微服务实践</link>
+    <link>https://wwqdrh.github.io/blog/blog/go-zero微服务实践</link>
     <description>微服务简介以及go-zero如何落地</description>
     <pubDate>Mon, 20 Jun 2022 00:00:00 GMT</pubDate>
     <author>huiloademail@163.com (wwqdrh)</author>
@@ -31,9 +31,9 @@
   </item>
 
   <item>
-    <guid>https://wwqdrh.github.io/blog/20220520/tekton使用示例</guid>
+    <guid>https://wwqdrh.github.io/blog/blog/tekton使用示例</guid>
     <title>tekton使用示例</title>
-    <link>https://wwqdrh.github.io/blog/20220520/tekton使用示例</link>
+    <link>https://wwqdrh.github.io/blog/blog/tekton使用示例</link>
     <description>tekton作为云原生中的cd工具，能够轻易的做到task复用，减少重复代码编写</description>
     <pubDate>Fri, 20 May 2022 00:00:00 GMT</pubDate>
     <author>huiloademail@163.com (wwqdrh)</author>
@@ -41,9 +41,9 @@
   </item>
 
   <item>
-    <guid>https://wwqdrh.github.io/blog/20220331/如何使用nginx实现灰度部署</guid>
+    <guid>https://wwqdrh.github.io/blog/blog/如何使用nginx实现灰度部署</guid>
     <title>如何使用nginx实现灰度部署</title>
-    <link>https://wwqdrh.github.io/blog/20220331/如何使用nginx实现灰度部署</link>
+    <link>https://wwqdrh.github.io/blog/blog/如何使用nginx实现灰度部署</link>
     <description>灰度部署</description>
     <pubDate>Thu, 31 Mar 2022 00:00:00 GMT</pubDate>
     <author>huiloademail@163.com (wwqdrh)</author>
@@ -51,9 +51,9 @@
   </item>
 
   <item>
-    <guid>https://wwqdrh.github.io/blog/20220315/一次k8s环境搭建记录</guid>
+    <guid>https://wwqdrh.github.io/blog/blog/一次k8s环境搭建记录</guid>
     <title>数据变更记录工具</title>
-    <link>https://wwqdrh.github.io/blog/20220315/一次k8s环境搭建记录</link>
+    <link>https://wwqdrh.github.io/blog/blog/一次k8s环境搭建记录</link>
     <description>kubernetes环境搭建记录</description>
     <pubDate>Tue, 15 Mar 2022 00:00:00 GMT</pubDate>
     <author>huiloademail@163.com (wwqdrh)</author>
