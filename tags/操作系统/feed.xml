@@ -7,13 +7,53 @@
       <language>en-us</language>
       <managingEditor>huiloademail@163.com (wwqdrh)</managingEditor>
       <webMaster>huiloademail@163.com (wwqdrh)</webMaster>
-      <lastBuildDate>Mon, 10 Oct 2022 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Sat, 16 Sep 2023 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://wwqdrh.github.io/tags/操作系统/feed.xml" rel="self" type="application/rss+xml"/>
       
   <item>
-    <guid>https://wwqdrh.github.io/blog/blog/操作系统性能分析工具</guid>
+    <guid>https://wwqdrh.github.io/blog/操作系统/一条命令执行时的整体流程</guid>
+    <title>一条命令执行时的整体流程</title>
+    <link>https://wwqdrh.github.io/blog/操作系统/一条命令执行时的整体流程</link>
+    <description>操作系统源码讲解</description>
+    <pubDate>Sat, 16 Sep 2023 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    <category>操作系统</category>
+  </item>
+
+  <item>
+    <guid>https://wwqdrh.github.io/blog/操作系统/内核启动流程</guid>
+    <title>内核启动流程</title>
+    <link>https://wwqdrh.github.io/blog/操作系统/内核启动流程</link>
+    <description>操作系统源码讲解</description>
+    <pubDate>Sat, 16 Sep 2023 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    <category>操作系统</category>
+  </item>
+
+  <item>
+    <guid>https://wwqdrh.github.io/blog/操作系统/初始化流程</guid>
+    <title>内核启动初始化流程</title>
+    <link>https://wwqdrh.github.io/blog/操作系统/初始化流程</link>
+    <description>操作系统源码讲解</description>
+    <pubDate>Sat, 16 Sep 2023 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    <category>操作系统</category>
+  </item>
+
+  <item>
+    <guid>https://wwqdrh.github.io/blog/操作系统/新进程的创建</guid>
+    <title>新进程如何创建的</title>
+    <link>https://wwqdrh.github.io/blog/操作系统/新进程的创建</link>
+    <description>操作系统源码讲解</description>
+    <pubDate>Sat, 16 Sep 2023 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    <category>操作系统</category>
+  </item>
+
+  <item>
+    <guid>https://wwqdrh.github.io/blog/操作系统性能分析工具</guid>
     <title>操作系统性能分析工具</title>
-    <link>https://wwqdrh.github.io/blog/blog/操作系统性能分析工具</link>
+    <link>https://wwqdrh.github.io/blog/操作系统性能分析工具</link>
     <description>操作系统性能分析工具</description>
     <pubDate>Mon, 10 Oct 2022 00:00:00 GMT</pubDate>
     <author>huiloademail@163.com (wwqdrh)</author>
@@ -21,9 +61,9 @@
   </item>
 
   <item>
-    <guid>https://wwqdrh.github.io/blog/blog/时间格式</guid>
+    <guid>https://wwqdrh.github.io/blog/时间格式</guid>
     <title>表达时间的格式</title>
-    <link>https://wwqdrh.github.io/blog/blog/时间格式</link>
+    <link>https://wwqdrh.github.io/blog/时间格式</link>
     <description>表达时间的格式</description>
     <pubDate>Mon, 10 Oct 2022 00:00:00 GMT</pubDate>
     <author>huiloademail@163.com (wwqdrh)</author>
