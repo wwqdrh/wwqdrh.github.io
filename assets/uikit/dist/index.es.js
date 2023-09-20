@@ -14225,7 +14225,7 @@ function Kh(t, e, n) {
     try {
       o(r.parse(a));
     } catch (d) {
-      d instanceof Gn.ZodError && n(5, c = d.flatten().fieldErrors);
+      d instanceof Gn.ZodError ? n(5, c = d.flatten().fieldErrors) : console.error(d);
     }
   }, f = (d) => {
     n(4, a[d.detail.id] = d.detail.value, a);
@@ -14254,19 +14254,20 @@ class Yh extends fe {
     });
   }
 }
-const im = (t, e) => {
+const im = (t, e, n) => {
   t || (t = window.document.createElement("div"));
-  const n = Gn.lazy(() => {
-    let i = Gn.object({});
-    for (let s of e)
-      s.props.id && s.schema && (i = i.merge(Gn.object({ [s.props.id]: s.schema })));
-    return i;
+  const r = Gn.lazy(() => {
+    let s = Gn.object({});
+    for (let o of e)
+      o.props.id && o.schema && (s = s.merge(Gn.object({ [o.props.id]: o.schema })));
+    return s;
   });
   return new Yh({
     target: t,
     props: {
       fields: e,
-      schema: n
+      schema: r,
+      ...n
     }
   });
 }, Wn = (t) => Object.entries(t).map(([e, n]) => `${e}: ${n};`).join(" ");
