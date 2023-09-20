@@ -13951,11 +13951,11 @@ class li extends fe {
 }
 function Cs(t, e, n) {
   const r = t.slice();
-  return r[9] = e[n], r[11] = n, r;
+  return r[10] = e[n], r[12] = n, r;
 }
 function Ss(t, e, n) {
   const r = t.slice();
-  return r[9] = e[n], r[11] = n, r;
+  return r[10] = e[n], r[12] = n, r;
 }
 function Gh(t) {
   let e, n, r = ze(
@@ -13982,7 +13982,7 @@ function Gh(t) {
     },
     p(o, a) {
       if (a & /*errors, fields, formdata*/
-      26) {
+      50) {
         r = ze(
           /*fields*/
           o[1]
@@ -14038,12 +14038,12 @@ function qh(t) {
         a[f] && a[f].m(n, null);
       r = !0, i || (s = Q(e, "submit", Ua(
         /*submit_handler*/
-        t[6]
+        t[7]
       )), i = !0);
     },
     p(l, u) {
       if (u & /*fields, errors, formdata*/
-      26) {
+      50) {
         o = ze(
           /*fields*/
           l[1]
@@ -14082,22 +14082,22 @@ function xs(t) {
     props: {
       msg: (
         /*errors*/
-        t[4][
+        t[5][
           /*item*/
-          t[9].props.id
+          t[10].props.id
         ] || ""
       ),
       item: (
         /*item*/
-        t[9]
+        t[10]
       ),
       i: `${/*i*/
-      t[11]}`
+      t[12]}`
     }
   }), e.$on(
     "onChange",
     /*onChange_handler_1*/
-    t[7]
+    t[8]
   ), {
     c() {
       ge(e.$$.fragment);
@@ -14108,13 +14108,13 @@ function xs(t) {
     p(r, i) {
       const s = {};
       i & /*errors, fields*/
-      18 && (s.msg = /*errors*/
-      r[4][
+      34 && (s.msg = /*errors*/
+      r[5][
         /*item*/
-        r[9].props.id
+        r[10].props.id
       ] || ""), i & /*fields*/
       2 && (s.item = /*item*/
-      r[9]), e.$set(s);
+      r[10]), e.$set(s);
     },
     i(r) {
       n || (k(e.$$.fragment, r), n = !0);
@@ -14133,22 +14133,22 @@ function Es(t) {
     props: {
       item: (
         /*item*/
-        t[9]
+        t[10]
       ),
       msg: (
         /*errors*/
-        t[4][
+        t[5][
           /*item*/
-          t[9].props.id
+          t[10].props.id
         ] || ""
       ),
       i: `${/*i*/
-      t[11]}`
+      t[12]}`
     }
   }), e.$on(
     "onChange",
     /*onChange_handler*/
-    t[5]
+    t[6]
   ), {
     c() {
       ge(e.$$.fragment);
@@ -14160,11 +14160,11 @@ function Es(t) {
       const s = {};
       i & /*fields*/
       2 && (s.item = /*item*/
-      r[9]), i & /*errors, fields*/
-      18 && (s.msg = /*errors*/
-      r[4][
+      r[10]), i & /*errors, fields*/
+      34 && (s.msg = /*errors*/
+      r[5][
         /*item*/
-        r[9].props.id
+        r[10].props.id
       ] || ""), e.$set(s);
     },
     i(r) {
@@ -14216,22 +14216,22 @@ function Hh(t) {
 }
 function Kh(t, e, n) {
   tn();
-  let { schema: r } = e, { fields: i } = e, { outform: s = !1 } = e, o = {}, a = {};
-  const c = (f) => {
-    n(3, o[f.detail.id] = f.detail.value, o);
-  }, l = () => {
-    console.log(o);
+  let { schema: r } = e, { fields: i } = e, { outform: s = !1 } = e, { onCheckSucc: o = (d) => {
+    console.log(d);
+  } } = e, a = {}, c = {};
+  const l = (d) => {
+    n(4, a[d.detail.id] = d.detail.value, a);
+  }, u = () => {
     try {
-      let f = r.parse(o);
-      console.log(f);
-    } catch (f) {
-      f instanceof Gn.ZodError && n(4, a = f.flatten().fieldErrors);
+      o(r.parse(a));
+    } catch (d) {
+      d instanceof Gn.ZodError && n(5, c = d.flatten().fieldErrors);
     }
-  }, u = (f) => {
-    n(3, o[f.detail.id] = f.detail.value, o);
+  }, f = (d) => {
+    n(4, a[d.detail.id] = d.detail.value, a);
   };
-  return t.$$set = (f) => {
-    "schema" in f && n(0, r = f.schema), "fields" in f && n(1, i = f.fields), "outform" in f && n(2, s = f.outform);
+  return t.$$set = (d) => {
+    "schema" in d && n(0, r = d.schema), "fields" in d && n(1, i = d.fields), "outform" in d && n(2, s = d.outform), "onCheckSucc" in d && n(3, o = d.onCheckSucc);
   }, [
     r,
     i,
@@ -14240,12 +14240,18 @@ function Kh(t, e, n) {
     a,
     c,
     l,
-    u
+    u,
+    f
   ];
 }
 class Yh extends fe {
   constructor(e) {
-    super(), ue(this, e, Kh, Hh, re, { schema: 0, fields: 1, outform: 2 });
+    super(), ue(this, e, Kh, Hh, re, {
+      schema: 0,
+      fields: 1,
+      outform: 2,
+      onCheckSucc: 3
+    });
   }
 }
 const im = (t, e) => {
