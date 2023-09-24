@@ -5366,7 +5366,7 @@ function bn(e) {
       t = w("div"), n = w("h2"), o = F(r), l = E(), i = w("div");
       for (let d = 0; d < a.length; d += 1)
         a[d].c();
-      c = E(), v(n, "class", "mb-2 px-4 text-lg font-semibold tracking-tight"), v(i, "class", "space-y-1"), v(t, "class", "px-3 py-2");
+      c = E(), v(n, "class", "mb-2 px-4 text-lg font-semibold tracking-tight"), v(i, "class", "space-y-1"), v(t, "class", "px-3 py-2 w-full");
     },
     m(d, g) {
       z(d, t, g), h(t, n), h(n, o), h(t, l), h(t, i);
@@ -5705,7 +5705,7 @@ function Dl(e) {
   }
   return {
     c() {
-      t = w("li"), n = w("button"), be(r.$$.fragment), o = w("span"), i = F(l), c = E(), v(o, "class", "ml-2"), v(n, "class", "btn btn-ghost drawer-button font-normal normal-case"), v(t, "class", "nav-item");
+      t = w("li"), n = w("button"), be(r.$$.fragment), o = w("span"), i = F(l), c = E(), v(o, "class", "ml-2"), v(n, "class", "daisy-btn daisy-btn-ghost daisy-drawer-button font-normal normal-case"), v(t, "class", "nav-item");
     },
     m(d, g) {
       z(d, t, g), h(t, n), ae(r, n, null), h(n, o), h(o, i), h(t, c), s = !0, u || (a = J(n, "click", f), u = !0);
@@ -5745,7 +5745,7 @@ function ql(e) {
       t = w("li"), n = w("div"), r = w("label"), l = F(o), i = E(), c = w("ul");
       for (let f = 0; f < a.length; f += 1)
         a[f].c();
-      s = E(), v(r, "tabindex", "1"), v(r, "class", "btn normal-case btn-ghost"), v(c, "tabindex", "1"), v(c, "class", "dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"), v(n, "class", "dropdown dropdown-hover dropdown-bottom dropdown-end"), v(t, "class", "nav-item");
+      s = E(), v(r, "tabindex", "1"), v(r, "class", "daisy-btn normal-case daisy-btn-ghost"), v(c, "tabindex", "1"), v(c, "class", "daisy-dropdown-content z-[1] daisy-menu p-2 shadow bg-base-100 rounded-box w-52"), v(n, "class", "daisy-dropdown daisy-dropdown-hover daisy-dropdown-bottom daisy-dropdown-end"), v(t, "class", "nav-item");
     },
     m(f, d) {
       z(f, t, d), h(t, n), h(n, r), h(r, l), h(n, i), h(n, c);
@@ -5973,7 +5973,7 @@ function Sn(e) {
   }
   return {
     c() {
-      t = w("button"), r = F(n), v(t, "class", "get-started text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-pink-500 active:bg-pink-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150");
+      t = w("button"), r = F(n), v(t, "class", "text-white font-bold px-6 py-4 rounded outline-none focus:outline-none mr-1 mb-1 bg-pink-500 active:bg-pink-600 uppercase text-sm shadow hover:shadow-lg ease-linear transition-all duration-150");
     },
     m(c, s) {
       z(c, t, s), h(t, r), o || (l = J(t, "click", i), o = !0);
@@ -6008,7 +6008,7 @@ function Jl(e) {
         _[m].c();
       d = E(), g = w("img"), v(l, "class", "font-semibold text-4xl text-slate-600"), v(s, "class", "mt-4 text-lg leading-relaxed text-slate-500"), v(f, "class", "mt-12"), v(o, "class", "pt-32 sm:pt-0"), v(r, "class", "w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4"), v(n, "class", "container mx-auto items-center flex flex-wrap"), v(g, "class", "absolute top-0 b-auto right-0 pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-10/12"), Qe(g.src, p = /*cover*/
       e[5]) || v(g, "src", p), v(g, "alt", "..."), Se(g, "max-height", "860px"), v(t, "class", x = le(
-        "header relative items-center flex h-screen",
+        "relative items-center flex h-full w-full",
         /*className*/
         e[2]
       )), Se(t, "max-height", "860px");
@@ -6049,7 +6049,7 @@ function Jl(e) {
       32 && !Qe(g.src, p = /*cover*/
       m[5]) && v(g, "src", p), S & /*className*/
       4 && x !== (x = le(
-        "header relative items-center flex h-screen",
+        "relative items-center flex h-full w-full",
         /*className*/
         m[2]
       )) && v(t, "class", x);
@@ -6152,7 +6152,7 @@ function Kl(e) {
       for (let b = 0; b < p.length; b += 1)
         p[b].c();
       v(o, "class", "mb-4 text-4xl font-extrabold text-gray-900 dark:text-white"), v(c, "class", "text-gray-500 sm:text-xl dark:text-gray-400"), v(r, "class", "mb-8 max-w-screen-md lg:mb-16"), v(a, "class", "space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0"), v(n, "class", "py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6"), v(t, "class", f = le(
-        " dark:bg-gray-800",
+        "dark:bg-gray-800",
         /*className*/
         e[0]
       ));
@@ -6191,7 +6191,7 @@ function Kl(e) {
       }
       (!d || _ & /*className*/
       1 && f !== (f = le(
-        " dark:bg-gray-800",
+        "dark:bg-gray-800",
         /*className*/
         b[0]
       ))) && v(t, "class", f);
