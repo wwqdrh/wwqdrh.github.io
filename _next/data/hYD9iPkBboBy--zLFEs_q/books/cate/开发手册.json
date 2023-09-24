@@ -1,0 +1,1 @@
+{"pageProps":{"cate":"开发手册","books":[{"id":15,"tag":"开发手册","title":"商城应用开发","author":"wwqdrh","desc":"开发一个商城应用，包括前台的用户界面展示，商品展示，用户登录注册，下单管理，物流系统，后台的管理界面等，支持个人当面付等支付功能","publish":"2023-09-18","pathname":"app-mall-handbook","secret":false}]},"__N_SSG":true}
