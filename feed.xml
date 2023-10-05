@@ -21,46 +21,6 @@
   </item>
 
   <item>
-    <guid>https://wwqdrh.github.io/blog/操作系统/一条命令执行时的整体流程</guid>
-    <title>一条命令执行时的整体流程</title>
-    <link>https://wwqdrh.github.io/blog/操作系统/一条命令执行时的整体流程</link>
-    <description>操作系统源码讲解</description>
-    <pubDate>Sat, 16 Sep 2023 00:00:00 GMT</pubDate>
-    <author>huiloademail@163.com (wwqdrh)</author>
-    <category>操作系统</category>
-  </item>
-
-  <item>
-    <guid>https://wwqdrh.github.io/blog/操作系统/内核启动流程</guid>
-    <title>内核启动流程</title>
-    <link>https://wwqdrh.github.io/blog/操作系统/内核启动流程</link>
-    <description>linux0.11源码讲解</description>
-    <pubDate>Sat, 16 Sep 2023 00:00:00 GMT</pubDate>
-    <author>huiloademail@163.com (wwqdrh)</author>
-    <category>操作系统</category>
-  </item>
-
-  <item>
-    <guid>https://wwqdrh.github.io/blog/操作系统/初始化流程</guid>
-    <title>内核启动初始化流程</title>
-    <link>https://wwqdrh.github.io/blog/操作系统/初始化流程</link>
-    <description>操作系统源码讲解</description>
-    <pubDate>Sat, 16 Sep 2023 00:00:00 GMT</pubDate>
-    <author>huiloademail@163.com (wwqdrh)</author>
-    <category>操作系统</category>
-  </item>
-
-  <item>
-    <guid>https://wwqdrh.github.io/blog/操作系统/新进程的创建</guid>
-    <title>新进程如何创建的</title>
-    <link>https://wwqdrh.github.io/blog/操作系统/新进程的创建</link>
-    <description>操作系统源码讲解</description>
-    <pubDate>Sat, 16 Sep 2023 00:00:00 GMT</pubDate>
-    <author>huiloademail@163.com (wwqdrh)</author>
-    <category>操作系统</category>
-  </item>
-
-  <item>
     <guid>https://wwqdrh.github.io/blog/[chat with chatgpt]什么是redis</guid>
     <title>什么是redis</title>
     <link>https://wwqdrh.github.io/blog/[chat with chatgpt]什么是redis</link>
@@ -88,16 +48,6 @@
     <pubDate>Tue, 28 Feb 2023 00:00:00 GMT</pubDate>
     <author>huiloademail@163.com (wwqdrh)</author>
     <category>计算机原理</category>
-  </item>
-
-  <item>
-    <guid>https://wwqdrh.github.io/blog/preview/测试应用</guid>
-    <title>测试应用</title>
-    <link>https://wwqdrh.github.io/blog/preview/测试应用</link>
-    <description>开发笔记</description>
-    <pubDate>Mon, 05 Dec 2022 00:00:00 GMT</pubDate>
-    <author>huiloademail@163.com (wwqdrh)</author>
-    <category>开发笔记</category>
   </item>
 
   <item>
