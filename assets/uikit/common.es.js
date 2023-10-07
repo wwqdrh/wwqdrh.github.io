@@ -6653,10 +6653,10 @@ function gl(t) {
       for (let k = 0; k < j.length; k += 1)
         j[k].c();
       p(u, "class", "uikit-text-3xl uikit-font-semibold"), p(c, "class", "uikit-mt-4 uikit-text-md uikit-leading-relaxed uikit-text-slate-500"), p(d, "class", "uikit-list-none uikit-mt-6"), p(o, "class", "md:uikit-pr-12"), p(r, "class", "uikit-w-full md:uikit-w-1/3 uikit-ml-auto uikit-px-12 md:uikit-px-4"), p(_, "class", "uikit-carousel uikit-carousel-center uikit-w-full"), p(S, "class", "uikit-w-full md:uikit-w-2/3 uikit-mr-auto uikit-px-4 uikit-pt-24 md:uikit-pt-0"), p(i, "class", A = re(
-        "uikit-flex uikit-justify-between",
+        "uikit-flex uikit-justify-between uikit-w-full",
         /*rtl*/
         t[6] ? "uikit-flex-row-reverse" : ""
-      )), p(n, "class", "uikit-items-center uikit-flex uikit-flex-wrap"), p(e, "class", z = re(
+      )), p(n, "class", "uikit-items-center uikit-flex uikit-flex-wrap uikit-w-full"), p(e, "class", z = re(
         "uikit-container uikit-mx-auto uikit-px-4 uikit-py-8",
         /*className*/
         t[0]
@@ -6736,7 +6736,7 @@ function gl(t) {
       }
       (!P || I & /*rtl*/
       64 && A !== (A = re(
-        "uikit-flex uikit-justify-between",
+        "uikit-flex uikit-justify-between uikit-w-full",
         /*rtl*/
         k[6] ? "uikit-flex-row-reverse" : ""
       ))) && p(i, "class", A), (!P || I & /*className*/
