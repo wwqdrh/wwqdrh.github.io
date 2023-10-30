@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>online-yaml</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div x-data="{file: null, data: [], editdata: [], download: null, id: 1,
+        parseFile() {
+            let reader = new FileReader();
+            reader.onload = function(e) {
+                let text = e.target.result;
+                let obj = jsyaml.load(text);
+                if (Array.isArray(obj) && obj.every(o => o.label && o.content)) {
+                    this.data = obj;
+                } else {
+                    alert('Invalid yaml format');
+                }
+            }.bind(this);
+            console.log(this.file, this.data, this.id);
+            reader.readAsText(this.file);
+        },
+        generateFile() {
+            let text = jsyaml.dump(this.editdata);
+            let blob = new Blob([text], { type: 'text/yaml' });
+            let url = URL.createObjectURL(blob);
+            let name = this.file.name.replace('.yaml', '-modified.yaml');
+            this.download = { url, name };
+        },
+        addedit(record, index) {
+            if (record.label !== 'todo') {
+                this.editdata.push({'label': record.label, 'content': record.content})
+            }
+        }
+    }">
+        <div class="file">
+            <label class="file-label">
+                <input class="file-input" type="file" accept=".yaml"
+                    @change="file = $event.target.files[0]; parseFile()">
+                <span class="file-cta">
+                    <span class="file-icon">
+                        <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label">
+                        Choose a file…
+                    </span>
+                </span>
+            </label>
+        </div>
+        <div id="content" style="max-height: 300px; overflow-y: scroll;">
+            <template x-for="(item, index) in data" :key="index">
+                <div class="item">
+                    <label>Label:</label>
+                    <input @change="addedit(item, index)" type="text" x-model="item.label">
+                    <label>Content:</label>
+                    <textarea @change="addedit(item, index)" style="width: 200px; height: 200px;"
+                        x-model="item.content"></textarea>
+                </div>
+            </template>
+        </div>
+        <button class="button" @click="generateFile()">Download</button>
+        <a x-show="download" :href="download.url" :download="download.name">download</a>
+    </div>
+</body>
+
+</html>
