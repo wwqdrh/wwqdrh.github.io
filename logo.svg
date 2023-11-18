@@ -1,0 +1,62 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1622513144486"
+    class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10042"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36">
+    <defs>
+        <style type="text/css"></style>
+    </defs>
+    <path d="M192 960h640v64H192zM832 832h64v128h-64z" fill="#F7FEFF" p-id="10043"></path>
+    <path d="M832 832h-64v64h-64v-128h-64v128H576v-128H448v128H384v-128H320v128H256V576H128v64h64v320h640v-128z"
+        fill="#231E2B" p-id="10044"></path>
+    <path d="M128 640h64v320H128zM896 768h64v64h-64z" fill="#F7FEFF" p-id="10045"></path>
+    <path d="M832 768h64v64h-64z" fill="#231E2B" p-id="10046"></path>
+    <path d="M768 704h-64V576h-64V512H576v128H512v128h64v128h64v-128h64v128h64v-192z" fill="#F7FEFF" p-id="10047">
+    </path>
+    <path d="M448 704h64v64H448z" fill="#E1D1DE" p-id="10048"></path>
+    <path d="M384 704V512H320V448H256V384H192v64H128v128h128v320h64v-128h64v128h64v-192H384z" fill="#F7FEFF"
+        p-id="10049"></path>
+    <path d="M896 576h64v192h-64z" fill="#231E2B" p-id="10050"></path>
+    <path d="M832 576h-64v256h64v-64h64v-64h-64V576z" fill="#B44BA1" p-id="10051"></path>
+    <path d="M448 640h64v64H448z" fill="#A545A4" p-id="10052"></path>
+    <path d="M384 640h64v64H384z" fill="#E1D1DE" p-id="10053"></path>
+    <path d="M960 576h64v192h-64z" fill="#F7FEFF" p-id="10054"></path>
+    <path d="M832 576h64v128h-64z" fill="#D779A5" p-id="10055"></path>
+    <path d="M704 576h64v128h-64zM512 576h64v64H512z" fill="#E1D1DE" p-id="10056"></path>
+    <path d="M384 512h64v128H384z" fill="#A545A4" p-id="10057"></path>
+    <path d="M64 576h64v64H64zM896 512h64v64h-64z" fill="#F7FEFF" p-id="10058"></path>
+    <path d="M832 512h64v64h-64z" fill="#231E2B" p-id="10059"></path>
+    <path d="M768 512h64v64h-64z" fill="#D779A5" p-id="10060"></path>
+    <path d="M704 512h64v64h-64z" fill="#B44BA1" p-id="10061"></path>
+    <path d="M640 512h64v64h-64z" fill="#E1D1DE" p-id="10062"></path>
+    <path d="M64 320h64v256H64z" fill="#231E2B" p-id="10063"></path>
+    <path d="M832 448h64v64h-64z" fill="#F7FEFF" p-id="10064"></path>
+    <path d="M576 448h256v64H576z" fill="#231E2B" p-id="10065"></path>
+    <path d="M512 448h64v64H512z" fill="#D779A5" p-id="10066"></path>
+    <path d="M384 448v64h64v128h64V576h64V512H512V448H384z" fill="#B44BA1" p-id="10067"></path>
+    <path d="M320 448h64v64H320z" fill="#E1D1DE" p-id="10068"></path>
+    <path d="M0 320h64v256H0zM576 448h256V384h-192V320H576v128z" fill="#F7FEFF" p-id="10069"></path>
+    <path d="M448 320h64v128H448z" fill="#D779A5" p-id="10070"></path>
+    <path d="M384 384h64v64H384z" fill="#F7FEFF" p-id="10071"></path>
+    <path d="M320 384h64v64H320z" fill="#A545A4" p-id="10072"></path>
+    <path d="M256 384h64v64H256z" fill="#E1D1DE" p-id="10073"></path>
+    <path d="M128 384h64v64H128z" fill="#A545A4" p-id="10074"></path>
+    <path d="M512 320h64v128H512z" fill="#231E2B" p-id="10075"></path>
+    <path d="M320 320h128v64H320z" fill="#B44BA1" p-id="10076"></path>
+    <path d="M192 320h128v64H192z" fill="#A545A4" p-id="10077"></path>
+    <path d="M128 320h64v64H128z" fill="#B44BA1" p-id="10078"></path>
+    <path d="M512 256h64v64H512z" fill="#F7FEFF" p-id="10079"></path>
+    <path d="M448 256h64v64H448z" fill="#231E2B" p-id="10080"></path>
+    <path d="M320 256h128v64H320z" fill="#D779A5" p-id="10081"></path>
+    <path d="M256 256h64v64H256z" fill="#E2B436" p-id="10082"></path>
+    <path d="M192 256h64v64H192z" fill="#CF8934" p-id="10083"></path>
+    <path d="M128 256h64v64H128z" fill="#231E2B" p-id="10084"></path>
+    <path d="M64 256h64v64H64zM448 192h64v64H448z" fill="#F7FEFF" p-id="10085"></path>
+    <path d="M256 192h192v64H256z" fill="#231E2B" p-id="10086"></path>
+    <path d="M192 192h64v64H192z" fill="#E2B436" p-id="10087"></path>
+    <path d="M128 192h64v64H128z" fill="#CF8934" p-id="10088"></path>
+    <path d="M128 128h64V64H64v192h64V128z" fill="#231E2B" p-id="10089"></path>
+    <path d="M256 128h192v64H256z" fill="#F7FEFF" p-id="10090"></path>
+    <path d="M192 128h64v64H192z" fill="#231E2B" p-id="10091"></path>
+    <path d="M128 128h64v64H128z" fill="#E2B436" p-id="10092"></path>
+    <path d="M0 64h64v192H0zM192 64h64v64H192zM64 0h128v64H64z" fill="#F7FEFF" p-id="10093"></path>
+</svg>
