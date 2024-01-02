@@ -7,9 +7,29 @@
       <language>en-us</language>
       <managingEditor>huiloademail@163.com (wwqdrh)</managingEditor>
       <webMaster>huiloademail@163.com (wwqdrh)</webMaster>
-      <lastBuildDate>Thu, 05 Oct 2023 00:00:00 GMT</lastBuildDate>
+      <lastBuildDate>Tue, 02 Jan 2024 00:00:00 GMT</lastBuildDate>
       <atom:link href="https://wwqdrh.github.io/feed.xml" rel="self" type="application/rss+xml"/>
       
+  <item>
+    <guid>https://wwqdrh.github.io/blog/2024/01-02</guid>
+    <title>2024-01-02</title>
+    <link>https://wwqdrh.github.io/blog/2024/01-02</link>
+    <description>每日一题</description>
+    <pubDate>Tue, 02 Jan 2024 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    <category>每日一题</category>
+  </item>
+
+  <item>
+    <guid>https://wwqdrh.github.io/blog/2024/01-01</guid>
+    <title>2024-01-01</title>
+    <link>https://wwqdrh.github.io/blog/2024/01-01</link>
+    <description>每日一题</description>
+    <pubDate>Mon, 01 Jan 2024 00:00:00 GMT</pubDate>
+    <author>huiloademail@163.com (wwqdrh)</author>
+    <category>每日一题</category>
+  </item>
+
   <item>
     <guid>https://wwqdrh.github.io/blog/AR开发/AR开发示例程序</guid>
     <title>AR开发示例程序</title>
