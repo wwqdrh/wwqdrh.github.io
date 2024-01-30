@@ -15847,11 +15847,11 @@ function oy(n) {
   let e, t, i, s, r, o;
   return {
     c() {
-      e = Kt("div"), t = Kt("div"), t.innerHTML = '<div class="scm-loading__spinner svelte-1pprwg0"></div> <p class="scm-loading__text svelte-1pprwg0">Loading editor...</p>', i = nf(), s = Kt("pre"), r = Nr(
+      e = Kt("div"), t = Kt("div"), t.innerHTML = '<div class="scm-loading__spinner svelte-kcx0g9"></div> <p class="scm-loading__text svelte-kcx0g9">Loading editor...</p>', i = nf(), s = Kt("pre"), r = Nr(
         /*value*/
         n[0]
-      ), st(t, "class", "scm-waiting__loading scm-loading svelte-1pprwg0"), st(s, "class", "scm-pre cm-editor svelte-1pprwg0"), st(e, "class", o = "scm-waiting " + /*classes*/
-      n[1] + " svelte-1pprwg0");
+      ), st(t, "class", "scm-waiting__loading scm-loading svelte-kcx0g9"), st(s, "class", "scm-pre cm-editor svelte-kcx0g9"), st(e, "class", o = "scm-waiting " + /*classes*/
+      n[1] + " svelte-kcx0g9");
     },
     m(l, a) {
       Jn(l, e, a), pi(e, t), pi(e, i), pi(e, s), pi(s, r);
@@ -15864,7 +15864,7 @@ function oy(n) {
         l[0]
       ), a[0] & /*classes*/
       2 && o !== (o = "scm-waiting " + /*classes*/
-      l[1] + " svelte-1pprwg0") && st(e, "class", o);
+      l[1] + " svelte-kcx0g9") && st(e, "class", o);
     },
     d(l) {
       l && zi(e);
@@ -15876,7 +15876,7 @@ function ly(n) {
   return {
     c() {
       e = Kt("div"), st(e, "class", t = "uikit-w-full uikit-h-full uikit-min-h-[300px] codemirror-wrapper uikit-shadow-lg uikit-p-3 " + /*classes*/
-      n[1] + " svelte-1pprwg0");
+      n[1] + " svelte-kcx0g9");
     },
     m(i, s) {
       Jn(i, e, s), n[18](e);
@@ -15884,7 +15884,7 @@ function ly(n) {
     p(i, s) {
       s[0] & /*classes*/
       2 && t !== (t = "uikit-w-full uikit-h-full uikit-min-h-[300px] codemirror-wrapper uikit-shadow-lg uikit-p-3 " + /*classes*/
-      i[1] + " svelte-1pprwg0") && st(e, "class", t);
+      i[1] + " svelte-kcx0g9") && st(e, "class", t);
     },
     d(i) {
       i && zi(e), n[18](null);
@@ -17458,7 +17458,7 @@ function dy(n) {
   let e, t, i;
   return {
     c() {
-      e = Kt("div"), t = Kt("code"), st(t, "class", "svelte-1p4o0ak"), st(e, "class", i = "code-wrapper prism-light " + /*classes*/
+      e = Kt("div"), t = Kt("code"), st(t, "class", "svelte-hqvbfs"), st(e, "class", i = "code-wrapper prism-light " + /*classes*/
       n[0]);
     },
     m(s, r) {

@@ -6792,7 +6792,7 @@ function kg(i) {
       e = B("h6"), t = ke(
         /*text*/
         i[0]
-      ), v(e, "class", "svelte-q3omz");
+      ), v(e, "class", "svelte-v381nb");
     },
     m(r, n) {
       M(r, e, n), $(e, t);
@@ -6817,7 +6817,7 @@ function Ug(i) {
       e = B("h5"), t = ke(
         /*text*/
         i[0]
-      ), v(e, "class", "svelte-q3omz");
+      ), v(e, "class", "svelte-v381nb");
     },
     m(r, n) {
       M(r, e, n), $(e, t);
@@ -6842,7 +6842,7 @@ function Fg(i) {
       e = B("h4"), t = ke(
         /*text*/
         i[0]
-      ), v(e, "class", "svelte-q3omz");
+      ), v(e, "class", "svelte-v381nb");
     },
     m(r, n) {
       M(r, e, n), $(e, t);
@@ -6867,7 +6867,7 @@ function Bg(i) {
       e = B("h3"), t = ke(
         /*text*/
         i[0]
-      ), v(e, "class", "svelte-q3omz");
+      ), v(e, "class", "svelte-v381nb");
     },
     m(r, n) {
       M(r, e, n), $(e, t);
@@ -6892,7 +6892,7 @@ function Gg(i) {
       e = B("h2"), t = ke(
         /*text*/
         i[0]
-      ), v(e, "class", "svelte-q3omz");
+      ), v(e, "class", "svelte-v381nb");
     },
     m(r, n) {
       M(r, e, n), $(e, t);
@@ -6917,7 +6917,7 @@ function Yg(i) {
       e = B("h1"), t = ke(
         /*text*/
         i[0]
-      ), v(e, "class", "svelte-q3omz");
+      ), v(e, "class", "svelte-v381nb");
     },
     m(r, n) {
       M(r, e, n), $(e, t);

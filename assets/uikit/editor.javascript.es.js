@@ -17951,11 +17951,11 @@ function u1(n) {
   let e, t, i, s, r, o;
   return {
     c() {
-      e = wn("div"), t = wn("div"), t.innerHTML = '<div class="scm-loading__spinner svelte-1pprwg0"></div> <p class="scm-loading__text svelte-1pprwg0">Loading editor...</p>', i = tu(), s = wn("pre"), r = Fr(
+      e = wn("div"), t = wn("div"), t.innerHTML = '<div class="scm-loading__spinner svelte-kcx0g9"></div> <p class="scm-loading__text svelte-kcx0g9">Loading editor...</p>', i = tu(), s = wn("pre"), r = Fr(
         /*value*/
         n[0]
-      ), jt(t, "class", "scm-waiting__loading scm-loading svelte-1pprwg0"), jt(s, "class", "scm-pre cm-editor svelte-1pprwg0"), jt(e, "class", o = "scm-waiting " + /*classes*/
-      n[1] + " svelte-1pprwg0");
+      ), jt(t, "class", "scm-waiting__loading scm-loading svelte-kcx0g9"), jt(s, "class", "scm-pre cm-editor svelte-kcx0g9"), jt(e, "class", o = "scm-waiting " + /*classes*/
+      n[1] + " svelte-kcx0g9");
     },
     m(l, a) {
       Gr(l, e, a), Ki(e, t), Ki(e, i), Ki(e, s), Ki(s, r);
@@ -17968,7 +17968,7 @@ function u1(n) {
         l[0]
       ), a & /*classes*/
       2 && o !== (o = "scm-waiting " + /*classes*/
-      l[1] + " svelte-1pprwg0") && jt(e, "class", o);
+      l[1] + " svelte-kcx0g9") && jt(e, "class", o);
     },
     d(l) {
       l && as(e);
@@ -17980,7 +17980,7 @@ function d1(n) {
   return {
     c() {
       e = wn("div"), jt(e, "class", t = "uikit-w-full uikit-h-full uikit-min-h-[300px] codemirror-wrapper uikit-shadow-lg uikit-p-3 " + /*classes*/
-      n[1] + " svelte-1pprwg0");
+      n[1] + " svelte-kcx0g9");
     },
     m(i, s) {
       Gr(i, e, s), n[16](e);
@@ -17988,7 +17988,7 @@ function d1(n) {
     p(i, s) {
       s & /*classes*/
       2 && t !== (t = "uikit-w-full uikit-h-full uikit-min-h-[300px] codemirror-wrapper uikit-shadow-lg uikit-p-3 " + /*classes*/
-      i[1] + " svelte-1pprwg0") && jt(e, "class", t);
+      i[1] + " svelte-kcx0g9") && jt(e, "class", t);
     },
     d(i) {
       i && as(e), n[16](null);
