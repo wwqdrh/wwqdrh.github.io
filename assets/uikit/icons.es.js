@@ -11,14 +11,14 @@ function v(i, e) {
     i
   );
 }
-function Ie(i) {
+function Ee(i) {
   return i();
 }
-function Oe() {
+function Fe() {
   return /* @__PURE__ */ Object.create(null);
 }
 function O(i) {
-  i.forEach(Ie);
+  i.forEach(Ee);
 }
 function Ge(i) {
   return typeof i == "function";
@@ -85,16 +85,16 @@ function ni() {
     throw new Error("Function called outside component initialization");
   return oe;
 }
-function I(i) {
+function E(i) {
   return ni().$$.context.get(i);
 }
 function u(i, e) {
   const t = i.$$.callbacks[e.type];
   t && t.slice().forEach((r) => r.call(this, e));
 }
-const p = [], Fe = [];
+const p = [], Re = [];
 let $ = [];
-const Re = [], oi = /* @__PURE__ */ Promise.resolve();
+const Ue = [], oi = /* @__PURE__ */ Promise.resolve();
 let Ce = !1;
 function ai() {
   Ce || (Ce = !0, oi.then(qe));
@@ -117,16 +117,16 @@ function qe() {
     } catch (e) {
       throw p.length = 0, x = 0, e;
     }
-    for (ne(null), p.length = 0, x = 0; Fe.length; )
-      Fe.pop()();
+    for (ne(null), p.length = 0, x = 0; Re.length; )
+      Re.pop()();
     for (let e = 0; e < $.length; e += 1) {
       const t = $[e];
       ze.has(t) || (ze.add(t), t());
     }
     $.length = 0;
   } while (p.length);
-  for (; Re.length; )
-    Re.pop()();
+  for (; Ue.length; )
+    Ue.pop()();
   Ce = !1, ze.clear(), ne(i);
 }
 function si(i) {
@@ -194,7 +194,7 @@ function ge(i) {
 function se(i, e, t) {
   const { fragment: r, after_update: c } = i.$$;
   r && r.m(e, t), je(() => {
-    const k = i.$$.on_mount.map(Ie).filter(Ge);
+    const k = i.$$.on_mount.map(Ee).filter(Ge);
     i.$$.on_destroy ? i.$$.on_destroy.push(...k) : O(k), i.$$.on_mount = [];
   }), c.forEach(je);
 }
@@ -215,7 +215,7 @@ function T(i, e, t, r, c, k, m, h = [-1]) {
     props: k,
     update: B,
     not_equal: c,
-    bound: Oe(),
+    bound: Fe(),
     // lifecycle
     on_mount: [],
     on_destroy: [],
@@ -224,7 +224,7 @@ function T(i, e, t, r, c, k, m, h = [-1]) {
     after_update: [],
     context: new Map(e.context || (l ? l.$$.context : [])),
     // everything else
-    callbacks: Oe(),
+    callbacks: Fe(),
     dirty: h,
     skip_bound: !1,
     root: e.target || l.$$.root
@@ -244,7 +244,7 @@ function T(i, e, t, r, c, k, m, h = [-1]) {
   }
   ne(l);
 }
-class E {
+class I {
   constructor() {
     /**
      * ### PRIVATE API
@@ -304,11 +304,11 @@ function Ke(i) {
     i[r] && (e = Ke(i[r])) && (t && (t += " "), t += e);
   return t;
 }
-var Me = "-";
+var Be = "-";
 function ci(i) {
   var e = fi(i), t = i.conflictingClassGroups, r = i.conflictingClassGroupModifiers, c = r === void 0 ? {} : r;
   function k(h) {
-    var l = h.split(Me);
+    var l = h.split(Be);
     return l[0] === "" && l.length !== 1 && l.shift(), Ye(l, e) || mi(h);
   }
   function m(h, l) {
@@ -328,17 +328,17 @@ function Ye(i, e) {
   if (c)
     return c;
   if (e.validators.length !== 0) {
-    var k = i.join(Me);
+    var k = i.join(Be);
     return (m = e.validators.find(function(h) {
       var l = h.validator;
       return l(k);
     })) == null ? void 0 : m.classGroupId;
   }
 }
-var Ue = /^\[(.+)\]$/;
+var De = /^\[(.+)\]$/;
 function mi(i) {
-  if (Ue.test(i)) {
-    var e = Ue.exec(i)[1], t = e == null ? void 0 : e.substring(0, e.indexOf(":"));
+  if (De.test(i)) {
+    var e = De.exec(i)[1], t = e == null ? void 0 : e.substring(0, e.indexOf(":"));
     if (t)
       return "arbitrary.." + t;
   }
@@ -356,7 +356,7 @@ function fi(i) {
 function Ze(i, e, t, r) {
   i.forEach(function(c) {
     if (typeof c == "string") {
-      var k = c === "" ? e : De(e, c);
+      var k = c === "" ? e : Te(e, c);
       k.classGroupId = t;
       return;
     }
@@ -373,13 +373,13 @@ function Ze(i, e, t, r) {
     }
     Object.entries(c).forEach(function(m) {
       var h = m[0], l = m[1];
-      Ze(l, De(e, h), t, r);
+      Ze(l, Te(e, h), t, r);
     });
   });
 }
-function De(i, e) {
+function Te(i, e) {
   var t = i;
-  return e.split(Me).forEach(function(r) {
+  return e.split(Be).forEach(function(r) {
     t.nextPart.has(r) || t.nextPart.set(r, {
       nextPart: /* @__PURE__ */ new Map(),
       validators: []
@@ -558,7 +558,7 @@ function Si(i) {
   return i.endsWith("%") && Y(i.slice(0, -1));
 }
 function le(i) {
-  return Te(i) || J(i, "number", Te);
+  return Ie(i) || J(i, "number", Ie);
 }
 function G(i) {
   return xe.test(i);
@@ -585,14 +585,14 @@ function pe() {
 function Fi(i) {
   return i.startsWith("url(");
 }
-function Te(i) {
+function Ie(i) {
   return Number.isInteger(Number(i));
 }
 function Ri(i) {
   return Bi.test(i);
 }
 function Ui() {
-  var i = N("colors"), e = N("spacing"), t = N("blur"), r = N("brightness"), c = N("borderColor"), k = N("borderRadius"), m = N("borderSpacing"), h = N("borderWidth"), l = N("contrast"), a = N("grayscale"), d = N("hueRotate"), g = N("invert"), L = N("gap"), _ = N("gradientColorStops"), w = N("gradientColorStopPositions"), z = N("inset"), C = N("margin"), Z = N("opacity"), j = N("padding"), n = N("saturate"), P = N("scale"), V = N("sepia"), o = N("skew"), Be = N("space"), He = N("translate"), ve = function() {
+  var i = N("colors"), e = N("spacing"), t = N("blur"), r = N("brightness"), c = N("borderColor"), k = N("borderRadius"), m = N("borderSpacing"), h = N("borderWidth"), l = N("contrast"), a = N("grayscale"), d = N("hueRotate"), g = N("invert"), L = N("gap"), _ = N("gradientColorStops"), w = N("gradientColorStopPositions"), z = N("inset"), C = N("margin"), Z = N("opacity"), j = N("padding"), n = N("saturate"), P = N("scale"), V = N("sepia"), o = N("skew"), He = N("space"), Ae = N("translate"), ve = function() {
     return ["auto", "contain", "none"];
   }, Le = function() {
     return ["auto", "hidden", "clip", "visible", "scroll"];
@@ -600,21 +600,21 @@ function Ui() {
     return ["auto", G, e];
   }, q = function() {
     return [G, e];
-  }, Ae = function() {
+  }, Ve = function() {
     return ["", Q];
   }, re = function() {
     return ["auto", Y, G];
-  }, Ve = function() {
+  }, Se = function() {
     return ["bottom", "center", "left", "left-bottom", "left-top", "right", "right-bottom", "right-top", "top"];
   }, he = function() {
     return ["solid", "dashed", "dotted", "double", "none"];
-  }, Se = function() {
+  }, Pe = function() {
     return ["normal", "multiply", "screen", "overlay", "darken", "lighten", "color-dodge", "color-burn", "hard-light", "soft-light", "difference", "exclusion", "hue", "saturation", "color", "luminosity", "plus-lighter"];
   }, we = function() {
     return ["start", "end", "center", "between", "around", "evenly", "stretch"];
   }, ee = function() {
     return ["", "0", G];
-  }, Pe = function() {
+  }, Oe = function() {
     return ["auto", "avoid", "all", "avoid-page", "page", "left", "right", "column"];
   }, ie = function() {
     return [Y, ce];
@@ -631,7 +631,7 @@ function Ui() {
       borderColor: [i],
       borderRadius: ["none", "", "full", X, G],
       borderSpacing: q(),
-      borderWidth: Ae(),
+      borderWidth: Ve(),
       contrast: ie(),
       grayscale: ee(),
       hueRotate: ke(),
@@ -676,14 +676,14 @@ function Ui() {
        * @see https://tailwindcss.com/docs/break-after
        */
       "break-after": [{
-        "break-after": Pe()
+        "break-after": Oe()
       }],
       /**
        * Break Before
        * @see https://tailwindcss.com/docs/break-before
        */
       "break-before": [{
-        "break-before": Pe()
+        "break-before": Oe()
       }],
       /**
        * Break Inside
@@ -742,7 +742,7 @@ function Ui() {
        * @see https://tailwindcss.com/docs/object-position
        */
       "object-position": [{
-        object: [].concat(Ve(), [G])
+        object: [].concat(Se(), [G])
       }],
       /**
        * Overflow
@@ -1213,7 +1213,7 @@ function Ui() {
        * @see https://tailwindcss.com/docs/space
        */
       "space-x": [{
-        "space-x": [Be]
+        "space-x": [He]
       }],
       /**
        * Space Between X Reverse
@@ -1225,7 +1225,7 @@ function Ui() {
        * @see https://tailwindcss.com/docs/space
        */
       "space-y": [{
-        "space-y": [Be]
+        "space-y": [He]
       }],
       /**
        * Space Between Y Reverse
@@ -1537,7 +1537,7 @@ function Ui() {
        * @see https://tailwindcss.com/docs/background-position
        */
       "bg-position": [{
-        bg: [].concat(Ve(), [Ai])
+        bg: [].concat(Se(), [Ai])
       }],
       /**
        * Background Repeat
@@ -1923,7 +1923,7 @@ function Ui() {
        * @see https://tailwindcss.com/docs/ring-width
        */
       "ring-w": [{
-        ring: Ae()
+        ring: Ve()
       }],
       /**
        * Ring Width Inset
@@ -1985,14 +1985,14 @@ function Ui() {
        * @see https://tailwindcss.com/docs/mix-blend-mode
        */
       "mix-blend": [{
-        "mix-blend": Se()
+        "mix-blend": Pe()
       }],
       /**
        * Background Blend Mode
        * @see https://tailwindcss.com/docs/background-blend-mode
        */
       "bg-blend": [{
-        "bg-blend": Se()
+        "bg-blend": Pe()
       }],
       // Filters
       /**
@@ -2257,14 +2257,14 @@ function Ui() {
        * @see https://tailwindcss.com/docs/translate
        */
       "translate-x": [{
-        "translate-x": [He]
+        "translate-x": [Ae]
       }],
       /**
        * Translate Y
        * @see https://tailwindcss.com/docs/translate
        */
       "translate-y": [{
-        "translate-y": [He]
+        "translate-y": [Ae]
       }],
       /**
        * Skew X
@@ -2722,7 +2722,7 @@ function Di(i) {
 function Ti(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -2777,12 +2777,12 @@ function Ti(i, e, t) {
     j
   ];
 }
-class Ei extends E {
+class Ii extends I {
   constructor(e) {
     super(), T(this, e, Ti, Di, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-function Ii(i) {
+function Ei(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "none" },
@@ -2948,7 +2948,7 @@ function Ii(i) {
 function Gi(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -3006,9 +3006,9 @@ function Gi(i, e, t) {
     V
   ];
 }
-class Ni extends E {
+class Ni extends I {
   constructor(e) {
-    super(), T(this, e, Gi, Ii, R, {
+    super(), T(this, e, Gi, Ei, R, {
       size: 0,
       role: 1,
       strokeLinecap: 2,
@@ -3151,7 +3151,7 @@ function qi(i) {
 function yi(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -3206,7 +3206,7 @@ function yi(i, e, t) {
     j
   ];
 }
-class Qi extends E {
+class Qi extends I {
   constructor(e) {
     super(), T(this, e, yi, qi, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -3377,7 +3377,7 @@ function Xi(i) {
 function Ki(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -3435,7 +3435,7 @@ function Ki(i, e, t) {
     V
   ];
 }
-class Yi extends E {
+class Yi extends I {
   constructor(e) {
     super(), T(this, e, Ki, Xi, R, {
       size: 0,
@@ -3580,7 +3580,7 @@ function Ji(i) {
 function xi(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -3635,7 +3635,7 @@ function xi(i, e, t) {
     j
   ];
 }
-class pi extends E {
+class pi extends I {
   constructor(e) {
     super(), T(this, e, xi, Ji, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -3806,7 +3806,7 @@ function $i(i) {
 function el(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -3864,7 +3864,7 @@ function el(i, e, t) {
     V
   ];
 }
-class il extends E {
+class il extends I {
   constructor(e) {
     super(), T(this, e, el, $i, R, {
       size: 0,
@@ -4009,7 +4009,7 @@ function ll(i) {
 function tl(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -4064,7 +4064,7 @@ function tl(i, e, t) {
     j
   ];
 }
-class nl extends E {
+class nl extends I {
   constructor(e) {
     super(), T(this, e, tl, ll, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -4235,7 +4235,7 @@ function ol(i) {
 function al(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -4293,7 +4293,7 @@ function al(i, e, t) {
     V
   ];
 }
-class sl extends E {
+class sl extends I {
   constructor(e) {
     super(), T(this, e, al, ol, R, {
       size: 0,
@@ -4471,7 +4471,7 @@ function ul(i) {
 function rl(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -4529,7 +4529,7 @@ function rl(i, e, t) {
     V
   ];
 }
-class hl extends E {
+class hl extends I {
   constructor(e) {
     super(), T(this, e, rl, ul, R, {
       size: 0,
@@ -4674,7 +4674,7 @@ function kl(i) {
 function cl(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -4729,7 +4729,7 @@ function cl(i, e, t) {
     j
   ];
 }
-class ml extends E {
+class ml extends I {
   constructor(e) {
     super(), T(this, e, cl, kl, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -4900,7 +4900,7 @@ function fl(i) {
 function dl(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -4958,7 +4958,7 @@ function dl(i, e, t) {
     V
   ];
 }
-class gl extends E {
+class gl extends I {
   constructor(e) {
     super(), T(this, e, dl, fl, R, {
       size: 0,
@@ -5103,7 +5103,7 @@ function vl(i) {
 function Ll(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -5158,7 +5158,7 @@ function Ll(i, e, t) {
     j
   ];
 }
-class bl extends E {
+class bl extends I {
   constructor(e) {
     super(), T(this, e, Ll, vl, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -5329,7 +5329,7 @@ function wl(i) {
 function _l(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -5387,7 +5387,7 @@ function _l(i, e, t) {
     V
   ];
 }
-class zl extends E {
+class zl extends I {
   constructor(e) {
     super(), T(this, e, _l, wl, R, {
       size: 0,
@@ -5532,7 +5532,7 @@ function Cl(i) {
 function jl(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -5587,7 +5587,7 @@ function jl(i, e, t) {
     j
   ];
 }
-class Zl extends E {
+class Zl extends I {
   constructor(e) {
     super(), T(this, e, jl, Cl, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -5758,7 +5758,7 @@ function Wl(i) {
 function Ml(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -5816,7 +5816,7 @@ function Ml(i, e, t) {
     V
   ];
 }
-class Bl extends E {
+class Bl extends I {
   constructor(e) {
     super(), T(this, e, Ml, Wl, R, {
       size: 0,
@@ -5961,7 +5961,7 @@ function Hl(i) {
 function Al(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -6016,7 +6016,7 @@ function Al(i, e, t) {
     j
   ];
 }
-class Vl extends E {
+class Vl extends I {
   constructor(e) {
     super(), T(this, e, Al, Hl, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -6187,7 +6187,7 @@ function Sl(i) {
 function Pl(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -6245,7 +6245,7 @@ function Pl(i, e, t) {
     V
   ];
 }
-class Ol extends E {
+class Ol extends I {
   constructor(e) {
     super(), T(this, e, Pl, Sl, R, {
       size: 0,
@@ -6390,7 +6390,7 @@ function Fl(i) {
 function Rl(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -6445,7 +6445,7 @@ function Rl(i, e, t) {
     j
   ];
 }
-class Ul extends E {
+class Ul extends I {
   constructor(e) {
     super(), T(this, e, Rl, Fl, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -6583,7 +6583,7 @@ function Dl(i) {
 function Tl(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -6638,12 +6638,12 @@ function Tl(i, e, t) {
     j
   ];
 }
-class El extends E {
+class Il extends I {
   constructor(e) {
     super(), T(this, e, Tl, Dl, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-function Il(i) {
+function El(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "none" },
@@ -6809,7 +6809,7 @@ function Il(i) {
 function Gl(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -6867,9 +6867,9 @@ function Gl(i, e, t) {
     V
   ];
 }
-class Nl extends E {
+class Nl extends I {
   constructor(e) {
-    super(), T(this, e, Gl, Il, R, {
+    super(), T(this, e, Gl, El, R, {
       size: 0,
       role: 1,
       strokeLinecap: 2,
@@ -7012,7 +7012,7 @@ function ql(i) {
 function yl(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -7067,7 +7067,7 @@ function yl(i, e, t) {
     j
   ];
 }
-class Ql extends E {
+class Ql extends I {
   constructor(e) {
     super(), T(this, e, yl, ql, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -7227,7 +7227,7 @@ function Xl(i) {
 function Kl(i, e, t) {
   const r = ["size", "role", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -7284,7 +7284,7 @@ function Kl(i, e, t) {
     P
   ];
 }
-class Yl extends E {
+class Yl extends I {
   constructor(e) {
     super(), T(this, e, Kl, Xl, R, {
       size: 0,
@@ -7428,7 +7428,7 @@ function Jl(i) {
 function xl(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -7483,7 +7483,7 @@ function xl(i, e, t) {
     j
   ];
 }
-class pl extends E {
+class pl extends I {
   constructor(e) {
     super(), T(this, e, xl, Jl, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -7621,7 +7621,7 @@ function $l(i) {
 function et(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -7676,7 +7676,7 @@ function et(i, e, t) {
     j
   ];
 }
-class it extends E {
+class it extends I {
   constructor(e) {
     super(), T(this, e, et, $l, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -7847,7 +7847,7 @@ function lt(i) {
 function tt(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -7905,7 +7905,7 @@ function tt(i, e, t) {
     V
   ];
 }
-class nt extends E {
+class nt extends I {
   constructor(e) {
     super(), T(this, e, tt, lt, R, {
       size: 0,
@@ -8050,7 +8050,7 @@ function ot(i) {
 function at(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -8105,7 +8105,7 @@ function at(i, e, t) {
     j
   ];
 }
-class st extends E {
+class st extends I {
   constructor(e) {
     super(), T(this, e, at, ot, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -8276,7 +8276,7 @@ function ut(i) {
 function rt(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -8334,7 +8334,7 @@ function rt(i, e, t) {
     V
   ];
 }
-class ht extends E {
+class ht extends I {
   constructor(e) {
     super(), T(this, e, rt, ut, R, {
       size: 0,
@@ -8479,7 +8479,7 @@ function kt(i) {
 function ct(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -8534,7 +8534,7 @@ function ct(i, e, t) {
     j
   ];
 }
-class mt extends E {
+class mt extends I {
   constructor(e) {
     super(), T(this, e, ct, kt, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -8705,7 +8705,7 @@ function ft(i) {
 function dt(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -8763,7 +8763,7 @@ function dt(i, e, t) {
     V
   ];
 }
-class gt extends E {
+class gt extends I {
   constructor(e) {
     super(), T(this, e, dt, ft, R, {
       size: 0,
@@ -8908,7 +8908,7 @@ function vt(i) {
 function Lt(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -8963,7 +8963,7 @@ function Lt(i, e, t) {
     j
   ];
 }
-class bt extends E {
+class bt extends I {
   constructor(e) {
     super(), T(this, e, Lt, vt, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -9134,7 +9134,7 @@ function wt(i) {
 function _t(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -9192,7 +9192,7 @@ function _t(i, e, t) {
     V
   ];
 }
-class zt extends E {
+class zt extends I {
   constructor(e) {
     super(), T(this, e, _t, wt, R, {
       size: 0,
@@ -9370,7 +9370,7 @@ function Ct(i) {
 function jt(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -9428,7 +9428,7 @@ function jt(i, e, t) {
     V
   ];
 }
-class Zt extends E {
+class Zt extends I {
   constructor(e) {
     super(), T(this, e, jt, Ct, R, {
       size: 0,
@@ -9606,7 +9606,7 @@ function Wt(i) {
 function Mt(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -9664,7 +9664,7 @@ function Mt(i, e, t) {
     V
   ];
 }
-class Bt extends E {
+class Bt extends I {
   constructor(e) {
     super(), T(this, e, Mt, Wt, R, {
       size: 0,
@@ -9809,7 +9809,7 @@ function Ht(i) {
 function At(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -9864,7 +9864,7 @@ function At(i, e, t) {
     j
   ];
 }
-class Vt extends E {
+class Vt extends I {
   constructor(e) {
     super(), T(this, e, At, Ht, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -10035,7 +10035,7 @@ function St(i) {
 function Pt(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -10093,7 +10093,7 @@ function Pt(i, e, t) {
     V
   ];
 }
-class Ot extends E {
+class Ot extends I {
   constructor(e) {
     super(), T(this, e, Pt, St, R, {
       size: 0,
@@ -10238,7 +10238,7 @@ function Ft(i) {
 function Rt(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -10293,7 +10293,7 @@ function Rt(i, e, t) {
     j
   ];
 }
-class Ut extends E {
+class Ut extends I {
   constructor(e) {
     super(), T(this, e, Rt, Ft, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -10464,7 +10464,7 @@ function Dt(i) {
 function Tt(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -10522,7 +10522,7 @@ function Tt(i, e, t) {
     V
   ];
 }
-class Et extends E {
+class It extends I {
   constructor(e) {
     super(), T(this, e, Tt, Dt, R, {
       size: 0,
@@ -10534,7 +10534,7 @@ class Et extends E {
     });
   }
 }
-function It(i) {
+function Et(i) {
   let e, t, r, c, k, m, h, l = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "currentColor" },
@@ -10667,7 +10667,7 @@ function It(i) {
 function Gt(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -10722,9 +10722,9 @@ function Gt(i, e, t) {
     j
   ];
 }
-class Nt extends E {
+class Nt extends I {
   constructor(e) {
-    super(), T(this, e, Gt, It, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, Gt, Et, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function qt(i) {
@@ -10893,7 +10893,7 @@ function qt(i) {
 function yt(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -10951,7 +10951,7 @@ function yt(i, e, t) {
     V
   ];
 }
-class Qt extends E {
+class Qt extends I {
   constructor(e) {
     super(), T(this, e, yt, qt, R, {
       size: 0,
@@ -11096,7 +11096,7 @@ function Xt(i) {
 function Kt(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -11151,7 +11151,7 @@ function Kt(i, e, t) {
     j
   ];
 }
-class Yt extends E {
+class Yt extends I {
   constructor(e) {
     super(), T(this, e, Kt, Xt, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -11322,7 +11322,7 @@ function Jt(i) {
 function xt(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -11380,7 +11380,7 @@ function xt(i, e, t) {
     V
   ];
 }
-class pt extends E {
+class pt extends I {
   constructor(e) {
     super(), T(this, e, xt, Jt, R, {
       size: 0,
@@ -11525,7 +11525,7 @@ function $t(i) {
 function en(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -11580,7 +11580,7 @@ function en(i, e, t) {
     j
   ];
 }
-class ln extends E {
+class ln extends I {
   constructor(e) {
     super(), T(this, e, en, $t, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -11751,7 +11751,7 @@ function tn(i) {
 function nn(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -11809,7 +11809,7 @@ function nn(i, e, t) {
     V
   ];
 }
-class on extends E {
+class on extends I {
   constructor(e) {
     super(), T(this, e, nn, tn, R, {
       size: 0,
@@ -11987,7 +11987,7 @@ function an(i) {
 function sn(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -12045,7 +12045,7 @@ function sn(i, e, t) {
     V
   ];
 }
-class un extends E {
+class un extends I {
   constructor(e) {
     super(), T(this, e, sn, an, R, {
       size: 0,
@@ -12223,7 +12223,7 @@ function rn(i) {
 function hn(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -12281,7 +12281,7 @@ function hn(i, e, t) {
     V
   ];
 }
-class kn extends E {
+class kn extends I {
   constructor(e) {
     super(), T(this, e, hn, rn, R, {
       size: 0,
@@ -12459,7 +12459,7 @@ function cn(i) {
 function mn(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -12517,7 +12517,7 @@ function mn(i, e, t) {
     V
   ];
 }
-class fn extends E {
+class fn extends I {
   constructor(e) {
     super(), T(this, e, mn, cn, R, {
       size: 0,
@@ -12695,7 +12695,7 @@ function dn(i) {
 function gn(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -12753,7 +12753,7 @@ function gn(i, e, t) {
     V
   ];
 }
-class vn extends E {
+class vn extends I {
   constructor(e) {
     super(), T(this, e, gn, dn, R, {
       size: 0,
@@ -12898,7 +12898,7 @@ function Ln(i) {
 function bn(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -12953,7 +12953,7 @@ function bn(i, e, t) {
     j
   ];
 }
-class wn extends E {
+class wn extends I {
   constructor(e) {
     super(), T(this, e, bn, Ln, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -13091,7 +13091,7 @@ function _n(i) {
 function zn(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -13146,7 +13146,7 @@ function zn(i, e, t) {
     j
   ];
 }
-class Cn extends E {
+class Cn extends I {
   constructor(e) {
     super(), T(this, e, zn, _n, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -13317,7 +13317,7 @@ function jn(i) {
 function Zn(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -13375,7 +13375,7 @@ function Zn(i, e, t) {
     V
   ];
 }
-class Wn extends E {
+class Wn extends I {
   constructor(e) {
     super(), T(this, e, Zn, jn, R, {
       size: 0,
@@ -13520,7 +13520,7 @@ function Mn(i) {
 function Bn(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -13575,7 +13575,7 @@ function Bn(i, e, t) {
     j
   ];
 }
-class Hn extends E {
+class Hn extends I {
   constructor(e) {
     super(), T(this, e, Bn, Mn, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -13746,7 +13746,7 @@ function An(i) {
 function Vn(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -13804,7 +13804,7 @@ function Vn(i, e, t) {
     V
   ];
 }
-class Sn extends E {
+class Sn extends I {
   constructor(e) {
     super(), T(this, e, Vn, An, R, {
       size: 0,
@@ -13949,7 +13949,7 @@ function Pn(i) {
 function On(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -14004,7 +14004,7 @@ function On(i, e, t) {
     j
   ];
 }
-class Fn extends E {
+class Fn extends I {
   constructor(e) {
     super(), T(this, e, On, Pn, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -14164,7 +14164,7 @@ function Rn(i) {
 function Un(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -14221,7 +14221,7 @@ function Un(i, e, t) {
     P
   ];
 }
-class Dn extends E {
+class Dn extends I {
   constructor(e) {
     super(), T(this, e, Un, Rn, R, {
       size: 0,
@@ -14362,10 +14362,10 @@ function Tn(i) {
     }
   };
 }
-function En(i, e, t) {
+function In(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -14420,9 +14420,9 @@ function En(i, e, t) {
     j
   ];
 }
-class In extends E {
+class En extends I {
   constructor(e) {
-    super(), T(this, e, En, Tn, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, In, Tn, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function Gn(i) {
@@ -14591,7 +14591,7 @@ function Gn(i) {
 function Nn(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -14649,7 +14649,7 @@ function Nn(i, e, t) {
     V
   ];
 }
-class qn extends E {
+class qn extends I {
   constructor(e) {
     super(), T(this, e, Nn, Gn, R, {
       size: 0,
@@ -14794,7 +14794,7 @@ function yn(i) {
 function Qn(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -14849,7 +14849,7 @@ function Qn(i, e, t) {
     j
   ];
 }
-class Xn extends E {
+class Xn extends I {
   constructor(e) {
     super(), T(this, e, Qn, yn, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -15020,7 +15020,7 @@ function Kn(i) {
 function Yn(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -15078,7 +15078,7 @@ function Yn(i, e, t) {
     V
   ];
 }
-class Jn extends E {
+class Jn extends I {
   constructor(e) {
     super(), T(this, e, Yn, Kn, R, {
       size: 0,
@@ -15223,7 +15223,7 @@ function xn(i) {
 function pn(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -15278,7 +15278,7 @@ function pn(i, e, t) {
     j
   ];
 }
-class $n extends E {
+class $n extends I {
   constructor(e) {
     super(), T(this, e, pn, xn, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -15416,7 +15416,7 @@ function eo(i) {
 function io(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -15471,7 +15471,7 @@ function io(i, e, t) {
     j
   ];
 }
-class lo extends E {
+class lo extends I {
   constructor(e) {
     super(), T(this, e, io, eo, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -15642,7 +15642,7 @@ function to(i) {
 function no(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -15700,7 +15700,7 @@ function no(i, e, t) {
     V
   ];
 }
-class oo extends E {
+class oo extends I {
   constructor(e) {
     super(), T(this, e, no, to, R, {
       size: 0,
@@ -15845,7 +15845,7 @@ function ao(i) {
 function so(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -15900,7 +15900,7 @@ function so(i, e, t) {
     j
   ];
 }
-class uo extends E {
+class uo extends I {
   constructor(e) {
     super(), T(this, e, so, ao, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -16071,7 +16071,7 @@ function ro(i) {
 function ho(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -16129,7 +16129,7 @@ function ho(i, e, t) {
     V
   ];
 }
-class ko extends E {
+class ko extends I {
   constructor(e) {
     super(), T(this, e, ho, ro, R, {
       size: 0,
@@ -16274,7 +16274,7 @@ function co(i) {
 function mo(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -16329,7 +16329,7 @@ function mo(i, e, t) {
     j
   ];
 }
-class fo extends E {
+class fo extends I {
   constructor(e) {
     super(), T(this, e, mo, co, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -16500,7 +16500,7 @@ function go(i) {
 function vo(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -16558,7 +16558,7 @@ function vo(i, e, t) {
     V
   ];
 }
-class Lo extends E {
+class Lo extends I {
   constructor(e) {
     super(), T(this, e, vo, go, R, {
       size: 0,
@@ -16703,7 +16703,7 @@ function bo(i) {
 function wo(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -16758,7 +16758,7 @@ function wo(i, e, t) {
     j
   ];
 }
-class _o extends E {
+class _o extends I {
   constructor(e) {
     super(), T(this, e, wo, bo, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -16929,7 +16929,7 @@ function zo(i) {
 function Co(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -16987,7 +16987,7 @@ function Co(i, e, t) {
     V
   ];
 }
-class jo extends E {
+class jo extends I {
   constructor(e) {
     super(), T(this, e, Co, zo, R, {
       size: 0,
@@ -17165,7 +17165,7 @@ function Zo(i) {
 function Wo(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -17223,7 +17223,7 @@ function Wo(i, e, t) {
     V
   ];
 }
-class Mo extends E {
+class Mo extends I {
   constructor(e) {
     super(), T(this, e, Wo, Zo, R, {
       size: 0,
@@ -17368,7 +17368,7 @@ function Bo(i) {
 function Ho(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -17423,7 +17423,7 @@ function Ho(i, e, t) {
     j
   ];
 }
-class Ao extends E {
+class Ao extends I {
   constructor(e) {
     super(), T(this, e, Ho, Bo, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -17561,7 +17561,7 @@ function Vo(i) {
 function So(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -17616,7 +17616,7 @@ function So(i, e, t) {
     j
   ];
 }
-class Po extends E {
+class Po extends I {
   constructor(e) {
     super(), T(this, e, So, Vo, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -17787,7 +17787,7 @@ function Oo(i) {
 function Fo(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -17845,7 +17845,7 @@ function Fo(i, e, t) {
     V
   ];
 }
-class Ro extends E {
+class Ro extends I {
   constructor(e) {
     super(), T(this, e, Fo, Oo, R, {
       size: 0,
@@ -17990,7 +17990,7 @@ function Uo(i) {
 function Do(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -18045,12 +18045,12 @@ function Do(i, e, t) {
     j
   ];
 }
-class To extends E {
+class To extends I {
   constructor(e) {
     super(), T(this, e, Do, Uo, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-function Eo(i) {
+function Io(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "currentColor" },
@@ -18180,10 +18180,10 @@ function Eo(i) {
     }
   };
 }
-function Io(i, e, t) {
+function Eo(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -18238,9 +18238,9 @@ function Io(i, e, t) {
     j
   ];
 }
-class Go extends E {
+class Go extends I {
   constructor(e) {
-    super(), T(this, e, Io, Eo, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, Eo, Io, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function No(i) {
@@ -18409,7 +18409,7 @@ function No(i) {
 function qo(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -18467,7 +18467,7 @@ function qo(i, e, t) {
     V
   ];
 }
-class yo extends E {
+class yo extends I {
   constructor(e) {
     super(), T(this, e, qo, No, R, {
       size: 0,
@@ -18645,7 +18645,7 @@ function Qo(i) {
 function Xo(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -18703,7 +18703,7 @@ function Xo(i, e, t) {
     V
   ];
 }
-class Ko extends E {
+class Ko extends I {
   constructor(e) {
     super(), T(this, e, Xo, Qo, R, {
       size: 0,
@@ -18848,7 +18848,7 @@ function Yo(i) {
 function Jo(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -18903,7 +18903,7 @@ function Jo(i, e, t) {
     j
   ];
 }
-class xo extends E {
+class xo extends I {
   constructor(e) {
     super(), T(this, e, Jo, Yo, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -19074,7 +19074,7 @@ function po(i) {
 function $o(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -19132,7 +19132,7 @@ function $o(i, e, t) {
     V
   ];
 }
-class ea extends E {
+class ea extends I {
   constructor(e) {
     super(), T(this, e, $o, po, R, {
       size: 0,
@@ -19277,7 +19277,7 @@ function ia(i) {
 function la(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -19332,7 +19332,7 @@ function la(i, e, t) {
     j
   ];
 }
-class ta extends E {
+class ta extends I {
   constructor(e) {
     super(), T(this, e, la, ia, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -19503,7 +19503,7 @@ function na(i) {
 function oa(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -19561,7 +19561,7 @@ function oa(i, e, t) {
     V
   ];
 }
-class aa extends E {
+class aa extends I {
   constructor(e) {
     super(), T(this, e, oa, na, R, {
       size: 0,
@@ -19706,7 +19706,7 @@ function sa(i) {
 function ua(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -19761,7 +19761,7 @@ function ua(i, e, t) {
     j
   ];
 }
-class ra extends E {
+class ra extends I {
   constructor(e) {
     super(), T(this, e, ua, sa, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -19899,7 +19899,7 @@ function ha(i) {
 function ka(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -19954,7 +19954,7 @@ function ka(i, e, t) {
     j
   ];
 }
-class ca extends E {
+class ca extends I {
   constructor(e) {
     super(), T(this, e, ka, ha, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -20092,7 +20092,7 @@ function ma(i) {
 function fa(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -20147,7 +20147,7 @@ function fa(i, e, t) {
     j
   ];
 }
-class da extends E {
+class da extends I {
   constructor(e) {
     super(), T(this, e, fa, ma, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -20318,7 +20318,7 @@ function ga(i) {
 function va(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -20376,7 +20376,7 @@ function va(i, e, t) {
     V
   ];
 }
-class La extends E {
+class La extends I {
   constructor(e) {
     super(), T(this, e, va, ga, R, {
       size: 0,
@@ -20521,7 +20521,7 @@ function ba(i) {
 function wa(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -20576,7 +20576,7 @@ function wa(i, e, t) {
     j
   ];
 }
-class _a extends E {
+class _a extends I {
   constructor(e) {
     super(), T(this, e, wa, ba, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -20747,7 +20747,7 @@ function za(i) {
 function Ca(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -20805,7 +20805,7 @@ function Ca(i, e, t) {
     V
   ];
 }
-class ja extends E {
+class ja extends I {
   constructor(e) {
     super(), T(this, e, Ca, za, R, {
       size: 0,
@@ -20950,7 +20950,7 @@ function Za(i) {
 function Wa(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -21005,7 +21005,7 @@ function Wa(i, e, t) {
     j
   ];
 }
-class Ma extends E {
+class Ma extends I {
   constructor(e) {
     super(), T(this, e, Wa, Za, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -21176,7 +21176,7 @@ function Ba(i) {
 function Ha(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -21234,7 +21234,7 @@ function Ha(i, e, t) {
     V
   ];
 }
-class Aa extends E {
+class Aa extends I {
   constructor(e) {
     super(), T(this, e, Ha, Ba, R, {
       size: 0,
@@ -21379,7 +21379,7 @@ function Va(i) {
 function Sa(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -21434,7 +21434,7 @@ function Sa(i, e, t) {
     j
   ];
 }
-class Pa extends E {
+class Pa extends I {
   constructor(e) {
     super(), T(this, e, Sa, Va, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -21605,7 +21605,7 @@ function Oa(i) {
 function Fa(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -21663,7 +21663,7 @@ function Fa(i, e, t) {
     V
   ];
 }
-class Ra extends E {
+class Ra extends I {
   constructor(e) {
     super(), T(this, e, Fa, Oa, R, {
       size: 0,
@@ -21808,7 +21808,7 @@ function Ua(i) {
 function Da(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -21863,12 +21863,12 @@ function Da(i, e, t) {
     j
   ];
 }
-class Ta extends E {
+class Ta extends I {
   constructor(e) {
     super(), T(this, e, Da, Ua, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-function Ea(i) {
+function Ia(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "none" },
@@ -21998,10 +21998,10 @@ function Ea(i) {
     }
   };
 }
-function Ia(i, e, t) {
+function Ea(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -22056,9 +22056,9 @@ function Ia(i, e, t) {
     j
   ];
 }
-class Ga extends E {
+class Ga extends I {
   constructor(e) {
-    super(), T(this, e, Ia, Ea, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, Ea, Ia, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function Na(i) {
@@ -22194,7 +22194,7 @@ function Na(i) {
 function qa(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -22249,7 +22249,7 @@ function qa(i, e, t) {
     j
   ];
 }
-class ya extends E {
+class ya extends I {
   constructor(e) {
     super(), T(this, e, qa, Na, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -22387,7 +22387,7 @@ function Qa(i) {
 function Xa(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -22442,7 +22442,7 @@ function Xa(i, e, t) {
     j
   ];
 }
-class Ka extends E {
+class Ka extends I {
   constructor(e) {
     super(), T(this, e, Xa, Qa, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -22613,7 +22613,7 @@ function Ya(i) {
 function Ja(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -22671,7 +22671,7 @@ function Ja(i, e, t) {
     V
   ];
 }
-class xa extends E {
+class xa extends I {
   constructor(e) {
     super(), T(this, e, Ja, Ya, R, {
       size: 0,
@@ -22816,7 +22816,7 @@ function pa(i) {
 function $a(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -22871,7 +22871,7 @@ function $a(i, e, t) {
     j
   ];
 }
-class es extends E {
+class es extends I {
   constructor(e) {
     super(), T(this, e, $a, pa, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -23042,7 +23042,7 @@ function is(i) {
 function ls(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -23100,7 +23100,7 @@ function ls(i, e, t) {
     V
   ];
 }
-class ts extends E {
+class ts extends I {
   constructor(e) {
     super(), T(this, e, ls, is, R, {
       size: 0,
@@ -23245,7 +23245,7 @@ function ns(i) {
 function os(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -23300,7 +23300,7 @@ function os(i, e, t) {
     j
   ];
 }
-class as extends E {
+class as extends I {
   constructor(e) {
     super(), T(this, e, os, ns, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -23471,7 +23471,7 @@ function ss(i) {
 function us(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -23529,7 +23529,7 @@ function us(i, e, t) {
     V
   ];
 }
-class rs extends E {
+class rs extends I {
   constructor(e) {
     super(), T(this, e, us, ss, R, {
       size: 0,
@@ -23674,7 +23674,7 @@ function hs(i) {
 function ks(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -23729,7 +23729,7 @@ function ks(i, e, t) {
     j
   ];
 }
-class cs extends E {
+class cs extends I {
   constructor(e) {
     super(), T(this, e, ks, hs, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -23900,7 +23900,7 @@ function ms(i) {
 function fs(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -23958,7 +23958,7 @@ function fs(i, e, t) {
     V
   ];
 }
-class ds extends E {
+class ds extends I {
   constructor(e) {
     super(), T(this, e, fs, ms, R, {
       size: 0,
@@ -24103,7 +24103,7 @@ function gs(i) {
 function vs(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -24158,7 +24158,7 @@ function vs(i, e, t) {
     j
   ];
 }
-class Ls extends E {
+class Ls extends I {
   constructor(e) {
     super(), T(this, e, vs, gs, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -24329,7 +24329,7 @@ function bs(i) {
 function ws(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -24387,7 +24387,7 @@ function ws(i, e, t) {
     V
   ];
 }
-class _s extends E {
+class _s extends I {
   constructor(e) {
     super(), T(this, e, ws, bs, R, {
       size: 0,
@@ -24532,7 +24532,7 @@ function zs(i) {
 function Cs(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -24587,7 +24587,7 @@ function Cs(i, e, t) {
     j
   ];
 }
-class js extends E {
+class js extends I {
   constructor(e) {
     super(), T(this, e, Cs, zs, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -24758,7 +24758,7 @@ function Zs(i) {
 function Ws(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -24816,7 +24816,7 @@ function Ws(i, e, t) {
     V
   ];
 }
-class Ms extends E {
+class Ms extends I {
   constructor(e) {
     super(), T(this, e, Ws, Zs, R, {
       size: 0,
@@ -24961,7 +24961,7 @@ function Bs(i) {
 function Hs(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -25016,7 +25016,7 @@ function Hs(i, e, t) {
     j
   ];
 }
-class As extends E {
+class As extends I {
   constructor(e) {
     super(), T(this, e, Hs, Bs, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -25187,7 +25187,7 @@ function Vs(i) {
 function Ss(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -25245,7 +25245,7 @@ function Ss(i, e, t) {
     V
   ];
 }
-class Ps extends E {
+class Ps extends I {
   constructor(e) {
     super(), T(this, e, Ss, Vs, R, {
       size: 0,
@@ -25390,7 +25390,7 @@ function Os(i) {
 function Fs(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -25445,7 +25445,7 @@ function Fs(i, e, t) {
     j
   ];
 }
-class Rs extends E {
+class Rs extends I {
   constructor(e) {
     super(), T(this, e, Fs, Os, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -25616,7 +25616,7 @@ function Us(i) {
 function Ds(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -25674,7 +25674,7 @@ function Ds(i, e, t) {
     V
   ];
 }
-class Ts extends E {
+class Ts extends I {
   constructor(e) {
     super(), T(this, e, Ds, Us, R, {
       size: 0,
@@ -25686,7 +25686,7 @@ class Ts extends E {
     });
   }
 }
-function Es(i) {
+function Is(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "currentColor" },
@@ -25816,10 +25816,10 @@ function Es(i) {
     }
   };
 }
-function Is(i, e, t) {
+function Es(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -25874,9 +25874,9 @@ function Is(i, e, t) {
     j
   ];
 }
-class Gs extends E {
+class Gs extends I {
   constructor(e) {
-    super(), T(this, e, Is, Es, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, Es, Is, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function Ns(i) {
@@ -26045,7 +26045,7 @@ function Ns(i) {
 function qs(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -26103,7 +26103,7 @@ function qs(i, e, t) {
     V
   ];
 }
-class ys extends E {
+class ys extends I {
   constructor(e) {
     super(), T(this, e, qs, Ns, R, {
       size: 0,
@@ -26281,7 +26281,7 @@ function Qs(i) {
 function Xs(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -26339,7 +26339,7 @@ function Xs(i, e, t) {
     V
   ];
 }
-class Ks extends E {
+class Ks extends I {
   constructor(e) {
     super(), T(this, e, Xs, Qs, R, {
       size: 0,
@@ -26484,7 +26484,7 @@ function Ys(i) {
 function Js(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -26539,7 +26539,7 @@ function Js(i, e, t) {
     j
   ];
 }
-class xs extends E {
+class xs extends I {
   constructor(e) {
     super(), T(this, e, Js, Ys, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -26710,7 +26710,7 @@ function ps(i) {
 function $s(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -26768,7 +26768,7 @@ function $s(i, e, t) {
     V
   ];
 }
-class e1 extends E {
+class e1 extends I {
   constructor(e) {
     super(), T(this, e, $s, ps, R, {
       size: 0,
@@ -26913,7 +26913,7 @@ function i1(i) {
 function l1(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -26968,7 +26968,7 @@ function l1(i, e, t) {
     j
   ];
 }
-class t1 extends E {
+class t1 extends I {
   constructor(e) {
     super(), T(this, e, l1, i1, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -27139,7 +27139,7 @@ function n1(i) {
 function o1(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -27197,7 +27197,7 @@ function o1(i, e, t) {
     V
   ];
 }
-class a1 extends E {
+class a1 extends I {
   constructor(e) {
     super(), T(this, e, o1, n1, R, {
       size: 0,
@@ -27342,7 +27342,7 @@ function s1(i) {
 function u1(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -27397,7 +27397,7 @@ function u1(i, e, t) {
     j
   ];
 }
-class r1 extends E {
+class r1 extends I {
   constructor(e) {
     super(), T(this, e, u1, s1, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -27568,7 +27568,7 @@ function h1(i) {
 function k1(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -27626,7 +27626,7 @@ function k1(i, e, t) {
     V
   ];
 }
-class c1 extends E {
+class c1 extends I {
   constructor(e) {
     super(), T(this, e, k1, h1, R, {
       size: 0,
@@ -27804,7 +27804,7 @@ function m1(i) {
 function f1(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -27862,7 +27862,7 @@ function f1(i, e, t) {
     V
   ];
 }
-class d1 extends E {
+class d1 extends I {
   constructor(e) {
     super(), T(this, e, f1, m1, R, {
       size: 0,
@@ -28007,7 +28007,7 @@ function g1(i) {
 function v1(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -28062,7 +28062,7 @@ function v1(i, e, t) {
     j
   ];
 }
-class L1 extends E {
+class L1 extends I {
   constructor(e) {
     super(), T(this, e, v1, g1, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -28233,7 +28233,7 @@ function b1(i) {
 function w1(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -28291,7 +28291,7 @@ function w1(i, e, t) {
     V
   ];
 }
-class _1 extends E {
+class _1 extends I {
   constructor(e) {
     super(), T(this, e, w1, b1, R, {
       size: 0,
@@ -28436,7 +28436,7 @@ function z1(i) {
 function C1(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -28491,7 +28491,7 @@ function C1(i, e, t) {
     j
   ];
 }
-class j1 extends E {
+class j1 extends I {
   constructor(e) {
     super(), T(this, e, C1, z1, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -28662,7 +28662,7 @@ function Z1(i) {
 function W1(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -28720,7 +28720,7 @@ function W1(i, e, t) {
     V
   ];
 }
-class M1 extends E {
+class M1 extends I {
   constructor(e) {
     super(), T(this, e, W1, Z1, R, {
       size: 0,
@@ -28865,7 +28865,7 @@ function B1(i) {
 function H1(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -28920,7 +28920,7 @@ function H1(i, e, t) {
     j
   ];
 }
-class A1 extends E {
+class A1 extends I {
   constructor(e) {
     super(), T(this, e, H1, B1, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -29091,7 +29091,7 @@ function V1(i) {
 function S1(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -29149,7 +29149,7 @@ function S1(i, e, t) {
     V
   ];
 }
-class P1 extends E {
+class P1 extends I {
   constructor(e) {
     super(), T(this, e, S1, V1, R, {
       size: 0,
@@ -29294,7 +29294,7 @@ function O1(i) {
 function F1(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -29349,7 +29349,7 @@ function F1(i, e, t) {
     j
   ];
 }
-class R1 extends E {
+class R1 extends I {
   constructor(e) {
     super(), T(this, e, F1, O1, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -29520,7 +29520,7 @@ function U1(i) {
 function D1(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -29578,7 +29578,7 @@ function D1(i, e, t) {
     V
   ];
 }
-class T1 extends E {
+class T1 extends I {
   constructor(e) {
     super(), T(this, e, D1, U1, R, {
       size: 0,
@@ -29590,7 +29590,7 @@ class T1 extends E {
     });
   }
 }
-function E1(i) {
+function I1(i) {
   let e, t, r, c, k, m, h, l = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "none" },
@@ -29753,10 +29753,10 @@ function E1(i) {
     }
   };
 }
-function I1(i, e, t) {
+function E1(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -29814,9 +29814,9 @@ function I1(i, e, t) {
     V
   ];
 }
-class G1 extends E {
+class G1 extends I {
   constructor(e) {
-    super(), T(this, e, I1, E1, R, {
+    super(), T(this, e, E1, I1, R, {
       size: 0,
       role: 1,
       strokeLinecap: 2,
@@ -29959,7 +29959,7 @@ function N1(i) {
 function q1(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -30014,7 +30014,7 @@ function q1(i, e, t) {
     j
   ];
 }
-class y1 extends E {
+class y1 extends I {
   constructor(e) {
     super(), T(this, e, q1, N1, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -30152,7 +30152,7 @@ function Q1(i) {
 function X1(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -30207,7 +30207,7 @@ function X1(i, e, t) {
     j
   ];
 }
-class K1 extends E {
+class K1 extends I {
   constructor(e) {
     super(), T(this, e, X1, Q1, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -30378,7 +30378,7 @@ function Y1(i) {
 function J1(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -30436,7 +30436,7 @@ function J1(i, e, t) {
     V
   ];
 }
-class x1 extends E {
+class x1 extends I {
   constructor(e) {
     super(), T(this, e, J1, Y1, R, {
       size: 0,
@@ -30581,7 +30581,7 @@ function p1(i) {
 function $1(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -30636,7 +30636,7 @@ function $1(i, e, t) {
     j
   ];
 }
-class e0 extends E {
+class e0 extends I {
   constructor(e) {
     super(), T(this, e, $1, p1, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -30807,7 +30807,7 @@ function i0(i) {
 function l0(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -30865,7 +30865,7 @@ function l0(i, e, t) {
     V
   ];
 }
-class t0 extends E {
+class t0 extends I {
   constructor(e) {
     super(), T(this, e, l0, i0, R, {
       size: 0,
@@ -31043,7 +31043,7 @@ function n0(i) {
 function o0(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -31101,7 +31101,7 @@ function o0(i, e, t) {
     V
   ];
 }
-class a0 extends E {
+class a0 extends I {
   constructor(e) {
     super(), T(this, e, o0, n0, R, {
       size: 0,
@@ -31246,7 +31246,7 @@ function s0(i) {
 function u0(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -31301,7 +31301,7 @@ function u0(i, e, t) {
     j
   ];
 }
-class r0 extends E {
+class r0 extends I {
   constructor(e) {
     super(), T(this, e, u0, s0, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -31439,7 +31439,7 @@ function h0(i) {
 function k0(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -31494,7 +31494,7 @@ function k0(i, e, t) {
     j
   ];
 }
-class c0 extends E {
+class c0 extends I {
   constructor(e) {
     super(), T(this, e, k0, h0, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -31632,7 +31632,7 @@ function m0(i) {
 function f0(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -31687,7 +31687,7 @@ function f0(i, e, t) {
     j
   ];
 }
-class d0 extends E {
+class d0 extends I {
   constructor(e) {
     super(), T(this, e, f0, m0, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -31825,7 +31825,7 @@ function g0(i) {
 function v0(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -31880,7 +31880,7 @@ function v0(i, e, t) {
     j
   ];
 }
-class L0 extends E {
+class L0 extends I {
   constructor(e) {
     super(), T(this, e, v0, g0, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -32018,7 +32018,7 @@ function b0(i) {
 function w0(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -32073,7 +32073,7 @@ function w0(i, e, t) {
     j
   ];
 }
-class _0 extends E {
+class _0 extends I {
   constructor(e) {
     super(), T(this, e, w0, b0, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -32211,7 +32211,7 @@ function z0(i) {
 function C0(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -32266,7 +32266,7 @@ function C0(i, e, t) {
     j
   ];
 }
-class j0 extends E {
+class j0 extends I {
   constructor(e) {
     super(), T(this, e, C0, z0, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -32437,7 +32437,7 @@ function Z0(i) {
 function W0(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -32495,7 +32495,7 @@ function W0(i, e, t) {
     V
   ];
 }
-class M0 extends E {
+class M0 extends I {
   constructor(e) {
     super(), T(this, e, W0, Z0, R, {
       size: 0,
@@ -32673,7 +32673,7 @@ function B0(i) {
 function H0(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -32731,7 +32731,7 @@ function H0(i, e, t) {
     V
   ];
 }
-class A0 extends E {
+class A0 extends I {
   constructor(e) {
     super(), T(this, e, H0, B0, R, {
       size: 0,
@@ -32909,7 +32909,7 @@ function V0(i) {
 function S0(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -32967,7 +32967,7 @@ function S0(i, e, t) {
     V
   ];
 }
-class P0 extends E {
+class P0 extends I {
   constructor(e) {
     super(), T(this, e, S0, V0, R, {
       size: 0,
@@ -33145,7 +33145,7 @@ function O0(i) {
 function F0(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -33203,7 +33203,7 @@ function F0(i, e, t) {
     V
   ];
 }
-class R0 extends E {
+class R0 extends I {
   constructor(e) {
     super(), T(this, e, F0, O0, R, {
       size: 0,
@@ -33381,7 +33381,7 @@ function U0(i) {
 function D0(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -33439,7 +33439,7 @@ function D0(i, e, t) {
     V
   ];
 }
-class T0 extends E {
+class T0 extends I {
   constructor(e) {
     super(), T(this, e, D0, U0, R, {
       size: 0,
@@ -33451,7 +33451,7 @@ class T0 extends E {
     });
   }
 }
-function E0(i) {
+function I0(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "currentColor" },
@@ -33581,10 +33581,10 @@ function E0(i) {
     }
   };
 }
-function I0(i, e, t) {
+function E0(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -33639,9 +33639,9 @@ function I0(i, e, t) {
     j
   ];
 }
-class G0 extends E {
+class G0 extends I {
   constructor(e) {
-    super(), T(this, e, I0, E0, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, E0, I0, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function N0(i) {
@@ -33810,7 +33810,7 @@ function N0(i) {
 function q0(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -33868,7 +33868,7 @@ function q0(i, e, t) {
     V
   ];
 }
-class y0 extends E {
+class y0 extends I {
   constructor(e) {
     super(), T(this, e, q0, N0, R, {
       size: 0,
@@ -34013,7 +34013,7 @@ function Q0(i) {
 function X0(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -34068,7 +34068,7 @@ function X0(i, e, t) {
     j
   ];
 }
-class K0 extends E {
+class K0 extends I {
   constructor(e) {
     super(), T(this, e, X0, Q0, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -34239,7 +34239,7 @@ function Y0(i) {
 function J0(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -34297,7 +34297,7 @@ function J0(i, e, t) {
     V
   ];
 }
-class x0 extends E {
+class x0 extends I {
   constructor(e) {
     super(), T(this, e, J0, Y0, R, {
       size: 0,
@@ -34442,7 +34442,7 @@ function p0(i) {
 function $0(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -34497,7 +34497,7 @@ function $0(i, e, t) {
     j
   ];
 }
-class eu extends E {
+class eu extends I {
   constructor(e) {
     super(), T(this, e, $0, p0, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -34668,7 +34668,7 @@ function iu(i) {
 function lu(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -34726,7 +34726,7 @@ function lu(i, e, t) {
     V
   ];
 }
-class tu extends E {
+class tu extends I {
   constructor(e) {
     super(), T(this, e, lu, iu, R, {
       size: 0,
@@ -34871,7 +34871,7 @@ function nu(i) {
 function ou(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -34926,7 +34926,7 @@ function ou(i, e, t) {
     j
   ];
 }
-class au extends E {
+class au extends I {
   constructor(e) {
     super(), T(this, e, ou, nu, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -35097,7 +35097,7 @@ function su(i) {
 function uu(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -35155,7 +35155,7 @@ function uu(i, e, t) {
     V
   ];
 }
-class ru extends E {
+class ru extends I {
   constructor(e) {
     super(), T(this, e, uu, su, R, {
       size: 0,
@@ -35300,7 +35300,7 @@ function hu(i) {
 function ku(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -35355,7 +35355,7 @@ function ku(i, e, t) {
     j
   ];
 }
-class cu extends E {
+class cu extends I {
   constructor(e) {
     super(), T(this, e, ku, hu, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -35526,7 +35526,7 @@ function mu(i) {
 function fu(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -35584,7 +35584,7 @@ function fu(i, e, t) {
     V
   ];
 }
-class du extends E {
+class du extends I {
   constructor(e) {
     super(), T(this, e, fu, mu, R, {
       size: 0,
@@ -35729,7 +35729,7 @@ function gu(i) {
 function vu(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -35784,7 +35784,7 @@ function vu(i, e, t) {
     j
   ];
 }
-class Lu extends E {
+class Lu extends I {
   constructor(e) {
     super(), T(this, e, vu, gu, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -35955,7 +35955,7 @@ function bu(i) {
 function wu(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -36013,7 +36013,7 @@ function wu(i, e, t) {
     V
   ];
 }
-class _u extends E {
+class _u extends I {
   constructor(e) {
     super(), T(this, e, wu, bu, R, {
       size: 0,
@@ -36158,7 +36158,7 @@ function zu(i) {
 function Cu(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -36213,7 +36213,7 @@ function Cu(i, e, t) {
     j
   ];
 }
-class ju extends E {
+class ju extends I {
   constructor(e) {
     super(), T(this, e, Cu, zu, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -36384,7 +36384,7 @@ function Zu(i) {
 function Wu(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -36442,7 +36442,7 @@ function Wu(i, e, t) {
     V
   ];
 }
-class Mu extends E {
+class Mu extends I {
   constructor(e) {
     super(), T(this, e, Wu, Zu, R, {
       size: 0,
@@ -36587,7 +36587,7 @@ function Bu(i) {
 function Hu(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -36642,7 +36642,7 @@ function Hu(i, e, t) {
     j
   ];
 }
-class Au extends E {
+class Au extends I {
   constructor(e) {
     super(), T(this, e, Hu, Bu, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -36813,7 +36813,7 @@ function Vu(i) {
 function Su(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -36871,7 +36871,7 @@ function Su(i, e, t) {
     V
   ];
 }
-class Pu extends E {
+class Pu extends I {
   constructor(e) {
     super(), T(this, e, Su, Vu, R, {
       size: 0,
@@ -37016,7 +37016,7 @@ function Ou(i) {
 function Fu(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -37071,7 +37071,7 @@ function Fu(i, e, t) {
     j
   ];
 }
-class Ru extends E {
+class Ru extends I {
   constructor(e) {
     super(), T(this, e, Fu, Ou, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -37209,7 +37209,7 @@ function Uu(i) {
 function Du(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -37264,12 +37264,12 @@ function Du(i, e, t) {
     j
   ];
 }
-class Tu extends E {
+class Tu extends I {
   constructor(e) {
     super(), T(this, e, Du, Uu, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-function Eu(i) {
+function Iu(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "currentColor" },
@@ -37399,10 +37399,10 @@ function Eu(i) {
     }
   };
 }
-function Iu(i, e, t) {
+function Eu(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -37457,9 +37457,9 @@ function Iu(i, e, t) {
     j
   ];
 }
-class Gu extends E {
+class Gu extends I {
   constructor(e) {
-    super(), T(this, e, Iu, Eu, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, Eu, Iu, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function Nu(i) {
@@ -37628,7 +37628,7 @@ function Nu(i) {
 function qu(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -37686,7 +37686,7 @@ function qu(i, e, t) {
     V
   ];
 }
-class yu extends E {
+class yu extends I {
   constructor(e) {
     super(), T(this, e, qu, Nu, R, {
       size: 0,
@@ -37831,7 +37831,7 @@ function Qu(i) {
 function Xu(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -37886,7 +37886,7 @@ function Xu(i, e, t) {
     j
   ];
 }
-class Ku extends E {
+class Ku extends I {
   constructor(e) {
     super(), T(this, e, Xu, Qu, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -38046,7 +38046,7 @@ function Yu(i) {
 function Ju(i, e, t) {
   const r = ["size", "role", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -38103,7 +38103,7 @@ function Ju(i, e, t) {
     P
   ];
 }
-class xu extends E {
+class xu extends I {
   constructor(e) {
     super(), T(this, e, Ju, Yu, R, {
       size: 0,
@@ -38247,7 +38247,7 @@ function pu(i) {
 function $u(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -38302,7 +38302,7 @@ function $u(i, e, t) {
     j
   ];
 }
-class er extends E {
+class er extends I {
   constructor(e) {
     super(), T(this, e, $u, pu, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -38440,7 +38440,7 @@ function ir(i) {
 function lr(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -38495,7 +38495,7 @@ function lr(i, e, t) {
     j
   ];
 }
-class tr extends E {
+class tr extends I {
   constructor(e) {
     super(), T(this, e, lr, ir, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -38633,7 +38633,7 @@ function nr(i) {
 function or(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -38688,7 +38688,7 @@ function or(i, e, t) {
     j
   ];
 }
-class ar extends E {
+class ar extends I {
   constructor(e) {
     super(), T(this, e, or, nr, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -38859,7 +38859,7 @@ function sr(i) {
 function ur(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -38917,7 +38917,7 @@ function ur(i, e, t) {
     V
   ];
 }
-class rr extends E {
+class rr extends I {
   constructor(e) {
     super(), T(this, e, ur, sr, R, {
       size: 0,
@@ -39062,7 +39062,7 @@ function hr(i) {
 function kr(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -39117,7 +39117,7 @@ function kr(i, e, t) {
     j
   ];
 }
-class cr extends E {
+class cr extends I {
   constructor(e) {
     super(), T(this, e, kr, hr, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -39288,7 +39288,7 @@ function mr(i) {
 function fr(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -39346,7 +39346,7 @@ function fr(i, e, t) {
     V
   ];
 }
-class dr extends E {
+class dr extends I {
   constructor(e) {
     super(), T(this, e, fr, mr, R, {
       size: 0,
@@ -39491,7 +39491,7 @@ function gr(i) {
 function vr(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -39546,7 +39546,7 @@ function vr(i, e, t) {
     j
   ];
 }
-class Lr extends E {
+class Lr extends I {
   constructor(e) {
     super(), T(this, e, vr, gr, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -39717,7 +39717,7 @@ function br(i) {
 function wr(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -39775,7 +39775,7 @@ function wr(i, e, t) {
     V
   ];
 }
-class _r extends E {
+class _r extends I {
   constructor(e) {
     super(), T(this, e, wr, br, R, {
       size: 0,
@@ -39920,7 +39920,7 @@ function zr(i) {
 function Cr(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -39975,7 +39975,7 @@ function Cr(i, e, t) {
     j
   ];
 }
-class jr extends E {
+class jr extends I {
   constructor(e) {
     super(), T(this, e, Cr, zr, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -40146,7 +40146,7 @@ function Zr(i) {
 function Wr(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -40204,7 +40204,7 @@ function Wr(i, e, t) {
     V
   ];
 }
-class Mr extends E {
+class Mr extends I {
   constructor(e) {
     super(), T(this, e, Wr, Zr, R, {
       size: 0,
@@ -40349,7 +40349,7 @@ function Br(i) {
 function Hr(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -40404,7 +40404,7 @@ function Hr(i, e, t) {
     j
   ];
 }
-class Ar extends E {
+class Ar extends I {
   constructor(e) {
     super(), T(this, e, Hr, Br, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -40575,7 +40575,7 @@ function Vr(i) {
 function Sr(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -40633,7 +40633,7 @@ function Sr(i, e, t) {
     V
   ];
 }
-class Pr extends E {
+class Pr extends I {
   constructor(e) {
     super(), T(this, e, Sr, Vr, R, {
       size: 0,
@@ -40778,7 +40778,7 @@ function Or(i) {
 function Fr(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -40833,7 +40833,7 @@ function Fr(i, e, t) {
     j
   ];
 }
-class Rr extends E {
+class Rr extends I {
   constructor(e) {
     super(), T(this, e, Fr, Or, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -41004,7 +41004,7 @@ function Ur(i) {
 function Dr(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -41062,7 +41062,7 @@ function Dr(i, e, t) {
     V
   ];
 }
-class Tr extends E {
+class Tr extends I {
   constructor(e) {
     super(), T(this, e, Dr, Ur, R, {
       size: 0,
@@ -41074,7 +41074,7 @@ class Tr extends E {
     });
   }
 }
-function Er(i) {
+function Ir(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "none" },
@@ -41237,10 +41237,10 @@ function Er(i) {
     }
   };
 }
-function Ir(i, e, t) {
+function Er(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -41298,9 +41298,9 @@ function Ir(i, e, t) {
     V
   ];
 }
-class Gr extends E {
+class Gr extends I {
   constructor(e) {
-    super(), T(this, e, Ir, Er, R, {
+    super(), T(this, e, Er, Ir, R, {
       size: 0,
       role: 1,
       strokeLinecap: 2,
@@ -41443,7 +41443,7 @@ function Nr(i) {
 function qr(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -41498,7 +41498,7 @@ function qr(i, e, t) {
     j
   ];
 }
-class yr extends E {
+class yr extends I {
   constructor(e) {
     super(), T(this, e, qr, Nr, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -41636,7 +41636,7 @@ function Qr(i) {
 function Xr(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -41691,7 +41691,7 @@ function Xr(i, e, t) {
     j
   ];
 }
-class Kr extends E {
+class Kr extends I {
   constructor(e) {
     super(), T(this, e, Xr, Qr, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -41862,7 +41862,7 @@ function Yr(i) {
 function Jr(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -41920,7 +41920,7 @@ function Jr(i, e, t) {
     V
   ];
 }
-class xr extends E {
+class xr extends I {
   constructor(e) {
     super(), T(this, e, Jr, Yr, R, {
       size: 0,
@@ -42098,7 +42098,7 @@ function pr(i) {
 function $r(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -42156,7 +42156,7 @@ function $r(i, e, t) {
     V
   ];
 }
-class eh extends E {
+class eh extends I {
   constructor(e) {
     super(), T(this, e, $r, pr, R, {
       size: 0,
@@ -42301,7 +42301,7 @@ function ih(i) {
 function lh(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -42356,7 +42356,7 @@ function lh(i, e, t) {
     j
   ];
 }
-class th extends E {
+class th extends I {
   constructor(e) {
     super(), T(this, e, lh, ih, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -42527,7 +42527,7 @@ function nh(i) {
 function oh(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -42585,7 +42585,7 @@ function oh(i, e, t) {
     V
   ];
 }
-class ah extends E {
+class ah extends I {
   constructor(e) {
     super(), T(this, e, oh, nh, R, {
       size: 0,
@@ -42763,7 +42763,7 @@ function sh(i) {
 function uh(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -42821,7 +42821,7 @@ function uh(i, e, t) {
     V
   ];
 }
-class rh extends E {
+class rh extends I {
   constructor(e) {
     super(), T(this, e, uh, sh, R, {
       size: 0,
@@ -42966,7 +42966,7 @@ function hh(i) {
 function kh(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -43021,7 +43021,7 @@ function kh(i, e, t) {
     j
   ];
 }
-class ch extends E {
+class ch extends I {
   constructor(e) {
     super(), T(this, e, kh, hh, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -43192,7 +43192,7 @@ function mh(i) {
 function fh(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -43250,7 +43250,7 @@ function fh(i, e, t) {
     V
   ];
 }
-class dh extends E {
+class dh extends I {
   constructor(e) {
     super(), T(this, e, fh, mh, R, {
       size: 0,
@@ -43395,7 +43395,7 @@ function gh(i) {
 function vh(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -43450,7 +43450,7 @@ function vh(i, e, t) {
     j
   ];
 }
-class Lh extends E {
+class Lh extends I {
   constructor(e) {
     super(), T(this, e, vh, gh, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -43588,7 +43588,7 @@ function bh(i) {
 function wh(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -43643,7 +43643,7 @@ function wh(i, e, t) {
     j
   ];
 }
-class _h extends E {
+class _h extends I {
   constructor(e) {
     super(), T(this, e, wh, bh, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -43781,7 +43781,7 @@ function zh(i) {
 function Ch(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -43836,7 +43836,7 @@ function Ch(i, e, t) {
     j
   ];
 }
-class jh extends E {
+class jh extends I {
   constructor(e) {
     super(), T(this, e, Ch, zh, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -44007,7 +44007,7 @@ function Zh(i) {
 function Wh(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -44065,7 +44065,7 @@ function Wh(i, e, t) {
     V
   ];
 }
-class Mh extends E {
+class Mh extends I {
   constructor(e) {
     super(), T(this, e, Wh, Zh, R, {
       size: 0,
@@ -44210,7 +44210,7 @@ function Bh(i) {
 function Hh(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -44265,7 +44265,7 @@ function Hh(i, e, t) {
     j
   ];
 }
-class Ah extends E {
+class Ah extends I {
   constructor(e) {
     super(), T(this, e, Hh, Bh, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -44403,7 +44403,7 @@ function Vh(i) {
 function Sh(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -44458,7 +44458,7 @@ function Sh(i, e, t) {
     j
   ];
 }
-class Ph extends E {
+class Ph extends I {
   constructor(e) {
     super(), T(this, e, Sh, Vh, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -44629,7 +44629,7 @@ function Oh(i) {
 function Fh(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -44687,7 +44687,7 @@ function Fh(i, e, t) {
     V
   ];
 }
-class Rh extends E {
+class Rh extends I {
   constructor(e) {
     super(), T(this, e, Fh, Oh, R, {
       size: 0,
@@ -44832,7 +44832,7 @@ function Uh(i) {
 function Dh(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -44887,12 +44887,12 @@ function Dh(i, e, t) {
     j
   ];
 }
-class Th extends E {
+class Th extends I {
   constructor(e) {
     super(), T(this, e, Dh, Uh, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-function Eh(i) {
+function Ih(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "none" },
@@ -45055,10 +45055,10 @@ function Eh(i) {
     }
   };
 }
-function Ih(i, e, t) {
+function Eh(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -45116,9 +45116,9 @@ function Ih(i, e, t) {
     V
   ];
 }
-class Gh extends E {
+class Gh extends I {
   constructor(e) {
-    super(), T(this, e, Ih, Eh, R, {
+    super(), T(this, e, Eh, Ih, R, {
       size: 0,
       role: 1,
       strokeLinecap: 2,
@@ -45261,7 +45261,7 @@ function Nh(i) {
 function qh(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -45316,7 +45316,7 @@ function qh(i, e, t) {
     j
   ];
 }
-class yh extends E {
+class yh extends I {
   constructor(e) {
     super(), T(this, e, qh, Nh, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -45454,7 +45454,7 @@ function Qh(i) {
 function Xh(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -45509,7 +45509,7 @@ function Xh(i, e, t) {
     j
   ];
 }
-class Kh extends E {
+class Kh extends I {
   constructor(e) {
     super(), T(this, e, Xh, Qh, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -45680,7 +45680,7 @@ function Yh(i) {
 function Jh(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -45738,7 +45738,7 @@ function Jh(i, e, t) {
     V
   ];
 }
-class xh extends E {
+class xh extends I {
   constructor(e) {
     super(), T(this, e, Jh, Yh, R, {
       size: 0,
@@ -45883,7 +45883,7 @@ function ph(i) {
 function $h(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -45938,7 +45938,7 @@ function $h(i, e, t) {
     j
   ];
 }
-class e2 extends E {
+class e2 extends I {
   constructor(e) {
     super(), T(this, e, $h, ph, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -46109,7 +46109,7 @@ function i2(i) {
 function l2(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -46167,7 +46167,7 @@ function l2(i, e, t) {
     V
   ];
 }
-class t2 extends E {
+class t2 extends I {
   constructor(e) {
     super(), T(this, e, l2, i2, R, {
       size: 0,
@@ -46312,7 +46312,7 @@ function n2(i) {
 function o2(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -46367,7 +46367,7 @@ function o2(i, e, t) {
     j
   ];
 }
-class a2 extends E {
+class a2 extends I {
   constructor(e) {
     super(), T(this, e, o2, n2, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -46516,7 +46516,7 @@ function s2(i) {
 function u2(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -46572,7 +46572,7 @@ function u2(i, e, t) {
     n
   ];
 }
-class r2 extends E {
+class r2 extends I {
   constructor(e) {
     super(), T(this, e, u2, s2, R, {
       size: 0,
@@ -46726,7 +46726,7 @@ function h2(i) {
 function k2(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -46782,7 +46782,7 @@ function k2(i, e, t) {
     n
   ];
 }
-class c2 extends E {
+class c2 extends I {
   constructor(e) {
     super(), T(this, e, k2, h2, R, {
       size: 0,
@@ -46958,7 +46958,7 @@ function m2(i) {
 function f2(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -47016,7 +47016,7 @@ function f2(i, e, t) {
     V
   ];
 }
-class d2 extends E {
+class d2 extends I {
   constructor(e) {
     super(), T(this, e, f2, m2, R, {
       size: 0,
@@ -47161,7 +47161,7 @@ function g2(i) {
 function v2(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -47216,7 +47216,7 @@ function v2(i, e, t) {
     j
   ];
 }
-class L2 extends E {
+class L2 extends I {
   constructor(e) {
     super(), T(this, e, v2, g2, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -47387,7 +47387,7 @@ function b2(i) {
 function w2(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -47445,7 +47445,7 @@ function w2(i, e, t) {
     V
   ];
 }
-class _2 extends E {
+class _2 extends I {
   constructor(e) {
     super(), T(this, e, w2, b2, R, {
       size: 0,
@@ -47590,7 +47590,7 @@ function z2(i) {
 function C2(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -47645,7 +47645,7 @@ function C2(i, e, t) {
     j
   ];
 }
-class j2 extends E {
+class j2 extends I {
   constructor(e) {
     super(), T(this, e, C2, z2, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -47783,7 +47783,7 @@ function Z2(i) {
 function W2(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -47838,7 +47838,7 @@ function W2(i, e, t) {
     j
   ];
 }
-class M2 extends E {
+class M2 extends I {
   constructor(e) {
     super(), T(this, e, W2, Z2, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -47976,7 +47976,7 @@ function B2(i) {
 function H2(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -48031,7 +48031,7 @@ function H2(i, e, t) {
     j
   ];
 }
-class A2 extends E {
+class A2 extends I {
   constructor(e) {
     super(), T(this, e, H2, B2, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -48202,7 +48202,7 @@ function V2(i) {
 function S2(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -48260,7 +48260,7 @@ function S2(i, e, t) {
     V
   ];
 }
-class P2 extends E {
+class P2 extends I {
   constructor(e) {
     super(), T(this, e, S2, V2, R, {
       size: 0,
@@ -48405,7 +48405,7 @@ function O2(i) {
 function F2(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -48460,7 +48460,7 @@ function F2(i, e, t) {
     j
   ];
 }
-class R2 extends E {
+class R2 extends I {
   constructor(e) {
     super(), T(this, e, F2, O2, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -48598,7 +48598,7 @@ function U2(i) {
 function D2(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -48653,12 +48653,12 @@ function D2(i, e, t) {
     j
   ];
 }
-class T2 extends E {
+class T2 extends I {
   constructor(e) {
     super(), T(this, e, D2, U2, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-function E2(i) {
+function I2(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "none" },
@@ -48821,10 +48821,10 @@ function E2(i) {
     }
   };
 }
-function I2(i, e, t) {
+function E2(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -48882,9 +48882,9 @@ function I2(i, e, t) {
     V
   ];
 }
-class G2 extends E {
+class G2 extends I {
   constructor(e) {
-    super(), T(this, e, I2, E2, R, {
+    super(), T(this, e, E2, I2, R, {
       size: 0,
       role: 1,
       strokeLinecap: 2,
@@ -49027,7 +49027,7 @@ function N2(i) {
 function q2(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -49082,7 +49082,7 @@ function q2(i, e, t) {
     j
   ];
 }
-class y2 extends E {
+class y2 extends I {
   constructor(e) {
     super(), T(this, e, q2, N2, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -49253,7 +49253,7 @@ function Q2(i) {
 function X2(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -49311,7 +49311,7 @@ function X2(i, e, t) {
     V
   ];
 }
-class K2 extends E {
+class K2 extends I {
   constructor(e) {
     super(), T(this, e, X2, Q2, R, {
       size: 0,
@@ -49456,7 +49456,7 @@ function Y2(i) {
 function J2(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -49511,7 +49511,7 @@ function J2(i, e, t) {
     j
   ];
 }
-class x2 extends E {
+class x2 extends I {
   constructor(e) {
     super(), T(this, e, J2, Y2, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -49682,7 +49682,7 @@ function p2(i) {
 function $2(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -49740,7 +49740,7 @@ function $2(i, e, t) {
     V
   ];
 }
-class ek extends E {
+class ek extends I {
   constructor(e) {
     super(), T(this, e, $2, p2, R, {
       size: 0,
@@ -49885,7 +49885,7 @@ function ik(i) {
 function lk(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -49940,7 +49940,7 @@ function lk(i, e, t) {
     j
   ];
 }
-class tk extends E {
+class tk extends I {
   constructor(e) {
     super(), T(this, e, lk, ik, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -50111,7 +50111,7 @@ function nk(i) {
 function ok(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -50169,7 +50169,7 @@ function ok(i, e, t) {
     V
   ];
 }
-class ak extends E {
+class ak extends I {
   constructor(e) {
     super(), T(this, e, ok, nk, R, {
       size: 0,
@@ -50314,7 +50314,7 @@ function sk(i) {
 function uk(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -50369,7 +50369,7 @@ function uk(i, e, t) {
     j
   ];
 }
-class rk extends E {
+class rk extends I {
   constructor(e) {
     super(), T(this, e, uk, sk, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -50540,7 +50540,7 @@ function hk(i) {
 function kk(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -50598,7 +50598,7 @@ function kk(i, e, t) {
     V
   ];
 }
-class ck extends E {
+class ck extends I {
   constructor(e) {
     super(), T(this, e, kk, hk, R, {
       size: 0,
@@ -50743,7 +50743,7 @@ function mk(i) {
 function fk(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -50798,7 +50798,7 @@ function fk(i, e, t) {
     j
   ];
 }
-class dk extends E {
+class dk extends I {
   constructor(e) {
     super(), T(this, e, fk, mk, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -50969,7 +50969,7 @@ function gk(i) {
 function vk(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -51027,7 +51027,7 @@ function vk(i, e, t) {
     V
   ];
 }
-class Lk extends E {
+class Lk extends I {
   constructor(e) {
     super(), T(this, e, vk, gk, R, {
       size: 0,
@@ -51205,7 +51205,7 @@ function bk(i) {
 function wk(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -51263,7 +51263,7 @@ function wk(i, e, t) {
     V
   ];
 }
-class _k extends E {
+class _k extends I {
   constructor(e) {
     super(), T(this, e, wk, bk, R, {
       size: 0,
@@ -51408,7 +51408,7 @@ function zk(i) {
 function Ck(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -51463,7 +51463,7 @@ function Ck(i, e, t) {
     j
   ];
 }
-class jk extends E {
+class jk extends I {
   constructor(e) {
     super(), T(this, e, Ck, zk, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -51601,7 +51601,7 @@ function Zk(i) {
 function Wk(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -51656,7 +51656,7 @@ function Wk(i, e, t) {
     j
   ];
 }
-class Mk extends E {
+class Mk extends I {
   constructor(e) {
     super(), T(this, e, Wk, Zk, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -51794,7 +51794,7 @@ function Bk(i) {
 function Hk(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -51849,7 +51849,7 @@ function Hk(i, e, t) {
     j
   ];
 }
-class Ak extends E {
+class Ak extends I {
   constructor(e) {
     super(), T(this, e, Hk, Bk, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -51987,7 +51987,7 @@ function Vk(i) {
 function Sk(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -52042,7 +52042,7 @@ function Sk(i, e, t) {
     j
   ];
 }
-class Pk extends E {
+class Pk extends I {
   constructor(e) {
     super(), T(this, e, Sk, Vk, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -52180,7 +52180,7 @@ function Ok(i) {
 function Fk(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -52235,7 +52235,7 @@ function Fk(i, e, t) {
     j
   ];
 }
-class Rk extends E {
+class Rk extends I {
   constructor(e) {
     super(), T(this, e, Fk, Ok, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -52373,7 +52373,7 @@ function Uk(i) {
 function Dk(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -52428,12 +52428,12 @@ function Dk(i, e, t) {
     j
   ];
 }
-class Tk extends E {
+class Tk extends I {
   constructor(e) {
     super(), T(this, e, Dk, Uk, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-function Ek(i) {
+function Ik(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "none" },
@@ -52596,10 +52596,10 @@ function Ek(i) {
     }
   };
 }
-function Ik(i, e, t) {
+function Ek(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -52657,9 +52657,9 @@ function Ik(i, e, t) {
     V
   ];
 }
-class Gk extends E {
+class Gk extends I {
   constructor(e) {
-    super(), T(this, e, Ik, Ek, R, {
+    super(), T(this, e, Ek, Ik, R, {
       size: 0,
       role: 1,
       strokeLinecap: 2,
@@ -52802,7 +52802,7 @@ function Nk(i) {
 function qk(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -52857,7 +52857,7 @@ function qk(i, e, t) {
     j
   ];
 }
-class yk extends E {
+class yk extends I {
   constructor(e) {
     super(), T(this, e, qk, Nk, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -52995,7 +52995,7 @@ function Qk(i) {
 function Xk(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -53050,7 +53050,7 @@ function Xk(i, e, t) {
     j
   ];
 }
-class Kk extends E {
+class Kk extends I {
   constructor(e) {
     super(), T(this, e, Xk, Qk, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -53188,7 +53188,7 @@ function Yk(i) {
 function Jk(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -53243,7 +53243,7 @@ function Jk(i, e, t) {
     j
   ];
 }
-class xk extends E {
+class xk extends I {
   constructor(e) {
     super(), T(this, e, Jk, Yk, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -53381,7 +53381,7 @@ function pk(i) {
 function $k(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -53436,7 +53436,7 @@ function $k(i, e, t) {
     j
   ];
 }
-class ec extends E {
+class ec extends I {
   constructor(e) {
     super(), T(this, e, $k, pk, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -53607,7 +53607,7 @@ function ic(i) {
 function lc(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -53665,7 +53665,7 @@ function lc(i, e, t) {
     V
   ];
 }
-class tc extends E {
+class tc extends I {
   constructor(e) {
     super(), T(this, e, lc, ic, R, {
       size: 0,
@@ -53810,7 +53810,7 @@ function nc(i) {
 function oc(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -53865,7 +53865,7 @@ function oc(i, e, t) {
     j
   ];
 }
-class ac extends E {
+class ac extends I {
   constructor(e) {
     super(), T(this, e, oc, nc, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -54036,7 +54036,7 @@ function sc(i) {
 function uc(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -54094,7 +54094,7 @@ function uc(i, e, t) {
     V
   ];
 }
-class rc extends E {
+class rc extends I {
   constructor(e) {
     super(), T(this, e, uc, sc, R, {
       size: 0,
@@ -54239,7 +54239,7 @@ function hc(i) {
 function kc(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -54294,7 +54294,7 @@ function kc(i, e, t) {
     j
   ];
 }
-class cc extends E {
+class cc extends I {
   constructor(e) {
     super(), T(this, e, kc, hc, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -54465,7 +54465,7 @@ function mc(i) {
 function fc(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -54523,7 +54523,7 @@ function fc(i, e, t) {
     V
   ];
 }
-class dc extends E {
+class dc extends I {
   constructor(e) {
     super(), T(this, e, fc, mc, R, {
       size: 0,
@@ -54701,7 +54701,7 @@ function gc(i) {
 function vc(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -54759,7 +54759,7 @@ function vc(i, e, t) {
     V
   ];
 }
-class Lc extends E {
+class Lc extends I {
   constructor(e) {
     super(), T(this, e, vc, gc, R, {
       size: 0,
@@ -54937,7 +54937,7 @@ function bc(i) {
 function wc(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -54995,7 +54995,7 @@ function wc(i, e, t) {
     V
   ];
 }
-class _c extends E {
+class _c extends I {
   constructor(e) {
     super(), T(this, e, wc, bc, R, {
       size: 0,
@@ -55140,7 +55140,7 @@ function zc(i) {
 function Cc(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -55195,7 +55195,7 @@ function Cc(i, e, t) {
     j
   ];
 }
-class jc extends E {
+class jc extends I {
   constructor(e) {
     super(), T(this, e, Cc, zc, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -55366,7 +55366,7 @@ function Zc(i) {
 function Wc(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -55424,7 +55424,7 @@ function Wc(i, e, t) {
     V
   ];
 }
-class Mc extends E {
+class Mc extends I {
   constructor(e) {
     super(), T(this, e, Wc, Zc, R, {
       size: 0,
@@ -55569,7 +55569,7 @@ function Bc(i) {
 function Hc(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -55624,7 +55624,7 @@ function Hc(i, e, t) {
     j
   ];
 }
-class Ac extends E {
+class Ac extends I {
   constructor(e) {
     super(), T(this, e, Hc, Bc, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -55795,7 +55795,7 @@ function Vc(i) {
 function Sc(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -55853,7 +55853,7 @@ function Sc(i, e, t) {
     V
   ];
 }
-class Pc extends E {
+class Pc extends I {
   constructor(e) {
     super(), T(this, e, Sc, Vc, R, {
       size: 0,
@@ -55998,7 +55998,7 @@ function Oc(i) {
 function Fc(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -56053,7 +56053,7 @@ function Fc(i, e, t) {
     j
   ];
 }
-class Rc extends E {
+class Rc extends I {
   constructor(e) {
     super(), T(this, e, Fc, Oc, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -56191,7 +56191,7 @@ function Uc(i) {
 function Dc(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -56246,12 +56246,12 @@ function Dc(i, e, t) {
     j
   ];
 }
-class Tc extends E {
+class Tc extends I {
   constructor(e) {
     super(), T(this, e, Dc, Uc, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-function Ec(i) {
+function Ic(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "none" },
@@ -56414,10 +56414,10 @@ function Ec(i) {
     }
   };
 }
-function Ic(i, e, t) {
+function Ec(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -56475,9 +56475,9 @@ function Ic(i, e, t) {
     V
   ];
 }
-class Gc extends E {
+class Gc extends I {
   constructor(e) {
-    super(), T(this, e, Ic, Ec, R, {
+    super(), T(this, e, Ec, Ic, R, {
       size: 0,
       role: 1,
       strokeLinecap: 2,
@@ -56620,7 +56620,7 @@ function Nc(i) {
 function qc(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -56675,7 +56675,7 @@ function qc(i, e, t) {
     j
   ];
 }
-class yc extends E {
+class yc extends I {
   constructor(e) {
     super(), T(this, e, qc, Nc, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -56846,7 +56846,7 @@ function Qc(i) {
 function Xc(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -56904,7 +56904,7 @@ function Xc(i, e, t) {
     V
   ];
 }
-class Kc extends E {
+class Kc extends I {
   constructor(e) {
     super(), T(this, e, Xc, Qc, R, {
       size: 0,
@@ -57049,7 +57049,7 @@ function Yc(i) {
 function Jc(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -57104,7 +57104,7 @@ function Jc(i, e, t) {
     j
   ];
 }
-class xc extends E {
+class xc extends I {
   constructor(e) {
     super(), T(this, e, Jc, Yc, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -57275,7 +57275,7 @@ function pc(i) {
 function $c(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -57333,7 +57333,7 @@ function $c(i, e, t) {
     V
   ];
 }
-class e3 extends E {
+class e3 extends I {
   constructor(e) {
     super(), T(this, e, $c, pc, R, {
       size: 0,
@@ -57478,7 +57478,7 @@ function i3(i) {
 function l3(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -57533,7 +57533,7 @@ function l3(i, e, t) {
     j
   ];
 }
-class t3 extends E {
+class t3 extends I {
   constructor(e) {
     super(), T(this, e, l3, i3, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -57704,7 +57704,7 @@ function n3(i) {
 function o3(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -57762,7 +57762,7 @@ function o3(i, e, t) {
     V
   ];
 }
-class a3 extends E {
+class a3 extends I {
   constructor(e) {
     super(), T(this, e, o3, n3, R, {
       size: 0,
@@ -57907,7 +57907,7 @@ function s3(i) {
 function u3(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -57962,7 +57962,7 @@ function u3(i, e, t) {
     j
   ];
 }
-class r3 extends E {
+class r3 extends I {
   constructor(e) {
     super(), T(this, e, u3, s3, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -58133,7 +58133,7 @@ function h3(i) {
 function k3(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -58191,7 +58191,7 @@ function k3(i, e, t) {
     V
   ];
 }
-class c3 extends E {
+class c3 extends I {
   constructor(e) {
     super(), T(this, e, k3, h3, R, {
       size: 0,
@@ -58336,7 +58336,7 @@ function m3(i) {
 function f3(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -58391,7 +58391,7 @@ function f3(i, e, t) {
     j
   ];
 }
-class d3 extends E {
+class d3 extends I {
   constructor(e) {
     super(), T(this, e, f3, m3, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -58562,7 +58562,7 @@ function g3(i) {
 function v3(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -58620,7 +58620,7 @@ function v3(i, e, t) {
     V
   ];
 }
-class L3 extends E {
+class L3 extends I {
   constructor(e) {
     super(), T(this, e, v3, g3, R, {
       size: 0,
@@ -58765,7 +58765,7 @@ function b3(i) {
 function w3(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -58820,7 +58820,7 @@ function w3(i, e, t) {
     j
   ];
 }
-class _3 extends E {
+class _3 extends I {
   constructor(e) {
     super(), T(this, e, w3, b3, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -58980,7 +58980,7 @@ function z3(i) {
 function C3(i, e, t) {
   const r = ["size", "role", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -59037,7 +59037,7 @@ function C3(i, e, t) {
     P
   ];
 }
-class j3 extends E {
+class j3 extends I {
   constructor(e) {
     super(), T(this, e, C3, z3, R, {
       size: 0,
@@ -59214,7 +59214,7 @@ function Z3(i) {
 function W3(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -59272,7 +59272,7 @@ function W3(i, e, t) {
     V
   ];
 }
-class M3 extends E {
+class M3 extends I {
   constructor(e) {
     super(), T(this, e, W3, Z3, R, {
       size: 0,
@@ -59417,7 +59417,7 @@ function B3(i) {
 function H3(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -59472,7 +59472,7 @@ function H3(i, e, t) {
     j
   ];
 }
-class A3 extends E {
+class A3 extends I {
   constructor(e) {
     super(), T(this, e, H3, B3, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -59643,7 +59643,7 @@ function V3(i) {
 function S3(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -59701,7 +59701,7 @@ function S3(i, e, t) {
     V
   ];
 }
-class P3 extends E {
+class P3 extends I {
   constructor(e) {
     super(), T(this, e, S3, V3, R, {
       size: 0,
@@ -59846,7 +59846,7 @@ function O3(i) {
 function F3(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -59901,7 +59901,7 @@ function F3(i, e, t) {
     j
   ];
 }
-class R3 extends E {
+class R3 extends I {
   constructor(e) {
     super(), T(this, e, F3, O3, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -60072,7 +60072,7 @@ function U3(i) {
 function D3(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -60130,7 +60130,7 @@ function D3(i, e, t) {
     V
   ];
 }
-class T3 extends E {
+class T3 extends I {
   constructor(e) {
     super(), T(this, e, D3, U3, R, {
       size: 0,
@@ -60142,7 +60142,7 @@ class T3 extends E {
     });
   }
 }
-function E3(i) {
+function I3(i) {
   let e, t, r, c, k, m, h, l = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "currentColor" },
@@ -60272,10 +60272,10 @@ function E3(i) {
     }
   };
 }
-function I3(i, e, t) {
+function E3(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -60330,9 +60330,9 @@ function I3(i, e, t) {
     j
   ];
 }
-class G3 extends E {
+class G3 extends I {
   constructor(e) {
-    super(), T(this, e, I3, E3, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, E3, I3, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function N3(i) {
@@ -60468,7 +60468,7 @@ function N3(i) {
 function q3(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -60523,7 +60523,7 @@ function q3(i, e, t) {
     j
   ];
 }
-class y3 extends E {
+class y3 extends I {
   constructor(e) {
     super(), T(this, e, q3, N3, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -60694,7 +60694,7 @@ function Q3(i) {
 function X3(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -60752,7 +60752,7 @@ function X3(i, e, t) {
     V
   ];
 }
-class K3 extends E {
+class K3 extends I {
   constructor(e) {
     super(), T(this, e, X3, Q3, R, {
       size: 0,
@@ -60930,7 +60930,7 @@ function Y3(i) {
 function J3(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -60988,7 +60988,7 @@ function J3(i, e, t) {
     V
   ];
 }
-class x3 extends E {
+class x3 extends I {
   constructor(e) {
     super(), T(this, e, J3, Y3, R, {
       size: 0,
@@ -61133,7 +61133,7 @@ function p3(i) {
 function $3(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -61188,7 +61188,7 @@ function $3(i, e, t) {
     j
   ];
 }
-class em extends E {
+class em extends I {
   constructor(e) {
     super(), T(this, e, $3, p3, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -61359,7 +61359,7 @@ function im(i) {
 function lm(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -61417,7 +61417,7 @@ function lm(i, e, t) {
     V
   ];
 }
-class tm extends E {
+class tm extends I {
   constructor(e) {
     super(), T(this, e, lm, im, R, {
       size: 0,
@@ -61562,7 +61562,7 @@ function nm(i) {
 function om(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -61617,7 +61617,7 @@ function om(i, e, t) {
     j
   ];
 }
-class am extends E {
+class am extends I {
   constructor(e) {
     super(), T(this, e, om, nm, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -61755,7 +61755,7 @@ function sm(i) {
 function um(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -61810,7 +61810,7 @@ function um(i, e, t) {
     j
   ];
 }
-class rm extends E {
+class rm extends I {
   constructor(e) {
     super(), T(this, e, um, sm, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -61981,7 +61981,7 @@ function hm(i) {
 function km(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -62039,7 +62039,7 @@ function km(i, e, t) {
     V
   ];
 }
-class cm extends E {
+class cm extends I {
   constructor(e) {
     super(), T(this, e, km, hm, R, {
       size: 0,
@@ -62184,7 +62184,7 @@ function mm(i) {
 function fm(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -62239,7 +62239,7 @@ function fm(i, e, t) {
     j
   ];
 }
-class dm extends E {
+class dm extends I {
   constructor(e) {
     super(), T(this, e, fm, mm, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -62410,7 +62410,7 @@ function gm(i) {
 function vm(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -62468,7 +62468,7 @@ function vm(i, e, t) {
     V
   ];
 }
-class Lm extends E {
+class Lm extends I {
   constructor(e) {
     super(), T(this, e, vm, gm, R, {
       size: 0,
@@ -62613,7 +62613,7 @@ function bm(i) {
 function wm(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -62668,7 +62668,7 @@ function wm(i, e, t) {
     j
   ];
 }
-class _m extends E {
+class _m extends I {
   constructor(e) {
     super(), T(this, e, wm, bm, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -62806,7 +62806,7 @@ function zm(i) {
 function Cm(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -62861,7 +62861,7 @@ function Cm(i, e, t) {
     j
   ];
 }
-class jm extends E {
+class jm extends I {
   constructor(e) {
     super(), T(this, e, Cm, zm, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -62999,7 +62999,7 @@ function Zm(i) {
 function Wm(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -63054,7 +63054,7 @@ function Wm(i, e, t) {
     j
   ];
 }
-class Mm extends E {
+class Mm extends I {
   constructor(e) {
     super(), T(this, e, Wm, Zm, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -63225,7 +63225,7 @@ function Bm(i) {
 function Hm(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -63283,7 +63283,7 @@ function Hm(i, e, t) {
     V
   ];
 }
-class Am extends E {
+class Am extends I {
   constructor(e) {
     super(), T(this, e, Hm, Bm, R, {
       size: 0,
@@ -63428,7 +63428,7 @@ function Vm(i) {
 function Sm(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -63483,7 +63483,7 @@ function Sm(i, e, t) {
     j
   ];
 }
-class Pm extends E {
+class Pm extends I {
   constructor(e) {
     super(), T(this, e, Sm, Vm, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -63654,7 +63654,7 @@ function Om(i) {
 function Fm(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -63712,7 +63712,7 @@ function Fm(i, e, t) {
     V
   ];
 }
-class Rm extends E {
+class Rm extends I {
   constructor(e) {
     super(), T(this, e, Fm, Om, R, {
       size: 0,
@@ -63857,7 +63857,7 @@ function Um(i) {
 function Dm(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -63912,12 +63912,12 @@ function Dm(i, e, t) {
     j
   ];
 }
-class Tm extends E {
+class Tm extends I {
   constructor(e) {
     super(), T(this, e, Dm, Um, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-function Em(i) {
+function Im(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "none" },
@@ -64080,10 +64080,10 @@ function Em(i) {
     }
   };
 }
-function Im(i, e, t) {
+function Em(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -64141,9 +64141,9 @@ function Im(i, e, t) {
     V
   ];
 }
-class Gm extends E {
+class Gm extends I {
   constructor(e) {
-    super(), T(this, e, Im, Em, R, {
+    super(), T(this, e, Em, Im, R, {
       size: 0,
       role: 1,
       strokeLinecap: 2,
@@ -64286,7 +64286,7 @@ function Nm(i) {
 function qm(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -64341,7 +64341,7 @@ function qm(i, e, t) {
     j
   ];
 }
-class ym extends E {
+class ym extends I {
   constructor(e) {
     super(), T(this, e, qm, Nm, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -64512,7 +64512,7 @@ function Qm(i) {
 function Xm(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -64570,7 +64570,7 @@ function Xm(i, e, t) {
     V
   ];
 }
-class Km extends E {
+class Km extends I {
   constructor(e) {
     super(), T(this, e, Xm, Qm, R, {
       size: 0,
@@ -64715,7 +64715,7 @@ function Ym(i) {
 function Jm(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -64770,7 +64770,7 @@ function Jm(i, e, t) {
     j
   ];
 }
-class xm extends E {
+class xm extends I {
   constructor(e) {
     super(), T(this, e, Jm, Ym, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -64941,7 +64941,7 @@ function pm(i) {
 function $m(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -64999,7 +64999,7 @@ function $m(i, e, t) {
     V
   ];
 }
-class e4 extends E {
+class e4 extends I {
   constructor(e) {
     super(), T(this, e, $m, pm, R, {
       size: 0,
@@ -65144,7 +65144,7 @@ function i4(i) {
 function l4(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -65199,7 +65199,7 @@ function l4(i, e, t) {
     j
   ];
 }
-class t4 extends E {
+class t4 extends I {
   constructor(e) {
     super(), T(this, e, l4, i4, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -65359,7 +65359,7 @@ function n4(i) {
 function o4(i, e, t) {
   const r = ["size", "role", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -65416,7 +65416,7 @@ function o4(i, e, t) {
     P
   ];
 }
-class a4 extends E {
+class a4 extends I {
   constructor(e) {
     super(), T(this, e, o4, n4, R, {
       size: 0,
@@ -65560,7 +65560,7 @@ function s4(i) {
 function u4(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -65615,7 +65615,7 @@ function u4(i, e, t) {
     j
   ];
 }
-class r4 extends E {
+class r4 extends I {
   constructor(e) {
     super(), T(this, e, u4, s4, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -65786,7 +65786,7 @@ function h4(i) {
 function k4(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -65844,7 +65844,7 @@ function k4(i, e, t) {
     V
   ];
 }
-class c4 extends E {
+class c4 extends I {
   constructor(e) {
     super(), T(this, e, k4, h4, R, {
       size: 0,
@@ -65989,7 +65989,7 @@ function m4(i) {
 function f4(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -66044,7 +66044,7 @@ function f4(i, e, t) {
     j
   ];
 }
-class d4 extends E {
+class d4 extends I {
   constructor(e) {
     super(), T(this, e, f4, m4, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -66215,7 +66215,7 @@ function g4(i) {
 function v4(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -66273,7 +66273,7 @@ function v4(i, e, t) {
     V
   ];
 }
-class L4 extends E {
+class L4 extends I {
   constructor(e) {
     super(), T(this, e, v4, g4, R, {
       size: 0,
@@ -66451,7 +66451,7 @@ function b4(i) {
 function w4(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -66509,7 +66509,7 @@ function w4(i, e, t) {
     V
   ];
 }
-class _4 extends E {
+class _4 extends I {
   constructor(e) {
     super(), T(this, e, w4, b4, R, {
       size: 0,
@@ -66654,7 +66654,7 @@ function z4(i) {
 function C4(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -66709,7 +66709,7 @@ function C4(i, e, t) {
     j
   ];
 }
-class j4 extends E {
+class j4 extends I {
   constructor(e) {
     super(), T(this, e, C4, z4, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -66847,7 +66847,7 @@ function Z4(i) {
 function W4(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -66902,7 +66902,7 @@ function W4(i, e, t) {
     j
   ];
 }
-class M4 extends E {
+class M4 extends I {
   constructor(e) {
     super(), T(this, e, W4, Z4, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -67073,7 +67073,7 @@ function B4(i) {
 function H4(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -67131,7 +67131,7 @@ function H4(i, e, t) {
     V
   ];
 }
-class A4 extends E {
+class A4 extends I {
   constructor(e) {
     super(), T(this, e, H4, B4, R, {
       size: 0,
@@ -67276,7 +67276,7 @@ function V4(i) {
 function S4(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -67331,7 +67331,7 @@ function S4(i, e, t) {
     j
   ];
 }
-class P4 extends E {
+class P4 extends I {
   constructor(e) {
     super(), T(this, e, S4, V4, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -67502,7 +67502,7 @@ function O4(i) {
 function F4(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -67560,7 +67560,7 @@ function F4(i, e, t) {
     V
   ];
 }
-class R4 extends E {
+class R4 extends I {
   constructor(e) {
     super(), T(this, e, F4, O4, R, {
       size: 0,
@@ -67705,7 +67705,7 @@ function U4(i) {
 function D4(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -67760,12 +67760,12 @@ function D4(i, e, t) {
     j
   ];
 }
-class T4 extends E {
+class T4 extends I {
   constructor(e) {
     super(), T(this, e, D4, U4, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-function E4(i) {
+function I4(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "currentColor" },
@@ -67895,10 +67895,10 @@ function E4(i) {
     }
   };
 }
-function I4(i, e, t) {
+function E4(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -67953,9 +67953,9 @@ function I4(i, e, t) {
     j
   ];
 }
-class G4 extends E {
+class G4 extends I {
   constructor(e) {
-    super(), T(this, e, I4, E4, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, E4, I4, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function N4(i) {
@@ -68124,7 +68124,7 @@ function N4(i) {
 function q4(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -68182,7 +68182,7 @@ function q4(i, e, t) {
     V
   ];
 }
-class y4 extends E {
+class y4 extends I {
   constructor(e) {
     super(), T(this, e, q4, N4, R, {
       size: 0,
@@ -68327,7 +68327,7 @@ function Q4(i) {
 function X4(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -68382,7 +68382,7 @@ function X4(i, e, t) {
     j
   ];
 }
-class K4 extends E {
+class K4 extends I {
   constructor(e) {
     super(), T(this, e, X4, Q4, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -68520,7 +68520,7 @@ function Y4(i) {
 function J4(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -68575,7 +68575,7 @@ function J4(i, e, t) {
     j
   ];
 }
-class x4 extends E {
+class x4 extends I {
   constructor(e) {
     super(), T(this, e, J4, Y4, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -68746,7 +68746,7 @@ function p4(i) {
 function $4(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -68804,7 +68804,7 @@ function $4(i, e, t) {
     V
   ];
 }
-class e5 extends E {
+class e5 extends I {
   constructor(e) {
     super(), T(this, e, $4, p4, R, {
       size: 0,
@@ -68949,7 +68949,7 @@ function i5(i) {
 function l5(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -69004,7 +69004,7 @@ function l5(i, e, t) {
     j
   ];
 }
-class t5 extends E {
+class t5 extends I {
   constructor(e) {
     super(), T(this, e, l5, i5, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -69142,7 +69142,7 @@ function n5(i) {
 function o5(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -69197,7 +69197,7 @@ function o5(i, e, t) {
     j
   ];
 }
-class a5 extends E {
+class a5 extends I {
   constructor(e) {
     super(), T(this, e, o5, n5, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -69368,7 +69368,7 @@ function s5(i) {
 function u5(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -69426,7 +69426,7 @@ function u5(i, e, t) {
     V
   ];
 }
-class r5 extends E {
+class r5 extends I {
   constructor(e) {
     super(), T(this, e, u5, s5, R, {
       size: 0,
@@ -69604,7 +69604,7 @@ function h5(i) {
 function k5(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -69662,7 +69662,7 @@ function k5(i, e, t) {
     V
   ];
 }
-class c5 extends E {
+class c5 extends I {
   constructor(e) {
     super(), T(this, e, k5, h5, R, {
       size: 0,
@@ -69807,7 +69807,7 @@ function m5(i) {
 function f5(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -69862,7 +69862,7 @@ function f5(i, e, t) {
     j
   ];
 }
-class d5 extends E {
+class d5 extends I {
   constructor(e) {
     super(), T(this, e, f5, m5, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -70000,7 +70000,7 @@ function g5(i) {
 function v5(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -70055,7 +70055,7 @@ function v5(i, e, t) {
     j
   ];
 }
-class L5 extends E {
+class L5 extends I {
   constructor(e) {
     super(), T(this, e, v5, g5, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -70068,7 +70068,7 @@ function b5(i) {
     i[7],
     {
       class: r = A(
-        "shrink-0",
+        "uikit-shrink-0",
         /*sizes*/
         i[6][
           /*size*/
@@ -70194,7 +70194,7 @@ function b5(i) {
         l[7],
         a & /*size, $$props*/
         257 && r !== (r = A(
-          "shrink-0",
+          "uikit-shrink-0",
           /*sizes*/
           l[6][
             /*size*/
@@ -70226,7 +70226,7 @@ function b5(i) {
 function w5(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -70284,7 +70284,7 @@ function w5(i, e, t) {
     V
   ];
 }
-class _5 extends E {
+class _5 extends I {
   constructor(e) {
     super(), T(this, e, w5, b5, R, {
       size: 0,
@@ -70429,7 +70429,7 @@ function z5(i) {
 function C5(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -70484,7 +70484,7 @@ function C5(i, e, t) {
     j
   ];
 }
-class j5 extends E {
+class j5 extends I {
   constructor(e) {
     super(), T(this, e, C5, z5, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -70655,7 +70655,7 @@ function Z5(i) {
 function W5(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -70713,7 +70713,7 @@ function W5(i, e, t) {
     V
   ];
 }
-class M5 extends E {
+class M5 extends I {
   constructor(e) {
     super(), T(this, e, W5, Z5, R, {
       size: 0,
@@ -70858,7 +70858,7 @@ function B5(i) {
 function H5(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -70913,7 +70913,7 @@ function H5(i, e, t) {
     j
   ];
 }
-class A5 extends E {
+class A5 extends I {
   constructor(e) {
     super(), T(this, e, H5, B5, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -70926,7 +70926,7 @@ function V5(i) {
     i[7],
     {
       class: r = A(
-        "shrink-0",
+        "uikit-shrink-0",
         /*sizes*/
         i[6][
           /*size*/
@@ -71052,7 +71052,7 @@ function V5(i) {
         l[7],
         a & /*size, $$props*/
         257 && r !== (r = A(
-          "shrink-0",
+          "uikit-shrink-0",
           /*sizes*/
           l[6][
             /*size*/
@@ -71084,7 +71084,7 @@ function V5(i) {
 function S5(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -71142,7 +71142,7 @@ function S5(i, e, t) {
     V
   ];
 }
-class P5 extends E {
+class P5 extends I {
   constructor(e) {
     super(), T(this, e, S5, V5, R, {
       size: 0,
@@ -71287,7 +71287,7 @@ function O5(i) {
 function F5(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -71342,7 +71342,7 @@ function F5(i, e, t) {
     j
   ];
 }
-class R5 extends E {
+class R5 extends I {
   constructor(e) {
     super(), T(this, e, F5, O5, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -71355,7 +71355,7 @@ function U5(i) {
     i[7],
     {
       class: r = A(
-        "shrink-0",
+        "uikit-shrink-0",
         /*sizes*/
         i[6][
           /*size*/
@@ -71481,7 +71481,7 @@ function U5(i) {
         l[7],
         a & /*size, $$props*/
         257 && r !== (r = A(
-          "shrink-0",
+          "uikit-shrink-0",
           /*sizes*/
           l[6][
             /*size*/
@@ -71513,7 +71513,7 @@ function U5(i) {
 function D5(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -71571,7 +71571,7 @@ function D5(i, e, t) {
     V
   ];
 }
-class T5 extends E {
+class T5 extends I {
   constructor(e) {
     super(), T(this, e, D5, U5, R, {
       size: 0,
@@ -71583,7 +71583,7 @@ class T5 extends E {
     });
   }
 }
-function E5(i) {
+function I5(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "currentColor" },
@@ -71713,10 +71713,10 @@ function E5(i) {
     }
   };
 }
-function I5(i, e, t) {
+function E5(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -71771,9 +71771,9 @@ function I5(i, e, t) {
     j
   ];
 }
-class G5 extends E {
+class G5 extends I {
   constructor(e) {
-    super(), T(this, e, I5, E5, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, E5, I5, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function N5(i) {
@@ -71909,7 +71909,7 @@ function N5(i) {
 function q5(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -71964,7 +71964,7 @@ function q5(i, e, t) {
     j
   ];
 }
-class y5 extends E {
+class y5 extends I {
   constructor(e) {
     super(), T(this, e, q5, N5, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -72069,7 +72069,7 @@ function X5(i, e, t) {
     t(5, e = v(v({}, e), W(a))), t(4, c = M(e, r)), "icon" in a && t(0, k = a.icon), "size" in a && t(1, m = a.size), "role" in a && t(2, h = a.role), "ariaLabel" in a && t(3, l = a.ariaLabel);
   }, e = W(e), [k, m, h, l, c, e];
 }
-class K5 extends E {
+class K5 extends I {
   constructor(e) {
     super(), T(this, e, X5, Q5, R, { icon: 0, size: 1, role: 2, ariaLabel: 3 });
   }
@@ -72223,7 +72223,7 @@ function J5(i, e, t) {
     e
   ];
 }
-class x5 extends E {
+class x5 extends I {
   constructor(e) {
     super(), T(this, e, J5, Y5, R, {
       icon: 0,
@@ -72413,7 +72413,7 @@ function p5(i) {
 function $5(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -72471,7 +72471,7 @@ function $5(i, e, t) {
     V
   ];
 }
-class ef extends E {
+class ef extends I {
   constructor(e) {
     super(), T(this, e, $5, p5, R, {
       size: 0,
@@ -72616,7 +72616,7 @@ function lf(i) {
 function tf(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -72671,7 +72671,7 @@ function tf(i, e, t) {
     j
   ];
 }
-class nf extends E {
+class nf extends I {
   constructor(e) {
     super(), T(this, e, tf, lf, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -72842,7 +72842,7 @@ function of(i) {
 function af(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -72900,7 +72900,7 @@ function af(i, e, t) {
     V
   ];
 }
-class sf extends E {
+class sf extends I {
   constructor(e) {
     super(), T(this, e, af, of, R, {
       size: 0,
@@ -73045,7 +73045,7 @@ function uf(i) {
 function rf(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -73100,7 +73100,7 @@ function rf(i, e, t) {
     j
   ];
 }
-class hf extends E {
+class hf extends I {
   constructor(e) {
     super(), T(this, e, rf, uf, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -73271,7 +73271,7 @@ function kf(i) {
 function cf(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -73329,7 +73329,7 @@ function cf(i, e, t) {
     V
   ];
 }
-class mf extends E {
+class mf extends I {
   constructor(e) {
     super(), T(this, e, cf, kf, R, {
       size: 0,
@@ -73474,7 +73474,7 @@ function ff(i) {
 function df(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -73529,7 +73529,7 @@ function df(i, e, t) {
     j
   ];
 }
-class gf extends E {
+class gf extends I {
   constructor(e) {
     super(), T(this, e, df, ff, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -73700,7 +73700,7 @@ function vf(i) {
 function Lf(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -73758,7 +73758,7 @@ function Lf(i, e, t) {
     V
   ];
 }
-class bf extends E {
+class bf extends I {
   constructor(e) {
     super(), T(this, e, Lf, vf, R, {
       size: 0,
@@ -73936,7 +73936,7 @@ function wf(i) {
 function _f(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -73994,7 +73994,7 @@ function _f(i, e, t) {
     V
   ];
 }
-class zf extends E {
+class zf extends I {
   constructor(e) {
     super(), T(this, e, _f, wf, R, {
       size: 0,
@@ -74139,7 +74139,7 @@ function Cf(i) {
 function jf(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -74194,7 +74194,7 @@ function jf(i, e, t) {
     j
   ];
 }
-class Zf extends E {
+class Zf extends I {
   constructor(e) {
     super(), T(this, e, jf, Cf, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -74332,7 +74332,7 @@ function Wf(i) {
 function Mf(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -74387,7 +74387,7 @@ function Mf(i, e, t) {
     j
   ];
 }
-class Bf extends E {
+class Bf extends I {
   constructor(e) {
     super(), T(this, e, Mf, Wf, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -74525,7 +74525,7 @@ function Hf(i) {
 function Af(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -74580,7 +74580,7 @@ function Af(i, e, t) {
     j
   ];
 }
-class Vf extends E {
+class Vf extends I {
   constructor(e) {
     super(), T(this, e, Af, Hf, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -74718,7 +74718,7 @@ function Sf(i) {
 function Pf(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -74773,7 +74773,7 @@ function Pf(i, e, t) {
     j
   ];
 }
-class Of extends E {
+class Of extends I {
   constructor(e) {
     super(), T(this, e, Pf, Sf, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -74944,7 +74944,7 @@ function Ff(i) {
 function Rf(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -75002,7 +75002,7 @@ function Rf(i, e, t) {
     V
   ];
 }
-class Uf extends E {
+class Uf extends I {
   constructor(e) {
     super(), T(this, e, Rf, Ff, R, {
       size: 0,
@@ -75147,7 +75147,7 @@ function Df(i) {
 function Tf(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -75202,12 +75202,12 @@ function Tf(i, e, t) {
     j
   ];
 }
-class Ef extends E {
+class If extends I {
   constructor(e) {
     super(), T(this, e, Tf, Df, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-function If(i) {
+function Ef(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "none" },
@@ -75373,7 +75373,7 @@ function If(i) {
 function Gf(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -75431,9 +75431,9 @@ function Gf(i, e, t) {
     V
   ];
 }
-class Nf extends E {
+class Nf extends I {
   constructor(e) {
-    super(), T(this, e, Gf, If, R, {
+    super(), T(this, e, Gf, Ef, R, {
       size: 0,
       role: 1,
       strokeLinecap: 2,
@@ -75576,7 +75576,7 @@ function qf(i) {
 function yf(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -75631,7 +75631,7 @@ function yf(i, e, t) {
     j
   ];
 }
-class Qf extends E {
+class Qf extends I {
   constructor(e) {
     super(), T(this, e, yf, qf, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -75802,7 +75802,7 @@ function Xf(i) {
 function Kf(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -75860,7 +75860,7 @@ function Kf(i, e, t) {
     V
   ];
 }
-class Yf extends E {
+class Yf extends I {
   constructor(e) {
     super(), T(this, e, Kf, Xf, R, {
       size: 0,
@@ -76005,7 +76005,7 @@ function Jf(i) {
 function xf(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -76060,7 +76060,7 @@ function xf(i, e, t) {
     j
   ];
 }
-class pf extends E {
+class pf extends I {
   constructor(e) {
     super(), T(this, e, xf, Jf, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -76231,7 +76231,7 @@ function $f(i) {
 function ed(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -76289,7 +76289,7 @@ function ed(i, e, t) {
     V
   ];
 }
-class id extends E {
+class id extends I {
   constructor(e) {
     super(), T(this, e, ed, $f, R, {
       size: 0,
@@ -76467,7 +76467,7 @@ function ld(i) {
 function td(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -76525,7 +76525,7 @@ function td(i, e, t) {
     V
   ];
 }
-class nd extends E {
+class nd extends I {
   constructor(e) {
     super(), T(this, e, td, ld, R, {
       size: 0,
@@ -76703,7 +76703,7 @@ function od(i) {
 function ad(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -76761,7 +76761,7 @@ function ad(i, e, t) {
     V
   ];
 }
-class sd extends E {
+class sd extends I {
   constructor(e) {
     super(), T(this, e, ad, od, R, {
       size: 0,
@@ -76939,7 +76939,7 @@ function ud(i) {
 function rd(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -76997,7 +76997,7 @@ function rd(i, e, t) {
     V
   ];
 }
-class hd extends E {
+class hd extends I {
   constructor(e) {
     super(), T(this, e, rd, ud, R, {
       size: 0,
@@ -77142,7 +77142,7 @@ function kd(i) {
 function cd(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -77197,7 +77197,7 @@ function cd(i, e, t) {
     j
   ];
 }
-class md extends E {
+class md extends I {
   constructor(e) {
     super(), T(this, e, cd, kd, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -77368,7 +77368,7 @@ function fd(i) {
 function dd(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -77426,7 +77426,7 @@ function dd(i, e, t) {
     V
   ];
 }
-class gd extends E {
+class gd extends I {
   constructor(e) {
     super(), T(this, e, dd, fd, R, {
       size: 0,
@@ -77571,7 +77571,7 @@ function vd(i) {
 function Ld(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -77626,7 +77626,7 @@ function Ld(i, e, t) {
     j
   ];
 }
-class bd extends E {
+class bd extends I {
   constructor(e) {
     super(), T(this, e, Ld, vd, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -77797,7 +77797,7 @@ function wd(i) {
 function _d(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -77855,7 +77855,7 @@ function _d(i, e, t) {
     V
   ];
 }
-class zd extends E {
+class zd extends I {
   constructor(e) {
     super(), T(this, e, _d, wd, R, {
       size: 0,
@@ -78000,7 +78000,7 @@ function Cd(i) {
 function jd(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -78055,7 +78055,7 @@ function jd(i, e, t) {
     j
   ];
 }
-class Zd extends E {
+class Zd extends I {
   constructor(e) {
     super(), T(this, e, jd, Cd, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -78193,7 +78193,7 @@ function Wd(i) {
 function Md(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -78248,7 +78248,7 @@ function Md(i, e, t) {
     j
   ];
 }
-class Bd extends E {
+class Bd extends I {
   constructor(e) {
     super(), T(this, e, Md, Wd, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -78419,7 +78419,7 @@ function Hd(i) {
 function Ad(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -78477,7 +78477,7 @@ function Ad(i, e, t) {
     V
   ];
 }
-class Vd extends E {
+class Vd extends I {
   constructor(e) {
     super(), T(this, e, Ad, Hd, R, {
       size: 0,
@@ -78622,7 +78622,7 @@ function Sd(i) {
 function Pd(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -78677,7 +78677,7 @@ function Pd(i, e, t) {
     j
   ];
 }
-class Od extends E {
+class Od extends I {
   constructor(e) {
     super(), T(this, e, Pd, Sd, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -78815,7 +78815,7 @@ function Fd(i) {
 function Rd(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -78870,7 +78870,7 @@ function Rd(i, e, t) {
     j
   ];
 }
-class Ud extends E {
+class Ud extends I {
   constructor(e) {
     super(), T(this, e, Rd, Fd, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -79030,7 +79030,7 @@ function Dd(i) {
 function Td(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -79087,7 +79087,7 @@ function Td(i, e, t) {
     P
   ];
 }
-class Ed extends E {
+class Id extends I {
   constructor(e) {
     super(), T(this, e, Td, Dd, R, {
       size: 0,
@@ -79098,7 +79098,7 @@ class Ed extends E {
     });
   }
 }
-function Id(i) {
+function Ed(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "currentColor" },
@@ -79231,7 +79231,7 @@ function Id(i) {
 function Gd(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -79286,9 +79286,9 @@ function Gd(i, e, t) {
     j
   ];
 }
-class Nd extends E {
+class Nd extends I {
   constructor(e) {
-    super(), T(this, e, Gd, Id, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, Gd, Ed, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function qd(i) {
@@ -79457,7 +79457,7 @@ function qd(i) {
 function yd(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -79515,7 +79515,7 @@ function yd(i, e, t) {
     V
   ];
 }
-class Qd extends E {
+class Qd extends I {
   constructor(e) {
     super(), T(this, e, yd, qd, R, {
       size: 0,
@@ -79660,7 +79660,7 @@ function Xd(i) {
 function Kd(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -79715,7 +79715,7 @@ function Kd(i, e, t) {
     j
   ];
 }
-class Yd extends E {
+class Yd extends I {
   constructor(e) {
     super(), T(this, e, Kd, Xd, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -79886,7 +79886,7 @@ function Jd(i) {
 function xd(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -79944,7 +79944,7 @@ function xd(i, e, t) {
     V
   ];
 }
-class pd extends E {
+class pd extends I {
   constructor(e) {
     super(), T(this, e, xd, Jd, R, {
       size: 0,
@@ -80089,7 +80089,7 @@ function $d(i) {
 function e8(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -80144,7 +80144,7 @@ function e8(i, e, t) {
     j
   ];
 }
-class i8 extends E {
+class i8 extends I {
   constructor(e) {
     super(), T(this, e, e8, $d, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -80315,7 +80315,7 @@ function l8(i) {
 function t8(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -80373,7 +80373,7 @@ function t8(i, e, t) {
     V
   ];
 }
-class n8 extends E {
+class n8 extends I {
   constructor(e) {
     super(), T(this, e, t8, l8, R, {
       size: 0,
@@ -80518,7 +80518,7 @@ function o8(i) {
 function a8(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -80573,7 +80573,7 @@ function a8(i, e, t) {
     j
   ];
 }
-class s8 extends E {
+class s8 extends I {
   constructor(e) {
     super(), T(this, e, a8, o8, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -80744,7 +80744,7 @@ function u8(i) {
 function r8(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -80802,7 +80802,7 @@ function r8(i, e, t) {
     V
   ];
 }
-class h8 extends E {
+class h8 extends I {
   constructor(e) {
     super(), T(this, e, r8, u8, R, {
       size: 0,
@@ -80947,7 +80947,7 @@ function k8(i) {
 function c8(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -81002,7 +81002,7 @@ function c8(i, e, t) {
     j
   ];
 }
-class m8 extends E {
+class m8 extends I {
   constructor(e) {
     super(), T(this, e, c8, k8, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -81173,7 +81173,7 @@ function f8(i) {
 function d8(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -81231,7 +81231,7 @@ function d8(i, e, t) {
     V
   ];
 }
-class g8 extends E {
+class g8 extends I {
   constructor(e) {
     super(), T(this, e, d8, f8, R, {
       size: 0,
@@ -81376,7 +81376,7 @@ function v8(i) {
 function L8(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -81431,7 +81431,7 @@ function L8(i, e, t) {
     j
   ];
 }
-class b8 extends E {
+class b8 extends I {
   constructor(e) {
     super(), T(this, e, L8, v8, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -81602,7 +81602,7 @@ function w8(i) {
 function _8(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -81660,7 +81660,7 @@ function _8(i, e, t) {
     V
   ];
 }
-class z8 extends E {
+class z8 extends I {
   constructor(e) {
     super(), T(this, e, _8, w8, R, {
       size: 0,
@@ -81805,7 +81805,7 @@ function C8(i) {
 function j8(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -81860,7 +81860,7 @@ function j8(i, e, t) {
     j
   ];
 }
-class Z8 extends E {
+class Z8 extends I {
   constructor(e) {
     super(), T(this, e, j8, C8, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -82031,7 +82031,7 @@ function W8(i) {
 function M8(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -82089,7 +82089,7 @@ function M8(i, e, t) {
     V
   ];
 }
-class B8 extends E {
+class B8 extends I {
   constructor(e) {
     super(), T(this, e, M8, W8, R, {
       size: 0,
@@ -82234,7 +82234,7 @@ function H8(i) {
 function A8(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -82289,7 +82289,7 @@ function A8(i, e, t) {
     j
   ];
 }
-class V8 extends E {
+class V8 extends I {
   constructor(e) {
     super(), T(this, e, A8, H8, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -82460,7 +82460,7 @@ function S8(i) {
 function P8(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -82518,7 +82518,7 @@ function P8(i, e, t) {
     V
   ];
 }
-class O8 extends E {
+class O8 extends I {
   constructor(e) {
     super(), T(this, e, P8, S8, R, {
       size: 0,
@@ -82696,7 +82696,7 @@ function F8(i) {
 function R8(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -82754,7 +82754,7 @@ function R8(i, e, t) {
     V
   ];
 }
-class U8 extends E {
+class U8 extends I {
   constructor(e) {
     super(), T(this, e, R8, F8, R, {
       size: 0,
@@ -82899,7 +82899,7 @@ function D8(i) {
 function T8(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -82954,12 +82954,12 @@ function T8(i, e, t) {
     j
   ];
 }
-class E8 extends E {
+class I8 extends I {
   constructor(e) {
     super(), T(this, e, T8, D8, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-function I8(i) {
+function E8(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "none" },
@@ -83125,7 +83125,7 @@ function I8(i) {
 function G8(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -83183,9 +83183,9 @@ function G8(i, e, t) {
     V
   ];
 }
-class N8 extends E {
+class N8 extends I {
   constructor(e) {
-    super(), T(this, e, G8, I8, R, {
+    super(), T(this, e, G8, E8, R, {
       size: 0,
       role: 1,
       strokeLinecap: 2,
@@ -83328,7 +83328,7 @@ function q8(i) {
 function y8(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -83383,7 +83383,7 @@ function y8(i, e, t) {
     j
   ];
 }
-class Q8 extends E {
+class Q8 extends I {
   constructor(e) {
     super(), T(this, e, y8, q8, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -83554,7 +83554,7 @@ function X8(i) {
 function K8(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -83612,7 +83612,7 @@ function K8(i, e, t) {
     V
   ];
 }
-class Y8 extends E {
+class Y8 extends I {
   constructor(e) {
     super(), T(this, e, K8, X8, R, {
       size: 0,
@@ -83757,7 +83757,7 @@ function J8(i) {
 function x8(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -83812,7 +83812,7 @@ function x8(i, e, t) {
     j
   ];
 }
-class p8 extends E {
+class p8 extends I {
   constructor(e) {
     super(), T(this, e, x8, J8, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -83983,7 +83983,7 @@ function $8(i) {
 function e6(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -84041,7 +84041,7 @@ function e6(i, e, t) {
     V
   ];
 }
-class i6 extends E {
+class i6 extends I {
   constructor(e) {
     super(), T(this, e, e6, $8, R, {
       size: 0,
@@ -84186,7 +84186,7 @@ function l6(i) {
 function t6(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -84241,7 +84241,7 @@ function t6(i, e, t) {
     j
   ];
 }
-class n6 extends E {
+class n6 extends I {
   constructor(e) {
     super(), T(this, e, t6, l6, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -84412,7 +84412,7 @@ function o6(i) {
 function a6(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -84470,7 +84470,7 @@ function a6(i, e, t) {
     V
   ];
 }
-class s6 extends E {
+class s6 extends I {
   constructor(e) {
     super(), T(this, e, a6, o6, R, {
       size: 0,
@@ -84615,7 +84615,7 @@ function u6(i) {
 function r6(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -84670,7 +84670,7 @@ function r6(i, e, t) {
     j
   ];
 }
-class h6 extends E {
+class h6 extends I {
   constructor(e) {
     super(), T(this, e, r6, u6, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -84841,7 +84841,7 @@ function k6(i) {
 function c6(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -84899,7 +84899,7 @@ function c6(i, e, t) {
     V
   ];
 }
-class m6 extends E {
+class m6 extends I {
   constructor(e) {
     super(), T(this, e, c6, k6, R, {
       size: 0,
@@ -85044,7 +85044,7 @@ function f6(i) {
 function d6(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -85099,7 +85099,7 @@ function d6(i, e, t) {
     j
   ];
 }
-class g6 extends E {
+class g6 extends I {
   constructor(e) {
     super(), T(this, e, d6, f6, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -85237,7 +85237,7 @@ function v6(i) {
 function L6(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -85292,7 +85292,7 @@ function L6(i, e, t) {
     j
   ];
 }
-class b6 extends E {
+class b6 extends I {
   constructor(e) {
     super(), T(this, e, L6, v6, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -85430,7 +85430,7 @@ function w6(i) {
 function _6(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -85485,7 +85485,7 @@ function _6(i, e, t) {
     j
   ];
 }
-class z6 extends E {
+class z6 extends I {
   constructor(e) {
     super(), T(this, e, _6, w6, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -85656,7 +85656,7 @@ function C6(i) {
 function j6(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -85714,7 +85714,7 @@ function j6(i, e, t) {
     V
   ];
 }
-class Z6 extends E {
+class Z6 extends I {
   constructor(e) {
     super(), T(this, e, j6, C6, R, {
       size: 0,
@@ -85892,7 +85892,7 @@ function W6(i) {
 function M6(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -85950,7 +85950,7 @@ function M6(i, e, t) {
     V
   ];
 }
-class B6 extends E {
+class B6 extends I {
   constructor(e) {
     super(), T(this, e, M6, W6, R, {
       size: 0,
@@ -86095,7 +86095,7 @@ function H6(i) {
 function A6(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -86150,7 +86150,7 @@ function A6(i, e, t) {
     j
   ];
 }
-class V6 extends E {
+class V6 extends I {
   constructor(e) {
     super(), T(this, e, A6, H6, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -86321,7 +86321,7 @@ function S6(i) {
 function P6(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -86379,7 +86379,7 @@ function P6(i, e, t) {
     V
   ];
 }
-class O6 extends E {
+class O6 extends I {
   constructor(e) {
     super(), T(this, e, P6, S6, R, {
       size: 0,
@@ -86557,7 +86557,7 @@ function F6(i) {
 function R6(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -86615,7 +86615,7 @@ function R6(i, e, t) {
     V
   ];
 }
-class U6 extends E {
+class U6 extends I {
   constructor(e) {
     super(), T(this, e, R6, F6, R, {
       size: 0,
@@ -86793,7 +86793,7 @@ function D6(i) {
 function T6(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -86851,7 +86851,7 @@ function T6(i, e, t) {
     V
   ];
 }
-class E6 extends E {
+class I6 extends I {
   constructor(e) {
     super(), T(this, e, T6, D6, R, {
       size: 0,
@@ -86863,7 +86863,7 @@ class E6 extends E {
     });
   }
 }
-function I6(i) {
+function E6(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "currentColor" },
@@ -86996,7 +86996,7 @@ function I6(i) {
 function G6(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -87051,9 +87051,9 @@ function G6(i, e, t) {
     j
   ];
 }
-class N6 extends E {
+class N6 extends I {
   constructor(e) {
-    super(), T(this, e, G6, I6, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, G6, E6, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function q6(i) {
@@ -87211,7 +87211,7 @@ function q6(i) {
 function y6(i, e, t) {
   const r = ["size", "role", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -87268,7 +87268,7 @@ function y6(i, e, t) {
     P
   ];
 }
-class Q6 extends E {
+class Q6 extends I {
   constructor(e) {
     super(), T(this, e, y6, q6, R, {
       size: 0,
@@ -87412,7 +87412,7 @@ function X6(i) {
 function K6(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -87467,7 +87467,7 @@ function K6(i, e, t) {
     j
   ];
 }
-class Y6 extends E {
+class Y6 extends I {
   constructor(e) {
     super(), T(this, e, K6, X6, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -87638,7 +87638,7 @@ function J6(i) {
 function x6(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -87696,7 +87696,7 @@ function x6(i, e, t) {
     V
   ];
 }
-class p6 extends E {
+class p6 extends I {
   constructor(e) {
     super(), T(this, e, x6, J6, R, {
       size: 0,
@@ -87841,7 +87841,7 @@ function $6(i) {
 function eg(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -87896,7 +87896,7 @@ function eg(i, e, t) {
     j
   ];
 }
-class ig extends E {
+class ig extends I {
   constructor(e) {
     super(), T(this, e, eg, $6, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -88067,7 +88067,7 @@ function lg(i) {
 function tg(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -88125,7 +88125,7 @@ function tg(i, e, t) {
     V
   ];
 }
-class ng extends E {
+class ng extends I {
   constructor(e) {
     super(), T(this, e, tg, lg, R, {
       size: 0,
@@ -88270,7 +88270,7 @@ function og(i) {
 function ag(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -88325,7 +88325,7 @@ function ag(i, e, t) {
     j
   ];
 }
-class sg extends E {
+class sg extends I {
   constructor(e) {
     super(), T(this, e, ag, og, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -88496,7 +88496,7 @@ function ug(i) {
 function rg(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -88554,7 +88554,7 @@ function rg(i, e, t) {
     V
   ];
 }
-class hg extends E {
+class hg extends I {
   constructor(e) {
     super(), T(this, e, rg, ug, R, {
       size: 0,
@@ -88699,7 +88699,7 @@ function kg(i) {
 function cg(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -88754,7 +88754,7 @@ function cg(i, e, t) {
     j
   ];
 }
-class mg extends E {
+class mg extends I {
   constructor(e) {
     super(), T(this, e, cg, kg, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -88925,7 +88925,7 @@ function fg(i) {
 function dg(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -88983,7 +88983,7 @@ function dg(i, e, t) {
     V
   ];
 }
-class gg extends E {
+class gg extends I {
   constructor(e) {
     super(), T(this, e, dg, fg, R, {
       size: 0,
@@ -89128,7 +89128,7 @@ function vg(i) {
 function Lg(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -89183,7 +89183,7 @@ function Lg(i, e, t) {
     j
   ];
 }
-class bg extends E {
+class bg extends I {
   constructor(e) {
     super(), T(this, e, Lg, vg, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -89321,7 +89321,7 @@ function wg(i) {
 function _g(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -89376,7 +89376,7 @@ function _g(i, e, t) {
     j
   ];
 }
-class zg extends E {
+class zg extends I {
   constructor(e) {
     super(), T(this, e, _g, wg, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -89547,7 +89547,7 @@ function Cg(i) {
 function jg(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -89605,7 +89605,7 @@ function jg(i, e, t) {
     V
   ];
 }
-class Zg extends E {
+class Zg extends I {
   constructor(e) {
     super(), T(this, e, jg, Cg, R, {
       size: 0,
@@ -89750,7 +89750,7 @@ function Wg(i) {
 function Mg(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -89805,7 +89805,7 @@ function Mg(i, e, t) {
     j
   ];
 }
-class Bg extends E {
+class Bg extends I {
   constructor(e) {
     super(), T(this, e, Mg, Wg, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -89976,7 +89976,7 @@ function Hg(i) {
 function Ag(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -90034,7 +90034,7 @@ function Ag(i, e, t) {
     V
   ];
 }
-class Vg extends E {
+class Vg extends I {
   constructor(e) {
     super(), T(this, e, Ag, Hg, R, {
       size: 0,
@@ -90179,7 +90179,7 @@ function Sg(i) {
 function Pg(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -90234,7 +90234,7 @@ function Pg(i, e, t) {
     j
   ];
 }
-class Og extends E {
+class Og extends I {
   constructor(e) {
     super(), T(this, e, Pg, Sg, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -90405,7 +90405,7 @@ function Fg(i) {
 function Rg(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -90463,7 +90463,7 @@ function Rg(i, e, t) {
     V
   ];
 }
-class Ug extends E {
+class Ug extends I {
   constructor(e) {
     super(), T(this, e, Rg, Fg, R, {
       size: 0,
@@ -90608,7 +90608,7 @@ function Dg(i) {
 function Tg(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -90663,12 +90663,12 @@ function Tg(i, e, t) {
     j
   ];
 }
-class Eg extends E {
+class Ig extends I {
   constructor(e) {
     super(), T(this, e, Tg, Dg, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-function Ig(i) {
+function Eg(i) {
   let e, t, r, c, k, m, h, l = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "currentColor" },
@@ -90801,7 +90801,7 @@ function Ig(i) {
 function Gg(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -90856,9 +90856,9 @@ function Gg(i, e, t) {
     j
   ];
 }
-class Ng extends E {
+class Ng extends I {
   constructor(e) {
-    super(), T(this, e, Gg, Ig, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, Gg, Eg, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function qg(i) {
@@ -91027,7 +91027,7 @@ function qg(i) {
 function yg(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -91085,7 +91085,7 @@ function yg(i, e, t) {
     V
   ];
 }
-class Qg extends E {
+class Qg extends I {
   constructor(e) {
     super(), T(this, e, yg, qg, R, {
       size: 0,
@@ -91263,7 +91263,7 @@ function Xg(i) {
 function Kg(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -91321,7 +91321,7 @@ function Kg(i, e, t) {
     V
   ];
 }
-class Yg extends E {
+class Yg extends I {
   constructor(e) {
     super(), T(this, e, Kg, Xg, R, {
       size: 0,
@@ -91499,7 +91499,7 @@ function Jg(i) {
 function xg(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -91557,7 +91557,7 @@ function xg(i, e, t) {
     V
   ];
 }
-class pg extends E {
+class pg extends I {
   constructor(e) {
     super(), T(this, e, xg, Jg, R, {
       size: 0,
@@ -91702,7 +91702,7 @@ function $g(i) {
 function e7(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -91757,7 +91757,7 @@ function e7(i, e, t) {
     j
   ];
 }
-class i7 extends E {
+class i7 extends I {
   constructor(e) {
     super(), T(this, e, e7, $g, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -91928,7 +91928,7 @@ function l7(i) {
 function t7(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -91986,7 +91986,7 @@ function t7(i, e, t) {
     V
   ];
 }
-class n7 extends E {
+class n7 extends I {
   constructor(e) {
     super(), T(this, e, t7, l7, R, {
       size: 0,
@@ -92131,7 +92131,7 @@ function o7(i) {
 function a7(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -92186,7 +92186,7 @@ function a7(i, e, t) {
     j
   ];
 }
-class s7 extends E {
+class s7 extends I {
   constructor(e) {
     super(), T(this, e, a7, o7, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -92324,7 +92324,7 @@ function u7(i) {
 function r7(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -92379,7 +92379,7 @@ function r7(i, e, t) {
     j
   ];
 }
-class h7 extends E {
+class h7 extends I {
   constructor(e) {
     super(), T(this, e, r7, u7, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -92550,7 +92550,7 @@ function k7(i) {
 function c7(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -92608,7 +92608,7 @@ function c7(i, e, t) {
     V
   ];
 }
-class m7 extends E {
+class m7 extends I {
   constructor(e) {
     super(), T(this, e, c7, k7, R, {
       size: 0,
@@ -92753,7 +92753,7 @@ function f7(i) {
 function d7(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -92808,7 +92808,7 @@ function d7(i, e, t) {
     j
   ];
 }
-class g7 extends E {
+class g7 extends I {
   constructor(e) {
     super(), T(this, e, d7, f7, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -92979,7 +92979,7 @@ function v7(i) {
 function L7(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -93037,7 +93037,7 @@ function L7(i, e, t) {
     V
   ];
 }
-class b7 extends E {
+class b7 extends I {
   constructor(e) {
     super(), T(this, e, L7, v7, R, {
       size: 0,
@@ -93182,7 +93182,7 @@ function w7(i) {
 function _7(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -93237,7 +93237,7 @@ function _7(i, e, t) {
     j
   ];
 }
-class z7 extends E {
+class z7 extends I {
   constructor(e) {
     super(), T(this, e, _7, w7, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -93408,7 +93408,7 @@ function C7(i) {
 function j7(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -93466,7 +93466,7 @@ function j7(i, e, t) {
     V
   ];
 }
-class Z7 extends E {
+class Z7 extends I {
   constructor(e) {
     super(), T(this, e, j7, C7, R, {
       size: 0,
@@ -93644,7 +93644,7 @@ function W7(i) {
 function M7(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -93702,7 +93702,7 @@ function M7(i, e, t) {
     V
   ];
 }
-class B7 extends E {
+class B7 extends I {
   constructor(e) {
     super(), T(this, e, M7, W7, R, {
       size: 0,
@@ -93847,7 +93847,7 @@ function H7(i) {
 function A7(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -93902,7 +93902,7 @@ function A7(i, e, t) {
     j
   ];
 }
-class V7 extends E {
+class V7 extends I {
   constructor(e) {
     super(), T(this, e, A7, H7, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -94073,7 +94073,7 @@ function S7(i) {
 function P7(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -94131,7 +94131,7 @@ function P7(i, e, t) {
     V
   ];
 }
-class O7 extends E {
+class O7 extends I {
   constructor(e) {
     super(), T(this, e, P7, S7, R, {
       size: 0,
@@ -94276,7 +94276,7 @@ function F7(i) {
 function R7(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -94331,7 +94331,7 @@ function R7(i, e, t) {
     j
   ];
 }
-class U7 extends E {
+class U7 extends I {
   constructor(e) {
     super(), T(this, e, R7, F7, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -94469,7 +94469,7 @@ function D7(i) {
 function T7(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -94524,12 +94524,12 @@ function T7(i, e, t) {
     j
   ];
 }
-class E7 extends E {
+class I7 extends I {
   constructor(e) {
     super(), T(this, e, T7, D7, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-function I7(i) {
+function E7(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "none" },
@@ -94695,7 +94695,7 @@ function I7(i) {
 function G7(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -94753,9 +94753,9 @@ function G7(i, e, t) {
     V
   ];
 }
-class N7 extends E {
+class N7 extends I {
   constructor(e) {
-    super(), T(this, e, G7, I7, R, {
+    super(), T(this, e, G7, E7, R, {
       size: 0,
       role: 1,
       strokeLinecap: 2,
@@ -94898,7 +94898,7 @@ function q7(i) {
 function y7(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -94953,7 +94953,7 @@ function y7(i, e, t) {
     j
   ];
 }
-class Q7 extends E {
+class Q7 extends I {
   constructor(e) {
     super(), T(this, e, y7, q7, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -95124,7 +95124,7 @@ function X7(i) {
 function K7(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -95182,7 +95182,7 @@ function K7(i, e, t) {
     V
   ];
 }
-class Y7 extends E {
+class Y7 extends I {
   constructor(e) {
     super(), T(this, e, K7, X7, R, {
       size: 0,
@@ -95360,7 +95360,7 @@ function J7(i) {
 function x7(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -95418,7 +95418,7 @@ function x7(i, e, t) {
     V
   ];
 }
-class p7 extends E {
+class p7 extends I {
   constructor(e) {
     super(), T(this, e, x7, J7, R, {
       size: 0,
@@ -95563,7 +95563,7 @@ function $7(i) {
 function ev(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -95618,7 +95618,7 @@ function ev(i, e, t) {
     j
   ];
 }
-class iv extends E {
+class iv extends I {
   constructor(e) {
     super(), T(this, e, ev, $7, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -95789,7 +95789,7 @@ function lv(i) {
 function tv(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -95847,7 +95847,7 @@ function tv(i, e, t) {
     V
   ];
 }
-class nv extends E {
+class nv extends I {
   constructor(e) {
     super(), T(this, e, tv, lv, R, {
       size: 0,
@@ -95992,7 +95992,7 @@ function ov(i) {
 function av(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -96047,7 +96047,7 @@ function av(i, e, t) {
     j
   ];
 }
-class sv extends E {
+class sv extends I {
   constructor(e) {
     super(), T(this, e, av, ov, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -96185,7 +96185,7 @@ function uv(i) {
 function rv(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -96240,7 +96240,7 @@ function rv(i, e, t) {
     j
   ];
 }
-class hv extends E {
+class hv extends I {
   constructor(e) {
     super(), T(this, e, rv, uv, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -96411,7 +96411,7 @@ function kv(i) {
 function cv(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -96469,7 +96469,7 @@ function cv(i, e, t) {
     V
   ];
 }
-class mv extends E {
+class mv extends I {
   constructor(e) {
     super(), T(this, e, cv, kv, R, {
       size: 0,
@@ -96647,7 +96647,7 @@ function fv(i) {
 function dv(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -96705,7 +96705,7 @@ function dv(i, e, t) {
     V
   ];
 }
-class gv extends E {
+class gv extends I {
   constructor(e) {
     super(), T(this, e, dv, fv, R, {
       size: 0,
@@ -96850,7 +96850,7 @@ function vv(i) {
 function Lv(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -96905,7 +96905,7 @@ function Lv(i, e, t) {
     j
   ];
 }
-class bv extends E {
+class bv extends I {
   constructor(e) {
     super(), T(this, e, Lv, vv, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -97076,7 +97076,7 @@ function wv(i) {
 function _v(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -97134,7 +97134,7 @@ function _v(i, e, t) {
     V
   ];
 }
-class zv extends E {
+class zv extends I {
   constructor(e) {
     super(), T(this, e, _v, wv, R, {
       size: 0,
@@ -97279,7 +97279,7 @@ function Cv(i) {
 function jv(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -97334,7 +97334,7 @@ function jv(i, e, t) {
     j
   ];
 }
-class Zv extends E {
+class Zv extends I {
   constructor(e) {
     super(), T(this, e, jv, Cv, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -97505,7 +97505,7 @@ function Wv(i) {
 function Mv(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -97563,7 +97563,7 @@ function Mv(i, e, t) {
     V
   ];
 }
-class Bv extends E {
+class Bv extends I {
   constructor(e) {
     super(), T(this, e, Mv, Wv, R, {
       size: 0,
@@ -97708,7 +97708,7 @@ function Hv(i) {
 function Av(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -97763,7 +97763,7 @@ function Av(i, e, t) {
     j
   ];
 }
-class Vv extends E {
+class Vv extends I {
   constructor(e) {
     super(), T(this, e, Av, Hv, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -97934,7 +97934,7 @@ function Sv(i) {
 function Pv(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -97992,7 +97992,7 @@ function Pv(i, e, t) {
     V
   ];
 }
-class Ov extends E {
+class Ov extends I {
   constructor(e) {
     super(), T(this, e, Pv, Sv, R, {
       size: 0,
@@ -98137,7 +98137,7 @@ function Fv(i) {
 function Rv(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -98192,7 +98192,7 @@ function Rv(i, e, t) {
     j
   ];
 }
-class Uv extends E {
+class Uv extends I {
   constructor(e) {
     super(), T(this, e, Rv, Fv, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -98363,7 +98363,7 @@ function Dv(i) {
 function Tv(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -98421,7 +98421,7 @@ function Tv(i, e, t) {
     V
   ];
 }
-class Ev extends E {
+class Iv extends I {
   constructor(e) {
     super(), T(this, e, Tv, Dv, R, {
       size: 0,
@@ -98433,7 +98433,7 @@ class Ev extends E {
     });
   }
 }
-function Iv(i) {
+function Ev(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "currentColor" },
@@ -98566,7 +98566,7 @@ function Iv(i) {
 function Gv(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -98621,9 +98621,9 @@ function Gv(i, e, t) {
     j
   ];
 }
-class Nv extends E {
+class Nv extends I {
   constructor(e) {
-    super(), T(this, e, Gv, Iv, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, Gv, Ev, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function qv(i) {
@@ -98792,7 +98792,7 @@ function qv(i) {
 function yv(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -98850,7 +98850,7 @@ function yv(i, e, t) {
     V
   ];
 }
-class Qv extends E {
+class Qv extends I {
   constructor(e) {
     super(), T(this, e, yv, qv, R, {
       size: 0,
@@ -98995,7 +98995,7 @@ function Xv(i) {
 function Kv(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -99050,7 +99050,7 @@ function Kv(i, e, t) {
     j
   ];
 }
-class Yv extends E {
+class Yv extends I {
   constructor(e) {
     super(), T(this, e, Kv, Xv, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -99221,7 +99221,7 @@ function Jv(i) {
 function xv(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -99279,7 +99279,7 @@ function xv(i, e, t) {
     V
   ];
 }
-class pv extends E {
+class pv extends I {
   constructor(e) {
     super(), T(this, e, xv, Jv, R, {
       size: 0,
@@ -99424,7 +99424,7 @@ function $v(i) {
 function e9(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -99479,7 +99479,7 @@ function e9(i, e, t) {
     j
   ];
 }
-class i9 extends E {
+class i9 extends I {
   constructor(e) {
     super(), T(this, e, e9, $v, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -99617,7 +99617,7 @@ function l9(i) {
 function t9(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -99672,7 +99672,7 @@ function t9(i, e, t) {
     j
   ];
 }
-class n9 extends E {
+class n9 extends I {
   constructor(e) {
     super(), T(this, e, t9, l9, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -99843,7 +99843,7 @@ function o9(i) {
 function a9(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -99901,7 +99901,7 @@ function a9(i, e, t) {
     V
   ];
 }
-class s9 extends E {
+class s9 extends I {
   constructor(e) {
     super(), T(this, e, a9, o9, R, {
       size: 0,
@@ -100046,7 +100046,7 @@ function u9(i) {
 function r9(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -100101,7 +100101,7 @@ function r9(i, e, t) {
     j
   ];
 }
-class h9 extends E {
+class h9 extends I {
   constructor(e) {
     super(), T(this, e, r9, u9, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -100239,7 +100239,7 @@ function k9(i) {
 function c9(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -100294,7 +100294,7 @@ function c9(i, e, t) {
     j
   ];
 }
-class m9 extends E {
+class m9 extends I {
   constructor(e) {
     super(), T(this, e, c9, k9, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -100465,7 +100465,7 @@ function f9(i) {
 function d9(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -100523,7 +100523,7 @@ function d9(i, e, t) {
     V
   ];
 }
-class g9 extends E {
+class g9 extends I {
   constructor(e) {
     super(), T(this, e, d9, f9, R, {
       size: 0,
@@ -100668,7 +100668,7 @@ function v9(i) {
 function L9(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -100723,7 +100723,7 @@ function L9(i, e, t) {
     j
   ];
 }
-class b9 extends E {
+class b9 extends I {
   constructor(e) {
     super(), T(this, e, L9, v9, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -100883,7 +100883,7 @@ function w9(i) {
 function _9(i, e, t) {
   const r = ["size", "role", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -100940,7 +100940,7 @@ function _9(i, e, t) {
     P
   ];
 }
-class z9 extends E {
+class z9 extends I {
   constructor(e) {
     super(), T(this, e, _9, w9, R, {
       size: 0,
@@ -101084,7 +101084,7 @@ function C9(i) {
 function j9(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -101139,7 +101139,7 @@ function j9(i, e, t) {
     j
   ];
 }
-class Z9 extends E {
+class Z9 extends I {
   constructor(e) {
     super(), T(this, e, j9, C9, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -101310,7 +101310,7 @@ function W9(i) {
 function M9(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -101368,7 +101368,7 @@ function M9(i, e, t) {
     V
   ];
 }
-class B9 extends E {
+class B9 extends I {
   constructor(e) {
     super(), T(this, e, M9, W9, R, {
       size: 0,
@@ -101513,7 +101513,7 @@ function H9(i) {
 function A9(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -101568,7 +101568,7 @@ function A9(i, e, t) {
     j
   ];
 }
-class V9 extends E {
+class V9 extends I {
   constructor(e) {
     super(), T(this, e, A9, H9, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -101706,7 +101706,7 @@ function S9(i) {
 function P9(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -101761,7 +101761,7 @@ function P9(i, e, t) {
     j
   ];
 }
-class O9 extends E {
+class O9 extends I {
   constructor(e) {
     super(), T(this, e, P9, S9, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -101899,7 +101899,7 @@ function F9(i) {
 function R9(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -101954,7 +101954,7 @@ function R9(i, e, t) {
     j
   ];
 }
-class U9 extends E {
+class U9 extends I {
   constructor(e) {
     super(), T(this, e, R9, F9, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -102125,7 +102125,7 @@ function D9(i) {
 function T9(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -102183,7 +102183,7 @@ function T9(i, e, t) {
     V
   ];
 }
-class E9 extends E {
+class I9 extends I {
   constructor(e) {
     super(), T(this, e, T9, D9, R, {
       size: 0,
@@ -102195,7 +102195,7 @@ class E9 extends E {
     });
   }
 }
-function I9(i) {
+function E9(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "currentColor" },
@@ -102328,7 +102328,7 @@ function I9(i) {
 function G9(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -102383,9 +102383,9 @@ function G9(i, e, t) {
     j
   ];
 }
-class N9 extends E {
+class N9 extends I {
   constructor(e) {
-    super(), T(this, e, G9, I9, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, G9, E9, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function q9(i) {
@@ -102554,7 +102554,7 @@ function q9(i) {
 function y9(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -102612,7 +102612,7 @@ function y9(i, e, t) {
     V
   ];
 }
-class Q9 extends E {
+class Q9 extends I {
   constructor(e) {
     super(), T(this, e, y9, q9, R, {
       size: 0,
@@ -102757,7 +102757,7 @@ function X9(i) {
 function K9(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -102812,7 +102812,7 @@ function K9(i, e, t) {
     j
   ];
 }
-class Y9 extends E {
+class Y9 extends I {
   constructor(e) {
     super(), T(this, e, K9, X9, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -102972,7 +102972,7 @@ function J9(i) {
 function x9(i, e, t) {
   const r = ["size", "role", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -103029,7 +103029,7 @@ function x9(i, e, t) {
     P
   ];
 }
-class p9 extends E {
+class p9 extends I {
   constructor(e) {
     super(), T(this, e, x9, J9, R, {
       size: 0,
@@ -103173,7 +103173,7 @@ function $9(i) {
 function eL(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -103228,7 +103228,7 @@ function eL(i, e, t) {
     j
   ];
 }
-class iL extends E {
+class iL extends I {
   constructor(e) {
     super(), T(this, e, eL, $9, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -103366,7 +103366,7 @@ function lL(i) {
 function tL(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -103421,7 +103421,7 @@ function tL(i, e, t) {
     j
   ];
 }
-class nL extends E {
+class nL extends I {
   constructor(e) {
     super(), T(this, e, tL, lL, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -103559,7 +103559,7 @@ function oL(i) {
 function aL(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -103614,7 +103614,7 @@ function aL(i, e, t) {
     j
   ];
 }
-class sL extends E {
+class sL extends I {
   constructor(e) {
     super(), T(this, e, aL, oL, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -103785,7 +103785,7 @@ function uL(i) {
 function rL(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -103843,7 +103843,7 @@ function rL(i, e, t) {
     V
   ];
 }
-class hL extends E {
+class hL extends I {
   constructor(e) {
     super(), T(this, e, rL, uL, R, {
       size: 0,
@@ -103988,7 +103988,7 @@ function kL(i) {
 function cL(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -104043,7 +104043,7 @@ function cL(i, e, t) {
     j
   ];
 }
-class mL extends E {
+class mL extends I {
   constructor(e) {
     super(), T(this, e, cL, kL, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -104214,7 +104214,7 @@ function fL(i) {
 function dL(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -104272,7 +104272,7 @@ function dL(i, e, t) {
     V
   ];
 }
-class gL extends E {
+class gL extends I {
   constructor(e) {
     super(), T(this, e, dL, fL, R, {
       size: 0,
@@ -104417,7 +104417,7 @@ function vL(i) {
 function LL(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -104472,7 +104472,7 @@ function LL(i, e, t) {
     j
   ];
 }
-class bL extends E {
+class bL extends I {
   constructor(e) {
     super(), T(this, e, LL, vL, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -104610,7 +104610,7 @@ function wL(i) {
 function _L(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -104665,7 +104665,7 @@ function _L(i, e, t) {
     j
   ];
 }
-class zL extends E {
+class zL extends I {
   constructor(e) {
     super(), T(this, e, _L, wL, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -104836,7 +104836,7 @@ function CL(i) {
 function jL(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -104894,7 +104894,7 @@ function jL(i, e, t) {
     V
   ];
 }
-class ZL extends E {
+class ZL extends I {
   constructor(e) {
     super(), T(this, e, jL, CL, R, {
       size: 0,
@@ -105039,7 +105039,7 @@ function WL(i) {
 function ML(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -105094,7 +105094,7 @@ function ML(i, e, t) {
     j
   ];
 }
-class BL extends E {
+class BL extends I {
   constructor(e) {
     super(), T(this, e, ML, WL, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -105232,7 +105232,7 @@ function HL(i) {
 function AL(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -105287,7 +105287,7 @@ function AL(i, e, t) {
     j
   ];
 }
-class VL extends E {
+class VL extends I {
   constructor(e) {
     super(), T(this, e, AL, HL, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -105458,7 +105458,7 @@ function SL(i) {
 function PL(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -105516,7 +105516,7 @@ function PL(i, e, t) {
     V
   ];
 }
-class OL extends E {
+class OL extends I {
   constructor(e) {
     super(), T(this, e, PL, SL, R, {
       size: 0,
@@ -105694,7 +105694,7 @@ function FL(i) {
 function RL(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -105752,7 +105752,7 @@ function RL(i, e, t) {
     V
   ];
 }
-class UL extends E {
+class UL extends I {
   constructor(e) {
     super(), T(this, e, RL, FL, R, {
       size: 0,
@@ -105930,7 +105930,7 @@ function DL(i) {
 function TL(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -105988,7 +105988,7 @@ function TL(i, e, t) {
     V
   ];
 }
-class EL extends E {
+class IL extends I {
   constructor(e) {
     super(), T(this, e, TL, DL, R, {
       size: 0,
@@ -106000,7 +106000,7 @@ class EL extends E {
     });
   }
 }
-function IL(i) {
+function EL(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "currentColor" },
@@ -106133,7 +106133,7 @@ function IL(i) {
 function GL(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -106188,9 +106188,9 @@ function GL(i, e, t) {
     j
   ];
 }
-class NL extends E {
+class NL extends I {
   constructor(e) {
-    super(), T(this, e, GL, IL, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, GL, EL, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function qL(i) {
@@ -106359,7 +106359,7 @@ function qL(i) {
 function yL(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -106417,7 +106417,7 @@ function yL(i, e, t) {
     V
   ];
 }
-class QL extends E {
+class QL extends I {
   constructor(e) {
     super(), T(this, e, yL, qL, R, {
       size: 0,
@@ -106562,7 +106562,7 @@ function XL(i) {
 function KL(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -106617,7 +106617,7 @@ function KL(i, e, t) {
     j
   ];
 }
-class YL extends E {
+class YL extends I {
   constructor(e) {
     super(), T(this, e, KL, XL, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -106788,7 +106788,7 @@ function JL(i) {
 function xL(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -106846,7 +106846,7 @@ function xL(i, e, t) {
     V
   ];
 }
-class pL extends E {
+class pL extends I {
   constructor(e) {
     super(), T(this, e, xL, JL, R, {
       size: 0,
@@ -106991,7 +106991,7 @@ function $L(i) {
 function eb(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -107046,7 +107046,7 @@ function eb(i, e, t) {
     j
   ];
 }
-class ib extends E {
+class ib extends I {
   constructor(e) {
     super(), T(this, e, eb, $L, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -107217,7 +107217,7 @@ function lb(i) {
 function tb(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -107275,7 +107275,7 @@ function tb(i, e, t) {
     V
   ];
 }
-class nb extends E {
+class nb extends I {
   constructor(e) {
     super(), T(this, e, tb, lb, R, {
       size: 0,
@@ -107420,7 +107420,7 @@ function ob(i) {
 function ab(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -107475,7 +107475,7 @@ function ab(i, e, t) {
     j
   ];
 }
-class sb extends E {
+class sb extends I {
   constructor(e) {
     super(), T(this, e, ab, ob, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -107646,7 +107646,7 @@ function ub(i) {
 function rb(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -107704,7 +107704,7 @@ function rb(i, e, t) {
     V
   ];
 }
-class hb extends E {
+class hb extends I {
   constructor(e) {
     super(), T(this, e, rb, ub, R, {
       size: 0,
@@ -107849,7 +107849,7 @@ function kb(i) {
 function cb(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -107904,7 +107904,7 @@ function cb(i, e, t) {
     j
   ];
 }
-class mb extends E {
+class mb extends I {
   constructor(e) {
     super(), T(this, e, cb, kb, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -108042,7 +108042,7 @@ function fb(i) {
 function db(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -108097,7 +108097,7 @@ function db(i, e, t) {
     j
   ];
 }
-class gb extends E {
+class gb extends I {
   constructor(e) {
     super(), T(this, e, db, fb, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -108235,7 +108235,7 @@ function vb(i) {
 function Lb(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -108290,7 +108290,7 @@ function Lb(i, e, t) {
     j
   ];
 }
-class bb extends E {
+class bb extends I {
   constructor(e) {
     super(), T(this, e, Lb, vb, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -108461,7 +108461,7 @@ function wb(i) {
 function _b(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -108519,7 +108519,7 @@ function _b(i, e, t) {
     V
   ];
 }
-class zb extends E {
+class zb extends I {
   constructor(e) {
     super(), T(this, e, _b, wb, R, {
       size: 0,
@@ -108697,7 +108697,7 @@ function Cb(i) {
 function jb(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -108755,7 +108755,7 @@ function jb(i, e, t) {
     V
   ];
 }
-class Zb extends E {
+class Zb extends I {
   constructor(e) {
     super(), T(this, e, jb, Cb, R, {
       size: 0,
@@ -108900,7 +108900,7 @@ function Wb(i) {
 function Mb(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -108955,7 +108955,7 @@ function Mb(i, e, t) {
     j
   ];
 }
-class Bb extends E {
+class Bb extends I {
   constructor(e) {
     super(), T(this, e, Mb, Wb, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -109126,7 +109126,7 @@ function Hb(i) {
 function Ab(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -109184,7 +109184,7 @@ function Ab(i, e, t) {
     V
   ];
 }
-class Vb extends E {
+class Vb extends I {
   constructor(e) {
     super(), T(this, e, Ab, Hb, R, {
       size: 0,
@@ -109362,7 +109362,7 @@ function Sb(i) {
 function Pb(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -109420,7 +109420,7 @@ function Pb(i, e, t) {
     V
   ];
 }
-class Ob extends E {
+class Ob extends I {
   constructor(e) {
     super(), T(this, e, Pb, Sb, R, {
       size: 0,
@@ -109565,7 +109565,7 @@ function Fb(i) {
 function Rb(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -109620,7 +109620,7 @@ function Rb(i, e, t) {
     j
   ];
 }
-class Ub extends E {
+class Ub extends I {
   constructor(e) {
     super(), T(this, e, Rb, Fb, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -109791,7 +109791,7 @@ function Db(i) {
 function Tb(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -109849,7 +109849,7 @@ function Tb(i, e, t) {
     V
   ];
 }
-class Eb extends E {
+class Ib extends I {
   constructor(e) {
     super(), T(this, e, Tb, Db, R, {
       size: 0,
@@ -109861,7 +109861,7 @@ class Eb extends E {
     });
   }
 }
-function Ib(i) {
+function Eb(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "currentColor" },
@@ -109994,7 +109994,7 @@ function Ib(i) {
 function Gb(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -110049,9 +110049,9 @@ function Gb(i, e, t) {
     j
   ];
 }
-class Nb extends E {
+class Nb extends I {
   constructor(e) {
-    super(), T(this, e, Gb, Ib, R, { size: 0, role: 1, ariaLabel: 2 });
+    super(), T(this, e, Gb, Eb, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
 function qb(i) {
@@ -110187,7 +110187,7 @@ function qb(i) {
 function yb(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -110242,7 +110242,7 @@ function yb(i, e, t) {
     j
   ];
 }
-class Qb extends E {
+class Qb extends I {
   constructor(e) {
     super(), T(this, e, yb, qb, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -110413,7 +110413,7 @@ function Xb(i) {
 function Kb(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -110471,7 +110471,7 @@ function Kb(i, e, t) {
     V
   ];
 }
-class Yb extends E {
+class Yb extends I {
   constructor(e) {
     super(), T(this, e, Kb, Xb, R, {
       size: 0,
@@ -110616,7 +110616,7 @@ function Jb(i) {
 function xb(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -110671,7 +110671,7 @@ function xb(i, e, t) {
     j
   ];
 }
-class pb extends E {
+class pb extends I {
   constructor(e) {
     super(), T(this, e, xb, Jb, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -110842,7 +110842,7 @@ function $b(i) {
 function ew(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -110900,7 +110900,7 @@ function ew(i, e, t) {
     V
   ];
 }
-class iw extends E {
+class iw extends I {
   constructor(e) {
     super(), T(this, e, ew, $b, R, {
       size: 0,
@@ -111045,7 +111045,7 @@ function lw(i) {
 function tw(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -111100,7 +111100,7 @@ function tw(i, e, t) {
     j
   ];
 }
-class nw extends E {
+class nw extends I {
   constructor(e) {
     super(), T(this, e, tw, lw, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -111271,7 +111271,7 @@ function ow(i) {
 function aw(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -111329,7 +111329,7 @@ function aw(i, e, t) {
     V
   ];
 }
-class sw extends E {
+class sw extends I {
   constructor(e) {
     super(), T(this, e, aw, ow, R, {
       size: 0,
@@ -111474,7 +111474,7 @@ function uw(i) {
 function rw(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -111529,7 +111529,7 @@ function rw(i, e, t) {
     j
   ];
 }
-class hw extends E {
+class hw extends I {
   constructor(e) {
     super(), T(this, e, rw, uw, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -111667,7 +111667,7 @@ function kw(i) {
 function cw(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -111722,7 +111722,7 @@ function cw(i, e, t) {
     j
   ];
 }
-class mw extends E {
+class mw extends I {
   constructor(e) {
     super(), T(this, e, cw, kw, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -111860,7 +111860,7 @@ function fw(i) {
 function dw(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -111915,7 +111915,7 @@ function dw(i, e, t) {
     j
   ];
 }
-class gw extends E {
+class gw extends I {
   constructor(e) {
     super(), T(this, e, dw, fw, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -112053,7 +112053,7 @@ function vw(i) {
 function Lw(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -112108,7 +112108,7 @@ function Lw(i, e, t) {
     j
   ];
 }
-class bw extends E {
+class bw extends I {
   constructor(e) {
     super(), T(this, e, Lw, vw, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -112279,7 +112279,7 @@ function ww(i) {
 function _w(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -112337,7 +112337,7 @@ function _w(i, e, t) {
     V
   ];
 }
-class zw extends E {
+class zw extends I {
   constructor(e) {
     super(), T(this, e, _w, ww, R, {
       size: 0,
@@ -112515,7 +112515,7 @@ function Cw(i) {
 function jw(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -112573,7 +112573,7 @@ function jw(i, e, t) {
     V
   ];
 }
-class Zw extends E {
+class Zw extends I {
   constructor(e) {
     super(), T(this, e, jw, Cw, R, {
       size: 0,
@@ -112718,7 +112718,7 @@ function Ww(i) {
 function Mw(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -112773,7 +112773,7 @@ function Mw(i, e, t) {
     j
   ];
 }
-class Bw extends E {
+class Bw extends I {
   constructor(e) {
     super(), T(this, e, Mw, Ww, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -112944,7 +112944,7 @@ function Hw(i) {
 function Aw(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -113002,7 +113002,7 @@ function Aw(i, e, t) {
     V
   ];
 }
-class Vw extends E {
+class Vw extends I {
   constructor(e) {
     super(), T(this, e, Aw, Hw, R, {
       size: 0,
@@ -113147,7 +113147,7 @@ function Sw(i) {
 function Pw(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -113202,7 +113202,7 @@ function Pw(i, e, t) {
     j
   ];
 }
-class Ow extends E {
+class Ow extends I {
   constructor(e) {
     super(), T(this, e, Pw, Sw, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -113373,7 +113373,7 @@ function Fw(i) {
 function Rw(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -113431,7 +113431,7 @@ function Rw(i, e, t) {
     V
   ];
 }
-class Uw extends E {
+class Uw extends I {
   constructor(e) {
     super(), T(this, e, Rw, Fw, R, {
       size: 0,
@@ -113576,7 +113576,7 @@ function Dw(i) {
 function Tw(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -113631,12 +113631,12 @@ function Tw(i, e, t) {
     j
   ];
 }
-class Ew extends E {
+class Iw extends I {
   constructor(e) {
     super(), T(this, e, Tw, Dw, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-function Iw(i) {
+function Ew(i) {
   let e, t, r, c, k, m = [
     { xmlns: "http://www.w3.org/2000/svg" },
     { fill: "none" },
@@ -113802,7 +113802,7 @@ function Iw(i) {
 function Gw(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -113860,9 +113860,9 @@ function Gw(i, e, t) {
     V
   ];
 }
-class Nw extends E {
+class Nw extends I {
   constructor(e) {
-    super(), T(this, e, Gw, Iw, R, {
+    super(), T(this, e, Gw, Ew, R, {
       size: 0,
       role: 1,
       strokeLinecap: 2,
@@ -114005,7 +114005,7 @@ function qw(i) {
 function yw(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -114060,7 +114060,7 @@ function yw(i, e, t) {
     j
   ];
 }
-class Qw extends E {
+class Qw extends I {
   constructor(e) {
     super(), T(this, e, yw, qw, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -114198,7 +114198,7 @@ function Xw(i) {
 function Kw(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -114253,7 +114253,7 @@ function Kw(i, e, t) {
     j
   ];
 }
-class Yw extends E {
+class Yw extends I {
   constructor(e) {
     super(), T(this, e, Kw, Xw, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -114424,7 +114424,7 @@ function Jw(i) {
 function xw(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -114482,7 +114482,7 @@ function xw(i, e, t) {
     V
   ];
 }
-class pw extends E {
+class pw extends I {
   constructor(e) {
     super(), T(this, e, xw, Jw, R, {
       size: 0,
@@ -114627,7 +114627,7 @@ function $w(i) {
 function e_(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -114682,7 +114682,7 @@ function e_(i, e, t) {
     j
   ];
 }
-class i_ extends E {
+class i_ extends I {
   constructor(e) {
     super(), T(this, e, e_, $w, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -114853,7 +114853,7 @@ function l_(i) {
 function t_(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -114911,7 +114911,7 @@ function t_(i, e, t) {
     V
   ];
 }
-class n_ extends E {
+class n_ extends I {
   constructor(e) {
     super(), T(this, e, t_, l_, R, {
       size: 0,
@@ -115056,7 +115056,7 @@ function o_(i) {
 function a_(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -115111,7 +115111,7 @@ function a_(i, e, t) {
     j
   ];
 }
-class s_ extends E {
+class s_ extends I {
   constructor(e) {
     super(), T(this, e, a_, o_, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -115271,7 +115271,7 @@ function u_(i) {
 function r_(i, e, t) {
   const r = ["size", "role", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -115328,7 +115328,7 @@ function r_(i, e, t) {
     P
   ];
 }
-class h_ extends E {
+class h_ extends I {
   constructor(e) {
     super(), T(this, e, r_, u_, R, {
       size: 0,
@@ -115505,7 +115505,7 @@ function k_(i) {
 function c_(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -115563,7 +115563,7 @@ function c_(i, e, t) {
     V
   ];
 }
-class m_ extends E {
+class m_ extends I {
   constructor(e) {
     super(), T(this, e, c_, k_, R, {
       size: 0,
@@ -115708,7 +115708,7 @@ function f_(i) {
 function d_(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -115763,7 +115763,7 @@ function d_(i, e, t) {
     j
   ];
 }
-class g_ extends E {
+class g_ extends I {
   constructor(e) {
     super(), T(this, e, d_, f_, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -115934,7 +115934,7 @@ function v_(i) {
 function L_(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -115992,7 +115992,7 @@ function L_(i, e, t) {
     V
   ];
 }
-class b_ extends E {
+class b_ extends I {
   constructor(e) {
     super(), T(this, e, L_, v_, R, {
       size: 0,
@@ -116137,7 +116137,7 @@ function w_(i) {
 function __(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -116192,7 +116192,7 @@ function __(i, e, t) {
     j
   ];
 }
-class z_ extends E {
+class z_ extends I {
   constructor(e) {
     super(), T(this, e, __, w_, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -116330,7 +116330,7 @@ function C_(i) {
 function j_(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -116385,7 +116385,7 @@ function j_(i, e, t) {
     j
   ];
 }
-class Z_ extends E {
+class Z_ extends I {
   constructor(e) {
     super(), T(this, e, j_, C_, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -116556,7 +116556,7 @@ function W_(i) {
 function M_(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -116614,7 +116614,7 @@ function M_(i, e, t) {
     V
   ];
 }
-class B_ extends E {
+class B_ extends I {
   constructor(e) {
     super(), T(this, e, M_, W_, R, {
       size: 0,
@@ -116759,7 +116759,7 @@ function H_(i) {
 function A_(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -116814,7 +116814,7 @@ function A_(i, e, t) {
     j
   ];
 }
-class V_ extends E {
+class V_ extends I {
   constructor(e) {
     super(), T(this, e, A_, H_, R, { size: 0, role: 1, ariaLabel: 2 });
   }
@@ -116985,7 +116985,7 @@ function S_(i) {
 function P_(i, e, t) {
   const r = ["size", "role", "strokeLinecap", "strokeLinejoin", "strokeWidth", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -117043,7 +117043,7 @@ function P_(i, e, t) {
     V
   ];
 }
-class O_ extends E {
+class O_ extends I {
   constructor(e) {
     super(), T(this, e, P_, S_, R, {
       size: 0,
@@ -117188,7 +117188,7 @@ function F_(i) {
 function R_(i, e, t) {
   const r = ["size", "role", "ariaLabel"];
   let c = M(e, r);
-  const k = I("iconCtx") ?? {}, m = {
+  const k = E("iconCtx") ?? {}, m = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-4 uikit-h-4",
     md: "uikit-w-5 uikit-h-5",
@@ -117243,13 +117243,13 @@ function R_(i, e, t) {
     j
   ];
 }
-class U_ extends E {
+class U_ extends I {
   constructor(e) {
     super(), T(this, e, R_, F_, R, { size: 0, role: 1, ariaLabel: 2 });
   }
 }
-const Ee = {
-  AddressCardSolid: Ei,
+const Me = {
+  AddressCardSolid: Ii,
   AdjustmentsHorizontalOutline: Ni,
   AdjustmentsHorizontalSolid: Qi,
   AdjustmentsVerticalOutline: Yi,
@@ -117267,7 +117267,7 @@ const Ee = {
   AngleUpSolidfrom: Vl,
   AnnotationOutline: Ol,
   AnnotationSolid: Ul,
-  AppleSolid: El,
+  AppleSolid: Il,
   ArchiveDownloadOutline: Nl,
   ArchiveDownloadSolid: Ql,
   ArchiveOutline: Yl,
@@ -117285,7 +117285,7 @@ const Ee = {
   ArrowRightFromBracketSolid: Vt,
   ArrowRightOutline: Ot,
   ArrowRightSolid: Ut,
-  ArrowRightToBracketOutline: Et,
+  ArrowRightToBracketOutline: It,
   ArrowRightToBracketSolid: Nt,
   ArrowSortLettersOutline: Qt,
   ArrowSortLettersSolid: Yt,
@@ -117303,7 +117303,7 @@ const Ee = {
   ArrowsRepeatOutline: Sn,
   ArrowsRepeatSolid: Fn,
   AtomOutline: Dn,
-  AtomSolid: In,
+  AtomSolid: En,
   BackwardStepOutline: qn,
   BackwardStepSolid: Xn,
   BadgeCheckOutline: Jn,
@@ -117590,7 +117590,7 @@ const Ee = {
   KeyboardOutline: Vf,
   KeyboardSolid: Of,
   LabelOutline: Uf,
-  LabelSolid: Ef,
+  LabelSolid: If,
   LandmarkOutline: Nf,
   LandmarkSolid: Qf,
   LayersOutline: Yf,
@@ -117608,7 +117608,7 @@ const Ee = {
   ListMusicOutline: Vd,
   ListMusicSolid: Od,
   ListOrdoredSolid: Ud,
-  ListOutline: Ed,
+  ListOutline: Id,
   ListSolid: Nd,
   LockOpenOutline: Qd,
   LockOpenSolid: Yd,
@@ -117626,7 +117626,7 @@ const Ee = {
   MessageCaptionSolid: V8,
   MessageDotsOutline: O8,
   MessagesOutline: U8,
-  MessagesSolid: E8,
+  MessagesSolid: I8,
   MicrophoneOutline: N8,
   MicrophoneSolid: Q8,
   MinimizeOutline: Y8,
@@ -117644,7 +117644,7 @@ const Ee = {
   OpenBookSolid: V6,
   OrdoredListOutline: O6,
   OutdentOutline: U6,
-  PaletteOutline: E6,
+  PaletteOutline: I6,
   PalleteSolid: N6,
   PaperClipOutline: Q6,
   PapperClipSolid: Y6,
@@ -117662,7 +117662,7 @@ const Ee = {
   PlayOutline: Vg,
   PlaySolid: Og,
   PlusOutline: Ug,
-  PlusSolid: Eg,
+  PlusSolid: Ig,
   PrintSolid: Ng,
   PrinterOutline: Qg,
   ProfileCardOutline: Yg,
@@ -117680,7 +117680,7 @@ const Ee = {
   ReplyAllSolid: V7,
   ReplyOutline: O7,
   ReplySolid: U7,
-  RestoreWindowSolid: E7,
+  RestoreWindowSolid: I7,
   RocketOutline: N7,
   RocketSolid: Q7,
   RotateOutline: Y7,
@@ -117698,7 +117698,7 @@ const Ee = {
   ShareNodesSolid: Vv,
   ShieldCheckOutline: Ov,
   ShieldCheckSolid: Uv,
-  ShieldOutline: Ev,
+  ShieldOutline: Iv,
   ShieldSolid: Nv,
   ShoppingBagOutline: Qv,
   ShoppingCartSolid: Yv,
@@ -117716,7 +117716,7 @@ const Ee = {
   StarSolid: V9,
   StoreOutline: O9,
   StoreSolid: U9,
-  SunOutline: E9,
+  SunOutline: I9,
   SunSolid: N9,
   SwatchbookOutline: Q9,
   SwatchbookSolid: Y9,
@@ -117734,7 +117734,7 @@ const Ee = {
   TextCenterSolid: VL,
   TextSizeOutline: OL,
   TextSlashOutline: UL,
-  ThumbsDownOutline: EL,
+  ThumbsDownOutline: IL,
   ThumbsDownSolid: NL,
   ThumbsUpOutline: QL,
   ThumbsUpSolid: YL,
@@ -117752,7 +117752,7 @@ const Ee = {
   UserAddOutline: Vb,
   UserCircleOutline: Ob,
   UserCircleSolid: Ub,
-  UserEditOutline: Eb,
+  UserEditOutline: Ib,
   UserEditSolid: Nb,
   UserGroupSolid: Qb,
   UserHeadsetOutline: Yb,
@@ -117770,7 +117770,7 @@ const Ee = {
   VideoCameraOutline: Vw,
   VideoSolid: Ow,
   VolumeDownOutline: Uw,
-  VolumeDownSolid: Ew,
+  VolumeDownSolid: Iw,
   VolumeUpOutline: Nw,
   VolumeUpSolid: Qw,
   VueSolid: Yw,
@@ -117788,9 +117788,11 @@ const Ee = {
   ZoomInSolid: V_,
   ZoomOutOutline: O_,
   ZoomOutSolid: U_
-};
-function T_(i, e, t) {
-  return i || (i = document.createElement("div"), document.body.appendChild(i)), Ee[e] ? new Ee[e]({
+}, D_ = [];
+for (let i in Me)
+  D_.push(i);
+function I_(i, e, t) {
+  return i || (i = document.createElement("div"), document.body.appendChild(i)), Me[e] ? new Me[e]({
     target: i,
     props: {
       ...t
@@ -117798,5 +117800,6 @@ function T_(i, e, t) {
   }) : null;
 }
 export {
-  T_ as FnIcon
+  D_ as AllIconName,
+  I_ as FnIcon
 };
