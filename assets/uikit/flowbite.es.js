@@ -28,7 +28,7 @@ function J(t, e) {
   return t != t ? e == e : t !== e || t && typeof t == "object" || typeof t == "function";
 }
 let Lt;
-function yt(t, e) {
+function vt(t, e) {
   return t === e ? !0 : (Lt || (Lt = document.createElement("a")), Lt.href = e, t === Lt.href);
 }
 function Ur(t) {
@@ -298,23 +298,23 @@ function io() {
     }), jt.clear());
   });
 }
-let vt;
-function _t(t) {
-  vt = t;
+let wt;
+function pt(t) {
+  wt = t;
 }
-function Et() {
-  if (!vt)
+function It() {
+  if (!wt)
     throw new Error("Function called outside component initialization");
-  return vt;
+  return wt;
 }
 function Ye(t) {
-  Et().$$.on_mount.push(t);
+  It().$$.on_mount.push(t);
 }
 function no(t) {
-  Et().$$.on_destroy.push(t);
+  It().$$.on_destroy.push(t);
 }
 function Ge() {
-  const t = Et();
+  const t = It();
   return (e, i, { cancelable: n = !1 } = {}) => {
     const l = t.$$.callbacks[e];
     if (l) {
@@ -332,10 +332,10 @@ function Ge() {
   };
 }
 function We(t, e) {
-  return Et().$$.context.set(t, e), e;
+  return It().$$.context.set(t, e), e;
 }
 function Re(t) {
-  return Et().$$.context.get(t);
+  return It().$$.context.get(t);
 }
 function W(t, e) {
   const i = t.$$.callbacks[e.type];
@@ -359,17 +359,17 @@ let rt = 0;
 function tr() {
   if (rt !== 0)
     return;
-  const t = vt;
+  const t = wt;
   do {
     try {
       for (; rt < st.length; ) {
         const e = st[rt];
-        rt++, _t(e), oo(e.$$);
+        rt++, pt(e), oo(e.$$);
       }
     } catch (e) {
       throw st.length = 0, rt = 0, e;
     }
-    for (_t(null), st.length = 0, rt = 0; Se.length; )
+    for (pt(null), st.length = 0, rt = 0; Se.length; )
       Se.pop()();
     for (let e = 0; e < at.length; e += 1) {
       const i = at[e];
@@ -379,7 +379,7 @@ function tr() {
   } while (st.length);
   for (; mi.length; )
     mi.pop()();
-  hi = !1, si.clear(), _t(t);
+  hi = !1, si.clear(), pt(t);
 }
 function oo(t) {
   if (t.fragment !== null) {
@@ -392,11 +392,11 @@ function so(t) {
   const e = [], i = [];
   at.forEach((n) => t.indexOf(n) === -1 ? e.push(n) : i.push(n)), i.forEach((n) => n()), at = e;
 }
-let gt;
+let mt;
 function Ni() {
-  return gt || (gt = Promise.resolve(), gt.then(() => {
-    gt = null;
-  })), gt;
+  return mt || (mt = Promise.resolve(), mt.then(() => {
+    mt = null;
+  })), mt;
 }
 function Ze(t, e, i) {
   t.dispatchEvent(er(`${e ? "intro" : "outro"}${i}`));
@@ -616,8 +616,8 @@ function fo(t, e) {
   t.$$.dirty[0] === -1 && (st.push(t), ro(), t.$$.dirty.fill(0)), t.$$.dirty[e / 31 | 0] |= 1 << e % 31;
 }
 function ee(t, e, i, n, l, r, o, s = [-1]) {
-  const u = vt;
-  _t(t);
+  const u = wt;
+  pt(t);
   const a = t.$$ = {
     fragment: null,
     ctx: [],
@@ -652,7 +652,7 @@ function ee(t, e, i, n, l, r, o, s = [-1]) {
       a.fragment && a.fragment.c();
     e.intro && p(t.$$.fragment), Z(t, e.target, e.anchor), tr();
   }
-  _t(u);
+  pt(u);
 }
 class te {
   constructor() {
@@ -994,13 +994,13 @@ function Je(t) {
 function No(t) {
   return t.endsWith("%") && Je(t.slice(0, -1));
 }
-function mt(t) {
+function ht(t) {
   return nn(t) || nt(t, "number", nn);
 }
 function ce(t) {
   return or.test(t);
 }
-function ht() {
+function bt() {
   return !0;
 }
 function Ve(t) {
@@ -1061,7 +1061,7 @@ function Fo() {
   return {
     cacheSize: 500,
     theme: {
-      colors: [ht],
+      colors: [bt],
       spacing: [Me],
       blur: ["none", "", Ve, ce],
       brightness: Ie(),
@@ -1301,7 +1301,7 @@ function Fo() {
        * @see https://tailwindcss.com/docs/z-index
        */
       z: [{
-        z: ["auto", mt]
+        z: ["auto", ht]
       }],
       // Flexbox and Grid
       /**
@@ -1351,14 +1351,14 @@ function Fo() {
        * @see https://tailwindcss.com/docs/order
        */
       order: [{
-        order: ["first", "last", "none", mt]
+        order: ["first", "last", "none", ht]
       }],
       /**
        * Grid Template Columns
        * @see https://tailwindcss.com/docs/grid-template-columns
        */
       "grid-cols": [{
-        "grid-cols": [ht]
+        "grid-cols": [bt]
       }],
       /**
        * Grid Column Start / End
@@ -1366,7 +1366,7 @@ function Fo() {
        */
       "col-start-end": [{
         col: ["auto", {
-          span: ["full", mt]
+          span: ["full", ht]
         }, ce]
       }],
       /**
@@ -1388,7 +1388,7 @@ function Fo() {
        * @see https://tailwindcss.com/docs/grid-template-rows
        */
       "grid-rows": [{
-        "grid-rows": [ht]
+        "grid-rows": [bt]
       }],
       /**
        * Grid Row Start / End
@@ -1396,7 +1396,7 @@ function Fo() {
        */
       "row-start-end": [{
         row: ["auto", {
-          span: [mt]
+          span: [ht]
         }, ce]
       }],
       /**
@@ -1744,7 +1744,7 @@ function Fo() {
        * @see https://tailwindcss.com/docs/font-family
        */
       "font-family": [{
-        font: [ht]
+        font: [bt]
       }],
       /**
        * Font Variant Numeric
@@ -2408,7 +2408,7 @@ function Fo() {
        * @see https://tailwindcss.com/docs/box-shadow-color
        */
       "shadow-color": [{
-        shadow: [ht]
+        shadow: [bt]
       }],
       /**
        * Opacity
@@ -2687,7 +2687,7 @@ function Fo() {
        * @see https://tailwindcss.com/docs/rotate
        */
       rotate: [{
-        rotate: [mt, ce]
+        rotate: [ht, ce]
       }],
       /**
        * Translate X
@@ -3055,7 +3055,7 @@ function xt(t, { delay: e = 0, duration: i = 400, easing: n = Qt } = {}) {
     css: (r) => `opacity: ${r * l}`
   };
 }
-function wt(t, { delay: e = 0, duration: i = 400, easing: n = ur, x: l = 0, y: r = 0, opacity: o = 0 } = {}) {
+function Ct(t, { delay: e = 0, duration: i = 400, easing: n = ur, x: l = 0, y: r = 0, opacity: o = 0 } = {}) {
   const s = getComputedStyle(t), u = +s.opacity, a = s.transform === "none" ? "" : s.transform, f = u * (1 - o), [c, d] = gi(l), [k, g] = gi(r);
   return {
     delay: e,
@@ -3461,7 +3461,7 @@ function Zo(t, e, i) {
       case "blur":
         return Di(L, re);
       case "fly":
-        return wt(L, re);
+        return Ct(L, re);
       case "fade":
         return xt(L, re);
       default:
@@ -5369,7 +5369,7 @@ class zs extends te {
     super(), ee(this, e, Ns, Ms, J, { open: 0, dismissable: 1, defaultClass: 6 });
   }
 }
-const pt = /^[a-z0-9]+(-[a-z0-9]+)*$/, $t = (t, e, i, n = "") => {
+const yt = /^[a-z0-9]+(-[a-z0-9]+)*$/, $t = (t, e, i, n = "") => {
   const l = t.split(":");
   if (t.slice(0, 1) === "@") {
     if (l.length < 2 || l.length > 3)
@@ -5405,7 +5405,7 @@ const pt = /^[a-z0-9]+(-[a-z0-9]+)*$/, $t = (t, e, i, n = "") => {
     return e && !Dt(s, i) ? null : s;
   }
   return null;
-}, Dt = (t, e) => t ? !!((t.provider === "" || t.provider.match(pt)) && (e && t.prefix === "" || t.prefix.match(pt)) && t.name.match(pt)) : !1, ar = Object.freeze(
+}, Dt = (t, e) => t ? !!((t.provider === "" || t.provider.match(yt)) && (e && t.prefix === "" || t.prefix.match(yt)) && t.name.match(yt)) : !1, ar = Object.freeze(
   {
     left: 0,
     top: 0,
@@ -5496,7 +5496,7 @@ function cr(t) {
   const i = e.icons;
   for (const l in i) {
     const r = i[l];
-    if (!l.match(pt) || typeof r.body != "string" || !ai(
+    if (!l.match(yt) || typeof r.body != "string" || !ai(
       r,
       pi
     ))
@@ -5505,7 +5505,7 @@ function cr(t) {
   const n = e.aliases || /* @__PURE__ */ Object.create(null);
   for (const l in n) {
     const r = n[l], o = r.parent;
-    if (!l.match(pt) || typeof o != "string" || !i[o] && !n[o] || !ai(
+    if (!l.match(yt) || typeof o != "string" || !i[o] && !n[o] || !ai(
       r,
       pi
     ))
@@ -5539,19 +5539,19 @@ function Ws(t, e, i) {
   }
   return !1;
 }
-let Ct = !1;
+let St = !1;
 function dr(t) {
-  return typeof t == "boolean" && (Ct = t), Ct;
+  return typeof t == "boolean" && (St = t), St;
 }
 function Us(t) {
-  const e = typeof t == "string" ? $t(t, !0, Ct) : t;
+  const e = typeof t == "string" ? $t(t, !0, St) : t;
   if (e) {
     const i = $e(e.provider, e.prefix), n = e.name;
     return i.icons[n] || (i.missing.has(n) ? null : void 0);
   }
 }
 function Gs(t, e) {
-  const i = $t(t, !0, Ct);
+  const i = $t(t, !0, St);
   if (!i)
     return !1;
   const n = $e(i.provider, i.prefix);
@@ -5560,7 +5560,7 @@ function Gs(t, e) {
 function Hs(t, e) {
   if (typeof t != "object")
     return !1;
-  if (typeof e != "string" && (e = t.provider || ""), Ct && !e && !t.prefix) {
+  if (typeof e != "string" && (e = t.provider || ""), St && !e && !t.prefix) {
     let l = !1;
     return cr(t) && (t.prefix = "", fr(t, (r, o) => {
       o && Gs(r, o) && (l = !0);
@@ -5714,12 +5714,12 @@ function Wi(t) {
     dataAfterTimeout: t.dataAfterTimeout !== !1
   };
 }
-const Ui = /* @__PURE__ */ Object.create(null), bt = [
+const Ui = /* @__PURE__ */ Object.create(null), _t = [
   "https://api.simplesvg.com",
   "https://api.unisvg.com"
 ], Bt = [];
-for (; bt.length > 0; )
-  bt.length === 1 || Math.random() > 0.5 ? Bt.push(bt.shift()) : Bt.push(bt.pop());
+for (; _t.length > 0; )
+  _t.length === 1 || Math.random() > 0.5 ? Bt.push(_t.shift()) : Bt.push(_t.pop());
 Ui[""] = Wi({
   resources: ["https://api.iconify.design"].concat(Bt)
 });
@@ -6104,7 +6104,7 @@ function mu(t, e, i) {
   }
   return !n || !l ? (i(void 0, 424), En) : n.query(e, l, i)().abort;
 }
-const In = "iconify2", St = "iconify", br = St + "-count", On = St + "-version", _r = 36e5, hu = 168;
+const In = "iconify2", Tt = "iconify", br = Tt + "-count", On = Tt + "-version", _r = 36e5, hu = 168;
 function wi(t, e) {
   try {
     return t.getItem(e);
@@ -6159,13 +6159,13 @@ function vr(t, e) {
     if (n) {
       const s = Si(i);
       for (let u = 0; u < s; u++)
-        An(i, St + u.toString());
+        An(i, Tt + u.toString());
     }
     Hi(i, On, In), Ci(i, 0);
     return;
   }
   const l = Math.floor(Date.now() / _r) - hu, r = (s) => {
-    const u = St + s.toString(), a = wi(i, u);
+    const u = Tt + s.toString(), a = wi(i, u);
     if (typeof a == "string") {
       try {
         const f = JSON.parse(a);
@@ -6231,7 +6231,7 @@ function pu(t, e) {
     };
     return Hi(
       l,
-      St + o.toString(),
+      Tt + o.toString(),
       JSON.stringify(s)
     );
   }
@@ -6678,7 +6678,7 @@ function Gu(t) {
         t[1]
       ),
       icon: (
-        /*name*/
+        /*defaultname*/
         t[0]
       )
     }
@@ -6696,8 +6696,8 @@ function Gu(t) {
         "uikit-h-full uikit-w-8 uikit-text-white uikit-bg-black uikit-opacity-30",
         /*className*/
         n[1]
-      )), l & /*name*/
-      1 && (r.icon = /*name*/
+      )), l & /*defaultname*/
+      1 && (r.icon = /*defaultname*/
       n[0]), e.$set(r);
     },
     i(n) {
@@ -6723,7 +6723,7 @@ function Hu(t) {
       );
     },
     m(i, n) {
-      E(i, e, n), t[5](e);
+      E(i, e, n), t[6](e);
     },
     p(i, n) {
       n & /*className*/
@@ -6737,7 +6737,7 @@ function Hu(t) {
     i: le,
     o: le,
     d(i) {
-      i && T(e), t[5](null);
+      i && T(e), t[6](null);
     }
   };
 }
@@ -6775,22 +6775,28 @@ function Vu(t) {
   };
 }
 function qu(t, e, i) {
-  let { name: n = "" } = e, { className: l = "" } = e, { uikit: r = !0 } = e, { size: o = "sm" } = e, s;
-  function u(a) {
-    Se[a ? "unshift" : "push"](() => {
-      s = a, i(3, s);
+  let { name: n = "" } = e, { defaultname: l = "eos-icons:loading" } = e, { className: r = "" } = e, { uikit: o = !0 } = e, { size: s = "sm" } = e, u;
+  function a(f) {
+    Se[f ? "unshift" : "push"](() => {
+      u = f, i(3, u);
     });
   }
-  return t.$$set = (a) => {
-    "name" in a && i(0, n = a.name), "className" in a && i(1, l = a.className), "uikit" in a && i(2, r = a.uikit), "size" in a && i(4, o = a.size);
+  return t.$$set = (f) => {
+    "name" in f && i(4, n = f.name), "defaultname" in f && i(0, l = f.defaultname), "className" in f && i(1, r = f.className), "uikit" in f && i(2, o = f.uikit), "size" in f && i(5, s = f.size);
   }, t.$$.update = () => {
     t.$$.dirty & /*icondom, name, size*/
-    25 && window && window.uikit_icons && s && window.uikit_icons.FnIcon(s, n, { size: o });
-  }, [n, l, r, s, o, u];
+    56 && window && window.uikit_icons && u && window.uikit_icons.FnIcon(u, n, { size: s });
+  }, [l, r, o, u, n, s, a];
 }
-class It extends te {
+class gt extends te {
   constructor(e) {
-    super(), ee(this, e, qu, Vu, J, { name: 0, className: 1, uikit: 2, size: 4 });
+    super(), ee(this, e, qu, Vu, J, {
+      name: 4,
+      defaultname: 0,
+      className: 1,
+      uikit: 2,
+      size: 5
+    });
   }
 }
 function Xu(t) {
@@ -6828,7 +6834,7 @@ function Xu(t) {
 }
 function Ku(t) {
   let e, i;
-  return e = new It({
+  return e = new gt({
     props: {
       name: "InfoCircleSolid",
       slot: "icon",
@@ -7125,7 +7131,7 @@ function $u(t) {
           r[4]
         ) },
         o & /*src*/
-        2 && !yt(e.src, i = /*src*/
+        2 && !vt(e.src, i = /*src*/
         r[1]) && { src: i },
         o & /*$$restProps*/
         128 && /*$$restProps*/
@@ -7241,7 +7247,7 @@ function ia(t) {
         "alt",
         /*alt*/
         t[4]
-      ), yt(e.src, i = /*src*/
+      ), vt(e.src, i = /*src*/
       t[1]) || h(e, "src", i), h(e, "class", n = /*rounded*/
       t[3] ? "uikit-rounded-full" : "uikit-rounded");
     },
@@ -7256,7 +7262,7 @@ function ia(t) {
         /*alt*/
         l[4]
       ), r & /*src*/
-      2 && !yt(e.src, i = /*src*/
+      2 && !vt(e.src, i = /*src*/
       l[1]) && h(e, "src", i), r & /*rounded*/
       8 && n !== (n = /*rounded*/
       l[3] ? "uikit-rounded-full" : "uikit-rounded") && h(e, "class", n);
@@ -9032,7 +9038,7 @@ function Va(t, e, i) {
       case "fade":
         return xt(z, B);
       default:
-        return wt(z, B);
+        return Ct(z, B);
     }
   }
   const j = {
@@ -9839,7 +9845,7 @@ function Hn(t) {
       l || (s && Oe(() => {
         l && (n && n.end(1), i = uo(
           e,
-          wt,
+          Ct,
           /*transitionSlideIn*/
           t[4]
         ), i.start());
@@ -9848,7 +9854,7 @@ function Hn(t) {
     o(s) {
       i && i.invalidate(), s && (n = ao(
         e,
-        wt,
+        Ct,
         /*transitionSlideOut*/
         t[3]
       )), l = !1;
@@ -11138,11 +11144,11 @@ function Lr(t) {
   const e = kt(t);
   return ni(e) ? t.ownerDocument ? t.ownerDocument.body : t.body : Be(e) && Pt(e) ? e : Lr(e);
 }
-function Tt(t, e, i) {
+function Et(t, e, i) {
   var n;
   e === void 0 && (e = []), i === void 0 && (i = !0);
   const l = Lr(t), r = l === ((n = t.ownerDocument) == null ? void 0 : n.body), o = Ee(l);
-  return r ? e.concat(o, o.visualViewport || [], Pt(l) ? l : [], o.frameElement && i ? Tt(o.frameElement) : []) : e.concat(l, Tt(l, [], i));
+  return r ? e.concat(o, o.visualViewport || [], Pt(l) ? l : [], o.frameElement && i ? Et(o.frameElement) : []) : e.concat(l, Et(l, [], i));
 }
 function Mr(t) {
   const e = Ae(t);
@@ -11318,7 +11324,7 @@ function Yf(t, e) {
   const i = e.get(t);
   if (i)
     return i;
-  let n = Tt(t, [], !1).filter((s) => Ue(s) && Ke(s) !== "body"), l = null;
+  let n = Et(t, [], !1).filter((s) => Ue(s) && Ke(s) !== "body"), l = null;
   const r = Ae(t).position === "fixed";
   let o = r ? kt(t) : t;
   for (; Ue(o) && !ni(o); ) {
@@ -11469,7 +11475,7 @@ function il(t, e, i, n) {
     elementResize: o = typeof ResizeObserver == "function",
     layoutShift: s = typeof IntersectionObserver == "function",
     animationFrame: u = !1
-  } = n, a = Ji(t), f = l || r ? [...a ? Tt(a) : [], ...Tt(e)] : [];
+  } = n, a = Ji(t), f = l || r ? [...a ? Et(a) : [], ...Et(e)] : [];
   f.forEach((_) => {
     l && _.addEventListener("scroll", i, {
       passive: !0
@@ -13395,7 +13401,7 @@ function Nc(t) {
       ]
     ) : "select a value") + ""
   ), i, n, l;
-  return n = new It({
+  return n = new gt({
     props: {
       name: "ChevronDownSolid",
       className: "uikit-w-3 uikit-h-3 uikit-ms-2 uikit-text-white dark:uikit-text-white"
@@ -14547,7 +14553,7 @@ function rd(t, e, i) {
       case "blur":
         return Di(v, y);
       case "fly":
-        return wt(v, y);
+        return Ct(v, y);
       case "fade":
         return xt(v, y);
       default:
@@ -14998,7 +15004,7 @@ function gd(t) {
 }
 function md(t) {
   let e, i, n;
-  return e = new It({
+  return e = new gt({
     props: {
       name: (
         /*icon*/
@@ -15170,7 +15176,7 @@ function bd(t) {
 }
 function _d(t) {
   let e, i, n;
-  return e = new It({
+  return e = new gt({
     props: {
       name: (
         /*icon*/
@@ -16764,7 +16770,7 @@ function $d(t) {
   let e, i, n, l, r, o;
   return {
     c() {
-      e = M("div"), i = M("img"), o = U(), yt(i.src, n = /*item*/
+      e = M("div"), i = M("img"), o = U(), vt(i.src, n = /*item*/
       t[7].src) || h(i, "src", n), h(i, "alt", l = /*item*/
       t[7].alt), h(i, "class", r = O(
         /*imgClass*/
@@ -16778,7 +16784,7 @@ function $d(t) {
     },
     p(s, u) {
       u & /*items*/
-      1 && !yt(i.src, n = /*item*/
+      1 && !vt(i.src, n = /*item*/
       s[7].src) && h(i, "src", n), u & /*items*/
       1 && l !== (l = /*item*/
       s[7].alt) && h(i, "alt", l), u & /*imgClass, $$props*/
@@ -17643,7 +17649,7 @@ function wk(t) {
     /*label*/
     t[5] + ""
   ), r, o, s;
-  return i = new It({
+  return i = new gt({
     props: { size: "sm", name: (
       /*icon*/
       t[4]
@@ -17840,6 +17846,22 @@ const Wk = (t, e, i) => {
       });
     }
   return n;
+}, Uk = (t, e, i) => {
+  t || (t = window.document.createElement("div"), document.body.appendChild(t));
+  const n = new gt({
+    target: t,
+    props: {
+      ...e
+    }
+  });
+  if (i)
+    for (let l in i) {
+      let r = i[l];
+      n.$on(l, (o) => {
+        r(o.detail);
+      });
+    }
+  return n;
 };
 export {
   Ok as FnAccordion,
@@ -17850,6 +17872,7 @@ export {
   Mk as FnDrawer,
   zk as FnDropdown,
   jk as FnGallery,
+  Uk as FnIcon,
   Fk as FnModal,
   Dk as FnSidebar,
   Bk as FnSpinner,
