@@ -199,18 +199,18 @@ function nn(t) {
     return e.stopPropagation(), t.call(this, e);
   };
 }
-function b(t, e, i) {
+function h(t, e, i) {
   i == null ? t.removeAttribute(e) : t.getAttribute(e) !== i && t.setAttribute(e, i);
 }
 const ro = ["width", "height"];
 function ae(t, e) {
   const i = Object.getOwnPropertyDescriptors(t.__proto__);
   for (const l in e)
-    e[l] == null ? t.removeAttribute(l) : l === "style" ? t.style.cssText = e[l] : l === "__value" ? t.value = t[l] = e[l] : i[l] && i[l].set && ro.indexOf(l) === -1 ? t[l] = e[l] : b(t, l, e[l]);
+    e[l] == null ? t.removeAttribute(l) : l === "style" ? t.style.cssText = e[l] : l === "__value" ? t.value = t[l] = e[l] : i[l] && i[l].set && ro.indexOf(l) === -1 ? t[l] = e[l] : h(t, l, e[l]);
 }
 function Wt(t, e) {
   for (const i in e)
-    b(t, i, e[i]);
+    h(t, i, e[i]);
 }
 function oo(t, e) {
   Object.keys(e).forEach((i) => {
@@ -218,7 +218,7 @@ function oo(t, e) {
   });
 }
 function so(t, e, i) {
-  e in t ? t[e] = typeof t[e] == "boolean" && i === "" ? !0 : i : b(t, e, i);
+  e in t ? t[e] = typeof t[e] == "boolean" && i === "" ? !0 : i : h(t, e, i);
 }
 function Fe(t) {
   return /-/.test(t) ? oo : ae;
@@ -272,9 +272,9 @@ function Ht(t, e, i, l, n, r, o, u = 0) {
   const s = 16.666 / l;
   let a = `{
 `;
-  for (let h = 0; h <= 1; h += s) {
-    const p = e + (i - e) * r(h);
-    a += h * 100 + `%{${o(p, 1 - p)}}
+  for (let b = 0; b <= 1; b += s) {
+    const p = e + (i - e) * r(b);
+    a += b * 100 + `%{${o(p, 1 - p)}}
 `;
   }
   const f = a + `100% {${o(i, 1 - i)}}
@@ -440,9 +440,9 @@ function vo(t, e, i) {
       duration: k = 300,
       easing: g = Yt,
       tick: m = oe,
-      css: h
+      css: b
     } = n || Di;
-    h && (o = Ht(t, 0, 1, k, d, g, h, s++)), m(0, 1);
+    b && (o = Ht(t, 0, 1, k, d, g, b, s++)), m(0, 1);
     const p = Li() + d, C = p + k;
     u && u.abort(), r = !0, Me(() => xe(t, !0, "start")), u = zi((w) => {
       if (r) {
@@ -484,11 +484,11 @@ function wo(t, e, i) {
       css: g
     } = n || Di;
     g && (o = Ht(t, 1, 0, c, f, d, g));
-    const m = Li() + f, h = m + c;
+    const m = Li() + f, b = m + c;
     Me(() => xe(t, !1, "start")), "inert" in t && (s = /** @type {HTMLElement} */
     t.inert, t.inert = !0), zi((p) => {
       if (r) {
-        if (p >= h)
+        if (p >= b)
           return k(0, 1), xe(t, !1, "end"), --u.r || Ce(u.c), !1;
         if (p >= m) {
           const C = d((p - m) / c);
@@ -512,14 +512,14 @@ function je(t, e, i, l) {
     a && Vt(t, a);
   }
   function d(g, m) {
-    const h = (
+    const b = (
       /** @type {Program['d']} */
       g.b - o
     );
-    return m *= Math.abs(h), {
+    return m *= Math.abs(b), {
       a: o,
       b: g.b,
-      d: h,
+      d: b,
       duration: m,
       start: g.start,
       end: g.start + m,
@@ -529,7 +529,7 @@ function je(t, e, i, l) {
   function k(g) {
     const {
       delay: m = 0,
-      duration: h = 300,
+      duration: b = 300,
       easing: p = Yt,
       tick: C = oe,
       css: w
@@ -538,8 +538,8 @@ function je(t, e, i, l) {
       b: g
     };
     g || (v.group = De, De.r += 1), "inert" in t && (g ? f !== void 0 && (t.inert = f) : (f = /** @type {HTMLElement} */
-    t.inert, t.inert = !0)), u || s ? s = v : (w && (c(), a = Ht(t, o, g, h, m, p, w)), g && C(0, 1), u = d(v, h), Me(() => xe(t, g, "start")), zi((E) => {
-      if (s && E > s.start && (u = d(s, h), s = null, xe(t, u.b, "start"), w && (c(), a = Ht(
+    t.inert, t.inert = !0)), u || s ? s = v : (w && (c(), a = Ht(t, o, g, b, m, p, w)), g && C(0, 1), u = d(v, b), Me(() => xe(t, g, "start")), zi((E) => {
+      if (s && E > s.start && (u = d(s, b), s = null, xe(t, u.b, "start"), w && (c(), a = Ht(
         t,
         o,
         u.b,
@@ -880,12 +880,12 @@ function Mo(t) {
       }
       d === "[" ? s++ : d === "]" && s--;
     }
-    var k = u.length === 0 ? o : o.substring(a), g = k.startsWith(mr), m = g ? k.substring(1) : k, h = f && f > a ? f - a : void 0;
+    var k = u.length === 0 ? o : o.substring(a), g = k.startsWith(mr), m = g ? k.substring(1) : k, b = f && f > a ? f - a : void 0;
     return {
       modifiers: u,
       hasImportantModifier: g,
       baseClassName: m,
-      maybePostfixModifierPosition: h
+      maybePostfixModifierPosition: b
     };
   };
 }
@@ -1029,7 +1029,7 @@ function Yo(t) {
   return Uo.test(t);
 }
 function Jo() {
-  var t = he("colors"), e = he("spacing"), i = he("blur"), l = he("brightness"), n = he("borderColor"), r = he("borderRadius"), o = he("borderSpacing"), u = he("borderWidth"), s = he("contrast"), a = he("grayscale"), f = he("hueRotate"), c = he("invert"), d = he("gap"), k = he("gradientColorStops"), g = he("gradientColorStopPositions"), m = he("inset"), h = he("margin"), p = he("opacity"), C = he("padding"), w = he("saturate"), v = he("scale"), E = he("sepia"), O = he("skew"), I = he("space"), U = he("translate"), $ = function() {
+  var t = he("colors"), e = he("spacing"), i = he("blur"), l = he("brightness"), n = he("borderColor"), r = he("borderRadius"), o = he("borderSpacing"), u = he("borderWidth"), s = he("contrast"), a = he("grayscale"), f = he("hueRotate"), c = he("invert"), d = he("gap"), k = he("gradientColorStops"), g = he("gradientColorStopPositions"), m = he("inset"), b = he("margin"), p = he("opacity"), C = he("padding"), w = he("saturate"), v = he("scale"), E = he("sepia"), O = he("skew"), I = he("space"), U = he("translate"), $ = function() {
     return ["auto", "contain", "none"];
   }, W = function() {
     return ["auto", "hidden", "clip", "visible", "scroll"];
@@ -1587,63 +1587,63 @@ function Jo() {
        * @see https://tailwindcss.com/docs/margin
        */
       m: [{
-        m: [h]
+        m: [b]
       }],
       /**
        * Margin X
        * @see https://tailwindcss.com/docs/margin
        */
       mx: [{
-        mx: [h]
+        mx: [b]
       }],
       /**
        * Margin Y
        * @see https://tailwindcss.com/docs/margin
        */
       my: [{
-        my: [h]
+        my: [b]
       }],
       /**
        * Margin Start
        * @see https://tailwindcss.com/docs/margin
        */
       ms: [{
-        ms: [h]
+        ms: [b]
       }],
       /**
        * Margin End
        * @see https://tailwindcss.com/docs/margin
        */
       me: [{
-        me: [h]
+        me: [b]
       }],
       /**
        * Margin Top
        * @see https://tailwindcss.com/docs/margin
        */
       mt: [{
-        mt: [h]
+        mt: [b]
       }],
       /**
        * Margin Right
        * @see https://tailwindcss.com/docs/margin
        */
       mr: [{
-        mr: [h]
+        mr: [b]
       }],
       /**
        * Margin Bottom
        * @see https://tailwindcss.com/docs/margin
        */
       mb: [{
-        mb: [h]
+        mb: [b]
       }],
       /**
        * Margin Left
        * @see https://tailwindcss.com/docs/margin
        */
       ml: [{
-        ml: [h]
+        ml: [b]
       }],
       /**
        * Space Between X
@@ -3061,9 +3061,9 @@ function Ct(t, { delay: e = 0, duration: i = 400, easing: l = _r, x: n = 0, y: r
     delay: e,
     duration: i,
     easing: l,
-    css: (m, h) => `
+    css: (m, b) => `
 			transform: ${a} translate(${(1 - m) * c}${d}, ${(1 - m) * k}${g});
-			opacity: ${s - f * h}`
+			opacity: ${s - f * b}`
   };
 }
 function ji(t, { delay: e = 0, duration: i = 400, easing: l = _r, axis: n = "y" } = {}) {
@@ -3071,14 +3071,14 @@ function ji(t, { delay: e = 0, duration: i = 400, easing: l = _r, axis: n = "y" 
     (p) => `${p[0].toUpperCase()}${p.slice(1)}`
   ), c = parseFloat(r[`padding${f[0]}`]), d = parseFloat(r[`padding${f[1]}`]), k = parseFloat(r[`margin${f[0]}`]), g = parseFloat(r[`margin${f[1]}`]), m = parseFloat(
     r[`border${f[0]}Width`]
-  ), h = parseFloat(
+  ), b = parseFloat(
     r[`border${f[1]}Width`]
   );
   return {
     delay: e,
     duration: i,
     easing: l,
-    css: (p) => `overflow: hidden;opacity: ${Math.min(p * 20, 1) * o};${u}: ${p * s}px;padding-${a[0]}: ${p * c}px;padding-${a[1]}: ${p * d}px;margin-${a[0]}: ${p * k}px;margin-${a[1]}: ${p * g}px;border-${a[0]}-width: ${p * m}px;border-${a[1]}-width: ${p * h}px;`
+    css: (p) => `overflow: hidden;opacity: ${Math.min(p * 20, 1) * o};${u}: ${p * s}px;padding-${a[0]}: ${p * c}px;padding-${a[1]}: ${p * d}px;margin-${a[0]}: ${p * k}px;margin-${a[1]}: ${p * g}px;border-${a[0]}-width: ${p * m}px;border-${a[1]}-width: ${p * b}px;`
   };
 }
 const $o = (t) => ({}), un = (t) => ({}), es = (t) => ({}), an = (t) => ({}), ts = (t) => ({}), fn = (t) => ({});
@@ -3188,7 +3188,7 @@ function ls(t) {
   let e, i;
   return {
     c() {
-      e = pe("svg"), i = pe("path"), b(i, "stroke", "currentColor"), b(i, "stroke-linecap", "round"), b(i, "stroke-linejoin", "round"), b(i, "stroke-width", "2"), b(i, "d", "m1 1 4 4 4-4"), b(e, "class", "uikit-w-3 uikit-h-3 uikit-text-gray-800 dark:uikit-text-white"), b(e, "aria-hidden", "true"), b(e, "xmlns", "http://www.w3.org/2000/svg"), b(e, "fill", "none"), b(e, "viewBox", "0 0 10 6");
+      e = pe("svg"), i = pe("path"), h(i, "stroke", "currentColor"), h(i, "stroke-linecap", "round"), h(i, "stroke-linejoin", "round"), h(i, "stroke-width", "2"), h(i, "d", "m1 1 4 4 4-4"), h(e, "class", "uikit-w-3 uikit-h-3 uikit-text-gray-800 dark:uikit-text-white"), h(e, "aria-hidden", "true"), h(e, "xmlns", "http://www.w3.org/2000/svg"), h(e, "fill", "none"), h(e, "viewBox", "0 0 10 6");
     },
     m(l, n) {
       T(l, e, n), R(e, i);
@@ -3203,7 +3203,7 @@ function rs(t) {
   let e, i;
   return {
     c() {
-      e = pe("svg"), i = pe("path"), b(i, "stroke", "currentColor"), b(i, "stroke-linecap", "round"), b(i, "stroke-linejoin", "round"), b(i, "stroke-width", "2"), b(i, "d", "M9 5 5 1 1 5"), b(e, "class", "uikit-w-3 uikit-h-3 uikit-text-gray-800 dark:uikit-text-white"), b(e, "aria-hidden", "true"), b(e, "xmlns", "http://www.w3.org/2000/svg"), b(e, "fill", "none"), b(e, "viewBox", "0 0 10 6");
+      e = pe("svg"), i = pe("path"), h(i, "stroke", "currentColor"), h(i, "stroke-linecap", "round"), h(i, "stroke-linejoin", "round"), h(i, "stroke-width", "2"), h(i, "d", "M9 5 5 1 1 5"), h(e, "class", "uikit-w-3 uikit-h-3 uikit-text-gray-800 dark:uikit-text-white"), h(e, "aria-hidden", "true"), h(e, "xmlns", "http://www.w3.org/2000/svg"), h(e, "fill", "none"), h(e, "viewBox", "0 0 10 6");
     },
     m(l, n) {
       T(l, e, n), R(e, i);
@@ -3228,12 +3228,12 @@ function os(t) {
   );
   return {
     c() {
-      e = L("div"), i = L("div"), r && r.c(), b(
+      e = L("div"), i = L("div"), r && r.c(), h(
         i,
         "class",
         /*contentClass*/
         t[3]
-      ), b(e, "class", "uikit-hidden");
+      ), h(e, "class", "uikit-hidden");
     },
     m(o, u) {
       T(o, e, u), R(e, i), r && r.m(i, null), l = !0;
@@ -3258,7 +3258,7 @@ function os(t) {
         ),
         null
       ), (!l || u & /*contentClass*/
-      8) && b(
+      8) && h(
         i,
         "class",
         /*contentClass*/
@@ -3290,7 +3290,7 @@ function ss(t) {
   );
   return {
     c() {
-      e = L("div"), i = L("div"), o && o.c(), b(
+      e = L("div"), i = L("div"), o && o.c(), h(
         i,
         "class",
         /*contentClass*/
@@ -3320,7 +3320,7 @@ function ss(t) {
         ),
         null
       ), (!n || s & /*contentClass*/
-      8) && b(
+      8) && h(
         i,
         "class",
         /*contentClass*/
@@ -3365,14 +3365,14 @@ function us(t) {
     /*$$scope*/
     t[21],
     fn
-  ), m = [ns, is], h = [];
+  ), m = [ns, is], b = [];
   function p(E, O) {
     return (
       /*open*/
       E[0] ? 0 : 1
     );
   }
-  n = p(t), r = h[n] = m[n](t);
+  n = p(t), r = b[n] = m[n](t);
   const C = [ss, os], w = [];
   function v(E, O) {
     return (
@@ -3382,20 +3382,20 @@ function us(t) {
   }
   return u = v(t), s = w[u] = C[u](t), {
     c() {
-      e = L("h2"), i = L("button"), g && g.c(), l = G(), r.c(), o = G(), s.c(), a = ue(), b(i, "type", "button"), b(
+      e = L("h2"), i = L("button"), g && g.c(), l = G(), r.c(), o = G(), s.c(), a = ue(), h(i, "type", "button"), h(
         i,
         "class",
         /*buttonClass*/
         t[2]
-      ), b(
+      ), h(
         i,
         "aria-expanded",
         /*open*/
         t[0]
-      ), b(e, "class", "group");
+      ), h(e, "class", "group");
     },
     m(E, O) {
-      T(E, e, O), R(e, i), g && g.m(i, null), R(i, l), h[n].m(i, null), T(E, o, O), w[u].m(E, O), T(E, a, O), f = !0, c || (d = D(
+      T(E, e, O), R(e, i), g && g.m(i, null), R(i, l), b[n].m(i, null), T(E, o, O), w[u].m(E, O), T(E, a, O), f = !0, c || (d = D(
         i,
         "click",
         /*handleToggle*/
@@ -3423,16 +3423,16 @@ function us(t) {
         fn
       );
       let I = n;
-      n = p(E), n === I ? h[n].p(E, O) : (le(), y(h[I], 1, 1, () => {
-        h[I] = null;
-      }), re(), r = h[n], r ? r.p(E, O) : (r = h[n] = m[n](E), r.c()), _(r, 1), r.m(i, null)), (!f || O & /*buttonClass*/
-      4) && b(
+      n = p(E), n === I ? b[n].p(E, O) : (le(), y(b[I], 1, 1, () => {
+        b[I] = null;
+      }), re(), r = b[n], r ? r.p(E, O) : (r = b[n] = m[n](E), r.c()), _(r, 1), r.m(i, null)), (!f || O & /*buttonClass*/
+      4) && h(
         i,
         "class",
         /*buttonClass*/
         E[2]
       ), (!f || O & /*open*/
-      1) && b(
+      1) && h(
         i,
         "aria-expanded",
         /*open*/
@@ -3450,12 +3450,12 @@ function us(t) {
       y(g, E), y(r), y(s), f = !1;
     },
     d(E) {
-      E && (S(e), S(o), S(a)), g && g.d(E), h[n].d(), w[u].d(E), c = !1, d();
+      E && (S(e), S(o), S(a)), g && g.d(E), b[n].d(), w[u].d(E), c = !1, d();
     }
   };
 }
 function as(t, e, i) {
-  let l, n, { $$slots: r = {}, $$scope: o } = e, { open: u = !1 } = e, { activeClass: s = void 0 } = e, { inactiveClass: a = void 0 } = e, { defaultClass: f = "uikit-flex uikit-items-center uikit-justify-between uikit-w-full uikit-font-medium uikit-text-left group-first:uikit-rounded-t-xl uikit-border-gray-200 dark:uikit-border-gray-700" } = e, { transitionType: c = "slide" } = e, { transitionParams: d = {} } = e, { paddingFlush: k = "uikit-py-5" } = e, { paddingDefault: g = "uikit-p-5" } = e, { textFlushOpen: m = "uikit-text-gray-900 dark:uikit-text-white" } = e, { textFlushDefault: h = "uikit-text-gray-500 dark:uikit-text-gray-400" } = e, { borderClass: p = "uikit-border-s uikit-border-e group-first:uikit-border-t" } = e, { borderOpenClass: C = "uikit-border-s uikit-border-e" } = e, { borderBottomClass: w = "uikit-border-b" } = e, { borderSharedClass: v = "uikit-border-gray-200 dark:uikit-border-gray-700" } = e, { classActive: E = void 0 } = e, { classInactive: O = void 0 } = e, I = A(s, E), U = A(a, O);
+  let l, n, { $$slots: r = {}, $$scope: o } = e, { open: u = !1 } = e, { activeClass: s = void 0 } = e, { inactiveClass: a = void 0 } = e, { defaultClass: f = "uikit-flex uikit-items-center uikit-justify-between uikit-w-full uikit-font-medium uikit-text-left group-first:uikit-rounded-t-xl uikit-border-gray-200 dark:uikit-border-gray-700" } = e, { transitionType: c = "slide" } = e, { transitionParams: d = {} } = e, { paddingFlush: k = "uikit-py-5" } = e, { paddingDefault: g = "uikit-p-5" } = e, { textFlushOpen: m = "uikit-text-gray-900 dark:uikit-text-white" } = e, { textFlushDefault: b = "uikit-text-gray-500 dark:uikit-text-gray-400" } = e, { borderClass: p = "uikit-border-s uikit-border-e group-first:uikit-border-t" } = e, { borderOpenClass: C = "uikit-border-s uikit-border-e" } = e, { borderBottomClass: w = "uikit-border-b" } = e, { borderSharedClass: v = "uikit-border-gray-200 dark:uikit-border-gray-700" } = e, { classActive: E = void 0 } = e, { classInactive: O = void 0 } = e, I = A(s, E), U = A(a, O);
   const $ = (M, se) => {
     switch (c) {
       case "blur":
@@ -3474,7 +3474,7 @@ function as(t, e, i) {
   const z = (M) => H.set(u ? {} : P);
   let j;
   return t.$$set = (M) => {
-    i(29, e = N(N({}, e), B(M))), "open" in M && i(0, u = M.open), "activeClass" in M && i(7, s = M.activeClass), "inactiveClass" in M && i(8, a = M.inactiveClass), "defaultClass" in M && i(9, f = M.defaultClass), "transitionType" in M && i(10, c = M.transitionType), "transitionParams" in M && i(1, d = M.transitionParams), "paddingFlush" in M && i(11, k = M.paddingFlush), "paddingDefault" in M && i(12, g = M.paddingDefault), "textFlushOpen" in M && i(13, m = M.textFlushOpen), "textFlushDefault" in M && i(14, h = M.textFlushDefault), "borderClass" in M && i(15, p = M.borderClass), "borderOpenClass" in M && i(16, C = M.borderOpenClass), "borderBottomClass" in M && i(17, w = M.borderBottomClass), "borderSharedClass" in M && i(18, v = M.borderSharedClass), "classActive" in M && i(19, E = M.classActive), "classInactive" in M && i(20, O = M.classInactive), "$$scope" in M && i(21, o = M.$$scope);
+    i(29, e = N(N({}, e), B(M))), "open" in M && i(0, u = M.open), "activeClass" in M && i(7, s = M.activeClass), "inactiveClass" in M && i(8, a = M.inactiveClass), "defaultClass" in M && i(9, f = M.defaultClass), "transitionType" in M && i(10, c = M.transitionType), "transitionParams" in M && i(1, d = M.transitionParams), "paddingFlush" in M && i(11, k = M.paddingFlush), "paddingDefault" in M && i(12, g = M.paddingDefault), "textFlushOpen" in M && i(13, m = M.textFlushOpen), "textFlushDefault" in M && i(14, b = M.textFlushDefault), "borderClass" in M && i(15, p = M.borderClass), "borderOpenClass" in M && i(16, C = M.borderOpenClass), "borderBottomClass" in M && i(17, w = M.borderBottomClass), "borderSharedClass" in M && i(18, v = M.borderSharedClass), "classActive" in M && i(19, E = M.classActive), "classInactive" in M && i(20, O = M.classInactive), "$$scope" in M && i(21, o = M.$$scope);
   }, t.$$.update = () => {
     i(2, j = A([
       f,
@@ -3483,7 +3483,7 @@ function as(t, e, i) {
       v,
       W.flush ? k : g,
       u && (W.flush ? m : I || W.activeClass),
-      !u && (W.flush ? h : U || W.inactiveClass),
+      !u && (W.flush ? b : U || W.inactiveClass),
       e.class
     ])), t.$$.dirty & /*paddingFlush, paddingDefault, borderOpenClass, borderBottomClass, borderSharedClass*/
     464896 && i(3, l = A([
@@ -3507,7 +3507,7 @@ function as(t, e, i) {
     k,
     g,
     m,
-    h,
+    b,
     p,
     C,
     w,
@@ -3714,7 +3714,7 @@ function ds(t, e, i) {
   const u = () => {
   };
   Ue("background", !0);
-  let { tag: s = n.href ? "a" : "div" } = e, { color: a = "default" } = e, { rounded: f = !1 } = e, { border: c = !1 } = e, { shadow: d = !1 } = e, { node: k = void 0 } = e, { use: g = u } = e, { options: m = {} } = e, { role: h = void 0 } = e;
+  let { tag: s = n.href ? "a" : "div" } = e, { color: a = "default" } = e, { rounded: f = !1 } = e, { border: c = !1 } = e, { shadow: d = !1 } = e, { node: k = void 0 } = e, { use: g = u } = e, { options: m = {} } = e, { role: b = void 0 } = e;
   const p = {
     gray: "uikit-bg-gray-50 dark:uikit-bg-gray-800",
     red: "uikit-bg-red-50 dark:uikit-bg-gray-800",
@@ -3795,7 +3795,7 @@ function ds(t, e, i) {
     });
   }
   return t.$$set = (P) => {
-    i(23, e = N(N({}, e), B(P))), i(6, n = ne(e, l)), "tag" in P && i(1, s = P.tag), "color" in P && i(7, a = P.color), "rounded" in P && i(8, f = P.rounded), "border" in P && i(9, c = P.border), "shadow" in P && i(10, d = P.shadow), "node" in P && i(0, k = P.node), "use" in P && i(2, g = P.use), "options" in P && i(3, m = P.options), "role" in P && i(4, h = P.role), "$$scope" in P && i(11, o = P.$$scope);
+    i(23, e = N(N({}, e), B(P))), i(6, n = ne(e, l)), "tag" in P && i(1, s = P.tag), "color" in P && i(7, a = P.color), "rounded" in P && i(8, f = P.rounded), "border" in P && i(9, c = P.border), "shadow" in P && i(10, d = P.shadow), "node" in P && i(0, k = P.node), "use" in P && i(2, g = P.use), "options" in P && i(3, m = P.options), "role" in P && i(4, b = P.role), "$$scope" in P && i(11, o = P.$$scope);
   }, t.$$.update = () => {
     t.$$.dirty & /*color*/
     128 && i(7, a = a ?? "default"), t.$$.dirty & /*color*/
@@ -3805,7 +3805,7 @@ function ds(t, e, i) {
     s,
     g,
     m,
-    h,
+    b,
     v,
     n,
     a,
@@ -3852,7 +3852,7 @@ function kn(t) {
   ), l;
   return {
     c() {
-      e = L("p"), l = ke(i), b(e, "class", "mb-2 text-gray-500 dark:text-gray-400");
+      e = L("p"), l = ke(i), h(e, "class", "mb-2 text-gray-500 dark:text-gray-400");
     },
     m(n, r) {
       T(n, e, r), R(e, l);
@@ -3914,7 +3914,7 @@ function gs(t) {
   ), l;
   return {
     c() {
-      e = L("span"), l = ke(i), b(e, "slot", "header");
+      e = L("span"), l = ke(i), h(e, "slot", "header");
     },
     m(n, r) {
       T(n, e, r), R(e, l);
@@ -4624,7 +4624,7 @@ function yn(t) {
       e = L("span"), i = ke(
         /*name*/
         t[0]
-      ), b(e, "class", "uikit-sr-only");
+      ), h(e, "class", "uikit-sr-only");
     },
     m(l, n) {
       T(l, e, n), R(e, i);
@@ -4649,7 +4649,7 @@ function vn(t) {
       e = L("span"), i = ke(
         /*name*/
         t[0]
-      ), b(e, "class", "uikit-sr-only");
+      ), h(e, "class", "uikit-sr-only");
     },
     m(l, n) {
       T(l, e, n), R(e, i);
@@ -4724,7 +4724,7 @@ function Ns(t, e, i) {
     lg: "uikit-m-0.5 uikit-rounded-lg focus:uikit-ring-2 uikit-p-2.5"
   };
   let m;
-  const h = {
+  const b = {
     xs: "uikit-w-3 uikit-h-3",
     sm: "uikit-w-3.5 uikit-h-3.5",
     md: "uikit-w-5 uikit-h-5",
@@ -4749,7 +4749,7 @@ function Ns(t, e, i) {
     c,
     d,
     m,
-    h,
+    b,
     n,
     s,
     o,
@@ -4772,8 +4772,8 @@ function Rs(t) {
   let e, i, l;
   return {
     c() {
-      e = pe("svg"), i = pe("path"), b(i, "fill-rule", "evenodd"), b(i, "d", "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"), b(i, "clip-rule", "evenodd"), b(e, "class", l = /*svgSize*/
-      t[4]), b(e, "fill", "currentColor"), b(e, "viewBox", "0 0 20 20"), b(e, "xmlns", "http://www.w3.org/2000/svg");
+      e = pe("svg"), i = pe("path"), h(i, "fill-rule", "evenodd"), h(i, "d", "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"), h(i, "clip-rule", "evenodd"), h(e, "class", l = /*svgSize*/
+      t[4]), h(e, "fill", "currentColor"), h(e, "viewBox", "0 0 20 20"), h(e, "xmlns", "http://www.w3.org/2000/svg");
     },
     m(n, r) {
       T(n, e, r), R(e, i);
@@ -4781,7 +4781,7 @@ function Rs(t) {
     p(n, r) {
       r & /*svgSize*/
       16 && l !== (l = /*svgSize*/
-      n[4]) && b(e, "class", l);
+      n[4]) && h(e, "class", l);
     },
     d(n) {
       n && S(e);
@@ -5317,7 +5317,7 @@ function qs(t, e, i) {
   function m(I) {
     F.call(this, t, I);
   }
-  function h(I) {
+  function b(I) {
     F.call(this, t, I);
   }
   function p(I) {
@@ -5354,7 +5354,7 @@ function qs(t, e, i) {
     k,
     g,
     m,
-    h,
+    b,
     p,
     C,
     w,
@@ -5624,9 +5624,9 @@ function ru(t, e) {
   };
   let r = i.body;
   [i, l].forEach((g) => {
-    const m = [], h = g.hFlip, p = g.vFlip;
+    const m = [], b = g.hFlip, p = g.vFlip;
     let C = g.rotate;
-    h ? p ? C += 2 : (m.push(
+    b ? p ? C += 2 : (m.push(
       "translate(" + (n.width + n.left).toString() + " " + (0 - n.top).toString() + ")"
     ), m.push("scale(-1 1)"), n.top = n.left = 0) : p && (m.push(
       "translate(" + (0 - n.left).toString() + " " + (n.height + n.top).toString() + ")"
@@ -5958,7 +5958,7 @@ function Tu(t, e, i, l) {
       O.status === "pending" && (O.status = "aborted");
     }), d = [];
   }
-  function h(O, I) {
+  function b(O, I) {
     I && (k = []), typeof O == "function" && k.push(O);
   }
   function p() {
@@ -5968,7 +5968,7 @@ function Tu(t, e, i, l) {
       status: s,
       queriesSent: a,
       queriesPending: d.length,
-      subscribe: h,
+      subscribe: b,
       abort: m
     };
   }
@@ -6463,10 +6463,10 @@ function Xu(t, e) {
     C && (g[p] = qu(C));
   };
   m("width"), m("height"), Object.assign(g, Vu, c ? Ei : Nr);
-  let h = "";
+  let b = "";
   for (const p in g)
-    h += p + ": " + g[p] + ";";
-  return n.style = h + r, {
+    b += p + ": " + g[p] + ";";
+  return n.style = b + r, {
     svg: !1,
     attributes: n
   };
@@ -6715,7 +6715,7 @@ function ta(t) {
   let e;
   return {
     c() {
-      e = L("div"), b(
+      e = L("div"), h(
         e,
         "class",
         /*className*/
@@ -6727,7 +6727,7 @@ function ta(t) {
     },
     p(i, l) {
       l & /*className*/
-      2 && b(
+      2 && h(
         e,
         "class",
         /*className*/
@@ -6800,35 +6800,27 @@ class gt extends ie {
   }
 }
 function la(t) {
-  let e, i, l, n;
+  let e;
   return {
     c() {
-      e = L("span"), i = ke(
-        /*mode*/
-        t[1]
-      ), l = G(), n = ke(
+      e = ke(
         /*info*/
         t[2]
-      ), b(e, "class", "uikit-font-medium");
-    },
-    m(r, o) {
-      T(r, e, o), R(e, i), T(r, l, o), T(r, n, o);
-    },
-    p(r, o) {
-      o & /*mode*/
-      2 && be(
-        i,
-        /*mode*/
-        r[1]
-      ), o & /*info*/
-      4 && be(
-        n,
-        /*info*/
-        r[2]
       );
     },
-    d(r) {
-      r && (S(e), S(l), S(n));
+    m(i, l) {
+      T(i, e, l);
+    },
+    p(i, l) {
+      l & /*info*/
+      4 && be(
+        e,
+        /*info*/
+        i[2]
+      );
+    },
+    d(i) {
+      i && S(e);
     }
   };
 }
@@ -6902,8 +6894,8 @@ function oa(t) {
       l[3].get(
         /*mode*/
         l[1]
-      )), n & /*$$scope, info, mode*/
-      134 && (r.$$scope = { dirty: n, ctx: l }), e.$set(r);
+      )), n & /*$$scope, info*/
+      132 && (r.$$scope = { dirty: n, ctx: l }), e.$set(r);
     },
     i(l) {
       i || (_(e.$$.fragment, l), i = !0);
@@ -6917,7 +6909,7 @@ function oa(t) {
   };
 }
 function sa(t, e, i) {
-  let { mode: l = "info" } = e, { info: n = "a default message" } = e, { open: r = !0 } = e, { duration: o = 0 } = e, u = /* @__PURE__ */ new Map([
+  let { mode: l = "info" } = e, { info: n = "a default message" } = e, { open: r = !0 } = e, { duration: o = 1e3 } = e, u = /* @__PURE__ */ new Map([
     ["debug", ""],
     ["info", "blue"],
     ["success", "green"],
@@ -6983,7 +6975,7 @@ function aa(t) {
   );
   return {
     c() {
-      e = L("div"), n && n.c(), b(
+      e = L("div"), n && n.c(), h(
         e,
         "class",
         /*dotClass*/
@@ -7013,7 +7005,7 @@ function aa(t) {
         ),
         null
       ), (!i || o & /*dotClass*/
-      1) && b(
+      1) && h(
         e,
         "class",
         /*dotClass*/
@@ -7080,12 +7072,12 @@ function fa(t, e, i) {
     "bottom-center": "uikit-translate-y-1/3",
     "bottom-right": "uikit-translate-x-1/3 rtl:-uikit-translate-x-1/3 uikit-translate-y-1/3"
   };
-  let h;
+  let b;
   return t.$$set = (p) => {
     i(13, e = N(N({}, e), B(p))), "color" in p && i(1, o = p.color), "rounded" in p && i(2, u = p.rounded), "size" in p && i(3, s = p.size), "border" in p && i(4, a = p.border), "placement" in p && i(5, f = p.placement), "offset" in p && i(6, c = p.offset), "$$scope" in p && i(7, n = p.$$scope);
   }, t.$$.update = () => {
-    i(0, h = A("uikit-flex-shrink-0", u ? "uikit-rounded" : "uikit-rounded-full", a && "uikit-border-2 uikit-border-white dark:uikit-border-gray-800", k[s], d[o], r.default && "uikit-inline-flex uikit-items-center uikit-justify-center", f && "uikit-absolute " + g[f], f && c && m[f], e.class));
-  }, e = B(e), [h, o, u, s, a, f, c, n, l];
+    i(0, b = A("uikit-flex-shrink-0", u ? "uikit-rounded" : "uikit-rounded-full", a && "uikit-border-2 uikit-border-white dark:uikit-border-gray-800", k[s], d[o], r.default && "uikit-inline-flex uikit-items-center uikit-justify-center", f && "uikit-absolute " + g[f], f && c && m[f], e.class));
+  }, e = B(e), [b, o, u, s, a, f, c, n, l];
 }
 class Qi extends ie {
   constructor(e) {
@@ -7242,13 +7234,13 @@ function ga(t) {
   let e, i, l;
   return {
     c() {
-      e = L("img"), b(
+      e = L("img"), h(
         e,
         "alt",
         /*alt*/
         t[4]
       ), vt(e.src, i = /*src*/
-      t[1]) || b(e, "src", i), b(e, "class", l = /*rounded*/
+      t[1]) || h(e, "src", i), h(e, "class", l = /*rounded*/
       t[3] ? "uikit-rounded-full" : "uikit-rounded");
     },
     m(n, r) {
@@ -7256,16 +7248,16 @@ function ga(t) {
     },
     p(n, r) {
       r & /*alt*/
-      16 && b(
+      16 && h(
         e,
         "alt",
         /*alt*/
         n[4]
       ), r & /*src*/
       2 && !vt(e.src, i = /*src*/
-      n[1]) && b(e, "src", i), r & /*rounded*/
+      n[1]) && h(e, "src", i), r & /*rounded*/
       8 && l !== (l = /*rounded*/
-      n[3] ? "uikit-rounded-full" : "uikit-rounded") && b(e, "class", l);
+      n[3] ? "uikit-rounded-full" : "uikit-rounded") && h(e, "class", l);
     },
     i: oe,
     o: oe,
@@ -7278,8 +7270,8 @@ function ma(t) {
   let e, i, l;
   return {
     c() {
-      e = pe("svg"), i = pe("path"), b(i, "fill-rule", "evenodd"), b(i, "d", "M8 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"), b(i, "clip-rule", "evenodd"), b(e, "class", l = "uikit-w-full uikit-h-full " + /*rounded*/
-      (t[3] ? "uikit-rounded-full" : "uikit-rounded")), b(e, "fill", "currentColor"), b(e, "viewBox", "0 0 16 16"), b(e, "xmlns", "http://www.w3.org/2000/svg");
+      e = pe("svg"), i = pe("path"), h(i, "fill-rule", "evenodd"), h(i, "d", "M8 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"), h(i, "clip-rule", "evenodd"), h(e, "class", l = "uikit-w-full uikit-h-full " + /*rounded*/
+      (t[3] ? "uikit-rounded-full" : "uikit-rounded")), h(e, "fill", "currentColor"), h(e, "viewBox", "0 0 16 16"), h(e, "xmlns", "http://www.w3.org/2000/svg");
     },
     m(n, r) {
       T(n, e, r), R(e, i);
@@ -7287,7 +7279,7 @@ function ma(t) {
     p(n, r) {
       r & /*rounded*/
       8 && l !== (l = "uikit-w-full uikit-h-full " + /*rounded*/
-      (n[3] ? "uikit-rounded-full" : "uikit-rounded")) && b(e, "class", l);
+      (n[3] ? "uikit-rounded-full" : "uikit-rounded")) && h(e, "class", l);
     },
     d(n) {
       n && S(e);
@@ -7458,7 +7450,7 @@ function ba(t, e, i) {
   let n = ne(e, l), { $$slots: r = {}, $$scope: o } = e;
   const u = Ye(r);
   let { src: s = "" } = e, { href: a = void 0 } = e, { rounded: f = !1 } = e, { border: c = !1 } = e, { stacked: d = !1 } = e, { dot: k = void 0 } = e, { alt: g = "" } = e, { size: m = "md" } = e;
-  const h = {
+  const b = {
     xs: "uikit-w-6 uikit-h-6",
     sm: "uikit-w-8 uikit-h-8",
     md: "uikit-w-10 uikit-h-10",
@@ -7476,7 +7468,7 @@ function ba(t, e, i) {
       color: "gray",
       size: "lg",
       ...k
-    }), i(5, p = A(f ? "uikit-rounded-full" : "uikit-rounded", c && "uikit-p-1 uikit-ring-2 uikit-ring-gray-300 dark:uikit-ring-gray-500", h[m], d && "uikit-border-2 -uikit-ms-4 uikit-border-white dark:uikit-border-gray-800", "uikit-bg-gray-100 dark:uikit-bg-gray-600 uikit-text-gray-600 dark:uikit-text-gray-300", e.class));
+    }), i(5, p = A(f ? "uikit-rounded-full" : "uikit-rounded", c && "uikit-p-1 uikit-ring-2 uikit-ring-gray-300 dark:uikit-ring-gray-500", b[m], d && "uikit-border-2 -uikit-ms-4 uikit-border-white dark:uikit-border-gray-800", "uikit-bg-gray-100 dark:uikit-bg-gray-600 uikit-text-gray-600 dark:uikit-text-gray-300", e.class));
   }, e = B(e), [
     k,
     s,
@@ -7672,7 +7664,7 @@ const g0 = (t, e, i) => {
   return l;
 };
 function Sa(t) {
-  let e, i, l, n, r, o, u, s, a, f, c, d, k, g, m, h, p, C, w, v;
+  let e, i, l, n, r, o, u, s, a, f, c, d, k, g, m, b, p, C, w, v;
   const E = (
     /*#slots*/
     t[9].default
@@ -7685,37 +7677,37 @@ function Sa(t) {
   );
   return {
     c() {
-      e = L("div"), i = L("div"), n = G(), r = L("div"), u = G(), s = L("div"), f = G(), c = L("div"), k = G(), g = L("div"), h = G(), p = L("div"), O && O.c(), b(i, "class", l = A(
+      e = L("div"), i = L("div"), n = G(), r = L("div"), u = G(), s = L("div"), f = G(), c = L("div"), k = G(), g = L("div"), b = G(), p = L("div"), O && O.c(), h(i, "class", l = A(
         /*top*/
         t[2],
         /*$$props*/
         t[7].classTop
-      )), b(r, "class", o = A(
+      )), h(r, "class", o = A(
         /*leftTop*/
         t[3],
         /*$$props*/
         t[7].classLeftTop
-      )), b(s, "class", a = A(
+      )), h(s, "class", a = A(
         /*leftMid*/
         t[4],
         /*$$props*/
         t[7].classLeftMid
-      )), b(c, "class", d = A(
+      )), h(c, "class", d = A(
         /*leftBot*/
         t[5],
         /*$$props*/
         t[7].classLeftBot
-      )), b(g, "class", m = A(
+      )), h(g, "class", m = A(
         /*right*/
         t[6],
         /*$$props*/
         t[7].classRight
-      )), b(p, "class", C = A(
+      )), h(p, "class", C = A(
         /*slot*/
         t[1],
         /*$$props*/
         t[7].classSlot
-      )), b(e, "class", w = A(
+      )), h(e, "class", w = A(
         /*div*/
         t[0],
         /*$$props*/
@@ -7723,7 +7715,7 @@ function Sa(t) {
       ));
     },
     m(I, U) {
-      T(I, e, U), R(e, i), R(e, n), R(e, r), R(e, u), R(e, s), R(e, f), R(e, c), R(e, k), R(e, g), R(e, h), R(e, p), O && O.m(p, null), v = !0;
+      T(I, e, U), R(e, i), R(e, n), R(e, r), R(e, u), R(e, s), R(e, f), R(e, c), R(e, k), R(e, g), R(e, b), R(e, p), O && O.m(p, null), v = !0;
     },
     p(I, [U]) {
       (!v || U & /*top, $$props*/
@@ -7732,31 +7724,31 @@ function Sa(t) {
         I[2],
         /*$$props*/
         I[7].classTop
-      ))) && b(i, "class", l), (!v || U & /*leftTop, $$props*/
+      ))) && h(i, "class", l), (!v || U & /*leftTop, $$props*/
       136 && o !== (o = A(
         /*leftTop*/
         I[3],
         /*$$props*/
         I[7].classLeftTop
-      ))) && b(r, "class", o), (!v || U & /*leftMid, $$props*/
+      ))) && h(r, "class", o), (!v || U & /*leftMid, $$props*/
       144 && a !== (a = A(
         /*leftMid*/
         I[4],
         /*$$props*/
         I[7].classLeftMid
-      ))) && b(s, "class", a), (!v || U & /*leftBot, $$props*/
+      ))) && h(s, "class", a), (!v || U & /*leftBot, $$props*/
       160 && d !== (d = A(
         /*leftBot*/
         I[5],
         /*$$props*/
         I[7].classLeftBot
-      ))) && b(c, "class", d), (!v || U & /*right, $$props*/
+      ))) && h(c, "class", d), (!v || U & /*right, $$props*/
       192 && m !== (m = A(
         /*right*/
         I[6],
         /*$$props*/
         I[7].classRight
-      ))) && b(g, "class", m), O && O.p && (!v || U & /*$$scope*/
+      ))) && h(g, "class", m), O && O.p && (!v || U & /*$$scope*/
       256) && J(
         O,
         E,
@@ -7780,13 +7772,13 @@ function Sa(t) {
         I[1],
         /*$$props*/
         I[7].classSlot
-      ))) && b(p, "class", C), (!v || U & /*div, $$props*/
+      ))) && h(p, "class", C), (!v || U & /*div, $$props*/
       129 && w !== (w = A(
         /*div*/
         I[0],
         /*$$props*/
         I[7].class
-      ))) && b(e, "class", w);
+      ))) && h(e, "class", w);
     },
     i(I) {
       v || (_(O, I), v = !0);
@@ -7819,7 +7811,7 @@ class Ea extends ie {
   }
 }
 function Ia(t) {
-  let e, i, l, n, r, o, u, s, a, f, c, d, k, g, m, h, p;
+  let e, i, l, n, r, o, u, s, a, f, c, d, k, g, m, b, p;
   const C = (
     /*#slots*/
     t[8].default
@@ -7832,32 +7824,32 @@ function Ia(t) {
   );
   return {
     c() {
-      e = L("div"), i = L("div"), n = G(), r = L("div"), u = G(), s = L("div"), f = G(), c = L("div"), k = G(), g = L("div"), w && w.c(), b(i, "class", l = A(
+      e = L("div"), i = L("div"), n = G(), r = L("div"), u = G(), s = L("div"), f = G(), c = L("div"), k = G(), g = L("div"), w && w.c(), h(i, "class", l = A(
         /*top*/
         t[2],
         /*$$props*/
         t[6].classTop
-      )), b(r, "class", o = A(
+      )), h(r, "class", o = A(
         /*leftTop*/
         t[3],
         /*$$props*/
         t[6].classLeftTop
-      )), b(s, "class", a = A(
+      )), h(s, "class", a = A(
         /*leftBot*/
         t[4],
         /*$$props*/
         t[6].classLeftBot
-      )), b(c, "class", d = A(
+      )), h(c, "class", d = A(
         /*right*/
         t[5],
         /*$$props*/
         t[6].classRight
-      )), b(g, "class", m = A(
+      )), h(g, "class", m = A(
         /*slot*/
         t[1],
         /*$$props*/
         t[6].classSlot
-      )), b(e, "class", h = A(
+      )), h(e, "class", b = A(
         /*div*/
         t[0],
         /*$$props*/
@@ -7874,25 +7866,25 @@ function Ia(t) {
         v[2],
         /*$$props*/
         v[6].classTop
-      ))) && b(i, "class", l), (!p || E & /*leftTop, $$props*/
+      ))) && h(i, "class", l), (!p || E & /*leftTop, $$props*/
       72 && o !== (o = A(
         /*leftTop*/
         v[3],
         /*$$props*/
         v[6].classLeftTop
-      ))) && b(r, "class", o), (!p || E & /*leftBot, $$props*/
+      ))) && h(r, "class", o), (!p || E & /*leftBot, $$props*/
       80 && a !== (a = A(
         /*leftBot*/
         v[4],
         /*$$props*/
         v[6].classLeftBot
-      ))) && b(s, "class", a), (!p || E & /*right, $$props*/
+      ))) && h(s, "class", a), (!p || E & /*right, $$props*/
       96 && d !== (d = A(
         /*right*/
         v[5],
         /*$$props*/
         v[6].classRight
-      ))) && b(c, "class", d), w && w.p && (!p || E & /*$$scope*/
+      ))) && h(c, "class", d), w && w.p && (!p || E & /*$$scope*/
       128) && J(
         w,
         C,
@@ -7916,13 +7908,13 @@ function Ia(t) {
         v[1],
         /*$$props*/
         v[6].classSlot
-      ))) && b(g, "class", m), (!p || E & /*div, $$props*/
-      65 && h !== (h = A(
+      ))) && h(g, "class", m), (!p || E & /*div, $$props*/
+      65 && b !== (b = A(
         /*div*/
         v[0],
         /*$$props*/
         v[6].class
-      ))) && b(e, "class", h);
+      ))) && h(e, "class", b);
     },
     i(v) {
       p || (_(w, v), p = !0);
@@ -7967,22 +7959,22 @@ function Pa(t) {
   );
   return {
     c() {
-      e = L("div"), i = L("div"), k && k.c(), r = G(), o = L("div"), s = G(), a = L("div"), b(i, "class", l = A(
+      e = L("div"), i = L("div"), k && k.c(), r = G(), o = L("div"), s = G(), a = L("div"), h(i, "class", l = A(
         /*inner*/
         t[0],
         /*$$props*/
         t[4].classInner
-      )), b(e, "class", n = A(
+      )), h(e, "class", n = A(
         /*div*/
         t[3],
         /*$$props*/
         t[4].class
-      )), b(o, "class", u = A(
+      )), h(o, "class", u = A(
         /*bot*/
         t[1],
         /*$$props*/
         t[4].classBot
-      )), b(a, "class", f = A(
+      )), h(a, "class", f = A(
         /*botUnder*/
         t[2],
         /*$$props*/
@@ -8017,25 +8009,25 @@ function Pa(t) {
         g[0],
         /*$$props*/
         g[4].classInner
-      ))) && b(i, "class", l), (!c || m & /*div, $$props*/
+      ))) && h(i, "class", l), (!c || m & /*div, $$props*/
       24 && n !== (n = A(
         /*div*/
         g[3],
         /*$$props*/
         g[4].class
-      ))) && b(e, "class", n), (!c || m & /*bot, $$props*/
+      ))) && h(e, "class", n), (!c || m & /*bot, $$props*/
       18 && u !== (u = A(
         /*bot*/
         g[1],
         /*$$props*/
         g[4].classBot
-      ))) && b(o, "class", u), (!c || m & /*botUnder, $$props*/
+      ))) && h(o, "class", u), (!c || m & /*botUnder, $$props*/
       20 && f !== (f = A(
         /*botUnder*/
         g[2],
         /*$$props*/
         g[4].classBotUnder
-      ))) && b(a, "class", f);
+      ))) && h(a, "class", f);
     },
     i(g) {
       c || (_(k, g), c = !0);
@@ -8060,7 +8052,7 @@ class La extends ie {
   }
 }
 function Na(t) {
-  let e, i, l, n, r, o, u, s, a, f, c, d, k, g, m, h, p;
+  let e, i, l, n, r, o, u, s, a, f, c, d, k, g, m, b, p;
   const C = (
     /*#slots*/
     t[8].default
@@ -8073,32 +8065,32 @@ function Na(t) {
   );
   return {
     c() {
-      e = L("div"), i = L("div"), n = G(), r = L("div"), u = G(), s = L("div"), f = G(), c = L("div"), k = G(), g = L("div"), w && w.c(), b(i, "class", l = A(
+      e = L("div"), i = L("div"), n = G(), r = L("div"), u = G(), s = L("div"), f = G(), c = L("div"), k = G(), g = L("div"), w && w.c(), h(i, "class", l = A(
         /*top*/
         t[2],
         /*$$props*/
         t[6].classTop
-      )), b(r, "class", o = A(
+      )), h(r, "class", o = A(
         /*leftTop*/
         t[3],
         /*$$props*/
         t[6].classLeftTop
-      )), b(s, "class", a = A(
+      )), h(s, "class", a = A(
         /*leftBot*/
         t[4],
         /*$$props*/
         t[6].classLeftBot
-      )), b(c, "class", d = A(
+      )), h(c, "class", d = A(
         /*right*/
         t[5],
         /*$$props*/
         t[6].classRight
-      )), b(g, "class", m = A(
+      )), h(g, "class", m = A(
         /*slot*/
         t[1],
         /*$$props*/
         t[6].classSlot
-      )), b(e, "class", h = A(
+      )), h(e, "class", b = A(
         /*div*/
         t[0],
         /*$$props*/
@@ -8115,25 +8107,25 @@ function Na(t) {
         v[2],
         /*$$props*/
         v[6].classTop
-      ))) && b(i, "class", l), (!p || E & /*leftTop, $$props*/
+      ))) && h(i, "class", l), (!p || E & /*leftTop, $$props*/
       72 && o !== (o = A(
         /*leftTop*/
         v[3],
         /*$$props*/
         v[6].classLeftTop
-      ))) && b(r, "class", o), (!p || E & /*leftBot, $$props*/
+      ))) && h(r, "class", o), (!p || E & /*leftBot, $$props*/
       80 && a !== (a = A(
         /*leftBot*/
         v[4],
         /*$$props*/
         v[6].classLeftBot
-      ))) && b(s, "class", a), (!p || E & /*right, $$props*/
+      ))) && h(s, "class", a), (!p || E & /*right, $$props*/
       96 && d !== (d = A(
         /*right*/
         v[5],
         /*$$props*/
         v[6].classRight
-      ))) && b(c, "class", d), w && w.p && (!p || E & /*$$scope*/
+      ))) && h(c, "class", d), w && w.p && (!p || E & /*$$scope*/
       128) && J(
         w,
         C,
@@ -8157,13 +8149,13 @@ function Na(t) {
         v[1],
         /*$$props*/
         v[6].classSlot
-      ))) && b(g, "class", m), (!p || E & /*div, $$props*/
-      65 && h !== (h = A(
+      ))) && h(g, "class", m), (!p || E & /*div, $$props*/
+      65 && b !== (b = A(
         /*div*/
         v[0],
         /*$$props*/
         v[6].class
-      ))) && b(e, "class", h);
+      ))) && h(e, "class", b);
     },
     i(v) {
       p || (_(w, v), p = !0);
@@ -8208,22 +8200,22 @@ function Da(t) {
   );
   return {
     c() {
-      e = L("div"), i = L("div"), d && d.c(), r = G(), o = L("div"), u = L("div"), b(i, "class", l = A(
+      e = L("div"), i = L("div"), d && d.c(), r = G(), o = L("div"), u = L("div"), h(i, "class", l = A(
         /*inner*/
         t[1],
         /*$$props*/
         t[4].classInner
-      )), b(e, "class", n = A(
+      )), h(e, "class", n = A(
         /*div*/
         t[0],
         /*$$props*/
         t[4].class
-      )), b(u, "class", s = A(
+      )), h(u, "class", s = A(
         /*botCen*/
         t[3],
         /*$$props*/
         t[4].classBotCen
-      )), b(o, "class", a = A(
+      )), h(o, "class", a = A(
         /*bot*/
         t[2],
         /*$$props*/
@@ -8258,25 +8250,25 @@ function Da(t) {
         k[1],
         /*$$props*/
         k[4].classInner
-      ))) && b(i, "class", l), (!f || g & /*div, $$props*/
+      ))) && h(i, "class", l), (!f || g & /*div, $$props*/
       17 && n !== (n = A(
         /*div*/
         k[0],
         /*$$props*/
         k[4].class
-      ))) && b(e, "class", n), (!f || g & /*botCen, $$props*/
+      ))) && h(e, "class", n), (!f || g & /*botCen, $$props*/
       24 && s !== (s = A(
         /*botCen*/
         k[3],
         /*$$props*/
         k[4].classBotCen
-      ))) && b(u, "class", s), (!f || g & /*bot, $$props*/
+      ))) && h(u, "class", s), (!f || g & /*bot, $$props*/
       20 && a !== (a = A(
         /*bot*/
         k[2],
         /*$$props*/
         k[4].classBot
-      ))) && b(o, "class", a);
+      ))) && h(o, "class", a);
     },
     i(k) {
       f || (_(d, k), f = !0);
@@ -8301,7 +8293,7 @@ class Fa extends ie {
   }
 }
 function ja(t) {
-  let e, i, l, n, r, o, u, s, a, f, c, d, k, g, m, h, p;
+  let e, i, l, n, r, o, u, s, a, f, c, d, k, g, m, b, p;
   const C = (
     /*#slots*/
     t[8].default
@@ -8314,32 +8306,32 @@ function ja(t) {
   );
   return {
     c() {
-      e = L("div"), l = G(), n = L("div"), r = L("div"), u = G(), s = L("div"), f = G(), c = L("div"), w && w.c(), g = G(), m = L("div"), b(e, "class", i = A(
+      e = L("div"), l = G(), n = L("div"), r = L("div"), u = G(), s = L("div"), f = G(), c = L("div"), w && w.c(), g = G(), m = L("div"), h(e, "class", i = A(
         /*div*/
         t[0],
         /*$$props*/
         t[6].class
-      )), b(r, "class", o = A(
+      )), h(r, "class", o = A(
         /*rightTop*/
         t[2],
         /*$$props*/
         t[6].classRightTop
-      )), b(s, "class", a = A(
+      )), h(s, "class", a = A(
         /*rightBot*/
         t[3],
         /*$$props*/
         t[6].classRightBot
-      )), b(c, "class", d = A(
+      )), h(c, "class", d = A(
         /*slot*/
         t[1],
         /*$$props*/
         t[6].classSlot
-      )), b(n, "class", k = A(
+      )), h(n, "class", k = A(
         /*top*/
         t[4],
         /*$$props*/
         t[6].classTop
-      )), b(m, "class", h = A(
+      )), h(m, "class", b = A(
         /*bot*/
         t[5],
         /*$$props*/
@@ -8356,19 +8348,19 @@ function ja(t) {
         v[0],
         /*$$props*/
         v[6].class
-      ))) && b(e, "class", i), (!p || E & /*rightTop, $$props*/
+      ))) && h(e, "class", i), (!p || E & /*rightTop, $$props*/
       68 && o !== (o = A(
         /*rightTop*/
         v[2],
         /*$$props*/
         v[6].classRightTop
-      ))) && b(r, "class", o), (!p || E & /*rightBot, $$props*/
+      ))) && h(r, "class", o), (!p || E & /*rightBot, $$props*/
       72 && a !== (a = A(
         /*rightBot*/
         v[3],
         /*$$props*/
         v[6].classRightBot
-      ))) && b(s, "class", a), w && w.p && (!p || E & /*$$scope*/
+      ))) && h(s, "class", a), w && w.p && (!p || E & /*$$scope*/
       128) && J(
         w,
         C,
@@ -8392,19 +8384,19 @@ function ja(t) {
         v[1],
         /*$$props*/
         v[6].classSlot
-      ))) && b(c, "class", d), (!p || E & /*top, $$props*/
+      ))) && h(c, "class", d), (!p || E & /*top, $$props*/
       80 && k !== (k = A(
         /*top*/
         v[4],
         /*$$props*/
         v[6].classTop
-      ))) && b(n, "class", k), (!p || E & /*bot, $$props*/
-      96 && h !== (h = A(
+      ))) && h(n, "class", k), (!p || E & /*bot, $$props*/
+      96 && b !== (b = A(
         /*bot*/
         v[5],
         /*$$props*/
         v[6].classBot
-      ))) && b(m, "class", h);
+      ))) && h(m, "class", b);
     },
     i(v) {
       p || (_(w, v), p = !0);
@@ -8436,7 +8428,7 @@ class Ua extends ie {
   }
 }
 function Ga(t) {
-  let e, i, l, n, r, o, u, s, a, f, c, d, k, g, m, h, p;
+  let e, i, l, n, r, o, u, s, a, f, c, d, k, g, m, b, p;
   const C = (
     /*#slots*/
     t[8].default
@@ -8449,32 +8441,32 @@ function Ga(t) {
   );
   return {
     c() {
-      e = L("div"), i = L("div"), n = G(), r = L("div"), u = G(), s = L("div"), f = G(), c = L("div"), k = G(), g = L("div"), w && w.c(), b(i, "class", l = A(
+      e = L("div"), i = L("div"), n = G(), r = L("div"), u = G(), s = L("div"), f = G(), c = L("div"), k = G(), g = L("div"), w && w.c(), h(i, "class", l = A(
         /*leftTop*/
         t[2],
         /*$$props*/
         t[6].classLeftTop
-      )), b(r, "class", o = A(
+      )), h(r, "class", o = A(
         /*leftMid*/
         t[3],
         /*$$props*/
         t[6].classLeftMid
-      )), b(s, "class", a = A(
+      )), h(s, "class", a = A(
         /*leftBot*/
         t[4],
         /*$$props*/
         t[6].classLeftBot
-      )), b(c, "class", d = A(
+      )), h(c, "class", d = A(
         /*right*/
         t[5],
         /*$$props*/
         t[6].classRight
-      )), b(g, "class", m = A(
+      )), h(g, "class", m = A(
         /*slot*/
         t[1],
         /*$$props*/
         t[6].classSlot
-      )), b(e, "class", h = A(
+      )), h(e, "class", b = A(
         /*div*/
         t[0],
         /*$$props*/
@@ -8491,25 +8483,25 @@ function Ga(t) {
         v[2],
         /*$$props*/
         v[6].classLeftTop
-      ))) && b(i, "class", l), (!p || E & /*leftMid, $$props*/
+      ))) && h(i, "class", l), (!p || E & /*leftMid, $$props*/
       72 && o !== (o = A(
         /*leftMid*/
         v[3],
         /*$$props*/
         v[6].classLeftMid
-      ))) && b(r, "class", o), (!p || E & /*leftBot, $$props*/
+      ))) && h(r, "class", o), (!p || E & /*leftBot, $$props*/
       80 && a !== (a = A(
         /*leftBot*/
         v[4],
         /*$$props*/
         v[6].classLeftBot
-      ))) && b(s, "class", a), (!p || E & /*right, $$props*/
+      ))) && h(s, "class", a), (!p || E & /*right, $$props*/
       96 && d !== (d = A(
         /*right*/
         v[5],
         /*$$props*/
         v[6].classRight
-      ))) && b(c, "class", d), w && w.p && (!p || E & /*$$scope*/
+      ))) && h(c, "class", d), w && w.p && (!p || E & /*$$scope*/
       128) && J(
         w,
         C,
@@ -8533,13 +8525,13 @@ function Ga(t) {
         v[1],
         /*$$props*/
         v[6].classSlot
-      ))) && b(g, "class", m), (!p || E & /*div, $$props*/
-      65 && h !== (h = A(
+      ))) && h(g, "class", m), (!p || E & /*div, $$props*/
+      65 && b !== (b = A(
         /*div*/
         v[0],
         /*$$props*/
         v[6].class
-      ))) && b(e, "class", h);
+      ))) && h(e, "class", b);
     },
     i(v) {
       p || (_(w, v), p = !0);
@@ -8574,7 +8566,7 @@ function qa(t) {
   let e;
   return {
     c() {
-      e = L("div"), e.textContent = "Unknow device", b(e, "class", "uikit-border uikit-p-3 uikit-text-xl");
+      e = L("div"), e.textContent = "Unknow device", h(e, "class", "uikit-border uikit-p-3 uikit-text-xl");
     },
     m(i, l) {
       T(i, e, l);
@@ -8776,7 +8768,7 @@ const m0 = (t, e, i) => {
 ) });
 function Gn(t) {
   let e, i, l, n, r, o, u;
-  function s(m, h) {
+  function s(m, b) {
     if (
       /*backdrop*/
       m[4] && /*activateClickOutside*/
@@ -8841,8 +8833,8 @@ function Gn(t) {
     c() {
       f && f.c(), e = G(), i = L("div"), d && d.c(), ae(i, g);
     },
-    m(m, h) {
-      f && f.m(m, h), T(m, e, h), T(m, i, h), d && d.m(i, null), r = !0, o || (u = Be(
+    m(m, b) {
+      f && f.m(m, b), T(m, e, b), T(m, i, b), d && d.m(i, null), r = !0, o || (u = Be(
         /*clickOutsideWrapper*/
         t[14].call(
           null,
@@ -8852,8 +8844,8 @@ function Gn(t) {
         )
       ), o = !0);
     },
-    p(m, h) {
-      t = m, a === (a = s(t)) && f ? f.p(t, h) : (f && f.d(1), f = a && a(t), f && (f.c(), f.m(e.parentNode, e))), d && d.p && (!r || h & /*$$scope, hidden*/
+    p(m, b) {
+      t = m, a === (a = s(t)) && f ? f.p(t, b) : (f && f.d(1), f = a && a(t), f && (f.c(), f.m(e.parentNode, e))), d && d.p && (!r || b & /*$$scope, hidden*/
       16777217) && J(
         d,
         c,
@@ -8864,7 +8856,7 @@ function Gn(t) {
           c,
           /*$$scope*/
           t[24],
-          h,
+          b,
           xa
         ) : Z(
           /*$$scope*/
@@ -8872,15 +8864,15 @@ function Gn(t) {
         ),
         Un
       ), ae(i, g = fe(k, [
-        (!r || h & /*id*/
+        (!r || b & /*id*/
         64) && { id: (
           /*id*/
           t[6]
         ) },
-        h & /*$$restProps*/
+        b & /*$$restProps*/
         32768 && /*$$restProps*/
         t[15],
-        (!r || h & /*divClass, width, position, placement, $$props*/
+        (!r || b & /*divClass, width, position, placement, $$props*/
         65708 && l !== (l = A(
           /*divClass*/
           t[7],
@@ -8897,12 +8889,12 @@ function Gn(t) {
           t[16].class
         ))) && { class: l },
         { tabindex: "-1" },
-        (!r || h & /*id*/
+        (!r || b & /*id*/
         64) && { "aria-controls": (
           /*id*/
           t[6]
         ) },
-        (!r || h & /*id*/
+        (!r || b & /*id*/
         64) && { "aria-labelledby": (
           /*id*/
           t[6]
@@ -8940,7 +8932,7 @@ function $a(t) {
   let e;
   return {
     c() {
-      e = L("div"), b(e, "role", "presentation"), b(
+      e = L("div"), h(e, "role", "presentation"), h(
         e,
         "class",
         /*backdropDivClass*/
@@ -8960,7 +8952,7 @@ function ef(t) {
   let e, i, l;
   return {
     c() {
-      e = L("div"), b(e, "role", "presentation"), b(
+      e = L("div"), h(e, "role", "presentation"), h(
         e,
         "class",
         /*backdropDivClass*/
@@ -9028,7 +9020,7 @@ function nf(t, e, i) {
     "transitionParams",
     "transitionType"
   ];
-  let n = ne(e, l), { $$slots: r = {}, $$scope: o } = e, { activateClickOutside: u = !0 } = e, { hidden: s = !0 } = e, { position: a = "uikit-fixed" } = e, { leftOffset: f = "uikit-inset-y-0 uikit-start-0" } = e, { rightOffset: c = "uikit-inset-y-0 uikit-end-0" } = e, { topOffset: d = "uikit-inset-x-0 uikit-top-0" } = e, { bottomOffset: k = "uikit-inset-x-0 uikit-bottom-0" } = e, { width: g = "uikit-w-80" } = e, { backdrop: m = !0 } = e, { bgColor: h = "uikit-bg-gray-900" } = e, { bgOpacity: p = "uikit-bg-opacity-75" } = e, { placement: C = "left" } = e, { id: w = "drawer-example" } = e, { divClass: v = "uikit-overflow-y-auto uikit-z-50 uikit-p-4 uikit-bg-white dark:uikit-bg-gray-800" } = e, { transitionParams: E = {} } = e, { transitionType: O = "fly" } = e;
+  let n = ne(e, l), { $$slots: r = {}, $$scope: o } = e, { activateClickOutside: u = !0 } = e, { hidden: s = !0 } = e, { position: a = "uikit-fixed" } = e, { leftOffset: f = "uikit-inset-y-0 uikit-start-0" } = e, { rightOffset: c = "uikit-inset-y-0 uikit-end-0" } = e, { topOffset: d = "uikit-inset-x-0 uikit-top-0" } = e, { bottomOffset: k = "uikit-inset-x-0 uikit-bottom-0" } = e, { width: g = "uikit-w-80" } = e, { backdrop: m = !0 } = e, { bgColor: b = "uikit-bg-gray-900" } = e, { bgOpacity: p = "uikit-bg-opacity-75" } = e, { placement: C = "left" } = e, { id: w = "drawer-example" } = e, { divClass: v = "uikit-overflow-y-auto uikit-z-50 uikit-p-4 uikit-bg-white dark:uikit-bg-gray-800" } = e, { transitionParams: E = {} } = e, { transitionType: O = "fly" } = e;
   function I(z, j) {
     switch (O) {
       case "slide":
@@ -9049,13 +9041,13 @@ function nf(t, e, i) {
   }, $ = () => {
     i(0, s = !s);
   }, W = () => u && !s && $();
-  let P = A("uikit-fixed uikit-top-0 uikit-start-0 uikit-z-50 uikit-w-full uikit-h-full", m && h, m && p);
+  let P = A("uikit-fixed uikit-top-0 uikit-start-0 uikit-z-50 uikit-w-full uikit-h-full", m && b, m && p);
   function H(z, j) {
     return u ? Za(z, j) : void 0;
   }
   const me = () => !s && $();
   return t.$$set = (z) => {
-    i(16, e = N(N({}, e), B(z))), i(15, n = ne(e, l)), "activateClickOutside" in z && i(1, u = z.activateClickOutside), "hidden" in z && i(0, s = z.hidden), "position" in z && i(2, a = z.position), "leftOffset" in z && i(17, f = z.leftOffset), "rightOffset" in z && i(18, c = z.rightOffset), "topOffset" in z && i(19, d = z.topOffset), "bottomOffset" in z && i(20, k = z.bottomOffset), "width" in z && i(3, g = z.width), "backdrop" in z && i(4, m = z.backdrop), "bgColor" in z && i(21, h = z.bgColor), "bgOpacity" in z && i(22, p = z.bgOpacity), "placement" in z && i(5, C = z.placement), "id" in z && i(6, w = z.id), "divClass" in z && i(7, v = z.divClass), "transitionParams" in z && i(8, E = z.transitionParams), "transitionType" in z && i(23, O = z.transitionType), "$$scope" in z && i(24, o = z.$$scope);
+    i(16, e = N(N({}, e), B(z))), i(15, n = ne(e, l)), "activateClickOutside" in z && i(1, u = z.activateClickOutside), "hidden" in z && i(0, s = z.hidden), "position" in z && i(2, a = z.position), "leftOffset" in z && i(17, f = z.leftOffset), "rightOffset" in z && i(18, c = z.rightOffset), "topOffset" in z && i(19, d = z.topOffset), "bottomOffset" in z && i(20, k = z.bottomOffset), "width" in z && i(3, g = z.width), "backdrop" in z && i(4, m = z.backdrop), "bgColor" in z && i(21, b = z.bgColor), "bgOpacity" in z && i(22, p = z.bgOpacity), "placement" in z && i(5, C = z.placement), "id" in z && i(6, w = z.id), "divClass" in z && i(7, v = z.divClass), "transitionParams" in z && i(8, E = z.transitionParams), "transitionType" in z && i(23, O = z.transitionType), "$$scope" in z && i(24, o = z.$$scope);
   }, e = B(e), [
     s,
     u,
@@ -9078,7 +9070,7 @@ function nf(t, e, i) {
     c,
     d,
     k,
-    h,
+    b,
     p,
     O,
     o,
@@ -9256,7 +9248,7 @@ function af(t) {
   let e, i;
   return {
     c() {
-      e = pe("svg"), i = pe("path"), b(i, "stroke-linecap", "round"), b(i, "stroke-linejoin", "round"), b(i, "stroke-width", "2"), b(i, "d", "M15 19l-7-7 7-7"), b(e, "aria-hidden", "true"), b(e, "class", "uikit-w-5 uikit-h-5 sm:uikit-w-6 sm:uikit-h-6"), b(e, "fill", "none"), b(e, "stroke", "currentColor"), b(e, "viewBox", "0 0 24 24"), b(e, "xmlns", "http://www.w3.org/2000/svg");
+      e = pe("svg"), i = pe("path"), h(i, "stroke-linecap", "round"), h(i, "stroke-linejoin", "round"), h(i, "stroke-width", "2"), h(i, "d", "M15 19l-7-7 7-7"), h(e, "aria-hidden", "true"), h(e, "class", "uikit-w-5 uikit-h-5 sm:uikit-w-6 sm:uikit-h-6"), h(e, "fill", "none"), h(e, "stroke", "currentColor"), h(e, "viewBox", "0 0 24 24"), h(e, "xmlns", "http://www.w3.org/2000/svg");
     },
     m(l, n) {
       T(l, e, n), R(e, i);
@@ -9270,7 +9262,7 @@ function ff(t) {
   let e, i;
   return {
     c() {
-      e = pe("svg"), i = pe("path"), b(i, "stroke-linecap", "round"), b(i, "stroke-linejoin", "round"), b(i, "stroke-width", "2"), b(i, "d", "M9 5l7 7-7 7"), b(e, "aria-hidden", "true"), b(e, "class", "uikit-w-5 uikit-h-5 sm:uikit-w-6 sm:uikit-h-6"), b(e, "fill", "none"), b(e, "stroke", "currentColor"), b(e, "viewBox", "0 0 24 24"), b(e, "xmlns", "http://www.w3.org/2000/svg");
+      e = pe("svg"), i = pe("path"), h(i, "stroke-linecap", "round"), h(i, "stroke-linejoin", "round"), h(i, "stroke-width", "2"), h(i, "d", "M9 5l7 7-7 7"), h(e, "aria-hidden", "true"), h(e, "class", "uikit-w-5 uikit-h-5 sm:uikit-w-6 sm:uikit-h-6"), h(e, "fill", "none"), h(e, "stroke", "currentColor"), h(e, "viewBox", "0 0 24 24"), h(e, "xmlns", "http://www.w3.org/2000/svg");
     },
     m(l, n) {
       T(l, e, n), R(e, i);
@@ -9294,7 +9286,7 @@ function cf(t) {
       e = L("span"), u.c(), i = G(), l = L("span"), n = ke(
         /*name*/
         t[1]
-      ), b(l, "class", "uikit-sr-only"), b(e, "class", "uikit-inline-flex uikit-justify-center uikit-items-center uikit-w-8 uikit-h-8 uikit-rounded-full sm:uikit-w-10 sm:uikit-h-10 uikit-bg-white/30 dark:uikit-bg-gray-800/30 group-hover:uikit-bg-white/50 dark:group-hover:uikit-bg-gray-800/60 group-focus:uikit-ring-4 group-focus:uikit-ring-white dark:group-focus:uikit-ring-gray-800/70 group-focus:uikit-outline-none");
+      ), h(l, "class", "uikit-sr-only"), h(e, "class", "uikit-inline-flex uikit-justify-center uikit-items-center uikit-w-8 uikit-h-8 uikit-rounded-full sm:uikit-w-10 sm:uikit-h-10 uikit-bg-white/30 dark:uikit-bg-gray-800/30 group-hover:uikit-bg-white/50 dark:group-hover:uikit-bg-gray-800/60 group-focus:uikit-ring-4 group-focus:uikit-ring-white dark:group-focus:uikit-ring-gray-800/70 group-focus:uikit-outline-none");
     },
     m(s, a) {
       T(s, e, a), u.m(e, null), R(e, i), R(e, l), R(l, n);
@@ -9326,7 +9318,7 @@ function df(t) {
   ), u = o || cf(t);
   return {
     c() {
-      e = L("button"), u && u.c(), b(e, "type", "button"), b(
+      e = L("button"), u && u.c(), h(e, "type", "button"), h(
         e,
         "class",
         /*buttonCls*/
@@ -9362,7 +9354,7 @@ function df(t) {
         null
       ) : u && u.p && (!i || a & /*name, forward*/
       3) && u.p(s, i ? a : -1), (!i || a & /*buttonCls*/
-      4) && b(
+      4) && h(
         e,
         "class",
         /*buttonCls*/
@@ -9684,7 +9676,7 @@ function vf(t) {
       e = L("div");
       for (let u = 0; u < r.length; u += 1)
         r[u].c();
-      b(e, "class", i = A(
+      h(e, "class", i = A(
         "uikit-flex uikit-absolute uikit-bottom-5 uikit-start-1/2 uikit-z-30 uikit-space-x-3 rtl:uikit-space-x-reverse -uikit-translate-x-1/2 rtl:uikit-translate-x-1/2",
         /*$$props*/
         t[4].class
@@ -9717,7 +9709,7 @@ function vf(t) {
         "uikit-flex uikit-absolute uikit-bottom-5 uikit-start-1/2 uikit-z-30 uikit-space-x-3 rtl:uikit-space-x-reverse -uikit-translate-x-1/2 rtl:uikit-translate-x-1/2",
         /*$$props*/
         u[4].class
-      ))) && b(e, "class", i);
+      ))) && h(e, "class", i);
     },
     i(u) {
       if (!l) {
@@ -10054,8 +10046,8 @@ function $n(t) {
   let e, i;
   return {
     c() {
-      e = L("link"), b(e, "rel", "preload"), b(e, "href", i = /*image*/
-      t[29].src), b(e, "as", "image");
+      e = L("link"), h(e, "rel", "preload"), h(e, "href", i = /*image*/
+      t[29].src), h(e, "as", "image");
     },
     m(l, n) {
       T(l, e, n);
@@ -10063,7 +10055,7 @@ function $n(t) {
     p(l, n) {
       n[0] & /*images*/
       2 && i !== (i = /*image*/
-      l[29].src) && b(e, "href", i);
+      l[29].src) && h(e, "href", i);
     },
     d(l) {
       l && S(e);
@@ -10136,7 +10128,7 @@ function Mf(t) {
     t[17],
     Jn
   ), m = g || Pf(t);
-  let h = [
+  let b = [
     /*$$restProps*/
     t[12],
     {
@@ -10149,8 +10141,8 @@ function Mf(t) {
       )
     }
   ], p = {};
-  for (let v = 0; v < h.length; v += 1)
-    p = N(p, h[v]);
+  for (let v = 0; v < b.length; v += 1)
+    p = N(p, b[v]);
   const C = (
     /*#slots*/
     t[18].default
@@ -10163,12 +10155,12 @@ function Mf(t) {
   );
   return {
     c() {
-      d && d.c(), e = ue(), i = G(), l = G(), n = L("div"), r = L("div"), m && m.c(), s = G(), w && w.c(), ae(r, p), b(n, "class", "uikit-relative"), b(n, "role", "button"), b(
+      d && d.c(), e = ue(), i = G(), l = G(), n = L("div"), r = L("div"), m && m.c(), s = G(), w && w.c(), ae(r, p), h(n, "class", "uikit-relative"), h(n, "role", "button"), h(
         n,
         "aria-label",
         /*ariaLabel*/
         t[4]
-      ), b(n, "tabindex", "0");
+      ), h(n, "tabindex", "0");
     },
     m(v, E) {
       d && d.m(document.head, null), R(document.head, e), T(v, i, E), T(v, l, E), T(v, n, E), R(n, r), m && m.m(r, null), R(n, s), w && w.m(n, null), t[19](n), a = !0, f || (c = [
@@ -10264,7 +10256,7 @@ function Mf(t) {
         ),
         Jn
       ) : m && m.p && (!a || E[0] & /*images, index, imgClass, transition*/
-      39) && m.p(t, a ? E : [-1, -1]), ae(r, p = fe(h, [
+      39) && m.p(t, a ? E : [-1, -1]), ae(r, p = fe(b, [
         E[0] & /*$$restProps*/
         4096 && /*$$restProps*/
         t[12],
@@ -10300,7 +10292,7 @@ function Mf(t) {
         ),
         Yn
       ), (!a || E[0] & /*ariaLabel*/
-      16) && b(
+      16) && h(
         n,
         "aria-label",
         /*ariaLabel*/
@@ -10332,7 +10324,7 @@ function Lf(t, e, i) {
     "imgClass"
   ];
   let o = ne(e, r), { $$slots: u = {}, $$scope: s } = e, { images: a } = e, { index: f = 0 } = e, { slideDuration: c = 1e3 } = e, { transition: d = null } = e, { duration: k = 0 } = e, { ariaLabel: g = "Draggable Carousel" } = e, { imgClass: m = "" } = e;
-  const h = He(), { set: p, subscribe: C, update: w } = nt({
+  const b = He(), { set: p, subscribe: C, update: w } = nt({
     images: a,
     index: f,
     forward: !0,
@@ -10351,9 +10343,9 @@ function Lf(t, e, i) {
   };
   let E = !0;
   Ue("state", v), C((M) => {
-    i(0, f = M.index), E = M.forward, h("change", a[f]);
+    i(0, f = M.index), E = M.forward, b("change", a[f]);
   }), Je(() => {
-    h("change", a[f]);
+    b("change", a[f]);
   });
   const O = () => {
     w((M) => Ai({
@@ -10501,7 +10493,7 @@ function Rf(t) {
     }
   }), {
     c() {
-      e = L("div"), x(i.$$.fragment), b(e, "slot", "slide");
+      e = L("div"), x(i.$$.fragment), h(e, "slot", "slide");
     },
     m(n, r) {
       T(n, e, r), X(i, e, null), l = !0;
@@ -10551,7 +10543,7 @@ function Df(t) {
     }
   }), {
     c() {
-      e = L("div"), x(i.$$.fragment), b(e, "class", "max-w-4xl space-y-4");
+      e = L("div"), x(i.$$.fragment), h(e, "class", "max-w-4xl space-y-4");
     },
     m(n, r) {
       T(n, e, r), X(i, e, null), l = !0;
@@ -10762,7 +10754,7 @@ const Xf = async (t, e, i) => {
   } = il(a, l, s), d = l, k = {}, g = 0;
   for (let m = 0; m < u.length; m++) {
     const {
-      name: h,
+      name: b,
       fn: p
     } = u[m], {
       x: C,
@@ -10785,8 +10777,8 @@ const Xf = async (t, e, i) => {
     });
     f = C ?? f, c = w ?? c, k = {
       ...k,
-      [h]: {
-        ...k[h],
+      [b]: {
+        ...k[b],
         ...v
       }
     }, E && g <= 50 && (g++, typeof E == "object" && (E.placement && (d = E.placement), E.rects && (a = E.rects === !0 ? await o.getElementRects({
@@ -10822,8 +10814,8 @@ async function Fr(t, e) {
     elementContext: c = "floating",
     altBoundary: d = !1,
     padding: k = 0
-  } = Pt(e, t), g = Br(k), h = u[d ? c === "floating" ? "reference" : "floating" : c], p = Kt(await r.getClippingRect({
-    element: (i = await (r.isElement == null ? void 0 : r.isElement(h))) == null || i ? h : h.contextElement || await (r.getDocumentElement == null ? void 0 : r.getDocumentElement(u.floating)),
+  } = Pt(e, t), g = Br(k), b = u[d ? c === "floating" ? "reference" : "floating" : c], p = Kt(await r.getClippingRect({
+    element: (i = await (r.isElement == null ? void 0 : r.isElement(b))) == null || i ? b : b.contextElement || await (r.getDocumentElement == null ? void 0 : r.getDocumentElement(u.floating)),
     boundary: a,
     rootBoundary: f,
     strategy: s
@@ -10871,7 +10863,7 @@ const Qf = (t) => ({
     const c = Br(f), d = {
       x: i,
       y: l
-    }, k = Yi(n), g = Ki(k), m = await o.getDimensions(a), h = k === "y", p = h ? "top" : "left", C = h ? "bottom" : "right", w = h ? "clientHeight" : "clientWidth", v = r.reference[g] + r.reference[k] - d[k] - r.floating[g], E = d[k] - r.reference[k], O = await (o.getOffsetParent == null ? void 0 : o.getOffsetParent(a));
+    }, k = Yi(n), g = Ki(k), m = await o.getDimensions(a), b = k === "y", p = b ? "top" : "left", C = b ? "bottom" : "right", w = b ? "clientHeight" : "clientWidth", v = r.reference[g] + r.reference[k] - d[k] - r.floating[g], E = d[k] - r.reference[k], O = await (o.getOffsetParent == null ? void 0 : o.getOffsetParent(a));
     let I = O ? O[w] : 0;
     (!I || !await (o.isElement == null ? void 0 : o.isElement(O))) && (I = u.floating[w] || r.floating[g]);
     const U = v / 2 - E / 2, $ = I / 2 - m[g] / 2 - 1, W = dt(c[p], $), P = dt(c[C], $), H = W, me = I - m[g] - P, z = I / 2 - m[g] / 2 + U, j = Oi(H, z, me), M = !s.arrow && Mt(n) != null && z !== j && r.reference[g] / 2 - (z < H ? W : P) - m[g] / 2 < 0, se = M ? z < H ? z - H : z - me : 0;
@@ -10907,13 +10899,13 @@ const Qf = (t) => ({
         fallbackStrategy: k = "bestFit",
         fallbackAxisSideDirection: g = "none",
         flipAlignment: m = !0,
-        ...h
+        ...b
       } = Pt(t, e);
       if ((i = r.arrow) != null && i.alignmentOffset)
         return {};
       const p = tt(n), C = tt(u) === u, w = await (s.isRTL == null ? void 0 : s.isRTL(a.floating)), v = d || (C || !m ? [Qt(u)] : Gf(u));
       !d && g !== "none" && v.push(...Vf(u, m, g, w));
-      const E = [u, ...v], O = await Fr(e, h), I = [];
+      const E = [u, ...v], O = await Fr(e, b), I = [];
       let U = ((l = r.flip) == null ? void 0 : l.overflows) || [];
       if (f && I.push(O[p]), c) {
         const H = Uf(n, o, w);
@@ -11022,11 +11014,11 @@ const Jf = function(t) {
         mainAxis: r = !0,
         crossAxis: o = !1,
         limiter: u = {
-          fn: (h) => {
+          fn: (b) => {
             let {
               x: p,
               y: C
-            } = h;
+            } = b;
             return {
               x: p,
               y: C
@@ -11040,11 +11032,11 @@ const Jf = function(t) {
       }, f = await Fr(e, s), c = ti(tt(n)), d = Dr(c);
       let k = a[d], g = a[c];
       if (r) {
-        const h = d === "y" ? "top" : "left", p = d === "y" ? "bottom" : "right", C = k + f[h], w = k - f[p];
+        const b = d === "y" ? "top" : "left", p = d === "y" ? "bottom" : "right", C = k + f[b], w = k - f[p];
         k = Oi(C, k, w);
       }
       if (o) {
-        const h = c === "y" ? "top" : "left", p = c === "y" ? "bottom" : "right", C = g + f[h], w = g - f[p];
+        const b = c === "y" ? "top" : "left", p = c === "y" ? "bottom" : "right", C = g + f[b], w = g - f[p];
         g = Oi(C, g, w);
       }
       const m = u.fn({
@@ -11200,7 +11192,7 @@ function it(t, e, i, l) {
     const d = Ee(r), k = l && Ge(l) ? Ee(l) : l;
     let g = d.frameElement;
     for (; g && l && k !== d; ) {
-      const m = ct(g), h = g.getBoundingClientRect(), p = Le(g), C = h.left + (g.clientLeft + parseFloat(p.paddingLeft)) * m.x, w = h.top + (g.clientTop + parseFloat(p.paddingTop)) * m.y;
+      const m = ct(g), b = g.getBoundingClientRect(), p = Le(g), C = b.left + (g.clientLeft + parseFloat(p.paddingLeft)) * m.x, w = b.top + (g.clientTop + parseFloat(p.paddingTop)) * m.y;
       s *= m.x, a *= m.y, f *= m.x, c *= m.y, s += C, a += w, g = Ee(g).frameElement;
     }
   }
@@ -11438,8 +11430,8 @@ function gc(t, e) {
     } = t.getBoundingClientRect();
     if (u || e(), !c || !d)
       return;
-    const k = Dt(f), g = Dt(n.clientWidth - (a + c)), m = Dt(n.clientHeight - (f + d)), h = Dt(a), C = {
-      rootMargin: -k + "px " + -g + "px " + -m + "px " + -h + "px",
+    const k = Dt(f), g = Dt(n.clientWidth - (a + c)), m = Dt(n.clientHeight - (f + d)), b = Dt(a), C = {
+      rootMargin: -k + "px " + -g + "px " + -m + "px " + -b + "px",
       threshold: $e(0, dt(1, s)) || 1
     };
     let w = !0;
@@ -11491,10 +11483,10 @@ function ol(t, e, i, l) {
     })), i();
   }), a && !s && k.observe(a), k.observe(e));
   let g, m = s ? it(t) : null;
-  s && h();
-  function h() {
+  s && b();
+  function b() {
     const p = it(t);
-    m && (p.x !== m.x || p.y !== m.y || p.width !== m.width || p.height !== m.height) && i(), m = p, g = requestAnimationFrame(h);
+    m && (p.x !== m.x || p.y !== m.y || p.width !== m.width || p.height !== m.height) && i(), m = p, g = requestAnimationFrame(b);
   }
   return i(), () => {
     var p;
@@ -11663,7 +11655,7 @@ function al(t) {
   let e, i, l;
   return {
     c() {
-      e = L("div"), b(
+      e = L("div"), h(
         e,
         "class",
         /*arrowClass*/
@@ -11678,7 +11670,7 @@ function al(t) {
     },
     p(n, r) {
       r[0] & /*arrowClass*/
-      64 && b(
+      64 && h(
         e,
         "class",
         /*arrowClass*/
@@ -11799,19 +11791,19 @@ function vc(t, e, i) {
     "yOnly",
     "middlewares"
   ];
-  let r = ne(e, n), { $$slots: o = {}, $$scope: u } = e, { activeContent: s = !1 } = e, { arrow: a = !0 } = e, { offset: f = 8 } = e, { placement: c = "top" } = e, { trigger: d = "hover" } = e, { triggeredBy: k = void 0 } = e, { reference: g = void 0 } = e, { strategy: m = "absolute" } = e, { open: h = !1 } = e, { yOnly: p = !1 } = e, { middlewares: C = [hc(), mc()] } = e;
+  let r = ne(e, n), { $$slots: o = {}, $$scope: u } = e, { activeContent: s = !1 } = e, { arrow: a = !0 } = e, { offset: f = 8 } = e, { placement: c = "top" } = e, { trigger: d = "hover" } = e, { triggeredBy: k = void 0 } = e, { reference: g = void 0 } = e, { strategy: m = "absolute" } = e, { open: b = !1 } = e, { yOnly: p = !1 } = e, { middlewares: C = [hc(), mc()] } = e;
   const w = He();
   let v, E, O, I, U, $ = [], W = !1;
   const P = () => (W = !0, setTimeout(() => W = !1, 250)), H = (ee) => {
-    E === void 0 && console.error("trigger undefined"), !g && $.includes(ee.target) && E !== ee.target && (i(3, E = ee.target), P()), v && ee.type === "focusin" && !h && P(), i(0, h = v && ee.type === "click" && !W ? !h : !0);
+    E === void 0 && console.error("trigger undefined"), !g && $.includes(ee.target) && E !== ee.target && (i(3, E = ee.target), P()), v && ee.type === "focusin" && !b && P(), i(0, b = v && ee.type === "click" && !W ? !b : !0);
   }, me = (ee) => ee.matches(":hover"), z = (ee) => ee.contains(document.activeElement), j = (ee) => ee != null ? `${ee}px` : "", M = (ee) => {
     s ? setTimeout(
       () => {
         const we = [E, O, ...$].filter(Boolean);
-        ee.type === "mouseleave" && we.some(me) || ee.type === "focusout" && we.some(z) || i(0, h = !1);
+        ee.type === "mouseleave" && we.some(me) || ee.type === "focusout" && we.some(z) || i(0, b = !1);
       },
       100
-    ) : i(0, h = !1);
+    ) : i(0, b = !1);
   };
   let se;
   const de = {
@@ -11871,11 +11863,11 @@ function vc(t, e, i) {
     });
   }
   return t.$$set = (ee) => {
-    i(36, e = N(N({}, e), B(ee))), i(11, r = ne(e, n)), "activeContent" in ee && i(1, s = ee.activeContent), "arrow" in ee && i(2, a = ee.arrow), "offset" in ee && i(12, f = ee.offset), "placement" in ee && i(13, c = ee.placement), "trigger" in ee && i(14, d = ee.trigger), "triggeredBy" in ee && i(15, k = ee.triggeredBy), "reference" in ee && i(16, g = ee.reference), "strategy" in ee && i(17, m = ee.strategy), "open" in ee && i(0, h = ee.open), "yOnly" in ee && i(18, p = ee.yOnly), "middlewares" in ee && i(19, C = ee.middlewares), "$$scope" in ee && i(24, u = ee.$$scope);
+    i(36, e = N(N({}, e), B(ee))), i(11, r = ne(e, n)), "activeContent" in ee && i(1, s = ee.activeContent), "arrow" in ee && i(2, a = ee.arrow), "offset" in ee && i(12, f = ee.offset), "placement" in ee && i(13, c = ee.placement), "trigger" in ee && i(14, d = ee.trigger), "triggeredBy" in ee && i(15, k = ee.triggeredBy), "reference" in ee && i(16, g = ee.reference), "strategy" in ee && i(17, m = ee.strategy), "open" in ee && i(0, b = ee.open), "yOnly" in ee && i(18, p = ee.yOnly), "middlewares" in ee && i(19, C = ee.middlewares), "$$scope" in ee && i(24, u = ee.$$scope);
   }, t.$$.update = () => {
     t.$$.dirty[0] & /*trigger*/
     16384 && i(4, v = d === "click"), t.$$.dirty[0] & /*open*/
-    1 && w("show", h), t.$$.dirty[0] & /*placement, referenceEl*/
+    1 && w("show", b), t.$$.dirty[0] & /*placement, referenceEl*/
     8200 && c && (i(3, E), i(13, c)), t.$$.dirty[0] & /*middlewares, offset, arrowEl*/
     1576960 && (l = [
       ...C,
@@ -11883,7 +11875,7 @@ function vc(t, e, i) {
       I && bc({ element: I, padding: 10 })
     ]), i(6, Oe = dr("uikit-absolute uikit-pointer-events-none uikit-block uikit-w-[10px] uikit-h-[10px] uikit-rotate-45 uikit-bg-inherit uikit-border-inherit", e.border && se === "bottom" && "uikit-border-b uikit-border-e", e.border && se === "top" && "uikit-border-t uikit-border-s ", e.border && se === "right" && "uikit-border-t uikit-border-e ", e.border && se === "left" && "uikit-border-b uikit-border-s "));
   }, e = B(e), [
-    h,
+    b,
     s,
     a,
     E,
@@ -11951,7 +11943,7 @@ function dl(t) {
   );
   return {
     c() {
-      e = L("div"), n && n.c(), b(
+      e = L("div"), n && n.c(), h(
         e,
         "class",
         /*headerCls*/
@@ -12007,7 +11999,7 @@ function kl(t) {
   );
   return {
     c() {
-      e = L("div"), n && n.c(), b(
+      e = L("div"), n && n.c(), h(
         e,
         "class",
         /*footerCls*/
@@ -12070,7 +12062,7 @@ function Sc(t) {
   );
   return {
     c() {
-      o && o.c(), e = G(), i = L("ul"), s && s.c(), l = G(), a && a.c(), n = ue(), b(
+      o && o.c(), e = G(), i = L("ul"), s && s.c(), l = G(), a && a.c(), n = ue(), h(
         i,
         "class",
         /*ulCls*/
@@ -12192,7 +12184,7 @@ function Ec(t, e, i) {
   const u = Ye(r), s = nt("");
   let { activeUrl: a = "" } = e, { open: f = !1 } = e, { containerClass: c = "uikit-divide-y z-50" } = e, { headerClass: d = "uikit-py-1 uikit-overflow-hidden uikit-rounded-t-lg" } = e, { footerClass: k = "uikit-py-1 uikit-overflow-hidden uikit-rounded-b-lg" } = e, { activeClass: g = "uikit-text-primary-700 dark:uikit-text-primary-700 hover:uikit-text-primary-900 dark:hover:uikit-text-primary-900" } = e, m = A(g, e.classActive);
   Ue("DropdownType", { activeClass: m }), Ue("activeUrl", s);
-  let h = A(c, e.classContainer), p = A(d, e.classHeader), C = A("py-1", e.class), w = A(k, e.classFooter);
+  let b = A(c, e.classContainer), p = A(d, e.classHeader), C = A("py-1", e.class), w = A(k, e.classFooter);
   function v(O) {
     f = O, i(0, f);
   }
@@ -12206,7 +12198,7 @@ function Ec(t, e, i) {
     128 && s.set(a), i(5, n.arrow = n.arrow ?? !1, n), i(5, n.trigger = n.trigger ?? "click", n), i(5, n.placement = n.placement ?? "bottom", n), i(5, n.color = n.color ?? "dropdown", n), i(5, n.shadow = n.shadow ?? !0, n), i(5, n.rounded = n.rounded ?? !0, n);
   }, e = B(e), [
     f,
-    h,
+    b,
     p,
     C,
     w,
@@ -12677,10 +12669,10 @@ function zc(t, e, i) {
   g.subscribe((W) => {
     i(8, m = W);
   });
-  let h = !0;
+  let b = !0;
   function p(W) {
     var P;
-    i(2, h = ((P = W.parentElement) == null ? void 0 : P.tagName) === "UL");
+    i(2, b = ((P = W.parentElement) == null ? void 0 : P.tagName) === "UL");
   }
   function C(W) {
     F.call(this, t, W);
@@ -12714,7 +12706,7 @@ function zc(t, e, i) {
   }, e = B(e), [
     f,
     d,
-    h,
+    b,
     n,
     p,
     o,
@@ -13172,7 +13164,7 @@ function jc(t, e, i) {
   const l = ["pill", "outline", "size", "href", "type", "color", "shadow", "tag", "checked"];
   let n = ne(e, l), { $$slots: r = {}, $$scope: o } = e;
   const u = Pe("group");
-  let { pill: s = !1 } = e, { outline: a = !1 } = e, { size: f = u ? "sm" : "md" } = e, { href: c = void 0 } = e, { type: d = "button" } = e, { color: k = u ? a ? "dark" : "alternative" : "primary" } = e, { shadow: g = !1 } = e, { tag: m = "button" } = e, { checked: h = void 0 } = e;
+  let { pill: s = !1 } = e, { outline: a = !1 } = e, { size: f = u ? "sm" : "md" } = e, { href: c = void 0 } = e, { type: d = "button" } = e, { color: k = u ? a ? "dark" : "alternative" : "primary" } = e, { shadow: g = !1 } = e, { tag: m = "button" } = e, { checked: b = void 0 } = e;
   const p = {
     alternative: "uikit-text-gray-900 uikit-bg-white uikit-border uikit-border-gray-200 hover:uikit-bg-gray-100 dark:uikit-bg-gray-800 dark:uikit-text-gray-400 hover:uikit-text-primary-700 focus-within:uikit-text-primary-700 dark:focus-within:uikit-text-white dark:hover:uikit-text-white",
     blue: "uikit-text-white uikit-bg-blue-700 hover:uikit-bg-blue-800 dark:uikit-bg-blue-600 dark:hover:uikit-bg-blue-700",
@@ -13291,7 +13283,7 @@ function jc(t, e, i) {
     F.call(this, t, q);
   }
   return t.$$set = (q) => {
-    i(39, e = N(N({}, e), B(q))), i(4, n = ne(e, l)), "pill" in q && i(5, s = q.pill), "outline" in q && i(6, a = q.outline), "size" in q && i(7, f = q.size), "href" in q && i(0, c = q.href), "type" in q && i(1, d = q.type), "color" in q && i(8, k = q.color), "shadow" in q && i(9, g = q.shadow), "tag" in q && i(2, m = q.tag), "checked" in q && i(10, h = q.checked), "$$scope" in q && i(11, o = q.$$scope);
+    i(39, e = N(N({}, e), B(q))), i(4, n = ne(e, l)), "pill" in q && i(5, s = q.pill), "outline" in q && i(6, a = q.outline), "size" in q && i(7, f = q.size), "href" in q && i(0, c = q.href), "type" in q && i(1, d = q.type), "color" in q && i(8, k = q.color), "shadow" in q && i(9, g = q.shadow), "tag" in q && i(2, m = q.tag), "checked" in q && i(10, b = q.checked), "$$scope" in q && i(11, o = q.$$scope);
   }, t.$$.update = () => {
     i(3, U = A(
       "uikit-text-center uikit-font-medium",
@@ -13299,13 +13291,13 @@ function jc(t, e, i) {
       u && "focus-within:uikit-z-10",
       u || "focus-within:uikit-outline-none",
       "uikit-inline-flex uikit-items-center uikit-justify-center " + O[f],
-      a && h && "uikit-border dark:uikit-border-gray-900",
-      a && h && C[k],
-      a && !h && E[k],
-      !a && h && C[k],
-      !a && !h && p[k],
-      k === "alternative" && (u && !h ? "dark:uikit-bg-gray-700 dark:uikit-text-white dark:uikit-border-gray-700 dark:hover:uikit-border-gray-600 dark:hover:uikit-bg-gray-600" : "dark:uikit-bg-transparent dark:uikit-border-gray-600 dark:hover:uikit-border-gray-700"),
-      a && k === "dark" && (u ? h ? "uikit-bg-gray-900 uikit-border-gray-800 dark:uikit-border-white dark:uikit-bg-gray-600" : "dark:uikit-text-white uikit-border-gray-800 dark:uikit-border-white" : "dark:uikit-text-gray-400 dark:uikit-border-gray-700"),
+      a && b && "uikit-border dark:uikit-border-gray-900",
+      a && b && C[k],
+      a && !b && E[k],
+      !a && b && C[k],
+      !a && !b && p[k],
+      k === "alternative" && (u && !b ? "dark:uikit-bg-gray-700 dark:uikit-text-white dark:uikit-border-gray-700 dark:hover:uikit-border-gray-600 dark:hover:uikit-bg-gray-600" : "dark:uikit-bg-transparent dark:uikit-border-gray-600 dark:hover:uikit-border-gray-700"),
+      a && k === "dark" && (u ? b ? "uikit-bg-gray-900 uikit-border-gray-800 dark:uikit-border-white dark:uikit-bg-gray-600" : "dark:uikit-text-white uikit-border-gray-800 dark:uikit-border-white" : "dark:uikit-text-gray-400 dark:uikit-border-gray-700"),
       w[k],
       I() && u && "uikit-border-s-0 first:uikit-border-s",
       u ? s && "first:uikit-rounded-s-full last:uikit-rounded-e-full" || "first:uikit-rounded-s-lg last:uikit-rounded-e-lg" : s && "uikit-rounded-full" || "uikit-rounded-lg",
@@ -13325,7 +13317,7 @@ function jc(t, e, i) {
     f,
     k,
     g,
-    h,
+    b,
     o,
     r,
     $,
@@ -13822,7 +13814,7 @@ function Yc(t, e, i) {
   function m(P) {
     F.call(this, t, P);
   }
-  function h(P) {
+  function b(P) {
     F.call(this, t, P);
   }
   function p(P) {
@@ -13869,7 +13861,7 @@ function Yc(t, e, i) {
     n,
     r,
     m,
-    h,
+    b,
     p,
     C,
     w,
@@ -14561,7 +14553,7 @@ function cd(t) {
       e = L("div");
       for (let o = 0; o < n.length; o += 1)
         n[o].c();
-      b(e, "class", "uikit-flex uikit-w-full");
+      h(e, "class", "uikit-flex uikit-w-full");
     },
     m(o, u) {
       T(o, e, u);
@@ -14961,21 +14953,21 @@ function wd(t) {
       t[4]
     ) }
   ], m = {};
-  for (let h = 0; h < g.length; h += 1)
-    m = N(m, g[h]);
+  for (let b = 0; b < g.length; b += 1)
+    m = N(m, g[b]);
   return {
     c() {
       e = L("li"), i = L("a"), d && d.c(), l = G(), n = L("span"), r = ke(
         /*label*/
         t[1]
-      ), u = G(), k && k.c(), b(n, "class", o = /*spanClass*/
+      ), u = G(), k && k.c(), h(n, "class", o = /*spanClass*/
       t[5][
         /*mode*/
         t[2]
       ]), ae(i, m);
     },
-    m(h, p) {
-      T(h, e, p), R(e, i), d && d.m(i, null), R(i, l), R(i, n), R(n, r), R(i, u), k && k.m(i, null), s = !0, a || (f = [
+    m(b, p) {
+      T(b, e, p), R(e, i), d && d.m(i, null), R(i, l), R(i, n), R(n, r), R(i, u), k && k.m(i, null), s = !0, a || (f = [
         D(
           i,
           "blur",
@@ -15032,64 +15024,64 @@ function wd(t) {
         )
       ], a = !0);
     },
-    p(h, [p]) {
+    p(b, [p]) {
       d && d.p && (!s || p & /*$$scope*/
       4096) && J(
         d,
         c,
-        h,
+        b,
         /*$$scope*/
-        h[12],
+        b[12],
         s ? Y(
           c,
           /*$$scope*/
-          h[12],
+          b[12],
           p,
           vd
         ) : Z(
           /*$$scope*/
-          h[12]
+          b[12]
         ),
         Tl
       ), (!s || p & /*label*/
       2) && be(
         r,
         /*label*/
-        h[1]
+        b[1]
       ), (!s || p & /*mode*/
       4 && o !== (o = /*spanClass*/
-      h[5][
+      b[5][
         /*mode*/
-        h[2]
-      ])) && b(n, "class", o), /*$$slots*/
-      h[7].subtext && /*mode*/
-      h[2] === "normal" ? k ? (k.p(h, p), p & /*$$slots, mode*/
-      132 && _(k, 1)) : (k = El(h), k.c(), _(k, 1), k.m(i, null)) : k && (le(), y(k, 1, 1, () => {
+        b[2]
+      ])) && h(n, "class", o), /*$$slots*/
+      b[7].subtext && /*mode*/
+      b[2] === "normal" ? k ? (k.p(b, p), p & /*$$slots, mode*/
+      132 && _(k, 1)) : (k = El(b), k.c(), _(k, 1), k.m(i, null)) : k && (le(), y(k, 1, 1, () => {
         k = null;
       }), re()), ae(i, m = fe(g, [
         p & /*$$restProps*/
         64 && /*$$restProps*/
-        h[6],
+        b[6],
         (!s || p & /*href*/
         1) && { href: (
           /*href*/
-          h[0]
+          b[0]
         ) },
         (!s || p & /*aClass*/
         16) && { class: (
           /*aClass*/
-          h[4]
+          b[4]
         ) }
       ]));
     },
-    i(h) {
-      s || (_(d, h), _(k), s = !0);
+    i(b) {
+      s || (_(d, b), _(k), s = !0);
     },
-    o(h) {
-      y(d, h), y(k), s = !1;
+    o(b) {
+      y(d, b), y(k), s = !1;
     },
-    d(h) {
-      h && S(e), d && d.d(h), k && k.d(), a = !1, Ce(f);
+    d(b) {
+      b && S(e), d && d.d(b), k && k.d(), a = !1, Ce(f);
     }
   };
 }
@@ -15100,7 +15092,7 @@ function Cd(t, e, i) {
   const a = Ye(u);
   let { href: f = "" } = e, { label: c = "" } = e, { mode: d = "normal" } = e, { activeClass: k = void 0 } = e, { nonActiveClass: g = void 0 } = e, { onclick: m = (z) => {
   } } = e;
-  const h = Pe("sidebarContext") ?? {}, p = Pe("activeUrl");
+  const b = Pe("sidebarContext") ?? {}, p = Pe("activeUrl");
   let C = "";
   p.subscribe((z) => {
     i(10, C = z);
@@ -15145,7 +15137,7 @@ function Cd(t, e, i) {
     t.$$.dirty & /*sidebarUrl, href*/
     1025 && i(11, l = C ? f === C : !1), i(4, n = A(
       v[d],
-      l ? k ?? h.activeClass : g ?? h.nonActiveClass,
+      l ? k ?? b.activeClass : g ?? b.nonActiveClass,
       e.class
     ));
   }, e = B(e), [
@@ -15191,7 +15183,7 @@ function Ad(t) {
   let e, i;
   return {
     c() {
-      e = pe("svg"), i = pe("path"), b(i, "stroke", "currentColor"), b(i, "stroke-linecap", "round"), b(i, "stroke-linejoin", "round"), b(i, "stroke-width", "2"), b(i, "d", "m1 1 4 4 4-4"), b(e, "class", "uikit-w-3 uikit-h-3 uikit-text-gray-800 dark:uikit-text-white"), b(e, "aria-hidden", "true"), b(e, "xmlns", "http://www.w3.org/2000/svg"), b(e, "fill", "none"), b(e, "viewBox", "0 0 10 6");
+      e = pe("svg"), i = pe("path"), h(i, "stroke", "currentColor"), h(i, "stroke-linecap", "round"), h(i, "stroke-linejoin", "round"), h(i, "stroke-width", "2"), h(i, "d", "m1 1 4 4 4-4"), h(e, "class", "uikit-w-3 uikit-h-3 uikit-text-gray-800 dark:uikit-text-white"), h(e, "aria-hidden", "true"), h(e, "xmlns", "http://www.w3.org/2000/svg"), h(e, "fill", "none"), h(e, "viewBox", "0 0 10 6");
     },
     m(l, n) {
       T(l, e, n), R(e, i);
@@ -15292,7 +15284,7 @@ function Md(t) {
   let e, i;
   return {
     c() {
-      e = pe("svg"), i = pe("path"), b(i, "stroke", "currentColor"), b(i, "stroke-linecap", "round"), b(i, "stroke-linejoin", "round"), b(i, "stroke-width", "2"), b(i, "d", "M9 5 5 1 1 5"), b(e, "class", "uikit-w-3 uikit-h-3 uikit-text-gray-800 dark:uikit-text-white"), b(e, "aria-hidden", "true"), b(e, "xmlns", "http://www.w3.org/2000/svg"), b(e, "fill", "none"), b(e, "viewBox", "0 0 10 6");
+      e = pe("svg"), i = pe("path"), h(i, "stroke", "currentColor"), h(i, "stroke-linecap", "round"), h(i, "stroke-linejoin", "round"), h(i, "stroke-width", "2"), h(i, "d", "M9 5 5 1 1 5"), h(e, "class", "uikit-w-3 uikit-h-3 uikit-text-gray-800 dark:uikit-text-white"), h(e, "aria-hidden", "true"), h(e, "xmlns", "http://www.w3.org/2000/svg"), h(e, "fill", "none"), h(e, "viewBox", "0 0 10 6");
     },
     m(l, n) {
       T(l, e, n), R(e, i);
@@ -15370,7 +15362,7 @@ function Pl(t) {
   );
   return {
     c() {
-      e = L("ul"), o && o.c(), b(e, "class", i = /*ulClass*/
+      e = L("ul"), o && o.c(), h(e, "class", i = /*ulClass*/
       t[6][
         /*mode*/
         t[2]
@@ -15403,7 +15395,7 @@ function Pl(t) {
       t[6][
         /*mode*/
         t[2]
-      ])) && b(e, "class", i);
+      ])) && h(e, "class", i);
     },
     i(u) {
       n || (_(o, u), u && Me(() => {
@@ -15437,7 +15429,7 @@ function Nd(t) {
   const m = (
     /*#slots*/
     t[14].icon
-  ), h = K(
+  ), b = K(
     m,
     t,
     /*$$scope*/
@@ -15484,17 +15476,17 @@ function Nd(t) {
   );
   return {
     c() {
-      e = L("li"), i = L("button"), h && h.c(), l = G(), n = L("span"), r = ke(
+      e = L("li"), i = L("button"), b && b.c(), l = G(), n = L("span"), r = ke(
         /*label*/
         t[1]
-      ), u = G(), a && a.c(), c = G(), O && O.c(), b(n, "class", o = /*spanClass*/
+      ), u = G(), a && a.c(), c = G(), O && O.c(), h(n, "class", o = /*spanClass*/
       t[5][
         /*mode*/
         t[2]
       ]), ae(i, E);
     },
     m(I, U) {
-      T(I, e, U), R(e, i), h && h.m(i, null), R(i, l), R(i, n), R(n, r), R(i, u), ~s && C[s].m(i, null), i.autofocus && i.focus(), R(e, c), O && O.m(e, null), d = !0, k || (g = D(
+      T(I, e, U), R(e, i), b && b.m(i, null), R(i, l), R(i, n), R(n, r), R(i, u), ~s && C[s].m(i, null), i.autofocus && i.focus(), R(e, c), O && O.m(e, null), d = !0, k || (g = D(
         i,
         "click",
         /*click_handler*/
@@ -15502,9 +15494,9 @@ function Nd(t) {
       ), k = !0);
     },
     p(I, [U]) {
-      h && h.p && (!d || U & /*$$scope*/
+      b && b.p && (!d || U & /*$$scope*/
       8192) && J(
-        h,
+        b,
         m,
         I,
         /*$$scope*/
@@ -15530,7 +15522,7 @@ function Nd(t) {
       I[5][
         /*mode*/
         I[2]
-      ])) && b(n, "class", o);
+      ])) && h(n, "class", o);
       let $ = s;
       s = w(I), s === $ ? ~s && C[s].p(I, U) : (a && (le(), y(C[$], 1, 1, () => {
         C[$] = null;
@@ -15557,13 +15549,13 @@ function Nd(t) {
       }), re());
     },
     i(I) {
-      d || (_(h, I), _(a), _(O), d = !0);
+      d || (_(b, I), _(a), _(O), d = !0);
     },
     o(I) {
-      y(h, I), y(a), y(O), d = !1;
+      y(b, I), y(a), y(O), d = !1;
     },
     d(I) {
-      I && S(e), h && h.d(I), ~s && C[s].d(), O && O.d(), k = !1, g();
+      I && S(e), b && b.d(I), ~s && C[s].d(), O && O.d(), k = !1, g();
     }
   };
 }
@@ -15593,14 +15585,14 @@ function zd(t, e, i) {
         return ji(w, v);
     }
   };
-  let { isOpen: h = !1 } = e;
+  let { isOpen: b = !1 } = e;
   const p = () => {
-    i(0, h = !h);
+    i(0, b = !b);
   }, C = () => p();
   return t.$$set = (w) => {
-    i(10, e = N(N({}, e), B(w))), i(9, n = ne(e, l)), "label" in w && i(1, s = w.label), "mode" in w && i(2, a = w.mode), "transitionType" in w && i(12, f = w.transitionType), "transitionParams" in w && i(3, c = w.transitionParams), "isOpen" in w && i(0, h = w.isOpen), "$$scope" in w && i(13, o = w.$$scope);
+    i(10, e = N(N({}, e), B(w))), i(9, n = ne(e, l)), "label" in w && i(1, s = w.label), "mode" in w && i(2, a = w.mode), "transitionType" in w && i(12, f = w.transitionType), "transitionParams" in w && i(3, c = w.transitionParams), "isOpen" in w && i(0, b = w.isOpen), "$$scope" in w && i(13, o = w.$$scope);
   }, e = B(e), [
-    h,
+    b,
     s,
     a,
     c,
@@ -15778,7 +15770,7 @@ function Bd(t, e, i) {
   function m(w) {
     F.call(this, t, w);
   }
-  function h(w) {
+  function b(w) {
     F.call(this, t, w);
   }
   function p(w) {
@@ -15803,7 +15795,7 @@ function Bd(t, e, i) {
     k,
     g,
     m,
-    h,
+    b,
     p,
     C
   ];
@@ -16076,7 +16068,7 @@ function Nl(t) {
   ), l;
   return {
     c() {
-      e = L("span"), l = ke(i), b(e, "class", "uikit-inline-flex uikit-justify-center uikit-items-center uikit-p-3 uikit-ms-3 uikit-w-3 uikit-h-3 uikit-text-sm uikit-font-medium uikit-text-primary-600 uikit-bg-primary-200 uikit-rounded-full dark:uikit-bg-primary-900 dark:uikit-text-primary-200");
+      e = L("span"), l = ke(i), h(e, "class", "uikit-inline-flex uikit-justify-center uikit-items-center uikit-p-3 uikit-ms-3 uikit-w-3 uikit-h-3 uikit-text-sm uikit-font-medium uikit-text-primary-600 uikit-bg-primary-200 uikit-rounded-full dark:uikit-bg-primary-900 dark:uikit-text-primary-200");
     },
     m(n, r) {
       T(n, e, r), R(e, l);
@@ -16503,12 +16495,12 @@ function ek(t) {
     o = N(o, r[u]);
   return {
     c() {
-      e = pe("svg"), i = pe("path"), l = pe("path"), b(i, "d", "M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"), b(
+      e = pe("svg"), i = pe("path"), l = pe("path"), h(i, "d", "M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"), h(
         i,
         "fill",
         /*currentColor*/
         t[2]
-      ), b(l, "d", "M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"), b(
+      ), h(l, "d", "M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"), h(
         l,
         "fill",
         /*currentFill*/
@@ -16520,13 +16512,13 @@ function ek(t) {
     },
     p(u, [s]) {
       s & /*currentColor*/
-      4 && b(
+      4 && h(
         i,
         "fill",
         /*currentColor*/
         u[2]
       ), s & /*currentFill*/
-      2 && b(
+      2 && h(
         l,
         "fill",
         /*currentFill*/
@@ -16657,7 +16649,7 @@ function nk(t) {
     }
   }), {
     c() {
-      e = L("div"), x(i.$$.fragment), b(e, "class", "uikit-flex uikit-flex-wrap uikit-items-center uikit-gap-2");
+      e = L("div"), x(i.$$.fragment), h(e, "class", "uikit-flex uikit-flex-wrap uikit-items-center uikit-gap-2");
     },
     m(n, r) {
       T(n, e, r), X(i, e, null), l = !0;
@@ -16821,23 +16813,23 @@ function Fl(t) {
     d = N(d, c[k]);
   return r = new rt({ props: d }), {
     c() {
-      e = L("div"), i = G(), l = L("div"), n = L("div"), x(r.$$.fragment), b(
+      e = L("div"), i = G(), l = L("div"), n = L("div"), x(r.$$.fragment), h(
         e,
         "class",
         /*backdropCls*/
         t[12]
-      ), b(n, "class", o = "uikit-flex uikit-relative " + /*sizes*/
+      ), h(n, "class", o = "uikit-flex uikit-relative " + /*sizes*/
       t[8][
         /*size*/
         t[2]
-      ] + " uikit-w-full uikit-max-h-full"), b(l, "class", u = A(
+      ] + " uikit-w-full uikit-max-h-full"), h(l, "class", u = A(
         /*dialogClass*/
         t[4],
         /*$$props*/
         t[14].classDialog,
         .../*getPlacementClasses*/
         t[7]()
-      )), b(l, "tabindex", "-1"), b(l, "aria-modal", "true"), b(l, "role", "dialog");
+      )), h(l, "tabindex", "-1"), h(l, "aria-modal", "true"), h(l, "role", "dialog");
     },
     m(k, g) {
       T(k, e, g), T(k, i, g), T(k, l, g), R(l, n), X(r, n, null), s = !0, a || (f = [
@@ -16892,7 +16884,7 @@ function Fl(t) {
       k[8][
         /*size*/
         k[2]
-      ] + " uikit-w-full uikit-max-h-full")) && b(n, "class", o), (!s || g & /*dialogClass, $$props*/
+      ] + " uikit-w-full uikit-max-h-full")) && h(n, "class", o), (!s || g & /*dialogClass, $$props*/
       16400 && u !== (u = A(
         /*dialogClass*/
         k[4],
@@ -16900,7 +16892,7 @@ function Fl(t) {
         k[14].classDialog,
         .../*getPlacementClasses*/
         k[7]()
-      ))) && b(l, "class", u);
+      ))) && h(l, "class", u);
     },
     i(k) {
       s || (_(r.$$.fragment, k), s = !0);
@@ -16957,7 +16949,7 @@ function dk(t) {
       e = L("h3"), i = ke(
         /*title*/
         t[1]
-      ), b(e, "class", l = "uikit-text-xl uikit-font-semibold " + /*$$restProps*/
+      ), h(e, "class", l = "uikit-text-xl uikit-font-semibold " + /*$$restProps*/
       (t[15].color ? "" : "uikit-text-gray-900 dark:uikit-text-white") + " uikit-p-0");
     },
     m(n, r) {
@@ -16971,7 +16963,7 @@ function dk(t) {
         n[1]
       ), r & /*$$restProps*/
       32768 && l !== (l = "uikit-text-xl uikit-font-semibold " + /*$$restProps*/
-      (n[15].color ? "" : "uikit-text-gray-900 dark:uikit-text-white") + " uikit-p-0") && b(e, "class", l);
+      (n[15].color ? "" : "uikit-text-gray-900 dark:uikit-text-white") + " uikit-p-0") && h(e, "class", l);
     },
     d(n) {
       n && S(e);
@@ -17230,14 +17222,14 @@ function mk(t) {
   );
   return {
     c() {
-      f && f.c(), e = G(), i = L("div"), c && c.c(), l = G(), k && k.c(), r = G(), g && g.c(), o = ue(), b(i, "class", n = A(
+      f && f.c(), e = G(), i = L("div"), c && c.c(), l = G(), k && k.c(), r = G(), g && g.c(), o = ue(), h(i, "class", n = A(
         "uikit-p-6 uikit-space-y-6 uikit-flex-1 uikit-overflow-y-auto uikit-overscroll-contain",
         /*$$props*/
         t[14].bodyClass
-      )), b(i, "role", "document");
+      )), h(i, "role", "document");
     },
-    m(m, h) {
-      f && f.m(m, h), T(m, e, h), T(m, i, h), c && c.m(i, null), R(i, l), k && k.m(i, null), T(m, r, h), g && g.m(m, h), T(m, o, h), u = !0, s || (a = [
+    m(m, b) {
+      f && f.m(m, b), T(m, e, b), T(m, i, b), c && c.m(i, null), R(i, l), k && k.m(i, null), T(m, r, b), g && g.m(m, b), T(m, o, b), u = !0, s || (a = [
         D(i, "keydown", nn(
           /*handleKeys*/
           t[13]
@@ -17248,19 +17240,19 @@ function mk(t) {
         ), { passive: !0 })
       ], s = !0);
     },
-    p(m, h) {
+    p(m, b) {
       /*$$slots*/
       m[16].header || /*title*/
-      m[1] ? f ? (f.p(m, h), h & /*$$slots, title*/
+      m[1] ? f ? (f.p(m, b), b & /*$$slots, title*/
       65538 && _(f, 1)) : (f = jl(m), f.c(), _(f, 1), f.m(e.parentNode, e)) : f && (le(), y(f, 1, 1, () => {
         f = null;
       }), re()), /*dismissable*/
       m[3] && !/*$$slots*/
       m[16].header && !/*title*/
-      m[1] ? c ? (c.p(m, h), h & /*dismissable, $$slots, title*/
+      m[1] ? c ? (c.p(m, b), b & /*dismissable, $$slots, title*/
       65546 && _(c, 1)) : (c = Ul(m), c.c(), _(c, 1), c.m(i, l)) : c && (le(), y(c, 1, 1, () => {
         c = null;
-      }), re()), k && k.p && (!u || h & /*$$scope*/
+      }), re()), k && k.p && (!u || b & /*$$scope*/
       33554432) && J(
         k,
         d,
@@ -17271,20 +17263,20 @@ function mk(t) {
           d,
           /*$$scope*/
           m[25],
-          h,
+          b,
           null
         ) : Z(
           /*$$scope*/
           m[25]
         ),
         null
-      ), (!u || h & /*$$props*/
+      ), (!u || b & /*$$props*/
       16384 && n !== (n = A(
         "uikit-p-6 uikit-space-y-6 uikit-flex-1 uikit-overflow-y-auto uikit-overscroll-contain",
         /*$$props*/
         m[14].bodyClass
-      ))) && b(i, "class", n), /*$$slots*/
-      m[16].footer ? g ? (g.p(m, h), h & /*$$slots*/
+      ))) && h(i, "class", n), /*$$slots*/
+      m[16].footer ? g ? (g.p(m, b), b & /*$$slots*/
       65536 && _(g, 1)) : (g = Gl(m), g.c(), _(g, 1), g.m(o.parentNode, o)) : g && (le(), y(g, 1, 1, () => {
         g = null;
       }), re());
@@ -17345,7 +17337,7 @@ function bk(t, e, i) {
   ];
   let n = ne(e, l), { $$slots: r = {}, $$scope: o } = e;
   const u = Ye(r);
-  let { open: s = !1 } = e, { title: a = "" } = e, { size: f = "md" } = e, { placement: c = "center" } = e, { autoclose: d = !1 } = e, { dismissable: k = !0 } = e, { backdropClass: g = "uikit-fixed uikit-inset-0 uikit-z-40 uikit-bg-gray-900 uikit-bg-opacity-50 dark:uikit-bg-opacity-80" } = e, { defaultClass: m = "uikit-relative uikit-flex uikit-flex-col uikit-mx-auto" } = e, { outsideclose: h = !1 } = e, { dialogClass: p = "uikit-fixed uikit-top-0 uikit-start-0 uikit-end-0 uikit-h-modal md:uikit-inset-0 md:uikit-h-full uikit-z-50 uikit-w-full uikit-p-4 uikit-flex" } = e;
+  let { open: s = !1 } = e, { title: a = "" } = e, { size: f = "md" } = e, { placement: c = "center" } = e, { autoclose: d = !1 } = e, { dismissable: k = !0 } = e, { backdropClass: g = "uikit-fixed uikit-inset-0 uikit-z-40 uikit-bg-gray-900 uikit-bg-opacity-50 dark:uikit-bg-opacity-80" } = e, { defaultClass: m = "uikit-relative uikit-flex uikit-flex-col uikit-mx-auto" } = e, { outsideclose: b = !1 } = e, { dialogClass: p = "uikit-fixed uikit-top-0 uikit-start-0 uikit-end-0 uikit-h-modal md:uikit-inset-0 md:uikit-h-full uikit-z-50 uikit-w-full uikit-p-4 uikit-flex" } = e;
   const C = He();
   function w(j) {
     const M = document.createTreeWalker(j, NodeFilter.SHOW_ELEMENT);
@@ -17391,7 +17383,7 @@ function bk(t, e, i) {
     d && (M == null ? void 0 : M.tagName) === "BUTTON" && U(j);
   }, I = (j) => {
     const M = j.target;
-    h && M === j.currentTarget && U(j);
+    b && M === j.currentTarget && U(j);
   }, U = (j) => {
     j.preventDefault(), i(0, s = !1);
   };
@@ -17412,7 +17404,7 @@ function bk(t, e, i) {
     F.call(this, t, j);
   }
   return t.$$set = (j) => {
-    i(14, e = N(N({}, e), B(j))), i(15, n = ne(e, l)), "open" in j && i(0, s = j.open), "title" in j && i(1, a = j.title), "size" in j && i(2, f = j.size), "placement" in j && i(17, c = j.placement), "autoclose" in j && i(18, d = j.autoclose), "dismissable" in j && i(3, k = j.dismissable), "backdropClass" in j && i(19, g = j.backdropClass), "defaultClass" in j && i(20, m = j.defaultClass), "outsideclose" in j && i(21, h = j.outsideclose), "dialogClass" in j && i(4, p = j.dialogClass), "$$scope" in j && i(25, o = j.$$scope);
+    i(14, e = N(N({}, e), B(j))), i(15, n = ne(e, l)), "open" in j && i(0, s = j.open), "title" in j && i(1, a = j.title), "size" in j && i(2, f = j.size), "placement" in j && i(17, c = j.placement), "autoclose" in j && i(18, d = j.autoclose), "dismissable" in j && i(3, k = j.dismissable), "backdropClass" in j && i(19, g = j.backdropClass), "defaultClass" in j && i(20, m = j.defaultClass), "outsideclose" in j && i(21, b = j.outsideclose), "dialogClass" in j && i(4, p = j.dialogClass), "$$scope" in j && i(25, o = j.$$scope);
   }, t.$$.update = () => {
     t.$$.dirty & /*open*/
     1 && C(s ? "open" : "close"), i(5, $ = A(m, "uikit-w-full uikit-divide-y", e.class));
@@ -17438,7 +17430,7 @@ function bk(t, e, i) {
     d,
     g,
     m,
-    h,
+    b,
     r,
     me,
     z,
@@ -17472,7 +17464,7 @@ function Vl(t) {
   ), l, n;
   return {
     c() {
-      e = L("p"), l = ke(i), n = G(), b(e, "class", "uikit-text-base uikit-leading-relaxed uikit-text-gray-500 dark:uikit-text-gray-400");
+      e = L("p"), l = ke(i), n = G(), h(e, "class", "uikit-text-base uikit-leading-relaxed uikit-text-gray-500 dark:uikit-text-gray-400");
     },
     m(r, o) {
       T(r, e, o), R(e, l), R(e, n);
@@ -17804,8 +17796,8 @@ function Ak(t) {
   return {
     c() {
       e = L("div"), i = L("img"), o = G(), vt(i.src, l = /*item*/
-      t[7].src) || b(i, "src", l), b(i, "alt", n = /*item*/
-      t[7].alt), b(i, "class", r = A(
+      t[7].src) || h(i, "src", l), h(i, "alt", n = /*item*/
+      t[7].alt), h(i, "class", r = A(
         /*imgClass*/
         t[1],
         /*$$props*/
@@ -17818,15 +17810,15 @@ function Ak(t) {
     p(u, s) {
       s & /*items*/
       1 && !vt(i.src, l = /*item*/
-      u[7].src) && b(i, "src", l), s & /*items*/
+      u[7].src) && h(i, "src", l), s & /*items*/
       1 && n !== (n = /*item*/
-      u[7].alt) && b(i, "alt", n), s & /*imgClass, $$props*/
+      u[7].alt) && h(i, "alt", n), s & /*imgClass, $$props*/
       10 && r !== (r = A(
         /*imgClass*/
         u[1],
         /*$$props*/
         u[3].classImg
-      )) && b(i, "class", r);
+      )) && h(i, "class", r);
     },
     d(u) {
       u && (S(e), S(o));
@@ -18135,7 +18127,7 @@ function Fk(t) {
   let e;
   return {
     c() {
-      e = L("div"), b(e, "class", "uikit-h-px uikit-bg-gray-200 dark:uikit-bg-gray-700");
+      e = L("div"), h(e, "class", "uikit-h-px uikit-bg-gray-200 dark:uikit-bg-gray-700");
     },
     m(i, l) {
       T(i, e, l);
@@ -18164,17 +18156,17 @@ function jk(t) {
   );
   return {
     c() {
-      e = L("ul"), a && a.c(), i = G(), f && f.c(), l = G(), n = L("div"), b(
+      e = L("ul"), a && a.c(), i = G(), f && f.c(), l = G(), n = L("div"), h(
         e,
         "class",
         /*ulClass*/
         t[3]
-      ), b(
+      ), h(
         n,
         "class",
         /*contentClass*/
         t[2]
-      ), b(n, "role", "tabpanel"), b(n, "aria-labelledby", "id-tab");
+      ), h(n, "role", "tabpanel"), h(n, "aria-labelledby", "id-tab");
     },
     m(c, d) {
       T(c, e, d), a && a.m(e, null), T(c, i, d), f && f.m(c, d), T(c, l, d), T(c, n, d), r = !0, o || (u = Be(
@@ -18202,7 +18194,7 @@ function jk(t) {
         ),
         xl
       ), (!r || d & /*ulClass*/
-      8) && b(
+      8) && h(
         e,
         "class",
         /*ulClass*/
@@ -18212,7 +18204,7 @@ function jk(t) {
       1 && _(f, 1)) : (f = $l(c), f.c(), _(f, 1), f.m(l.parentNode, l)) : f && (le(), y(f, 1, 1, () => {
         f = null;
       }), re()), (!r || d & /*contentClass*/
-      4) && b(
+      4) && h(
         n,
         "class",
         /*contentClass*/
@@ -18248,13 +18240,13 @@ function Wk(t, e, i) {
     selected: nt()
   };
   Ue("ctx", g);
-  function m(h) {
+  function m(b) {
     return { destroy: g.selected.subscribe((C) => {
-      C && h.replaceChildren(C);
+      C && b.replaceChildren(C);
     }) };
   }
-  return t.$$set = (h) => {
-    i(13, e = N(N({}, e), B(h))), "style" in h && i(1, o = h.style), "defaultClass" in h && i(5, u = h.defaultClass), "contentClass" in h && i(2, s = h.contentClass), "divider" in h && i(0, a = h.divider), "activeClasses" in h && i(6, f = h.activeClasses), "inactiveClasses" in h && i(7, c = h.inactiveClasses), "$$scope" in h && i(8, r = h.$$scope);
+  return t.$$set = (b) => {
+    i(13, e = N(N({}, e), B(b))), "style" in b && i(1, o = b.style), "defaultClass" in b && i(5, u = b.defaultClass), "contentClass" in b && i(2, s = b.contentClass), "divider" in b && i(0, a = b.divider), "activeClasses" in b && i(6, f = b.activeClasses), "inactiveClasses" in b && i(7, c = b.inactiveClasses), "$$scope" in b && i(8, r = b.$$scope);
   }, t.$$.update = () => {
     t.$$.dirty & /*style, divider*/
     3 && i(0, a = ["full", "pill"].includes(o) ? !1 : a), i(3, l = A(u, o === "underline" && "-uikit-mb-px", e.class));
@@ -18323,7 +18315,7 @@ function tr(t) {
   );
   return {
     c() {
-      e = L("div"), i = L("div"), u && u.c(), b(e, "class", "uikit-hidden tab_content_placeholder");
+      e = L("div"), i = L("div"), u && u.c(), h(e, "class", "uikit-hidden tab_content_placeholder");
     },
     m(s, a) {
       T(s, e, a), R(e, i), u && u.m(i, null), l = !0, n || (r = Be(
@@ -18393,11 +18385,11 @@ function Vk(t) {
   );
   return {
     c() {
-      e = L("li"), i = L("button"), f && f.c(), l = G(), k && k.c(), ae(i, d), b(e, "class", n = A(
+      e = L("li"), i = L("button"), f && f.c(), l = G(), k && k.c(), ae(i, d), h(e, "class", n = A(
         "group",
         /*$$props*/
         t[4].class
-      )), b(e, "role", "presentation");
+      )), h(e, "role", "presentation");
     },
     m(g, m) {
       T(g, e, m), R(e, i), f && f.m(i, null), i.autofocus && i.focus(), R(e, l), k && k.m(e, null), r = !0, o || (u = [
@@ -18509,7 +18501,7 @@ function Vk(t) {
         "group",
         /*$$props*/
         g[4].class
-      ))) && b(e, "class", n);
+      ))) && h(e, "class", n);
     },
     i(g) {
       r || (_(f, g), _(k), r = !0);
@@ -18532,7 +18524,7 @@ function qk(t, e, i) {
     }) };
   }
   let m;
-  function h(P) {
+  function b(P) {
     F.call(this, t, P);
   }
   function p(P) {
@@ -18584,7 +18576,7 @@ function qk(t, e, i) {
     c,
     o,
     r,
-    h,
+    b,
     p,
     C,
     w,
@@ -18655,7 +18647,7 @@ function Jk(t) {
     t[6]
   ) } }), {
     c() {
-      e = L("p"), x(i.$$.fragment), l = G(), b(e, "class", "uikit-text-sm uikit-text-gray-500 dark:uikit-text-gray-400");
+      e = L("p"), x(i.$$.fragment), l = G(), h(e, "class", "uikit-text-sm uikit-text-gray-500 dark:uikit-text-gray-400");
     },
     m(r, o) {
       T(r, e, o), X(i, e, null), T(r, l, o), n = !0;
@@ -18689,7 +18681,7 @@ function Zk(t) {
     ) }
   }), {
     c() {
-      e = L("div"), x(i.$$.fragment), l = G(), r = ke(n), o = G(), b(e, "slot", "title"), b(e, "class", "uikit-flex uikit-items-center uikit-gap-2");
+      e = L("div"), x(i.$$.fragment), l = G(), r = ke(n), o = G(), h(e, "slot", "title"), h(e, "class", "uikit-flex uikit-items-center uikit-gap-2");
     },
     m(s, a) {
       T(s, e, a), X(i, e, null), R(e, l), R(e, r), R(e, o), u = !0;
@@ -19034,21 +19026,10 @@ function o0(t) {
   let e;
   return {
     c() {
-      e = ke(
-        /*message*/
-        t[1]
-      );
+      e = ke("tooltip");
     },
     m(i, l) {
       T(i, e, l);
-    },
-    p(i, l) {
-      l & /*message*/
-      2 && be(
-        e,
-        /*message*/
-        i[1]
-      );
     },
     d(i) {
       i && S(e);
@@ -19056,161 +19037,155 @@ function o0(t) {
   };
 }
 function s0(t) {
-  let e, i;
-  const l = (
-    /*#slots*/
-    t[8].default
-  ), n = K(
-    l,
-    t,
-    /*$$scope*/
-    t[11],
-    null
-  ), r = n || o0(t);
+  let e;
   return {
     c() {
-      e = L("div"), r && r.c();
+      e = ke(
+        /*message*/
+        t[0]
+      );
     },
-    m(o, u) {
-      T(o, e, u), r && r.m(e, null), t[10](e), i = !0;
+    m(i, l) {
+      T(i, e, l);
     },
-    p(o, u) {
-      n ? n.p && (!i || u & /*$$scope*/
-      2048) && J(
-        n,
-        l,
-        o,
-        /*$$scope*/
-        o[11],
-        i ? Y(
-          l,
-          /*$$scope*/
-          o[11],
-          u,
-          null
-        ) : Z(
-          /*$$scope*/
-          o[11]
-        ),
-        null
-      ) : r && r.p && (!i || u & /*message*/
-      2) && r.p(o, i ? u : -1);
+    p(i, l) {
+      l & /*message*/
+      1 && be(
+        e,
+        /*message*/
+        i[0]
+      );
     },
-    i(o) {
-      i || (_(r, o), i = !0);
-    },
-    o(o) {
-      y(r, o), i = !1;
-    },
-    d(o) {
-      o && S(e), r && r.d(o), t[10](null);
+    d(i) {
+      i && S(e);
     }
   };
 }
 function u0(t) {
-  let e, i, l, n, r;
-  return n = new r0({
+  let e, i, l, n;
+  const r = (
+    /*#slots*/
+    t[7].default
+  ), o = K(
+    r,
+    t,
+    /*$$scope*/
+    t[9],
+    null
+  ), u = o || o0();
+  return l = new r0({
     props: {
-      reference: (
-        /*ref*/
-        t[0]
+      trigger: (
+        /*trigger*/
+        t[1]
       ),
-      trigger: "click",
       placement: (
         /*placement*/
         t[2]
       ),
       triggeredBy: "#" + /*id*/
-      t[5],
+      t[4],
       $$slots: { default: [s0] },
       $$scope: { ctx: t }
     }
   }), {
     c() {
-      e = L("button"), i = ke("tooltip"), l = G(), x(n.$$.fragment), b(
+      e = L("div"), u && u.c(), i = G(), x(l.$$.fragment), h(
         e,
         "id",
         /*id*/
-        t[5]
-      ), b(e, "class", "uikit-hidden");
+        t[4]
+      );
     },
-    m(o, u) {
-      T(o, e, u), R(e, i), t[9](e), T(o, l, u), X(n, o, u), r = !0;
+    m(s, a) {
+      T(s, e, a), u && u.m(e, null), t[8](e), T(s, i, a), X(l, s, a), n = !0;
     },
-    p(o, [u]) {
-      const s = {};
-      u & /*ref*/
-      1 && (s.reference = /*ref*/
-      o[0]), u & /*placement*/
-      4 && (s.placement = /*placement*/
-      o[2]), u & /*$$scope, bodydom, message*/
-      2058 && (s.$$scope = { dirty: u, ctx: o }), n.$set(s);
+    p(s, [a]) {
+      o && o.p && (!n || a & /*$$scope*/
+      512) && J(
+        o,
+        r,
+        s,
+        /*$$scope*/
+        s[9],
+        n ? Y(
+          r,
+          /*$$scope*/
+          s[9],
+          a,
+          null
+        ) : Z(
+          /*$$scope*/
+          s[9]
+        ),
+        null
+      );
+      const f = {};
+      a & /*trigger*/
+      2 && (f.trigger = /*trigger*/
+      s[1]), a & /*placement*/
+      4 && (f.placement = /*placement*/
+      s[2]), a & /*$$scope, message*/
+      513 && (f.$$scope = { dirty: a, ctx: s }), l.$set(f);
     },
-    i(o) {
-      r || (_(n.$$.fragment, o), r = !0);
+    i(s) {
+      n || (_(u, s), _(l.$$.fragment, s), n = !0);
     },
-    o(o) {
-      y(n.$$.fragment, o), r = !1;
+    o(s) {
+      y(u, s), y(l.$$.fragment, s), n = !1;
     },
-    d(o) {
-      o && (S(e), S(l)), t[9](null), Q(n, o);
+    d(s) {
+      s && (S(e), S(i)), u && u.d(s), t[8](null), Q(l, s);
     }
   };
 }
 function a0(t, e, i) {
-  let { $$slots: l = {}, $$scope: n } = e, { ref: r = "" } = e, { message: o = "a tooltip" } = e, { placement: u = "top" } = e, { slotdefault: s = void 0 } = e, a, f;
-  function c() {
+  let { $$slots: l = {}, $$scope: n } = e, { message: r = "a tooltip" } = e, { trigger: o = "hover" } = e, { placement: u = "top" } = e, { slotdefault: s = void 0 } = e, a;
+  function f() {
     a && a.click();
   }
-  let k = "tooltip" + ((h) => {
-    h = h || 32;
-    var p = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678", C = p.length, w = "";
-    for (let v = 0; v < h; v++)
-      w += p.charAt(Math.floor(Math.random() * C));
-    return w;
+  let d = "tooltip" + ((g) => {
+    g = g || 32;
+    var m = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678", b = m.length, p = "";
+    for (let C = 0; C < g; C++)
+      p += m.charAt(Math.floor(Math.random() * b));
+    return p;
   })(5);
-  function g(h) {
-    Se[h ? "unshift" : "push"](() => {
-      a = h, i(4, a);
+  function k(g) {
+    Se[g ? "unshift" : "push"](() => {
+      a = g, i(3, a), i(5, s);
     });
   }
-  function m(h) {
-    Se[h ? "unshift" : "push"](() => {
-      f = h, i(3, f), i(6, s);
-    });
-  }
-  return t.$$set = (h) => {
-    "ref" in h && i(0, r = h.ref), "message" in h && i(1, o = h.message), "placement" in h && i(2, u = h.placement), "slotdefault" in h && i(6, s = h.slotdefault), "$$scope" in h && i(11, n = h.$$scope);
+  return t.$$set = (g) => {
+    "message" in g && i(0, r = g.message), "trigger" in g && i(1, o = g.trigger), "placement" in g && i(2, u = g.placement), "slotdefault" in g && i(5, s = g.slotdefault), "$$scope" in g && i(9, n = g.$$scope);
   }, t.$$.update = () => {
     t.$$.dirty & /*bodydom, slotdefault*/
-    72 && f && s && (i(3, f.innerHTML = "", f), f.appendChild(s));
+    40 && a && s && (i(3, a.innerHTML = "", a), a.appendChild(s));
   }, [
     r,
     o,
     u,
-    f,
     a,
-    k,
+    d,
     s,
-    c,
+    f,
     l,
-    g,
-    m,
+    k,
     n
   ];
 }
 class f0 extends ie {
   constructor(e) {
     super(), te(this, e, a0, u0, V, {
-      ref: 0,
-      message: 1,
+      message: 0,
+      trigger: 1,
       placement: 2,
-      slotdefault: 6,
-      show: 7
+      slotdefault: 5,
+      show: 6
     });
   }
   get show() {
-    return this.$$.ctx[7];
+    return this.$$.ctx[6];
   }
 }
 const A0 = (t, e, i) => {
