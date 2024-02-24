@@ -16062,11 +16062,11 @@ function xI(i) {
   let e, t, n, r, o, a;
   return {
     c() {
-      e = G("div"), t = G("div"), t.innerHTML = '<div class="scm-loading__spinner svelte-mzr1mn"></div> <p class="scm-loading__text svelte-mzr1mn">Loading editor...</p>', n = Ae(), r = G("pre"), o = st(
+      e = G("div"), t = G("div"), t.innerHTML = '<div class="scm-loading__spinner svelte-1gyloy1"></div> <p class="scm-loading__text svelte-1gyloy1">Loading editor...</p>', n = Ae(), r = G("pre"), o = st(
         /*value*/
         i[0]
-      ), x(t, "class", "scm-waiting__loading scm-loading svelte-mzr1mn"), x(r, "class", "scm-pre cm-editor svelte-mzr1mn"), x(e, "class", a = "scm-waiting " + /*classes*/
-      i[1] + " svelte-mzr1mn");
+      ), x(t, "class", "scm-waiting__loading scm-loading svelte-1gyloy1"), x(r, "class", "scm-pre cm-editor svelte-1gyloy1"), x(e, "class", a = "scm-waiting " + /*classes*/
+      i[1] + " svelte-1gyloy1");
     },
     m(s, l) {
       U(s, e, l), z(e, t), z(e, n), z(e, r), z(r, o);
@@ -16079,7 +16079,7 @@ function xI(i) {
         s[0]
       ), l[0] & /*classes*/
       2 && a !== (a = "scm-waiting " + /*classes*/
-      s[1] + " svelte-mzr1mn") && x(e, "class", a);
+      s[1] + " svelte-1gyloy1") && x(e, "class", a);
     },
     d(s) {
       s && B(e);
@@ -16091,7 +16091,7 @@ function DI(i) {
   return {
     c() {
       e = G("div"), x(e, "class", t = "uikit-w-full uikit-h-full codemirror-wrapper uikit-shadow-lg uikit-p-3 " + /*classes*/
-      i[1] + " svelte-mzr1mn");
+      i[1] + " svelte-1gyloy1");
     },
     m(n, r) {
       U(n, e, r), i[18](e);
@@ -16099,7 +16099,7 @@ function DI(i) {
     p(n, r) {
       r[0] & /*classes*/
       2 && t !== (t = "uikit-w-full uikit-h-full codemirror-wrapper uikit-shadow-lg uikit-p-3 " + /*classes*/
-      n[1] + " svelte-mzr1mn") && x(e, "class", t);
+      n[1] + " svelte-1gyloy1") && x(e, "class", t);
     },
     d(n) {
       n && B(e), i[18](null);
