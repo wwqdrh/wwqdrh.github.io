@@ -1,0 +1,178 @@
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 1.5rem;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x)* .5);
+    padding-left: calc(var(--bs-gutter-x)* .5);
+    padding-top: calc(var(--bs-gutter-y)* .5);
+    padding-bottom: calc(var(--bs-gutter-y)* .5);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+
+    .container,
+    .container-sm {
+        max-width: 540px;
+    }
+}
+
+
+@media (min-width: 768px) {
+
+    .container,
+    .container-md,
+    .container-sm {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm {
+        max-width: 960px;
+    }
+}
+
+
+@media (min-width: 1200px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1300px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 95%;
+    }
+}
+
+.basis-mini {
+    flex-basis: 4rem;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.space-x-2> :not([hidden])~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    padding-right: calc(0.5rem * var(--tw-space-x-reverse));
+    padding-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.row {
+    --bs-gutter-y: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1* var(--bs-gutter-y));
+}
+
+.row-2 {
+    flex: 1 0 0%;
+    height: 16.66666666%;
+
+}
+
+.row-4 {
+    flex: 0 0 auto;
+    height: 33.33333333%;
+
+}
+
+.row-5 {
+    flex: 0 0 auto;
+    height: 41.66666667%;
+
+}
+
+.row-6 {
+    flex: 0 0 auto;
+    height: 50%;
+
+}
+
+
+.row-8 {
+    flex: 0 0 auto;
+    height: 66.66666667%;
+
+}
+
+.col {
+    flex: 1 0 0%;
+
+}
+
+.col-2 {
+    flex: 1 0 0%;
+    width: 16.66666666%;
+
+}
+
+
+.col-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+
+}
+
+.col-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+
+}
+
+.col-6 {
+    flex: 0 0 auto;
+    width: 50%;
+
+}
+
+
+.col-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+
+}
+
+@media (min-width: 768px) {
+    .col-md-auto {
+        flex: 0 0 auto;
+        width: auto;
+
+    }
+}
+
+@media (min-width: 992px) {
+    .col-lg-2 {
+        flex: 0 0 auto;
+        width: 16.66666667%;
+
+    }
+}
+
+.opacity-50 {
+    opacity: .5;
+}
