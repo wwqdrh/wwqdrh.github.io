@@ -11235,7 +11235,7 @@ function v0(t, e, i) {
     "content" in s && i(1, l = s.content);
   }, t.$$.update = () => {
     t.$$.dirty & /*content, domref*/
-    3 && l && n && (i(0, n.innerHTML = "", n), typeof l == "string" ? i(0, n.textContent = l, n) : l.$$ && l.$$.root ? n.appendChild(l.$$.root) : n.appendChild(l));
+    3 && l && n && (i(0, n.innerHTML = "", n), typeof l == "string" ? i(0, n.textContent = l, n) : l.$$ && l.$$.root ? n.appendChild(l.$$.root) : l && n.appendChild(l));
   }, [n, l, r];
 }
 class zt extends Q {
@@ -26830,7 +26830,7 @@ class gp extends Q {
     return this.$$.ctx[3];
   }
 }
-const My = (t, e, i, l) => {
+const Ly = (t, e, i, l) => {
   oi.string(), t || (t = window.document.createElement("div"), document.body.appendChild(t));
   const n = oi.lazy(() => {
     let s = oi.object({});
@@ -29852,7 +29852,7 @@ class Ck extends Q {
     });
   }
 }
-const Ly = (t, e, i) => {
+const Ry = (t, e, i) => {
   t || (t = window.document.createElement("div"), document.body.appendChild(t));
   const l = new Ck({
     target: t,
@@ -30016,7 +30016,7 @@ class Ok extends Q {
     super(), Y(this, e, Ik, Nk, J, { slotdefault: 0 });
   }
 }
-const Ry = (t, e, i) => {
+const jy = (t, e, i) => {
   t || (t = window.document.createElement("div"), document.body.appendChild(t));
   const l = new Ok({
     target: t,
@@ -31106,7 +31106,7 @@ class iv extends Q {
     super(), Y(this, e, tv, ev, J, { device: 1 });
   }
 }
-const jy = (t, e, i) => {
+const By = (t, e, i) => {
   t || (t = window.document.createElement("div"), document.body.appendChild(t));
   const l = new iv({
     target: t,
@@ -31597,7 +31597,7 @@ class mv extends Q {
     return this.$$.ctx[5];
   }
 }
-const By = (t, e, i) => {
+const Dy = (t, e, i) => {
   t || (t = window.document.createElement("div"), document.body.appendChild(t));
   const l = new mv({
     target: t,
@@ -33387,7 +33387,7 @@ class Jv extends Q {
     super(), Y(this, e, qv, Gv, J, { items: 0 });
   }
 }
-const Dy = (t, e, i) => {
+const Zy = (t, e, i) => {
   t || (t = window.document.createElement("div"), document.body.appendChild(t));
   const l = new yf({
     target: t,
@@ -33403,7 +33403,7 @@ const Dy = (t, e, i) => {
       });
     }
   return l;
-}, Zy = (t, e, i) => {
+}, Fy = (t, e, i) => {
   t || (t = window.document.createElement("div"), document.body.appendChild(t));
   const l = new Jv({
     target: t,
@@ -33419,7 +33419,7 @@ const Dy = (t, e, i) => {
       });
     }
   return l;
-}, Fy = (t, e, i) => {
+}, Uy = (t, e, i) => {
   t || (t = window.document.createElement("div"), document.body.appendChild(t));
   const l = new Hv({
     target: t,
@@ -35235,7 +35235,7 @@ let M2 = class extends Q {
     return this.$$.ctx[3];
   }
 };
-const Wy = (t, e, i) => {
+const Vy = (t, e, i) => {
   t || (t = window.document.createElement("div"), document.body.appendChild(t));
   const l = new M2({
     target: t,
@@ -35536,7 +35536,7 @@ class U2 extends Q {
     });
   }
 }
-const Vy = (t, e, i) => {
+const Hy = (t, e, i) => {
   t || (t = window.document.createElement("div"), document.body.appendChild(t));
   const l = new U2({
     target: t,
@@ -36611,7 +36611,7 @@ class uy extends Q {
     return this.$$.ctx[10];
   }
 }
-const Hy = (t, e, i) => {
+const Gy = (t, e, i) => {
   t || (t = window.document.createElement("div"), document.body.appendChild(t));
   const l = new uy({
     target: t,
@@ -36952,7 +36952,7 @@ class by extends Q {
     super(), Y(this, e, _y, hy, J, { images: 0, col: 1 });
   }
 }
-const Gy = (t, e, i) => {
+const qy = (t, e, i) => {
   t || (t = window.document.createElement("div"), document.body.appendChild(t));
   const l = new by({
     target: t,
@@ -36968,7 +36968,7 @@ const Gy = (t, e, i) => {
       });
     }
   return l;
-}, qy = (t, e, i) => {
+}, Jy = (t, e, i) => {
   t || (t = window.document.createElement("div"), document.body.appendChild(t));
   const l = new Ze({
     target: t,
@@ -37285,7 +37285,7 @@ class Ey extends Q {
     return this.$$.ctx[6];
   }
 }
-const Jy = (t, e, i) => {
+const Xy = (t, e, i) => {
   t || (t = window.document.createElement("div"), document.body.appendChild(t));
   const l = new Ey({
     target: t,
@@ -37370,7 +37370,7 @@ let Ln = kt("zh"), Tf = kt({
     logout: "logout"
   }
 });
-const Xy = (t, e) => {
+const Yy = (t, e) => {
   Ln.set(t), Tf.update((i) => Sf(i, e));
 };
 function Sf(t, e) {
@@ -37382,14 +37382,14 @@ function Sf(t, e) {
 function jl(t) {
   return t && typeof t == "object" && !Array.isArray(t);
 }
-const Yy = (t) => {
+const Qy = (t) => {
   Ln.set(t);
-}, Qy = (t) => new Cf({
+}, Ky = (t) => new Cf({
   target: document.createElement("p"),
   props: {
     key: t
   }
-}), Ky = (t) => new Cf({
+}), xy = (t) => new Cf({
   target: document.createElement("p"),
   props: {
     key: t
@@ -37432,55 +37432,66 @@ const Yy = (t) => {
   FormToggle: ff,
   Table: rk,
   Pagination: kf
-}, zy = (t, e, i, l) => {
+};
+function zy(t) {
+  let e = {}, i = t.getElementsByTagName("div");
+  for (let l = 0; l < i.length; l++) {
+    let n = i[l].getAttribute("data-slot");
+    n && (console.log(i[l]), e[n] = i[l], i[l].parentNode.removeChild(i[l]), console.log(i[l]));
+  }
+  return e;
+}
+const Ay = (t, e, i, l) => {
   let n = Oy[t];
   if (!n)
     return;
   e || (e = window.document.createElement("div"), document.body.appendChild(e));
-  const r = new n({
+  let r = zy(e);
+  const s = new n({
     target: e,
     props: {
-      ...i
+      ...i,
+      ...r
     }
   });
   if (l)
-    for (let s in l) {
-      let u = l[s];
-      r.$on(s, (o) => {
-        u(o.detail);
+    for (let u in l) {
+      let o = l[u];
+      s.$on(u, (a) => {
+        o(a.detail);
       });
     }
-  return r;
-}, oa = "uikit_msg_panel", xy = (t, e, i) => {
+  return s;
+}, oa = "uikit_msg_panel", $y = (t, e, i) => {
   let l = window.document.getElementById(oa);
-  return l || (l = window.document.createElement("div"), l.id = oa, l.style.position = "absolute", l.style.top = "5px", l.style.right = "5px", l.style.display = "flex", l.style.flexDirection = "column", l.style.rowGap = "10px", l.style.zIndex = "100", document.body.appendChild(l)), t || (t = window.document.createElement("div"), l.appendChild(t)), zy("Alert", t, e, i);
-}, $y = (t, e, i) => {
+  return l || (l = window.document.createElement("div"), l.id = oa, l.style.position = "absolute", l.style.top = "5px", l.style.right = "5px", l.style.display = "flex", l.style.flexDirection = "column", l.style.rowGap = "10px", l.style.zIndex = "100", document.body.appendChild(l)), t || (t = window.document.createElement("div"), l.appendChild(t)), Ay("Alert", t, e, i);
+}, e4 = (t, e, i) => {
   let l = window.document.createElement(t);
   for (let n in e)
     l.setAttribute(n, e[n]);
   return l.textContent = i, l;
 };
 export {
-  Ly as FnAccordion,
-  Ry as FnAvatar,
-  jy as FnDeviceMockup,
-  By as FnDrawer,
-  Dy as FnDropdown,
-  Zy as FnDropdownMenu,
-  Fy as FnDropdownSelect,
-  Gy as FnGallery,
-  qy as FnIcon,
-  Hy as FnModal,
-  Wy as FnSidebar,
-  Vy as FnSpinner,
-  Jy as FnTooltip,
-  $y as dom,
-  My as formx,
-  Qy as i18n,
-  Yy as i18nChange,
-  Xy as i18nInit,
-  Ky as i18ns,
-  zy as kit,
-  xy as message,
+  Ry as FnAccordion,
+  jy as FnAvatar,
+  By as FnDeviceMockup,
+  Dy as FnDrawer,
+  Zy as FnDropdown,
+  Fy as FnDropdownMenu,
+  Uy as FnDropdownSelect,
+  qy as FnGallery,
+  Jy as FnIcon,
+  Gy as FnModal,
+  Vy as FnSidebar,
+  Hy as FnSpinner,
+  Xy as FnTooltip,
+  e4 as dom,
+  Ly as formx,
+  Ky as i18n,
+  Qy as i18nChange,
+  Yy as i18nInit,
+  xy as i18ns,
+  Ay as kit,
+  $y as message,
   oi as z
 };
