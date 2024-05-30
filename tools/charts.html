@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="module" src="https://unpkg.com/@wwqdrh/uikit@0.2.2/umd/charts.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body x-data="index">
+    <div x-text="graphdata"></div>
+    <button x-on:click="graphdata = JSON.stringify(graph.getRawData())">获取数据</button>
+</body>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data("index", () => ({
+            kit: null,
+            graph: null,
+            graphdata: "现在是空的",
+            init(){
+                window.uikit_charts_loaded().then((res) => {
+                    this.kit = window.uikit_charts
+                    this.graph = new this.kit.Graph([], true)
+                })
+            }
+        }))
+    })
+</script>
+
+</html>
