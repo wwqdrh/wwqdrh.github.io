@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>核心概念</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href=".././theme/style.css">
+    <link rel="stylesheet" href=".././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../GDScript.html">GDScript 开发教程</a></li><li class="chapter-item expanded "><a href="../godot3/Start.html"><strong aria-hidden="true">1.</strong> godot3示例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../godot3/将文件拖入窗口并加载文件内容.html"><strong aria-hidden="true">1.1.</strong> 将文件拖入窗口并加载文件内容</a></li><li class="chapter-item expanded "><a href="../godot3/教你实现2D游戏中的小地图.html"><strong aria-hidden="true">1.2.</strong> 教你实现2D游戏中的小地图</a></li><li class="chapter-item expanded "><a href="../godot3/教你实现简单的传送带效果.html"><strong aria-hidden="true">1.3.</strong> 教你实现简单的传送带效果</a></li><li class="chapter-item expanded "><a href="../godot3/教你实现漂浮文本效果.html"><strong aria-hidden="true">1.4.</strong> 教你实现漂浮文本效果</a></li><li class="chapter-item expanded "><a href="../godot3/教你实现PC和手机端的虚拟摇杆.html"><strong aria-hidden="true">1.5.</strong> 教你实现PC和手机端的虚拟摇杆</a></li><li class="chapter-item expanded "><a href="../godot3/如何实时显示相机内容.html"><strong aria-hidden="true">1.6.</strong> 如何实时显示相机内容</a></li><li class="chapter-item expanded "><a href="../godot3/如何实现2D场景的AI寻路.html"><strong aria-hidden="true">1.7.</strong> 如何实现2D场景的AI寻路</a></li><li class="chapter-item expanded "><a href="../godot3/实现2D物品的拖拽移动.html"><strong aria-hidden="true">1.8.</strong> 实现2D物品的拖拽移动</a></li><li class="chapter-item expanded "><a href="../godot3/实现2D相机的视角控制.html"><strong aria-hidden="true">1.9.</strong> 实现2D相机的视角控制</a></li><li class="chapter-item expanded "><a href="../godot3/实现简单的2D灯光和阴影.html"><strong aria-hidden="true">1.10.</strong> 实现简单的2D灯光和阴影</a></li><li class="chapter-item expanded "><a href="../godot3/实现物品拖拽与放置的功能.html"><strong aria-hidden="true">1.11.</strong> 实现物品拖拽与放置的功能</a></li><li class="chapter-item expanded "><a href="../godot3/实现在2D场景中显示3D物体.html"><strong aria-hidden="true">1.12.</strong> 实现在2D场景中显示3D物体</a></li><li class="chapter-item expanded "><a href="../godot3/使用鼠标拖拽来实现列表的滚动效果.html"><strong aria-hidden="true">1.13.</strong> 使用鼠标拖拽来实现列表的滚动效果</a></li><li class="chapter-item expanded "><a href="../godot3/使用PinJoint2D实现可中心旋转的物体.html"><strong aria-hidden="true">1.14.</strong> 使用PinJoint2D实现可中心旋转的物体</a></li><li class="chapter-item expanded "><a href="../godot3/为2D物体移动添加烟尘效果.html"><strong aria-hidden="true">1.15.</strong> 为2D物体移动添加烟尘效果</a></li><li class="chapter-item expanded "><a href="../godot3/为3D物体添加一个跟随的2D物体.html"><strong aria-hidden="true">1.16.</strong> 为3D物体添加一个跟随的2D物体</a></li><li class="chapter-item expanded "><a href="../godot3/血条的实现.html"><strong aria-hidden="true">1.17.</strong> 血条的实现</a></li><li class="chapter-item expanded "><a href="../godot3/用Light2D实现遮罩动画.html"><strong aria-hidden="true">1.18.</strong> 用Light2D实现遮罩动画</a></li></ol></li><li class="chapter-item expanded "><a href="../godot4/Start.html"><strong aria-hidden="true">2.</strong> godot4示例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../godot4/3D场景中如何控制物体的移动.html"><strong aria-hidden="true">2.1.</strong> 3D场景中如何控制物体的移动</a></li><li class="chapter-item expanded "><a href="../godot4/3D场景中物体的自动寻路.html"><strong aria-hidden="true">2.2.</strong> 3D场景中物体的自动寻路</a></li><li class="chapter-item expanded "><a href="../godot4/3D基础场景的搭建.html"><strong aria-hidden="true">2.3.</strong> 3D基础场景的搭建</a></li><li class="chapter-item expanded "><a href="../godot4/如何将godot3项目转为godot4.html"><strong aria-hidden="true">2.4.</strong> 如何将godot3项目转为godot4</a></li><li class="chapter-item expanded "><a href="../godot4/使用shader实现屏幕震动效果.html"><strong aria-hidden="true">2.5.</strong> 使用shader实现屏幕震动效果</a></li><li class="chapter-item expanded "><a href="../godot4/实现抽奖功能.html"><strong aria-hidden="true">2.6.</strong> 实现抽奖功能</a></li></ol></li><li class="chapter-item expanded "><a href="../游戏设计/Start.html"><strong aria-hidden="true">3.</strong> 游戏设计原理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../游戏设计/核心创意三要素.html"><strong aria-hidden="true">3.1.</strong> 核心创意三要素</a></li><li class="chapter-item expanded "><a href="../游戏设计/核心创意思路.html"><strong aria-hidden="true">3.2.</strong> 核心创意思路</a></li><li class="chapter-item expanded "><a href="../游戏设计/如何考虑游戏节奏.html"><strong aria-hidden="true">3.3.</strong> 如何考虑游戏节奏</a></li><li class="chapter-item expanded "><a href="../游戏设计/游戏设计的基本原理.html"><strong aria-hidden="true">3.4.</strong> 游戏设计的基本原理</a></li></ol></li><li class="chapter-item expanded "><a href="../shader/Start.html"><strong aria-hidden="true">4.</strong> shader实战</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../shader/核心概念.html" class="active"><strong aria-hidden="true">4.1.</strong> 核心概念</a></li><li class="chapter-item expanded "><a href="../shader/glsl知识.html"><strong aria-hidden="true">4.2.</strong> glsl知识</a></li><li class="chapter-item expanded "><a href="../shader/绑定图像.html"><strong aria-hidden="true">4.3.</strong> 绑定图像</a></li><li class="chapter-item expanded "><a href="../shader/采样器.html"><strong aria-hidden="true">4.4.</strong> 采样器</a></li><li class="chapter-item expanded "><a href="../shader/采样器.html"><strong aria-hidden="true">4.5.</strong> 采样器</a></li><li class="chapter-item expanded "><a href="../shader/绑定缓冲区.html"><strong aria-hidden="true">4.6.</strong> 绑定缓冲区</a></li><li class="chapter-item expanded "><a href="../shader/2D闪电特效.html"><strong aria-hidden="true">4.7.</strong> shader实战-2D闪电特效</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/godot-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <blockquote>
+<p>TODO</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../shader/Start.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../shader/glsl知识.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../shader/Start.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../shader/glsl知识.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src=".././theme/style.js"></script>
+        <script src="../clarity.js"></script>
+        <script src=".././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>

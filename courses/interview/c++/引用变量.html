@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>引用变量</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href=".././theme/style.css">
+    <link rel="stylesheet" href=".././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">面试指南</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/index.html"><strong aria-hidden="true">1.</strong> 数据结构与算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/index.html"><strong aria-hidden="true">1.1.</strong> 题库</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer1.html"><strong aria-hidden="true">1.1.1.</strong> 剑指offer1</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer2.html"><strong aria-hidden="true">1.1.2.</strong> 剑指offer2</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer3.html"><strong aria-hidden="true">1.1.3.</strong> 剑指offer3</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer4.html"><strong aria-hidden="true">1.1.4.</strong> 剑指offer4</a></li></ol></li><li class="chapter-item expanded "><a href="../数据结构与算法/短链系统设计.html"><strong aria-hidden="true">1.2.</strong> 短链系统设计</a></li></ol></li><li class="chapter-item expanded "><a href="../c++/index.html"><strong aria-hidden="true">2.</strong> c++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../c++/引用变量.html" class="active"><strong aria-hidden="true">2.1.</strong> 引用变量</a></li><li class="chapter-item expanded "><a href="../c++/什么是虚函数.html"><strong aria-hidden="true">2.2.</strong> 什么是虚函数</a></li><li class="chapter-item expanded "><a href="../c++/什么是指针.html"><strong aria-hidden="true">2.3.</strong> 什么是指针</a></li><li class="chapter-item expanded "><a href="../c++/如何保证并发安全.html"><strong aria-hidden="true">2.4.</strong> 如何保证并发安全</a></li><li class="chapter-item expanded "><a href="../c++/常见对象的内存结构.html"><strong aria-hidden="true">2.5.</strong> 常见对象的内存结构</a></li><li class="chapter-item expanded "><a href="../c++/stl容器库.html"><strong aria-hidden="true">2.6.</strong> stl容器库</a></li></ol></li><li class="chapter-item expanded "><a href="../linux操作系统/index.html"><strong aria-hidden="true">3.</strong> linux操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux操作系统/资源管理.html"><strong aria-hidden="true">3.1.</strong> 资源管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/网络配置.html"><strong aria-hidden="true">3.2.</strong> 网络配置</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/interview-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+<style>
+    select.code-example {
+        color: var(--fg);
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--fg);
+        padding: 2px 10px 2px 10px;
+        border-radius: 5px;
+    }
+</style>
+<p>在C++中，左值（lvalue）和右值（rvalue）是与值的生命周期和表达式类型有关的概念。它们与C++11引入的右值引用和完美转发机制密切相关。以下是这些概念的详细解释和代码示例。</p>
+<h2 id="1-左值lvalue"><a class="header" href="#1-左值lvalue">1. 左值（Lvalue）</a></h2>
+<p>左值是指持久存在的对象或内存位置，它可以出现在赋值操作符的左边。换句话说，左值可以被引用，并且有明确的地址。</p>
+<p><code>示例</code>：</p>
+<pre><code class="language-cpp">int x = 10;  // x是一个左值，因为它可以被引用并且有内存地址
+int&amp; ref = x;  // 可以通过引用来绑定左值
+ref = 20;  // 通过引用修改x的值
+</code></pre>
+<p>在上面的代码中，x 是一个左值，因为它有明确的地址并且可以被赋值或引用。</p>
+<h2 id="2-右值rvalue"><a class="header" href="#2-右值rvalue">2. 右值（Rvalue）</a></h2>
+<p>右值是指一个临时值，通常是一个表达式的结果，并且没有明确的内存地址。右值不能出现在赋值操作符的左边，因为它们没有持久的存储空间。</p>
+<pre><code class="language-cpp">int a = 5;
+int b = 3;
+int result = a + b;  // a + b是一个右值，因为它是一个表达式的结果，没有具体的地址s
+</code></pre>
+<h2 id="3-右值引用rvalue-reference"><a class="header" href="#3-右值引用rvalue-reference">3. 右值引用（Rvalue Reference）</a></h2>
+<p>C++11引入了右值引用，用来绑定右值。右值引用使用&amp;&amp;语法，可以捕获和操作临时对象，从而避免不必要的复制。右值引用的主要应用之一是移动语义，即通过转移临时对象的资源来提高性能。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;utility&gt;  // for std::move
+
+void process(int&amp;&amp; x) {
+    std::cout &lt;&lt; "Processing rvalue: " &lt;&lt; x &lt;&lt; std::endl;
+    x = 30; // 对于左值move过来的右值引用是可以修改的, 当然这个不是右值引用(本身只是为了处理右值复制的问题)的专利，普通引用int也可以修改
+}
+
+int main() {
+    int a = 10;
+    process(std::move(a));  // std::move将a转换为右值
+    std::cout &lt;&lt; a &lt;&lt; std::endl;
+    process(20);  // 20是右值，可以直接传递给右值引用
+    // output
+    // Processing rvalue: 10
+    // 30
+    // Processing rvalue: 20
+}
+</code></pre>
+<h2 id="4-完美转发perfect-forwarding"><a class="header" href="#4-完美转发perfect-forwarding">4. 完美转发（Perfect Forwarding）</a></h2>
+<p>完美转发是指在模板中将参数精确地传递给另一个函数，保持其原始的左值或右值特性。它通常通过结合模板参数推导和右值引用来实现。</p>
+<p>完美转发的主要工具是std::forward。std::forward确保在函数调用中参数的值类别（左值或右值）得以保留。</p>
+<p><code>示例</code>：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;utility&gt;  // for std::forward
+
+// 处理左值和右值的函数重载
+void process(int&amp; x) {
+    std::cout &lt;&lt; "Processing lvalue: " &lt;&lt; x &lt;&lt; std::endl;
+}
+
+void process(int&amp;&amp; x) {
+    std::cout &lt;&lt; "Processing rvalue: " &lt;&lt; x &lt;&lt; std::endl;
+}
+
+// 泛型函数，接收任意类型的参数并转发给另一个函数
+template&lt;typename T&gt;
+void wrapper(T&amp;&amp; arg) {
+    process(std::forward&lt;T&gt;(arg));  // 完美转发
+}
+
+int main() {
+    int a = 5;
+    wrapper(a);        // 传递左值
+    wrapper(10);       // 传递右值
+}
+</code></pre>
+<p><code>说明</code>：</p>
+<ul>
+<li>在wrapper函数中，<code>T&amp;&amp;</code> 是一个万能引用（universal reference），可以绑定左值或右值。</li>
+<li><code>std::forward&lt;T&gt;(arg)</code> 保证了当传入的是左值时，arg会作为左值传递；当传入的是右值时，arg会作为右值传递，这就是完美转发。</li>
+</ul>
+<p><code>总结</code></p>
+<ul>
+<li>左值（lvalue） 是有具体地址的对象，可以被持久引用。</li>
+<li>右值（rvalue） 是临时对象或表达式的结果，通常没有地址。</li>
+<li>右值引用（rvalue reference） 是通过&amp;&amp;来引用右值的机制，主要用于移动语义，避免拷贝。</li>
+<li>完美转发 用于保持参数的值类别（左值或右值）不变，通过std::forward实现。</li>
+</ul>
+<p>这些特性有助于优化代码性能，尤其是在处理临时对象和资源转移时。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../c++/index.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../c++/什么是虚函数.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../c++/index.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../c++/什么是虚函数.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src=".././theme/style.js"></script>
+        <script src="../clarity.js"></script>
+        <script src=".././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>

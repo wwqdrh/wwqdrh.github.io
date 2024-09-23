@@ -1,0 +1,2153 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>剑指offer1</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../../favicon.svg">
+    <link rel="shortcut icon" href="../../favicon.png">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../../css/chrome.css">
+    <link rel="stylesheet" href="../../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../../highlight.css">
+    <link rel="stylesheet" href="../../tomorrow-night.css">
+    <link rel="stylesheet" href="../../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href="../.././theme/style.css">
+    <link rel="stylesheet" href="../.././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">面试指南</a></li><li class="chapter-item expanded "><a href="../../数据结构与算法/index.html"><strong aria-hidden="true">1.</strong> 数据结构与算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../数据结构与算法/题库/index.html"><strong aria-hidden="true">1.1.</strong> 题库</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../数据结构与算法/题库/剑指offer1.html" class="active"><strong aria-hidden="true">1.1.1.</strong> 剑指offer1</a></li><li class="chapter-item expanded "><a href="../../数据结构与算法/题库/剑指offer2.html"><strong aria-hidden="true">1.1.2.</strong> 剑指offer2</a></li><li class="chapter-item expanded "><a href="../../数据结构与算法/题库/剑指offer3.html"><strong aria-hidden="true">1.1.3.</strong> 剑指offer3</a></li><li class="chapter-item expanded "><a href="../../数据结构与算法/题库/剑指offer4.html"><strong aria-hidden="true">1.1.4.</strong> 剑指offer4</a></li></ol></li><li class="chapter-item expanded "><a href="../../数据结构与算法/短链系统设计.html"><strong aria-hidden="true">1.2.</strong> 短链系统设计</a></li></ol></li><li class="chapter-item expanded "><a href="../../c++/index.html"><strong aria-hidden="true">2.</strong> c++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../c++/引用变量.html"><strong aria-hidden="true">2.1.</strong> 引用变量</a></li><li class="chapter-item expanded "><a href="../../c++/什么是虚函数.html"><strong aria-hidden="true">2.2.</strong> 什么是虚函数</a></li><li class="chapter-item expanded "><a href="../../c++/什么是指针.html"><strong aria-hidden="true">2.3.</strong> 什么是指针</a></li><li class="chapter-item expanded "><a href="../../c++/如何保证并发安全.html"><strong aria-hidden="true">2.4.</strong> 如何保证并发安全</a></li><li class="chapter-item expanded "><a href="../../c++/常见对象的内存结构.html"><strong aria-hidden="true">2.5.</strong> 常见对象的内存结构</a></li><li class="chapter-item expanded "><a href="../../c++/stl容器库.html"><strong aria-hidden="true">2.6.</strong> stl容器库</a></li></ol></li><li class="chapter-item expanded "><a href="../../linux操作系统/index.html"><strong aria-hidden="true">3.</strong> linux操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../linux操作系统/资源管理.html"><strong aria-hidden="true">3.1.</strong> 资源管理</a></li><li class="chapter-item expanded "><a href="../../linux操作系统/网络配置.html"><strong aria-hidden="true">3.2.</strong> 网络配置</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/interview-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+<style>
+    select.code-example {
+        color: var(--fg);
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--fg);
+        padding: 2px 10px 2px 10px;
+        border-radius: 5px;
+    }
+</style>
+<h1 id="剑指offer"><a class="header" href="#剑指offer">剑指offer</a></h1>
+<blockquote>
+<p>题库链接: https://leetcode.cn/problem-list/e8X3pBZi/</p>
+</blockquote>
+<h2 id="整数除法"><a class="header" href="#整数除法">整数除法</a></h2>
+<p><code>剑指 Offer II 001. 整数除法</code></p>
+<p>给定整数a、b，求得商的结果</p>
+<p>条件:</p>
+<p>1、不能使用除法、取余数等运算
+2、只能存储32位有符号整数(范围是[-2^31,2^31-1])，如果溢出了就返回<code>2^31-1</code></p>
+<p><code>解法</code></p>
+<ul>
+<li>处理边界条件，当a是最小值，判断b是1或者-1；当b是最小值，a是最小值则为1，其他都为0</li>
+<li>使用二分法+快速乘来判断是否满足</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-0', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-0-cpp">cpp</option><option value="code-example-tab-0-go">go</option></select></div>
+<div id="code-example-tab-0-cpp" class="code-example-tab-0"><pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;limits&gt;
+<em></em>
+using namespace std;
+<em></em>
+// 快速乘
+// x 和 y 是负数，z 是正数
+// 判断 z * y &gt;= x 是否成立
+bool quickAdd(int y, int z, int x) {
+  int result = 0, add = y;
+  while (z &gt; 0) { // 不能使用除法
+    if (z &amp; 1) {
+      // 需要保证 result + add &gt;= x
+      if (result &lt; x - add) {
+        return false;
+      }
+      result += add;
+    }
+    if (z != 1) {
+      // 需要保证 add + add &gt;= x
+      if (add &lt; x - add) {
+        return false;
+      }
+      add += add;
+    }
+    z &gt;&gt;= 1;
+  }
+  return true;
+}
+<em></em>
+int divide(int a, int b) {
+  if (a == numeric_limits&lt;int&gt;::min()) { // 考虑被除数为最小值的情况
+    if (b == 1) {
+      return numeric_limits&lt;int&gt;::min();
+    }
+    if (b == -1) {
+      return numeric_limits&lt;int&gt;::max();
+    }
+  }
+  if (b == numeric_limits&lt;int&gt;::min()) { // 考虑除数为最小值的情况
+    if (a == numeric_limits&lt;int&gt;::min()) {
+      return 1;
+    }
+    return 0;
+  }
+  if (a == 0) { // 考虑被除数为 0 的情况
+    return 0;
+  }
+<em></em>
+  // 一般情况，使用二分查找
+  // 将所有的正数取相反数，这样就只需要考虑一种情况
+  bool rev = false;
+  if (a &gt; 0) {
+    a = -a;
+    rev = !rev;
+  }
+  if (b &gt; 0) {
+    b = -b;
+    rev = !rev;
+  }
+<em></em>
+  int ans = 0;
+  int left = 1, right = numeric_limits&lt;int&gt;::max();
+  while (left &lt;= right) {
+    int mid = left + ((right - left) &gt;&gt; 1); // 注意溢出，并且不能使用除法
+    if (quickAdd(b, mid, a)) {
+      ans = mid;
+      if (mid == numeric_limits&lt;int&gt;::max()) { // 注意溢出
+        break;
+      }
+      left = mid + 1;
+    } else {
+      right = mid - 1;
+    }
+  }
+<em></em>
+  return rev ? -ans : ans;
+}
+<em></em>
+int main() {
+  std::cout &lt;&lt; divide(4, 3) &lt;&lt; std::endl;
+  return 0;
+}
+</code></pre></div><div id="code-example-tab-0-go" class="code-example-tab-0"><pre><code class="language-go">package main
+<em></em>
+import &quot;math&quot;
+<em></em>
+// 快速乘
+// x 和 y 是负数，z 是正数
+// 判断 z * y &gt;= x 是否成立
+func QuickAdd(y, z, x int) bool {
+	for result, add := 0, y; z &gt; 0; z &gt;&gt;= 1 { // 不能使用除法
+		if z&amp;1 &gt; 0 {
+			// 需要保证 result + add &gt;= x
+			if result &lt; x-add {
+				return false
+			}
+			result += add
+		}
+		if z != 1 {
+			// 需要保证 add + add &gt;= x
+			if add &lt; x-add {
+				return false
+			}
+			add += add
+		}
+	}
+	return true
+}
+<em></em>
+func divide(a, b int) int {
+	if a == math.MinInt32 { // 考虑被除数为最小值的情况
+		if b == 1 {
+			return math.MinInt32
+		}
+		if b == -1 {
+			return math.MaxInt32
+		}
+	}
+	if b == math.MinInt32 { // 考虑除数为最小值的情况
+		if a == math.MinInt32 {
+			return 1
+		}
+		return 0
+	}
+	if a == 0 { // 考虑被除数为 0 的情况
+		return 0
+	}
+<em></em>
+	// 一般情况，使用二分查找
+	// 将所有的正数取相反数，这样就只需要考虑一种情况
+	rev := false
+	if a &gt; 0 {
+		a = -a
+		rev = !rev
+	}
+	if b &gt; 0 {
+		b = -b
+		rev = !rev
+	}
+<em></em>
+	ans := 0
+	left, right := 1, math.MaxInt32
+	for left &lt;= right {
+		mid := left + (right-left)&gt;&gt;1 // 注意溢出，并且不能使用除法
+		if QuickAdd(b, mid, a) {
+			ans = mid
+			if mid == math.MaxInt32 { // 注意溢出
+				break
+			}
+			left = mid + 1
+		} else {
+			right = mid - 1
+		}
+	}
+	if rev {
+		return -ans
+	}
+	return ans
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-0", "code-example-tab-0-cpp")})()</script>
+<h2 id="2"><a class="header" href="#2">2、</a></h2>
+<p><code>剑指 Offer II 002. 二进制加法</code></p>
+<p>给定两个01字符串，求得加法字符串</p>
+<p><code>解法</code></p>
+<ul>
+<li>相对应下标(len-i-1)不断相加，计算商继续作为carry、模作为当前下标的值。</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-1', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-1-cpp">cpp</option><option value="code-example-tab-1-go">go</option></select></div>
+<div id="code-example-tab-1-cpp" class="code-example-tab-1"><pre><code class="language-cpp">#include &lt;algorithm&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+<em></em>
+using namespace std;
+<em></em>
+// 二进制字符串相加
+string addBinary(string a, string b) {
+  string ans = &quot;&quot;;
+  int carry = 0;
+  int lenA = a.size(), lenB = b.size();
+  int n = max(lenA, lenB);
+<em></em>
+  // 从后往前逐位相加
+  for (int i = 0; i &lt; n; i++) {
+    if (i &lt; lenA) {
+      carry += a[lenA - i - 1] - &#39;0&#39;;
+    }
+    if (i &lt; lenB) {
+      carry += b[lenB - i - 1] - &#39;0&#39;;
+    }
+    ans = char(carry % 2 + &#39;0&#39;) + ans;
+    carry /= 2;
+  }
+<em></em>
+  // 如果最后有进位，补上一个1
+  if (carry &gt; 0) {
+    ans = &#39;1&#39; + ans;
+  }
+<em></em>
+  return ans;
+}
+<em></em>
+int main() {
+  std::cout &lt;&lt; addBinary(&quot;11&quot;, &quot;1&quot;) &lt;&lt; std::endl;
+  std::cout &lt;&lt; addBinary(&quot;11&quot;, &quot;1001&quot;) &lt;&lt; std::endl;
+  return 0;
+}
+</code></pre></div><div id="code-example-tab-1-go" class="code-example-tab-1"><pre><code class="language-go">package main
+<em></em>
+import &quot;strconv&quot;
+<em></em>
+func AddBinary(a string, b string) string {
+	ans := &quot;&quot;
+	carry := 0
+	lenA, lenB := len(a), len(b)
+	n := max(lenA, lenB)
+<em></em>
+	for i := 0; i &lt; n; i++ {
+		if i &lt; lenA {
+			carry += int(a[lenA-i-1] - &#39;0&#39;)
+		}
+		if i &lt; lenB {
+			carry += int(b[lenB-i-1] - &#39;0&#39;)
+		}
+		ans = strconv.Itoa(carry%2) + ans
+		carry /= 2
+	}
+	if carry &gt; 0 {
+		ans = &quot;1&quot; + ans
+	}
+	return ans
+}
+<em></em>
+func max(x, y int) int {
+	if x &gt; y {
+		return x
+	}
+	return y
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-1", "code-example-tab-1-cpp")})()</script>
+<h2 id="3"><a class="header" href="#3">3、</a></h2>
+<p><code>剑指 Offer II 003. 前 n 个数字二进制中 1 的个数</code></p>
+<p>给定一个数字n，从[0,n]中计算出二进制表示中1的个数</p>
+<p><code>解法</code></p>
+<ul>
+<li>计算一个数的二进制表示中有多少个1，<code>x&gt;0</code>的循环条件中，能有多少次<code>x&amp;=x-1</code>满足条件</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-2', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-2-cpp">cpp</option><option value="code-example-tab-2-go">go</option></select></div>
+<div id="code-example-tab-2-cpp" class="code-example-tab-2"><pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+<em></em>
+// 计算一个整数的二进制表示中1的个数
+int onesCount(int x) {
+  int ones = 0;
+  while (x &gt; 0) {
+    x &amp;= (x - 1); // 消除最低位的1
+    ones++;
+  }
+  return ones;
+}
+<em></em>
+// 返回从0到n的每个整数的二进制表示中1的个数
+vector&lt;int&gt; countBits(int n) {
+  vector&lt;int&gt; bits(n + 1);
+  for (int i = 0; i &lt;= n; ++i) {
+    bits[i] = onesCount(i);
+  }
+  return bits;
+}
+<em></em>
+int main() {
+  vector&lt;int&gt; bits = countBits(5);
+  for (int i = 0; i &lt; bits.size(); ++i) {
+    cout &lt;&lt; bits[i] &lt;&lt; &quot; &quot;;
+  }
+  cout &lt;&lt; endl;
+  return 0;
+}
+</code></pre></div><div id="code-example-tab-2-go" class="code-example-tab-2"><pre><code class="language-go">package main
+<em></em>
+func onesCount(x int) (ones int) {
+	for ; x &gt; 0; x &amp;= x - 1 {
+		ones++
+	}
+	return
+}
+<em></em>
+func CountBits(n int) []int {
+	bits := make([]int, n+1)
+	for i := range bits {
+		bits[i] = onesCount(i)
+	}
+	return bits
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-2", "code-example-tab-2-cpp")})()</script>
+<h2 id="4"><a class="header" href="#4">4、</a></h2>
+<p><code>剑指 Offer II 004. 只出现一次的数字</code></p>
+<p>给定一个整数数组，其中一个元素出现了一次，其他元素出现了三次，找到那个只出现了一次的元素</p>
+<p>要求: <code>O(n)</code>时间复杂度, <code>O(1)</code>空间复杂度</p>
+<p><code>解法</code></p>
+<ul>
+<li>将数组中的数字看成二进制格式，对于出现了三次的数字，他们对应的比特位数字和为0或者3，对于出现一次的数字，对应的比特位数字和为1或者4，将每一位的和取余所得到的余数就是结果对应的元素对应的位置。</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-3', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-3-cpp">cpp</option><option value="code-example-tab-3-go">go</option></select></div>
+<div id="code-example-tab-3-cpp" class="code-example-tab-3"><pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+<em></em>
+int singleNumber(const vector&lt;int&gt;&amp; nums) {
+    int ans = 0;  // 32位整数，保存结果
+    for (int i = 0; i &lt; 32; ++i) {
+        int total = 0;  // 记录第i位的1的个数
+        for (int num : nums) {
+            total += (num &gt;&gt; i) &amp; 1;  // 取出num的第i位并累加
+        }
+        if (total % 3 &gt; 0) {  // 如果该位上的1的个数不是3的倍数
+            ans |= (1 &lt;&lt; i);  // 将该位设置为1
+        }
+    }
+    return ans;
+}
+<em></em>
+int main() {
+    vector&lt;int&gt; nums = { 1,1,1,2,2,2,3,3,3,4 };
+    int ans = singleNumber(nums);
+    cout &lt;&lt; ans &lt;&lt; endl;
+    return 0;
+}
+</code></pre></div><div id="code-example-tab-3-go" class="code-example-tab-3"><pre><code class="language-go">package main
+<em></em>
+func SingleNumber(nums []int) int {
+	ans := int32(0)
+	for i := 0; i &lt; 32; i++ {
+		total := int32(0)
+		for _, num := range nums {
+			total += int32(num) &gt;&gt; i &amp; 1
+		}
+		if total%3 &gt; 0 {
+			ans |= 1 &lt;&lt; i
+		}
+	}
+	return int(ans)
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-3", "code-example-tab-3-cpp")})()</script>
+<h2 id="5"><a class="header" href="#5">5、</a></h2>
+<p><code>剑指 Offer II 005. 单词长度的最大乘积</code></p>
+<p>一个字符串数组，寻找满足 不包含相同字符 的两个字符串的长度乘积，找到满足条件的最大长度</p>
+<p><code>解法</code></p>
+<ul>
+<li>将字符串转为int类型mask来表示哪些字母是出现了的</li>
+<li>使用位运算来判断是否存在相同的字符</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-4', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-4-cpp">cpp</option><option value="code-example-tab-4-go">go</option></select></div>
+<div id="code-example-tab-4-cpp" class="code-example-tab-4"><pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using namespace std;
+<em></em>
+int maxProduct(const vector&lt;string&gt; &amp;words) {
+  int ans = 0;
+  int n = words.size();
+  vector&lt;int&gt; masks(n, 0); // 用于存储每个单词的掩码
+<em></em>
+  // 计算每个单词的字母掩码
+  for (int i = 0; i &lt; n; ++i) {
+    for (char ch : words[i]) {
+      masks[i] |= (1 &lt;&lt; (ch - &#39;a&#39;)); // 将字母对应的位标记为1
+    }
+  }
+<em></em>
+  // 两两比较掩码，找出没有公共字母的单词组合，并计算其乘积
+  for (int i = 0; i &lt; n; ++i) {
+    for (int j = 0; j &lt; i; ++j) {
+      if ((masks[i] &amp; masks[j]) == 0) { // 判断是否没有公共字母
+        int product = words[i].size() * words[j].size();
+        if (product &gt; ans) {
+          ans = product;
+        }
+      }
+    }
+  }
+<em></em>
+  return ans;
+}
+<em></em>
+int main() {
+  vector&lt;string&gt; words = {&quot;abcw&quot;, &quot;baz&quot;, &quot;foo&quot;, &quot;bar&quot;, &quot;xtfn&quot;, &quot;abcdef&quot;};
+  int ans = maxProduct(words);
+  cout &lt;&lt; ans &lt;&lt; endl;
+  return 0;
+}
+</code></pre></div><div id="code-example-tab-4-go" class="code-example-tab-4"><pre><code class="language-go">package main
+<em></em>
+func MaxProduct(words []string) (ans int) {
+	masks := make([]int, len(words))
+	for i, word := range words {
+		for _, ch := range word {
+			masks[i] |= 1 &lt;&lt; (ch - &#39;a&#39;)
+		}
+	}
+<em></em>
+	for i, x := range masks {
+		for j, y := range masks[:i] {
+			if x&amp;y == 0 &amp;&amp; len(words[i])*len(words[j]) &gt; ans {
+				ans = len(words[i]) * len(words[j])
+			}
+		}
+	}
+	return
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-4", "code-example-tab-4-cpp")})()</script>
+<h2 id="6"><a class="header" href="#6">6、</a></h2>
+<p><code>剑指 Offer II 006. 排序数组中两个数字之和</code></p>
+<p>一个升序数组，找到其中的两个元素和为目标值，返回其目标下标。同一个数字不能使用两次，并且题目要求一定会存在满足条件的答案。</p>
+<div><select onchange="changeCodeExample('code-example-tab-5', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-5-cpp">cpp</option><option value="code-example-tab-5-go">go</option></select></div>
+<div id="code-example-tab-5-cpp" class="code-example-tab-5"><pre><code class="language-cpp">#include &lt;vector&gt;
+<em></em>
+std::vector&lt;int&gt; TwoSum(const std::vector&lt;int&gt; &amp;numbers, int target) {
+  int low = 0, high = numbers.size() - 1;
+  while (low &lt; high) {
+    int sum = numbers[low] + numbers[high];
+    if (sum == target) {
+      return {low, high};
+    } else if (sum &lt; target) {
+      ++low;
+    } else {
+      --high;
+    }
+  }
+  return {-1, -1};
+}
+</code></pre></div><div id="code-example-tab-5-go" class="code-example-tab-5"><pre><code class="language-go">package main
+<em></em>
+func TwoSum(numbers []int, target int) []int {
+	low, high := 0, len(numbers)-1
+	for low &lt; high {
+		sum := numbers[low] + numbers[high]
+		if sum == target {
+			return []int{low, high}
+		} else if sum &lt; target {
+			low++
+		} else {
+			high--
+		}
+	}
+	return []int{-1, -1}
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-5", "code-example-tab-5-cpp")})()</script>
+<h2 id="7"><a class="header" href="#7">7、</a></h2>
+<p><code>剑指 Offer II 007. 数组中和为 0 的三个数</code></p>
+<p>给定一个整数数组，返回其中和为0的三元组，并且需要答案不能重复</p>
+<p><code>解法</code></p>
+<ul>
+<li>先进行排序，优化搜索条件</li>
+<li>记得跳过相同的值，即相同的一段，只计算第一个进行剪枝。</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-6', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-6-cpp">cpp</option><option value="code-example-tab-6-go">go</option></select></div>
+<div id="code-example-tab-6-cpp" class="code-example-tab-6"><pre><code class="language-cpp">#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+<em></em>
+std::vector&lt;std::vector&lt;int&gt;&gt; ThreeSum(std::vector&lt;int&gt; &amp;nums) {
+  std::vector&lt;std::vector&lt;int&gt;&gt; ans;
+  std::sort(nums.begin(), nums.end());
+  int n = nums.size();
+<em></em>
+  for (int first = 0; first &lt; n; ++first) {
+    if (first &gt; 0 &amp;&amp; nums[first] == nums[first - 1]) {
+      continue;
+    }
+    int third = n - 1;
+    int target = -nums[first];
+    for (int second = first + 1; second &lt; n; ++second) {
+      if (second &gt; first + 1 &amp;&amp; nums[second] == nums[second - 1]) {
+        continue;
+      }
+      while (second &lt; third &amp;&amp; nums[second] + nums[third] &gt; target) {
+        --third;
+      }
+      if (second == third) {
+        break;
+      }
+      if (nums[second] + nums[third] == target) {
+        ans.push_back({nums[first], nums[second], nums[third]});
+      }
+    }
+  }
+  return ans;
+}
+</code></pre></div><div id="code-example-tab-6-go" class="code-example-tab-6"><pre><code class="language-go">package main
+<em></em>
+import &quot;sort&quot;
+<em></em>
+func ThreeSum(nums []int) [][]int {
+	n := len(nums)
+	sort.Ints(nums)
+	ans := make([][]int, 0)
+<em></em>
+	// 枚举 a
+	for first := 0; first &lt; n; first++ {
+		// 需要和上一次枚举的数不相同
+		if first &gt; 0 &amp;&amp; nums[first] == nums[first-1] {
+			continue
+		}
+		// c 对应的指针初始指向数组的最右端
+		third := n - 1
+		target := -1 * nums[first]
+		// 枚举 b
+		for second := first + 1; second &lt; n; second++ {
+			// 需要和上一次枚举的数不相同
+			if second &gt; first+1 &amp;&amp; nums[second] == nums[second-1] {
+				continue
+			}
+			// 需要保证 b 的指针在 c 的指针的左侧
+			for second &lt; third &amp;&amp; nums[second]+nums[third] &gt; target {
+				third--
+			}
+			// 如果指针重合，随着 b 后续的增加
+			// 就不会有满足 a+b+c=0 并且 b&lt;c 的 c 了，可以退出循环
+			if second == third {
+				break
+			}
+			if nums[second]+nums[third] == target {
+				ans = append(ans, []int{nums[first], nums[second], nums[third]})
+			}
+		}
+	}
+	return ans
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-6", "code-example-tab-6-cpp")})()</script>
+<h2 id="8"><a class="header" href="#8">8、</a></h2>
+<p><code>剑指 Offer II 008. 和大于等于 target 的最短子数组</code></p>
+<p>给定一个整数数组，寻找满足数组和大于target的一个最短连续子数组</p>
+<p><code>解法</code></p>
+<ul>
+<li>滑动窗口: 计算满足和大于目标值的最短子数组长度</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-7', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-7-cpp">cpp</option><option value="code-example-tab-7-go">go</option></select></div>
+<div id="code-example-tab-7-cpp" class="code-example-tab-7"><pre><code class="language-cpp">#include &lt;algorithm&gt;
+#include &lt;climits&gt;
+#include &lt;vector&gt;
+<em></em>
+int minSubArrayLen(int s, const std::vector&lt;int&gt; &amp;nums) {
+  int n = nums.size();
+  if (n == 0) {
+    return 0;
+  }
+  int ans = INT_MAX;
+  int start = 0, end = 0, sum = 0;
+  while (end &lt; n) {
+    sum += nums[end];
+    while (sum &gt;= s) {
+      ans = std::min(ans, end - start + 1);
+      sum -= nums[start];
+      ++start;
+    }
+    ++end;
+  }
+  return (ans == INT_MAX) ? 0 : ans;
+}
+</code></pre></div><div id="code-example-tab-7-go" class="code-example-tab-7"><pre><code class="language-go">package main
+<em></em>
+import &quot;math&quot;
+<em></em>
+func MinSubArrayLen(s int, nums []int) int {
+	n := len(nums)
+	if n == 0 {
+		return 0
+	}
+	ans := math.MaxInt32
+	start, end := 0, 0
+	sum := 0
+	for end &lt; n {
+		sum += nums[end]
+		for sum &gt;= s {
+			ans = min(ans, end-start+1)
+			sum -= nums[start]
+			start++
+		}
+		end++
+	}
+	if ans == math.MaxInt32 {
+		return 0
+	}
+	return ans
+}
+<em></em>
+func min(x, y int) int {
+	if x &lt; y {
+		return x
+	}
+	return y
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-7", "code-example-tab-7-cpp")})()</script>
+<h2 id="9"><a class="header" href="#9">9、</a></h2>
+<p><code>剑指 Offer II 009. 乘积小于 K 的子数组</code></p>
+<p>给定一个数组，寻找其中满足数组乘积小于k的子数组的个数</p>
+<div><select onchange="changeCodeExample('code-example-tab-8', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-8-cpp">cpp</option><option value="code-example-tab-8-go">go</option></select></div>
+<div id="code-example-tab-8-cpp" class="code-example-tab-8"><pre><code class="language-cpp">#include &lt;vector&gt;
+<em></em>
+int numSubarrayProductLessThanK(const std::vector&lt;int&gt; &amp;nums, int k) {
+  if (k &lt;= 1)
+    return 0;
+  int prod = 1, ans = 0, i = 0;
+  for (int j = 0; j &lt; nums.size(); ++j) {
+    prod *= nums[j];
+    while (prod &gt;= k) {
+      prod /= nums[i++];
+    }
+    ans += j - i + 1;
+  }
+  return ans;
+}
+</code></pre></div><div id="code-example-tab-8-go" class="code-example-tab-8"><pre><code class="language-go">package main
+<em></em>
+func numSubarrayProductLessThanK(nums []int, k int) (ans int) {
+	prod, i := 1, 0
+	for j, num := range nums {
+		prod *= num
+		for ; i &lt;= j &amp;&amp; prod &gt;= k; i++ {
+			prod /= nums[i]
+		}
+		ans += j - i + 1
+	}
+	return
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-8", "code-example-tab-8-cpp")})()</script>
+<h2 id="10"><a class="header" href="#10">10、</a></h2>
+<p><code>剑指 Offer II 010. 和为 k 的子数组</code></p>
+<p>给定一个数组，寻找其中满足数组和为k的子数组的个数</p>
+<p><code>解法</code></p>
+<ul>
+<li>数组和在计算过程中需要记录下来，并且同时计算该数组和对应的个数</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-9', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-9-cpp">cpp</option><option value="code-example-tab-9-go">go</option></select></div>
+<div id="code-example-tab-9-cpp" class="code-example-tab-9"><pre><code class="language-cpp">#include &lt;unordered_map&gt;
+#include &lt;vector&gt;
+<em></em>
+int subarraySum(const std::vector&lt;int&gt; &amp;nums, int k) {
+  int count = 0, pre = 0;
+  std::unordered_map&lt;int, int&gt; m;
+  m[0] = 1;
+  for (int i = 0; i &lt; nums.size(); ++i) {
+    pre += nums[i];
+    if (m.find(pre - k) != m.end()) {
+      count += m[pre - k];
+    }
+    m[pre]++;
+  }
+  return count;
+}
+</code></pre></div><div id="code-example-tab-9-go" class="code-example-tab-9"><pre><code class="language-go">package main
+<em></em>
+func subarraySum(nums []int, k int) int {
+	count, pre := 0, 0
+	m := map[int]int{}
+	m[0] = 1
+	for i := 0; i &lt; len(nums); i++ {
+		pre += nums[i]
+		if _, ok := m[pre-k]; ok {
+			count += m[pre-k]
+		}
+		m[pre] += 1
+	}
+	return count
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-9", "code-example-tab-9-cpp")})()</script>
+<h2 id="11"><a class="header" href="#11">11、</a></h2>
+<p><code>剑指 Offer II 011. 0 和 1 个数相同的子数组</code></p>
+<p>给定一个只包含0和1的数组，找到其中含有相同<code>0和1</code>数量的最大长度的子数组</p>
+<p><code>解法</code></p>
+<ul>
+<li>使用map记录某个前缀和最左边的下标是多少</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-10', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-10-cpp">cpp</option><option value="code-example-tab-10-go">go</option></select></div>
+<div id="code-example-tab-10-cpp" class="code-example-tab-10"><pre><code class="language-cpp">#include &lt;algorithm&gt;
+#include &lt;unordered_map&gt;
+#include &lt;vector&gt;
+<em></em>
+int FindMaxLength(const std::vector&lt;int&gt; &amp;nums) {
+  std::unordered_map&lt;int, int&gt; mp = {{0, -1}};
+  int maxLength = 0, counter = 0;
+  for (int i = 0; i &lt; nums.size(); ++i) {
+    counter += (nums[i] == 1) ? 1 : -1;
+    if (mp.find(counter) != mp.end()) {
+      maxLength = std::max(maxLength, i - mp[counter]);
+    } else {
+      mp[counter] = i;
+    }
+  }
+  return maxLength;
+}
+</code></pre></div><div id="code-example-tab-10-go" class="code-example-tab-10"><pre><code class="language-go">package main
+<em></em>
+func FindMaxLength(nums []int) (maxLength int) {
+	mp := map[int]int{0: -1}
+	counter := 0
+	for i, num := range nums {
+		if num == 1 {
+			counter++
+		} else {
+			counter--
+		}
+		if prevIndex, has := mp[counter]; has {
+			maxLength = max(maxLength, i-prevIndex)
+		} else {
+			mp[counter] = i
+		}
+	}
+	return
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-10", "code-example-tab-10-cpp")})()</script>
+<h2 id="12"><a class="header" href="#12">12、</a></h2>
+<p><code>剑指 Offer II 012. 左右两边子数组的和相等</code></p>
+<p>找到数组的最左边的中心下标，中心下标是指以该下标为分界，左右数组元素和相同的下标</p>
+<p><code>解法</code></p>
+<ul>
+<li>判断<code>2 * 前缀和 + 当前值</code>是否等于数组总和</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-11', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-11-cpp">cpp</option><option value="code-example-tab-11-go">go</option></select></div>
+<div id="code-example-tab-11-cpp" class="code-example-tab-11"><pre><code class="language-cpp">#include &lt;vector&gt;
+<em></em>
+int pivotIndex(const std::vector&lt;int&gt; &amp;nums) {
+  int total = 0;
+  for (int v : nums) {
+    total += v;
+  }
+  int sum = 0;
+  for (int i = 0; i &lt; nums.size(); ++i) {
+    if (2 * sum + nums[i] == total) {
+      return i;
+    }
+    sum += nums[i];
+  }
+  return -1;
+}
+</code></pre></div><div id="code-example-tab-11-go" class="code-example-tab-11"><pre><code class="language-go">package main
+<em></em>
+func pivotIndex(nums []int) int {
+	total := 0
+	for _, v := range nums {
+		total += v
+	}
+	sum := 0
+	for i, v := range nums {
+		if 2*sum+v == total {
+			return i
+		}
+		sum += v
+	}
+	return -1
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-11", "code-example-tab-11-cpp")})()</script>
+<h2 id="13"><a class="header" href="#13">13、</a></h2>
+<p><code>剑指 Offer II 013. 二维子矩阵的和</code></p>
+<p>给定一个二维矩阵，提供多次查询，计算子矩阵的和</p>
+<p><code>解法</code></p>
+<ul>
+<li>预处理(0,0)到(i,j)的子数组的和</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-12', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-12-cpp">cpp</option><option value="code-example-tab-12-go">go</option></select></div>
+<div id="code-example-tab-12-cpp" class="code-example-tab-12"><pre><code class="language-cpp">#include &lt;vector&gt;
+<em></em>
+class NumMatrix {
+public:
+  NumMatrix(const std::vector&lt;std::vector&lt;int&gt;&gt; &amp;matrix) {
+    int m = matrix.size();
+    if (m == 0)
+      return;
+    int n = matrix[0].size();
+    sums.resize(m + 1, std::vector&lt;int&gt;(n + 1, 0));
+    for (int i = 0; i &lt; m; ++i) {
+      for (int j = 0; j &lt; n; ++j) {
+        sums[i + 1][j + 1] =
+            sums[i + 1][j] + sums[i][j + 1] - sums[i][j] + matrix[i][j];
+      }
+    }
+  }
+<em></em>
+  int SumRegion(int row1, int col1, int row2, int col2) {
+    return sums[row2 + 1][col2 + 1] - sums[row1][col2 + 1] -
+           sums[row2 + 1][col1] + sums[row1][col1];
+  }
+<em></em>
+private:
+  std::vector&lt;std::vector&lt;int&gt;&gt; sums;
+};
+</code></pre></div><div id="code-example-tab-12-go" class="code-example-tab-12"><pre><code class="language-go">package main
+<em></em>
+type NumMatrix struct {
+	sums [][]int
+}
+<em></em>
+func Constructor(matrix [][]int) NumMatrix {
+	m := len(matrix)
+	if m == 0 {
+		return NumMatrix{}
+	}
+	n := len(matrix[0])
+	sums := make([][]int, m+1)
+	sums[0] = make([]int, n+1)
+	for i, row := range matrix {
+		sums[i+1] = make([]int, n+1)
+		for j, v := range row {
+			sums[i+1][j+1] = sums[i+1][j] + sums[i][j+1] - sums[i][j] + v
+		}
+	}
+	return NumMatrix{sums}
+}
+<em></em>
+func (nm *NumMatrix) SumRegion(row1, col1, row2, col2 int) int {
+	return nm.sums[row2+1][col2+1] - nm.sums[row1][col2+1] - nm.sums[row2+1][col1] + nm.sums[row1][col1]
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-12", "code-example-tab-12-cpp")})()</script>
+<h2 id="14"><a class="header" href="#14">14、</a></h2>
+<p><code>剑指 Offer II 014. 字符串中的变位词</code></p>
+<p>给定两个字符串，判断字符串的排列之一是否是另一个字符串的子串</p>
+<p><code>解法</code></p>
+<ul>
+<li>使用26长度的数组来保存字符情况</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-13', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-13-cpp">cpp</option><option value="code-example-tab-13-go">go</option></select></div>
+<div id="code-example-tab-13-cpp" class="code-example-tab-13"><pre><code class="language-cpp">#include &lt;string&gt;
+#include &lt;vector&gt;
+<em></em>
+bool checkInclusion(const std::string &amp;s1, const std::string &amp;s2) {
+  int n = s1.size(), m = s2.size();
+  if (n &gt; m)
+    return false;
+<em></em>
+  std::vector&lt;int&gt; cnt(26, 0);
+  for (char ch : s1) {
+    cnt[ch - &#39;a&#39;]--;
+  }
+<em></em>
+  int left = 0;
+  for (int right = 0; right &lt; m; ++right) {
+    int x = s2[right] - &#39;a&#39;;
+    cnt[x]++;
+    while (cnt[x] &gt; 0) {
+      cnt[s2[left] - &#39;a&#39;]--;
+      left++;
+    }
+    if (right - left + 1 == n) {
+      return true;
+    }
+  }
+  return false;
+}
+</code></pre></div><div id="code-example-tab-13-go" class="code-example-tab-13"><pre><code class="language-go">package main
+<em></em>
+func checkInclusion(s1, s2 string) bool {
+	n, m := len(s1), len(s2)
+	if n &gt; m {
+		return false
+	}
+	cnt := [26]int{}
+	for _, ch := range s1 {
+		cnt[ch-&#39;a&#39;]--
+	}
+	left := 0
+	for right, ch := range s2 {
+		x := ch - &#39;a&#39;
+		cnt[x]++
+		for cnt[x] &gt; 0 {
+			cnt[s2[left]-&#39;a&#39;]--
+			left++
+		}
+		if right-left+1 == n {
+			return true
+		}
+	}
+	return false
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-13", "code-example-tab-13-cpp")})()</script>
+<h2 id="15"><a class="header" href="#15">15、</a></h2>
+<p><code>剑指 Offer II 015. 字符串中的所有变位词</code></p>
+<p>给定两个字符串，返回一个子串的所有变位形式判断在另一个字符串中是子串的话，就返回其起始下标</p>
+<p><code>解法</code></p>
+<ul>
+<li>26位长度数组</li>
+<li>滑动窗口</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-14', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-14-cpp">cpp</option><option value="code-example-tab-14-go">go</option></select></div>
+<div id="code-example-tab-14-cpp" class="code-example-tab-14"><pre><code class="language-cpp">#include &lt;string&gt;
+#include &lt;vector&gt;
+<em></em>
+std::vector&lt;int&gt; findAnagrams(const std::string &amp;s, const std::string &amp;p) {
+  std::vector&lt;int&gt; ans;
+  int sLen = s.size(), pLen = p.size();
+  if (sLen &lt; pLen)
+    return ans;
+<em></em>
+  std::vector&lt;int&gt; sCount(26, 0), pCount(26, 0);
+  for (int i = 0; i &lt; pLen; ++i) {
+    sCount[s[i] - &#39;a&#39;]++;
+    pCount[p[i] - &#39;a&#39;]++;
+  }
+  if (sCount == pCount) {
+    ans.push_back(0);
+  }
+<em></em>
+  for (int i = 0; i &lt; sLen - pLen; ++i) {
+    sCount[s[i] - &#39;a&#39;]--;
+    sCount[s[i + pLen] - &#39;a&#39;]++;
+    if (sCount == pCount) {
+      ans.push_back(i + 1);
+    }
+  }
+  return ans;
+}
+</code></pre></div><div id="code-example-tab-14-go" class="code-example-tab-14"><pre><code class="language-go">package main
+<em></em>
+func findAnagrams(s, p string) (ans []int) {
+	sLen, pLen := len(s), len(p)
+	if sLen &lt; pLen {
+		return
+	}
+<em></em>
+	var sCount, pCount [26]int
+	for i, ch := range p {
+		sCount[s[i]-&#39;a&#39;]++
+		pCount[ch-&#39;a&#39;]++
+	}
+	if sCount == pCount {
+		ans = append(ans, 0)
+	}
+<em></em>
+	for i, ch := range s[:sLen-pLen] {
+		sCount[ch-&#39;a&#39;]--
+		sCount[s[i+pLen]-&#39;a&#39;]++
+		if sCount == pCount {
+			ans = append(ans, i+1)
+		}
+	}
+	return
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-14", "code-example-tab-14-cpp")})()</script>
+<h2 id="16"><a class="header" href="#16">16、</a></h2>
+<p><code>剑指 Offer II 016. 不含重复字符的最长子字符串</code></p>
+<p>给定一个字符串，返回不包含重复字符的最长子字符串长度</p>
+<p><code>解法</code></p>
+<ul>
+<li>滑动窗口，记录在窗口中字符的个数</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-15', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-15-cpp">cpp</option><option value="code-example-tab-15-go">go</option></select></div>
+<div id="code-example-tab-15-cpp" class="code-example-tab-15"><pre><code class="language-cpp">#include &lt;algorithm&gt;
+#include &lt;string&gt;
+#include &lt;unordered_map&gt;
+<em></em>
+int lengthOfLongestSubstring(const std::string &amp;s) {
+  std::unordered_map&lt;char, int&gt; m;
+  int n = s.length();
+  int rk = -1, ans = 0;
+<em></em>
+  for (int i = 0; i &lt; n; ++i) {
+    if (i != 0) {
+      m.erase(s[i - 1]);
+    }
+    while (rk + 1 &lt; n &amp;&amp; m[s[rk + 1]] == 0) {
+      m[s[++rk]]++;
+    }
+    ans = std::max(ans, rk - i + 1);
+  }
+<em></em>
+  return ans;
+}
+</code></pre></div><div id="code-example-tab-15-go" class="code-example-tab-15"><pre><code class="language-go">package main
+<em></em>
+func lengthOfLongestSubstring(s string) int {
+	// 哈希集合，记录每个字符是否出现过
+	m := map[byte]int{}
+	n := len(s)
+	// 右指针，初始值为 -1，相当于我们在字符串的左边界的左侧，还没有开始移动
+	rk, ans := -1, 0
+	for i := 0; i &lt; n; i++ {
+		if i != 0 {
+			// 左指针向右移动一格，移除一个字符
+			delete(m, s[i-1])
+		}
+		for rk+1 &lt; n &amp;&amp; m[s[rk+1]] == 0 {
+			// 不断地移动右指针
+			m[s[rk+1]]++
+			rk++
+		}
+		// 第 i 到 rk 个字符是一个极长的无重复字符子串
+		ans = max(ans, rk-i+1)
+	}
+	return ans
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-15", "code-example-tab-15-cpp")})()</script>
+<h2 id="17"><a class="header" href="#17">17、</a></h2>
+<p><code>剑指 Offer II 017. 含有所有字符的最短字符串</code></p>
+<p>给定两个字符串s和t，找到s中的一个最短字符串，包含t的所有字符，如果不存在这样的子字符串，则返回空字符串</p>
+<div><select onchange="changeCodeExample('code-example-tab-16', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-16-cpp">cpp</option><option value="code-example-tab-16-go">go</option></select></div>
+<div id="code-example-tab-16-cpp" class="code-example-tab-16"><pre><code class="language-cpp">#include &lt;climits&gt;
+#include &lt;string&gt;
+#include &lt;unordered_map&gt;
+<em></em>
+std::string minWindow(const std::string &amp;s, const std::string &amp;t) {
+  std::unordered_map&lt;char, int&gt; ori, cnt;
+  for (char c : t) {
+    ori[c]++;
+  }
+<em></em>
+  int sLen = s.length();
+  int minLen = INT_MAX;
+  int ansL = -1, ansR = -1;
+<em></em>
+  auto check = [&amp;]() -&gt; bool {
+    for (const auto &amp;[k, v] : ori) {
+      if (cnt[k] &lt; v) {
+        return false;
+      }
+    }
+    return true;
+  };
+<em></em>
+  for (int l = 0, r = 0; r &lt; sLen; ++r) {
+    if (ori.find(s[r]) != ori.end()) {
+      cnt[s[r]]++;
+    }
+    while (check() &amp;&amp; l &lt;= r) {
+      if (r - l + 1 &lt; minLen) {
+        minLen = r - l + 1;
+        ansL = l;
+        ansR = l + minLen;
+      }
+      if (ori.find(s[l]) != ori.end()) {
+        cnt[s[l]]--;
+      }
+      ++l;
+    }
+  }
+<em></em>
+  if (ansL == -1) {
+    return &quot;&quot;;
+  }
+  return s.substr(ansL, ansR - ansL);
+}
+</code></pre></div><div id="code-example-tab-16-go" class="code-example-tab-16"><pre><code class="language-go">package main
+<em></em>
+import &quot;math&quot;
+<em></em>
+func minWindow(s string, t string) string {
+	ori, cnt := map[byte]int{}, map[byte]int{}
+	for i := 0; i &lt; len(t); i++ {
+		ori[t[i]]++
+	}
+<em></em>
+	sLen := len(s)
+	len := math.MaxInt32
+	ansL, ansR := -1, -1
+<em></em>
+	check := func() bool {
+		for k, v := range ori {
+			if cnt[k] &lt; v {
+				return false
+			}
+		}
+		return true
+	}
+	for l, r := 0, 0; r &lt; sLen; r++ {
+		if r &lt; sLen &amp;&amp; ori[s[r]] &gt; 0 {
+			cnt[s[r]]++
+		}
+		for check() &amp;&amp; l &lt;= r {
+			if r-l+1 &lt; len {
+				len = r - l + 1
+				ansL, ansR = l, l+len
+			}
+			if _, ok := ori[s[l]]; ok {
+				cnt[s[l]] -= 1
+			}
+			l++
+		}
+	}
+	if ansL == -1 {
+		return &quot;&quot;
+	}
+	return s[ansL:ansR]
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-16", "code-example-tab-16-cpp")})()</script>
+<h2 id="18"><a class="header" href="#18">18、</a></h2>
+<p><code>剑指 Offer II 018. 有效的回文</code></p>
+<p>给定一个字符串，验证是否是回文字符串, 只考虑字母和数字字符，可以忽略字母的大小写。</p>
+<div><select onchange="changeCodeExample('code-example-tab-17', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-17-cpp">cpp</option><option value="code-example-tab-17-go">go</option></select></div>
+<div id="code-example-tab-17-cpp" class="code-example-tab-17"><pre><code class="language-cpp">#include &lt;algorithm&gt;
+#include &lt;cctype&gt;
+#include &lt;string&gt;
+<em></em>
+bool isalnum(char ch) {
+  return (ch &gt;= &#39;A&#39; &amp;&amp; ch &lt;= &#39;Z&#39;) || (ch &gt;= &#39;a&#39; &amp;&amp; ch &lt;= &#39;z&#39;) ||
+         (ch &gt;= &#39;0&#39; &amp;&amp; ch &lt;= &#39;9&#39;);
+}
+<em></em>
+bool isPalindrome(const std::string &amp;s) {
+  std::string sgood;
+  for (char ch : s) {
+    if (isalnum(ch)) {
+      sgood += std::tolower(ch);
+    }
+  }
+<em></em>
+  int n = sgood.length();
+  for (int i = 0; i &lt; n / 2; ++i) {
+    if (sgood[i] != sgood[n - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+}
+</code></pre></div><div id="code-example-tab-17-go" class="code-example-tab-17"><pre><code class="language-go">package main
+<em></em>
+import &quot;strings&quot;
+<em></em>
+func isPalindrome(s string) bool {
+	var sgood string
+	for i := 0; i &lt; len(s); i++ {
+		if isalnum(s[i]) {
+			sgood += string(s[i])
+		}
+	}
+<em></em>
+	n := len(sgood)
+	sgood = strings.ToLower(sgood)
+	for i := 0; i &lt; n/2; i++ {
+		if sgood[i] != sgood[n-1-i] {
+			return false
+		}
+	}
+	return true
+}
+<em></em>
+func isalnum(ch byte) bool {
+	return (ch &gt;= &#39;A&#39; &amp;&amp; ch &lt;= &#39;Z&#39;) || (ch &gt;= &#39;a&#39; &amp;&amp; ch &lt;= &#39;z&#39;) || (ch &gt;= &#39;0&#39; &amp;&amp; ch &lt;= &#39;9&#39;)
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-17", "code-example-tab-17-cpp")})()</script>
+<h2 id="19"><a class="header" href="#19">19、</a></h2>
+<p><code>剑指 Offer II 019. 最多删除一个字符得到回文</code></p>
+<p>给定一个字符串，删除其中一个字符判断是否是回文</p>
+<div><select onchange="changeCodeExample('code-example-tab-18', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-18-cpp">cpp</option><option value="code-example-tab-18-go">go</option></select></div>
+<div id="code-example-tab-18-cpp" class="code-example-tab-18"><pre><code class="language-cpp">#include &lt;string&gt;
+<em></em>
+bool validPalindrome(const std::string &amp;s) {
+  int low = 0, high = s.length() - 1;
+  while (low &lt; high) {
+    if (s[low] == s[high]) {
+      ++low;
+      --high;
+    } else {
+      bool flag1 = true, flag2 = true;
+      for (int i = low, j = high - 1; i &lt; j; ++i, --j) {
+        if (s[i] != s[j]) {
+          flag1 = false;
+          break;
+        }
+      }
+      for (int i = low + 1, j = high; i &lt; j; ++i, --j) {
+        if (s[i] != s[j]) {
+          flag2 = false;
+          break;
+        }
+      }
+      return flag1 || flag2;
+    }
+  }
+  return true;
+}
+</code></pre></div><div id="code-example-tab-18-go" class="code-example-tab-18"><pre><code class="language-go">package main
+<em></em>
+func validPalindrome(s string) bool {
+	low, high := 0, len(s)-1
+	for low &lt; high {
+		if s[low] == s[high] {
+			low++
+			high--
+		} else {
+			flag1, flag2 := true, true
+			for i, j := low, high-1; i &lt; j; i, j = i+1, j-1 {
+				if s[i] != s[j] {
+					flag1 = false
+					break
+				}
+			}
+			for i, j := low+1, high; i &lt; j; i, j = i+1, j-1 {
+				if s[i] != s[j] {
+					flag2 = false
+					break
+				}
+			}
+			return flag1 || flag2
+		}
+	}
+	return true
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-18", "code-example-tab-18-cpp")})()</script>
+<h2 id="20"><a class="header" href="#20">20、</a></h2>
+<p><code>剑指 Offer II 020. 回文子字符串的个数</code></p>
+<p>计算一个字符串中有多少个回文子字符串</p>
+<div><select onchange="changeCodeExample('code-example-tab-19', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-19-cpp">cpp</option><option value="code-example-tab-19-go">go</option></select></div>
+<div id="code-example-tab-19-cpp" class="code-example-tab-19"><pre><code class="language-cpp">#include &lt;string&gt;
+<em></em>
+int countSubstrings(const std::string &amp;s) {
+  int n = s.length();
+  int ans = 0;
+  for (int i = 0; i &lt; 2 * n - 1; ++i) {
+    int l = i / 2;
+    int r = i / 2 + i % 2;
+    while (l &gt;= 0 &amp;&amp; r &lt; n &amp;&amp; s[l] == s[r]) {
+      --l;
+      ++r;
+      ++ans;
+    }
+  }
+  return ans;
+}
+</code></pre></div><div id="code-example-tab-19-go" class="code-example-tab-19"><pre><code class="language-go">package main
+<em></em>
+func countSubstrings(s string) int {
+	n := len(s)
+	ans := 0
+	for i := 0; i &lt; 2*n-1; i++ {
+		l, r := i/2, i/2+i%2
+		for l &gt;= 0 &amp;&amp; r &lt; n &amp;&amp; s[l] == s[r] {
+			l--
+			r++
+			ans++
+		}
+	}
+	return ans
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-19", "code-example-tab-19-cpp")})()</script>
+<h2 id="21"><a class="header" href="#21">21、</a></h2>
+<p><code>剑指 Offer II 021. 删除链表的倒数第 n 个结点</code></p>
+<p>给定一个链表，删除链表的倒数第n个节点，并且返回头节点</p>
+<p><code>解法</code></p>
+<ul>
+<li>快慢指针</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-20', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-20-cpp">cpp</option><option value="code-example-tab-20-go">go</option></select></div>
+<div id="code-example-tab-20-cpp" class="code-example-tab-20"><pre><code class="language-cpp">struct ListNode {
+  int Val;
+  ListNode *Next;
+  ListNode(int x) : Val(x), Next(nullptr) {}
+};
+<em></em>
+ListNode *removeNthFromEnd(ListNode *head, int n) {
+  ListNode *dummy = new ListNode(0);
+  dummy-&gt;Next = head;
+  ListNode *first = head;
+  ListNode *second = dummy;
+<em></em>
+  for (int i = 0; i &lt; n; ++i) {
+    first = first-&gt;Next;
+  }
+<em></em>
+  while (first != nullptr) {
+    first = first-&gt;Next;
+    second = second-&gt;Next;
+  }
+<em></em>
+  second-&gt;Next = second-&gt;Next-&gt;Next;
+  ListNode *newHead = dummy-&gt;Next;
+  delete dummy; // Free the allocated memory for dummy node
+  return newHead;
+}
+</code></pre></div><div id="code-example-tab-20-go" class="code-example-tab-20"><pre><code class="language-go">package main
+<em></em>
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+<em></em>
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
+	dummy := &amp;ListNode{0, head}
+	first, second := head, dummy
+	for i := 0; i &lt; n; i++ {
+		first = first.Next
+	}
+	for ; first != nil; first = first.Next {
+		second = second.Next
+	}
+	second.Next = second.Next.Next
+	return dummy.Next
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-20", "code-example-tab-20-cpp")})()</script>
+<h2 id="22"><a class="header" href="#22">22、</a></h2>
+<p><code>剑指 Offer II 022. 链表中环的入口节点</code></p>
+<p>给定一个数组形式的链表，数组中每个元素对应着下一个节点的下标，如果该链表没有环，就返回-1，如果有环，则返回环入口的下标</p>
+<p><code>解法</code></p>
+<ul>
+<li>快慢指针，当相遇了之后从当前以及初始位置以相同速度前进，当再次相遇就是环的入口</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-21', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-21-cpp">cpp</option><option value="code-example-tab-21-go">go</option></select></div>
+<div id="code-example-tab-21-cpp" class="code-example-tab-21"><pre><code class="language-cpp">struct ListNode {
+  int Val;
+  ListNode *Next;
+  ListNode(int x) : Val(x), Next(nullptr) {}
+};
+<em></em>
+ListNode *detectCycle(ListNode *head) {
+  if (!head)
+    return nullptr;
+<em></em>
+  ListNode *slow = head;
+  ListNode *fast = head;
+<em></em>
+  while (fast != nullptr &amp;&amp; fast-&gt;Next != nullptr) {
+    slow = slow-&gt;Next;
+    fast = fast-&gt;Next-&gt;Next;
+<em></em>
+    if (slow == fast) {
+      ListNode *p = head;
+      while (p != slow) {
+        p = p-&gt;Next;
+        slow = slow-&gt;Next;
+      }
+      return p;
+    }
+  }
+<em></em>
+  return nullptr;
+}
+</code></pre></div><div id="code-example-tab-21-go" class="code-example-tab-21"><pre><code class="language-go">package main
+<em></em>
+func detectCycle(head *ListNode) *ListNode {
+	slow, fast := head, head
+	for fast != nil {
+		slow = slow.Next
+		if fast.Next == nil {
+			return nil
+		}
+		fast = fast.Next.Next
+		if fast == slow {
+			p := head
+			for p != slow {
+				p = p.Next
+				slow = slow.Next
+			}
+			return p
+		}
+	}
+	return nil
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-21", "code-example-tab-21-cpp")})()</script>
+<h2 id="23"><a class="header" href="#23">23、</a></h2>
+<p><code>剑指 Offer II 023. 两个链表的第一个重合节点</code></p>
+<p>给定两个链表，题目保证该链式结构没有环，找到该两个链表的相交节点，如果不存在相交节点，就返回空</p>
+<p><code>解法</code></p>
+<ul>
+<li>链表走完了之后到另外一个上，这样到达相交节点的节点数相同，是会相遇的</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-22', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-22-cpp">cpp</option><option value="code-example-tab-22-go">go</option></select></div>
+<div id="code-example-tab-22-cpp" class="code-example-tab-22"><pre><code class="language-cpp">struct ListNode {
+  int Val;
+  ListNode *Next;
+  ListNode(int x) : Val(x), Next(nullptr) {}
+};
+<em></em>
+ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+  if (headA == nullptr || headB == nullptr) {
+    return nullptr;
+  }
+<em></em>
+  ListNode *pa = headA;
+  ListNode *pb = headB;
+<em></em>
+  while (pa != pb) {
+    pa = (pa == nullptr) ? headB : pa-&gt;Next;
+    pb = (pb == nullptr) ? headA : pb-&gt;Next;
+  }
+<em></em>
+  return pa;
+}
+</code></pre></div><div id="code-example-tab-22-go" class="code-example-tab-22"><pre><code class="language-go">package main
+<em></em>
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
+	if headA == nil || headB == nil {
+		return nil
+	}
+	pa, pb := headA, headB
+	for pa != pb {
+		if pa == nil {
+			pa = headB
+		} else {
+			pa = pa.Next
+		}
+		if pb == nil {
+			pb = headA
+		} else {
+			pb = pb.Next
+		}
+	}
+	return pa
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-22", "code-example-tab-22-cpp")})()</script>
+<h2 id="24"><a class="header" href="#24">24、</a></h2>
+<p><code>剑指 Offer II 024. 反转链表</code></p>
+<p>给定一个链式结构，反转后返回其头节点</p>
+<div><select onchange="changeCodeExample('code-example-tab-23', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-23-cpp">cpp</option><option value="code-example-tab-23-go">go</option></select></div>
+<div id="code-example-tab-23-cpp" class="code-example-tab-23"><pre><code class="language-cpp">struct ListNode {
+  int Val;
+  ListNode *Next;
+  ListNode(int x) : Val(x), Next(nullptr) {}
+};
+<em></em>
+ListNode *reverseList(ListNode *head) {
+  if (head == nullptr || head-&gt;Next == nullptr) {
+    return head;
+  }
+  ListNode *newHead = reverseList(head-&gt;Next);
+  head-&gt;Next-&gt;Next = head;
+  head-&gt;Next = nullptr;
+  return newHead;
+}
+</code></pre></div><div id="code-example-tab-23-go" class="code-example-tab-23"><pre><code class="language-go">package main
+<em></em>
+func reverseList(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+	newHead := reverseList(head.Next)
+	head.Next.Next = head
+	head.Next = nil
+	return newHead
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-23", "code-example-tab-23-cpp")})()</script>
+<h2 id="25"><a class="header" href="#25">25、</a></h2>
+<p><code>剑指 Offer II 025. 链表中的两数相加</code></p>
+<p>使用两个链表表示非负整数，尾节点为个位数，返回两个链表的相加结果，并以链表形式返回</p>
+<p><code>解法</code></p>
+<ul>
+<li>将链表转为数组，然后计算完后进行重新构造成链表</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-24', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-24-cpp">cpp</option><option value="code-example-tab-24-go">go</option></select></div>
+<div id="code-example-tab-24-cpp" class="code-example-tab-24"><pre><code class="language-cpp">#include &lt;vector&gt;
+<em></em>
+struct ListNode {
+  int Val;
+  ListNode *Next;
+  ListNode(int x) : Val(x), Next(nullptr) {}
+};
+<em></em>
+ListNode *addTwoNumbers(ListNode *l1, ListNode *l2) {
+  std::vector&lt;int&gt; s1, s2;
+  while (l1 != nullptr) {
+    s1.push_back(l1-&gt;Val);
+    l1 = l1-&gt;Next;
+  }
+  while (l2 != nullptr) {
+    s2.push_back(l2-&gt;Val);
+    l2 = l2-&gt;Next;
+  }
+<em></em>
+  int carry = 0;
+  ListNode *head = nullptr;
+  while (!s1.empty() || !s2.empty() || carry != 0) {
+    int sum = 0;
+    if (!s1.empty()) {
+      sum += s1.back();
+      s1.pop_back();
+    }
+    if (!s2.empty()) {
+      sum += s2.back();
+      s2.pop_back();
+    }
+    sum += carry;
+    ListNode *node = new ListNode(sum % 10);
+    node-&gt;Next = head;
+    head = node;
+    carry = sum / 10;
+  }
+<em></em>
+  return head;
+}
+</code></pre></div><div id="code-example-tab-24-go" class="code-example-tab-24"><pre><code class="language-go">package main
+<em></em>
+func addTwoNumbers(l1 *ListNode, l2 *ListNode) (head *ListNode) {
+	var s1, s2 []int
+	for l1 != nil {
+		s1 = append(s1, l1.Val)
+		l1 = l1.Next
+	}
+	for l2 != nil {
+		s2 = append(s2, l2.Val)
+		l2 = l2.Next
+	}
+	carry := 0
+	for len(s1) &gt; 0 || len(s2) &gt; 0 || carry &gt; 0 {
+		sum := 0
+		if len(s1) &gt; 0 {
+			sum += s1[len(s1)-1]
+			s1 = s1[:len(s1)-1]
+		}
+		if len(s2) &gt; 0 {
+			sum += s2[len(s2)-1]
+			s2 = s2[:len(s2)-1]
+		}
+		sum += carry
+		node := &amp;ListNode{Val: sum % 10}
+		node.Next = head
+		head = node
+		carry = sum / 10
+	}
+	return
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-24", "code-example-tab-24-cpp")})()</script>
+<h2 id="26"><a class="header" href="#26">26、</a></h2>
+<p><code>剑指 Offer II 026. 重排链表</code></p>
+<p>给定一个链表结构，原始为'1 2 3 4 5 6 ... n-1 n' 修改为'1 n 2 n-1 3 n-2 ...'</p>
+<div><select onchange="changeCodeExample('code-example-tab-25', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-25-cpp">cpp</option><option value="code-example-tab-25-go">go</option></select></div>
+<div id="code-example-tab-25-cpp" class="code-example-tab-25"><pre><code class="language-cpp">#include &lt;vector&gt;
+<em></em>
+struct ListNode {
+  int Val;
+  ListNode *Next;
+  ListNode(int x) : Val(x), Next(nullptr) {}
+};
+<em></em>
+void reorderList(ListNode *head) {
+  if (head == nullptr) {
+    return;
+  }
+<em></em>
+  std::vector&lt;ListNode *&gt; nodes;
+  for (ListNode *node = head; node != nullptr; node = node-&gt;Next) {
+    nodes.push_back(node);
+  }
+<em></em>
+  int i = 0, j = nodes.size() - 1;
+  while (i &lt; j) {
+    nodes[i]-&gt;Next = nodes[j];
+    ++i;
+    if (i == j) {
+      break;
+    }
+    nodes[j]-&gt;Next = nodes[i];
+    --j;
+  }
+  nodes[i]-&gt;Next = nullptr;
+}
+</code></pre></div><div id="code-example-tab-25-go" class="code-example-tab-25"><pre><code class="language-go">package main
+<em></em>
+func reorderList(head *ListNode) {
+	if head == nil {
+		return
+	}
+	nodes := []*ListNode{}
+	for node := head; node != nil; node = node.Next {
+		nodes = append(nodes, node)
+	}
+	i, j := 0, len(nodes)-1
+	for i &lt; j {
+		nodes[i].Next = nodes[j]
+		i++
+		if i == j {
+			break
+		}
+		nodes[j].Next = nodes[i]
+		j--
+	}
+	nodes[i].Next = nil
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-25", "code-example-tab-25-cpp")})()</script>
+<h2 id="27"><a class="header" href="#27">27、</a></h2>
+<p><code>剑指 Offer II 027. 回文链表</code></p>
+<p>给定一个链表结构，判断该链表是否是回文</p>
+<div><select onchange="changeCodeExample('code-example-tab-26', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-26-cpp">cpp</option><option value="code-example-tab-26-go">go</option></select></div>
+<div id="code-example-tab-26-cpp" class="code-example-tab-26"><pre><code class="language-cpp">#include &lt;vector&gt;
+<em></em>
+struct ListNode {
+  int Val;
+  ListNode *Next;
+  ListNode(int x) : Val(x), Next(nullptr) {}
+};
+<em></em>
+bool isLinkListPalindrome(ListNode *head) {
+  std::vector&lt;int&gt; vals;
+  for (ListNode *node = head; node != nullptr; node = node-&gt;Next) {
+    vals.push_back(node-&gt;Val);
+  }
+<em></em>
+  int n = vals.size();
+  for (int i = 0; i &lt; n / 2; ++i) {
+    if (vals[i] != vals[n - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+}
+</code></pre></div><div id="code-example-tab-26-go" class="code-example-tab-26"><pre><code class="language-go">package main
+<em></em>
+func isLinkListPalindrome(head *ListNode) bool {
+	vals := []int{}
+	for ; head != nil; head = head.Next {
+		vals = append(vals, head.Val)
+	}
+	n := len(vals)
+	for i, v := range vals[:n/2] {
+		if v != vals[n-1-i] {
+			return false
+		}
+	}
+	return true
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-26", "code-example-tab-26-cpp")})()</script>
+<h2 id="28"><a class="header" href="#28">28、</a></h2>
+<p><code>剑指 Offer II 028. 展平多级双向链表</code></p>
+<p>将多级双向链表展平</p>
+<p>这里多级双向链表就是包含前后指针，还包含子链表的指针，(其实就相当于链表)</p>
+<div><select onchange="changeCodeExample('code-example-tab-27', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-27-cpp">cpp</option><option value="code-example-tab-27-go">go</option></select></div>
+<div id="code-example-tab-27-cpp" class="code-example-tab-27"><pre><code class="language-cpp">struct Node {
+  int Val;
+  Node *Prev;
+  Node *Next;
+  Node *Child;
+  Node(int x) : Val(x), Prev(nullptr), Next(nullptr), Child(nullptr) {}
+};
+<em></em>
+Node *dfs(Node *node) {
+  Node *cur = node;
+  Node *last = nullptr;
+<em></em>
+  while (cur != nullptr) {
+    Node *next = cur-&gt;Next;
+    if (cur-&gt;Child != nullptr) {
+      Node *childLast = dfs(cur-&gt;Child);
+<em></em>
+      cur-&gt;Next = cur-&gt;Child;
+      cur-&gt;Child-&gt;Prev = cur;
+<em></em>
+      if (next != nullptr) {
+        childLast-&gt;Next = next;
+        next-&gt;Prev = childLast;
+      }
+<em></em>
+      cur-&gt;Child = nullptr;
+      last = childLast;
+    } else {
+      last = cur;
+    }
+    cur = next;
+  }
+  return last;
+}
+<em></em>
+Node *flatten(Node *root) {
+  dfs(root);
+  return root;
+}
+</code></pre></div><div id="code-example-tab-27-go" class="code-example-tab-27"><pre><code class="language-go">package main
+<em></em>
+type LinkNode struct {
+	Val   int
+	Next  *LinkNode
+	Prev  *LinkNode
+	Child *LinkNode
+}
+<em></em>
+func dfs(node *LinkNode) (last *LinkNode) {
+	cur := node
+	for cur != nil {
+		next := cur.Next
+		// 如果有子节点，那么首先处理子节点
+		if cur.Child != nil {
+			childLast := dfs(cur.Child)
+<em></em>
+			next = cur.Next
+			// 将 node 与 child 相连
+			cur.Next = cur.Child
+			cur.Child.Prev = cur
+<em></em>
+			// 如果 next 不为空，就将 last 与 next 相连
+			if next != nil {
+				childLast.Next = next
+				next.Prev = childLast
+			}
+<em></em>
+			// 将 child 置为空
+			cur.Child = nil
+			last = childLast
+		} else {
+			last = cur
+		}
+		cur = next
+	}
+	return
+}
+<em></em>
+func flatten(root *LinkNode) *LinkNode {
+	dfs(root)
+	return root
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-27", "code-example-tab-27-cpp")})()</script>
+<h2 id="29"><a class="header" href="#29">29、</a></h2>
+<p><code>剑指 Offer II 029. 排序的循环链表</code></p>
+<p>给定一个循环链表，它的值是单调非递减的，提供一个元素插入的方法，使得元素插入之后值依然是单调非递减的</p>
+<p><code>解法</code></p>
+<ul>
+<li>第一种情况 <code>cur.val &lt;= val &lt;= next.val</code>, 直接插入到这里</li>
+<li>第二种情况 <code>cur.val &gt; next.val</code>, 说明是链表遍历完了，break，直接加入到cur的后面</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-28', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-28-cpp">cpp</option><option value="code-example-tab-28-go">go</option></select></div>
+<div id="code-example-tab-28-cpp" class="code-example-tab-28"><pre><code class="language-cpp">struct Node {
+  int Val;
+  Node *Next;
+  Node(int x) : Val(x), Next(nullptr) {}
+};
+<em></em>
+Node *insert(Node *head, int insertVal) {
+  Node *node = new Node(insertVal);
+  if (head == nullptr) {
+    node-&gt;Next = node;
+    return node;
+  }
+  if (head-&gt;Next == head) {
+    head-&gt;Next = node;
+    node-&gt;Next = head;
+    return head;
+  }
+  Node *curr = head;
+  Node *next = head-&gt;Next;
+  while (next != head) {
+    if (insertVal &gt;= curr-&gt;Val &amp;&amp; insertVal &lt;= next-&gt;Val) {
+      break;
+    }
+    if (curr-&gt;Val &gt; next-&gt;Val) {
+      if (insertVal &gt; curr-&gt;Val || insertVal &lt; next-&gt;Val) {
+        break;
+      }
+    }
+    curr = curr-&gt;Next;
+    next = next-&gt;Next;
+  }
+  curr-&gt;Next = node;
+  node-&gt;Next = next;
+  return head;
+}
+</code></pre></div><div id="code-example-tab-28-go" class="code-example-tab-28"><pre><code class="language-go">package main
+<em></em>
+func insert(head *ListNode, insertVal int) *ListNode {
+	node := &amp;ListNode{Val: insertVal}
+	if head == nil {
+		node.Next = node
+		return node
+	}
+	if head.Next == head {
+		head.Next = node
+		node.Next = head
+		return head
+	}
+	curr, next := head, head.Next
+	for next != head {
+		if insertVal &gt;= curr.Val &amp;&amp; insertVal &lt;= next.Val {
+			break
+		}
+		if curr.Val &gt; next.Val {
+			if insertVal &gt; curr.Val || insertVal &lt; next.Val {
+				break
+			}
+		}
+		curr = curr.Next
+		next = next.Next
+	}
+	curr.Next = node
+	node.Next = next
+	return head
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-28", "code-example-tab-28-cpp")})()</script>
+<h2 id="30"><a class="header" href="#30">30、</a></h2>
+<p><code>剑指 Offer II 030. 插入、删除和随机访问都是 O(1) 的容器</code></p>
+<p>创造一个数据结构，它的插入、删除、随机访问都是O(1)时间复杂度</p>
+<p><code>解法</code></p>
+<ul>
+<li>由于需要随机访问，所以将数据存储到数组中，通过对下标进行随机来进行访问</li>
+<li>插入和删除也需要O(1), 使用map来存储值与下标</li>
+<li>当删除的时候，将末尾的一个移动到要删除的位置并且更新下对应下标，然后数组只需要减一个长度即可</li>
+</ul>
+<div><select onchange="changeCodeExample('code-example-tab-29', event.target.value)" value="cpp" class="code-example" autocomplete="off"><option value="code-example-tab-29-cpp">cpp</option><option value="code-example-tab-29-go">go</option></select></div>
+<div id="code-example-tab-29-cpp" class="code-example-tab-29"><pre><code class="language-cpp">#include &lt;cstdlib&gt;
+#include &lt;unordered_map&gt;
+#include &lt;vector&gt;
+<em></em>
+class RandomizedSet {
+public:
+  RandomizedSet() {}
+<em></em>
+  bool insert(int val) {
+    if (indices.find(val) != indices.end()) {
+      return false;
+    }
+    indices[val] = nums.size();
+    nums.push_back(val);
+    return true;
+  }
+<em></em>
+  bool remove(int val) {
+    auto it = indices.find(val);
+    if (it == indices.end()) {
+      return false;
+    }
+    int last = nums.back();
+    nums[it-&gt;second] = last;
+    indices[last] = it-&gt;second;
+    nums.pop_back();
+    indices.erase(val);
+    return true;
+  }
+<em></em>
+  int getRandom() {
+    int randomIndex = rand() % nums.size();
+    return nums[randomIndex];
+  }
+<em></em>
+private:
+  std::vector&lt;int&gt; nums;
+  std::unordered_map&lt;int, int&gt; indices;
+};
+</code></pre></div><div id="code-example-tab-29-go" class="code-example-tab-29"><pre><code class="language-go">package main
+<em></em>
+import &quot;math/rand&quot;
+<em></em>
+type RandomizedSet struct {
+	nums    []int
+	indices map[int]int
+}
+<em></em>
+func NewRandomizedSet() RandomizedSet {
+	return RandomizedSet{
+		[]int{}, map[int]int{},
+	}
+}
+<em></em>
+func (rs *RandomizedSet) Insert(val int) bool {
+	if _, ok := rs.indices[val]; ok {
+		return false
+	}
+	rs.indices[val] = len(rs.nums)
+	rs.nums = append(rs.nums, val)
+	return true
+}
+<em></em>
+func (rs *RandomizedSet) Remove(val int) bool {
+	id, ok := rs.indices[val]
+	if !ok {
+		return false
+	}
+	last := len(rs.nums) - 1
+	rs.nums[id] = rs.nums[last]
+	rs.indices[rs.nums[id]] = id
+	rs.nums = rs.nums[:last]
+	delete(rs.indices, val)
+	return true
+}
+<em></em>
+func (rs *RandomizedSet) GetRandom() int {
+	return rs.nums[rand.Intn(len(rs.nums))]
+}
+</code></pre></div><script>(()=>{changeCodeExample("code-example-tab-29", "code-example-tab-29-cpp")})()</script>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../../数据结构与算法/题库/index.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../../数据结构与算法/题库/剑指offer2.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../../数据结构与算法/题库/index.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../../数据结构与算法/题库/剑指offer2.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../.././theme/style.js"></script>
+        <script src="../../clarity.js"></script>
+        <script src="../.././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,1325 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>剑指offer3</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../../favicon.svg">
+    <link rel="shortcut icon" href="../../favicon.png">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../../css/chrome.css">
+    <link rel="stylesheet" href="../../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../../highlight.css">
+    <link rel="stylesheet" href="../../tomorrow-night.css">
+    <link rel="stylesheet" href="../../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href="../.././theme/style.css">
+    <link rel="stylesheet" href="../.././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">面试指南</a></li><li class="chapter-item expanded "><a href="../../数据结构与算法/index.html"><strong aria-hidden="true">1.</strong> 数据结构与算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../数据结构与算法/题库/index.html"><strong aria-hidden="true">1.1.</strong> 题库</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../数据结构与算法/题库/剑指offer1.html"><strong aria-hidden="true">1.1.1.</strong> 剑指offer1</a></li><li class="chapter-item expanded "><a href="../../数据结构与算法/题库/剑指offer2.html"><strong aria-hidden="true">1.1.2.</strong> 剑指offer2</a></li><li class="chapter-item expanded "><a href="../../数据结构与算法/题库/剑指offer3.html" class="active"><strong aria-hidden="true">1.1.3.</strong> 剑指offer3</a></li><li class="chapter-item expanded "><a href="../../数据结构与算法/题库/剑指offer4.html"><strong aria-hidden="true">1.1.4.</strong> 剑指offer4</a></li></ol></li><li class="chapter-item expanded "><a href="../../数据结构与算法/短链系统设计.html"><strong aria-hidden="true">1.2.</strong> 短链系统设计</a></li></ol></li><li class="chapter-item expanded "><a href="../../c++/index.html"><strong aria-hidden="true">2.</strong> c++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../c++/引用变量.html"><strong aria-hidden="true">2.1.</strong> 引用变量</a></li><li class="chapter-item expanded "><a href="../../c++/什么是虚函数.html"><strong aria-hidden="true">2.2.</strong> 什么是虚函数</a></li><li class="chapter-item expanded "><a href="../../c++/什么是指针.html"><strong aria-hidden="true">2.3.</strong> 什么是指针</a></li><li class="chapter-item expanded "><a href="../../c++/如何保证并发安全.html"><strong aria-hidden="true">2.4.</strong> 如何保证并发安全</a></li><li class="chapter-item expanded "><a href="../../c++/常见对象的内存结构.html"><strong aria-hidden="true">2.5.</strong> 常见对象的内存结构</a></li><li class="chapter-item expanded "><a href="../../c++/stl容器库.html"><strong aria-hidden="true">2.6.</strong> stl容器库</a></li></ol></li><li class="chapter-item expanded "><a href="../../linux操作系统/index.html"><strong aria-hidden="true">3.</strong> linux操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../linux操作系统/资源管理.html"><strong aria-hidden="true">3.1.</strong> 资源管理</a></li><li class="chapter-item expanded "><a href="../../linux操作系统/网络配置.html"><strong aria-hidden="true">3.2.</strong> 网络配置</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/interview-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+<style>
+    select.code-example {
+        color: var(--fg);
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--fg);
+        padding: 2px 10px 2px 10px;
+        border-radius: 5px;
+    }
+</style>
+<h2 id="61"><a class="header" href="#61">61、</a></h2>
+<p><code>剑指 Offer II 061. 和最小的 k 个数对</code></p>
+<p>给定两个升序数组，找到前n小的数对</p>
+<pre><code class="language-go">func kSmallestPairs(nums1, nums2 []int, k int) (ans [][]int) {
+    h := hp{nums1: nums1, nums2: nums2}
+    m, n := len(nums1), len(nums2)
+    for i := 0; i &lt; k &amp;&amp; i &lt; m; i++ {
+        heap.Push(&amp;h, pair{i, 0})
+    }
+    for h.Len() &gt; 0 &amp;&amp; len(ans) &lt; k {
+        p := heap.Pop(&amp;h).(pair)
+        i, j := p.i, p.j
+        ans = append(ans, []int{nums1[i], nums2[j]})
+        if j + 1 &lt; n {
+            heap.Push(&amp;h, pair{i, j+1})
+        }
+    }
+    return
+}
+
+type hp struct{
+    data []pair
+    nums1, nums2 []int
+}
+
+type pair struct{
+    i, j int
+}
+
+func (h hp) Len() int {
+    return len(h.data)
+}
+
+func (h hp) Less(i, j int) bool {
+    p1, p2 := h.data[i], h.data[j]
+    return h.nums1[p1.i] + h.nums2[p1.j] &lt; h.nums1[p2.i] + h.nums2[p2.j]
+}
+
+func (h hp) Swap(i, j int) {
+    h.data[i], h.data[j] = h.data[j], h.data[i]
+}
+
+func (h *hp) Push(val interface{}) {
+    h.data = append(h.data, val.(pair))
+}
+
+func (h *hp) Pop() interface{} {
+    data := h.data
+    val := data[len(data)-1]
+    h.data = data[:len(data)-1]
+    return val
+}
+</code></pre>
+<h2 id="62"><a class="header" href="#62">62、</a></h2>
+<p><code>剑指 Offer II 062. 实现前缀树</code></p>
+<p>设计一个前缀树，提供数据插入，数据搜索，判断是否存在某个前缀</p>
+<pre><code class="language-go">type Trie struct {
+    children [26]*Trie
+    isEnd    bool
+}
+
+func Constructor() Trie {
+    return Trie{}
+}
+
+func (t *Trie) Insert(word string) {
+    node := t
+    for _, ch := range word {
+        ch -= 'a'
+        if node.children[ch] == nil {
+            node.children[ch] = &amp;Trie{}
+        }
+        node = node.children[ch]
+    }
+    node.isEnd = true
+}
+
+func (t *Trie) SearchPrefix(prefix string) *Trie {
+    node := t
+    for _, ch := range prefix {
+        ch -= 'a'
+        if node.children[ch] == nil {
+            return nil
+        }
+        node = node.children[ch]
+    }
+    return node
+}
+
+func (t *Trie) Search(word string) bool {
+    node := t.SearchPrefix(word)
+    return node != nil &amp;&amp; node.isEnd
+}
+
+func (t *Trie) StartsWith(prefix string) bool {
+    return t.SearchPrefix(prefix) != nil
+}
+</code></pre>
+<h2 id="63"><a class="header" href="#63">63、</a></h2>
+<p><code>剑指 Offer II 063. 替换单词</code></p>
+<p>当一个词为另一个词的前缀那么称其为词根，后者称为继承词</p>
+<p>给定一个词根数组，一个句子，将句子中的所有词语，如果存在其词根，那么就用词根进行替换</p>
+<pre><code class="language-go">func replaceWords(dictionary []string, sentence string) string {
+    type trie map[rune]trie
+    root := trie{}
+    for _, s := range dictionary {
+        cur := root
+        for _, c := range s {
+            if cur[c] == nil {
+                cur[c] = trie{}
+            }
+            cur = cur[c]
+        }
+        cur['#'] = trie{}
+    }
+
+    words := strings.Split(sentence, " ")
+    for i, word := range words {
+        cur := root
+        for j, c := range word {
+            if cur['#'] != nil {
+                words[i] = word[:j]
+                break
+            }
+            if cur[c] == nil {
+                break
+            }
+            cur = cur[c]
+        }
+    }
+    return strings.Join(words, " ")
+}
+</code></pre>
+<h2 id="64"><a class="header" href="#64">64、</a></h2>
+<p><code>剑指 Offer II 064. 神奇的字典</code></p>
+<p>一个初始字符串列表，提供一个搜索方法，判断需要搜索的字符串进行一次字符替换后是否出现在初始字符串列表。</p>
+<pre><code class="language-go">type MagicDictionary struct {
+    trie *trie
+}
+
+type trie struct{
+    children [26]*trie
+    isEnd bool
+}
+
+/** Initialize your data structure here. */
+func Constructor() MagicDictionary {
+    return MagicDictionary{trie: &amp;trie{}}
+}
+
+
+func (this *MagicDictionary) BuildDict(dictionary []string)  {
+    for _, word := range dictionary {
+        cur := this.trie
+        for _, ch := range word {
+            idx := ch - 'a'
+            if cur.children[idx] == nil {
+                cur.children[idx] = &amp;trie{}
+            }
+            cur = cur.children[idx]
+        }
+        cur.isEnd = true
+    }
+}
+
+
+func (this *MagicDictionary) Search(searchWord string) bool {
+    var dfs func(node *trie, searchWord string, modified bool) bool
+    dfs = func(node *trie, searchWord string, modified bool) bool {
+        if searchWord == "" {
+            return modified &amp;&amp; node.isEnd
+        }
+        c := searchWord[0] - 'a'
+        if node.children[c] != nil &amp;&amp; dfs(node.children[c], searchWord[1:], modified) {
+            return true
+        }
+        if !modified {
+            for i, child := range node.children {
+                if i != int(c) &amp;&amp; child != nil &amp;&amp; dfs(child, searchWord[1:], true) {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    return dfs(this.trie, searchWord, false)
+}
+</code></pre>
+<h2 id="65"><a class="header" href="#65">65、</a></h2>
+<p><code>剑指 Offer II 065. 最短的单词编码</code></p>
+<blockquote>
+<p>暂时没理解到含义，详情查看https://leetcode.cn/problems/iSwD2y/?favorite=e8X3pBZi</p>
+</blockquote>
+<pre><code class="language-go">
+type Trie struct {
+	child [26]*Trie
+	depth int
+}
+
+func Constructor() *Trie {
+	return &amp;Trie{
+		child: [26]*Trie{},
+		depth: 1,
+	}
+}
+
+func (t *Trie) Insert(word string) {
+	curr := t
+	n := len(word)
+	for i := n - 1; i &gt;= 0; i-- {
+		c := word[i] - 'a'
+		if curr.child[c] == nil {
+			curr.child[c] = Constructor()
+		}
+		curr.child[c].depth = curr.depth + 1
+		curr = curr.child[c]
+	}
+}
+
+func minimumLengthEncoding(words []string) int {
+	t := Constructor()
+	for _, w := range words {
+		t.Insert(w)
+	}
+	var res int
+	var dfs func(node *Trie)
+	dfs = func(node *Trie) {
+		var hasChild bool
+		for i := 0; i &lt; 26; i++ {
+			if node.child[i] != nil {
+				hasChild = true
+				dfs(node.child[i])
+			}
+		}
+		if !hasChild {
+			res += node.depth
+		}
+	}
+	dfs(t)
+	return res
+}
+</code></pre>
+<h2 id="66"><a class="header" href="#66">66、</a></h2>
+<p><code>剑指 Offer II 066. 单词之和</code></p>
+<p>提供两个方法，插入字符串以及个数，查询一个前缀所包含的值的大小。</p>
+<p>如果该key已经存在则进行替换，给定一个字符串查询以该字符串为前缀的元素总和</p>
+<pre><code class="language-go">type TrieNode struct {
+    children [26]*TrieNode
+    val      int
+}
+
+type MapSum struct {
+    root *TrieNode
+    cnt  map[string]int
+}
+
+func Constructor() MapSum {
+    return MapSum{
+        &amp;TrieNode{}, 
+        map[string]int{},
+    }
+}
+
+func (m *MapSum) Insert(key string, val int) {
+    delta := val
+    if m.cnt[key] &gt; 0 {
+        delta -= m.cnt[key]
+    }
+    m.cnt[key] = val
+    node := m.root
+    for _, ch := range key {
+        ch -= 'a'
+        if node.children[ch] == nil {
+            node.children[ch] = &amp;TrieNode{}
+        }
+        node = node.children[ch]
+        node.val += delta
+    }
+}
+
+func (m *MapSum) Sum(prefix string) int {
+    node := m.root
+    for _, ch := range prefix {
+        ch -= 'a'
+        if node.children[ch] == nil {
+            return 0
+        }
+        node = node.children[ch]
+    }
+    return node.val
+}
+</code></pre>
+<h2 id="67"><a class="header" href="#67">67、</a></h2>
+<p><code>剑指 Offer II 067. 最大的异或</code></p>
+<p>给定一个整数数组，两两元素进行异或，找到最大值</p>
+<pre><code class="language-go">const highBit = 30
+
+type trie struct {
+    left, right *trie
+}
+
+func (t *trie) add(num int) {
+    cur := t
+    for i := highBit; i &gt;= 0; i-- {
+        bit := num &gt;&gt; i &amp; 1
+        if bit == 0 {
+            if cur.left == nil {
+                cur.left = &amp;trie{}
+            }
+            cur = cur.left
+        } else {
+            if cur.right == nil {
+                cur.right = &amp;trie{}
+            }
+            cur = cur.right
+        }
+    }
+}
+
+func (t *trie) check(num int) (x int) {
+    cur := t
+    for i := highBit; i &gt;= 0; i-- {
+        bit := num &gt;&gt; i &amp; 1
+        if bit == 0 {
+            // a_i 的第 k 个二进制位为 0，应当往表示 1 的子节点 right 走
+            if cur.right != nil {
+                cur = cur.right
+                x = x*2 + 1
+            } else {
+                cur = cur.left
+                x = x * 2
+            }
+        } else {
+            // a_i 的第 k 个二进制位为 1，应当往表示 0 的子节点 left 走
+            if cur.left != nil {
+                cur = cur.left
+                x = x*2 + 1
+            } else {
+                cur = cur.right
+                x = x * 2
+            }
+        }
+    }
+    return
+}
+
+func findMaximumXOR(nums []int) (x int) {
+    root := &amp;trie{}
+    for i := 1; i &lt; len(nums); i++ {
+        // 将 nums[i-1] 放入字典树，此时 nums[0 .. i-1] 都在字典树中
+        root.add(nums[i-1])
+        // 将 nums[i] 看作 ai，找出最大的 x 更新答案
+        x = max(x, root.check(nums[i]))
+    }
+    return
+}
+
+func max(a, b int) int {
+    if a &gt; b {
+        return a
+    }
+    return b
+}
+</code></pre>
+<h2 id="68"><a class="header" href="#68">68、</a></h2>
+<p><code>剑指 Offer II 068. 查找插入位置</code></p>
+<p>往一个有序数组中进行数据插入，查找数据的插入位置，要求使用O(logn)复杂度</p>
+<pre><code class="language-go">func searchInsert(nums []int, target int) int {
+    n := len(nums)
+    left, right := 0, n - 1
+    ans := n
+    for left &lt;= right {
+        mid := (right - left) &gt;&gt; 1 + left
+        if target &lt;= nums[mid] {
+            ans = mid
+            right = mid - 1
+        } else {
+            left = mid + 1
+        }
+    }
+    return ans
+}
+</code></pre>
+<h2 id="69"><a class="header" href="#69">69、</a></h2>
+<p><code>剑指 Offer II 069. 山峰数组的顶部</code></p>
+<p>找到下标i，在i之前是递增数据，在i之后是递减数据</p>
+<p>题目保证满足存在这样的i</p>
+<pre><code class="language-go">func peakIndexInMountainArray(arr []int) int {
+    return sort.Search(len(arr)-1, func(i int) bool { return arr[i] &gt; arr[i+1] })
+}
+</code></pre>
+<h2 id="70"><a class="header" href="#70">70、</a></h2>
+<p>剑指 Offer II 070. 排序数组中只出现一次的数字</p>
+<p>一个有序数组，有一个元素只出现一次，其他元素出现了两次，找到这个只出现了一次的元素，满足O(logn)时间复杂度，O(1)空间复杂度</p>
+<pre><code class="language-go">func singleNonDuplicate(nums []int) int {
+    low, high := 0, len(nums)-1
+    for low &lt; high {
+        mid := low + (high-low)/2
+        if nums[mid] == nums[mid^1] {
+            low = mid + 1
+        } else {
+            high = mid
+        }
+    }
+    return nums[low]
+}
+</code></pre>
+<h2 id="71"><a class="header" href="#71">71、</a></h2>
+<p><code>剑指 Offer II 071. 按权重生成随机数</code></p>
+<p>按照值的大小作为权重占比进行随机数获取，返回其数据下标</p>
+<pre><code class="language-go">type Solution struct {
+    pre []int
+}
+
+func Constructor(w []int) Solution {
+    for i := 1; i &lt; len(w); i++ {
+        w[i] += w[i-1]
+    }
+    return Solution{w}
+}
+
+func (s *Solution) PickIndex() int {
+    x := rand.Intn(s.pre[len(s.pre)-1]) + 1
+    return sort.SearchInts(s.pre, x)
+}
+</code></pre>
+<h2 id="72"><a class="header" href="#72">72、</a></h2>
+<p><code>剑指 Offer II 072. 求平方根</code></p>
+<p>计算一个整数的开平方根，只取正数那一个</p>
+<pre><code class="language-go">func mySqrt(x int) int {
+    l, r := 0, x
+    ans := -1
+    for l &lt;= r {
+        mid := l + (r - l) / 2
+        if mid * mid &lt;= x {
+            ans = mid
+            l = mid + 1
+        } else {
+            r = mid - 1
+        }
+    }
+    return ans
+}
+</code></pre>
+<h2 id="73"><a class="header" href="#73">73、</a></h2>
+<p><code>剑指 Offer II 073. 狒狒吃香蕉</code></p>
+<p>n堆香蕉，在h小时内要吃完，选择要吃完所有香蕉的最小速度，不过需要注意如果选择了一堆香蕉后，小于k个也会等待下一个小时才会继续吃。</p>
+<pre><code class="language-go">func minEatingSpeed(piles []int, h int) int {
+    max := 0
+    for _, pile := range piles {
+        if pile &gt; max {
+            max = pile
+        }
+    }
+    return 1 + sort.Search(max-1, func(speed int) bool {
+        speed++
+        time := 0
+        for _, pile := range piles {
+            time += (pile + speed - 1) / speed
+        }
+        return time &lt;= h
+    })
+}
+</code></pre>
+<h2 id="74"><a class="header" href="#74">74、</a></h2>
+<p><code>剑指 Offer II 074. 合并区间</code></p>
+<p>给定一个元组数组，其中的元素即为一个左右区间，将所有重叠的区间进行合并，并返回一个不重叠的区间数组</p>
+<pre><code class="language-go">func merge(intervals [][]int) [][]int {
+	sort.Slice(intervals, func(i, j int) bool {
+		return intervals[i][0] &lt; intervals[j][0] || (intervals[i][0] == intervals[j][0] &amp;&amp; intervals[i][1] &lt; intervals[j][1])
+	})
+	var res [][]int
+	for _, interval := range intervals {
+		if len(res) == 0 || res[len(res)-1][1] &lt; interval[0] {
+			res = append(res, interval)
+		} else {
+			res[len(res)-1][1] = max(res[len(res)-1][1], interval[1])
+		}
+	}
+	return res
+}
+
+func max(a, b int) int {
+	if a &gt; b {
+		return a
+	}
+	return b
+}
+</code></pre>
+<h2 id="75"><a class="header" href="#75">75</a></h2>
+<p><code>剑指 Offer II 075. 数组相对排序</code></p>
+<p>给定两个数组arr1和arr2，将arr1按照arr2的顺序进行排序，未出现过的就按照升序之后放在arr1的末尾。</p>
+<pre><code class="language-go">type zset map[int]int
+
+func(zs *zset) keys() []int {
+    res := []int{}
+    for key := range *zs {
+        res = append(res, key)
+    }
+    sort.Ints(res)
+    return res
+}
+
+func relativeSortArray(arr1 []int, arr2 []int) []int {
+    zs := zset{}
+    for _, val := range arr1 {
+        zs[val]++
+    }
+
+    res := make([]int, 0, len(arr1))
+    for _, val := range arr2 {
+        for i := 0; i &lt; zs[val]; i++ {
+            res = append(res, val)
+        }
+        delete(zs, val)
+    }
+    for _, key := range zs.keys() {
+        for i := 0; i &lt; zs[key]; i++ {
+            res = append(res, key)
+        }
+    }
+    return res
+}
+</code></pre>
+<h2 id="76"><a class="header" href="#76">76</a></h2>
+<p><code>剑指 Offer II 076. 数组中的第 k 大的数字</code></p>
+<p>给定一个整数数组和整数，返回数组中第k个最大的元素</p>
+<pre><code class="language-go">func findKthLargest(nums []int, k int) int {
+    rand.Seed(time.Now().UnixNano())
+    return quickSelect(nums, 0, len(nums)-1, len(nums)-k)
+}
+
+func quickSelect(a []int, l, r, index int) int {
+    q := randomPartition(a, l, r)
+    if q == index {
+        return a[q]
+    } else if q &lt; index {
+        return quickSelect(a, q + 1, r, index)
+    }
+    return quickSelect(a, l, q - 1, index)
+}
+
+func randomPartition(a []int, l, r int) int {
+    i := rand.Int() % (r - l + 1) + l
+    a[i], a[r] = a[r], a[i]
+    return partition(a, l, r)
+}
+
+func partition(a []int, l, r int) int {
+    x := a[r]
+    i := l - 1
+    for j := l; j &lt; r; j++ {
+        if a[j] &lt;= x {
+            i++
+            a[i], a[j] = a[j], a[i]
+        }
+    }
+    a[i+1], a[r] = a[r], a[i+1]
+    return i + 1
+}
+</code></pre>
+<h2 id="77"><a class="header" href="#77">77</a></h2>
+<p><code>剑指 Offer II 077. 链表排序</code></p>
+<p>对链表节点进行升序排序</p>
+<pre><code class="language-go">func merge(head1, head2 *ListNode) *ListNode {
+    dummyHead := &amp;ListNode{}
+    temp, temp1, temp2 := dummyHead, head1, head2
+    for temp1 != nil &amp;&amp; temp2 != nil {
+        if temp1.Val &lt;= temp2.Val {
+            temp.Next = temp1
+            temp1 = temp1.Next
+        } else {
+            temp.Next = temp2
+            temp2 = temp2.Next
+        }
+        temp = temp.Next
+    }
+    if temp1 != nil {
+        temp.Next = temp1
+    } else if temp2 != nil {
+        temp.Next = temp2
+    }
+    return dummyHead.Next
+}
+
+func sort(head, tail *ListNode) *ListNode {
+    if head == nil {
+        return head
+    }
+
+    if head.Next == tail {
+        head.Next = nil
+        return head
+    }
+
+    slow, fast := head, head
+    for fast != tail {
+        slow = slow.Next
+        fast = fast.Next
+        if fast != tail {
+            fast = fast.Next
+        }
+    }
+
+    mid := slow
+    return merge(sort(head, mid), sort(mid, tail))
+}
+
+func sortList(head *ListNode) *ListNode {
+    return sort(head, nil)
+}
+</code></pre>
+<h2 id="78"><a class="header" href="#78">78</a></h2>
+<p><code>剑指 Offer II 078. 合并排序链表</code></p>
+<p>给定一个链表数组，将链表按照升序排列</p>
+<pre><code class="language-go">//合并K个升序链表
+func mergeKLists(lists []*ListNode) (res *ListNode) {
+	for _, v := range lists {
+		res = mergeTwoLists(res, v)
+	}
+	return res
+}
+
+//合并两个升序链表
+func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
+	//初始化一个虚拟的头节点
+	newList := &amp;ListNode{}
+	p := newList
+	p1 := list1
+	p2 := list2
+	//遍历对比两个指针值的大小，有一个走完了就停止
+	for p1 != nil &amp;&amp; p2 != nil {
+		//将值小的节点接到p指针后面
+		if p1.Val &gt; p2.Val {
+			p.Next = p2
+			p2 = p2.Next
+		} else {
+			p.Next = p1
+			p1 = p1.Next
+		}
+		//p指针前进
+		p = p.Next
+	}
+	//将未比较的剩余节点都放到p指针后面
+	if p1 != nil {
+		p.Next = p1
+	}
+	if p2 != nil {
+		p.Next = p2
+	}
+	//返回虚拟头节点的下一个节点就是真正的头节点
+	return newList.Next
+}
+</code></pre>
+<h2 id="79"><a class="header" href="#79">79</a></h2>
+<p><code>剑指 Offer II 079. 所有子集</code></p>
+<p>给定一个元素各不相同的的数组，返回所有不重复的子集</p>
+<pre><code class="language-go">func subsets(nums []int) (ans [][]int) {
+    n := len(nums)
+    for mask := 0; mask &lt; 1&lt;&lt;n; mask++ {
+        set := []int{}
+        for i, v := range nums {
+            if mask&gt;&gt;i&amp;1 &gt; 0 {
+                set = append(set, v)
+            }
+        }
+        ans = append(ans, append([]int(nil), set...))
+    }
+    return
+}
+</code></pre>
+<h2 id="80"><a class="header" href="#80">80</a></h2>
+<p><code>剑指 Offer II 080. 含有 k 个元素的组合</code></p>
+<p>给定整数n和k，返回<code>1...n</code>中所有可能的k个数的组合</p>
+<pre><code class="language-go">func combine(n int, k int) (ans [][]int) {
+	temp := []int{}
+	var dfs func(int)
+	dfs = func(cur int) {
+		// 剪枝：temp 长度加上区间 [cur, n] 的长度小于 k，不可能构造出长度为 k 的 temp
+		if len(temp) + (n - cur + 1) &lt; k {
+			return
+		}
+		// 记录合法的答案
+		if len(temp) == k {
+			comb := make([]int, k)
+			copy(comb, temp)
+			ans = append(ans, comb)
+			return
+		}
+		// 考虑选择当前位置
+		temp = append(temp, cur)
+		dfs(cur + 1)
+		temp = temp[:len(temp)-1]
+		// 考虑不选择当前位置
+		dfs(cur + 1)
+	}
+	dfs(1)
+	return
+}
+</code></pre>
+<h2 id="81"><a class="header" href="#81">81</a></h2>
+<p><code>剑指 Offer II 081. 允许重复选择元素的组合</code></p>
+<p>从数组中寻找和为目标值的组合，数组中的元素可以重复选择</p>
+<blockquote>
+<p>下面这种题解是标准解法，不过不能去除重复的情况，详情看82</p>
+</blockquote>
+<pre><code class="language-go">func combinationSum(candidates []int, target int) (ans [][]int) {
+	comb := []int{}
+	var dfs func(target, idx int)
+	dfs = func(target, idx int) {
+		if idx == len(candidates) {
+			return
+		}
+		if target == 0 {
+			ans = append(ans, append([]int(nil), comb...))
+			return
+		}
+		// 直接跳过
+		dfs(target, idx+1)
+		// 选择当前数
+		if target-candidates[idx] &gt;= 0 {
+			comb = append(comb, candidates[idx])
+			dfs(target-candidates[idx], idx)
+			comb = comb[:len(comb)-1]
+		}
+	}
+	dfs(target, 0)
+	return
+}
+</code></pre>
+<h2 id="82"><a class="header" href="#82">82</a></h2>
+<p><code>剑指 Offer II 082. 含有重复元素集合的组合</code></p>
+<p>与81题类似，不过这里元素只能使用一次</p>
+<pre><code class="language-go">func combinationSum2(candidates []int, target int) (ans [][]int) {
+    sort.Ints(candidates)
+    var freq [][2]int // [值，次数]
+    for _, num := range candidates {
+        if freq == nil || num != freq[len(freq)-1][0] {
+            freq = append(freq, [2]int{num, 1})
+        } else {
+            freq[len(freq)-1][1]++
+        }
+    }
+
+    var sequence []int
+    var dfs func(pos, rest int)
+    dfs = func(pos, rest int) {
+        if rest == 0 {
+            ans = append(ans, append([]int(nil), sequence...))
+            return
+        }
+        if pos == len(freq) || rest &lt; freq[pos][0] {
+            return
+        }
+
+        dfs(pos+1, rest)
+
+        most := min(rest/freq[pos][0], freq[pos][1])
+        for i := 1; i &lt;= most; i++ {
+            sequence = append(sequence, freq[pos][0])
+            dfs(pos+1, rest-i*freq[pos][0])
+        }
+        sequence = sequence[:len(sequence)-most]
+    }
+    dfs(0, target)
+    return
+}
+
+func min(a, b int) int {
+    if a &lt; b {
+        return a
+    }
+    return b
+}
+</code></pre>
+<h2 id="83"><a class="header" href="#83">83</a></h2>
+<p><code>剑指 Offer II 083. 没有重复元素集合的全排列</code></p>
+<p>给定一个不包含重复数字的整数数组，返回所有可能的全排列</p>
+<pre><code class="language-go">func permute(nums []int) [][]int {
+	n := len(nums)
+	var ans [][]int
+	var path []int
+	vis := make([]bool, n)
+	var dfs func()
+	dfs = func() {
+		if len(path) == n {
+			ans = append(ans, append([]int{}, path...))
+			return
+		}
+		for i := 0; i &lt; n; i++ {
+			if !vis[i] {
+				vis[i] = true
+				path = append(path, nums[i])
+				dfs()
+				vis[i] = false
+				path = path[:len(path) - 1]
+			}
+		}
+	}
+	dfs()
+	return ans
+}
+</code></pre>
+<h2 id="84"><a class="header" href="#84">84</a></h2>
+<p><code>剑指 Offer II 084. 含有重复元素集合的全排列</code></p>
+<p>给定一个可包含重复数字的整数集合 nums ，按任意顺序 返回它所有不重复的全排列。</p>
+<pre><code class="language-go">func permuteUnique(nums []int) (ans [][]int) {
+    sort.Ints(nums)
+    n := len(nums)
+    perm := []int{}
+    vis := make([]bool, n)
+    var backtrack func(int)
+    backtrack = func(idx int) {
+        if idx == n {
+            ans = append(ans, append([]int(nil), perm...))
+            return
+        }
+        for i, v := range nums {
+            if vis[i] || i &gt; 0 &amp;&amp; !vis[i-1] &amp;&amp; v == nums[i-1] {
+                continue
+            }
+            perm = append(perm, v)
+            vis[i] = true
+            backtrack(idx + 1)
+            vis[i] = false
+            perm = perm[:len(perm)-1]
+        }
+    }
+    backtrack(0)
+    return
+}
+</code></pre>
+<h2 id="85"><a class="header" href="#85">85</a></h2>
+<p><code>剑指 Offer II 085. 生成匹配的括号</code></p>
+<p>正整数 n 代表生成括号的对数，请设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。</p>
+<pre><code class="language-go">// 动态规划版本
+func generateParenthesis(n int) []string {
+	dp := make([][]string, n+1)
+	dp[0] = []string{""}
+	for i := 1; i &lt;= n; i++ {
+		for j := 0; j &lt; i; j++ {
+			for _, left := range dp[j] {
+				for _, right := range dp[i-j-1] {
+					dp[i] = append(dp[i], "("+left+")"+right)
+				}
+			}
+
+		}
+	}
+	return dp[n]
+}
+
+// 递归版本
+func generateParenthesis(n int) []string {
+	var res []string
+	var leftCnt, rightCnt int
+	var tmp []byte
+	var dfs func(cnt int)
+	dfs = func(cnt int) {
+		if cnt == n*2 {
+			res = append(res, string(tmp))
+			return
+		}
+		if leftCnt &lt; n {
+			leftCnt++
+			tmp = append(tmp, '(')
+			dfs(cnt + 1)
+			leftCnt--
+			tmp = tmp[:len(tmp)-1]
+		}
+		if leftCnt &gt; rightCnt {
+			rightCnt++
+			tmp = append(tmp, ')')
+			dfs(cnt + 1)
+			rightCnt--
+			tmp = tmp[:len(tmp)-1]
+		}
+	}
+	dfs(0)
+	return res
+}
+</code></pre>
+<h2 id="86"><a class="header" href="#86">86</a></h2>
+<p><code>剑指 Offer II 086. 分割回文子字符串</code></p>
+<p>将字符串分割成回文串, 返回所有可能的方案</p>
+<pre><code class="language-go">func partition(s string) (ans [][]string) {
+    n := len(s)
+    f := make([][]bool, n)
+    for i := range f {
+        f[i] = make([]bool, n)
+        for j := range f[i] {
+            f[i][j] = true
+        }
+    }
+    for i := n - 1; i &gt;= 0; i-- {
+        for j := i + 1; j &lt; n; j++ {
+            f[i][j] = s[i] == s[j] &amp;&amp; f[i+1][j-1]
+        }
+    }
+
+    splits := []string{}
+    var dfs func(int)
+    dfs = func(i int) {
+        if i == n {
+            ans = append(ans, append([]string(nil), splits...))
+            return
+        }
+        for j := i; j &lt; n; j++ {
+            if f[i][j] {
+                splits = append(splits, s[i:j+1])
+                dfs(j + 1)
+                splits = splits[:len(splits)-1]
+            }
+        }
+    }
+    dfs(0)
+    return
+}
+</code></pre>
+<h2 id="87"><a class="header" href="#87">87</a></h2>
+<p><code>剑指 Offer II 087. 复原 IP</code></p>
+<p>将字符串格式化成所有合法的ipv4地址</p>
+<pre><code class="language-go">const SEG_COUNT = 4
+
+var (
+    ans []string
+    segments []int
+)
+
+func restoreIpAddresses(s string) []string {
+    segments = make([]int, SEG_COUNT)
+    ans = []string{}
+    dfs(s, 0, 0)
+    return ans
+}
+
+func dfs(s string, segId, segStart int) {
+    // 如果找到了 4 段 IP 地址并且遍历完了字符串，那么就是一种答案
+    if segId == SEG_COUNT {
+        if segStart == len(s) {
+            ipAddr := ""
+            for i := 0; i &lt; SEG_COUNT; i++ {
+                ipAddr += strconv.Itoa(segments[i])
+                if i != SEG_COUNT - 1 {
+                    ipAddr += "."
+                }
+            }
+            ans = append(ans, ipAddr)
+        }
+        return
+    }
+
+    // 如果还没有找到 4 段 IP 地址就已经遍历完了字符串，那么提前回溯
+    if segStart == len(s) {
+        return
+    }
+    // 由于不能有前导零，如果当前数字为 0，那么这一段 IP 地址只能为 0
+    if s[segStart] == '0' {
+        segments[segId] = 0
+        dfs(s, segId + 1, segStart + 1)
+    }
+    // 一般情况，枚举每一种可能性并递归
+    addr := 0
+    for segEnd := segStart; segEnd &lt; len(s); segEnd++ {
+        addr = addr * 10 + int(s[segEnd] - '0')
+        if addr &gt; 0 &amp;&amp; addr &lt;= 0xFF {
+            segments[segId] = addr
+            dfs(s, segId + 1, segEnd + 1)
+        } else {
+            break
+        }
+    }
+}
+</code></pre>
+<h2 id="88"><a class="header" href="#88">88</a></h2>
+<p><code>剑指 Offer II 088. 爬楼梯的最少成本</code></p>
+<p>给定一个一维数组表示爬楼梯需要的成本，并且每次支付一次就可以往上爬一个阶梯或者爬两个阶梯, 计算爬楼梯的最少成本。</p>
+<pre><code class="language-go">func minCostClimbingStairs(cost []int) int {
+    n := len(cost)
+    pre, cur := 0, 0
+    for i := 2; i &lt;= n; i++ {
+        pre, cur = cur, min(cur+cost[i-1], pre+cost[i-2])
+    }
+    return cur
+}
+
+func min(a, b int) int {
+    if a &lt; b {
+        return a
+    }
+    return b
+}
+</code></pre>
+<h2 id="89"><a class="header" href="#89">89</a></h2>
+<p><code>剑指 Offer II 089. 房屋偷盗</code></p>
+<p>给定一个一维数组表示每间房子的价值，不能偷相邻的两家，问能够偷窃到的最高金额</p>
+<pre><code class="language-go">func rob(nums []int) int {
+    if len(nums) == 0 {
+        return 0
+    }
+    if len(nums) == 1 {
+        return nums[0]
+    }
+    dp := make([]int, len(nums))
+    dp[0] = nums[0]
+    dp[1] = max(nums[0], nums[1])
+    for i := 2; i &lt; len(nums); i++ {
+        dp[i] = max(dp[i-2] + nums[i], dp[i-1])
+    }
+    return dp[len(nums)-1]
+}
+
+func max(x, y int) int {
+    if x &gt; y {
+        return x
+    }
+    return y
+}
+</code></pre>
+<h2 id="90"><a class="header" href="#90">90</a></h2>
+<p><code>剑指 Offer II 090. 环形房屋偷盗</code></p>
+<p>与上一题类似，不过这一题房屋是首位相连的，问能够偷窃到的最大价值</p>
+<pre><code class="language-go">func _rob(nums []int) int {
+    first, second := nums[0], max(nums[0], nums[1])
+    for _, v := range nums[2:] {
+        first, second = second, max(first+v, second)
+    }
+    return second
+}
+
+func rob(nums []int) int {
+    n := len(nums)
+    if n == 1 {
+        return nums[0]
+    }
+    if n == 2 {
+        return max(nums[0], nums[1])
+    }
+    return max(_rob(nums[:n-1]), _rob(nums[1:]))
+}
+
+func max(a, b int) int {
+    if a &gt; b {
+        return a
+    }
+    return b
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../../数据结构与算法/题库/剑指offer2.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../../数据结构与算法/题库/剑指offer4.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../../数据结构与算法/题库/剑指offer2.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../../数据结构与算法/题库/剑指offer4.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../.././theme/style.js"></script>
+        <script src="../../clarity.js"></script>
+        <script src="../.././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>

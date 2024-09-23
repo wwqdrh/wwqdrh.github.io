@@ -1,0 +1,391 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>stl容器库</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href=".././theme/style.css">
+    <link rel="stylesheet" href=".././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">面试指南</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/index.html"><strong aria-hidden="true">1.</strong> 数据结构与算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/index.html"><strong aria-hidden="true">1.1.</strong> 题库</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer1.html"><strong aria-hidden="true">1.1.1.</strong> 剑指offer1</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer2.html"><strong aria-hidden="true">1.1.2.</strong> 剑指offer2</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer3.html"><strong aria-hidden="true">1.1.3.</strong> 剑指offer3</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer4.html"><strong aria-hidden="true">1.1.4.</strong> 剑指offer4</a></li></ol></li><li class="chapter-item expanded "><a href="../数据结构与算法/短链系统设计.html"><strong aria-hidden="true">1.2.</strong> 短链系统设计</a></li></ol></li><li class="chapter-item expanded "><a href="../c++/index.html"><strong aria-hidden="true">2.</strong> c++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../c++/引用变量.html"><strong aria-hidden="true">2.1.</strong> 引用变量</a></li><li class="chapter-item expanded "><a href="../c++/什么是虚函数.html"><strong aria-hidden="true">2.2.</strong> 什么是虚函数</a></li><li class="chapter-item expanded "><a href="../c++/什么是指针.html"><strong aria-hidden="true">2.3.</strong> 什么是指针</a></li><li class="chapter-item expanded "><a href="../c++/如何保证并发安全.html"><strong aria-hidden="true">2.4.</strong> 如何保证并发安全</a></li><li class="chapter-item expanded "><a href="../c++/常见对象的内存结构.html"><strong aria-hidden="true">2.5.</strong> 常见对象的内存结构</a></li><li class="chapter-item expanded "><a href="../c++/stl容器库.html" class="active"><strong aria-hidden="true">2.6.</strong> stl容器库</a></li></ol></li><li class="chapter-item expanded "><a href="../linux操作系统/index.html"><strong aria-hidden="true">3.</strong> linux操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux操作系统/资源管理.html"><strong aria-hidden="true">3.1.</strong> 资源管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/网络配置.html"><strong aria-hidden="true">3.2.</strong> 网络配置</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/interview-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+<style>
+    select.code-example {
+        color: var(--fg);
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--fg);
+        padding: 2px 10px 2px 10px;
+        border-radius: 5px;
+    }
+</style>
+<p>C++中的STL（标准模板库）是编程中非常重要的一个部分，STL不仅提供了丰富的数据结构和算法，同时也是泛型编程的重要应用。</p>
+<p>选择合适的STL容器通常取决于你对数据结构的需求，如访问速度、插入/删除操作的频率、内存使用等。以下是一些常见的选择标准：</p>
+<ul>
+<li>std::vector：当你需要频繁随机访问元素，且只在末尾插入/删除时。</li>
+<li>std::deque：当你需要在两端进行插入和删除时。</li>
+<li>std::list：当你需要频繁的中间插入/删除时。</li>
+<li>std::set：当你需要自动排序和唯一性时。</li>
+<li>std::map：当你需要键值对关联时。</li>
+</ul>
+<p>STL容器本身不是线程安全的。多个线程同时读写同一个容器，或者同时修改容器状态（比如插入或删除元素）时，可能会导致数据竞争。因此，需要通过锁（如std::mutex）来确保线程安全。</p>
+<p>STL广泛采用了泛型编程，所有STL容器和算法都使用模板，使它们能够处理不同的数据类型。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+template &lt;typename T&gt;
+void print_vector(const std::vector&lt;T&gt;&amp; vec) {
+    for (const auto&amp; item : vec) {
+        std::cout &lt;&lt; item &lt;&lt; " ";
+    }
+    std::cout &lt;&lt; std::endl;
+}
+
+int main() {
+    std::vector&lt;int&gt; int_vec = {1, 2, 3};
+    std::vector&lt;double&gt; double_vec = {1.1, 2.2, 3.3};
+
+    print_vector(int_vec);
+    print_vector(double_vec);
+
+    return 0;
+}
+</code></pre>
+<p><code>RAII</code></p>
+<p>STL中，像std::vector、std::unique_ptr等容器和智能指针都遵循RAII原则。RAII（Resource Acquisition Is Initialization）是一种资源管理的原则。在C++中，RAII意味着对象的生命周期与资源的管理直接相关。当对象被创建时，资源被分配；当对象被销毁时，资源自动释放。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int main() {
+    {
+        std::vector&lt;int&gt; vec = {1, 2, 3};
+        // vec创建时分配内存，RAII管理其生命周期
+    }
+    // 离开作用域时，vec自动销毁，内存被释放
+
+    return 0;
+}
+</code></pre>
+<p><code>allocator</code></p>
+<p>Allocator是STL中用于管理内存分配的机制。STL中的所有容器都使用allocator来控制如何分配、释放和管理内存。这使得STL能够更灵活地适应不同的内存管理需求。</p>
+<p>默认的allocator是std::allocator，但用户可以自定义allocator来优化内存分配策略（比如用于嵌入式系统中的内存池）。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;memory&gt;
+
+int main() {
+    std::vector&lt;int, std::allocator&lt;int&gt;&gt; vec = {1, 2, 3};
+
+    return 0;
+}
+</code></pre>
+<h2 id="1-stl中的优先级队列是如何实现的"><a class="header" href="#1-stl中的优先级队列是如何实现的">1. STL中的优先级队列是如何实现的？</a></h2>
+<p>STL中的priority_queue是基于堆（heap）实现的。优先级队列默认是一个最大堆，即每次取出的元素都是当前队列中的最大值（或最小值，取决于定义）。堆的性质确保插入和删除的时间复杂度为O(log n)。</p>
+<p>代码示例：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;vector&gt;
+
+int main() {
+    std::priority_queue&lt;int&gt; pq;
+
+    pq.push(10);
+    pq.push(5);
+    pq.push(20);
+
+    while (!pq.empty()) {
+        std::cout &lt;&lt; pq.top() &lt;&lt; " ";  // 每次输出最大值
+        pq.pop();
+    }
+
+    return 0;
+}
+</code></pre>
+<p>这里，std::priority_queue是通过std::vector存储数据，并使用堆来维持顺序。内部使用std::make_heap()、std::push_heap()和std::pop_heap()等算法。</p>
+<h2 id="2-stl中常见的算法库"><a class="header" href="#2-stl中常见的算法库">2. STL中常见的算法库</a></h2>
+<p>STL中的算法库是其核心部分之一，包含了很多常见的算法，比如排序、查找、遍历等。以下是一些常见的算法：</p>
+<ul>
+<li>std::sort：快速排序，时间复杂度为O(n log n)。</li>
+<li>std::find：在范围内查找某个元素，线性时间复杂度。</li>
+<li>std::binary_search：二分查找，时间复杂度为O(log n)，需要排序数组。</li>
+<li>std::accumulate：用于计算区间内所有元素的累加值。</li>
+</ul>
+<p>代码示例：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+int main() {
+    std::vector&lt;int&gt; vec = {1, 3, 5, 2, 4};
+
+    // 排序
+    std::sort(vec.begin(), vec.end());
+
+    // 查找
+    if (std::binary_search(vec.begin(), vec.end(), 3)) {
+        std::cout &lt;&lt; "找到元素3" &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+<h2 id="map的底层实现"><a class="header" href="#map的底层实现">map的底层实现</a></h2>
+<p>std::map的底层实现是红黑树，这是一种自平衡二叉搜索树。红黑树保证插入、删除、查找的时间复杂度为O(log n)。红黑树通过颜色标记和旋转操作保持平衡。</p>
+<h2 id="set的底层实现"><a class="header" href="#set的底层实现">set的底层实现</a></h2>
+<p>std::set的底层实现与std::map类似，也是基于红黑树。区别在于std::set只存储键，而不存储值。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../c++/常见对象的内存结构.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../linux操作系统/index.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../c++/常见对象的内存结构.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../linux操作系统/index.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src=".././theme/style.js"></script>
+        <script src="../clarity.js"></script>
+        <script src=".././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>

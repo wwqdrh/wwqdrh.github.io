@@ -1,0 +1,324 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="viewport" content="width=device-width"/><title>grpc手册</title><meta name="robots" content="follow, index"/><meta charSet="UTF-8"/><meta name="description" content="grpc介绍以及使用"/><meta property="og:type"/><meta property="og:title" content="grpc手册"/><meta property="og:description" content="grpc介绍以及使用"/><meta property="og:url" content="https://wwqdrh.github.io/undefined"/><meta name="keywords" content="wwqdrh技术博客"/><meta property="og:locale" content="zh-CN"/><meta property="og:image" content="https://wwqdrh.github.io"/><meta name="twitter:title" content="grpc手册"/><meta name="twitter:description" content="grpc介绍以及使用"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://wwqdrh.github.io"/><link rel="stylesheet" href="/assets/mdrender/editor-render.css"/><meta name="next-head-count" content="17"/><link rel="icon" href="/favicon.ico"/><link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png"/><link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed"/><script src="/assets/analizy/clarity.js"></script><link rel="preload" href="/_next/static/media/d83e92f0af8b17e4-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/ed42d1b51efd45f6-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/fba9d678ff638e59-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/e52907b750a6f61e-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/9031250013752d4b-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/eb9adf802b0a60eb-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/81b352a4d7a000ae-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/41b9b3ece820718f-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/d587d1c112526568-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/css/869c7de7c781f904.css" as="style"/><link rel="stylesheet" href="/_next/static/css/869c7de7c781f904.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"></script><script src="/_next/static/chunks/webpack-6ef43a8d4a395f49.js" defer=""></script><script src="/_next/static/chunks/framework-fbe37f60a09a330b.js" defer=""></script><script src="/_next/static/chunks/main-082d90b1269d95f6.js" defer=""></script><script src="/_next/static/chunks/pages/_app-494ee9c4b0594b31.js" defer=""></script><script src="/_next/static/chunks/pages/blog/%5B...slug%5D-222bf60d0a2bf3df.js" defer=""></script><script src="/_next/static/PMB5qMppIrri5HN2Gb314/_buildManifest.js" defer=""></script><script src="/_next/static/PMB5qMppIrri5HN2Gb314/_ssgManifest.js" defer=""></script></head><body><div id="__next"><style data-emotion="css-global c86wz">body{margin:0;padding:0;color:hsl(0, 0%, 9.0%);background-color:hsl(0, 0%, 97.3%);font-family:'__pretendard_6bb8e5','__pretendard_Fallback_6bb8e5';}*{-webkit-print-color-scheme:light;color-scheme:light;box-sizing:border-box;}h1,h2,h3,h4,h5,h6{margin:0;font-weight:inherit;font-style:inherit;}a{all:unset;cursor:pointer;}ul{padding:0;}button{all:unset;cursor:pointer;}input{all:unset;box-sizing:border-box;}textarea{border:none;background-color:transparent;font-family:inherit;padding:0;outline:none;resize:none;color:inherit;}hr{width:100%;border:none;margin:0;border-top:1px solid hsl(0, 0%, 88.7%);}</style><style data-emotion="css 1q70a33">.css-1q70a33{z-index:30;position:-webkit-sticky;position:sticky;top:0;background-color:hsl(0, 0%, 97.3%);box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.05);}.css-1q70a33 .container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;height:3rem;margin:0 auto;}@media (min-width: 768px){.css-1q70a33 .container[data-full-width="true"]{padding-left:6rem;padding-right:6rem;}}.css-1q70a33 .container .nav{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;gap:0.75rem;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}.css-1q70a33 .container .mid{padding-top:0.5rem;padding-bottom:0.5rem;padding-left:1.25rem;padding-right:1.25rem;border-radius:1rem;outline-style:none;width:50%;background-color:hsl(0, 0%, 93.0%);}</style><div class="py-2 css-1q70a33"><div data-full-width="false" class="container"><a aria-label="wwqdrh" class="css-0" href="/">wwqdrh</a><input class="mid" type="text" placeholder="Search Keyword..." value=""/><div class="nav"><style data-emotion="css 1nw6zn9">.css-1nw6zn9{-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;}.css-1nw6zn9 ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;}.css-1nw6zn9 ul li{display:block;margin-left:1rem;color:hsl(0, 0%, 43.5%);}</style><div class="css-1nw6zn9"><ul><li><a target="_blank" href="https://space.bilibili.com/538676331">B站</a></li></ul></div><style data-emotion="css 1h5x3dy">.css-1h5x3dy{cursor:pointer;}</style><div class="css-1h5x3dy"><style data-emotion="css p95608">.css-p95608{font-family:'__Noto_Color_Emoji_be1378','__Noto_Color_Emoji_Fallback_be1378',Apple Color Emoji;font-weight:400;font-style:normal;}</style><span class="css-p95608">☀️</span></div></div></div></div><style data-emotion="css lomkhl">.css-lomkhl{margin:0 auto;width:100%;padding:0 3rem;}</style><main class="css-lomkhl"><div class="divide-y bg-white dark:bg-gray-700 p-6 shadow-lg rounded-lg mt-3 divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0"><div class="max-w-none pt-10 pb-8 prose dark:prose-dark"><div><h1>集群角色</h1>
+<p>gRPC 是建立在 HTTP/2 版本之上，如果 HTTP 不是 HTTP/2 协议则必然无法提供 gRPC 支持。同时，每个 gRPC 调用请求的 Content-Type 类型会被标注为 &quot;application/grpc&quot; 类型。</p>
+<p>gRPC 服务一般用于集群内部通信，如果需要对外暴露服务一般会提供等价的 REST 接口。通过 REST 接口比较方便前端 JavaScript 和后端交互。开源社区中的 grpc-gateway 项目就实现了将 gRPC 服务转为 REST 服务的能力。</p>
+<pre><code class="hljs language-bash">go install github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway@latest
+
+protoc -I/usr/local/include -I. \
+    -I$GOPATH/src \
+    -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis \
+    --grpc-gateway_out=. --go_out=plugins=grpc:.\
+    hello.proto
+</code></pre><p>通过在 Protobuf 文件中添加路由相关的元信息，通过自定义的代码插件生成路由相关的处理代码，最终将 REST 请求转给更后端的 gRPC 服务处理。</p>
+<pre><code class="hljs language-proto">syntax = <span class="hljs-string">&quot;proto3&quot;</span>;
+
+package main;
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;google/api/annotations.proto&quot;</span>;
+
+message StringMessage {
+  string value = <span class="hljs-number">1</span>;
+}
+
+service RestService {
+    <span class="hljs-function">rpc <span class="hljs-title">Get</span><span class="hljs-params">(StringMessage)</span> <span class="hljs-title">returns</span> <span class="hljs-params">(StringMessage)</span> </span>{
+        <span class="hljs-built_in">option</span> (google.api.http) = {
+            get: <span class="hljs-string">&quot;/get/{value}&quot;</span>
+        };
+    }
+    <span class="hljs-function">rpc <span class="hljs-title">Post</span><span class="hljs-params">(StringMessage)</span> <span class="hljs-title">returns</span> <span class="hljs-params">(StringMessage)</span> </span>{
+        <span class="hljs-built_in">option</span> (google.api.http) = {
+            post: <span class="hljs-string">&quot;/post&quot;</span>
+            body: <span class="hljs-string">&quot;*&quot;</span>
+        };
+    }
+}
+</code></pre><p>生成好代码后使用如下</p>
+<pre><code class="hljs language-go">func <span class="hljs-title function_">main</span>(<span class="hljs-params"></span>) {
+    ctx := context.<span class="hljs-title class_">Background</span>()
+    ctx, cancel := context.<span class="hljs-title class_">WithCancel</span>(ctx)
+    defer <span class="hljs-title function_">cancel</span>()
+
+    mux := runtime.<span class="hljs-title class_">NewServeMux</span>()
+
+    err := <span class="hljs-title class_">RegisterRestServiceHandlerFromEndpoint</span>(
+        ctx, mux, <span class="hljs-string">&quot;localhost:5000&quot;</span>,
+        []grpc.<span class="hljs-property">DialOption</span>{grpc.<span class="hljs-title class_">WithInsecure</span>()},
+    )
+    <span class="hljs-keyword">if</span> err != nil {
+        log.<span class="hljs-title class_">Fatal</span>(err)
+    }
+
+    http.<span class="hljs-title class_">ListenAndServe</span>(<span class="hljs-string">&quot;:8080&quot;</span>, mux)
+}
+</code></pre><p>另外，最新的 Nginx 对 gRPC 提供了深度支持。可以通过 Nginx 将后端多个 gRPC 服务聚合到一个 Nginx 服务。同时 Nginx 也提供了为同一种 gRPC 服务注册多个后端的功能，这样可以轻松实现 gRPC 负载均衡的支持。</p>
+<p>gRPC 构建在 HTTP/2 协议之上，因此我们可以将 gRPC 服务和普通的 Web 服务架设在同一个端口之上。</p>
+<p>因为 gRPC 服务已经实现了 ServeHTTP 方法，可以直接作为 Web 路由处理对象。如果将 gRPC 和 Web 服务放在一起，会导致 gRPC 和 Web 路径的冲突，在处理时我们需要区分两类服务。</p>
+<pre><code class="hljs language-go">func <span class="hljs-title function_">main</span>(<span class="hljs-params"></span>) {
+    ...
+
+    http.<span class="hljs-title class_">ListenAndServeTLS</span>(port, <span class="hljs-string">&quot;server.crt&quot;</span>, <span class="hljs-string">&quot;server.key&quot;</span>,
+        http.<span class="hljs-title class_">HandlerFunc</span>(<span class="hljs-title function_">func</span>(<span class="hljs-params">w http.ResponseWriter, r *http.Request</span>) {
+            <span class="hljs-keyword">if</span> r.<span class="hljs-property">ProtoMajor</span> != <span class="hljs-number">2</span> {
+                mux.<span class="hljs-title class_">ServeHTTP</span>(w, r)
+                <span class="hljs-keyword">return</span>
+            }
+            <span class="hljs-keyword">if</span> strings.<span class="hljs-title class_">Contains</span>(
+                r.<span class="hljs-property">Header</span>.<span class="hljs-title class_">Get</span>(<span class="hljs-string">&quot;Content-Type&quot;</span>), <span class="hljs-string">&quot;application/grpc&quot;</span>,
+            ) {
+                grpcServer.<span class="hljs-title class_">ServeHTTP</span>(w, r) <span class="hljs-comment">// gRPC Server</span>
+                <span class="hljs-keyword">return</span>
+            }
+
+            mux.<span class="hljs-title class_">ServeHTTP</span>(w, r)
+            <span class="hljs-keyword">return</span>
+        }),
+    )
+}
+</code></pre><p>对于没有启动 TLS 协议的服务则需要对 HTTP/2 特性做适当的调整</p>
+<pre><code class="hljs language-go">func <span class="hljs-title function_">main</span>(<span class="hljs-params"></span>) {
+    mux := http.<span class="hljs-title class_">NewServeMux</span>()
+
+    h2Handler := h2c.<span class="hljs-title class_">NewHandler</span>(mux, &amp;http2.<span class="hljs-property">Server</span>{})
+    server = &amp;http.<span class="hljs-property">Server</span>{<span class="hljs-title class_">Addr</span>: <span class="hljs-string">&quot;:3999&quot;</span>, <span class="hljs-title class_">Handler</span>: h2Handler}
+    server.<span class="hljs-title class_">ListenAndServe</span>()
+}
+
+<span class="hljs-comment">// or</span>
+func <span class="hljs-title function_">main</span>(<span class="hljs-params"></span>) {
+    mux := http.<span class="hljs-title class_">NewServeMux</span>()
+    mux.<span class="hljs-title class_">HandleFunc</span>(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-title function_">func</span>(<span class="hljs-params">w http.ResponseWriter, req *http.Request</span>) {
+        fmt.<span class="hljs-title class_">Fprintln</span>(w, <span class="hljs-string">&quot;hello&quot;</span>)
+    })
+
+    http.<span class="hljs-title class_">ListenAndServeTLS</span>(port, <span class="hljs-string">&quot;server.crt&quot;</span>, <span class="hljs-string">&quot;server.key&quot;</span>,
+        http.<span class="hljs-title class_">HandlerFunc</span>(<span class="hljs-title function_">func</span>(<span class="hljs-params">w http.ResponseWriter, r *http.Request</span>) {
+            mux.<span class="hljs-title class_">ServeHTTP</span>(w, r)
+            <span class="hljs-keyword">return</span>
+        }),
+    )
+}
+
+<span class="hljs-comment">// or 单独启用</span>
+func <span class="hljs-title function_">main</span>(<span class="hljs-params"></span>) {
+    creds, err := credentials.<span class="hljs-title class_">NewServerTLSFromFile</span>(<span class="hljs-string">&quot;server.crt&quot;</span>, <span class="hljs-string">&quot;server.key&quot;</span>)
+    <span class="hljs-keyword">if</span> err != nil {
+        log.<span class="hljs-title class_">Fatal</span>(err)
+    }
+
+    grpcServer := grpc.<span class="hljs-title class_">NewServer</span>(grpc.<span class="hljs-title class_">Creds</span>(creds))
+
+    ...
+}
+</code></pre><h1>核心功能</h1>
+<p>基于http2，因此提供了数据流功能、tls安全认证等</p>
+<p>HTTP2 是一个全双工的流式协议, 服务端也可以主动 ping 客户端, 且服务端还会有一些检测连接可用性和控制客户端 ping 包频率的配置。gRPC 就是采用 HTTP2 来作为其基础通信模式的，所以默认的 gRPC 客户端都是长连接。</p>
+<h2>数据流</h2>
+<img src="/images/blogs/grpc.png" />
+
+<pre><code class="hljs language-proto">service <span class="hljs-title class_">HelloService</span> {
+    rpc <span class="hljs-title class_">Hello</span> (<span class="hljs-title class_">String</span>) returns (<span class="hljs-title class_">String</span>);
+
+    rpc <span class="hljs-title class_">Channel</span> (stream <span class="hljs-title class_">String</span>) returns (stream <span class="hljs-title class_">String</span>);
+}
+</code></pre><p><code>stream</code>就是开启消息流的关键字，生成代码的接口类型如下</p>
+<pre><code class="hljs language-go">type name_ChannelServer interface {
+    <span class="hljs-title class_">Send</span>(*<span class="hljs-title class_">String</span>) error
+    <span class="hljs-title class_">Recv</span>() (*<span class="hljs-title class_">String</span>, error)
+    grpc.<span class="hljs-property">ServerStream</span>
+}
+</code></pre><p>用户使用时就是通过这两个方法来传输数据</p>
+<p>由于数据流的特性，使得grpc可以用来实现发布订阅模式</p>
+<h2>证书</h2>
+<p>客户端在连接服务器中通过 grpc.WithInsecure() 选项跳过了对服务器证书的验证。没有启用证书的 gRPC 服务在和客户端进行的是明文通讯，信息面临被任何第三方监听的风险。为了保障 gRPC 通信不被第三方监听篡改或伪造，我们可以对服务器启动 TLS 加密特性。</p>
+<p>自签证书, 生成<code>server.key</code>, <code>server.crt</code>, <code>client.key</code>, <code>client.crt</code>四个文件(crt结尾的是证书文件，其中存放着公钥，key结尾则是私钥文件)</p>
+<pre><code class="hljs language-bash">$ openssl genrsa -out server.<span class="hljs-property">key</span> <span class="hljs-number">2048</span>
+$ openssl req -<span class="hljs-keyword">new</span> -x509 -days <span class="hljs-number">3650</span> \
+    -subj <span class="hljs-string">&quot;/C=GB/L=China/O=grpc-server/CN=server.grpc.io&quot;</span> \
+    -key server.<span class="hljs-property">key</span> -out server.<span class="hljs-property">crt</span>
+
+$ openssl genrsa -out client.<span class="hljs-property">key</span> <span class="hljs-number">2048</span>
+$ openssl req -<span class="hljs-keyword">new</span> -x509 -days <span class="hljs-number">3650</span> \
+    -subj <span class="hljs-string">&quot;/C=GB/L=China/O=grpc-client/CN=client.grpc.io&quot;</span> \
+    -key client.<span class="hljs-property">key</span> -out client.<span class="hljs-property">crt</span>
+</code></pre><pre><code class="hljs language-go"><span class="hljs-comment">// 服务端</span>
+func <span class="hljs-title function_">main</span>(<span class="hljs-params"></span>) {
+    creds, err := credentials.<span class="hljs-title class_">NewServerTLSFromFile</span>(<span class="hljs-string">&quot;server.crt&quot;</span>, <span class="hljs-string">&quot;server.key&quot;</span>)
+    <span class="hljs-keyword">if</span> err != nil {
+        log.<span class="hljs-title class_">Fatal</span>(err)
+    }
+
+    server := grpc.<span class="hljs-title class_">NewServer</span>(grpc.<span class="hljs-title class_">Creds</span>(creds))
+    ...
+}
+
+<span class="hljs-comment">// 客户端</span>
+func <span class="hljs-title function_">main</span>(<span class="hljs-params"></span>) {
+    creds, err := credentials.<span class="hljs-title class_">NewClientTLSFromFile</span>(
+        <span class="hljs-string">&quot;server.crt&quot;</span>, <span class="hljs-string">&quot;server.grpc.io&quot;</span>,
+    )
+    <span class="hljs-keyword">if</span> err != nil {
+        log.<span class="hljs-title class_">Fatal</span>(err)
+    }
+
+    conn, err := grpc.<span class="hljs-title class_">Dial</span>(<span class="hljs-string">&quot;localhost:5000&quot;</span>,
+        grpc.<span class="hljs-title class_">WithTransportCredentials</span>(creds),
+    )
+    <span class="hljs-keyword">if</span> err != nil {
+        log.<span class="hljs-title class_">Fatal</span>(err)
+    }
+    defer conn.<span class="hljs-title class_">Close</span>()
+
+    ...
+}
+</code></pre><p>第一个参数是服务器的证书文件，第二个参数是签发证书的服务器的名字。然后通过 grpc.WithTransportCredentials(creds) 将证书对象转为参数选项传人 grpc.Dial 函数。这种方式，需要提前将服务器的证书告知客户端，这样客户端在连接服务器时才能进行对服务器证书认证。</p>
+<p>为了避免传输过程中导致证书被篡改，需要使用安全可靠的根证书分别对服务器和客户端的证书进行签名。这样客户端或服务器在收到对方的证书后可以通过根证书进行验证证书的有效性(计算签名然后和根证书上的相互匹配)。</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># 根证书生成</span>
+<span class="hljs-string">$</span> <span class="hljs-string">openssl</span> <span class="hljs-string">genrsa</span> <span class="hljs-string">-out</span> <span class="hljs-string">ca.key</span> <span class="hljs-number">2048</span>
+<span class="hljs-string">$</span> <span class="hljs-string">openssl</span> <span class="hljs-string">req</span> <span class="hljs-string">-new</span> <span class="hljs-string">-x509</span> <span class="hljs-string">-days</span> <span class="hljs-number">3650</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">-subj</span> <span class="hljs-string">&quot;/C=GB/L=China/O=gobook/CN=github.com&quot;</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">-key</span> <span class="hljs-string">ca.key</span> <span class="hljs-string">-out</span> <span class="hljs-string">ca.crt</span>
+
+<span class="hljs-comment"># 服务端证书进行签名</span>
+<span class="hljs-string">$</span> <span class="hljs-string">openssl</span> <span class="hljs-string">req</span> <span class="hljs-string">-new</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">-subj</span> <span class="hljs-string">&quot;/C=GB/L=China/O=server/CN=server.io&quot;</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">-key</span> <span class="hljs-string">server.key</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">-out</span> <span class="hljs-string">server.csr</span>
+<span class="hljs-string">$</span> <span class="hljs-string">openssl</span> <span class="hljs-string">x509</span> <span class="hljs-string">-req</span> <span class="hljs-string">-sha256</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">-CA</span> <span class="hljs-string">ca.crt</span> <span class="hljs-string">-CAkey</span> <span class="hljs-string">ca.key</span> <span class="hljs-string">-CAcreateserial</span> <span class="hljs-string">-days</span> <span class="hljs-number">3650</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">-in</span> <span class="hljs-string">server.csr</span> <span class="hljs-string">\</span>
+    <span class="hljs-string">-out</span> <span class="hljs-string">server.crt</span>
+</code></pre><p>签名的过程中引入了一个新的以. csr 为后缀名的文件，它表示证书签名请求文件。在证书签名完成之后可以删除. csr 文件。</p>
+<p>这样客户端就可以不再依赖服务器端证书文件，客户端通过引入一个 CA 根证书和服务器的名字来实现对服务器进行验证。客户端在连接服务器时会首先请求服务器的证书，然后使用 CA 根证书对收到的服务器端证书进行验证。</p>
+<blockquote>
+<p>双向认证同理</p>
+</blockquote>
+<pre><code class="hljs language-go">func <span class="hljs-title function_">main</span>(<span class="hljs-params"></span>) {
+    certificate, err := tls.<span class="hljs-title class_">LoadX509KeyPair</span>(<span class="hljs-string">&quot;server.crt&quot;</span>, <span class="hljs-string">&quot;server.key&quot;</span>)
+    <span class="hljs-keyword">if</span> err != nil {
+        log.<span class="hljs-title class_">Fatal</span>(err)
+    }
+
+    certPool := x509.<span class="hljs-title class_">NewCertPool</span>()
+    ca, err := ioutil.<span class="hljs-title class_">ReadFile</span>(<span class="hljs-string">&quot;ca.crt&quot;</span>)
+    <span class="hljs-keyword">if</span> err != nil {
+        log.<span class="hljs-title class_">Fatal</span>(err)
+    }
+    <span class="hljs-keyword">if</span> ok := certPool.<span class="hljs-title class_">AppendCertsFromPEM</span>(ca); !ok {
+        log.<span class="hljs-title class_">Fatal</span>(<span class="hljs-string">&quot;failed to append certs&quot;</span>)
+    }
+
+    creds := credentials.<span class="hljs-title class_">NewTLS</span>(&amp;tls.<span class="hljs-property">Config</span>{
+        <span class="hljs-title class_">Certificates</span>: []tls.<span class="hljs-property">Certificate</span>{certificate},
+        <span class="hljs-title class_">ClientAuth</span>:   tls.<span class="hljs-property">RequireAndVerifyClientCert</span>, <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> this is optional!</span>
+        <span class="hljs-title class_">ClientCAs</span>:    certPool,
+    })
+
+    server := grpc.<span class="hljs-title class_">NewServer</span>(grpc.<span class="hljs-title class_">Creds</span>(creds))
+    ...
+}
+</code></pre><h2>服务token</h2>
+<p>用于具体服务方法的认证</p>
+<p>示例</p>
+<pre><code class="hljs language-go"><span class="hljs-built_in">type</span> Authentication struct {
+    User     string
+    Password string
+}
+
+func (a *Authentication) GetRequestMetadata(context.Context, ...string) (
+    <span class="hljs-built_in">map</span>[string]string, error,
+) {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">map</span>[string]string{<span class="hljs-string">&quot;user&quot;</span>:a.User, <span class="hljs-string">&quot;password&quot;</span>: a.Password}, nil
+}
+func (a *Authentication) RequireTransportSecurity() <span class="hljs-built_in">bool</span> {
+    <span class="hljs-keyword">return</span> false
+}
+
+
+func main() {
+    auth := Authentication{
+        User:    <span class="hljs-string">&quot;gopher&quot;</span>,
+        Password: <span class="hljs-string">&quot;password&quot;</span>,
+    }
+
+    conn, err := grpc.Dial(<span class="hljs-string">&quot;localhost&quot;</span>+port, grpc.WithInsecure(), grpc.WithPerRPCCredentials(&amp;auth))
+    <span class="hljs-keyword">if</span> err != nil {
+        log.Fatal(err)
+    }
+    defer conn.Close()
+
+    ...
+}
+</code></pre><p>然后在每个方法中使用</p>
+<pre><code class="hljs language-go">type grpcServer struct {auth *<span class="hljs-title class_">Authentication</span>}
+
+func (p *grpcServer) <span class="hljs-title class_">SomeMethod</span>(
+    ctx context.<span class="hljs-property">Context</span>, <span class="hljs-keyword">in</span> *<span class="hljs-title class_">HelloRequest</span>,
+) (*<span class="hljs-title class_">HelloReply</span>, error) {
+    <span class="hljs-keyword">if</span> err := p.<span class="hljs-property">auth</span>.<span class="hljs-title class_">Auth</span>(ctx); err != nil {
+        <span class="hljs-keyword">return</span> nil, err
+    }
+
+    <span class="hljs-keyword">return</span> &amp;<span class="hljs-title class_">HelloReply</span>{<span class="hljs-title class_">Message</span>: <span class="hljs-string">&quot;Hello&quot;</span> + <span class="hljs-keyword">in</span>.<span class="hljs-property">Name</span>}, nil
+}
+
+func (a *<span class="hljs-title class_">Authentication</span>) <span class="hljs-title class_">Auth</span>(ctx context.<span class="hljs-property">Context</span>) error {
+    md, ok := metadata.<span class="hljs-title class_">FromIncomingContext</span>(ctx)
+    <span class="hljs-keyword">if</span> !ok {
+        <span class="hljs-keyword">return</span> fmt.<span class="hljs-title class_">Errorf</span>(<span class="hljs-string">&quot;missing credentials&quot;</span>)
+    }
+
+    <span class="hljs-keyword">var</span> appid string
+    <span class="hljs-keyword">var</span> appkey string
+
+    <span class="hljs-keyword">if</span> val, ok := md[<span class="hljs-string">&quot;user&quot;</span>]; ok { appid = val[<span class="hljs-number">0</span>] }
+    <span class="hljs-keyword">if</span> val, ok := md[<span class="hljs-string">&quot;password&quot;</span>]; ok { appkey = val[<span class="hljs-number">0</span>] }
+
+    <span class="hljs-keyword">if</span> appid != a.<span class="hljs-property">User</span> || appkey != a.<span class="hljs-property">Password</span> {
+        <span class="hljs-keyword">return</span> grpc.<span class="hljs-title class_">Errorf</span>(codes.<span class="hljs-property">Unauthenticated</span>, <span class="hljs-string">&quot;invalid token&quot;</span>)
+    }
+
+    <span class="hljs-keyword">return</span> nil
+}
+</code></pre><h1>长连接</h1>
+<p>需要客户端和服务端保持持久的长连接，即无论服务端、客户端异常断开或重启，长连接都要具备重试保活（当然前提是两方重启都成功）的需求。</p>
+<p>在 gRPC 中，默认情况下对于已经建立的长连接，服务端异常重启之后，客户端一般会收到如下错误：</p>
+<blockquote>
+<p>rpc error: code = Unavailable desc = transport is closing</p>
+</blockquote>
+<p>主要处理方法是</p>
+<ul>
+<li>重试：在客户端调用失败时，选择以指数退避（Exponential Backoff ）来优雅进行重试</li>
+<li>增加 keepalive 的保活策略</li>
+<li>增加重连（auto reconnect）策略</li>
+</ul>
+<blockquote>
+<p><a href="https://github.com/grpc/grpc-go/blob/master/examples/features/keepalive/server/main.go">服务端示例</a>
+<a href="https://github.com/grpc/grpc-go/blob/master/examples/features/keepalive/client/main.go">客户端示例</a></p>
+</blockquote>
+<p>HTTP2 使用 GOAWAY 帧信号来控制连接关闭，GOAWAY 用于启动连接关闭或发出严重错误状态信号。
+GOAWAY 语义为允许端点正常停止接受新的流，同时仍然完成对先前建立的流的处理，当 client 收到这个包之后就会主动关闭连接。下次需要发送数据时，就会重新建立连接。GOAWAY 是实现 grpc.gracefulStop 机制的重要保证。</p>
+<p><code>gRPC 客户端提供 keepalive 配置</code></p>
+<ul>
+<li>Time：如果没有 activity， 则每隔 10s 发送一个 ping 包</li>
+<li>Timeout： 如果 ping ack 1s 之内未返回则认为连接已断开</li>
+<li>PermitWithoutStream：如果没有 active 的 stream， 是否允许发送 ping</li>
+</ul>
+<p><code>gRPC 服务端提供 keepalive 配置</code></p>
+<ul>
+<li>keepalive.EnforcementPolicy：<ul>
+<li>MinTime：如果客户端两次 ping 的间隔小于 5s，则关闭连接</li>
+<li>PermitWithoutStream： 即使没有 active stream, 也允许 ping</li>
+</ul>
+</li>
+<li>keepalive.ServerParameters：<ul>
+<li>MaxConnectionIdle：如果一个 client 空闲超过 15s, 发送一个 GOAWAY, 为了防止同一时间发送大量 GOAWAY, 会在 15s 时间间隔上下浮动 15*10%, 即 15+1.5 或者 15-1.5</li>
+<li>MaxConnectionAge：如果任意连接存活时间超过 30s, 发送一个 GOAWAY</li>
+<li>MaxConnectionAgeGrace：在强制关闭连接之间, 允许有 5s 的时间完成 pending 的 rpc 请求</li>
+<li>Time： 如果一个 client 空闲超过 5s, 则发送一个 ping 请求</li>
+<li>Timeout： 如果 ping 请求 1s 内未收到回复, 则认为该连接已断开</li>
+</ul>
+</li>
+</ul>
+<p>服务端处理客户端的 ping 包的 response 的逻辑在 handlePing 方法 中。
+handlePing 方法会判断是否违反两条 policy, 如果违反则将 pingStrikes++, 当违反次数大于 maxPingStrikes(2) 时, 打印一条错误日志并且发送一个 goAway 包，断开这个连接</p>
+</div></div></div></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"mdxSource":"\u003ch1\u003e集群角色\u003c/h1\u003e\n\u003cp\u003egRPC 是建立在 HTTP/2 版本之上，如果 HTTP 不是 HTTP/2 协议则必然无法提供 gRPC 支持。同时，每个 gRPC 调用请求的 Content-Type 类型会被标注为 \u0026quot;application/grpc\u0026quot; 类型。\u003c/p\u003e\n\u003cp\u003egRPC 服务一般用于集群内部通信，如果需要对外暴露服务一般会提供等价的 REST 接口。通过 REST 接口比较方便前端 JavaScript 和后端交互。开源社区中的 grpc-gateway 项目就实现了将 gRPC 服务转为 REST 服务的能力。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003ego install github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway@latest\n\nprotoc -I/usr/local/include -I. \\\n    -I$GOPATH/src \\\n    -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis \\\n    --grpc-gateway_out=. --go_out=plugins=grpc:.\\\n    hello.proto\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e通过在 Protobuf 文件中添加路由相关的元信息，通过自定义的代码插件生成路由相关的处理代码，最终将 REST 请求转给更后端的 gRPC 服务处理。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-proto\"\u003esyntax = \u003cspan class=\"hljs-string\"\u003e\u0026quot;proto3\u0026quot;\u003c/span\u003e;\n\npackage main;\n\n\u003cspan class=\"hljs-keyword\"\u003eimport\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;google/api/annotations.proto\u0026quot;\u003c/span\u003e;\n\nmessage StringMessage {\n  string value = \u003cspan class=\"hljs-number\"\u003e1\u003c/span\u003e;\n}\n\nservice RestService {\n    \u003cspan class=\"hljs-function\"\u003erpc \u003cspan class=\"hljs-title\"\u003eGet\u003c/span\u003e\u003cspan class=\"hljs-params\"\u003e(StringMessage)\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003ereturns\u003c/span\u003e \u003cspan class=\"hljs-params\"\u003e(StringMessage)\u003c/span\u003e \u003c/span\u003e{\n        \u003cspan class=\"hljs-built_in\"\u003eoption\u003c/span\u003e (google.api.http) = {\n            get: \u003cspan class=\"hljs-string\"\u003e\u0026quot;/get/{value}\u0026quot;\u003c/span\u003e\n        };\n    }\n    \u003cspan class=\"hljs-function\"\u003erpc \u003cspan class=\"hljs-title\"\u003ePost\u003c/span\u003e\u003cspan class=\"hljs-params\"\u003e(StringMessage)\u003c/span\u003e \u003cspan class=\"hljs-title\"\u003ereturns\u003c/span\u003e \u003cspan class=\"hljs-params\"\u003e(StringMessage)\u003c/span\u003e \u003c/span\u003e{\n        \u003cspan class=\"hljs-built_in\"\u003eoption\u003c/span\u003e (google.api.http) = {\n            post: \u003cspan class=\"hljs-string\"\u003e\u0026quot;/post\u0026quot;\u003c/span\u003e\n            body: \u003cspan class=\"hljs-string\"\u003e\u0026quot;*\u0026quot;\u003c/span\u003e\n        };\n    }\n}\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e生成好代码后使用如下\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-go\"\u003efunc \u003cspan class=\"hljs-title function_\"\u003emain\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003e\u003c/span\u003e) {\n    ctx := context.\u003cspan class=\"hljs-title class_\"\u003eBackground\u003c/span\u003e()\n    ctx, cancel := context.\u003cspan class=\"hljs-title class_\"\u003eWithCancel\u003c/span\u003e(ctx)\n    defer \u003cspan class=\"hljs-title function_\"\u003ecancel\u003c/span\u003e()\n\n    mux := runtime.\u003cspan class=\"hljs-title class_\"\u003eNewServeMux\u003c/span\u003e()\n\n    err := \u003cspan class=\"hljs-title class_\"\u003eRegisterRestServiceHandlerFromEndpoint\u003c/span\u003e(\n        ctx, mux, \u003cspan class=\"hljs-string\"\u003e\u0026quot;localhost:5000\u0026quot;\u003c/span\u003e,\n        []grpc.\u003cspan class=\"hljs-property\"\u003eDialOption\u003c/span\u003e{grpc.\u003cspan class=\"hljs-title class_\"\u003eWithInsecure\u003c/span\u003e()},\n    )\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e err != nil {\n        log.\u003cspan class=\"hljs-title class_\"\u003eFatal\u003c/span\u003e(err)\n    }\n\n    http.\u003cspan class=\"hljs-title class_\"\u003eListenAndServe\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\u0026quot;:8080\u0026quot;\u003c/span\u003e, mux)\n}\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e另外，最新的 Nginx 对 gRPC 提供了深度支持。可以通过 Nginx 将后端多个 gRPC 服务聚合到一个 Nginx 服务。同时 Nginx 也提供了为同一种 gRPC 服务注册多个后端的功能，这样可以轻松实现 gRPC 负载均衡的支持。\u003c/p\u003e\n\u003cp\u003egRPC 构建在 HTTP/2 协议之上，因此我们可以将 gRPC 服务和普通的 Web 服务架设在同一个端口之上。\u003c/p\u003e\n\u003cp\u003e因为 gRPC 服务已经实现了 ServeHTTP 方法，可以直接作为 Web 路由处理对象。如果将 gRPC 和 Web 服务放在一起，会导致 gRPC 和 Web 路径的冲突，在处理时我们需要区分两类服务。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-go\"\u003efunc \u003cspan class=\"hljs-title function_\"\u003emain\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003e\u003c/span\u003e) {\n    ...\n\n    http.\u003cspan class=\"hljs-title class_\"\u003eListenAndServeTLS\u003c/span\u003e(port, \u003cspan class=\"hljs-string\"\u003e\u0026quot;server.crt\u0026quot;\u003c/span\u003e, \u003cspan class=\"hljs-string\"\u003e\u0026quot;server.key\u0026quot;\u003c/span\u003e,\n        http.\u003cspan class=\"hljs-title class_\"\u003eHandlerFunc\u003c/span\u003e(\u003cspan class=\"hljs-title function_\"\u003efunc\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003ew http.ResponseWriter, r *http.Request\u003c/span\u003e) {\n            \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e r.\u003cspan class=\"hljs-property\"\u003eProtoMajor\u003c/span\u003e != \u003cspan class=\"hljs-number\"\u003e2\u003c/span\u003e {\n                mux.\u003cspan class=\"hljs-title class_\"\u003eServeHTTP\u003c/span\u003e(w, r)\n                \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e\n            }\n            \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e strings.\u003cspan class=\"hljs-title class_\"\u003eContains\u003c/span\u003e(\n                r.\u003cspan class=\"hljs-property\"\u003eHeader\u003c/span\u003e.\u003cspan class=\"hljs-title class_\"\u003eGet\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\u0026quot;Content-Type\u0026quot;\u003c/span\u003e), \u003cspan class=\"hljs-string\"\u003e\u0026quot;application/grpc\u0026quot;\u003c/span\u003e,\n            ) {\n                grpcServer.\u003cspan class=\"hljs-title class_\"\u003eServeHTTP\u003c/span\u003e(w, r) \u003cspan class=\"hljs-comment\"\u003e// gRPC Server\u003c/span\u003e\n                \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e\n            }\n\n            mux.\u003cspan class=\"hljs-title class_\"\u003eServeHTTP\u003c/span\u003e(w, r)\n            \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e\n        }),\n    )\n}\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e对于没有启动 TLS 协议的服务则需要对 HTTP/2 特性做适当的调整\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-go\"\u003efunc \u003cspan class=\"hljs-title function_\"\u003emain\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003e\u003c/span\u003e) {\n    mux := http.\u003cspan class=\"hljs-title class_\"\u003eNewServeMux\u003c/span\u003e()\n\n    h2Handler := h2c.\u003cspan class=\"hljs-title class_\"\u003eNewHandler\u003c/span\u003e(mux, \u0026amp;http2.\u003cspan class=\"hljs-property\"\u003eServer\u003c/span\u003e{})\n    server = \u0026amp;http.\u003cspan class=\"hljs-property\"\u003eServer\u003c/span\u003e{\u003cspan class=\"hljs-title class_\"\u003eAddr\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\u0026quot;:3999\u0026quot;\u003c/span\u003e, \u003cspan class=\"hljs-title class_\"\u003eHandler\u003c/span\u003e: h2Handler}\n    server.\u003cspan class=\"hljs-title class_\"\u003eListenAndServe\u003c/span\u003e()\n}\n\n\u003cspan class=\"hljs-comment\"\u003e// or\u003c/span\u003e\nfunc \u003cspan class=\"hljs-title function_\"\u003emain\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003e\u003c/span\u003e) {\n    mux := http.\u003cspan class=\"hljs-title class_\"\u003eNewServeMux\u003c/span\u003e()\n    mux.\u003cspan class=\"hljs-title class_\"\u003eHandleFunc\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\u0026quot;/\u0026quot;\u003c/span\u003e, \u003cspan class=\"hljs-title function_\"\u003efunc\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003ew http.ResponseWriter, req *http.Request\u003c/span\u003e) {\n        fmt.\u003cspan class=\"hljs-title class_\"\u003eFprintln\u003c/span\u003e(w, \u003cspan class=\"hljs-string\"\u003e\u0026quot;hello\u0026quot;\u003c/span\u003e)\n    })\n\n    http.\u003cspan class=\"hljs-title class_\"\u003eListenAndServeTLS\u003c/span\u003e(port, \u003cspan class=\"hljs-string\"\u003e\u0026quot;server.crt\u0026quot;\u003c/span\u003e, \u003cspan class=\"hljs-string\"\u003e\u0026quot;server.key\u0026quot;\u003c/span\u003e,\n        http.\u003cspan class=\"hljs-title class_\"\u003eHandlerFunc\u003c/span\u003e(\u003cspan class=\"hljs-title function_\"\u003efunc\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003ew http.ResponseWriter, r *http.Request\u003c/span\u003e) {\n            mux.\u003cspan class=\"hljs-title class_\"\u003eServeHTTP\u003c/span\u003e(w, r)\n            \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e\n        }),\n    )\n}\n\n\u003cspan class=\"hljs-comment\"\u003e// or 单独启用\u003c/span\u003e\nfunc \u003cspan class=\"hljs-title function_\"\u003emain\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003e\u003c/span\u003e) {\n    creds, err := credentials.\u003cspan class=\"hljs-title class_\"\u003eNewServerTLSFromFile\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\u0026quot;server.crt\u0026quot;\u003c/span\u003e, \u003cspan class=\"hljs-string\"\u003e\u0026quot;server.key\u0026quot;\u003c/span\u003e)\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e err != nil {\n        log.\u003cspan class=\"hljs-title class_\"\u003eFatal\u003c/span\u003e(err)\n    }\n\n    grpcServer := grpc.\u003cspan class=\"hljs-title class_\"\u003eNewServer\u003c/span\u003e(grpc.\u003cspan class=\"hljs-title class_\"\u003eCreds\u003c/span\u003e(creds))\n\n    ...\n}\n\u003c/code\u003e\u003c/pre\u003e\u003ch1\u003e核心功能\u003c/h1\u003e\n\u003cp\u003e基于http2，因此提供了数据流功能、tls安全认证等\u003c/p\u003e\n\u003cp\u003eHTTP2 是一个全双工的流式协议, 服务端也可以主动 ping 客户端, 且服务端还会有一些检测连接可用性和控制客户端 ping 包频率的配置。gRPC 就是采用 HTTP2 来作为其基础通信模式的，所以默认的 gRPC 客户端都是长连接。\u003c/p\u003e\n\u003ch2\u003e数据流\u003c/h2\u003e\n\u003cimg src=\"/images/blogs/grpc.png\" /\u003e\n\n\u003cpre\u003e\u003ccode class=\"hljs language-proto\"\u003eservice \u003cspan class=\"hljs-title class_\"\u003eHelloService\u003c/span\u003e {\n    rpc \u003cspan class=\"hljs-title class_\"\u003eHello\u003c/span\u003e (\u003cspan class=\"hljs-title class_\"\u003eString\u003c/span\u003e) returns (\u003cspan class=\"hljs-title class_\"\u003eString\u003c/span\u003e);\n\n    rpc \u003cspan class=\"hljs-title class_\"\u003eChannel\u003c/span\u003e (stream \u003cspan class=\"hljs-title class_\"\u003eString\u003c/span\u003e) returns (stream \u003cspan class=\"hljs-title class_\"\u003eString\u003c/span\u003e);\n}\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e\u003ccode\u003estream\u003c/code\u003e就是开启消息流的关键字，生成代码的接口类型如下\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-go\"\u003etype name_ChannelServer interface {\n    \u003cspan class=\"hljs-title class_\"\u003eSend\u003c/span\u003e(*\u003cspan class=\"hljs-title class_\"\u003eString\u003c/span\u003e) error\n    \u003cspan class=\"hljs-title class_\"\u003eRecv\u003c/span\u003e() (*\u003cspan class=\"hljs-title class_\"\u003eString\u003c/span\u003e, error)\n    grpc.\u003cspan class=\"hljs-property\"\u003eServerStream\u003c/span\u003e\n}\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e用户使用时就是通过这两个方法来传输数据\u003c/p\u003e\n\u003cp\u003e由于数据流的特性，使得grpc可以用来实现发布订阅模式\u003c/p\u003e\n\u003ch2\u003e证书\u003c/h2\u003e\n\u003cp\u003e客户端在连接服务器中通过 grpc.WithInsecure() 选项跳过了对服务器证书的验证。没有启用证书的 gRPC 服务在和客户端进行的是明文通讯，信息面临被任何第三方监听的风险。为了保障 gRPC 通信不被第三方监听篡改或伪造，我们可以对服务器启动 TLS 加密特性。\u003c/p\u003e\n\u003cp\u003e自签证书, 生成\u003ccode\u003eserver.key\u003c/code\u003e, \u003ccode\u003eserver.crt\u003c/code\u003e, \u003ccode\u003eclient.key\u003c/code\u003e, \u003ccode\u003eclient.crt\u003c/code\u003e四个文件(crt结尾的是证书文件，其中存放着公钥，key结尾则是私钥文件)\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003e$ openssl genrsa -out server.\u003cspan class=\"hljs-property\"\u003ekey\u003c/span\u003e \u003cspan class=\"hljs-number\"\u003e2048\u003c/span\u003e\n$ openssl req -\u003cspan class=\"hljs-keyword\"\u003enew\u003c/span\u003e -x509 -days \u003cspan class=\"hljs-number\"\u003e3650\u003c/span\u003e \\\n    -subj \u003cspan class=\"hljs-string\"\u003e\u0026quot;/C=GB/L=China/O=grpc-server/CN=server.grpc.io\u0026quot;\u003c/span\u003e \\\n    -key server.\u003cspan class=\"hljs-property\"\u003ekey\u003c/span\u003e -out server.\u003cspan class=\"hljs-property\"\u003ecrt\u003c/span\u003e\n\n$ openssl genrsa -out client.\u003cspan class=\"hljs-property\"\u003ekey\u003c/span\u003e \u003cspan class=\"hljs-number\"\u003e2048\u003c/span\u003e\n$ openssl req -\u003cspan class=\"hljs-keyword\"\u003enew\u003c/span\u003e -x509 -days \u003cspan class=\"hljs-number\"\u003e3650\u003c/span\u003e \\\n    -subj \u003cspan class=\"hljs-string\"\u003e\u0026quot;/C=GB/L=China/O=grpc-client/CN=client.grpc.io\u0026quot;\u003c/span\u003e \\\n    -key client.\u003cspan class=\"hljs-property\"\u003ekey\u003c/span\u003e -out client.\u003cspan class=\"hljs-property\"\u003ecrt\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\u003cpre\u003e\u003ccode class=\"hljs language-go\"\u003e\u003cspan class=\"hljs-comment\"\u003e// 服务端\u003c/span\u003e\nfunc \u003cspan class=\"hljs-title function_\"\u003emain\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003e\u003c/span\u003e) {\n    creds, err := credentials.\u003cspan class=\"hljs-title class_\"\u003eNewServerTLSFromFile\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\u0026quot;server.crt\u0026quot;\u003c/span\u003e, \u003cspan class=\"hljs-string\"\u003e\u0026quot;server.key\u0026quot;\u003c/span\u003e)\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e err != nil {\n        log.\u003cspan class=\"hljs-title class_\"\u003eFatal\u003c/span\u003e(err)\n    }\n\n    server := grpc.\u003cspan class=\"hljs-title class_\"\u003eNewServer\u003c/span\u003e(grpc.\u003cspan class=\"hljs-title class_\"\u003eCreds\u003c/span\u003e(creds))\n    ...\n}\n\n\u003cspan class=\"hljs-comment\"\u003e// 客户端\u003c/span\u003e\nfunc \u003cspan class=\"hljs-title function_\"\u003emain\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003e\u003c/span\u003e) {\n    creds, err := credentials.\u003cspan class=\"hljs-title class_\"\u003eNewClientTLSFromFile\u003c/span\u003e(\n        \u003cspan class=\"hljs-string\"\u003e\u0026quot;server.crt\u0026quot;\u003c/span\u003e, \u003cspan class=\"hljs-string\"\u003e\u0026quot;server.grpc.io\u0026quot;\u003c/span\u003e,\n    )\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e err != nil {\n        log.\u003cspan class=\"hljs-title class_\"\u003eFatal\u003c/span\u003e(err)\n    }\n\n    conn, err := grpc.\u003cspan class=\"hljs-title class_\"\u003eDial\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\u0026quot;localhost:5000\u0026quot;\u003c/span\u003e,\n        grpc.\u003cspan class=\"hljs-title class_\"\u003eWithTransportCredentials\u003c/span\u003e(creds),\n    )\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e err != nil {\n        log.\u003cspan class=\"hljs-title class_\"\u003eFatal\u003c/span\u003e(err)\n    }\n    defer conn.\u003cspan class=\"hljs-title class_\"\u003eClose\u003c/span\u003e()\n\n    ...\n}\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e第一个参数是服务器的证书文件，第二个参数是签发证书的服务器的名字。然后通过 grpc.WithTransportCredentials(creds) 将证书对象转为参数选项传人 grpc.Dial 函数。这种方式，需要提前将服务器的证书告知客户端，这样客户端在连接服务器时才能进行对服务器证书认证。\u003c/p\u003e\n\u003cp\u003e为了避免传输过程中导致证书被篡改，需要使用安全可靠的根证书分别对服务器和客户端的证书进行签名。这样客户端或服务器在收到对方的证书后可以通过根证书进行验证证书的有效性(计算签名然后和根证书上的相互匹配)。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003e\u003cspan class=\"hljs-comment\"\u003e# 根证书生成\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003e$\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eopenssl\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003egenrsa\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-out\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eca.key\u003c/span\u003e \u003cspan class=\"hljs-number\"\u003e2048\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003e$\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eopenssl\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ereq\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-new\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-x509\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-days\u003c/span\u003e \u003cspan class=\"hljs-number\"\u003e3650\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\\\u003c/span\u003e\n    \u003cspan class=\"hljs-string\"\u003e-subj\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;/C=GB/L=China/O=gobook/CN=github.com\u0026quot;\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\\\u003c/span\u003e\n    \u003cspan class=\"hljs-string\"\u003e-key\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eca.key\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-out\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eca.crt\u003c/span\u003e\n\n\u003cspan class=\"hljs-comment\"\u003e# 服务端证书进行签名\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003e$\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eopenssl\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ereq\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-new\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\\\u003c/span\u003e\n    \u003cspan class=\"hljs-string\"\u003e-subj\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;/C=GB/L=China/O=server/CN=server.io\u0026quot;\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\\\u003c/span\u003e\n    \u003cspan class=\"hljs-string\"\u003e-key\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eserver.key\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\\\u003c/span\u003e\n    \u003cspan class=\"hljs-string\"\u003e-out\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eserver.csr\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003e$\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eopenssl\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ex509\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-req\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-sha256\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\\\u003c/span\u003e\n    \u003cspan class=\"hljs-string\"\u003e-CA\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eca.crt\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-CAkey\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eca.key\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-CAcreateserial\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-days\u003c/span\u003e \u003cspan class=\"hljs-number\"\u003e3650\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\\\u003c/span\u003e\n    \u003cspan class=\"hljs-string\"\u003e-in\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eserver.csr\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\\\u003c/span\u003e\n    \u003cspan class=\"hljs-string\"\u003e-out\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eserver.crt\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e签名的过程中引入了一个新的以. csr 为后缀名的文件，它表示证书签名请求文件。在证书签名完成之后可以删除. csr 文件。\u003c/p\u003e\n\u003cp\u003e这样客户端就可以不再依赖服务器端证书文件，客户端通过引入一个 CA 根证书和服务器的名字来实现对服务器进行验证。客户端在连接服务器时会首先请求服务器的证书，然后使用 CA 根证书对收到的服务器端证书进行验证。\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e双向认证同理\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-go\"\u003efunc \u003cspan class=\"hljs-title function_\"\u003emain\u003c/span\u003e(\u003cspan class=\"hljs-params\"\u003e\u003c/span\u003e) {\n    certificate, err := tls.\u003cspan class=\"hljs-title class_\"\u003eLoadX509KeyPair\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\u0026quot;server.crt\u0026quot;\u003c/span\u003e, \u003cspan class=\"hljs-string\"\u003e\u0026quot;server.key\u0026quot;\u003c/span\u003e)\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e err != nil {\n        log.\u003cspan class=\"hljs-title class_\"\u003eFatal\u003c/span\u003e(err)\n    }\n\n    certPool := x509.\u003cspan class=\"hljs-title class_\"\u003eNewCertPool\u003c/span\u003e()\n    ca, err := ioutil.\u003cspan class=\"hljs-title class_\"\u003eReadFile\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\u0026quot;ca.crt\u0026quot;\u003c/span\u003e)\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e err != nil {\n        log.\u003cspan class=\"hljs-title class_\"\u003eFatal\u003c/span\u003e(err)\n    }\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e ok := certPool.\u003cspan class=\"hljs-title class_\"\u003eAppendCertsFromPEM\u003c/span\u003e(ca); !ok {\n        log.\u003cspan class=\"hljs-title class_\"\u003eFatal\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\u0026quot;failed to append certs\u0026quot;\u003c/span\u003e)\n    }\n\n    creds := credentials.\u003cspan class=\"hljs-title class_\"\u003eNewTLS\u003c/span\u003e(\u0026amp;tls.\u003cspan class=\"hljs-property\"\u003eConfig\u003c/span\u003e{\n        \u003cspan class=\"hljs-title class_\"\u003eCertificates\u003c/span\u003e: []tls.\u003cspan class=\"hljs-property\"\u003eCertificate\u003c/span\u003e{certificate},\n        \u003cspan class=\"hljs-title class_\"\u003eClientAuth\u003c/span\u003e:   tls.\u003cspan class=\"hljs-property\"\u003eRequireAndVerifyClientCert\u003c/span\u003e, \u003cspan class=\"hljs-comment\"\u003e// \u003cspan class=\"hljs-doctag\"\u003eNOTE:\u003c/span\u003e this is optional!\u003c/span\u003e\n        \u003cspan class=\"hljs-title class_\"\u003eClientCAs\u003c/span\u003e:    certPool,\n    })\n\n    server := grpc.\u003cspan class=\"hljs-title class_\"\u003eNewServer\u003c/span\u003e(grpc.\u003cspan class=\"hljs-title class_\"\u003eCreds\u003c/span\u003e(creds))\n    ...\n}\n\u003c/code\u003e\u003c/pre\u003e\u003ch2\u003e服务token\u003c/h2\u003e\n\u003cp\u003e用于具体服务方法的认证\u003c/p\u003e\n\u003cp\u003e示例\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-go\"\u003e\u003cspan class=\"hljs-built_in\"\u003etype\u003c/span\u003e Authentication struct {\n    User     string\n    Password string\n}\n\nfunc (a *Authentication) GetRequestMetadata(context.Context, ...string) (\n    \u003cspan class=\"hljs-built_in\"\u003emap\u003c/span\u003e[string]string, error,\n) {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e \u003cspan class=\"hljs-built_in\"\u003emap\u003c/span\u003e[string]string{\u003cspan class=\"hljs-string\"\u003e\u0026quot;user\u0026quot;\u003c/span\u003e:a.User, \u003cspan class=\"hljs-string\"\u003e\u0026quot;password\u0026quot;\u003c/span\u003e: a.Password}, nil\n}\nfunc (a *Authentication) RequireTransportSecurity() \u003cspan class=\"hljs-built_in\"\u003ebool\u003c/span\u003e {\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e false\n}\n\n\nfunc main() {\n    auth := Authentication{\n        User:    \u003cspan class=\"hljs-string\"\u003e\u0026quot;gopher\u0026quot;\u003c/span\u003e,\n        Password: \u003cspan class=\"hljs-string\"\u003e\u0026quot;password\u0026quot;\u003c/span\u003e,\n    }\n\n    conn, err := grpc.Dial(\u003cspan class=\"hljs-string\"\u003e\u0026quot;localhost\u0026quot;\u003c/span\u003e+port, grpc.WithInsecure(), grpc.WithPerRPCCredentials(\u0026amp;auth))\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e err != nil {\n        log.Fatal(err)\n    }\n    defer conn.Close()\n\n    ...\n}\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e然后在每个方法中使用\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-go\"\u003etype grpcServer struct {auth *\u003cspan class=\"hljs-title class_\"\u003eAuthentication\u003c/span\u003e}\n\nfunc (p *grpcServer) \u003cspan class=\"hljs-title class_\"\u003eSomeMethod\u003c/span\u003e(\n    ctx context.\u003cspan class=\"hljs-property\"\u003eContext\u003c/span\u003e, \u003cspan class=\"hljs-keyword\"\u003ein\u003c/span\u003e *\u003cspan class=\"hljs-title class_\"\u003eHelloRequest\u003c/span\u003e,\n) (*\u003cspan class=\"hljs-title class_\"\u003eHelloReply\u003c/span\u003e, error) {\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e err := p.\u003cspan class=\"hljs-property\"\u003eauth\u003c/span\u003e.\u003cspan class=\"hljs-title class_\"\u003eAuth\u003c/span\u003e(ctx); err != nil {\n        \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e nil, err\n    }\n\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e \u0026amp;\u003cspan class=\"hljs-title class_\"\u003eHelloReply\u003c/span\u003e{\u003cspan class=\"hljs-title class_\"\u003eMessage\u003c/span\u003e: \u003cspan class=\"hljs-string\"\u003e\u0026quot;Hello\u0026quot;\u003c/span\u003e + \u003cspan class=\"hljs-keyword\"\u003ein\u003c/span\u003e.\u003cspan class=\"hljs-property\"\u003eName\u003c/span\u003e}, nil\n}\n\nfunc (a *\u003cspan class=\"hljs-title class_\"\u003eAuthentication\u003c/span\u003e) \u003cspan class=\"hljs-title class_\"\u003eAuth\u003c/span\u003e(ctx context.\u003cspan class=\"hljs-property\"\u003eContext\u003c/span\u003e) error {\n    md, ok := metadata.\u003cspan class=\"hljs-title class_\"\u003eFromIncomingContext\u003c/span\u003e(ctx)\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e !ok {\n        \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e fmt.\u003cspan class=\"hljs-title class_\"\u003eErrorf\u003c/span\u003e(\u003cspan class=\"hljs-string\"\u003e\u0026quot;missing credentials\u0026quot;\u003c/span\u003e)\n    }\n\n    \u003cspan class=\"hljs-keyword\"\u003evar\u003c/span\u003e appid string\n    \u003cspan class=\"hljs-keyword\"\u003evar\u003c/span\u003e appkey string\n\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e val, ok := md[\u003cspan class=\"hljs-string\"\u003e\u0026quot;user\u0026quot;\u003c/span\u003e]; ok { appid = val[\u003cspan class=\"hljs-number\"\u003e0\u003c/span\u003e] }\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e val, ok := md[\u003cspan class=\"hljs-string\"\u003e\u0026quot;password\u0026quot;\u003c/span\u003e]; ok { appkey = val[\u003cspan class=\"hljs-number\"\u003e0\u003c/span\u003e] }\n\n    \u003cspan class=\"hljs-keyword\"\u003eif\u003c/span\u003e appid != a.\u003cspan class=\"hljs-property\"\u003eUser\u003c/span\u003e || appkey != a.\u003cspan class=\"hljs-property\"\u003ePassword\u003c/span\u003e {\n        \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e grpc.\u003cspan class=\"hljs-title class_\"\u003eErrorf\u003c/span\u003e(codes.\u003cspan class=\"hljs-property\"\u003eUnauthenticated\u003c/span\u003e, \u003cspan class=\"hljs-string\"\u003e\u0026quot;invalid token\u0026quot;\u003c/span\u003e)\n    }\n\n    \u003cspan class=\"hljs-keyword\"\u003ereturn\u003c/span\u003e nil\n}\n\u003c/code\u003e\u003c/pre\u003e\u003ch1\u003e长连接\u003c/h1\u003e\n\u003cp\u003e需要客户端和服务端保持持久的长连接，即无论服务端、客户端异常断开或重启，长连接都要具备重试保活（当然前提是两方重启都成功）的需求。\u003c/p\u003e\n\u003cp\u003e在 gRPC 中，默认情况下对于已经建立的长连接，服务端异常重启之后，客户端一般会收到如下错误：\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003erpc error: code = Unavailable desc = transport is closing\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e主要处理方法是\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e重试：在客户端调用失败时，选择以指数退避（Exponential Backoff ）来优雅进行重试\u003c/li\u003e\n\u003cli\u003e增加 keepalive 的保活策略\u003c/li\u003e\n\u003cli\u003e增加重连（auto reconnect）策略\u003c/li\u003e\n\u003c/ul\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003ca href=\"https://github.com/grpc/grpc-go/blob/master/examples/features/keepalive/server/main.go\"\u003e服务端示例\u003c/a\u003e\n\u003ca href=\"https://github.com/grpc/grpc-go/blob/master/examples/features/keepalive/client/main.go\"\u003e客户端示例\u003c/a\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003eHTTP2 使用 GOAWAY 帧信号来控制连接关闭，GOAWAY 用于启动连接关闭或发出严重错误状态信号。\nGOAWAY 语义为允许端点正常停止接受新的流，同时仍然完成对先前建立的流的处理，当 client 收到这个包之后就会主动关闭连接。下次需要发送数据时，就会重新建立连接。GOAWAY 是实现 grpc.gracefulStop 机制的重要保证。\u003c/p\u003e\n\u003cp\u003e\u003ccode\u003egRPC 客户端提供 keepalive 配置\u003c/code\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eTime：如果没有 activity， 则每隔 10s 发送一个 ping 包\u003c/li\u003e\n\u003cli\u003eTimeout： 如果 ping ack 1s 之内未返回则认为连接已断开\u003c/li\u003e\n\u003cli\u003ePermitWithoutStream：如果没有 active 的 stream， 是否允许发送 ping\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e\u003ccode\u003egRPC 服务端提供 keepalive 配置\u003c/code\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003ekeepalive.EnforcementPolicy：\u003cul\u003e\n\u003cli\u003eMinTime：如果客户端两次 ping 的间隔小于 5s，则关闭连接\u003c/li\u003e\n\u003cli\u003ePermitWithoutStream： 即使没有 active stream, 也允许 ping\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003cli\u003ekeepalive.ServerParameters：\u003cul\u003e\n\u003cli\u003eMaxConnectionIdle：如果一个 client 空闲超过 15s, 发送一个 GOAWAY, 为了防止同一时间发送大量 GOAWAY, 会在 15s 时间间隔上下浮动 15*10%, 即 15+1.5 或者 15-1.5\u003c/li\u003e\n\u003cli\u003eMaxConnectionAge：如果任意连接存活时间超过 30s, 发送一个 GOAWAY\u003c/li\u003e\n\u003cli\u003eMaxConnectionAgeGrace：在强制关闭连接之间, 允许有 5s 的时间完成 pending 的 rpc 请求\u003c/li\u003e\n\u003cli\u003eTime： 如果一个 client 空闲超过 5s, 则发送一个 ping 请求\u003c/li\u003e\n\u003cli\u003eTimeout： 如果 ping 请求 1s 内未收到回复, 则认为该连接已断开\u003c/li\u003e\n\u003c/ul\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e服务端处理客户端的 ping 包的 response 的逻辑在 handlePing 方法 中。\nhandlePing 方法会判断是否违反两条 policy, 如果违反则将 pingStrikes++, 当违反次数大于 maxPingStrikes(2) 时, 打印一条错误日志并且发送一个 goAway 包，断开这个连接\u003c/p\u003e\n","frontMatter":{"readingTime":{"text":"14 min read","minutes":13.95,"time":837000,"words":2790},"slug":"grpc手册","fileName":"grpc手册.md","title":"grpc手册","date":"2022-08-13T00:00:00.000Z","tags":["中间件"],"draft":false,"summary":"grpc介绍以及使用"}},"prev":{"title":"Kubernetes生产化实践之路4","date":"2022-08-12T00:00:00.000Z","tags":["读书笔记"],"draft":false,"summary":"Kubernetes生产化实践之路-第8-9章","slug":"《Kubernetes生产化实践之路》读书笔记 - 4"},"next":{"title":"容器核心点","date":"2022-08-14T00:00:00.000Z","tags":["容器"],"draft":false,"summary":"容器使用与主机的区别","slug":"容器核心点概览"}},"__N_SSG":true},"page":"/blog/[...slug]","query":{"slug":["grpc手册"]},"buildId":"PMB5qMppIrri5HN2Gb314","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,1164 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>剑指offer2</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../../favicon.svg">
+    <link rel="shortcut icon" href="../../favicon.png">
+    <link rel="stylesheet" href="../../css/variables.css">
+    <link rel="stylesheet" href="../../css/general.css">
+    <link rel="stylesheet" href="../../css/chrome.css">
+    <link rel="stylesheet" href="../../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../../highlight.css">
+    <link rel="stylesheet" href="../../tomorrow-night.css">
+    <link rel="stylesheet" href="../../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href="../.././theme/style.css">
+    <link rel="stylesheet" href="../.././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">面试指南</a></li><li class="chapter-item expanded "><a href="../../数据结构与算法/index.html"><strong aria-hidden="true">1.</strong> 数据结构与算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../数据结构与算法/题库/index.html"><strong aria-hidden="true">1.1.</strong> 题库</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../数据结构与算法/题库/剑指offer1.html"><strong aria-hidden="true">1.1.1.</strong> 剑指offer1</a></li><li class="chapter-item expanded "><a href="../../数据结构与算法/题库/剑指offer2.html" class="active"><strong aria-hidden="true">1.1.2.</strong> 剑指offer2</a></li><li class="chapter-item expanded "><a href="../../数据结构与算法/题库/剑指offer3.html"><strong aria-hidden="true">1.1.3.</strong> 剑指offer3</a></li><li class="chapter-item expanded "><a href="../../数据结构与算法/题库/剑指offer4.html"><strong aria-hidden="true">1.1.4.</strong> 剑指offer4</a></li></ol></li><li class="chapter-item expanded "><a href="../../数据结构与算法/短链系统设计.html"><strong aria-hidden="true">1.2.</strong> 短链系统设计</a></li></ol></li><li class="chapter-item expanded "><a href="../../c++/index.html"><strong aria-hidden="true">2.</strong> c++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../c++/引用变量.html"><strong aria-hidden="true">2.1.</strong> 引用变量</a></li><li class="chapter-item expanded "><a href="../../c++/什么是虚函数.html"><strong aria-hidden="true">2.2.</strong> 什么是虚函数</a></li><li class="chapter-item expanded "><a href="../../c++/什么是指针.html"><strong aria-hidden="true">2.3.</strong> 什么是指针</a></li><li class="chapter-item expanded "><a href="../../c++/如何保证并发安全.html"><strong aria-hidden="true">2.4.</strong> 如何保证并发安全</a></li><li class="chapter-item expanded "><a href="../../c++/常见对象的内存结构.html"><strong aria-hidden="true">2.5.</strong> 常见对象的内存结构</a></li><li class="chapter-item expanded "><a href="../../c++/stl容器库.html"><strong aria-hidden="true">2.6.</strong> stl容器库</a></li></ol></li><li class="chapter-item expanded "><a href="../../linux操作系统/index.html"><strong aria-hidden="true">3.</strong> linux操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../linux操作系统/资源管理.html"><strong aria-hidden="true">3.1.</strong> 资源管理</a></li><li class="chapter-item expanded "><a href="../../linux操作系统/网络配置.html"><strong aria-hidden="true">3.2.</strong> 网络配置</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/interview-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+<style>
+    select.code-example {
+        color: var(--fg);
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--fg);
+        padding: 2px 10px 2px 10px;
+        border-radius: 5px;
+    }
+</style>
+<h2 id="31"><a class="header" href="#31">31、</a></h2>
+<p><code>剑指 Offer II 031. 最近最少使用缓存</code></p>
+<p>设计一个最近最少使用的缓存数据结构，提供get和put方法</p>
+<pre><code class="language-go">import "container/list"
+
+type LRUCache struct {
+    capacity int
+    cache    map[int]*list.Element
+    list     *list.List
+}
+
+type entry struct {
+    key   int
+    value int
+}
+
+func Constructor(capacity int) LRUCache {
+    return LRUCache{
+        capacity: capacity,
+        cache:    make(map[int]*list.Element),
+        list:     list.New(),
+    }
+}
+
+func (this *LRUCache) Get(key int) int {
+    if elem, ok := this.cache[key]; ok {
+        this.list.MoveToFront(elem)
+        return elem.Value.(*entry).value
+    }
+    return -1
+}
+
+func (this *LRUCache) Put(key int, value int) {
+    if elem, ok := this.cache[key]; ok {
+        elem.Value.(*entry).value = value
+        this.list.MoveToFront(elem)
+        return
+    }
+    if this.list.Len() == this.capacity {
+        lastElem := this.list.Back()
+        delete(this.cache, lastElem.Value.(*entry).key)
+        this.list.Remove(lastElem)
+    }
+    newElem := this.list.PushFront(&amp;entry{key: key, value: value})
+    this.cache[key] = newElem
+}
+</code></pre>
+<h2 id="32"><a class="header" href="#32">32、</a></h2>
+<p><code>剑指 Offer II 032. 有效的变位词</code></p>
+<p>判断字符串s和t是否是一组有效的变位词，即元素相同位置不同</p>
+<pre><code class="language-go">func isAnagram(s, t string) bool {
+    if s == t {
+        return false
+    }
+    var c1, c2 [26]int
+    for _, ch := range s {
+        c1[ch-'a']++
+    }
+    for _, ch := range t {
+        c2[ch-'a']++
+    }
+    return c1 == c2
+}
+</code></pre>
+<h2 id="33"><a class="header" href="#33">33、</a></h2>
+<p><code>剑指 Offer II 033. 变位词组</code></p>
+<p>给定一个字符串数组，将所有是同一类变位词的组合在一起</p>
+<pre><code class="language-go">func groupAnagrams(strs []string) [][]string {
+    mp := map[[26]int][]string{}
+    for _, str := range strs {
+        cnt := [26]int{}
+        for _, b := range str {
+            cnt[b-'a']++
+        }
+        mp[cnt] = append(mp[cnt], str)
+    }
+    ans := make([][]string, 0, len(mp))
+    for _, v := range mp {
+        ans = append(ans, v)
+    }
+    return ans
+}
+</code></pre>
+<h2 id="34"><a class="header" href="#34">34、</a></h2>
+<p><code>剑指 Offer II 034. 外星语言是否排序</code></p>
+<p>给定一种新的order字符顺序，判断一个字符串数组words中的字符串是否是按照字典序进行排列的</p>
+<pre><code class="language-go">func isAlienSorted(words []string, order string) bool {
+    index := [26]int{}
+    for i, c := range order {
+        index[c-'a'] = i
+    }
+next:
+    for i := 1; i &lt; len(words); i++ {
+        for j := 0; j &lt; len(words[i-1]) &amp;&amp; j &lt; len(words[i]); j++ {
+            pre, cur := index[words[i-1][j]-'a'], index[words[i][j]-'a']
+            if pre &gt; cur {
+                return false
+            }
+            if pre &lt; cur {
+                continue next
+            }
+        }
+        if len(words[i-1]) &gt; len(words[i]) {
+            return false
+        }
+    }
+    return true
+}
+</code></pre>
+<h2 id="35"><a class="header" href="#35">35、</a></h2>
+<p><code>剑指 Offer II 035. 最小时间差</code></p>
+<p>给定一个字符串列表，其中字符串是以"HH:MM"的24小时时间格式进行表示，找到列表中时间差最小值，并以分钟格式进行表示</p>
+<pre><code class="language-go">func getMinutes(t string) int {
+    return (int(t[0]-'0')*10+int(t[1]-'0'))*60 + int(t[3]-'0')*10 + int(t[4]-'0')
+}
+
+func findMinDifference(timePoints []string) int {
+    if len(timePoints) &gt; 1440 {
+        return 0
+    }
+    sort.Strings(timePoints)
+    ans := math.MaxInt32
+    t0Minutes := getMinutes(timePoints[0])
+    preMinutes := t0Minutes
+    for _, t := range timePoints[1:] {
+        minutes := getMinutes(t)
+        ans = min(ans, minutes-preMinutes) // 相邻时间的时间差
+        preMinutes = minutes
+    }
+    ans = min(ans, t0Minutes+1440-preMinutes) // 首尾时间的时间差
+    return ans
+}
+
+func min(a, b int) int {
+    if a &gt; b {
+        return b
+    }
+    return a
+}
+</code></pre>
+<h2 id="36"><a class="header" href="#36">36、</a></h2>
+<p><code>剑指 Offer II 036. 后缀表达式</code></p>
+<p>给定一个token字符串列表，该token列表是逆波兰表达式，用来求该后缀表达式的结果，整数除法只保留整数部分</p>
+<pre><code class="language-go">func evalRPN(tokens []string) int {
+    stack := make([]int, (len(tokens)+1)/2)
+    index := -1
+    for _, token := range tokens {
+        val, err := strconv.Atoi(token)
+        if err == nil {
+            index++
+            stack[index] = val
+        } else {
+            index--
+            switch token {
+            case "+":
+                stack[index] += stack[index+1]
+            case "-":
+                stack[index] -= stack[index+1]
+            case "*":
+                stack[index] *= stack[index+1]
+            default:
+                stack[index] /= stack[index+1]
+            }
+        }
+    }
+    return stack[0]
+}
+</code></pre>
+<h2 id="37"><a class="header" href="#37">37、</a></h2>
+<p><code>剑指 Offer II 037. 小行星碰撞</code></p>
+<p>给定一个整数数组用来表示同一行的小行星，绝对值表示大小，正负表示方向，正表示向右移动，负表示向左移动。</p>
+<p>当两个行星相遇会进行碰撞，留下大小大的那个，大小相同两个一起爆炸</p>
+<p>求解最后的小行星情况</p>
+<pre><code class="language-go">func asteroidCollision(asteroids []int) (st []int) {
+    for _, aster := range asteroids {
+        alive := true
+        for alive &amp;&amp; aster &lt; 0 &amp;&amp; len(st) &gt; 0 &amp;&amp; st[len(st)-1] &gt; 0 {
+            alive = st[len(st)-1] &lt; -aster // aster 是否存在
+            if st[len(st)-1] &lt;= -aster {   // 栈顶小行星爆炸
+                st = st[:len(st)-1]
+            }
+        }
+        if alive {
+            st = append(st, aster)
+        }
+    }
+    return
+}
+</code></pre>
+<h2 id="38"><a class="header" href="#38">38、</a></h2>
+<p><code>剑指 Offer II 038. 每日温度</code></p>
+<p>给定一个每天的气温列表，返回最近的一个温度更高的相差的天数</p>
+<pre><code class="language-go">func dailyTemperatures(temperatures []int) []int {
+    length := len(temperatures)
+    ans := make([]int, length)
+    stack := []int{}
+    for i := 0; i &lt; length; i++ {
+        temperature := temperatures[i]
+        for len(stack) &gt; 0 &amp;&amp; temperature &gt; temperatures[stack[len(stack)-1]] {
+            prevIndex := stack[len(stack)-1]
+            stack = stack[:len(stack)-1]
+            ans[prevIndex] = i - prevIndex
+        }
+        stack = append(stack, i)
+    }
+    return ans
+}
+</code></pre>
+<h2 id="39"><a class="header" href="#39">39、</a></h2>
+<p><code>剑指 Offer II 039. 直方图最大矩形面积</code></p>
+<p>给定一个整数数组，表示一个二维平面，其中每个元素表示其y轴的高度，返回该二维平面中覆盖的最大的矩形面积</p>
+<pre><code class="language-go">func largestRectangleArea(heights []int) int {
+    n := len(heights)
+    left, right := make([]int, n), make([]int, n)
+    mono_stack := []int{}
+    for i := 0; i &lt; n; i++ {
+        for len(mono_stack) &gt; 0 &amp;&amp; heights[mono_stack[len(mono_stack)-1]] &gt;= heights[i] {
+            mono_stack = mono_stack[:len(mono_stack)-1]
+        }
+        if len(mono_stack) == 0 {
+            left[i] = -1
+        } else {
+            left[i] = mono_stack[len(mono_stack)-1]
+        }
+        mono_stack = append(mono_stack, i)
+    }
+    mono_stack = []int{}
+    for i := n - 1; i &gt;= 0; i-- {
+        for len(mono_stack) &gt; 0 &amp;&amp; heights[mono_stack[len(mono_stack)-1]] &gt;= heights[i] {
+            mono_stack = mono_stack[:len(mono_stack)-1]
+        }
+        if len(mono_stack) == 0 {
+            right[i] = n
+        } else {
+            right[i] = mono_stack[len(mono_stack)-1]
+        }
+        mono_stack = append(mono_stack, i)
+    }
+    ans := 0
+    for i := 0; i &lt; n; i++ {
+        ans = max(ans, (right[i] - left[i] - 1) * heights[i])
+    }
+    return ans
+}
+
+func max(x, y int) int {
+    if x &gt; y {
+        return x
+    }
+    return y
+}
+</code></pre>
+<h2 id="40"><a class="header" href="#40">40、</a></h2>
+<p><code>剑指 Offer II 040. 矩阵中最大的矩形</code></p>
+<p>一个只包含0、1元素的矩阵，找到全部为1的元素的最大矩阵的面积</p>
+<pre><code class="language-go">func maximalRectangle(matrix []string) (ans int) {
+    if len(matrix) == 0 {
+        return
+    }
+    m, n := len(matrix), len(matrix[0])
+    left := make([][]int, m)
+    for i, row := range matrix {
+        left[i] = make([]int, n)
+        for j, v := range row {
+            if v == '0' {
+                continue
+            }
+            if j == 0 {
+                left[i][j] = 1
+            } else {
+                left[i][j] = left[i][j-1] + 1
+            }
+        }
+    }
+    for i, row := range matrix {
+        for j, v := range row {
+            if v == '0' {
+                continue
+            }
+            width := left[i][j]
+            area := width
+            for k := i - 1; k &gt;= 0; k-- {
+                width = min(width, left[k][j])
+                if width == 0 {
+                    break
+                }
+                area = max(area, (i-k+1)*width)
+            }
+            ans = max(ans, area)
+        }
+    }
+    return
+}
+
+func min(a, b int) int {
+    if a &lt; b {
+        return a
+    }
+    return b
+}
+
+func max(a, b int) int {
+    if a &gt; b {
+        return a
+    }
+    return b
+}
+</code></pre>
+<h2 id="41"><a class="header" href="#41">41、</a></h2>
+<p><code>剑指 Offer II 041. 滑动窗口的平均值</code></p>
+<p>给定一个指定大小的窗口，提供数据流并返回这个窗口内的元素的平均值</p>
+<pre><code class="language-go">type MovingAverage struct {
+    size, sum int
+    q         []int
+}
+
+func Constructor(size int) MovingAverage {
+    return MovingAverage{size: size}
+}
+
+func (m *MovingAverage) Next(val int) float64 {
+    if len(m.q) == m.size {
+        m.sum -= m.q[0]
+        m.q = m.q[1:]
+    }
+    m.sum += val
+    m.q = append(m.q, val)
+    return float64(m.sum) / float64(len(m.q))
+}
+</code></pre>
+<h2 id="42"><a class="header" href="#42">42、</a></h2>
+<p><code>剑指 Offer II 042. 最近请求次数</code></p>
+<p>记录请求的时间等，并且返回最近3000ms内的调用次数</p>
+<pre><code class="language-go">type RecentCounter []int
+
+func Constructor() (_ RecentCounter) { return }
+
+func (q *RecentCounter) Ping(t int) int {
+    *q = append(*q, t)
+    for (*q)[0] &lt; t-3000 {
+        *q = (*q)[1:]
+    }
+    return len(*q)
+}
+</code></pre>
+<h2 id="43"><a class="header" href="#43">43、</a></h2>
+<p><code>剑指 Offer II 043. 往完全二叉树添加节点</code></p>
+<p>一个尽量集中在左边的完全二叉树，提供插入以及获取根节点的元素</p>
+<pre><code class="language-go">type CBTInserter struct {
+    root      *TreeNode
+    candidate []*TreeNode
+}
+
+func Constructor(root *TreeNode) CBTInserter {
+    q := []*TreeNode{root}
+    candidate := []*TreeNode{}
+    for len(q) &gt; 0 {
+        node := q[0]
+        q = q[1:]
+        if node.Left != nil {
+            q = append(q, node.Left)
+        }
+        if node.Right != nil {
+            q = append(q, node.Right)
+        }
+        if node.Left == nil || node.Right == nil {
+            candidate = append(candidate, node)
+        }
+    }
+    return CBTInserter{root, candidate}
+}
+
+func (c *CBTInserter) Insert(val int) int {
+    child := &amp;TreeNode{Val: val}
+    node := c.candidate[0]
+    if node.Left == nil {
+        node.Left = child
+    } else {
+        node.Right = child
+        c.candidate = c.candidate[1:]
+    }
+    c.candidate = append(c.candidate, child)
+    return node.Val
+}
+
+func (c *CBTInserter) Get_root() *TreeNode {
+    return c.root
+}
+</code></pre>
+<h2 id="44"><a class="header" href="#44">44、</a></h2>
+<p><code>剑指 Offer II 044. 二叉树每层的最大值</code></p>
+<p>给定一个二叉树，找出二叉树每一层的最大值</p>
+<pre><code class="language-go">func largestValues(root *TreeNode) (ans []int) {
+    var dfs func(*TreeNode, int)
+    dfs = func(node *TreeNode, curHeight int) {
+        if node == nil {
+            return
+        }
+        if curHeight == len(ans) {
+            ans = append(ans, node.Val)
+        } else {
+            ans[curHeight] = max(ans[curHeight], node.Val)
+        }
+        dfs(node.Left, curHeight+1)
+        dfs(node.Right, curHeight+1)
+    }
+    dfs(root, 0)
+    return
+}
+
+func max(a, b int) int {
+    if b &gt; a {
+        return b
+    }
+    return a
+}
+</code></pre>
+<h2 id="45"><a class="header" href="#45">45、</a></h2>
+<p><code>剑指 Offer II 045. 二叉树最底层最左边的值</code></p>
+<p>给定一个二叉树，找出二叉树最底层，最左边的元素</p>
+<pre><code class="language-go">func findBottomLeftValue(root *TreeNode) (curVal int) {
+    curHeight := 0
+    var dfs func(*TreeNode, int)
+    dfs = func(node *TreeNode, height int) {
+        if node == nil {
+            return
+        }
+        height++
+        dfs(node.Left, height)
+        dfs(node.Right, height)
+        if height &gt; curHeight {
+            curHeight = height
+            curVal = node.Val
+        }
+    }
+    dfs(root, 0)
+    return
+}
+</code></pre>
+<h2 id="46"><a class="header" href="#46">46、</a></h2>
+<p><code>剑指 Offer II 046. 二叉树的右侧视图</code></p>
+<p>给定一个二叉树，返回其右边的第一层视图，并从上往下打印出来</p>
+<pre><code class="language-go">/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func rightSideView(root *TreeNode) []int {
+    ans:=[]int{}
+    if root==nil{
+        return  ans
+    }
+    var dfs func(node *TreeNode,depth int)
+    dfs = func(node *TreeNode,depth int){
+        if node==nil{
+            return
+        }
+        
+        if len(ans)==depth{
+            ans = append(ans,node.Val)
+        }
+        dfs(node.Right,depth+1)
+        dfs(node.Left,depth+1)
+    }
+    dfs(root,0)
+    return ans
+}
+</code></pre>
+<h2 id="47"><a class="header" href="#47">47、</a></h2>
+<p><code>剑指 Offer II 047. 二叉树剪枝</code></p>
+<p>给定一个二叉树，对所有只包含0数据的子树进行剪枝</p>
+<pre><code class="language-go">
+func pruneTree(root *TreeNode) *TreeNode {
+    if root == nil {
+        return nil
+    }
+    root.Left = pruneTree(root.Left)
+    root.Right = pruneTree(root.Right)
+    if root.Left == nil &amp;&amp; root.Right == nil &amp;&amp; root.Val == 0 {
+        return nil
+    }
+    return root
+}
+</code></pre>
+<h2 id="48"><a class="header" href="#48">48、</a></h2>
+<p><code>剑指 Offer II 048. 序列化与反序列化二叉树</code></p>
+<p>将二叉树进行序列化和反序列化</p>
+<pre><code class="language-go">type Codec struct{}
+
+func Constructor() (_ Codec) {
+    return
+}
+
+func (Codec) serialize(root *TreeNode) string {
+    sb := &amp;strings.Builder{}
+    var dfs func(*TreeNode)
+    dfs = func(node *TreeNode) {
+        if node == nil {
+            sb.WriteString("null,")
+            return
+        }
+        sb.WriteString(strconv.Itoa(node.Val))
+        sb.WriteByte(',')
+        dfs(node.Left)
+        dfs(node.Right)
+    }
+    dfs(root)
+    return sb.String()
+}
+
+func (Codec) deserialize(data string) *TreeNode {
+    sp := strings.Split(data, ",")
+    var build func() *TreeNode
+    build = func() *TreeNode {
+        if sp[0] == "null" {
+            sp = sp[1:]
+            return nil
+        }
+        val, _ := strconv.Atoi(sp[0])
+        sp = sp[1:]
+        return &amp;TreeNode{val, build(), build()}
+    }
+    return build()
+}
+</code></pre>
+<h2 id="49"><a class="header" href="#49">49、</a></h2>
+<p><code>剑指 Offer II 049. 从根节点到叶节点的路径数字之和</code></p>
+<p>给定一个二叉树，获取从根节点到叶子节点的所有路径所表示的数字之和。</p>
+<pre><code class="language-go">func dfs(root *TreeNode, prevSum int) int {
+    if root == nil {
+        return 0
+    }
+    sum := prevSum*10 + root.Val
+    if root.Left == nil &amp;&amp; root.Right == nil {
+        return sum
+    }
+    return dfs(root.Left, sum) + dfs(root.Right, sum)
+}
+
+func sumNumbers(root *TreeNode) int {
+    return dfs(root, 0)
+}
+</code></pre>
+<h2 id="50"><a class="header" href="#50">50、</a></h2>
+<p><code>剑指 Offer II 050. 向下的路径节点之和</code></p>
+<p>给定一个二叉树，返回其中路径和为target的路径个数，其中这路径只能从上往下</p>
+<pre><code class="language-go">func pathSum(root *TreeNode, targetSum int) (ans int) {
+    preSum := map[int64]int{0: 1}
+    var dfs func(*TreeNode, int64)
+    dfs = func(node *TreeNode, curr int64) {
+        if node == nil {
+            return
+        }
+        curr += int64(node.Val)
+        ans += preSum[curr-int64(targetSum)]
+        preSum[curr]++
+        dfs(node.Left, curr)
+        dfs(node.Right, curr)
+        preSum[curr]--
+        return
+    }
+    dfs(root, 0)
+    return
+}
+</code></pre>
+<h2 id="51"><a class="header" href="#51">51、</a></h2>
+<p><code>剑指 Offer II 051. 节点之和最大的路径</code></p>
+<p>给定一个二叉树，返回其最大的路径和，这里的路径可以是任意两个节点之间相连的路径</p>
+<pre><code class="language-go">func maxPathSum(root *TreeNode) int {
+    maxSum := math.MinInt32
+    var maxGain func(*TreeNode) int
+    maxGain = func(node *TreeNode) int {
+        if node == nil {
+            return 0
+        }
+
+        // 递归计算左右子节点的最大贡献值
+        // 只有在最大贡献值大于 0 时，才会选取对应子节点
+        leftGain := max(maxGain(node.Left), 0)
+        rightGain := max(maxGain(node.Right), 0)
+
+        // 节点的最大路径和取决于该节点的值与该节点的左右子节点的最大贡献值
+        priceNewPath := node.Val + leftGain + rightGain
+
+        // 更新答案
+        maxSum = max(maxSum, priceNewPath)
+
+        // 返回节点的最大贡献值
+        return node.Val + max(leftGain, rightGain)
+    }
+    maxGain(root)
+    return maxSum
+}
+
+func max(x, y int) int {
+    if x &gt; y {
+        return x
+    }
+    return y
+}
+</code></pre>
+<h2 id="52"><a class="header" href="#52">52、</a></h2>
+<p><code>剑指 Offer II 052. 展平二叉搜索树</code></p>
+<p>给定一个二叉搜索树，将其进行结构转换，使得没有左节点，只有右节点</p>
+<pre><code class="language-go">func increasingBST(root *TreeNode) *TreeNode {
+    dummyNode := &amp;TreeNode{}
+    resNode := dummyNode
+
+    var inorder func(*TreeNode)
+    inorder = func(node *TreeNode) {
+        if node == nil {
+            return
+        }
+        inorder(node.Left)
+
+        // 在中序遍历的过程中修改节点指向
+        resNode.Right = node
+        node.Left = nil
+        resNode = node
+
+        inorder(node.Right)
+    }
+    inorder(root)
+
+    return dummyNode.Right
+}
+</code></pre>
+<h2 id="53"><a class="header" href="#53">53、</a></h2>
+<p><code>剑指 Offer II 053. 二叉搜索树中的中序后继</code></p>
+<p>给定一个二叉搜索树以及一个节点，找到这个节点的中序后继</p>
+<pre><code class="language-go">func inorderSuccessor(root *TreeNode, p *TreeNode) *TreeNode {
+    var successor *TreeNode
+    if p.Right != nil {
+        successor = p.Right
+        for successor.Left != nil {
+            successor = successor.Left
+        }
+        return successor
+    }
+    node := root
+    for node != nil {
+        if node.Val &gt; p.Val {
+            successor = node
+            node = node.Left
+        } else {
+            node = node.Right
+        }
+    }
+    return successor
+}
+</code></pre>
+<h2 id="54"><a class="header" href="#54">54、</a></h2>
+<p><code>剑指 Offer II 054. 所有大于等于节点的值之和</code></p>
+<p>给定一个二叉搜索树，将每个节点替换成大于他节点的元素的和</p>
+<pre><code class="language-go">func convertBST(root *TreeNode) *TreeNode {
+    sum := 0
+    var dfs func(*TreeNode)
+    dfs = func(node *TreeNode) {
+        if node != nil {
+            dfs(node.Right)
+            sum += node.Val
+            node.Val = sum
+            dfs(node.Left)
+        }
+    }
+    dfs(root)
+    return root
+}
+</code></pre>
+<h2 id="55"><a class="header" href="#55">55、</a></h2>
+<p><code>剑指 Offer II 055. 二叉搜索树迭代器</code></p>
+<p>给定一个二叉搜素树迭代器，提供next和hasNext两个方法</p>
+<pre><code class="language-go">type BSTIterator struct {
+    stack []*TreeNode
+    cur   *TreeNode
+}
+
+func Constructor(root *TreeNode) BSTIterator {
+    return BSTIterator{cur: root}
+}
+
+func (it *BSTIterator) Next() int {
+    for node := it.cur; node != nil; node = node.Left {
+        it.stack = append(it.stack, node)
+    }
+    it.cur, it.stack = it.stack[len(it.stack)-1], it.stack[:len(it.stack)-1]
+    val := it.cur.Val
+    it.cur = it.cur.Right
+    return val
+}
+
+func (it *BSTIterator) HasNext() bool {
+    return it.cur != nil || len(it.stack) &gt; 0
+}
+</code></pre>
+<h2 id="56"><a class="header" href="#56">56、</a></h2>
+<p><code>剑指 Offer II 056. 二叉搜索树中两个节点之和</code></p>
+<p>判断二叉搜索树中是否存在两个节点，和为目标值</p>
+<pre><code class="language-go">func findTarget(root *TreeNode, k int) bool {
+    visit := map[int]struct{}{}
+    flag := false
+    var inorder func(*TreeNode)
+    inorder = func(node *TreeNode) {
+        if node == nil || flag {
+            return
+        }
+        inorder(node.Left)
+        if _, ok := visit[k-node.Val]; ok {
+            flag = true
+            return
+        }
+        visit[node.Val] = struct{}{}
+        inorder(node.Right)
+    }
+    inorder(root)
+    return flag
+}
+</code></pre>
+<h2 id="57"><a class="header" href="#57">57、</a></h2>
+<p><code>剑指 Offer II 057. 值和下标之差都在给定的范围内</code></p>
+<p>给定一个数组，判断是否存在两个下标i、j，下标差绝对值小于等于k，所对应的值差值小于等于t</p>
+<pre><code class="language-go">func getID(x, w int) int {
+    if x &gt;= 0 {
+        return x / w
+    }
+    return (x+1)/w - 1
+}
+
+func containsNearbyAlmostDuplicate(nums []int, k, t int) bool {
+    mp := map[int]int{}
+    for i, x := range nums {
+        id := getID(x, t+1)
+        if _, has := mp[id]; has {
+            return true
+        }
+        if y, has := mp[id-1]; has &amp;&amp; abs(x-y) &lt;= t {
+            return true
+        }
+        if y, has := mp[id+1]; has &amp;&amp; abs(x-y) &lt;= t {
+            return true
+        }
+        mp[id] = x
+        if i &gt;= k {
+            delete(mp, getID(nums[i-k], t+1))
+        }
+    }
+    return false
+}
+
+func abs(x int) int {
+    if x &lt; 0 {
+        return -x
+    }
+    return x
+}
+</code></pre>
+<h2 id="58"><a class="header" href="#58">58、</a></h2>
+<p><code>剑指 Offer II 058. 日程表</code></p>
+<p>提供一个方法，在添加日程的时候，时间区间为<code>[start, end)</code>, 只要这个时间段没有其他安排就能够使用</p>
+<pre><code class="language-go">type MyCalendar struct {
+    tree, lazy map[int]bool
+}
+
+func Constructor() MyCalendar {
+    return MyCalendar{map[int]bool{}, map[int]bool{}}
+}
+
+func (c MyCalendar) query(start, end, l, r, idx int) bool {
+    if r &lt; start || end &lt; l {
+        return false
+    }
+    if c.lazy[idx] { // 如果该区间已被预订，则直接返回
+        return true
+    }
+    if start &lt;= l &amp;&amp; r &lt;= end {
+        return c.tree[idx]
+    }
+    mid := (l + r) &gt;&gt; 1
+    return c.query(start, end, l, mid, 2*idx) ||
+        c.query(start, end, mid+1, r, 2*idx+1)
+}
+
+func (c MyCalendar) update(start, end, l, r, idx int) {
+    if r &lt; start || end &lt; l {
+        return
+    }
+    if start &lt;= l &amp;&amp; r &lt;= end {
+        c.tree[idx] = true
+        c.lazy[idx] = true
+    } else {
+        mid := (l + r) &gt;&gt; 1
+        c.update(start, end, l, mid, 2*idx)
+        c.update(start, end, mid+1, r, 2*idx+1)
+        c.tree[idx] = true
+        if c.lazy[2*idx] &amp;&amp; c.lazy[2*idx+1] {
+            c.lazy[idx] = true
+        }
+    }
+}
+
+func (c MyCalendar) Book(start, end int) bool {
+    if c.query(start, end-1, 0, 1e9, 1) {
+        return false
+    }
+    c.update(start, end-1, 0, 1e9, 1)
+    return true
+}
+</code></pre>
+<h2 id="59"><a class="header" href="#59">59、</a></h2>
+<p><code>剑指 Offer II 059. 数据流的第 K 大数值</code></p>
+<p>一个数据流结构，在插入元素的时候返回数据中第k大的数。</p>
+<pre><code class="language-go">type KthLargest struct {
+    sort.IntSlice
+    k int
+}
+
+func Constructor(k int, nums []int) KthLargest {
+    kl := KthLargest{k: k}
+    for _, val := range nums {
+        kl.Add(val)
+    }
+    return kl
+}
+
+func (kl *KthLargest) Push(v interface{}) {
+    kl.IntSlice = append(kl.IntSlice, v.(int))
+}
+
+func (kl *KthLargest) Pop() interface{} {
+    a := kl.IntSlice
+    v := a[len(a)-1]
+    kl.IntSlice = a[:len(a)-1]
+    return v
+}
+
+func (kl *KthLargest) Add(val int) int {
+    heap.Push(kl, val)
+    if kl.Len() &gt; kl.k {
+        heap.Pop(kl)
+    }
+    return kl.IntSlice[0]
+}
+</code></pre>
+<h2 id="60"><a class="header" href="#60">60、</a></h2>
+<p>剑指 Offer II 060. 出现频率最高的 k 个数字</p>
+<p>统计数字数组中元素的出现次数，返回出现频率最高的几个</p>
+<pre><code class="language-go">func topKFrequent(nums []int, k int) []int {
+    occurrences := map[int]int{}
+    for _, num := range nums {
+        occurrences[num]++
+    }
+    h := &amp;IHeap{}
+    heap.Init(h)
+    for key, value := range occurrences {
+        heap.Push(h, [2]int{key, value})
+        if h.Len() &gt; k {
+            heap.Pop(h)
+        }
+    }
+    ret := make([]int, k)
+    for i := 0; i &lt; k; i++ {
+        ret[k - i - 1] = heap.Pop(h).([2]int)[0]
+    }
+    return ret
+}
+
+type IHeap [][2]int
+
+func (h IHeap) Len() int           { return len(h) }
+func (h IHeap) Less(i, j int) bool { return h[i][1] &lt; h[j][1] }
+func (h IHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+
+func (h *IHeap) Push(x interface{}) {
+    *h = append(*h, x.([2]int))
+}
+
+func (h *IHeap) Pop() interface{} {
+    old := *h
+    n := len(old)
+    x := old[n-1]
+    *h = old[0 : n-1]
+    return x
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../../数据结构与算法/题库/剑指offer1.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../../数据结构与算法/题库/剑指offer3.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../../数据结构与算法/题库/剑指offer1.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../../数据结构与算法/题库/剑指offer3.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../.././theme/style.js"></script>
+        <script src="../../clarity.js"></script>
+        <script src="../.././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>

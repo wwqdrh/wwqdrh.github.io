@@ -1,0 +1,508 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>什么是虚函数</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href=".././theme/style.css">
+    <link rel="stylesheet" href=".././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">面试指南</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/index.html"><strong aria-hidden="true">1.</strong> 数据结构与算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/index.html"><strong aria-hidden="true">1.1.</strong> 题库</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer1.html"><strong aria-hidden="true">1.1.1.</strong> 剑指offer1</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer2.html"><strong aria-hidden="true">1.1.2.</strong> 剑指offer2</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer3.html"><strong aria-hidden="true">1.1.3.</strong> 剑指offer3</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer4.html"><strong aria-hidden="true">1.1.4.</strong> 剑指offer4</a></li></ol></li><li class="chapter-item expanded "><a href="../数据结构与算法/短链系统设计.html"><strong aria-hidden="true">1.2.</strong> 短链系统设计</a></li></ol></li><li class="chapter-item expanded "><a href="../c++/index.html"><strong aria-hidden="true">2.</strong> c++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../c++/引用变量.html"><strong aria-hidden="true">2.1.</strong> 引用变量</a></li><li class="chapter-item expanded "><a href="../c++/什么是虚函数.html" class="active"><strong aria-hidden="true">2.2.</strong> 什么是虚函数</a></li><li class="chapter-item expanded "><a href="../c++/什么是指针.html"><strong aria-hidden="true">2.3.</strong> 什么是指针</a></li><li class="chapter-item expanded "><a href="../c++/如何保证并发安全.html"><strong aria-hidden="true">2.4.</strong> 如何保证并发安全</a></li><li class="chapter-item expanded "><a href="../c++/常见对象的内存结构.html"><strong aria-hidden="true">2.5.</strong> 常见对象的内存结构</a></li><li class="chapter-item expanded "><a href="../c++/stl容器库.html"><strong aria-hidden="true">2.6.</strong> stl容器库</a></li></ol></li><li class="chapter-item expanded "><a href="../linux操作系统/index.html"><strong aria-hidden="true">3.</strong> linux操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux操作系统/资源管理.html"><strong aria-hidden="true">3.1.</strong> 资源管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/网络配置.html"><strong aria-hidden="true">3.2.</strong> 网络配置</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/interview-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+<style>
+    select.code-example {
+        color: var(--fg);
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--fg);
+        padding: 2px 10px 2px 10px;
+        border-radius: 5px;
+    }
+</style>
+<h2 id="概览"><a class="header" href="#概览">概览</a></h2>
+<ul>
+<li>什么是虚函数,有什么作用?</li>
+<li>纯虚函数，为什么需要纯虚函数？</li>
+<li>为什么需要虚析构函数,什么时候不需要?</li>
+<li>内联函数、构造函数、静态成员函数可以是虚函数吗?</li>
+<li>构造函数中可以调用虚函数吗?</li>
+<li>为什么需要虚继承?虚继承实现原理解析</li>
+<li>虚函数是针对类还是针对对象的？</li>
+<li>同一个类的两个对象的虚函数表是如何维护的？</li>
+</ul>
+<hr />
+<p>在C++中，虚函数（virtual function）是面向对象编程的一个核心概念，它允许通过基类指针或引用来调用派生类的重写方法，实现动态多态（dynamic polymorphism）。虚函数的背后涉及虚函数表（vtable）、指针机制以及一些运行时的操作。</p>
+<h1 id="虚函数的基本概念与作用"><a class="header" href="#虚函数的基本概念与作用">虚函数的基本概念与作用</a></h1>
+<p>虚函数是基类中声明为virtual的成员函数，它允许派生类重写该函数，并支持通过基类的指针或引用调用派生类的重写函数。</p>
+<p><code>作用</code>：</p>
+<ul>
+<li>虚函数实现了动态多态，允许基类指针或引用在运行时调用派生类的重写函数，而不是基类的版本。</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+class Base {
+public:
+    virtual void show() {
+        std::cout &lt;&lt; "Base class show() called" &lt;&lt; std::endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() override {  // 重写虚函数
+        std::cout &lt;&lt; "Derived class show() called" &lt;&lt; std::endl;
+    }
+};
+
+int main() {
+    Base* ptr = new Derived();  // 基类指针指向派生类对象
+    ptr-&gt;show();  // 调用派生类的show()，而不是Base的show()
+    // 输出 Derived class show() called
+    delete ptr;
+}
+</code></pre>
+<p>在这个例子中，Base类的show()是虚函数，当通过基类指针ptr调用时，实际调用的是派生类Derived的show()，这就是虚函数的作用——动态分派。</p>
+<h2 id="纯虚函数与抽象类"><a class="header" href="#纯虚函数与抽象类">纯虚函数与抽象类</a></h2>
+<p>纯虚函数（pure virtual function）是指在基类中只声明而不定义的虚函数，形式是<code>virtual void func() = 0;</code>。一个包含纯虚函数的类称为抽象类，抽象类不能实例化，只能被继承。</p>
+<pre><code class="language-cpp">class Base {
+public:
+    virtual void show() = 0;  // 纯虚函数
+};
+
+class Derived : public Base {
+public:
+    void show() override {
+        std::cout &lt;&lt; "Derived class show() called" &lt;&lt; std::endl;
+    }
+};
+
+int main() {
+    // Base obj;  // 错误！抽象类不能实例化
+    Base* ptr = new Derived();
+    ptr-&gt;show();  // 调用派生类的show()
+    delete ptr;
+}
+</code></pre>
+<h2 id="虚析构函数的必要性"><a class="header" href="#虚析构函数的必要性">虚析构函数的必要性</a></h2>
+<p>如果一个类中存在虚函数，通常也需要将析构函数声明为虚函数。这是为了确保通过基类指针或引用删除对象时，能够正确调用派生类的析构函数，防止资源泄漏。</p>
+<p>为什么需要虚析构函数：
+如果基类的析构函数不是虚函数，那么通过基类指针删除派生类对象时，只会调用基类的析构函数，导致派生类的资源没有正确释放。</p>
+<pre><code class="language-cpp">class Base {
+public:
+    virtual ~Base() {
+        std::cout &lt;&lt; "Base destructor called" &lt;&lt; std::endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    ~Derived() {
+        std::cout &lt;&lt; "Derived destructor called" &lt;&lt; std::endl;
+    }
+};
+
+int main() {
+    Base* ptr = new Derived();  // 基类指针指向派生类对象
+    delete ptr;  // 调用虚析构函数，确保派生类析构函数被调用
+   // output
+   // Derived destructor called
+   // Base destructor called
+}
+</code></pre>
+<p>如果没有虚析构函数，Derived类的析构函数将不会被调用，导致资源泄漏。</p>
+<p><code>什么时候不需要虚析构函数</code>：</p>
+<p>当类不打算用于继承，或者不打算通过基类指针删除派生类对象时，虚析构函数可以省略。普通的类（非多态类）不需要虚析构函数。</p>
+<h2 id="构造函数中可以调用虚函数吗"><a class="header" href="#构造函数中可以调用虚函数吗">构造函数中可以调用虚函数吗？</a></h2>
+<p>不可以。在构造函数中调用虚函数时，虚函数的动态分派机制不会工作。因为在构造基类对象时，派生类部分还未构造完成，此时即便调用的是虚函数，调用的也是基类的版本。</p>
+<pre><code class="language-cpp">class Base {
+public:
+    Base() { show(); }  // 构造函数中调用虚函数
+    virtual void show() {
+        std::cout &lt;&lt; "Base show() called" &lt;&lt; std::endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() override {
+        std::cout &lt;&lt; "Derived show() called" &lt;&lt; std::endl;
+    }
+};
+
+int main() {
+    Derived obj;  // 调用Derived的构造函数
+    // output
+    // Base show() called
+}
+</code></pre>
+<p>即使派生类Derived重写了show()，构造函数中调用的仍然是基类的show()。</p>
+<h2 id="哪些函数不能是虚函数"><a class="header" href="#哪些函数不能是虚函数">哪些函数不能是虚函数</a></h2>
+<ul>
+<li>内联函数（inline function）：理论上内联函数可以是虚函数，但实际中，虚函数需要动态分派，因此通常不会被内联。编译器无法在运行时决定调用哪个版本的函数，所以虚函数的内联机会较少。</li>
+<li>构造函数：构造函数不能是虚函数，因为在对象构造时无法进行动态分派。构造函数的职责是创建对象，虚函数的作用是在对象创建完成后进行动态分派。</li>
+<li>静态成员函数：静态成员函数不能是虚函数，因为它们与具体的对象无关。虚函数依赖于对象的动态类型，而静态函数属于类本身，不依赖于对象实例。</li>
+</ul>
+<h2 id="为什么需要虚继承"><a class="header" href="#为什么需要虚继承">为什么需要虚继承？</a></h2>
+<p>虚继承用于解决多重继承中的菱形继承问题，即当多个派生类从同一个基类继承时，可能导致基类被多次继承，从而引发二义性或资源冗余。虚继承通过让所有派生类共享基类的唯一实例来解决这个问题。</p>
+<pre><code class="language-cpp">class Base {
+public:
+    int value;
+};
+
+class Derived1 : virtual public Base {};
+class Derived2 : virtual public Base {};
+
+class Final : public Derived1, public Derived2 {};
+
+int main() {
+    Final obj;
+    obj.value = 10;  // 没有二义性，只有一个Base子对象
+}
+</code></pre>
+<p>在上面的例子中，如果不使用虚继承，Final类将有两个Base的副本，导致value的二义性。</p>
+<p><code>虚继承的实现原理</code></p>
+<p>虚继承通过引入**虚基类指针（virtual base pointer, vptr）**来跟踪共享的基类实例。派生类在内存布局中包含一个指向虚基类实例的指针，所有派生类都指向同一个基类实例，避免重复继承。</p>
+<h2 id="虚函数表vtable的维护"><a class="header" href="#虚函数表vtable的维护">虚函数表（vtable）的维护</a></h2>
+<p>每个具有虚函数的类在编译时会生成一个虚函数表（vtable），表中存储了该类的虚函数指针。每个对象会有一个虚函数表指针（vptr），指向该类的虚函数表。</p>
+<p><code>同一个类的两个对象的虚函数表</code>：</p>
+<p>对于同一个类的多个对象，它们共享相同的虚函数表（vtable），但每个对象都有自己的虚函数表指针（vptr），指向相同的vtable。</p>
+<p><code>虚函数是针对类还是对象的</code>：</p>
+<p>虚函数是针对类的。虚函数表是类级别的，所有对象共享同一个虚函数表，但调用虚函数时，是根据对象的动态类型来选择合适的函数。这就是动态多态的核心机制。</p>
+<pre><code class="language-cpp">class Base {
+public:
+    virtual void show() { std::cout &lt;&lt; "Base show() called" &lt;&lt; std::endl; }
+};
+
+class Derived : public Base {
+public:
+    void show() override { std::cout &lt;&lt; "Derived show() called" &lt;&lt; std::endl; }
+};
+
+int main() {
+    Base b;
+    Derived d;
+    Base* ptr1 = &amp;b;
+    Base* ptr2 = &amp;d;
+    ptr1-&gt;show();  // 调用Base的show()
+    ptr2-&gt;show();  // 调用Derived的show()
+    // output
+    // Base show() called
+    // Derived show() called
+}
+</code></pre>
+<p>在这个例子中，Base和Derived类都有各自的虚函数表，ptr1指向基类对象，调用基类的show()，ptr2指向派生类对象，调用派生类的show()。</p>
+<p><code>如果拿到虚函数表的储存地址，是否可以改写虚函数表的内容？</code></p>
+<p>虽然可以修改虚函数表的内容，但这种操作是非常危险的，如果将虚函数表的某个条目改为无效地址，调用虚函数时会导致崩溃。改写虚函数表后，程序行为变得不可预测，可能导致奇怪的结果、错误调用、数据损坏等问题。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+
+class Base {
+public:
+    virtual void func1() {
+        std::cout &lt;&lt; "Base func1" &lt;&lt; std::endl;
+    }
+    virtual void func2() {
+        std::cout &lt;&lt; "Base func2" &lt;&lt; std::endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void func1() override {
+        std::cout &lt;&lt; "Derived func1" &lt;&lt; std::endl;
+    }
+    void func2() override {
+        std::cout &lt;&lt; "Derived func2" &lt;&lt; std::endl;
+    }
+};
+
+// 一个假的函数，伪装成虚函数
+void hacked_func() {
+    std::cout &lt;&lt; "Hacked function called!" &lt;&lt; std::endl;
+}
+
+int main() {
+    Derived obj;
+
+    // 获取虚函数表指针
+    // vptr通常是对象的前8个字节（或者32位系统的前4个字节）
+    long long* vptr = *(long long**)(&amp;obj);
+
+    // 打印虚函数表内容
+    std::cout &lt;&lt; "Before hacking:" &lt;&lt; std::endl;
+    typedef void(*FuncPtr)();
+    FuncPtr original_func1 = (FuncPtr)vptr[0];
+    original_func1();  // 调用虚函数表的第一个函数，应该调用Derived::func1
+
+    // 修改虚函数表的第一个函数指针
+    vptr[0] = (long long)(&amp;hacked_func);
+
+    // 调用虚函数表第一个函数，应该调用伪造的hacked_func
+    std::cout &lt;&lt; "After hacking:" &lt;&lt; std::endl;
+    original_func1 = (FuncPtr)vptr[0];
+    original_func1();  // 调用hacked_func
+
+    // output
+    // Before hacking:
+    // Derived func1
+    // After hacking:
+    // Hacked function called!
+    return 0;
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../c++/引用变量.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../c++/什么是指针.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../c++/引用变量.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../c++/什么是指针.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src=".././theme/style.js"></script>
+        <script src="../clarity.js"></script>
+        <script src=".././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="viewport" content="width=device-width"/><title>数据变更记录工具</title><meta name="robots" content="follow, index"/><meta charSet="UTF-8"/><meta name="description" content="kubernetes环境搭建记录"/><meta property="og:type"/><meta property="og:title" content="数据变更记录工具"/><meta property="og:description" content="kubernetes环境搭建记录"/><meta property="og:url" content="https://wwqdrh.github.io/undefined"/><meta name="keywords" content="wwqdrh技术博客"/><meta property="og:locale" content="zh-CN"/><meta property="og:image" content="https://wwqdrh.github.io"/><meta name="twitter:title" content="数据变更记录工具"/><meta name="twitter:description" content="kubernetes环境搭建记录"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://wwqdrh.github.io"/><link rel="stylesheet" href="/assets/mdrender/editor-render.css"/><meta name="next-head-count" content="17"/><link rel="icon" href="/favicon.ico"/><link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png"/><link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed"/><script src="/assets/analizy/clarity.js"></script><link rel="preload" href="/_next/static/media/d83e92f0af8b17e4-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/ed42d1b51efd45f6-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/fba9d678ff638e59-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/e52907b750a6f61e-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/9031250013752d4b-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/eb9adf802b0a60eb-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/81b352a4d7a000ae-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/41b9b3ece820718f-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/d587d1c112526568-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/css/869c7de7c781f904.css" as="style"/><link rel="stylesheet" href="/_next/static/css/869c7de7c781f904.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"></script><script src="/_next/static/chunks/webpack-6ef43a8d4a395f49.js" defer=""></script><script src="/_next/static/chunks/framework-fbe37f60a09a330b.js" defer=""></script><script src="/_next/static/chunks/main-082d90b1269d95f6.js" defer=""></script><script src="/_next/static/chunks/pages/_app-494ee9c4b0594b31.js" defer=""></script><script src="/_next/static/chunks/pages/blog/%5B...slug%5D-222bf60d0a2bf3df.js" defer=""></script><script src="/_next/static/PMB5qMppIrri5HN2Gb314/_buildManifest.js" defer=""></script><script src="/_next/static/PMB5qMppIrri5HN2Gb314/_ssgManifest.js" defer=""></script></head><body><div id="__next"><style data-emotion="css-global c86wz">body{margin:0;padding:0;color:hsl(0, 0%, 9.0%);background-color:hsl(0, 0%, 97.3%);font-family:'__pretendard_6bb8e5','__pretendard_Fallback_6bb8e5';}*{-webkit-print-color-scheme:light;color-scheme:light;box-sizing:border-box;}h1,h2,h3,h4,h5,h6{margin:0;font-weight:inherit;font-style:inherit;}a{all:unset;cursor:pointer;}ul{padding:0;}button{all:unset;cursor:pointer;}input{all:unset;box-sizing:border-box;}textarea{border:none;background-color:transparent;font-family:inherit;padding:0;outline:none;resize:none;color:inherit;}hr{width:100%;border:none;margin:0;border-top:1px solid hsl(0, 0%, 88.7%);}</style><style data-emotion="css 1q70a33">.css-1q70a33{z-index:30;position:-webkit-sticky;position:sticky;top:0;background-color:hsl(0, 0%, 97.3%);box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.05);}.css-1q70a33 .container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;height:3rem;margin:0 auto;}@media (min-width: 768px){.css-1q70a33 .container[data-full-width="true"]{padding-left:6rem;padding-right:6rem;}}.css-1q70a33 .container .nav{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;gap:0.75rem;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}.css-1q70a33 .container .mid{padding-top:0.5rem;padding-bottom:0.5rem;padding-left:1.25rem;padding-right:1.25rem;border-radius:1rem;outline-style:none;width:50%;background-color:hsl(0, 0%, 93.0%);}</style><div class="py-2 css-1q70a33"><div data-full-width="false" class="container"><a aria-label="wwqdrh" class="css-0" href="/">wwqdrh</a><input class="mid" type="text" placeholder="Search Keyword..." value=""/><div class="nav"><style data-emotion="css 1nw6zn9">.css-1nw6zn9{-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;}.css-1nw6zn9 ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;}.css-1nw6zn9 ul li{display:block;margin-left:1rem;color:hsl(0, 0%, 43.5%);}</style><div class="css-1nw6zn9"><ul><li><a target="_blank" href="https://space.bilibili.com/538676331">B站</a></li></ul></div><style data-emotion="css 1h5x3dy">.css-1h5x3dy{cursor:pointer;}</style><div class="css-1h5x3dy"><style data-emotion="css p95608">.css-p95608{font-family:'__Noto_Color_Emoji_be1378','__Noto_Color_Emoji_Fallback_be1378',Apple Color Emoji;font-weight:400;font-style:normal;}</style><span class="css-p95608">☀️</span></div></div></div></div><style data-emotion="css lomkhl">.css-lomkhl{margin:0 auto;width:100%;padding:0 3rem;}</style><main class="css-lomkhl"><div class="divide-y bg-white dark:bg-gray-700 p-6 shadow-lg rounded-lg mt-3 divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0"><div class="max-w-none pt-10 pb-8 prose dark:prose-dark"><div><h1>环境安装</h1>
+<h2>前言</h2>
+<p>使用虚拟机搭建集群了</p>
+<p>因为macos、windows下的docker桥接网络问题</p>
+<h2>虚拟机集群搭建</h2>
+<p>virtualbox下载（太难用了）</p>
+<p>使用vmwarefusion</p>
+<p>centos stream 8 下载</p>
+<p>导入 创建一个master 两个worker</p>
+<blockquote>
+<p>20GB磁盘 2GB内存 2CPU核心
+192.168.68.101
+192.168.68.111 192.168.68.112</p>
+</blockquote>
+<pre><code>设置镜像
+
+设置桥接模式
+
+打开网络连接
+
+aliyun的
+<span class="hljs-attr">http</span>:<span class="hljs-comment">//mirrors.aliyun.com/centos/8-stream/BaseOS/x86_64/os/</span>
+
+镜像url
+
+等待镜像meta完成
+
+使用最小安装(免得浪费空间)
+
+创建一个然后复制另外两个
+
+复制完修改主机名
+
+修改ip地址
+</code></pre><h2>centos8网络配置</h2>
+<blockquote>
+<p>nmtui(GUI模式) nmcli(命令行模式)</p>
+</blockquote>
+<p>nmcli会自动把配置写到/etc/sysconfig/network-scripts/目录下面(ifcfg-ens33)（nmcli和nmtui的网络配置会覆盖配置文件的内容），配置文件的生成与使用状态均由NetworkManager控制。</p>
+<pre><code>nmcli connection show  <span class="hljs-comment"># 查看当前网络连接</span>
+
+nmcli con mod ens33 ipv4.addresses <span class="hljs-number">192.168</span><span class="hljs-number">.93</span><span class="hljs-number">.70</span>/<span class="hljs-number">24</span>  <span class="hljs-comment"># 直接修改当前网卡静态IP地址</span>
+
+<span class="hljs-comment"># 重启网路</span>
+<span class="hljs-comment">#方法1</span>
+nmcli device reapply ens33 
+
+<span class="hljs-comment">#方法2</span>
+nmcli con reload &amp;&amp; nmcli con up ens33
+
+<span class="hljs-comment">#方法3</span>
+nmcli networking off &amp;&amp; nmcli networking on
+
+ip a  <span class="hljs-comment"># 检查网络是否生效 也可以去上文说的配置文件中查看</span>
+</code></pre><h2>修改时区</h2>
+<pre><code class="hljs language-powershell">timedatectl  <span class="hljs-comment"># 查看时间</span>
+
+timedatectl <span class="hljs-built_in">list</span>-timezones  <span class="hljs-comment"># 列出可用时区</span>
+
+timedatectl <span class="hljs-built_in">set</span>-timezone Asia/Shanghai
+</code></pre><h2>系统命令</h2>
+<pre><code class="hljs language-powershell">shutdown -P now <span class="hljs-comment"># 立即关机</span>
+</code></pre><h2>k8s集群安装</h2>
+<p>使用 root 身份在所有节点执行如下代码，以安装软件：</p>
+<p>containerd
+nfs-utils
+kubectl / kubeadm / kubelet</p>
+<p>镜像</p>
+<ul>
+<li>腾讯云 docker hub 镜像
+export REGISTRY_MIRROR=&quot;<a href="https://mirror.ccs.tencentyun.com">https://mirror.ccs.tencentyun.com</a>&quot;</li>
+<li>DaoCloud 镜像
+export REGISTRY_MIRROR=&quot;<a href="http://f1361db2.m.daocloud.io">http://f1361db2.m.daocloud.io</a>&quot;</li>
+<li>华为云镜像
+export REGISTRY_MIRROR=&quot;<a href="https://05f073ad3c0010ea0f4bc00b7105ec20.mirror.swr.myhuaweicloud.com">https://05f073ad3c0010ea0f4bc00b7105ec20.mirror.swr.myhuaweicloud.com</a>&quot;</li>
+<li>阿里云 docker hub 镜像
+export REGISTRY_MIRROR=<a href="https://registry.cn-hangzhou.aliyuncs.com">https://registry.cn-hangzhou.aliyuncs.com</a></li>
+</ul>
+<pre><code class="hljs language-powershell"><span class="hljs-comment"># 在 master 节点和 worker 节点都要执行</span>
+<span class="hljs-comment"># 最后一个参数 1.21.4 用于指定 kubenetes 版本，支持所有 1.21.x 版本的安装</span>
+
+export REGISTRY_MIRROR=https://registry.cn-hangzhou.aliyuncs.com
+
+curl -sSL https://kuboard.cn/install-script/v1<span class="hljs-number">.21</span>.x/install_kubelet.sh | sh -s <span class="hljs-number">1.21</span><span class="hljs-number">.4</span>
+
+<span class="hljs-comment"># 或者使用该目录下kubelet_install.sh脚本</span>
+</code></pre><h2>init_master</h2>
+<pre><code class="hljs language-powershell"><span class="hljs-comment"># 只在 master 节点执行</span>
+<span class="hljs-comment"># 替换 x.x.x.x 为 master 节点的内网IP</span>
+<span class="hljs-comment"># export 命令只在当前 shell 会话中有效，开启新的 shell 窗口后，如果要继续安装过程，请重新执行此处的 export 命令</span>
+
+export MASTER_IP=x.x.x.x
+
+<span class="hljs-comment"># 替换 apiserver.demo 为 您想要的 dnsName</span>
+
+export APISERVER_NAME=apiserver.demo
+
+<span class="hljs-comment"># Kubernetes 容器组所在的网段，该网段安装完成后，由 kubernetes 创建，事先并不存在于您的物理网络中</span>
+
+export POD_SUBNET=<span class="hljs-number">10.100</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>/<span class="hljs-number">16</span>
+
+echo <span class="hljs-string">&quot;${MASTER_IP}    ${APISERVER_NAME}&quot;</span> &gt;&gt; /etc/hosts
+
+
+curl -sSL https://kuboard.cn/install-script/v1<span class="hljs-number">.21</span>.x/init_master.sh | sh -s <span class="hljs-number">1.21</span><span class="hljs-number">.4</span> [/coredns]
+<span class="hljs-comment"># 使用同目录下的init_master.sh执行脚本</span>
+</code></pre><p>检查master初始化结果</p>
+<pre><code class="hljs language-powershell"><span class="hljs-comment"># 只在 master 节点执行</span>
+
+<span class="hljs-comment"># 执行如下命令，等待 3-10 分钟，直到所有的容器组处于 Running 状态</span>
+watch kubectl get pod -n kube-system -o wide
+
+<span class="hljs-comment"># 查看 master 节点初始化结果</span>
+kubectl get nodes -o wide
+</code></pre><h2>安装网络插件</h2>
+<p>网络插件可以选择 calico 或者 flannel（任意选择其一即可）。</p>
+<pre><code class="hljs language-powershell">
+# Calico
+
+<span class="hljs-keyword">export</span> POD_SUBNET=<span class="hljs-number">10.100</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>/<span class="hljs-number">16</span>
+kubectl apply -f https:<span class="hljs-comment">//kuboard.cn/install-script/v1.21.x/calico-operator.yaml</span>
+wget https:<span class="hljs-comment">//kuboard.cn/install-script/v1.21.x/calico-custom-resources.yaml</span>
+sed -i <span class="hljs-string">&quot;s#192.168.0.0/16#${POD_SUBNET}#&quot;</span> calico-custom-resources.yaml
+kubectl apply -f calico-custom-resources.yaml
+
+# !! Flannel
+
+<span class="hljs-keyword">export</span> POD_SUBNET=<span class="hljs-number">10.100</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span>/<span class="hljs-number">16</span>
+kubectl apply -f https:<span class="hljs-comment">//kuboard.cn/install-script/v1.21.x/calico-operator.yaml</span>
+wget https:<span class="hljs-comment">//kuboard.cn/install-script/flannel/flannel-v0.14.0.yaml</span>
+sed -i <span class="hljs-string">&quot;s#10.244.0.0/16#${POD_SUBNET}#&quot;</span> flannel-v0<span class="hljs-number">.14</span><span class="hljs-number">.0</span>.yaml
+kubectl apply -f ./flannel-v0<span class="hljs-number">.14</span><span class="hljs-number">.0</span>.yaml
+</code></pre><h1>初始化worker节点</h1>
+<p>在master节点获取token</p>
+<pre><code class="hljs language-powershell">kubeadm token create --<span class="hljs-built_in">print</span>-join-command
+
+kubeadm join apiserver.demo:<span class="hljs-number">6443</span> --token mpfjma<span class="hljs-number">.4</span>vjjg8flqihor4vt     --discovery-token-ca-cert-<span class="hljs-built_in">hash</span> sha256:6f7a8e40a810323672de5eee6f4d19aa2dbdb38411845a1bf5dd63485c43d303
+ 
+<span class="hljs-comment"># 该 token 的有效时间为 2 个小时，2小时内，您可以使用此 token 初始化任意数量的 worker 节点。</span>
+</code></pre><p>在worker下执行</p>
+<pre><code class="hljs language-powershell"><span class="hljs-comment"># 只在 worker 节点执行</span>
+<span class="hljs-comment"># 替换 x.x.x.x 为 master 节点的内网 IP</span>
+export MASTER_IP=x.x.x.x
+<span class="hljs-comment"># 替换 apiserver.demo 为初始化 master 节点时所使用的 APISERVER_NAME</span>
+export APISERVER_NAME=apiserver.demo
+echo <span class="hljs-string">&quot;${MASTER_IP}    ${APISERVER_NAME}&quot;</span> &gt;&gt; /etc/hosts
+
+<span class="hljs-comment"># 替换为 master 节点上 kubeadm token create 命令的输出</span>
+kubeadm join apiserver.demo:<span class="hljs-number">6443</span> --token mpfjma<span class="hljs-number">.4</span>vjjg8flqihor4vt     --discovery-token-ca-cert-<span class="hljs-built_in">hash</span> sha256:6f7a8e40a810323672de5eee6f4d19aa2dbdb38411845a1bf5dd63485c43d303
+ 
+</code></pre><p>检查安装结果</p>
+<pre><code>kubectl get nodes -o wide
+</code></pre><h1>安装ingress controller</h1>
+<p>kubernetes支持多种Ingress Controllers (traefic / Kong / Istio / Nginx 等)，本文推荐使用 <a href="https://github.com/nginxinc/kubernetes-ingress">https://github.com/nginxinc/kubernetes-ingress</a></p>
+<pre><code class="hljs language-powershell">
+<span class="hljs-comment"># 参考yaml/ingress.yaml的配置文件</span>
+
+<span class="hljs-comment"># 只在master节点中执行</span>
+kubectl apply -f ....yaml
+</code></pre><h1>重启问题</h1>
+<p>整个集群所有的节点ip必须是固定的</p>
+<p>重启后会发现许多 Pod 不在 Running 状态，此时，请使用如下命令删除这些状态不正常的 Pod。通常，您的 Pod 如果是使用 Deployment、StatefulSet 等控制器创建的，kubernetes 将创建新的 Pod 作为替代，重新启动的 Pod 通常能够正常工作。</p>
+<pre><code>kubectl get pods --all-namespaces
+
+kubectl <span class="hljs-keyword">delete</span> pod &lt;pod-name&gt; -n &lt;pod-namespece&gt;
+</code></pre><h1>按照kuboard按照但是报错没有docker</h1>
+<p>错了主要是按照脚本出错没有装上containered</p>
+<p>尝试是否是因为kubelet没有将环境设置为systemd</p>
+<pre><code class="hljs language-powershell">vim /usr/lib/systemd/system/kubelet.service.d/<span class="hljs-number">10</span>-kubeadm.conf
+<span class="hljs-comment"># 在Environment后添加--cgroup-driver=systemd</span>
+systemctl daemon-reload
+systemctl restart kubelet
+</code></pre><p>容器运行时和 kubelet 都具有名字为 <a href="https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/">&quot;cgroup driver&quot;</a> 的属性，该属性对于在 Linux 机器上管理 CGroups 而言非常重要。你需要确保容器运行时和 kubelet 所使用的是相同的 cgroup 驱动，否则 kubelet 进程会失败。</p>
+<br/>
+
+<h1>主要脚本</h1>
+<br/>
+
+<pre><code class="hljs language-powershell"><span class="hljs-comment">#!/bin/bash</span>
+<span class="hljs-comment"># init_master.sh</span>
+<span class="hljs-comment"># 只在 master 节点执行</span>
+
+<span class="hljs-comment"># 脚本出错时终止执行</span>
+<span class="hljs-string">set</span> <span class="hljs-string">-e</span>
+
+<span class="hljs-string">if</span> [ <span class="hljs-string">$</span>{<span class="hljs-comment">#POD_SUBNET} -eq 0 ] || [ ${#APISERVER_NAME} -eq 0 ]; then</span>
+  <span class="hljs-string">echo</span> <span class="hljs-string">-e</span> <span class="hljs-string">&quot;\033[31;1m请确保您已经设置了环境变量 POD_SUBNET 和 APISERVER_NAME \033[0m&quot;</span>
+  <span class="hljs-string">echo</span> <span class="hljs-string">当前POD_SUBNET=$POD_SUBNET</span>
+  <span class="hljs-string">echo</span> <span class="hljs-string">当前APISERVER_NAME=$APISERVER_NAME</span>
+  <span class="hljs-string">exit</span> <span class="hljs-number">1</span>
+<span class="hljs-string">fi</span>
+
+
+<span class="hljs-comment"># 查看完整配置选项 https://godoc.org/k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1beta2</span>
+<span class="hljs-string">rm</span> <span class="hljs-string">-f</span> <span class="hljs-string">./kubeadm-config.yaml</span>
+<span class="hljs-string">cat</span> <span class="hljs-string">&lt;&lt;EOF</span> <span class="hljs-string">&gt;</span> <span class="hljs-string">./kubeadm-config.yaml</span>
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">kubeadm.k8s.io/v1beta2</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">ClusterConfiguration</span>
+<span class="hljs-attr">kubernetesVersion:</span> <span class="hljs-string">v$</span>{<span class="hljs-number">1</span>}
+<span class="hljs-attr">imageRepository:</span> <span class="hljs-string">registry.aliyuncs.com/k8sxio</span>
+<span class="hljs-attr">controlPlaneEndpoint:</span> <span class="hljs-string">&quot;${APISERVER_NAME}:6443&quot;</span>
+<span class="hljs-attr">networking:</span>
+  <span class="hljs-attr">serviceSubnet:</span> <span class="hljs-string">&quot;10.96.0.0/16&quot;</span>
+  <span class="hljs-attr">podSubnet:</span> <span class="hljs-string">&quot;${POD_SUBNET}&quot;</span>
+  <span class="hljs-attr">dnsDomain:</span> <span class="hljs-string">&quot;cluster.local&quot;</span>
+<span class="hljs-attr">dns:</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">CoreDNS</span>
+  <span class="hljs-attr">imageRepository:</span> <span class="hljs-string">swr.cn-east-2.myhuaweicloud.com$</span>{<span class="hljs-number">2</span>}
+  <span class="hljs-attr">imageTag:</span> <span class="hljs-number">1.8</span><span class="hljs-number">.0</span>
+
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">kubelet.config.k8s.io/v1beta1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">KubeletConfiguration</span>
+<span class="hljs-attr">cgroupDriver:</span> <span class="hljs-string">systemd</span>
+<span class="hljs-string">EOF</span>
+
+<span class="hljs-comment"># kubeadm init</span>
+<span class="hljs-comment"># 根据您服务器网速的情况，您需要等候 3 - 10 分钟</span>
+<span class="hljs-string">echo</span> <span class="hljs-string">&quot;&quot;</span>
+<span class="hljs-string">echo</span> <span class="hljs-string">&quot;抓取镜像，请稍候...&quot;</span>
+<span class="hljs-string">kubeadm</span> <span class="hljs-string">config</span> <span class="hljs-string">images</span> <span class="hljs-string">pull</span> <span class="hljs-string">--config=kubeadm-config.yaml</span>
+<span class="hljs-string">echo</span> <span class="hljs-string">&quot;&quot;</span>
+<span class="hljs-string">echo</span> <span class="hljs-string">&quot;初始化 Master 节点&quot;</span>
+<span class="hljs-string">kubeadm</span> <span class="hljs-string">init</span> <span class="hljs-string">--config=kubeadm-config.yaml</span> <span class="hljs-string">--upload-certs</span>
+
+<span class="hljs-comment"># 配置 kubectl</span>
+<span class="hljs-string">rm</span> <span class="hljs-string">-rf</span> <span class="hljs-string">/root/.kube/</span>
+<span class="hljs-string">mkdir</span> <span class="hljs-string">/root/.kube/</span>
+<span class="hljs-string">cp</span> <span class="hljs-string">-i</span> <span class="hljs-string">/etc/kubernetes/admin.conf</span> <span class="hljs-string">/root/.kube/config</span>
+ 
+</code></pre><br/>
+
+<pre><code class="hljs language-powershell"><span class="hljs-comment">#!/bin/bash</span>
+<span class="hljs-comment"># kubelet_install.sh</span>
+<span class="hljs-comment"># 在 master 节点和 worker 节点都要执行</span>
+
+<span class="hljs-comment"># 安装 containerd</span>
+<span class="hljs-comment"># 参考文档如下</span>
+<span class="hljs-comment"># https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd</span>
+
+cat &lt;&lt;EOF | sudo tee /etc/modules-load.d/containerd.conf
+overlay
+br_netfilter
+EOF
+
+sudo modprobe overlay
+sudo modprobe br_netfilter
+
+<span class="hljs-comment"># Setup required sysctl params, these persist across reboots.</span>
+cat &lt;&lt;EOF | sudo tee /etc/sysctl.d/<span class="hljs-number">99</span>-kubernetes-cri.conf
+net.bridge.bridge-nf-call-iptables  = <span class="hljs-number">1</span>
+net.ipv4.ip_forward                 = <span class="hljs-number">1</span>
+net.bridge.bridge-nf-call-ip6tables = <span class="hljs-number">1</span>
+EOF
+
+<span class="hljs-comment"># Apply sysctl params without reboot</span>
+sysctl --system
+
+<span class="hljs-comment"># 卸载旧版本</span>
+yum remove -y containerd.io
+
+<span class="hljs-comment"># 设置 yum repository</span>
+yum install -y yum-utils device-mapper-persistent-data lvm2
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+<span class="hljs-comment"># 安装 containerd</span>
+yum install -y containerd.io-<span class="hljs-number">1.4</span><span class="hljs-number">.3</span>
+
+mkdir -p /etc/containerd
+containerd config default &gt; /etc/containerd/config.toml
+
+sed -i <span class="hljs-string">&quot;s#k8s.gcr.io#registry.aliyuncs.com/k8sxio#g&quot;</span>  /etc/containerd/config.toml
+sed -i <span class="hljs-string">&#x27;/containerd.runtimes.runc.options/a\ \ \ \ \ \ \ \ \ \ \ \ SystemdCgroup = true&#x27;</span> /etc/containerd/config.toml
+sed -i <span class="hljs-string">&quot;s#https://registry-1.docker.io#${REGISTRY_MIRROR}#g&quot;</span>  /etc/containerd/config.toml
+
+
+systemctl daemon-reload
+systemctl enable containerd
+systemctl restart containerd
+
+
+<span class="hljs-comment"># 安装 nfs-utils</span>
+<span class="hljs-comment"># 必须先安装 nfs-utils 才能挂载 nfs 网络存储</span>
+yum install -y nfs-utils
+yum install -y wget
+
+<span class="hljs-comment"># 关闭 防火墙</span>
+systemctl stop firewalld
+systemctl disable firewalld
+
+<span class="hljs-comment"># 关闭 SeLinux</span>
+setenforce <span class="hljs-number">0</span>
+sed -i <span class="hljs-string">&quot;s/SELINUX=enforcing/SELINUX=disabled/g&quot;</span> /etc/selinux/config
+
+<span class="hljs-comment"># 关闭 swap</span>
+swapoff -a
+yes | cp /etc/fstab /etc/fstab_bak
+cat /etc/fstab_bak |grep -v swap &gt; /etc/fstab
+
+<span class="hljs-comment"># 配置K8S的yum源</span>
+cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
+enabled=<span class="hljs-number">1</span>
+gpgcheck=<span class="hljs-number">0</span>
+repo_gpgcheck=<span class="hljs-number">0</span>
+gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
+       http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+EOF
+
+<span class="hljs-comment"># 卸载旧版本</span>
+yum remove -y kubelet kubeadm kubectl
+
+<span class="hljs-comment"># 安装kubelet、kubeadm、kubectl</span>
+<span class="hljs-comment"># 将 ${1} 替换为 kubernetes 版本号，例如 1.20.1</span>
+yum install -y kubelet-${<span class="hljs-number">1</span>} kubeadm-${<span class="hljs-number">1</span>} kubectl-${<span class="hljs-number">1</span>}
+
+crictl config runtime-endpoint /run/containerd/containerd.sock
+
+<span class="hljs-comment"># 重启 docker，并启动 kubelet</span>
+systemctl daemon-reload
+systemctl enable kubelet &amp;&amp; systemctl start kubelet
+
+containerd --version
+kubelet --version
+ 
+</code></pre><pre><code class="hljs language-yaml"><span class="hljs-comment"># 如果打算用于生产环境，请参考 https://github.com/nginxinc/kubernetes-ingress/blob/v1.5.5/docs/installation.md 并根据您自己的情况做进一步定制</span>
+<span class="hljs-comment"># ingress.yaml</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Namespace</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">nginx-ingress</span>
+
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">ServiceAccount</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">nginx-ingress</span> 
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">nginx-ingress</span>
+
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">Secret</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">default-server-secret</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">nginx-ingress</span>
+<span class="hljs-attr">type:</span> <span class="hljs-string">Opaque</span>
+<span class="hljs-attr">data:</span>
+  <span class="hljs-attr">tls.crt:</span> <span class="hljs-string">LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN2akNDQWFZQ0NRREFPRjl0THNhWFhEQU5CZ2txaGtpRzl3MEJBUXNGQURBaE1SOHdIUVlEVlFRRERCWk8KUjBsT1dFbHVaM0psYzNORGIyNTBjbTlzYkdWeU1CNFhEVEU0TURreE1qRTRNRE16TlZvWERUSXpNRGt4TVRFNApNRE16TlZvd0lURWZNQjBHQTFVRUF3d1dUa2RKVGxoSmJtZHlaWE56UTI5dWRISnZiR3hsY2pDQ0FTSXdEUVlKCktvWklodmNOQVFFQkJRQURnZ0VQQURDQ0FRb0NnZ0VCQUwvN2hIUEtFWGRMdjNyaUM3QlBrMTNpWkt5eTlyQ08KR2xZUXYyK2EzUDF0azIrS3YwVGF5aGRCbDRrcnNUcTZzZm8vWUk1Y2Vhbkw4WGM3U1pyQkVRYm9EN2REbWs1Qgo4eDZLS2xHWU5IWlg0Rm5UZ0VPaStlM2ptTFFxRlBSY1kzVnNPazFFeUZBL0JnWlJVbkNHZUtGeERSN0tQdGhyCmtqSXVuektURXUyaDU4Tlp0S21ScUJHdDEwcTNRYzhZT3ExM2FnbmovUWRjc0ZYYTJnMjB1K1lYZDdoZ3krZksKWk4vVUkxQUQ0YzZyM1lma1ZWUmVHd1lxQVp1WXN2V0RKbW1GNWRwdEMzN011cDBPRUxVTExSakZJOTZXNXIwSAo1TmdPc25NWFJNV1hYVlpiNWRxT3R0SmRtS3FhZ25TZ1JQQVpQN2MwQjFQU2FqYzZjNGZRVXpNQ0F3RUFBVEFOCkJna3Foa2lHOXcwQkFRc0ZBQU9DQVFFQWpLb2tRdGRPcEsrTzhibWVPc3lySmdJSXJycVFVY2ZOUitjb0hZVUoKdGhrYnhITFMzR3VBTWI5dm15VExPY2xxeC9aYzJPblEwMEJCLzlTb0swcitFZ1U2UlVrRWtWcitTTFA3NTdUWgozZWI4dmdPdEduMS9ienM3bzNBaS9kclkrcUI5Q2k1S3lPc3FHTG1US2xFaUtOYkcyR1ZyTWxjS0ZYQU80YTY3Cklnc1hzYktNbTQwV1U3cG9mcGltU1ZmaXFSdkV5YmN3N0NYODF6cFErUyt1eHRYK2VBZ3V0NHh3VlI5d2IyVXYKelhuZk9HbWhWNThDd1dIQnNKa0kxNXhaa2VUWXdSN0diaEFMSkZUUkk3dkhvQXprTWIzbjAxQjQyWjNrN3RXNQpJUDFmTlpIOFUvOWxiUHNoT21FRFZkdjF5ZytVRVJxbStGSis2R0oxeFJGcGZnPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=</span>
+  <span class="hljs-attr">tls.key:</span> <span class="hljs-string">LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcEFJQkFBS0NBUUVBdi91RWM4b1JkMHUvZXVJTHNFK1RYZUprckxMMnNJNGFWaEMvYjVyYy9XMlRiNHEvClJOcktGMEdYaVN1eE9ycXgrajlnamx4NXFjdnhkenRKbXNFUkJ1Z1B0ME9hVGtIekhvb3FVWmcwZGxmZ1dkT0EKUTZMNTdlT1l0Q29VOUZ4amRXdzZUVVRJVUQ4R0JsRlNjSVo0b1hFTkhzbysyR3VTTWk2Zk1wTVM3YUhudzFtMApxWkdvRWEzWFNyZEJ6eGc2clhkcUNlUDlCMXl3VmRyYURiUzc1aGQzdUdETDU4cGszOVFqVUFQaHpxdmRoK1JWClZGNGJCaW9CbTVpeTlZTW1hWVhsMm0wTGZzeTZuUTRRdFFzdEdNVWozcGJtdlFmazJBNnljeGRFeFpkZFZsdmwKMm82MjBsMllxcHFDZEtCRThCay90elFIVTlKcU56cHpoOUJUTXdJREFRQUJBb0lCQVFDZklHbXowOHhRVmorNwpLZnZJUXQwQ0YzR2MxNld6eDhVNml4MHg4Mm15d1kxUUNlL3BzWE9LZlRxT1h1SENyUlp5TnUvZ2IvUUQ4bUFOCmxOMjRZTWl0TWRJODg5TEZoTkp3QU5OODJDeTczckM5bzVvUDlkazAvYzRIbjAzSkVYNzZ5QjgzQm9rR1FvYksKMjhMNk0rdHUzUmFqNjd6Vmc2d2szaEhrU0pXSzBwV1YrSjdrUkRWYmhDYUZhNk5nMUZNRWxhTlozVDhhUUtyQgpDUDNDeEFTdjYxWTk5TEI4KzNXWVFIK3NYaTVGM01pYVNBZ1BkQUk3WEh1dXFET1lvMU5PL0JoSGt1aVg2QnRtCnorNTZud2pZMy8yUytSRmNBc3JMTnIwMDJZZi9oY0IraVlDNzVWYmcydVd6WTY3TWdOTGQ5VW9RU3BDRkYrVm4KM0cyUnhybnhBb0dCQU40U3M0ZVlPU2huMVpQQjdhTUZsY0k2RHR2S2ErTGZTTXFyY2pOZjJlSEpZNnhubmxKdgpGenpGL2RiVWVTbWxSekR0WkdlcXZXaHFISy9iTjIyeWJhOU1WMDlRQ0JFTk5jNmtWajJTVHpUWkJVbEx4QzYrCk93Z0wyZHhKendWelU0VC84ajdHalRUN05BZVpFS2FvRHFyRG5BYWkyaW5oZU1JVWZHRXFGKzJyQW9HQkFOMVAKK0tZL0lsS3RWRzRKSklQNzBjUis3RmpyeXJpY05iWCtQVzUvOXFHaWxnY2grZ3l4b25BWlBpd2NpeDN3QVpGdwpaZC96ZFB2aTBkWEppc1BSZjRMazg5b2pCUmpiRmRmc2l5UmJYbyt3TFU4NUhRU2NGMnN5aUFPaTVBRHdVU0FkCm45YWFweUNweEFkREtERHdObit3ZFhtaTZ0OHRpSFRkK3RoVDhkaVpBb0dCQUt6Wis1bG9OOTBtYlF4VVh5YUwKMjFSUm9tMGJjcndsTmVCaWNFSmlzaEhYa2xpSVVxZ3hSZklNM2hhUVRUcklKZENFaHFsV01aV0xPb2I2NTNyZgo3aFlMSXM1ZUtka3o0aFRVdnpldm9TMHVXcm9CV2xOVHlGanIrSWhKZnZUc0hpOGdsU3FkbXgySkJhZUFVWUNXCndNdlQ4NmNLclNyNkQrZG8wS05FZzFsL0FvR0FlMkFVdHVFbFNqLzBmRzgrV3hHc1RFV1JqclRNUzRSUjhRWXQKeXdjdFA4aDZxTGxKUTRCWGxQU05rMXZLTmtOUkxIb2pZT2pCQTViYjhibXNVU1BlV09NNENoaFJ4QnlHbmR2eAphYkJDRkFwY0IvbEg4d1R0alVZYlN5T294ZGt5OEp0ek90ajJhS0FiZHd6NlArWDZDODhjZmxYVFo5MWpYL3RMCjF3TmRKS2tDZ1lCbyt0UzB5TzJ2SWFmK2UwSkN5TGhzVDQ5cTN3Zis2QWVqWGx2WDJ1VnRYejN5QTZnbXo5aCsKcDNlK2JMRUxwb3B0WFhNdUFRR0xhUkcrYlNNcjR5dERYbE5ZSndUeThXczNKY3dlSTdqZVp2b0ZpbmNvVlVIMwphdmxoTUVCRGYxSjltSDB5cDBwWUNaS2ROdHNvZEZtQktzVEtQMjJhTmtsVVhCS3gyZzR6cFE9PQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQo=</span>
+
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">ConfigMap</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">v1</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">nginx-config</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">nginx-ingress</span>
+<span class="hljs-attr">data:</span>
+  <span class="hljs-attr">server-names-hash-bucket-size:</span> <span class="hljs-string">&quot;1024&quot;</span>
+
+
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">ClusterRole</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">rbac.authorization.k8s.io/v1beta1</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">nginx-ingress</span>
+<span class="hljs-attr">rules:</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">apiGroups:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;&quot;</span>
+  <span class="hljs-attr">resources:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">services</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">endpoints</span>
+  <span class="hljs-attr">verbs:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">get</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">list</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">watch</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">apiGroups:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;&quot;</span>
+  <span class="hljs-attr">resources:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">secrets</span>
+  <span class="hljs-attr">verbs:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">get</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">list</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">watch</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">apiGroups:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;&quot;</span>
+  <span class="hljs-attr">resources:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">configmaps</span>
+  <span class="hljs-attr">verbs:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">get</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">list</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">watch</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">update</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">create</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">apiGroups:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;&quot;</span>
+  <span class="hljs-attr">resources:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">pods</span>
+  <span class="hljs-attr">verbs:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">list</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">apiGroups:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;&quot;</span>
+  <span class="hljs-attr">resources:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">events</span>
+  <span class="hljs-attr">verbs:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">create</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">patch</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">apiGroups:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">extensions</span>
+  <span class="hljs-attr">resources:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">ingresses</span>
+  <span class="hljs-attr">verbs:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">list</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">watch</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">get</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">apiGroups:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">&quot;extensions&quot;</span>
+  <span class="hljs-attr">resources:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">ingresses/status</span>
+  <span class="hljs-attr">verbs:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">update</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">apiGroups:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">k8s.nginx.org</span>
+  <span class="hljs-attr">resources:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">virtualservers</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">virtualserverroutes</span>
+  <span class="hljs-attr">verbs:</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">list</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">watch</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">get</span>
+
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">ClusterRoleBinding</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">rbac.authorization.k8s.io/v1beta1</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">nginx-ingress</span>
+<span class="hljs-attr">subjects:</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">kind:</span> <span class="hljs-string">ServiceAccount</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">nginx-ingress</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">nginx-ingress</span>
+<span class="hljs-attr">roleRef:</span>
+  <span class="hljs-attr">kind:</span> <span class="hljs-string">ClusterRole</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">nginx-ingress</span>
+  <span class="hljs-attr">apiGroup:</span> <span class="hljs-string">rbac.authorization.k8s.io</span>
+
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">apiVersion:</span> <span class="hljs-string">apps/v1</span>
+<span class="hljs-attr">kind:</span> <span class="hljs-string">DaemonSet</span>
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-attr">name:</span> <span class="hljs-string">nginx-ingress</span>
+  <span class="hljs-attr">namespace:</span> <span class="hljs-string">nginx-ingress</span>
+  <span class="hljs-attr">annotations:</span>
+    <span class="hljs-attr">prometheus.io/scrape:</span> <span class="hljs-string">&quot;true&quot;</span>
+    <span class="hljs-attr">prometheus.io/port:</span> <span class="hljs-string">&quot;9113&quot;</span>
+<span class="hljs-attr">spec:</span>
+  <span class="hljs-attr">selector:</span>
+    <span class="hljs-attr">matchLabels:</span>
+      <span class="hljs-attr">app:</span> <span class="hljs-string">nginx-ingress</span>
+  <span class="hljs-attr">template:</span>
+    <span class="hljs-attr">metadata:</span>
+      <span class="hljs-attr">labels:</span>
+        <span class="hljs-attr">app:</span> <span class="hljs-string">nginx-ingress</span>
+    <span class="hljs-attr">spec:</span>
+      <span class="hljs-attr">serviceAccountName:</span> <span class="hljs-string">nginx-ingress</span>
+      <span class="hljs-attr">containers:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-attr">image:</span> <span class="hljs-string">nginx/nginx-ingress:1.5.5</span>
+        <span class="hljs-attr">name:</span> <span class="hljs-string">nginx-ingress</span>
+        <span class="hljs-attr">ports:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">http</span>
+          <span class="hljs-attr">containerPort:</span> <span class="hljs-number">80</span>
+          <span class="hljs-attr">hostPort:</span> <span class="hljs-number">80</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">https</span>
+          <span class="hljs-attr">containerPort:</span> <span class="hljs-number">443</span>
+          <span class="hljs-attr">hostPort:</span> <span class="hljs-number">443</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">prometheus</span>
+          <span class="hljs-attr">containerPort:</span> <span class="hljs-number">9113</span>
+        <span class="hljs-attr">env:</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">POD_NAMESPACE</span>
+          <span class="hljs-attr">valueFrom:</span>
+            <span class="hljs-attr">fieldRef:</span>
+              <span class="hljs-attr">fieldPath:</span> <span class="hljs-string">metadata.namespace</span>
+        <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">POD_NAME</span>
+          <span class="hljs-attr">valueFrom:</span>
+            <span class="hljs-attr">fieldRef:</span>
+              <span class="hljs-attr">fieldPath:</span> <span class="hljs-string">metadata.name</span>
+        <span class="hljs-attr">args:</span>
+          <span class="hljs-bullet">-</span> <span class="hljs-string">-nginx-configmaps=$(POD_NAMESPACE)/nginx-config</span>
+          <span class="hljs-bullet">-</span> <span class="hljs-string">-default-server-tls-secret=$(POD_NAMESPACE)/default-server-secret</span>
+         <span class="hljs-comment">#- -v=3 # Enables extensive logging. Useful for troubleshooting.</span>
+         <span class="hljs-comment">#- -report-ingress-status</span>
+         <span class="hljs-comment">#- -external-service=nginx-ingress</span>
+         <span class="hljs-comment">#- -enable-leader-election</span>
+          <span class="hljs-bullet">-</span> <span class="hljs-string">-enable-prometheus-metrics</span>
+         <span class="hljs-comment">#- -enable-custom-resources</span>
+ 
+</code></pre></div></div></div></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"mdxSource":"\u003ch1\u003e环境安装\u003c/h1\u003e\n\u003ch2\u003e前言\u003c/h2\u003e\n\u003cp\u003e使用虚拟机搭建集群了\u003c/p\u003e\n\u003cp\u003e因为macos、windows下的docker桥接网络问题\u003c/p\u003e\n\u003ch2\u003e虚拟机集群搭建\u003c/h2\u003e\n\u003cp\u003evirtualbox下载（太难用了）\u003c/p\u003e\n\u003cp\u003e使用vmwarefusion\u003c/p\u003e\n\u003cp\u003ecentos stream 8 下载\u003c/p\u003e\n\u003cp\u003e导入 创建一个master 两个worker\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e20GB磁盘 2GB内存 2CPU核心\n192.168.68.101\n192.168.68.111 192.168.68.112\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cpre\u003e\u003ccode\u003e设置镜像\n\n设置桥接模式\n\n打开网络连接\n\naliyun的\n\u003cspan class=\"hljs-attr\"\u003ehttp\u003c/span\u003e:\u003cspan class=\"hljs-comment\"\u003e//mirrors.aliyun.com/centos/8-stream/BaseOS/x86_64/os/\u003c/span\u003e\n\n镜像url\n\n等待镜像meta完成\n\n使用最小安装(免得浪费空间)\n\n创建一个然后复制另外两个\n\n复制完修改主机名\n\n修改ip地址\n\u003c/code\u003e\u003c/pre\u003e\u003ch2\u003ecentos8网络配置\u003c/h2\u003e\n\u003cblockquote\u003e\n\u003cp\u003enmtui(GUI模式) nmcli(命令行模式)\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003enmcli会自动把配置写到/etc/sysconfig/network-scripts/目录下面(ifcfg-ens33)（nmcli和nmtui的网络配置会覆盖配置文件的内容），配置文件的生成与使用状态均由NetworkManager控制。\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003enmcli connection show  \u003cspan class=\"hljs-comment\"\u003e# 查看当前网络连接\u003c/span\u003e\n\nnmcli con mod ens33 ipv4.addresses \u003cspan class=\"hljs-number\"\u003e192.168\u003c/span\u003e\u003cspan class=\"hljs-number\"\u003e.93\u003c/span\u003e\u003cspan class=\"hljs-number\"\u003e.70\u003c/span\u003e/\u003cspan class=\"hljs-number\"\u003e24\u003c/span\u003e  \u003cspan class=\"hljs-comment\"\u003e# 直接修改当前网卡静态IP地址\u003c/span\u003e\n\n\u003cspan class=\"hljs-comment\"\u003e# 重启网路\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e#方法1\u003c/span\u003e\nnmcli device reapply ens33 \n\n\u003cspan class=\"hljs-comment\"\u003e#方法2\u003c/span\u003e\nnmcli con reload \u0026amp;\u0026amp; nmcli con up ens33\n\n\u003cspan class=\"hljs-comment\"\u003e#方法3\u003c/span\u003e\nnmcli networking off \u0026amp;\u0026amp; nmcli networking on\n\nip a  \u003cspan class=\"hljs-comment\"\u003e# 检查网络是否生效 也可以去上文说的配置文件中查看\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\u003ch2\u003e修改时区\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-powershell\"\u003etimedatectl  \u003cspan class=\"hljs-comment\"\u003e# 查看时间\u003c/span\u003e\n\ntimedatectl \u003cspan class=\"hljs-built_in\"\u003elist\u003c/span\u003e-timezones  \u003cspan class=\"hljs-comment\"\u003e# 列出可用时区\u003c/span\u003e\n\ntimedatectl \u003cspan class=\"hljs-built_in\"\u003eset\u003c/span\u003e-timezone Asia/Shanghai\n\u003c/code\u003e\u003c/pre\u003e\u003ch2\u003e系统命令\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-powershell\"\u003eshutdown -P now \u003cspan class=\"hljs-comment\"\u003e# 立即关机\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\u003ch2\u003ek8s集群安装\u003c/h2\u003e\n\u003cp\u003e使用 root 身份在所有节点执行如下代码，以安装软件：\u003c/p\u003e\n\u003cp\u003econtainerd\nnfs-utils\nkubectl / kubeadm / kubelet\u003c/p\u003e\n\u003cp\u003e镜像\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e腾讯云 docker hub 镜像\nexport REGISTRY_MIRROR=\u0026quot;\u003ca href=\"https://mirror.ccs.tencentyun.com\"\u003ehttps://mirror.ccs.tencentyun.com\u003c/a\u003e\u0026quot;\u003c/li\u003e\n\u003cli\u003eDaoCloud 镜像\nexport REGISTRY_MIRROR=\u0026quot;\u003ca href=\"http://f1361db2.m.daocloud.io\"\u003ehttp://f1361db2.m.daocloud.io\u003c/a\u003e\u0026quot;\u003c/li\u003e\n\u003cli\u003e华为云镜像\nexport REGISTRY_MIRROR=\u0026quot;\u003ca href=\"https://05f073ad3c0010ea0f4bc00b7105ec20.mirror.swr.myhuaweicloud.com\"\u003ehttps://05f073ad3c0010ea0f4bc00b7105ec20.mirror.swr.myhuaweicloud.com\u003c/a\u003e\u0026quot;\u003c/li\u003e\n\u003cli\u003e阿里云 docker hub 镜像\nexport REGISTRY_MIRROR=\u003ca href=\"https://registry.cn-hangzhou.aliyuncs.com\"\u003ehttps://registry.cn-hangzhou.aliyuncs.com\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-powershell\"\u003e\u003cspan class=\"hljs-comment\"\u003e# 在 master 节点和 worker 节点都要执行\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# 最后一个参数 1.21.4 用于指定 kubenetes 版本，支持所有 1.21.x 版本的安装\u003c/span\u003e\n\nexport REGISTRY_MIRROR=https://registry.cn-hangzhou.aliyuncs.com\n\ncurl -sSL https://kuboard.cn/install-script/v1\u003cspan class=\"hljs-number\"\u003e.21\u003c/span\u003e.x/install_kubelet.sh | sh -s \u003cspan class=\"hljs-number\"\u003e1.21\u003c/span\u003e\u003cspan class=\"hljs-number\"\u003e.4\u003c/span\u003e\n\n\u003cspan class=\"hljs-comment\"\u003e# 或者使用该目录下kubelet_install.sh脚本\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\u003ch2\u003einit_master\u003c/h2\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-powershell\"\u003e\u003cspan class=\"hljs-comment\"\u003e# 只在 master 节点执行\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# 替换 x.x.x.x 为 master 节点的内网IP\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# export 命令只在当前 shell 会话中有效，开启新的 shell 窗口后，如果要继续安装过程，请重新执行此处的 export 命令\u003c/span\u003e\n\nexport MASTER_IP=x.x.x.x\n\n\u003cspan class=\"hljs-comment\"\u003e# 替换 apiserver.demo 为 您想要的 dnsName\u003c/span\u003e\n\nexport APISERVER_NAME=apiserver.demo\n\n\u003cspan class=\"hljs-comment\"\u003e# Kubernetes 容器组所在的网段，该网段安装完成后，由 kubernetes 创建，事先并不存在于您的物理网络中\u003c/span\u003e\n\nexport POD_SUBNET=\u003cspan class=\"hljs-number\"\u003e10.100\u003c/span\u003e\u003cspan class=\"hljs-number\"\u003e.0\u003c/span\u003e\u003cspan class=\"hljs-number\"\u003e.0\u003c/span\u003e/\u003cspan class=\"hljs-number\"\u003e16\u003c/span\u003e\n\necho \u003cspan class=\"hljs-string\"\u003e\u0026quot;${MASTER_IP}    ${APISERVER_NAME}\u0026quot;\u003c/span\u003e \u0026gt;\u0026gt; /etc/hosts\n\n\ncurl -sSL https://kuboard.cn/install-script/v1\u003cspan class=\"hljs-number\"\u003e.21\u003c/span\u003e.x/init_master.sh | sh -s \u003cspan class=\"hljs-number\"\u003e1.21\u003c/span\u003e\u003cspan class=\"hljs-number\"\u003e.4\u003c/span\u003e [/coredns]\n\u003cspan class=\"hljs-comment\"\u003e# 使用同目录下的init_master.sh执行脚本\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e检查master初始化结果\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-powershell\"\u003e\u003cspan class=\"hljs-comment\"\u003e# 只在 master 节点执行\u003c/span\u003e\n\n\u003cspan class=\"hljs-comment\"\u003e# 执行如下命令，等待 3-10 分钟，直到所有的容器组处于 Running 状态\u003c/span\u003e\nwatch kubectl get pod -n kube-system -o wide\n\n\u003cspan class=\"hljs-comment\"\u003e# 查看 master 节点初始化结果\u003c/span\u003e\nkubectl get nodes -o wide\n\u003c/code\u003e\u003c/pre\u003e\u003ch2\u003e安装网络插件\u003c/h2\u003e\n\u003cp\u003e网络插件可以选择 calico 或者 flannel（任意选择其一即可）。\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-powershell\"\u003e\n# Calico\n\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e POD_SUBNET=\u003cspan class=\"hljs-number\"\u003e10.100\u003c/span\u003e\u003cspan class=\"hljs-number\"\u003e.0\u003c/span\u003e\u003cspan class=\"hljs-number\"\u003e.0\u003c/span\u003e/\u003cspan class=\"hljs-number\"\u003e16\u003c/span\u003e\nkubectl apply -f https:\u003cspan class=\"hljs-comment\"\u003e//kuboard.cn/install-script/v1.21.x/calico-operator.yaml\u003c/span\u003e\nwget https:\u003cspan class=\"hljs-comment\"\u003e//kuboard.cn/install-script/v1.21.x/calico-custom-resources.yaml\u003c/span\u003e\nsed -i \u003cspan class=\"hljs-string\"\u003e\u0026quot;s#192.168.0.0/16#${POD_SUBNET}#\u0026quot;\u003c/span\u003e calico-custom-resources.yaml\nkubectl apply -f calico-custom-resources.yaml\n\n# !! Flannel\n\n\u003cspan class=\"hljs-keyword\"\u003eexport\u003c/span\u003e POD_SUBNET=\u003cspan class=\"hljs-number\"\u003e10.100\u003c/span\u003e\u003cspan class=\"hljs-number\"\u003e.0\u003c/span\u003e\u003cspan class=\"hljs-number\"\u003e.0\u003c/span\u003e/\u003cspan class=\"hljs-number\"\u003e16\u003c/span\u003e\nkubectl apply -f https:\u003cspan class=\"hljs-comment\"\u003e//kuboard.cn/install-script/v1.21.x/calico-operator.yaml\u003c/span\u003e\nwget https:\u003cspan class=\"hljs-comment\"\u003e//kuboard.cn/install-script/flannel/flannel-v0.14.0.yaml\u003c/span\u003e\nsed -i \u003cspan class=\"hljs-string\"\u003e\u0026quot;s#10.244.0.0/16#${POD_SUBNET}#\u0026quot;\u003c/span\u003e flannel-v0\u003cspan class=\"hljs-number\"\u003e.14\u003c/span\u003e\u003cspan class=\"hljs-number\"\u003e.0\u003c/span\u003e.yaml\nkubectl apply -f ./flannel-v0\u003cspan class=\"hljs-number\"\u003e.14\u003c/span\u003e\u003cspan class=\"hljs-number\"\u003e.0\u003c/span\u003e.yaml\n\u003c/code\u003e\u003c/pre\u003e\u003ch1\u003e初始化worker节点\u003c/h1\u003e\n\u003cp\u003e在master节点获取token\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-powershell\"\u003ekubeadm token create --\u003cspan class=\"hljs-built_in\"\u003eprint\u003c/span\u003e-join-command\n\nkubeadm join apiserver.demo:\u003cspan class=\"hljs-number\"\u003e6443\u003c/span\u003e --token mpfjma\u003cspan class=\"hljs-number\"\u003e.4\u003c/span\u003evjjg8flqihor4vt     --discovery-token-ca-cert-\u003cspan class=\"hljs-built_in\"\u003ehash\u003c/span\u003e sha256:6f7a8e40a810323672de5eee6f4d19aa2dbdb38411845a1bf5dd63485c43d303\n \n\u003cspan class=\"hljs-comment\"\u003e# 该 token 的有效时间为 2 个小时，2小时内，您可以使用此 token 初始化任意数量的 worker 节点。\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e在worker下执行\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-powershell\"\u003e\u003cspan class=\"hljs-comment\"\u003e# 只在 worker 节点执行\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# 替换 x.x.x.x 为 master 节点的内网 IP\u003c/span\u003e\nexport MASTER_IP=x.x.x.x\n\u003cspan class=\"hljs-comment\"\u003e# 替换 apiserver.demo 为初始化 master 节点时所使用的 APISERVER_NAME\u003c/span\u003e\nexport APISERVER_NAME=apiserver.demo\necho \u003cspan class=\"hljs-string\"\u003e\u0026quot;${MASTER_IP}    ${APISERVER_NAME}\u0026quot;\u003c/span\u003e \u0026gt;\u0026gt; /etc/hosts\n\n\u003cspan class=\"hljs-comment\"\u003e# 替换为 master 节点上 kubeadm token create 命令的输出\u003c/span\u003e\nkubeadm join apiserver.demo:\u003cspan class=\"hljs-number\"\u003e6443\u003c/span\u003e --token mpfjma\u003cspan class=\"hljs-number\"\u003e.4\u003c/span\u003evjjg8flqihor4vt     --discovery-token-ca-cert-\u003cspan class=\"hljs-built_in\"\u003ehash\u003c/span\u003e sha256:6f7a8e40a810323672de5eee6f4d19aa2dbdb38411845a1bf5dd63485c43d303\n \n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e检查安装结果\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ekubectl get nodes -o wide\n\u003c/code\u003e\u003c/pre\u003e\u003ch1\u003e安装ingress controller\u003c/h1\u003e\n\u003cp\u003ekubernetes支持多种Ingress Controllers (traefic / Kong / Istio / Nginx 等)，本文推荐使用 \u003ca href=\"https://github.com/nginxinc/kubernetes-ingress\"\u003ehttps://github.com/nginxinc/kubernetes-ingress\u003c/a\u003e\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-powershell\"\u003e\n\u003cspan class=\"hljs-comment\"\u003e# 参考yaml/ingress.yaml的配置文件\u003c/span\u003e\n\n\u003cspan class=\"hljs-comment\"\u003e# 只在master节点中执行\u003c/span\u003e\nkubectl apply -f ....yaml\n\u003c/code\u003e\u003c/pre\u003e\u003ch1\u003e重启问题\u003c/h1\u003e\n\u003cp\u003e整个集群所有的节点ip必须是固定的\u003c/p\u003e\n\u003cp\u003e重启后会发现许多 Pod 不在 Running 状态，此时，请使用如下命令删除这些状态不正常的 Pod。通常，您的 Pod 如果是使用 Deployment、StatefulSet 等控制器创建的，kubernetes 将创建新的 Pod 作为替代，重新启动的 Pod 通常能够正常工作。\u003c/p\u003e\n\u003cpre\u003e\u003ccode\u003ekubectl get pods --all-namespaces\n\nkubectl \u003cspan class=\"hljs-keyword\"\u003edelete\u003c/span\u003e pod \u0026lt;pod-name\u0026gt; -n \u0026lt;pod-namespece\u0026gt;\n\u003c/code\u003e\u003c/pre\u003e\u003ch1\u003e按照kuboard按照但是报错没有docker\u003c/h1\u003e\n\u003cp\u003e错了主要是按照脚本出错没有装上containered\u003c/p\u003e\n\u003cp\u003e尝试是否是因为kubelet没有将环境设置为systemd\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-powershell\"\u003evim /usr/lib/systemd/system/kubelet.service.d/\u003cspan class=\"hljs-number\"\u003e10\u003c/span\u003e-kubeadm.conf\n\u003cspan class=\"hljs-comment\"\u003e# 在Environment后添加--cgroup-driver=systemd\u003c/span\u003e\nsystemctl daemon-reload\nsystemctl restart kubelet\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e容器运行时和 kubelet 都具有名字为 \u003ca href=\"https://kubernetes.io/zh/docs/setup/production-environment/container-runtimes/\"\u003e\u0026quot;cgroup driver\u0026quot;\u003c/a\u003e 的属性，该属性对于在 Linux 机器上管理 CGroups 而言非常重要。你需要确保容器运行时和 kubelet 所使用的是相同的 cgroup 驱动，否则 kubelet 进程会失败。\u003c/p\u003e\n\u003cbr/\u003e\n\n\u003ch1\u003e主要脚本\u003c/h1\u003e\n\u003cbr/\u003e\n\n\u003cpre\u003e\u003ccode class=\"hljs language-powershell\"\u003e\u003cspan class=\"hljs-comment\"\u003e#!/bin/bash\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# init_master.sh\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# 只在 master 节点执行\u003c/span\u003e\n\n\u003cspan class=\"hljs-comment\"\u003e# 脚本出错时终止执行\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003eset\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-e\u003c/span\u003e\n\n\u003cspan class=\"hljs-string\"\u003eif\u003c/span\u003e [ \u003cspan class=\"hljs-string\"\u003e$\u003c/span\u003e{\u003cspan class=\"hljs-comment\"\u003e#POD_SUBNET} -eq 0 ] || [ ${#APISERVER_NAME} -eq 0 ]; then\u003c/span\u003e\n  \u003cspan class=\"hljs-string\"\u003eecho\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-e\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;\\033[31;1m请确保您已经设置了环境变量 POD_SUBNET 和 APISERVER_NAME \\033[0m\u0026quot;\u003c/span\u003e\n  \u003cspan class=\"hljs-string\"\u003eecho\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e当前POD_SUBNET=$POD_SUBNET\u003c/span\u003e\n  \u003cspan class=\"hljs-string\"\u003eecho\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e当前APISERVER_NAME=$APISERVER_NAME\u003c/span\u003e\n  \u003cspan class=\"hljs-string\"\u003eexit\u003c/span\u003e \u003cspan class=\"hljs-number\"\u003e1\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003efi\u003c/span\u003e\n\n\n\u003cspan class=\"hljs-comment\"\u003e# 查看完整配置选项 https://godoc.org/k8s.io/kubernetes/cmd/kubeadm/app/apis/kubeadm/v1beta2\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003erm\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-f\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e./kubeadm-config.yaml\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003ecat\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026lt;\u0026lt;EOF\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026gt;\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e./kubeadm-config.yaml\u003c/span\u003e\n\u003cspan class=\"hljs-meta\"\u003e---\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003eapiVersion:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ekubeadm.k8s.io/v1beta2\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003ekind:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eClusterConfiguration\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003ekubernetesVersion:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ev$\u003c/span\u003e{\u003cspan class=\"hljs-number\"\u003e1\u003c/span\u003e}\n\u003cspan class=\"hljs-attr\"\u003eimageRepository:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eregistry.aliyuncs.com/k8sxio\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003econtrolPlaneEndpoint:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;${APISERVER_NAME}:6443\u0026quot;\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003enetworking:\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003eserviceSubnet:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;10.96.0.0/16\u0026quot;\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003epodSubnet:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;${POD_SUBNET}\u0026quot;\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003ednsDomain:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;cluster.local\u0026quot;\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003edns:\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003etype:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eCoreDNS\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003eimageRepository:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eswr.cn-east-2.myhuaweicloud.com$\u003c/span\u003e{\u003cspan class=\"hljs-number\"\u003e2\u003c/span\u003e}\n  \u003cspan class=\"hljs-attr\"\u003eimageTag:\u003c/span\u003e \u003cspan class=\"hljs-number\"\u003e1.8\u003c/span\u003e\u003cspan class=\"hljs-number\"\u003e.0\u003c/span\u003e\n\n\u003cspan class=\"hljs-meta\"\u003e---\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003eapiVersion:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ekubelet.config.k8s.io/v1beta1\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003ekind:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eKubeletConfiguration\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003ecgroupDriver:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003esystemd\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003eEOF\u003c/span\u003e\n\n\u003cspan class=\"hljs-comment\"\u003e# kubeadm init\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# 根据您服务器网速的情况，您需要等候 3 - 10 分钟\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003eecho\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;\u0026quot;\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003eecho\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;抓取镜像，请稍候...\u0026quot;\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003ekubeadm\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003econfig\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eimages\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003epull\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e--config=kubeadm-config.yaml\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003eecho\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;\u0026quot;\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003eecho\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;初始化 Master 节点\u0026quot;\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003ekubeadm\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003einit\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e--config=kubeadm-config.yaml\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e--upload-certs\u003c/span\u003e\n\n\u003cspan class=\"hljs-comment\"\u003e# 配置 kubectl\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003erm\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-rf\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e/root/.kube/\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003emkdir\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e/root/.kube/\u003c/span\u003e\n\u003cspan class=\"hljs-string\"\u003ecp\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-i\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e/etc/kubernetes/admin.conf\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e/root/.kube/config\u003c/span\u003e\n \n\u003c/code\u003e\u003c/pre\u003e\u003cbr/\u003e\n\n\u003cpre\u003e\u003ccode class=\"hljs language-powershell\"\u003e\u003cspan class=\"hljs-comment\"\u003e#!/bin/bash\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# kubelet_install.sh\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# 在 master 节点和 worker 节点都要执行\u003c/span\u003e\n\n\u003cspan class=\"hljs-comment\"\u003e# 安装 containerd\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# 参考文档如下\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# https://kubernetes.io/docs/setup/production-environment/container-runtimes/#containerd\u003c/span\u003e\n\ncat \u0026lt;\u0026lt;EOF | sudo tee /etc/modules-load.d/containerd.conf\noverlay\nbr_netfilter\nEOF\n\nsudo modprobe overlay\nsudo modprobe br_netfilter\n\n\u003cspan class=\"hljs-comment\"\u003e# Setup required sysctl params, these persist across reboots.\u003c/span\u003e\ncat \u0026lt;\u0026lt;EOF | sudo tee /etc/sysctl.d/\u003cspan class=\"hljs-number\"\u003e99\u003c/span\u003e-kubernetes-cri.conf\nnet.bridge.bridge-nf-call-iptables  = \u003cspan class=\"hljs-number\"\u003e1\u003c/span\u003e\nnet.ipv4.ip_forward                 = \u003cspan class=\"hljs-number\"\u003e1\u003c/span\u003e\nnet.bridge.bridge-nf-call-ip6tables = \u003cspan class=\"hljs-number\"\u003e1\u003c/span\u003e\nEOF\n\n\u003cspan class=\"hljs-comment\"\u003e# Apply sysctl params without reboot\u003c/span\u003e\nsysctl --system\n\n\u003cspan class=\"hljs-comment\"\u003e# 卸载旧版本\u003c/span\u003e\nyum remove -y containerd.io\n\n\u003cspan class=\"hljs-comment\"\u003e# 设置 yum repository\u003c/span\u003e\nyum install -y yum-utils device-mapper-persistent-data lvm2\nyum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo\n\n\u003cspan class=\"hljs-comment\"\u003e# 安装 containerd\u003c/span\u003e\nyum install -y containerd.io-\u003cspan class=\"hljs-number\"\u003e1.4\u003c/span\u003e\u003cspan class=\"hljs-number\"\u003e.3\u003c/span\u003e\n\nmkdir -p /etc/containerd\ncontainerd config default \u0026gt; /etc/containerd/config.toml\n\nsed -i \u003cspan class=\"hljs-string\"\u003e\u0026quot;s#k8s.gcr.io#registry.aliyuncs.com/k8sxio#g\u0026quot;\u003c/span\u003e  /etc/containerd/config.toml\nsed -i \u003cspan class=\"hljs-string\"\u003e\u0026#x27;/containerd.runtimes.runc.options/a\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ SystemdCgroup = true\u0026#x27;\u003c/span\u003e /etc/containerd/config.toml\nsed -i \u003cspan class=\"hljs-string\"\u003e\u0026quot;s#https://registry-1.docker.io#${REGISTRY_MIRROR}#g\u0026quot;\u003c/span\u003e  /etc/containerd/config.toml\n\n\nsystemctl daemon-reload\nsystemctl enable containerd\nsystemctl restart containerd\n\n\n\u003cspan class=\"hljs-comment\"\u003e# 安装 nfs-utils\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# 必须先安装 nfs-utils 才能挂载 nfs 网络存储\u003c/span\u003e\nyum install -y nfs-utils\nyum install -y wget\n\n\u003cspan class=\"hljs-comment\"\u003e# 关闭 防火墙\u003c/span\u003e\nsystemctl stop firewalld\nsystemctl disable firewalld\n\n\u003cspan class=\"hljs-comment\"\u003e# 关闭 SeLinux\u003c/span\u003e\nsetenforce \u003cspan class=\"hljs-number\"\u003e0\u003c/span\u003e\nsed -i \u003cspan class=\"hljs-string\"\u003e\u0026quot;s/SELINUX=enforcing/SELINUX=disabled/g\u0026quot;\u003c/span\u003e /etc/selinux/config\n\n\u003cspan class=\"hljs-comment\"\u003e# 关闭 swap\u003c/span\u003e\nswapoff -a\nyes | cp /etc/fstab /etc/fstab_bak\ncat /etc/fstab_bak |grep -v swap \u0026gt; /etc/fstab\n\n\u003cspan class=\"hljs-comment\"\u003e# 配置K8S的yum源\u003c/span\u003e\ncat \u0026lt;\u0026lt;EOF \u0026gt; /etc/yum.repos.d/kubernetes.repo\n[kubernetes]\nname=Kubernetes\nbaseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64\nenabled=\u003cspan class=\"hljs-number\"\u003e1\u003c/span\u003e\ngpgcheck=\u003cspan class=\"hljs-number\"\u003e0\u003c/span\u003e\nrepo_gpgcheck=\u003cspan class=\"hljs-number\"\u003e0\u003c/span\u003e\ngpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg\n       http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg\nEOF\n\n\u003cspan class=\"hljs-comment\"\u003e# 卸载旧版本\u003c/span\u003e\nyum remove -y kubelet kubeadm kubectl\n\n\u003cspan class=\"hljs-comment\"\u003e# 安装kubelet、kubeadm、kubectl\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# 将 ${1} 替换为 kubernetes 版本号，例如 1.20.1\u003c/span\u003e\nyum install -y kubelet-${\u003cspan class=\"hljs-number\"\u003e1\u003c/span\u003e} kubeadm-${\u003cspan class=\"hljs-number\"\u003e1\u003c/span\u003e} kubectl-${\u003cspan class=\"hljs-number\"\u003e1\u003c/span\u003e}\n\ncrictl config runtime-endpoint /run/containerd/containerd.sock\n\n\u003cspan class=\"hljs-comment\"\u003e# 重启 docker，并启动 kubelet\u003c/span\u003e\nsystemctl daemon-reload\nsystemctl enable kubelet \u0026amp;\u0026amp; systemctl start kubelet\n\ncontainerd --version\nkubelet --version\n \n\u003c/code\u003e\u003c/pre\u003e\u003cpre\u003e\u003ccode class=\"hljs language-yaml\"\u003e\u003cspan class=\"hljs-comment\"\u003e# 如果打算用于生产环境，请参考 https://github.com/nginxinc/kubernetes-ingress/blob/v1.5.5/docs/installation.md 并根据您自己的情况做进一步定制\u003c/span\u003e\n\u003cspan class=\"hljs-comment\"\u003e# ingress.yaml\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003eapiVersion:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ev1\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003ekind:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eNamespace\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003emetadata:\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003ename:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-ingress\u003c/span\u003e\n\n\u003cspan class=\"hljs-meta\"\u003e---\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003eapiVersion:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ev1\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003ekind:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eServiceAccount\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003emetadata:\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003ename:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-ingress\u003c/span\u003e \n  \u003cspan class=\"hljs-attr\"\u003enamespace:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-ingress\u003c/span\u003e\n\n\u003cspan class=\"hljs-meta\"\u003e---\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003eapiVersion:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ev1\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003ekind:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eSecret\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003emetadata:\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003ename:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003edefault-server-secret\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003enamespace:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-ingress\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003etype:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eOpaque\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003edata:\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003etls.crt:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eLS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN2akNDQWFZQ0NRREFPRjl0THNhWFhEQU5CZ2txaGtpRzl3MEJBUXNGQURBaE1SOHdIUVlEVlFRRERCWk8KUjBsT1dFbHVaM0psYzNORGIyNTBjbTlzYkdWeU1CNFhEVEU0TURreE1qRTRNRE16TlZvWERUSXpNRGt4TVRFNApNRE16TlZvd0lURWZNQjBHQTFVRUF3d1dUa2RKVGxoSmJtZHlaWE56UTI5dWRISnZiR3hsY2pDQ0FTSXdEUVlKCktvWklodmNOQVFFQkJRQURnZ0VQQURDQ0FRb0NnZ0VCQUwvN2hIUEtFWGRMdjNyaUM3QlBrMTNpWkt5eTlyQ08KR2xZUXYyK2EzUDF0azIrS3YwVGF5aGRCbDRrcnNUcTZzZm8vWUk1Y2Vhbkw4WGM3U1pyQkVRYm9EN2REbWs1Qgo4eDZLS2xHWU5IWlg0Rm5UZ0VPaStlM2ptTFFxRlBSY1kzVnNPazFFeUZBL0JnWlJVbkNHZUtGeERSN0tQdGhyCmtqSXVuektURXUyaDU4Tlp0S21ScUJHdDEwcTNRYzhZT3ExM2FnbmovUWRjc0ZYYTJnMjB1K1lYZDdoZ3krZksKWk4vVUkxQUQ0YzZyM1lma1ZWUmVHd1lxQVp1WXN2V0RKbW1GNWRwdEMzN011cDBPRUxVTExSakZJOTZXNXIwSAo1TmdPc25NWFJNV1hYVlpiNWRxT3R0SmRtS3FhZ25TZ1JQQVpQN2MwQjFQU2FqYzZjNGZRVXpNQ0F3RUFBVEFOCkJna3Foa2lHOXcwQkFRc0ZBQU9DQVFFQWpLb2tRdGRPcEsrTzhibWVPc3lySmdJSXJycVFVY2ZOUitjb0hZVUoKdGhrYnhITFMzR3VBTWI5dm15VExPY2xxeC9aYzJPblEwMEJCLzlTb0swcitFZ1U2UlVrRWtWcitTTFA3NTdUWgozZWI4dmdPdEduMS9ienM3bzNBaS9kclkrcUI5Q2k1S3lPc3FHTG1US2xFaUtOYkcyR1ZyTWxjS0ZYQU80YTY3Cklnc1hzYktNbTQwV1U3cG9mcGltU1ZmaXFSdkV5YmN3N0NYODF6cFErUyt1eHRYK2VBZ3V0NHh3VlI5d2IyVXYKelhuZk9HbWhWNThDd1dIQnNKa0kxNXhaa2VUWXdSN0diaEFMSkZUUkk3dkhvQXprTWIzbjAxQjQyWjNrN3RXNQpJUDFmTlpIOFUvOWxiUHNoT21FRFZkdjF5ZytVRVJxbStGSis2R0oxeFJGcGZnPT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003etls.key:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eLS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcEFJQkFBS0NBUUVBdi91RWM4b1JkMHUvZXVJTHNFK1RYZUprckxMMnNJNGFWaEMvYjVyYy9XMlRiNHEvClJOcktGMEdYaVN1eE9ycXgrajlnamx4NXFjdnhkenRKbXNFUkJ1Z1B0ME9hVGtIekhvb3FVWmcwZGxmZ1dkT0EKUTZMNTdlT1l0Q29VOUZ4amRXdzZUVVRJVUQ4R0JsRlNjSVo0b1hFTkhzbysyR3VTTWk2Zk1wTVM3YUhudzFtMApxWkdvRWEzWFNyZEJ6eGc2clhkcUNlUDlCMXl3VmRyYURiUzc1aGQzdUdETDU4cGszOVFqVUFQaHpxdmRoK1JWClZGNGJCaW9CbTVpeTlZTW1hWVhsMm0wTGZzeTZuUTRRdFFzdEdNVWozcGJtdlFmazJBNnljeGRFeFpkZFZsdmwKMm82MjBsMllxcHFDZEtCRThCay90elFIVTlKcU56cHpoOUJUTXdJREFRQUJBb0lCQVFDZklHbXowOHhRVmorNwpLZnZJUXQwQ0YzR2MxNld6eDhVNml4MHg4Mm15d1kxUUNlL3BzWE9LZlRxT1h1SENyUlp5TnUvZ2IvUUQ4bUFOCmxOMjRZTWl0TWRJODg5TEZoTkp3QU5OODJDeTczckM5bzVvUDlkazAvYzRIbjAzSkVYNzZ5QjgzQm9rR1FvYksKMjhMNk0rdHUzUmFqNjd6Vmc2d2szaEhrU0pXSzBwV1YrSjdrUkRWYmhDYUZhNk5nMUZNRWxhTlozVDhhUUtyQgpDUDNDeEFTdjYxWTk5TEI4KzNXWVFIK3NYaTVGM01pYVNBZ1BkQUk3WEh1dXFET1lvMU5PL0JoSGt1aVg2QnRtCnorNTZud2pZMy8yUytSRmNBc3JMTnIwMDJZZi9oY0IraVlDNzVWYmcydVd6WTY3TWdOTGQ5VW9RU3BDRkYrVm4KM0cyUnhybnhBb0dCQU40U3M0ZVlPU2huMVpQQjdhTUZsY0k2RHR2S2ErTGZTTXFyY2pOZjJlSEpZNnhubmxKdgpGenpGL2RiVWVTbWxSekR0WkdlcXZXaHFISy9iTjIyeWJhOU1WMDlRQ0JFTk5jNmtWajJTVHpUWkJVbEx4QzYrCk93Z0wyZHhKendWelU0VC84ajdHalRUN05BZVpFS2FvRHFyRG5BYWkyaW5oZU1JVWZHRXFGKzJyQW9HQkFOMVAKK0tZL0lsS3RWRzRKSklQNzBjUis3RmpyeXJpY05iWCtQVzUvOXFHaWxnY2grZ3l4b25BWlBpd2NpeDN3QVpGdwpaZC96ZFB2aTBkWEppc1BSZjRMazg5b2pCUmpiRmRmc2l5UmJYbyt3TFU4NUhRU2NGMnN5aUFPaTVBRHdVU0FkCm45YWFweUNweEFkREtERHdObit3ZFhtaTZ0OHRpSFRkK3RoVDhkaVpBb0dCQUt6Wis1bG9OOTBtYlF4VVh5YUwKMjFSUm9tMGJjcndsTmVCaWNFSmlzaEhYa2xpSVVxZ3hSZklNM2hhUVRUcklKZENFaHFsV01aV0xPb2I2NTNyZgo3aFlMSXM1ZUtka3o0aFRVdnpldm9TMHVXcm9CV2xOVHlGanIrSWhKZnZUc0hpOGdsU3FkbXgySkJhZUFVWUNXCndNdlQ4NmNLclNyNkQrZG8wS05FZzFsL0FvR0FlMkFVdHVFbFNqLzBmRzgrV3hHc1RFV1JqclRNUzRSUjhRWXQKeXdjdFA4aDZxTGxKUTRCWGxQU05rMXZLTmtOUkxIb2pZT2pCQTViYjhibXNVU1BlV09NNENoaFJ4QnlHbmR2eAphYkJDRkFwY0IvbEg4d1R0alVZYlN5T294ZGt5OEp0ek90ajJhS0FiZHd6NlArWDZDODhjZmxYVFo5MWpYL3RMCjF3TmRKS2tDZ1lCbyt0UzB5TzJ2SWFmK2UwSkN5TGhzVDQ5cTN3Zis2QWVqWGx2WDJ1VnRYejN5QTZnbXo5aCsKcDNlK2JMRUxwb3B0WFhNdUFRR0xhUkcrYlNNcjR5dERYbE5ZSndUeThXczNKY3dlSTdqZVp2b0ZpbmNvVlVIMwphdmxoTUVCRGYxSjltSDB5cDBwWUNaS2ROdHNvZEZtQktzVEtQMjJhTmtsVVhCS3gyZzR6cFE9PQotLS0tLUVORCBSU0EgUFJJVkFURSBLRVktLS0tLQo=\u003c/span\u003e\n\n\u003cspan class=\"hljs-meta\"\u003e---\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003ekind:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eConfigMap\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003eapiVersion:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ev1\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003emetadata:\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003ename:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-config\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003enamespace:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-ingress\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003edata:\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003eserver-names-hash-bucket-size:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;1024\u0026quot;\u003c/span\u003e\n\n\n\u003cspan class=\"hljs-meta\"\u003e---\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003ekind:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eClusterRole\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003eapiVersion:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003erbac.authorization.k8s.io/v1beta1\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003emetadata:\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003ename:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-ingress\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003erules:\u003c/span\u003e\n\u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003eapiGroups:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;\u0026quot;\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003eresources:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eservices\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eendpoints\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003everbs:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eget\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003elist\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ewatch\u003c/span\u003e\n\u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003eapiGroups:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;\u0026quot;\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003eresources:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003esecrets\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003everbs:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eget\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003elist\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ewatch\u003c/span\u003e\n\u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003eapiGroups:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;\u0026quot;\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003eresources:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003econfigmaps\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003everbs:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eget\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003elist\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ewatch\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eupdate\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ecreate\u003c/span\u003e\n\u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003eapiGroups:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;\u0026quot;\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003eresources:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003epods\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003everbs:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003elist\u003c/span\u003e\n\u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003eapiGroups:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;\u0026quot;\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003eresources:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eevents\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003everbs:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ecreate\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003epatch\u003c/span\u003e\n\u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003eapiGroups:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eextensions\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003eresources:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eingresses\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003everbs:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003elist\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ewatch\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eget\u003c/span\u003e\n\u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003eapiGroups:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;extensions\u0026quot;\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003eresources:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eingresses/status\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003everbs:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eupdate\u003c/span\u003e\n\u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003eapiGroups:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ek8s.nginx.org\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003eresources:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003evirtualservers\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003evirtualserverroutes\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003everbs:\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003elist\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ewatch\u003c/span\u003e\n  \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eget\u003c/span\u003e\n\n\u003cspan class=\"hljs-meta\"\u003e---\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003ekind:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eClusterRoleBinding\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003eapiVersion:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003erbac.authorization.k8s.io/v1beta1\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003emetadata:\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003ename:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-ingress\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003esubjects:\u003c/span\u003e\n\u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003ekind:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eServiceAccount\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003ename:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-ingress\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003enamespace:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-ingress\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003eroleRef:\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003ekind:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eClusterRole\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003ename:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-ingress\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003eapiGroup:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003erbac.authorization.k8s.io\u003c/span\u003e\n\n\u003cspan class=\"hljs-meta\"\u003e---\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003eapiVersion:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eapps/v1\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003ekind:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eDaemonSet\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003emetadata:\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003ename:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-ingress\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003enamespace:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-ingress\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003eannotations:\u003c/span\u003e\n    \u003cspan class=\"hljs-attr\"\u003eprometheus.io/scrape:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;true\u0026quot;\u003c/span\u003e\n    \u003cspan class=\"hljs-attr\"\u003eprometheus.io/port:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e\u0026quot;9113\u0026quot;\u003c/span\u003e\n\u003cspan class=\"hljs-attr\"\u003espec:\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003eselector:\u003c/span\u003e\n    \u003cspan class=\"hljs-attr\"\u003ematchLabels:\u003c/span\u003e\n      \u003cspan class=\"hljs-attr\"\u003eapp:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-ingress\u003c/span\u003e\n  \u003cspan class=\"hljs-attr\"\u003etemplate:\u003c/span\u003e\n    \u003cspan class=\"hljs-attr\"\u003emetadata:\u003c/span\u003e\n      \u003cspan class=\"hljs-attr\"\u003elabels:\u003c/span\u003e\n        \u003cspan class=\"hljs-attr\"\u003eapp:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-ingress\u003c/span\u003e\n    \u003cspan class=\"hljs-attr\"\u003espec:\u003c/span\u003e\n      \u003cspan class=\"hljs-attr\"\u003eserviceAccountName:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-ingress\u003c/span\u003e\n      \u003cspan class=\"hljs-attr\"\u003econtainers:\u003c/span\u003e\n      \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003eimage:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx/nginx-ingress:1.5.5\u003c/span\u003e\n        \u003cspan class=\"hljs-attr\"\u003ename:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003enginx-ingress\u003c/span\u003e\n        \u003cspan class=\"hljs-attr\"\u003eports:\u003c/span\u003e\n        \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003ename:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ehttp\u003c/span\u003e\n          \u003cspan class=\"hljs-attr\"\u003econtainerPort:\u003c/span\u003e \u003cspan class=\"hljs-number\"\u003e80\u003c/span\u003e\n          \u003cspan class=\"hljs-attr\"\u003ehostPort:\u003c/span\u003e \u003cspan class=\"hljs-number\"\u003e80\u003c/span\u003e\n        \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003ename:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ehttps\u003c/span\u003e\n          \u003cspan class=\"hljs-attr\"\u003econtainerPort:\u003c/span\u003e \u003cspan class=\"hljs-number\"\u003e443\u003c/span\u003e\n          \u003cspan class=\"hljs-attr\"\u003ehostPort:\u003c/span\u003e \u003cspan class=\"hljs-number\"\u003e443\u003c/span\u003e\n        \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003ename:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003eprometheus\u003c/span\u003e\n          \u003cspan class=\"hljs-attr\"\u003econtainerPort:\u003c/span\u003e \u003cspan class=\"hljs-number\"\u003e9113\u003c/span\u003e\n        \u003cspan class=\"hljs-attr\"\u003eenv:\u003c/span\u003e\n        \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003ename:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ePOD_NAMESPACE\u003c/span\u003e\n          \u003cspan class=\"hljs-attr\"\u003evalueFrom:\u003c/span\u003e\n            \u003cspan class=\"hljs-attr\"\u003efieldRef:\u003c/span\u003e\n              \u003cspan class=\"hljs-attr\"\u003efieldPath:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003emetadata.namespace\u003c/span\u003e\n        \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-attr\"\u003ename:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003ePOD_NAME\u003c/span\u003e\n          \u003cspan class=\"hljs-attr\"\u003evalueFrom:\u003c/span\u003e\n            \u003cspan class=\"hljs-attr\"\u003efieldRef:\u003c/span\u003e\n              \u003cspan class=\"hljs-attr\"\u003efieldPath:\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003emetadata.name\u003c/span\u003e\n        \u003cspan class=\"hljs-attr\"\u003eargs:\u003c/span\u003e\n          \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-nginx-configmaps=$(POD_NAMESPACE)/nginx-config\u003c/span\u003e\n          \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-default-server-tls-secret=$(POD_NAMESPACE)/default-server-secret\u003c/span\u003e\n         \u003cspan class=\"hljs-comment\"\u003e#- -v=3 # Enables extensive logging. Useful for troubleshooting.\u003c/span\u003e\n         \u003cspan class=\"hljs-comment\"\u003e#- -report-ingress-status\u003c/span\u003e\n         \u003cspan class=\"hljs-comment\"\u003e#- -external-service=nginx-ingress\u003c/span\u003e\n         \u003cspan class=\"hljs-comment\"\u003e#- -enable-leader-election\u003c/span\u003e\n          \u003cspan class=\"hljs-bullet\"\u003e-\u003c/span\u003e \u003cspan class=\"hljs-string\"\u003e-enable-prometheus-metrics\u003c/span\u003e\n         \u003cspan class=\"hljs-comment\"\u003e#- -enable-custom-resources\u003c/span\u003e\n \n\u003c/code\u003e\u003c/pre\u003e","frontMatter":{"readingTime":{"text":"13 min read","minutes":12.845,"time":770700,"words":2569},"slug":"一次k8s环境搭建记录","fileName":"一次k8s环境搭建记录.md","title":"数据变更记录工具","date":"2022-03-15T00:00:00.000Z","tags":["实践","云原生"],"draft":false,"summary":"kubernetes环境搭建记录"}},"prev":{"title":"数据变更记录工具","date":"2022-01-15T00:00:00.000Z","tags":["中间件"],"draft":false,"summary":"接到个工作，需要为应用提供通用的数据变更日志功能","slug":"数据变更记录工具"},"next":{"title":"如何使用nginx实现灰度部署","date":"2022-03-31T00:00:00.000Z","tags":["实践","云原生"],"draft":false,"summary":"灰度部署","slug":"如何使用nginx实现灰度部署"}},"__N_SSG":true},"page":"/blog/[...slug]","query":{"slug":["一次k8s环境搭建记录"]},"buildId":"PMB5qMppIrri5HN2Gb314","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

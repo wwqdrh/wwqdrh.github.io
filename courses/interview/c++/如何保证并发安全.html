@@ -1,0 +1,428 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>如何保证并发安全</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href=".././theme/style.css">
+    <link rel="stylesheet" href=".././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">面试指南</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/index.html"><strong aria-hidden="true">1.</strong> 数据结构与算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/index.html"><strong aria-hidden="true">1.1.</strong> 题库</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer1.html"><strong aria-hidden="true">1.1.1.</strong> 剑指offer1</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer2.html"><strong aria-hidden="true">1.1.2.</strong> 剑指offer2</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer3.html"><strong aria-hidden="true">1.1.3.</strong> 剑指offer3</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer4.html"><strong aria-hidden="true">1.1.4.</strong> 剑指offer4</a></li></ol></li><li class="chapter-item expanded "><a href="../数据结构与算法/短链系统设计.html"><strong aria-hidden="true">1.2.</strong> 短链系统设计</a></li></ol></li><li class="chapter-item expanded "><a href="../c++/index.html"><strong aria-hidden="true">2.</strong> c++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../c++/引用变量.html"><strong aria-hidden="true">2.1.</strong> 引用变量</a></li><li class="chapter-item expanded "><a href="../c++/什么是虚函数.html"><strong aria-hidden="true">2.2.</strong> 什么是虚函数</a></li><li class="chapter-item expanded "><a href="../c++/什么是指针.html"><strong aria-hidden="true">2.3.</strong> 什么是指针</a></li><li class="chapter-item expanded "><a href="../c++/如何保证并发安全.html" class="active"><strong aria-hidden="true">2.4.</strong> 如何保证并发安全</a></li><li class="chapter-item expanded "><a href="../c++/常见对象的内存结构.html"><strong aria-hidden="true">2.5.</strong> 常见对象的内存结构</a></li><li class="chapter-item expanded "><a href="../c++/stl容器库.html"><strong aria-hidden="true">2.6.</strong> stl容器库</a></li></ol></li><li class="chapter-item expanded "><a href="../linux操作系统/index.html"><strong aria-hidden="true">3.</strong> linux操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux操作系统/资源管理.html"><strong aria-hidden="true">3.1.</strong> 资源管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/网络配置.html"><strong aria-hidden="true">3.2.</strong> 网络配置</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/interview-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+<style>
+    select.code-example {
+        color: var(--fg);
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--fg);
+        padding: 2px 10px 2px 10px;
+        border-radius: 5px;
+    }
+</style>
+<p>C++中的并发编程是指多个线程或任务同时执行，旨在提高程序的效率、响应性或处理多个任务。虽然并发编程可以带来性能提升，但它也引入了许多复杂的问题，如<code>线程竞争（race conditions）</code>、<code>死锁（deadlocks）</code>、<code>内存可见性问题（memory visibility issues）</code>等。</p>
+<h2 id="并发编程的基本原理"><a class="header" href="#并发编程的基本原理">并发编程的基本原理</a></h2>
+<p>在并发编程中，多个线程同时运行并访问共享资源。C++标准库提供了<code>&lt;thread&gt;</code>库，允许我们轻松创建和管理线程。线程可以共享相同的内存地址空间，这意味着它们可以直接访问同一个变量。这种共享内存的特性可以提高性能，但同时也可能导致竞争条件等并发问题。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;thread&gt;
+
+void task(int id) {
+    std::cout &lt;&lt; "Task " &lt;&lt; id &lt;&lt; " is running." &lt;&lt; std::endl;
+}
+
+int main() {
+    std::thread t1(task, 1); // 启动线程t1
+    std::thread t2(task, 2); // 启动线程t2
+
+    t1.join();  // 等待线程t1执行完毕
+    t2.join();  // 等待线程t2执行完毕
+
+    return 0;
+}
+</code></pre>
+<p>这段代码中，我们创建了两个线程t1和t2，它们并行执行相同的task函数。每个线程都会输出自己的任务ID。为了确保程序正常退出，我们使用了join()，使得主线程等待所有子线程结束。</p>
+<h2 id="并发问题"><a class="header" href="#并发问题">并发问题</a></h2>
+<p>并发问题通常发生在多个线程访问共享资源时，如果没有合适的同步机制，可能会产生不可预测的行为。常见的并发问题包括：</p>
+<ul>
+<li>(1) 竞争条件（Race Condition）</li>
+</ul>
+<p>当多个线程并发地读写相同的共享资源且没有适当的同步时，可能导致竞争条件。结果是，程序的输出依赖于线程的执行顺序，而这个顺序是无法预测的。</p>
+<p>错误示例：竞争条件</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;thread&gt;
+
+int counter = 0;
+
+void increment(int iterations) {
+    for (int i = 0; i &lt; iterations; ++i) {
+        ++counter;  // 不安全的递增操作
+    }
+}
+
+int main() {
+    std::thread t1(increment, 100000);
+    std::thread t2(increment, 100000);
+
+    t1.join();
+    t2.join();
+
+    std::cout &lt;&lt; "Final counter value: " &lt;&lt; counter &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+<p>在这个例子中，counter是两个线程共享的变量。多个线程同时对counter进行递增操作时会发生竞争条件，最终输出的结果会不一致，因为递增操作不是原子的（非原子操作可能会被多个线程同时访问并中断）。</p>
+<p><code>(2) 死锁（Deadlock）</code></p>
+<p>当多个线程相互等待对方持有的资源释放时，就会发生死锁。死锁会导致程序无法继续运行。</p>
+<p>错误示例：死锁</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;thread&gt;
+#include &lt;mutex&gt;
+
+std::mutex mutex1, mutex2;
+
+void task1() {
+    std::lock_guard&lt;std::mutex&gt; lock1(mutex1);
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+    std::lock_guard&lt;std::mutex&gt; lock2(mutex2);  // 死锁
+}
+
+void task2() {
+    std::lock_guard&lt;std::mutex&gt; lock2(mutex2);
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+    std::lock_guard&lt;std::mutex&gt; lock1(mutex1);  // 死锁
+}
+
+int main() {
+    std::thread t1(task1);
+    std::thread t2(task2);
+
+    t1.join();
+    t2.join();
+    return 0;
+}
+</code></pre>
+<p>在这个例子中，task1持有mutex1并等待mutex2，而task2持有mutex2并等待mutex1，从而造成了死锁。</p>
+<h2 id="并发安全线程安全的常见方法"><a class="header" href="#并发安全线程安全的常见方法">并发安全（线程安全）的常见方法</a></h2>
+<p>为了避免并发问题，我们需要引入适当的同步机制。C++标准库提供了多种工具来帮助我们实现线程安全。</p>
+<ul>
+<li>(1) 互斥量（Mutex）</li>
+</ul>
+<p>互斥量是用来保证只有一个线程可以访问共享资源的工具。使用互斥量可以确保某个线程在访问共享资源时不会被其他线程打断。</p>
+<p>正确示例：使用互斥量避免竞争条件</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;thread&gt;
+#include &lt;mutex&gt;
+
+int counter = 0;
+std::mutex mtx;
+
+void increment(int iterations) {
+    for (int i = 0; i &lt; iterations; ++i) {
+        std::lock_guard&lt;std::mutex&gt; lock(mtx);  // 锁定互斥量
+        ++counter;  // 安全的递增操作
+    }
+}
+
+int main() {
+    std::thread t1(increment, 100000);
+    std::thread t2(increment, 100000);
+
+    t1.join();
+    t2.join();
+
+    std::cout &lt;&lt; "Final counter value: " &lt;&lt; counter &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+<p>使用std::mutex保证同一时间只有一个线程可以访问counter，从而避免竞争条件。</p>
+<ul>
+<li>(2) 原子操作（Atomic Operations）</li>
+</ul>
+<p>C++提供了<code>&lt;atomic&gt;</code>库，允许对某些基本类型执行原子操作。原子操作不需要显式的锁机制，通常更高效。</p>
+<p>正确示例：使用原子变量</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;thread&gt;
+#include &lt;atomic&gt;
+
+std::atomic&lt;int&gt; counter(0);
+
+void increment(int iterations) {
+    for (int i = 0; i &lt; iterations; ++i) {
+        ++counter;  // 原子递增操作
+    }
+}
+
+int main() {
+    std::thread t1(increment, 100000);
+    std::thread t2(increment, 100000);
+
+    t1.join();
+    t2.join();
+
+    std::cout &lt;&lt; "Final counter value: " &lt;&lt; counter.load() &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+<p>在这个例子中，counter是一个原子变量，递增操作是线程安全的，无需使用互斥量。</p>
+<h2 id="性能问题分析"><a class="header" href="#性能问题分析">性能问题分析</a></h2>
+<p>在并发编程中，性能与安全性之间存在权衡。引入锁和同步机制可以保证线程安全，但会带来额外的性能开销。以下是一些需要考虑的性能问题：</p>
+<ul>
+<li>锁的开销：频繁加锁和解锁会降低并发性能，特别是在竞争激烈的场合（多个线程频繁尝试获取锁）。</li>
+<li>原子操作的开销：尽管原子操作比锁轻量，但它们也会引入一些性能开销，尤其是在复杂的数据结构上。</li>
+<li>上下文切换：线程之间的切换会带来额外的系统开销，如果线程数量过多，上下文切换可能导致性能下降。</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../c++/什么是指针.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../c++/常见对象的内存结构.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../c++/什么是指针.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../c++/常见对象的内存结构.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src=".././theme/style.js"></script>
+        <script src="../clarity.js"></script>
+        <script src=".././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>

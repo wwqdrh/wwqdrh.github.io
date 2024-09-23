@@ -1,0 +1,448 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>常见对象的内存结构</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href=".././theme/style.css">
+    <link rel="stylesheet" href=".././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">面试指南</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/index.html"><strong aria-hidden="true">1.</strong> 数据结构与算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/index.html"><strong aria-hidden="true">1.1.</strong> 题库</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer1.html"><strong aria-hidden="true">1.1.1.</strong> 剑指offer1</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer2.html"><strong aria-hidden="true">1.1.2.</strong> 剑指offer2</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer3.html"><strong aria-hidden="true">1.1.3.</strong> 剑指offer3</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer4.html"><strong aria-hidden="true">1.1.4.</strong> 剑指offer4</a></li></ol></li><li class="chapter-item expanded "><a href="../数据结构与算法/短链系统设计.html"><strong aria-hidden="true">1.2.</strong> 短链系统设计</a></li></ol></li><li class="chapter-item expanded "><a href="../c++/index.html"><strong aria-hidden="true">2.</strong> c++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../c++/引用变量.html"><strong aria-hidden="true">2.1.</strong> 引用变量</a></li><li class="chapter-item expanded "><a href="../c++/什么是虚函数.html"><strong aria-hidden="true">2.2.</strong> 什么是虚函数</a></li><li class="chapter-item expanded "><a href="../c++/什么是指针.html"><strong aria-hidden="true">2.3.</strong> 什么是指针</a></li><li class="chapter-item expanded "><a href="../c++/如何保证并发安全.html"><strong aria-hidden="true">2.4.</strong> 如何保证并发安全</a></li><li class="chapter-item expanded "><a href="../c++/常见对象的内存结构.html" class="active"><strong aria-hidden="true">2.5.</strong> 常见对象的内存结构</a></li><li class="chapter-item expanded "><a href="../c++/stl容器库.html"><strong aria-hidden="true">2.6.</strong> stl容器库</a></li></ol></li><li class="chapter-item expanded "><a href="../linux操作系统/index.html"><strong aria-hidden="true">3.</strong> linux操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux操作系统/资源管理.html"><strong aria-hidden="true">3.1.</strong> 资源管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/网络配置.html"><strong aria-hidden="true">3.2.</strong> 网络配置</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/interview-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+<style>
+    select.code-example {
+        color: var(--fg);
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--fg);
+        padding: 2px 10px 2px 10px;
+        border-radius: 5px;
+    }
+</style>
+<p>在C++中，理解对象的内存布局是编写高效代码、进行性能优化和调试的重要基础。不同类型的对象在内存中的布局各不相同，从基本类型、指针和引用到复杂的类和对象，C++编译器为它们在内存中分配空间。我们将循序渐进地讨论这些对象的内存布局，并提供相应的代码示例以帮助理解。</p>
+<h2 id="1-基本类型primitive-types"><a class="header" href="#1-基本类型primitive-types">1. 基本类型（Primitive Types）</a></h2>
+<p>C++中的基本类型包括int、char、float、double等。这些类型的内存布局是固定的，并且它们通常被直接存储在栈（stack）上。</p>
+<p>基本类型的内存布局</p>
+<ul>
+<li>int 通常占用4个字节（具体取决于平台和编译器）。</li>
+<li>char 通常占用1个字节。</li>
+<li>float 通常占用4个字节。</li>
+<li>double 通常占用8个字节。</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+    int a = 10;
+    char b = 'c';
+    float c = 3.14;
+    double d = 2.718;
+
+    std::cout &lt;&lt; "Size of int: " &lt;&lt; sizeof(a) &lt;&lt; " bytes\n";
+    std::cout &lt;&lt; "Size of char: " &lt;&lt; sizeof(b) &lt;&lt; " bytes\n";
+    std::cout &lt;&lt; "Size of float: " &lt;&lt; sizeof(c) &lt;&lt; " bytes\n";
+    std::cout &lt;&lt; "Size of double: " &lt;&lt; sizeof(d) &lt;&lt; " bytes\n";
+    return 0;
+}
+</code></pre>
+<p>输出结果可能为：</p>
+<pre><code class="language-cpp">Size of int: 4 bytes
+Size of char: 1 byte
+Size of float: 4 bytes
+Size of double: 8 bytes
+</code></pre>
+<h2 id="2-指针pointer"><a class="header" href="#2-指针pointer">2. 指针（Pointer）</a></h2>
+<p>指针是用于存储内存地址的变量。指针的大小通常取决于平台的架构：</p>
+<ul>
+<li>在32位系统上，指针通常占用4个字节（32位地址空间）。</li>
+<li>在64位系统上，指针通常占用8个字节（64位地址空间）。</li>
+</ul>
+<p>指针的大小与它指向的对象类型无关，关键在于操作系统的地址空间大小。</p>
+<p>示例代码：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+    int* p1 = nullptr;  // 指向int类型的指针
+    double* p2 = nullptr;  // 指向double类型的指针
+
+    std::cout &lt;&lt; "Size of int pointer: " &lt;&lt; sizeof(p1) &lt;&lt; " bytes\n";
+    std::cout &lt;&lt; "Size of double pointer: " &lt;&lt; sizeof(p2) &lt;&lt; " bytes\n";
+    return 0;
+}
+</code></pre>
+<p>输出结果可能为：</p>
+<pre><code class="language-cpp">Size of int pointer: 8 bytes
+Size of double pointer: 8 bytes
+</code></pre>
+<h2 id="3-引用reference"><a class="header" href="#3-引用reference">3. 引用（Reference）</a></h2>
+<p>引用在C++中是某个变量的别名。虽然它在语法上类似于指针，但它本质上是不同的。引用的内存布局取决于编译器的实现。在大多数情况下，引用会被编译器实现为指针，因此它的大小通常与指针相同。</p>
+<p>示例代码：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+    int a = 5;
+    int&amp; ref = a;
+
+    std::cout &lt;&lt; "Address of a: " &lt;&lt; &amp;a &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Address of ref: " &lt;&lt; &amp;ref &lt;&lt; std::endl;  // 与a的地址相同
+    return 0;
+}
+</code></pre>
+<p>尽管引用与变量共享同一个地址，但编译器可能在内部将引用实现为指针。</p>
+<h2 id="4-函数function"><a class="header" href="#4-函数function">4. 函数（Function）</a></h2>
+<p>在C++中，函数的内存布局相对较为抽象，因为函数通常存储在代码段（code segment）中。指向函数的指针在内存中存储着函数的入口地址。</p>
+<p>函数指针示例：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+void myFunction() {
+    std::cout &lt;&lt; "Hello, world!" &lt;&lt; std::endl;
+}
+
+int main() {
+    void (*funcPtr)() = &amp;myFunction;  // 函数指针
+
+    std::cout &lt;&lt; "Address of function: " &lt;&lt; reinterpret_cast&lt;void*&gt;(funcPtr) &lt;&lt; std::endl;
+    funcPtr();  // 通过函数指针调用函数
+    return 0;
+}
+</code></pre>
+<p>输出结果会显示函数的内存地址，并执行该函数。</p>
+<h2 id="5-类class"><a class="header" href="#5-类class">5. 类（Class）</a></h2>
+<p>类在内存中的布局取决于其成员变量和方法。编译器会为类中的数据成员分配内存，而成员函数不会影响对象的大小（因为成员函数是共享的，不占用对象实例的内存空间）。</p>
+<p>类的内存布局示例：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+class MyClass {
+public:
+    int a;  // 占用4字节
+    char b;  // 占用1字节
+    double c;  // 占用8字节
+};
+
+int main() {
+    MyClass obj;
+    std::cout &lt;&lt; "Size of MyClass: " &lt;&lt; sizeof(obj) &lt;&lt; " bytes\n";
+    return 0;
+}
+</code></pre>
+<p>在这个例子中，MyClass对象的大小不是简单的相加，因为编译器可能会进行内存对齐。即使char只占1字节，编译器可能会填充额外的字节以保证对齐。</p>
+<p>对齐与填充：</p>
+<ul>
+<li>内存对齐（Memory Alignment）：为了提高内存访问效率，编译器通常会把数据对齐到特定的边界。例如，32位系统中可能要求4字节对齐，64位系统可能要求8字节对齐。</li>
+<li>填充字节（Padding Bytes）：为了满足对齐要求，编译器会在成员变量之间插入一些空白字节。</li>
+</ul>
+<p>示例输出可能是：<code>Size of MyClass: 16 bytes</code></p>
+<p>这说明编译器在char后面插入了3个字节的填充，以保证double按8字节对齐。</p>
+<p><code>如果 A 这个对象对应的类是一个空类，那么 sizeof(A) 的值是多少？</code></p>
+<p>在C++中，即使类是空的，sizeof 一个对象仍然不会是 0。一个空类在 C++ 中的 sizeof 值通常是 1 字节。这是为了确保每个实例都有一个唯一的地址。不同的编译器实现可能会有不同的结果，但通常会返回 1 字节。</p>
+<h2 id="6-对象的内存布局"><a class="header" href="#6-对象的内存布局">6. 对象的内存布局</a></h2>
+<p>对象是类的实例，它在内存中存储着类的所有非静态数据成员。静态成员属于类，而不是某个具体的对象，因此不包含在对象的内存布局中。</p>
+<p>多重继承和虚表
+当类使用继承时，特别是使用多重继承或虚函数时，对象的内存布局会更加复杂。例如，如果一个类有虚函数，编译器会为每个对象分配一个指向虚表（vtable）的指针，称为虚指针（vptr）。虚表存储了虚函数的地址。</p>
+<p>示例代码（虚函数和虚表）：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+class Base {
+public:
+    virtual void func() {
+        std::cout &lt;&lt; "Base function\n";
+    }
+};
+
+class Derived : public Base {
+public:
+    void func() override {
+        std::cout &lt;&lt; "Derived function\n";
+    }
+};
+
+int main() {
+    Base b;
+    Derived d;
+
+    std::cout &lt;&lt; "Size of Base: " &lt;&lt; sizeof(b) &lt;&lt; " bytes\n";
+    std::cout &lt;&lt; "Size of Derived: " &lt;&lt; sizeof(d) &lt;&lt; " bytes\n";
+    return 0;
+}
+</code></pre>
+<p>由于类Base和Derived都有虚函数，编译器会为每个对象分配虚指针。通常，虚指针的大小等于一个普通指针的大小（例如，64位系统上为8字节）。</p>
+<p><code>如果 A 是某一个类的指针，那么在它等于 nullptr 的情况下能直接调用它对应类的 public 函数吗？</code></p>
+<p>这取决于该 public 函数是否访问了该对象的成员。如果该函数不访问对象成员，并且它是一个非虚函数，那么可以在 A == nullptr 的情况下调用它而不会出错。但如果函数访问了对象的成员（无论是直接还是间接），或者是虚函数（因为虚函数需要通过虚表指针调用），那么调用时会引发未定义行为。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;utility&gt;  // for std::forward
+
+class A{
+public:
+void process(int x) {
+    std::cout &lt;&lt; "Processing lvalue: " &lt;&lt; x &lt;&lt; std::endl;
+}
+};
+
+int main() {
+    A* a = nullptr;
+    a-&gt;process(2);
+    // output
+    // Processing lvalue: 2
+}
+</code></pre>
+<p><code>非成员访问的成员函数</code>： 当一个成员函数不访问该对象的成员变量时，它在本质上相当于一个普通的函数，只是函数签名上有一个隐式的 this 指针。这种函数不会依赖于指针所指向的对象内容。</p>
+<ul>
+<li>当你调用一个函数，比如 ptr-&gt;foo()，编译器会将它转化为 foo(ptr)，其中 ptr 是隐式传递的 this 指针。</li>
+<li>如果 foo 函数内部并不访问成员变量，而是执行独立逻辑，传入的 nullptr 就不会导致问题，因为它实际上没有解引用 this 指针中的任何内容。</li>
+</ul>
+<p>对于其他的，比如需要解引用this指针，比如调用虚函数涉及虚表指针的解引用，使用nullptr就会出问题了。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../c++/如何保证并发安全.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../c++/stl容器库.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../c++/如何保证并发安全.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../c++/stl容器库.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src=".././theme/style.js"></script>
+        <script src="../clarity.js"></script>
+        <script src=".././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>

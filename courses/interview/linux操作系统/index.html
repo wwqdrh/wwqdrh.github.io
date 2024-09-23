@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>linux操作系统</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href=".././theme/style.css">
+    <link rel="stylesheet" href=".././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">面试指南</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/index.html"><strong aria-hidden="true">1.</strong> 数据结构与算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/index.html"><strong aria-hidden="true">1.1.</strong> 题库</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer1.html"><strong aria-hidden="true">1.1.1.</strong> 剑指offer1</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer2.html"><strong aria-hidden="true">1.1.2.</strong> 剑指offer2</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer3.html"><strong aria-hidden="true">1.1.3.</strong> 剑指offer3</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer4.html"><strong aria-hidden="true">1.1.4.</strong> 剑指offer4</a></li></ol></li><li class="chapter-item expanded "><a href="../数据结构与算法/短链系统设计.html"><strong aria-hidden="true">1.2.</strong> 短链系统设计</a></li></ol></li><li class="chapter-item expanded "><a href="../c++/index.html"><strong aria-hidden="true">2.</strong> c++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../c++/引用变量.html"><strong aria-hidden="true">2.1.</strong> 引用变量</a></li><li class="chapter-item expanded "><a href="../c++/什么是虚函数.html"><strong aria-hidden="true">2.2.</strong> 什么是虚函数</a></li><li class="chapter-item expanded "><a href="../c++/什么是指针.html"><strong aria-hidden="true">2.3.</strong> 什么是指针</a></li><li class="chapter-item expanded "><a href="../c++/如何保证并发安全.html"><strong aria-hidden="true">2.4.</strong> 如何保证并发安全</a></li><li class="chapter-item expanded "><a href="../c++/常见对象的内存结构.html"><strong aria-hidden="true">2.5.</strong> 常见对象的内存结构</a></li><li class="chapter-item expanded "><a href="../c++/stl容器库.html"><strong aria-hidden="true">2.6.</strong> stl容器库</a></li></ol></li><li class="chapter-item expanded "><a href="../linux操作系统/index.html" class="active"><strong aria-hidden="true">3.</strong> linux操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux操作系统/资源管理.html"><strong aria-hidden="true">3.1.</strong> 资源管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/网络配置.html"><strong aria-hidden="true">3.2.</strong> 网络配置</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/interview-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+<style>
+    select.code-example {
+        color: var(--fg);
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--fg);
+        padding: 2px 10px 2px 10px;
+        border-radius: 5px;
+    }
+</style>
+<p>学习 Linux 系统能够显著提升工作效率、开发能力和系统管理能力。掌握 Linux 系统的各项技能可以帮助程序员更好地管理和维护开发环境，提升自动化水平、问题解决能力和工作效率。特别是在服务器运维、网络编程、大规模集成开发环境等场景下，Linux 的学习能够显著提升程序员的全方位能力，增加对系统底层的理解，为更复杂的技术栈打下坚实的基础。</p>
+<h2 id="1-基础命令与文件系统管理"><a class="header" href="#1-基础命令与文件系统管理">1. 基础命令与文件系统管理</a></h2>
+<p>重点掌握内容：基本的命令如 ls、cd、cp、mv、rm、chmod、chown、ln、find、grep 等，文件和目录权限（如 rwx 权限的含义），文件路径结构，文件压缩与解压（如 tar、gzip）。
+作用：这些命令是管理 Linux 文件系统的基础，掌握它们可以帮助程序员高效地在系统中导航、管理文件、调整权限等。
+提升：熟悉这些基础命令可以提高操作系统的工作效率，让程序员更快、更便捷地完成日常开发和运维任务。</p>
+<h2 id="2-文本编辑器"><a class="header" href="#2-文本编辑器">2. 文本编辑器</a></h2>
+<p>重点掌握内容：使用文本编辑器如 vim、nano、emacs 等进行文件编辑。掌握 vim 的基本操作（如插入模式、命令模式、保存、退出、查找与替换）。</p>
+<p>作用：文本编辑器是处理配置文件、代码和脚本的主要工具。快速掌握 vim 等编辑器的使用能够提高工作效率。</p>
+<p>提升：熟悉高效的文本编辑工具能够减少切换图形界面编辑器的需求，增强命令行下的开发与配置能力。</p>
+<h2 id="3-shell-脚本编程"><a class="header" href="#3-shell-脚本编程">3. Shell 脚本编程</a></h2>
+<p>重点掌握内容：了解 bash 等 Shell 语言的基础，如变量、条件判断（if）、循环（for、while）、函数、自定义命令，以及管道（|）与重定向（&gt;、&gt;&gt;、&lt;）的使用。</p>
+<p>作用：Shell 脚本能够自动化重复性任务，如批量文件处理、自动化部署和系统监控等，是系统运维的必备技能。</p>
+<p>提升：通过编写 Shell 脚本，可以大幅减少人工操作，提高工作流程的自动化水平，增强系统运维和批处理能力。</p>
+<h2 id="4-系统权限与用户管理"><a class="header" href="#4-系统权限与用户管理">4. 系统权限与用户管理</a></h2>
+<p>重点掌握内容：用户和组的管理（如 useradd、usermod、passwd、groupadd 等），文件权限与归属（chmod、chown），sudo 权限配置与管理。</p>
+<p>作用：通过掌握这些内容，程序员可以为不同用户分配权限，保护系统安全，防止未经授权的访问。</p>
+<p>提升：掌握用户和权限管理能让程序员确保系统的安全性，特别是在服务器或团队协作开发环境中。</p>
+<h2 id="5-进程管理与系统监控"><a class="header" href="#5-进程管理与系统监控">5. 进程管理与系统监控</a></h2>
+<p>重点掌握内容：使用 ps、top、htop、kill、pkill 等命令管理进程，使用 systemctl 或 service 管理服务，查看系统日志（如 dmesg、journalctl）。</p>
+<p>作用：进程管理是系统资源分配和调度的重要环节，了解如何查看和管理进程可以帮助程序员定位性能瓶颈或崩溃原因。</p>
+<p>提升：通过掌握进程和系统监控，程序员可以更好地排查系统问题，优化应用性能，了解系统资源的分配与使用。</p>
+<h2 id="6-网络配置与管理"><a class="header" href="#6-网络配置与管理">6. 网络配置与管理</a></h2>
+<p>重点掌握内容：了解基本的网络命令如 ifconfig、ping、netstat、ss、traceroute、iptables，学习网络接口配置与调试。</p>
+<p>作用：掌握网络相关命令能够帮助程序员配置和管理服务器的网络连接，进行网络调试和诊断，设置防火墙规则。</p>
+<p>提升：网络配置能力让程序员能够自己搭建开发或测试环境的网络部分，有助于理解和优化分布式系统或网络应用的性能。</p>
+<h2 id="7-软件包管理"><a class="header" href="#7-软件包管理">7. 软件包管理</a></h2>
+<p>重点掌握内容：使用软件包管理工具如 apt（Ubuntu/Debian 系列）、yum 或 dnf（CentOS/Fedora 系列），安装、更新、卸载软件包，管理软件依赖。
+作用：软件包管理是 Linux 系统中安装、升级和管理软件的主要方式，掌握这些工具可以高效管理开发环境。
+提升：掌握软件包管理工具，可以让程序员更加自由地定制开发环境，管理系统所需的库和依赖。</p>
+<h2 id="8-日志管理"><a class="header" href="#8-日志管理">8. 日志管理</a></h2>
+<p>重点掌握内容：熟悉系统日志文件的路径和格式（如 /var/log 目录中的日志文件），使用 tail、less、grep 等工具查看日志内容，配置日志轮替（如 logrotate）。</p>
+<p>作用：日志是系统运行状态的记录，掌握日志查看与分析工具可以帮助程序员定位问题，监控系统运行。</p>
+<p>提升：通过熟练掌握日志管理，程序员能够更迅速地排查系统和应用程序的错误，提升问题解决能力。</p>
+<h2 id="9-虚拟化与容器化"><a class="header" href="#9-虚拟化与容器化">9. 虚拟化与容器化</a></h2>
+<p>重点掌握内容：学习如何使用虚拟机（如 VirtualBox）或容器（如 Docker），掌握虚拟环境的配置和管理。</p>
+<p>作用：容器化技术如 Docker 已经成为现代应用开发和部署的核心，掌握这些技术能够提高开发和部署的灵活性与一致性。</p>
+<p>提升：通过掌握虚拟化与容器化技术，程序员可以创建独立的开发环境，模拟生产环境，提升开发效率并减少部署出错的概率。</p>
+<h2 id="10--版本控制系统与远程管理"><a class="header" href="#10--版本控制系统与远程管理">10.  版本控制系统与远程管理</a></h2>
+<p>重点掌握内容：学习 git 版本控制系统的使用，掌握基本的 git 操作（如 clone、commit、push、pull、branch），并掌握远程服务器的管理工具如 ssh、scp。</p>
+<p>作用：版本控制和远程管理是多人协作开发和维护服务器的重要技能。通过远程连接和管理服务器，程序员可以进行部署、维护和调试。</p>
+<p>提升：这些技能对于程序员的协作开发、代码管理和远程运维具有重要意义，能够让程序员更好地参与团队合作和管理生产服务器。</p>
+<h2 id="11-安全与防护"><a class="header" href="#11-安全与防护">11. 安全与防护</a></h2>
+<p>重点掌握内容：掌握基础的安全措施，如使用 SSH 密钥登录、设置防火墙、加固文件权限、配置 Fail2Ban 等防护措施。</p>
+<p>作用：提高系统的安全性，防止网络攻击或数据泄露。</p>
+<p>提升：安全意识和防护技能是保护系统与数据安全的核心，能够帮助程序员打造更安全可靠的开发和生产环境。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../c++/stl容器库.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../linux操作系统/资源管理.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../c++/stl容器库.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../linux操作系统/资源管理.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src=".././theme/style.js"></script>
+        <script src="../clarity.js"></script>
+        <script src=".././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>

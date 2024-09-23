@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://wwqdrh.github.io
+
+# Sitemaps
+Sitemap: https://wwqdrh.github.io/sitemap.xml

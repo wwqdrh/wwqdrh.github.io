@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="viewport" content="width=device-width"/><title>overlay文件系统</title><meta name="robots" content="follow, index"/><meta charSet="UTF-8"/><meta name="description" content="overlay文件系统实践，探索容器原理"/><meta property="og:type"/><meta property="og:title" content="overlay文件系统"/><meta property="og:description" content="overlay文件系统实践，探索容器原理"/><meta property="og:url" content="https://wwqdrh.github.io/undefined"/><meta name="keywords" content="wwqdrh技术博客"/><meta property="og:locale" content="zh-CN"/><meta property="og:image" content="https://wwqdrh.github.io"/><meta name="twitter:title" content="overlay文件系统"/><meta name="twitter:description" content="overlay文件系统实践，探索容器原理"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://wwqdrh.github.io"/><link rel="stylesheet" href="/assets/mdrender/editor-render.css"/><meta name="next-head-count" content="17"/><link rel="icon" href="/favicon.ico"/><link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png"/><link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed"/><script src="/assets/analizy/clarity.js"></script><link rel="preload" href="/_next/static/media/d83e92f0af8b17e4-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/ed42d1b51efd45f6-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/fba9d678ff638e59-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/e52907b750a6f61e-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/9031250013752d4b-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/eb9adf802b0a60eb-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/81b352a4d7a000ae-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/41b9b3ece820718f-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/media/d587d1c112526568-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" data-next-font="size-adjust"/><link rel="preload" href="/_next/static/css/869c7de7c781f904.css" as="style"/><link rel="stylesheet" href="/_next/static/css/869c7de7c781f904.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"></script><script src="/_next/static/chunks/webpack-6ef43a8d4a395f49.js" defer=""></script><script src="/_next/static/chunks/framework-fbe37f60a09a330b.js" defer=""></script><script src="/_next/static/chunks/main-082d90b1269d95f6.js" defer=""></script><script src="/_next/static/chunks/pages/_app-494ee9c4b0594b31.js" defer=""></script><script src="/_next/static/chunks/pages/blog/%5B...slug%5D-222bf60d0a2bf3df.js" defer=""></script><script src="/_next/static/PMB5qMppIrri5HN2Gb314/_buildManifest.js" defer=""></script><script src="/_next/static/PMB5qMppIrri5HN2Gb314/_ssgManifest.js" defer=""></script></head><body><div id="__next"><style data-emotion="css-global c86wz">body{margin:0;padding:0;color:hsl(0, 0%, 9.0%);background-color:hsl(0, 0%, 97.3%);font-family:'__pretendard_6bb8e5','__pretendard_Fallback_6bb8e5';}*{-webkit-print-color-scheme:light;color-scheme:light;box-sizing:border-box;}h1,h2,h3,h4,h5,h6{margin:0;font-weight:inherit;font-style:inherit;}a{all:unset;cursor:pointer;}ul{padding:0;}button{all:unset;cursor:pointer;}input{all:unset;box-sizing:border-box;}textarea{border:none;background-color:transparent;font-family:inherit;padding:0;outline:none;resize:none;color:inherit;}hr{width:100%;border:none;margin:0;border-top:1px solid hsl(0, 0%, 88.7%);}</style><style data-emotion="css 1q70a33">.css-1q70a33{z-index:30;position:-webkit-sticky;position:sticky;top:0;background-color:hsl(0, 0%, 97.3%);box-shadow:0 1px 2px 0 rgba(0, 0, 0, 0.05);}.css-1q70a33 .container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;width:100%;height:3rem;margin:0 auto;}@media (min-width: 768px){.css-1q70a33 .container[data-full-width="true"]{padding-left:6rem;padding-right:6rem;}}.css-1q70a33 .container .nav{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;gap:0.75rem;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}.css-1q70a33 .container .mid{padding-top:0.5rem;padding-bottom:0.5rem;padding-left:1.25rem;padding-right:1.25rem;border-radius:1rem;outline-style:none;width:50%;background-color:hsl(0, 0%, 93.0%);}</style><div class="py-2 css-1q70a33"><div data-full-width="false" class="container"><a aria-label="wwqdrh" class="css-0" href="/">wwqdrh</a><input class="mid" type="text" placeholder="Search Keyword..." value=""/><div class="nav"><style data-emotion="css 1nw6zn9">.css-1nw6zn9{-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;}.css-1nw6zn9 ul{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;}.css-1nw6zn9 ul li{display:block;margin-left:1rem;color:hsl(0, 0%, 43.5%);}</style><div class="css-1nw6zn9"><ul><li><a target="_blank" href="https://space.bilibili.com/538676331">B站</a></li></ul></div><style data-emotion="css 1h5x3dy">.css-1h5x3dy{cursor:pointer;}</style><div class="css-1h5x3dy"><style data-emotion="css p95608">.css-p95608{font-family:'__Noto_Color_Emoji_be1378','__Noto_Color_Emoji_Fallback_be1378',Apple Color Emoji;font-weight:400;font-style:normal;}</style><span class="css-p95608">☀️</span></div></div></div></div><style data-emotion="css lomkhl">.css-lomkhl{margin:0 auto;width:100%;padding:0 3rem;}</style><main class="css-lomkhl"><div class="divide-y bg-white dark:bg-gray-700 p-6 shadow-lg rounded-lg mt-3 divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0"><div class="max-w-none pt-10 pb-8 prose dark:prose-dark"><div><h1>实验</h1>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># !/bin/bash</span>
+
+sudo umount ./merged
+rm -rf upper lower merged work
+
+mkdir upper lower merged work
+echo <span class="hljs-string">&quot;I&#x27;m from lower!&quot;</span> &gt; lower/in_lower.txt
+echo <span class="hljs-string">&quot;I&#x27;m from upper!&quot;</span> &gt; upper/in_upper.txt
+<span class="hljs-comment"># `in_both` is in both directories</span>
+echo <span class="hljs-string">&quot;I&#x27;m from lower!&quot;</span> &gt; lower/in_both.txt
+echo <span class="hljs-string">&quot;I&#x27;m from upper!&quot;</span> &gt; upper/in_both.txt
+</code></pre><p>当前文件目录结构</p>
+<pre><code class="hljs language-bash">├── lower
+│   ├── in_both.txt
+│   └── in_lower.txt
+├── merged
+├── upper
+│   ├── in_both.txt
+│   └── in_upper.txt
+└── work
+
+4 directories, 4 files
+</code></pre><p>使用overlay文件系统来挂载目录</p>
+<pre><code class="hljs language-bash">sudo mount -t overlay overlay \
+ -o lowerdir=./lower,upperdir=./upper,workdir=./work \
+ ./merged
+</code></pre><p>OverlayFS 就是 UnionFS 的一种实现，最底下这一层里的文件是不会被修改的,upper目录是可读写的，最上面的&quot;merged&quot; ，它是挂载点（mount point）目录，也是用户看到的目录，用户的实际文件操作在这里进行。</p>
+<img src="/images/blogs/overlayfs.jpeg" />
+
+<p><code>1、新建文件</code></p>
+<p>这个文件会出现在 upper/ 目录中</p>
+<pre><code class="hljs language-bash">$touch merged/newfile.txt
+
+$tree
+├── lower
+│   ├── in_both.txt
+│   └── in_lower.txt
+├── merged
+│   ├── in_both.txt
+│   ├── in_lower.txt
+│   ├── in_upper.txt
+│   └── newfile.txt
+├── upper
+│   ├── in_both.txt
+│   ├── in_upper.txt
+│   └── newfile.txt
+└── work
+    └── work  [error opening <span class="hljs-built_in">dir</span>]
+</code></pre><p><code>2、删除文件</code></p>
+<ul>
+<li>删除属于上层的文件，upper目录下的会消失</li>
+<li>删除属于下层的文件，下层目录的不会消失而是在上层新建一个特殊文件表示下层的已经消失了</li>
+</ul>
+<pre><code class="hljs language-bash">$ rm merged/in_lower.txt
+
+$ tree
+├── lower
+│   ├── in_both.txt
+│   └── in_lower.txt
+├── merged
+│   ├── in_both.txt
+│   ├── in_upper.txt
+│   └── newfile.txt
+├── upper
+│   ├── in_both.txt
+│   ├── *in_lower.txt
+│   ├── in_upper.txt
+│   └── newfile.txt
+└── work
+    └── work  [error opening <span class="hljs-built_in">dir</span>]
+
+$ ls -l upper/in_lower.txt
+c--------- <span class="hljs-number">2</span> root root <span class="hljs-number">0</span>, <span class="hljs-number">0</span> <span class="hljs-number">11</span>月  <span class="hljs-number">1</span> <span class="hljs-number">16</span>:<span class="hljs-number">18</span> upper/in_lower.txt
+</code></pre><blockquote>
+<p>字符设备(以字符为单位进行传输，例如键盘，打印机)可以使用与普通文件相同的文件操作命令对字符设备文件进行操作，例如打开、关闭、读、写等。</p>
+</blockquote>
+<p><code>3、修改文件</code></p>
+<ul>
+<li>属于底层文件: 在upper新建然后修改</li>
+<li>属于上层文件: 在upper中进行修改</li>
+</ul>
+<pre><code class="hljs language-bash">$ echo &#x27;modify&#x27; &gt;&gt; merged/in_lower.txt
+
+$ tree
+├── lower
+│   ├── in_both.txt
+│   └── in_lower.txt
+├── merged
+│   ├── in_both.txt
+│   ├── in_lower.txt
+│   ├── in_upper.txt
+│   └── newfile.txt
+├── upper
+│   ├── in_both.txt
+│   ├── in_lower.txt
+│   ├── in_upper.txt
+│   └── newfile.txt
+└── work
+    └── work  [error opening dir]
+
+$ cat lower/in_lower.txt
+I&#x27;m from lower!
+
+$ cat merged/in_lower.txt
+modify
+</code></pre><p>4、验证docker使用的overlay文件系统</p>
+<pre><code class="hljs language-bash">$ cat /proc/mounts | grep overlay
+overlay /var/lib/docker/overlay2/<span class="hljs-number">4e6</span>...
+<span class="hljs-comment"># 同样也有lowerdir，upperdir、workdir等配置</span>
+</code></pre><h1>overlay与overlay2的区别</h1>
+<p>overlay驱动只能工作在两层之上，每个镜像层在/var/lib/docker/overlay中用自己的目录来实现。</p>
+<p>overlay驱动只工作在一个lower OverlayFS层之上，因此需要硬链接来实现多层镜像，存在inode耗尽问题 </p>
+<pre><code class="hljs language-bash">$ mount | grep overlay
+
+overlay on /<span class="hljs-keyword">var</span>/lib/docker/overlay/ec444863a55a.../merged
+type overlay (rw,relatime,lowerdir=<span class="hljs-regexp">/var/</span>lib/docker/overlay/55f1e14c361b.../root,
+upperdir=<span class="hljs-regexp">/var/</span>lib/docker/overlay/ec444863a55a.../upper,
+workdir=<span class="hljs-regexp">/var/</span>lib/docker/overlay/ec444863a55a.../work)
+</code></pre><p>overlay2驱动原生地支持多层lower OverlayFS镜像（最多128层）</p>
+<pre><code class="hljs language-bash">$ mount | grep overlay
+
+overlay on /<span class="hljs-keyword">var</span>/lib/docker/overlay2/9186877cdf386d0a3b016149cf30c208f326dca307529e646afce5b3f83f5304/merged
+type overlay (rw,relatime,
+lowerdir=l/<span class="hljs-title class_">DJA75GUWHWG</span>7<span class="hljs-attr">EWICFYX54FIOVT</span>:l/<span class="hljs-attr">B3WWEFKBG3PLLV737KZFIASSW7</span>:l/<span class="hljs-title class_">JEYMODZYFCZFYSDABYXD5MF</span>6<span class="hljs-attr">YO</span>:l/<span class="hljs-title class_">UL2MW</span>33<span class="hljs-attr">MSE3Q5VYIKBRN4ZAGQP</span>:l/<span class="hljs-title class_">NFYKDW6APBCCUCTOUSYDH</span>4<span class="hljs-attr">DXAT</span>:l/6Y5IM2XC7TSNIJZZFLJCS6I4I4,
+upperdir=9186877cdf386d0a3b016149cf30c208f326dca307529e646afce5b3f83f5304/diff,
+workdir=9186877cdf386d0a3b016149cf30c208f326dca307529e646afce5b3f83f5304/work)
+</code></pre></div></div></div></main></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"post":{"mdxSource":"\u003ch1\u003e实验\u003c/h1\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003e\u003cspan class=\"hljs-comment\"\u003e# !/bin/bash\u003c/span\u003e\n\nsudo umount ./merged\nrm -rf upper lower merged work\n\nmkdir upper lower merged work\necho \u003cspan class=\"hljs-string\"\u003e\u0026quot;I\u0026#x27;m from lower!\u0026quot;\u003c/span\u003e \u0026gt; lower/in_lower.txt\necho \u003cspan class=\"hljs-string\"\u003e\u0026quot;I\u0026#x27;m from upper!\u0026quot;\u003c/span\u003e \u0026gt; upper/in_upper.txt\n\u003cspan class=\"hljs-comment\"\u003e# `in_both` is in both directories\u003c/span\u003e\necho \u003cspan class=\"hljs-string\"\u003e\u0026quot;I\u0026#x27;m from lower!\u0026quot;\u003c/span\u003e \u0026gt; lower/in_both.txt\necho \u003cspan class=\"hljs-string\"\u003e\u0026quot;I\u0026#x27;m from upper!\u0026quot;\u003c/span\u003e \u0026gt; upper/in_both.txt\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e当前文件目录结构\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003e├── lower\n│   ├── in_both.txt\n│   └── in_lower.txt\n├── merged\n├── upper\n│   ├── in_both.txt\n│   └── in_upper.txt\n└── work\n\n4 directories, 4 files\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e使用overlay文件系统来挂载目录\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003esudo mount -t overlay overlay \\\n -o lowerdir=./lower,upperdir=./upper,workdir=./work \\\n ./merged\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003eOverlayFS 就是 UnionFS 的一种实现，最底下这一层里的文件是不会被修改的,upper目录是可读写的，最上面的\u0026quot;merged\u0026quot; ，它是挂载点（mount point）目录，也是用户看到的目录，用户的实际文件操作在这里进行。\u003c/p\u003e\n\u003cimg src=\"/images/blogs/overlayfs.jpeg\" /\u003e\n\n\u003cp\u003e\u003ccode\u003e1、新建文件\u003c/code\u003e\u003c/p\u003e\n\u003cp\u003e这个文件会出现在 upper/ 目录中\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003e$touch merged/newfile.txt\n\n$tree\n├── lower\n│   ├── in_both.txt\n│   └── in_lower.txt\n├── merged\n│   ├── in_both.txt\n│   ├── in_lower.txt\n│   ├── in_upper.txt\n│   └── newfile.txt\n├── upper\n│   ├── in_both.txt\n│   ├── in_upper.txt\n│   └── newfile.txt\n└── work\n    └── work  [error opening \u003cspan class=\"hljs-built_in\"\u003edir\u003c/span\u003e]\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e\u003ccode\u003e2、删除文件\u003c/code\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e删除属于上层的文件，upper目录下的会消失\u003c/li\u003e\n\u003cli\u003e删除属于下层的文件，下层目录的不会消失而是在上层新建一个特殊文件表示下层的已经消失了\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003e$ rm merged/in_lower.txt\n\n$ tree\n├── lower\n│   ├── in_both.txt\n│   └── in_lower.txt\n├── merged\n│   ├── in_both.txt\n│   ├── in_upper.txt\n│   └── newfile.txt\n├── upper\n│   ├── in_both.txt\n│   ├── *in_lower.txt\n│   ├── in_upper.txt\n│   └── newfile.txt\n└── work\n    └── work  [error opening \u003cspan class=\"hljs-built_in\"\u003edir\u003c/span\u003e]\n\n$ ls -l upper/in_lower.txt\nc--------- \u003cspan class=\"hljs-number\"\u003e2\u003c/span\u003e root root \u003cspan class=\"hljs-number\"\u003e0\u003c/span\u003e, \u003cspan class=\"hljs-number\"\u003e0\u003c/span\u003e \u003cspan class=\"hljs-number\"\u003e11\u003c/span\u003e月  \u003cspan class=\"hljs-number\"\u003e1\u003c/span\u003e \u003cspan class=\"hljs-number\"\u003e16\u003c/span\u003e:\u003cspan class=\"hljs-number\"\u003e18\u003c/span\u003e upper/in_lower.txt\n\u003c/code\u003e\u003c/pre\u003e\u003cblockquote\u003e\n\u003cp\u003e字符设备(以字符为单位进行传输，例如键盘，打印机)可以使用与普通文件相同的文件操作命令对字符设备文件进行操作，例如打开、关闭、读、写等。\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003cp\u003e\u003ccode\u003e3、修改文件\u003c/code\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e属于底层文件: 在upper新建然后修改\u003c/li\u003e\n\u003cli\u003e属于上层文件: 在upper中进行修改\u003c/li\u003e\n\u003c/ul\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003e$ echo \u0026#x27;modify\u0026#x27; \u0026gt;\u0026gt; merged/in_lower.txt\n\n$ tree\n├── lower\n│   ├── in_both.txt\n│   └── in_lower.txt\n├── merged\n│   ├── in_both.txt\n│   ├── in_lower.txt\n│   ├── in_upper.txt\n│   └── newfile.txt\n├── upper\n│   ├── in_both.txt\n│   ├── in_lower.txt\n│   ├── in_upper.txt\n│   └── newfile.txt\n└── work\n    └── work  [error opening dir]\n\n$ cat lower/in_lower.txt\nI\u0026#x27;m from lower!\n\n$ cat merged/in_lower.txt\nmodify\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003e4、验证docker使用的overlay文件系统\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003e$ cat /proc/mounts | grep overlay\noverlay /var/lib/docker/overlay2/\u003cspan class=\"hljs-number\"\u003e4e6\u003c/span\u003e...\n\u003cspan class=\"hljs-comment\"\u003e# 同样也有lowerdir，upperdir、workdir等配置\u003c/span\u003e\n\u003c/code\u003e\u003c/pre\u003e\u003ch1\u003eoverlay与overlay2的区别\u003c/h1\u003e\n\u003cp\u003eoverlay驱动只能工作在两层之上，每个镜像层在/var/lib/docker/overlay中用自己的目录来实现。\u003c/p\u003e\n\u003cp\u003eoverlay驱动只工作在一个lower OverlayFS层之上，因此需要硬链接来实现多层镜像，存在inode耗尽问题 \u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003e$ mount | grep overlay\n\noverlay on /\u003cspan class=\"hljs-keyword\"\u003evar\u003c/span\u003e/lib/docker/overlay/ec444863a55a.../merged\ntype overlay (rw,relatime,lowerdir=\u003cspan class=\"hljs-regexp\"\u003e/var/\u003c/span\u003elib/docker/overlay/55f1e14c361b.../root,\nupperdir=\u003cspan class=\"hljs-regexp\"\u003e/var/\u003c/span\u003elib/docker/overlay/ec444863a55a.../upper,\nworkdir=\u003cspan class=\"hljs-regexp\"\u003e/var/\u003c/span\u003elib/docker/overlay/ec444863a55a.../work)\n\u003c/code\u003e\u003c/pre\u003e\u003cp\u003eoverlay2驱动原生地支持多层lower OverlayFS镜像（最多128层）\u003c/p\u003e\n\u003cpre\u003e\u003ccode class=\"hljs language-bash\"\u003e$ mount | grep overlay\n\noverlay on /\u003cspan class=\"hljs-keyword\"\u003evar\u003c/span\u003e/lib/docker/overlay2/9186877cdf386d0a3b016149cf30c208f326dca307529e646afce5b3f83f5304/merged\ntype overlay (rw,relatime,\nlowerdir=l/\u003cspan class=\"hljs-title class_\"\u003eDJA75GUWHWG\u003c/span\u003e7\u003cspan class=\"hljs-attr\"\u003eEWICFYX54FIOVT\u003c/span\u003e:l/\u003cspan class=\"hljs-attr\"\u003eB3WWEFKBG3PLLV737KZFIASSW7\u003c/span\u003e:l/\u003cspan class=\"hljs-title class_\"\u003eJEYMODZYFCZFYSDABYXD5MF\u003c/span\u003e6\u003cspan class=\"hljs-attr\"\u003eYO\u003c/span\u003e:l/\u003cspan class=\"hljs-title class_\"\u003eUL2MW\u003c/span\u003e33\u003cspan class=\"hljs-attr\"\u003eMSE3Q5VYIKBRN4ZAGQP\u003c/span\u003e:l/\u003cspan class=\"hljs-title class_\"\u003eNFYKDW6APBCCUCTOUSYDH\u003c/span\u003e4\u003cspan class=\"hljs-attr\"\u003eDXAT\u003c/span\u003e:l/6Y5IM2XC7TSNIJZZFLJCS6I4I4,\nupperdir=9186877cdf386d0a3b016149cf30c208f326dca307529e646afce5b3f83f5304/diff,\nworkdir=9186877cdf386d0a3b016149cf30c208f326dca307529e646afce5b3f83f5304/work)\n\u003c/code\u003e\u003c/pre\u003e","frontMatter":{"readingTime":{"text":"4 min read","minutes":3.715,"time":222900,"words":743},"slug":"overlay文件系统实验","fileName":"overlay文件系统实验.md","title":"overlay文件系统","date":"2022-11-01T00:00:00.000Z","tags":["实践"],"draft":false,"summary":"overlay文件系统实践，探索容器原理"}},"prev":{"title":"手动建立容器网络实践","date":"2022-10-31T00:00:00.000Z","tags":["实践"],"draft":false,"summary":"amespace-网络配置实践","slug":"从none网络实践容器的网络配置"},"next":{"title":"容器中磁盘容量限制实践","date":"2022-11-02T00:00:00.000Z","tags":["实践"],"draft":false,"summary":"容器中磁盘容量限制实践","slug":"容器中磁盘容量限制"}},"__N_SSG":true},"page":"/blog/[...slug]","query":{"slug":["overlay文件系统实验"]},"buildId":"PMB5qMppIrri5HN2Gb314","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>

@@ -1,0 +1,339 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>3D场景中物体的自动寻路</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href=".././theme/style.css">
+    <link rel="stylesheet" href=".././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../GDScript.html">GDScript 开发教程</a></li><li class="chapter-item expanded "><a href="../godot3/Start.html"><strong aria-hidden="true">1.</strong> godot3示例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../godot3/将文件拖入窗口并加载文件内容.html"><strong aria-hidden="true">1.1.</strong> 将文件拖入窗口并加载文件内容</a></li><li class="chapter-item expanded "><a href="../godot3/教你实现2D游戏中的小地图.html"><strong aria-hidden="true">1.2.</strong> 教你实现2D游戏中的小地图</a></li><li class="chapter-item expanded "><a href="../godot3/教你实现简单的传送带效果.html"><strong aria-hidden="true">1.3.</strong> 教你实现简单的传送带效果</a></li><li class="chapter-item expanded "><a href="../godot3/教你实现漂浮文本效果.html"><strong aria-hidden="true">1.4.</strong> 教你实现漂浮文本效果</a></li><li class="chapter-item expanded "><a href="../godot3/教你实现PC和手机端的虚拟摇杆.html"><strong aria-hidden="true">1.5.</strong> 教你实现PC和手机端的虚拟摇杆</a></li><li class="chapter-item expanded "><a href="../godot3/如何实时显示相机内容.html"><strong aria-hidden="true">1.6.</strong> 如何实时显示相机内容</a></li><li class="chapter-item expanded "><a href="../godot3/如何实现2D场景的AI寻路.html"><strong aria-hidden="true">1.7.</strong> 如何实现2D场景的AI寻路</a></li><li class="chapter-item expanded "><a href="../godot3/实现2D物品的拖拽移动.html"><strong aria-hidden="true">1.8.</strong> 实现2D物品的拖拽移动</a></li><li class="chapter-item expanded "><a href="../godot3/实现2D相机的视角控制.html"><strong aria-hidden="true">1.9.</strong> 实现2D相机的视角控制</a></li><li class="chapter-item expanded "><a href="../godot3/实现简单的2D灯光和阴影.html"><strong aria-hidden="true">1.10.</strong> 实现简单的2D灯光和阴影</a></li><li class="chapter-item expanded "><a href="../godot3/实现物品拖拽与放置的功能.html"><strong aria-hidden="true">1.11.</strong> 实现物品拖拽与放置的功能</a></li><li class="chapter-item expanded "><a href="../godot3/实现在2D场景中显示3D物体.html"><strong aria-hidden="true">1.12.</strong> 实现在2D场景中显示3D物体</a></li><li class="chapter-item expanded "><a href="../godot3/使用鼠标拖拽来实现列表的滚动效果.html"><strong aria-hidden="true">1.13.</strong> 使用鼠标拖拽来实现列表的滚动效果</a></li><li class="chapter-item expanded "><a href="../godot3/使用PinJoint2D实现可中心旋转的物体.html"><strong aria-hidden="true">1.14.</strong> 使用PinJoint2D实现可中心旋转的物体</a></li><li class="chapter-item expanded "><a href="../godot3/为2D物体移动添加烟尘效果.html"><strong aria-hidden="true">1.15.</strong> 为2D物体移动添加烟尘效果</a></li><li class="chapter-item expanded "><a href="../godot3/为3D物体添加一个跟随的2D物体.html"><strong aria-hidden="true">1.16.</strong> 为3D物体添加一个跟随的2D物体</a></li><li class="chapter-item expanded "><a href="../godot3/血条的实现.html"><strong aria-hidden="true">1.17.</strong> 血条的实现</a></li><li class="chapter-item expanded "><a href="../godot3/用Light2D实现遮罩动画.html"><strong aria-hidden="true">1.18.</strong> 用Light2D实现遮罩动画</a></li></ol></li><li class="chapter-item expanded "><a href="../godot4/Start.html"><strong aria-hidden="true">2.</strong> godot4示例</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../godot4/3D场景中如何控制物体的移动.html"><strong aria-hidden="true">2.1.</strong> 3D场景中如何控制物体的移动</a></li><li class="chapter-item expanded "><a href="../godot4/3D场景中物体的自动寻路.html" class="active"><strong aria-hidden="true">2.2.</strong> 3D场景中物体的自动寻路</a></li><li class="chapter-item expanded "><a href="../godot4/3D基础场景的搭建.html"><strong aria-hidden="true">2.3.</strong> 3D基础场景的搭建</a></li><li class="chapter-item expanded "><a href="../godot4/如何将godot3项目转为godot4.html"><strong aria-hidden="true">2.4.</strong> 如何将godot3项目转为godot4</a></li><li class="chapter-item expanded "><a href="../godot4/使用shader实现屏幕震动效果.html"><strong aria-hidden="true">2.5.</strong> 使用shader实现屏幕震动效果</a></li><li class="chapter-item expanded "><a href="../godot4/实现抽奖功能.html"><strong aria-hidden="true">2.6.</strong> 实现抽奖功能</a></li></ol></li><li class="chapter-item expanded "><a href="../游戏设计/Start.html"><strong aria-hidden="true">3.</strong> 游戏设计原理</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../游戏设计/核心创意三要素.html"><strong aria-hidden="true">3.1.</strong> 核心创意三要素</a></li><li class="chapter-item expanded "><a href="../游戏设计/核心创意思路.html"><strong aria-hidden="true">3.2.</strong> 核心创意思路</a></li><li class="chapter-item expanded "><a href="../游戏设计/如何考虑游戏节奏.html"><strong aria-hidden="true">3.3.</strong> 如何考虑游戏节奏</a></li><li class="chapter-item expanded "><a href="../游戏设计/游戏设计的基本原理.html"><strong aria-hidden="true">3.4.</strong> 游戏设计的基本原理</a></li></ol></li><li class="chapter-item expanded "><a href="../shader/Start.html"><strong aria-hidden="true">4.</strong> shader实战</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../shader/核心概念.html"><strong aria-hidden="true">4.1.</strong> 核心概念</a></li><li class="chapter-item expanded "><a href="../shader/glsl知识.html"><strong aria-hidden="true">4.2.</strong> glsl知识</a></li><li class="chapter-item expanded "><a href="../shader/绑定图像.html"><strong aria-hidden="true">4.3.</strong> 绑定图像</a></li><li class="chapter-item expanded "><a href="../shader/采样器.html"><strong aria-hidden="true">4.4.</strong> 采样器</a></li><li class="chapter-item expanded "><a href="../shader/采样器.html"><strong aria-hidden="true">4.5.</strong> 采样器</a></li><li class="chapter-item expanded "><a href="../shader/绑定缓冲区.html"><strong aria-hidden="true">4.6.</strong> 绑定缓冲区</a></li><li class="chapter-item expanded "><a href="../shader/2D闪电特效.html"><strong aria-hidden="true">4.7.</strong> shader实战-2D闪电特效</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/godot-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <ul>
+<li><a href="#3d%E5%9C%BA%E6%99%AF%E4%B8%AD%E7%89%A9%E4%BD%93%E7%9A%84%E8%87%AA%E5%8A%A8%E5%AF%BB%E8%B7%AF">3D场景中物体的自动寻路</a>
+<ul>
+<li><a href="#%E5%9C%BA%E6%99%AF%E6%90%AD%E5%BB%BA">场景搭建</a></li>
+<li><a href="#3d%E8%A7%92%E8%89%B2">3D角色</a>
+<ul>
+<li><a href="#%E6%9D%90%E8%B4%A8%E7%BC%96%E5%86%99">材质编写</a></li>
+<li><a href="#%E8%BF%90%E5%8A%A8%E6%8E%A7%E5%88%B6">运动控制</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="3d场景中物体的自动寻路"><a class="header" href="#3d场景中物体的自动寻路">3D场景中物体的自动寻路</a></h1>
+<img data-id="20240608183410" src="https://cdn.ipfsscan.io/weibo/large/005ZoLfCgy1hqi4n7h8m8j313g0jigqo.jpg" alt="自动寻路" />
+<h2 id="场景搭建"><a class="header" href="#场景搭建">场景搭建</a></h2>
+<img data-id="20240608183428" src="https://cdn.ipfsscan.io/weibo/large/005ZoLfCgy1hqi4nij3agj30da0diac0.jpg" alt="自动寻路" />
+<p>上述BASE节点下分别为相机、灯光、与地板</p>
+<p>在地板中添加材质, 设置路径<code>Mesh属性 -&gt; Material</code></p>
+<pre><code class="language-godot">[gd_resource type="StandardMaterial3D" load_steps=2 format=2]
+
+[ext_resource path="res://.../grid.png" type="Texture2D" id=1]
+
+[resource]
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 10, 10, 1 )
+
+</code></pre>
+<p>然后创建<code>Path3D</code>以及<code>PathFollow3D</code>以及角色模型(一个简单的柱体和球体)</p>
+<h2 id="3d角色"><a class="header" href="#3d角色">3D角色</a></h2>
+<img data-id="20240608183459" src="https://cdn.ipfsscan.io/weibo/large/005ZoLfCgy1hqi4o2fp6aj316w0fsh4b.jpg" alt="角色模型" />
+<h3 id="材质编写"><a class="header" href="#材质编写">材质编写</a></h3>
+<p>分别在Body、Head中加入材质，设置Geometry属性，创建tres文件, 这里将物体控制为红色</p>
+<pre><code class="language-godot">[gd_resource type="StandardMaterial3D" format=2]
+
+[resource]
+albedo_color = Color( 1, 0, 0, 1 )
+</code></pre>
+<h3 id="运动控制"><a class="header" href="#运动控制">运动控制</a></h3>
+<p>在<code>Path3D</code>的属性面板中，新建Curve3D，然后在主窗口上方的菜单栏选择路径节点创建按钮，绘制运动路径</p>
+<img data-id="20240608183519" src="https://cdn.ipfsscan.io/weibo/large/005ZoLfCgy1hqi4oe9dulj30dq03kdgh.jpg" alt="路径创建" />
+<p>最后在character上创建运动脚本,根据父节点中的运动路径创建一个位置列表，然后定时的将人物移动到该节点位置</p>
+<pre><code class="language-godot">extends Node
+
+@export var waypoint_check_distance: float = 0.1
+@export var total_loop_time: float = 5.0
+
+var _path_follow: PathFollow3D
+var _waypoint_timer: Timer
+var _waypoint_positions: PackedVector3Array
+var _current_path_time: float
+var _current_waypoint_index: int
+var _next_waypoint_index: int
+var _moving: bool
+
+func _ready() -&gt; void:
+	_path_follow = get_parent() as PathFollow3D
+	_waypoint_timer = get_node("WaypointTimer") as Timer
+	
+	var path_curve: Curve3D = _path_follow.get_parent().curve
+	var n_waypoints: int = path_curve.get_point_count()
+	_waypoint_positions = PackedVector3Array()
+	for i in range(n_waypoints - 1):
+		_waypoint_positions.append(path_curve.get_point_position(i))
+	
+	_current_waypoint_index = 0
+	_next_waypoint_index = 1
+	_moving = true
+
+func _process(delta: float) -&gt; void:
+	if _moving:
+		_current_path_time += delta
+		_path_follow.progress_ratio = _current_path_time / total_loop_time
+		
+		var d = (_waypoint_positions[_next_waypoint_index] - _path_follow.position).length()
+		if d &lt; waypoint_check_distance:
+			_current_waypoint_index = _next_waypoint_index
+			_next_waypoint_index = (_current_waypoint_index + 1) % _waypoint_positions.size()
+			_waypoint_timer.start()
+			_moving = false
+
+func _on_waypoint_timer_timeout() -&gt; void:
+	_moving = true
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../godot4/3D场景中如何控制物体的移动.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../godot4/3D基础场景的搭建.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../godot4/3D场景中如何控制物体的移动.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../godot4/3D基础场景的搭建.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src=".././theme/style.js"></script>
+        <script src="../clarity.js"></script>
+        <script src=".././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>
