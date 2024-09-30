@@ -1,0 +1,346 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>进程结构与调度</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href=".././theme/style.css">
+    <link rel="stylesheet" href=".././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">面试指南</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/index.html"><strong aria-hidden="true">1.</strong> 数据结构与算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/index.html"><strong aria-hidden="true">1.1.</strong> 题库</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer1.html"><strong aria-hidden="true">1.1.1.</strong> 剑指offer1</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer2.html"><strong aria-hidden="true">1.1.2.</strong> 剑指offer2</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer3.html"><strong aria-hidden="true">1.1.3.</strong> 剑指offer3</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer4.html"><strong aria-hidden="true">1.1.4.</strong> 剑指offer4</a></li></ol></li><li class="chapter-item expanded "><a href="../数据结构与算法/短链系统设计.html"><strong aria-hidden="true">1.2.</strong> 短链系统设计</a></li></ol></li><li class="chapter-item expanded "><a href="../c++/index.html"><strong aria-hidden="true">2.</strong> c++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../c++/c++标准.html"><strong aria-hidden="true">2.1.</strong> c++标准</a></li><li class="chapter-item expanded "><a href="../c++/引用变量.html"><strong aria-hidden="true">2.2.</strong> 引用变量</a></li><li class="chapter-item expanded "><a href="../c++/什么是虚函数.html"><strong aria-hidden="true">2.3.</strong> 什么是虚函数</a></li><li class="chapter-item expanded "><a href="../c++/什么是指针.html"><strong aria-hidden="true">2.4.</strong> 什么是指针</a></li><li class="chapter-item expanded "><a href="../c++/如何保证并发安全.html"><strong aria-hidden="true">2.5.</strong> 如何保证并发安全</a></li><li class="chapter-item expanded "><a href="../c++/常见对象的内存结构.html"><strong aria-hidden="true">2.6.</strong> 常见对象的内存结构</a></li><li class="chapter-item expanded "><a href="../c++/stl容器库.html"><strong aria-hidden="true">2.7.</strong> stl容器库</a></li><li class="chapter-item expanded "><a href="../c++/内存模型.html"><strong aria-hidden="true">2.8.</strong> 内存模型</a></li></ol></li><li class="chapter-item expanded "><a href="../linux操作系统/index.html"><strong aria-hidden="true">3.</strong> linux操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux操作系统/进程结构与调度.html" class="active"><strong aria-hidden="true">3.1.</strong> 进程结构与调度</a></li><li class="chapter-item expanded "><a href="../linux操作系统/内存管理.html"><strong aria-hidden="true">3.2.</strong> 内存管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/资源管理.html"><strong aria-hidden="true">3.3.</strong> 资源管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/网络配置.html"><strong aria-hidden="true">3.4.</strong> 网络配置</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/interview-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+<style>
+    select.code-example {
+        color: var(--fg);
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--fg);
+        padding: 2px 10px 2px 10px;
+        border-radius: 5px;
+    }
+</style>
+<h2 id="进程与线程的数据结构"><a class="header" href="#进程与线程的数据结构">进程与线程的数据结构</a></h2>
+<h3 id="1-进程的数据结构"><a class="header" href="#1-进程的数据结构">1. 进程的数据结构</a></h3>
+<p>在Linux内核中，进程（Process）使用 task_struct 数据结构来表示。该结构包含了进程的所有信息，下面列出一些关键字段：</p>
+<ul>
+<li>PID: 进程ID。</li>
+<li>state: 进程当前的状态，比如运行中（TASK_RUNNING）、休眠（TASK_INTERRUPTIBLE）等。</li>
+<li>mm_struct: 进程的内存管理信息，如内存映射、虚拟地址空间等。</li>
+<li>signal_struct: 信号处理相关的信息。</li>
+<li>task_list: 用于将进程链接到进程链表中的指针，形成进程的调度队列。</li>
+<li>sched_class: 调度类，用于定义进程的调度策略，如CFS（Completely Fair Scheduler）。</li>
+<li>thread_info: 保存与线程相关的特定信息，比如栈指针、寄存器状态等。</li>
+</ul>
+<p>一个进程的生命周期从 fork() 系统调用开始，创建一个新进程时，父进程会复制自身的某些信息给子进程，例如文件描述符、内存映射等。</p>
+<h3 id="2-线程的数据结构"><a class="header" href="#2-线程的数据结构">2. 线程的数据结构</a></h3>
+<p>线程（Thread）在Linux中是轻量级进程，其本质上与进程共享同一地址空间。在Linux中，线程和进程的管理是通过 task_struct 统一管理的，但与进程不同的是，线程共享一部分资源，如地址空间、文件描述符等。</p>
+<ul>
+<li>共享资源：多个线程之间共享内存、打开的文件、信号处理器等。</li>
+<li>独立资源：每个线程有自己独立的堆栈和寄存器集。</li>
+</ul>
+<p>在Linux中，线程的创建通过 clone() 系统调用，它允许指定新线程共享的资源。</p>
+<h2 id="二进程与线程的创建流程"><a class="header" href="#二进程与线程的创建流程">二、进程与线程的创建流程</a></h2>
+<h3 id="1-进程的创建流程"><a class="header" href="#1-进程的创建流程">1. 进程的创建流程</a></h3>
+<p>进程的创建通常由 fork() 系统调用完成，其流程如下：</p>
+<ul>
+<li>父进程调用fork(): 父进程调用 fork() 系统调用。</li>
+<li>内核分配资源: 内核为新进程分配 task_struct 并复制父进程的所有信息。</li>
+<li>PID分配: 内核为新进程分配一个唯一的进程ID。</li>
+<li>内存结构复制: 子进程的内存空间是父进程的一个“写时复制”（copy-on-write），即子进程在第一次写操作时才会真正复制父进程的内存区域。</li>
+<li>调度: 子进程会被加入到调度队列，等待被内核调度运行。</li>
+</ul>
+<p>另一个常用的创建进程的系统调用是 exec()，它允许替换进程的地址空间，从而运行新的程序。</p>
+<h3 id="2-线程的创建流程"><a class="header" href="#2-线程的创建流程">2. 线程的创建流程</a></h3>
+<p>线程的创建通常使用 pthread_create()，而底层则是使用 clone() 系统调用。线程创建的步骤如下：</p>
+<ul>
+<li>用户空间调用pthread_create(): 应用程序调用 pthread_create() 来创建一个新线程。</li>
+<li>内核调用clone(): 内核调用 clone() 系统调用，在创建线程时，可以通过参数指定哪些资源需要共享（如地址空间、文件描述符等）。</li>
+<li>创建线程控制块: 内核会为新线程分配 task_struct，但新线程与父线程共享内存空间和其他资源。</li>
+<li>加入调度队列: 新线程被加入到调度队列，等待被调度执行。</li>
+</ul>
+<h2 id="三进程与线程的调度"><a class="header" href="#三进程与线程的调度">三、进程与线程的调度</a></h2>
+<h3 id="1-调度器的概念"><a class="header" href="#1-调度器的概念">1. 调度器的概念</a></h3>
+<p>Linux内核中的调度器负责决定哪个进程或线程在何时执行。调度器的核心是基于优先级、时间片和调度策略。调度的主要目标是实现多任务处理，提升系统响应速度和吞吐量。</p>
+<h3 id="2-调度策略"><a class="header" href="#2-调度策略">2. 调度策略</a></h3>
+<p>Linux的调度器有多种策略，常见的有：</p>
+<ul>
+<li>SCHED_OTHER: 默认的时间共享调度策略，使用CFS（完全公平调度器）。</li>
+<li>SCHED_FIFO: 实时调度策略，基于先入先出，优先级高的进程先调度，且不会被时间片剥夺。</li>
+<li>SCHED_RR: 实时轮转调度，每个进程分配固定的时间片，轮流调度。</li>
+<li>SCHED_IDLE: 低优先级进程，只有在系统空闲时才会被调度。</li>
+</ul>
+<h3 id="3-cfs完全公平调度器"><a class="header" href="#3-cfs完全公平调度器">3. CFS（完全公平调度器）</a></h3>
+<p>CFS 是Linux默认的调度器，它通过维护一个红黑树来追踪所有进程的“虚拟运行时间”，虚拟运行时间最短的进程被优先调度。</p>
+<p>CFS 主要的机制包括：</p>
+<ul>
+<li>vruntime: 每个进程都有一个 vruntime（虚拟运行时间），表示进程运行的时间。CFS 调度器通过比较 vruntime 来选择最优先的进程。</li>
+<li>时间片: CFS根据进程的优先级分配时间片，优先级高的进程会获得更多的运行时间。</li>
+</ul>
+<h3 id="4-进程调度流程"><a class="header" href="#4-进程调度流程">4. 进程调度流程</a></h3>
+<ul>
+<li>准备调度: 当进程的时间片耗尽，或有一个优先级更高的进程进入可运行状态时，当前进程会被挂起。</li>
+<li>选择进程: 调度器遍历任务队列或红黑树，选择下一个要执行的进程。</li>
+<li>上下文切换: 内核进行上下文切换，保存当前进程的CPU状态，加载新进程的状态，并让新进程获得CPU的控制权。</li>
+</ul>
+<h3 id="5-线程调度流程"><a class="header" href="#5-线程调度流程">5. 线程调度流程</a></h3>
+<p>线程调度与进程调度在Linux内核中几乎相同。线程也是通过 task_struct 进行管理和调度的，线程会像进程一样根据调度策略和优先级来分配时间片。</p>
+<h3 id="6-多核处理器调度"><a class="header" href="#6-多核处理器调度">6. 多核处理器调度</a></h3>
+<p>在多核系统中，Linux内核的调度器支持同时调度多个进程。每个CPU都有一个独立的运行队列，调度器通过负载均衡机制来平衡每个CPU上的任务负载。</p>
+<p>负载均衡: 调度器定期检查各个CPU的负载情况，如果发现某个CPU负载过重，会将任务从繁忙的CPU迁移到空闲的CPU上，以实现更均衡的负载分配。</p>
+<p>总结来说，Linux的进程和线程在内核中的管理和调度机制高度统一，核心数据结构 task_struct 扮演了关键角色。而调度器则基于调度策略、优先级、时间片等来实现对进程和线程的高效管理。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../linux操作系统/index.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../linux操作系统/内存管理.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../linux操作系统/index.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../linux操作系统/内存管理.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src=".././theme/style.js"></script>
+        <script src="../clarity.js"></script>
+        <script src=".././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>

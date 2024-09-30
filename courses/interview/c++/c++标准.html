@@ -1,0 +1,912 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>c++标准</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href=".././theme/style.css">
+    <link rel="stylesheet" href=".././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">面试指南</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/index.html"><strong aria-hidden="true">1.</strong> 数据结构与算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/index.html"><strong aria-hidden="true">1.1.</strong> 题库</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer1.html"><strong aria-hidden="true">1.1.1.</strong> 剑指offer1</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer2.html"><strong aria-hidden="true">1.1.2.</strong> 剑指offer2</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer3.html"><strong aria-hidden="true">1.1.3.</strong> 剑指offer3</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer4.html"><strong aria-hidden="true">1.1.4.</strong> 剑指offer4</a></li></ol></li><li class="chapter-item expanded "><a href="../数据结构与算法/短链系统设计.html"><strong aria-hidden="true">1.2.</strong> 短链系统设计</a></li></ol></li><li class="chapter-item expanded "><a href="../c++/index.html"><strong aria-hidden="true">2.</strong> c++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../c++/c++标准.html" class="active"><strong aria-hidden="true">2.1.</strong> c++标准</a></li><li class="chapter-item expanded "><a href="../c++/引用变量.html"><strong aria-hidden="true">2.2.</strong> 引用变量</a></li><li class="chapter-item expanded "><a href="../c++/什么是虚函数.html"><strong aria-hidden="true">2.3.</strong> 什么是虚函数</a></li><li class="chapter-item expanded "><a href="../c++/什么是指针.html"><strong aria-hidden="true">2.4.</strong> 什么是指针</a></li><li class="chapter-item expanded "><a href="../c++/如何保证并发安全.html"><strong aria-hidden="true">2.5.</strong> 如何保证并发安全</a></li><li class="chapter-item expanded "><a href="../c++/常见对象的内存结构.html"><strong aria-hidden="true">2.6.</strong> 常见对象的内存结构</a></li><li class="chapter-item expanded "><a href="../c++/stl容器库.html"><strong aria-hidden="true">2.7.</strong> stl容器库</a></li><li class="chapter-item expanded "><a href="../c++/内存模型.html"><strong aria-hidden="true">2.8.</strong> 内存模型</a></li></ol></li><li class="chapter-item expanded "><a href="../linux操作系统/index.html"><strong aria-hidden="true">3.</strong> linux操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux操作系统/进程结构与调度.html"><strong aria-hidden="true">3.1.</strong> 进程结构与调度</a></li><li class="chapter-item expanded "><a href="../linux操作系统/内存管理.html"><strong aria-hidden="true">3.2.</strong> 内存管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/资源管理.html"><strong aria-hidden="true">3.3.</strong> 资源管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/网络配置.html"><strong aria-hidden="true">3.4.</strong> 网络配置</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/interview-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+<style>
+    select.code-example {
+        color: var(--fg);
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--fg);
+        padding: 2px 10px 2px 10px;
+        border-radius: 5px;
+    }
+</style>
+<h2 id="c11标准"><a class="header" href="#c11标准">c++11标准</a></h2>
+<p>C++11 标准是 C++ 语言的一个重大更新，引入了许多新的语言特性和库功能，旨在提高代码的可读性、性能和编写效率。以下是 C++11 标准中最重要的几个改进和新增特性：</p>
+<h3 id="1-自动类型推导-auto"><a class="header" href="#1-自动类型推导-auto">1. 自动类型推导 (auto)</a></h3>
+<p>C++11 引入了 auto 关键字，允许编译器根据右值推导变量类型。它极大简化了复杂类型的声明，并让代码更简洁。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">auto x = 42;          // x 被推导为 int
+auto y = 3.14;        // y 被推导为 double
+auto z = someFunc();  // z 的类型根据 someFunc() 的返回值推导
+</code></pre>
+<h3 id="2-范围-for-循环"><a class="header" href="#2-范围-for-循环">2. 范围 for 循环</a></h3>
+<p>C++11 引入了基于范围的 for 循环，使得遍历容器变得更简便。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; vec = {1, 2, 3, 4, 5};
+for (auto v : vec) {
+    std::cout &lt;&lt; v &lt;&lt; std::endl;
+}
+</code></pre>
+<h3 id="3-lambda-表达式"><a class="header" href="#3-lambda-表达式">3. Lambda 表达式</a></h3>
+<p>Lambda 表达式是 C++11 的一个非常重要的特性，它提供了内联定义匿名函数的能力，常用于回调、函数对象等场景。</p>
+<p>语法：</p>
+<pre><code class="language-cpp">[捕获列表](参数列表) -&gt; 返回类型 { 函数体 }
+</code></pre>
+<p>示例：</p>
+<pre><code class="language-cpp">
+auto add = [](int a, int b) -&gt; int {
+    return a + b;
+};
+std::cout &lt;&lt; add(1, 2) &lt;&lt; std::endl;
+</code></pre>
+<h3 id="4-右值引用与移动语义--和-stdmove"><a class="header" href="#4-右值引用与移动语义--和-stdmove">4. 右值引用与移动语义 (&amp;&amp; 和 std::move)</a></h3>
+<p>C++11 引入了右值引用（T&amp;&amp;），用于实现移动语义，解决拷贝开销问题。通过右值引用和 std::move，可以避免不必要的深拷贝，提升性能。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; vec1 = {1, 2, 3};
+std::vector&lt;int&gt; vec2 = std::move(vec1);  // vec1 的资源被移动到 vec2 中
+</code></pre>
+<p>移动构造函数与移动赋值运算符：</p>
+<pre><code class="language-cpp">
+class MyClass {
+public:
+    MyClass(MyClass&amp;&amp; other) { /* 实现移动构造 */ }
+    MyClass&amp; operator=(MyClass&amp;&amp; other) { /* 实现移动赋值 */ }
+};
+</code></pre>
+<h3 id="5-智能指针stdunique_ptr-和-stdshared_ptr"><a class="header" href="#5-智能指针stdunique_ptr-和-stdshared_ptr">5. 智能指针（std::unique_ptr 和 std::shared_ptr）</a></h3>
+<p>C++11 引入了 std::unique_ptr 和 std::shared_ptr，这是现代 C++ 中管理动态内存的推荐方式，减少了手动管理内存的风险（如内存泄漏）。</p>
+<p>std::unique_ptr：唯一拥有某个资源，不能拷贝，但可以移动。
+std::shared_ptr：多个指针共享同一资源，使用引用计数来管理资源的生命周期。
+示例：</p>
+<pre><code class="language-cpp">std::unique_ptr&lt;int&gt; p1(new int(10));  // 独占所有权
+std::shared_ptr&lt;int&gt; p2 = std::make_shared&lt;int&gt;(20);  // 共享所有权
+</code></pre>
+<h3 id="6-nullptr"><a class="header" href="#6-nullptr">6. nullptr</a></h3>
+<p>C++11 用 nullptr 取代了 C++98 的 NULL，使指针与整数 0 更明确地区分。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+int* ptr = nullptr;
+</code></pre>
+<h3 id="7-静态断言-static_assert"><a class="header" href="#7-静态断言-static_assert">7. 静态断言 (static_assert)</a></h3>
+<p>静态断言允许在编译时进行条件检查，提高了代码的健壮性和可维护性。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+static_assert(sizeof(int) == 4, "int 大小必须是 4 字节");
+</code></pre>
+<h3 id="8-constexpr"><a class="header" href="#8-constexpr">8. constexpr</a></h3>
+<p>constexpr 关键字允许函数或变量在编译时求值，这对常量表达式的优化有很大帮助。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+constexpr int square(int x) {
+    return x * x;
+}
+int arr[square(5)];  // 编译时就能计算出 arr 的大小为 25
+</code></pre>
+<h3 id="9-stdthread-和并发库"><a class="header" href="#9-stdthread-和并发库">9. std::thread 和并发库</a></h3>
+<p>C++11 提供了标准线程支持，通过 std::thread 类启动线程，使用互斥量（std::mutex）、锁（std::lock_guard）等进行同步控制。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+void task() {
+    std::cout &lt;&lt; "Task running" &lt;&lt; std::endl;
+}
+
+std::thread t(task);
+t.join();  // 等待线程结束
+</code></pre>
+<h3 id="10-stdtuple"><a class="header" href="#10-stdtuple">10. std::tuple</a></h3>
+<p>C++11 引入了 std::tuple，它是一种可以存储任意数量不同类型值的容器。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+std::tuple&lt;int, double, std::string&gt; t(1, 2.3, "C++11");
+int i;
+double d;
+std::string s;
+std::tie(i, d, s) = t;  // 解包 tuple
+</code></pre>
+<h3 id="11-stdinitializer_list"><a class="header" href="#11-stdinitializer_list">11. std::initializer_list</a></h3>
+<p>C++11 引入了 std::initializer_list，支持通过大括号列表初始化容器或类的成员变量。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+std::vector&lt;int&gt; vec = {1, 2, 3, 4};  // 初始化列表
+</code></pre>
+<h3 id="12-枚举类-enum-class"><a class="header" href="#12-枚举类-enum-class">12. 枚举类 (enum class)</a></h3>
+<p>C++11 引入了枚举类，它提高了类型安全性，避免了传统枚举类型的隐式转换问题。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+enum class Color { Red, Green, Blue };
+Color c = Color::Red;
+</code></pre>
+<h3 id="13-decltype"><a class="header" href="#13-decltype">13. decltype</a></h3>
+<p>decltype 关键字可以用于获取表达式的类型，常用于模板编程和自动推导复杂表达式的返回类型。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">int x = 10;
+decltype(x) y = 20;  // y 的类型与 x 相同，即 int
+</code></pre>
+<h3 id="14-移动捕获lambda-改进"><a class="header" href="#14-移动捕获lambda-改进">14. 移动捕获（Lambda 改进）</a></h3>
+<p>C++11 中 Lambda 表达式可以通过 [=] 捕获外部变量，但有时需要显式地移动某些变量。为此，C++11 提供了捕获列表中的 std::move。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+auto ptr = std::make_unique&lt;int&gt;(10);
+auto lambda = [p = std::move(ptr)] { std::cout &lt;&lt; *p &lt;&lt; std::endl; };
+</code></pre>
+<h2 id="c14标准"><a class="header" href="#c14标准">c++14标准</a></h2>
+<p>C++14 是 C++11 标准的一个增量更新，它的目标是对 C++11 做出一些修订和小改进。C++14 并没有像 C++11 那样引入大量的新特性，但它对 C++11 的语言和库进行了优化、简化，提升了编程体验和性能。以下是 C++14 的主要改进和新增特性：</p>
+<h3 id="1-泛型-lambda-表达式改进"><a class="header" href="#1-泛型-lambda-表达式改进">1. 泛型 Lambda 表达式改进</a></h3>
+<p>C++14 允许 Lambda 表达式的参数使用自动类型推导（即 auto），从而支持更广泛的泛型编程。这简化了 Lambda 表达式的使用，尤其是涉及模板的情况下。</p>
+<p>C++11 的 Lambda：</p>
+<pre><code class="language-cpp">
+auto lambda = [](int x, double y) {
+    return x + y;
+};
+</code></pre>
+<p>C++14 的 Lambda：</p>
+<pre><code class="language-cpp">
+auto lambda = [](auto x, auto y) {
+    return x + y;  // 可以传递不同类型的参数
+};
+std::cout &lt;&lt; lambda(1, 2.5) &lt;&lt; std::endl;  // 结果为 3.5
+</code></pre>
+<h3 id="2-auto-返回类型推导"><a class="header" href="#2-auto-返回类型推导">2. auto 返回类型推导</a></h3>
+<p>C++11 引入了 auto 关键字，但在函数返回类型上，必须显式声明返回类型，或者使用尾随返回类型。C++14 则允许编译器自动推导函数的返回类型。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+auto add(int x, int y) {
+    return x + y;  // 编译器自动推导返回类型为 int
+}
+</code></pre>
+<p>在 C++11 中，如果使用 auto，需要这样写：</p>
+<pre><code class="language-cpp">
+auto add(int x, int y) -&gt; int {
+    return x + y;
+}
+</code></pre>
+<h3 id="3-常量表达式中的更多功能-constexpr"><a class="header" href="#3-常量表达式中的更多功能-constexpr">3. 常量表达式中的更多功能 (constexpr)</a></h3>
+<p>C++14 对 constexpr 关键字做了进一步扩展，允许 constexpr 函数变得更灵活。C++11 中的 constexpr 函数必须是简单的一行计算，C++14 则允许在 constexpr 函数中使用更复杂的语句，如循环和条件语句。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+constexpr int factorial(int n) {
+    int result = 1;
+    for (int i = 1; i &lt;= n; ++i)
+        result *= i;
+    return result;
+}
+
+int arr[factorial(5)];  // 编译时计算 5 的阶乘，arr 的大小为 120
+</code></pre>
+<h3 id="4-stdmake_unique"><a class="header" href="#4-stdmake_unique">4. std::make_unique</a></h3>
+<p>在 C++11 中，智能指针 std::unique_ptr 是引入的重要特性，但当时没有类似于 std::make_shared 的创建 std::shared_ptr 的便捷工厂函数。C++14 引入了 std::make_unique，用于创建 std::unique_ptr 对象，使代码更加安全和简洁。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+auto ptr = std::make_unique&lt;int&gt;(10);  // 创建一个智能指针
+</code></pre>
+<p>在 C++11 中，你需要这样写：</p>
+<pre><code class="language-cpp">std::unique_ptr&lt;int&gt; ptr(new int(10));
+</code></pre>
+<p>std::make_unique 优点包括：</p>
+<p>避免手动调用 new，减少内存泄漏风险。
+更加高效，因为它可以防止对象初始化和指针赋值的两步操作。</p>
+<h3 id="5-二进制字面量"><a class="header" href="#5-二进制字面量">5. 二进制字面量</a></h3>
+<p>C++14 引入了二进制字面量，使得以二进制形式表示数值更加直观。通过前缀 0b 或 0B 来定义二进制数字。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">int binary = 0b1010;  // 二进制 1010 对应十进制的 10
+</code></pre>
+<p>这个功能对处理位运算、嵌入式编程或需要直接操作硬件的场景尤其有用。</p>
+<h3 id="6-数字分隔符单引号"><a class="header" href="#6-数字分隔符单引号">6. 数字分隔符（单引号）</a></h3>
+<p>C++14 引入了数字分隔符，可以用单引号（'）来分隔数字，使得长数字更易于阅读。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+int million = 1'000'000;  // 等价于 1000000
+long hex = 0x1'ABC'DEF;
+</code></pre>
+<p>这种写法不会影响数字的数值，纯粹是为了提升可读性，尤其是在金融和科学计算中处理大数时非常方便。</p>
+<h3 id="7-返回类型后置推导改进"><a class="header" href="#7-返回类型后置推导改进">7. 返回类型后置推导改进</a></h3>
+<p>在 C++11 中，函数的返回类型推导只能通过“尾随返回类型”来实现。而 C++14 引入了可以直接使用 decltype(auto)，让返回类型的推导更加灵活。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+int x = 10;
+decltype(auto) func() {
+    return (x);  // 返回类型是 int&amp;
+}
+</code></pre>
+<p>这种写法可以确保返回的表达式类型与实际表达式类型保持一致（包括引用）。</p>
+<h3 id="8-stdinteger_sequence-和-stdindex_sequence"><a class="header" href="#8-stdinteger_sequence-和-stdindex_sequence">8. std::integer_sequence 和 std::index_sequence</a></h3>
+<p>这些新工具极大简化了与参数包（variadic template）相关的元编程，它们允许开发者为编译时生成的一系列整数类型提供一个索引序列。这对于一些需要展开参数包的场景非常有用。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+template&lt;std::size_t... Indices&gt;
+void print_indices(std::index_sequence&lt;Indices...&gt;) {
+    ((std::cout &lt;&lt; Indices &lt;&lt; " "), ...);
+}
+
+int main() {
+    print_indices(std::make_index_sequence&lt;5&gt;{});  // 输出：0 1 2 3 4
+}
+</code></pre>
+<h3 id="9-deprecated-属性"><a class="header" href="#9-deprecated-属性">9. <code>[[deprecated]]</code> 属性</a></h3>
+<p>C++14 引入了 <code>[[deprecated]]</code> 属性，用于标记不推荐使用的函数或类，编译器会在使用这些标记的元素时给出警告。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">[[deprecated("使用新函数 newFunc 代替")]]
+void oldFunc() {}
+
+void newFunc() {}
+</code></pre>
+<p>这样当程序员调用 oldFunc 时，编译器会提示使用新函数 newFunc。</p>
+<h3 id="10-扩展的捕获lambda-表达式"><a class="header" href="#10-扩展的捕获lambda-表达式">10. 扩展的捕获（Lambda 表达式）</a></h3>
+<p>C++14 Lambda 表达式的捕获列表支持直接移动捕获。C++11 只允许按值或按引用捕获外部变量，而 C++14 支持通过移动语义捕获。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+auto ptr = std::make_unique&lt;int&gt;(42);
+auto lambda = [p = std::move(ptr)]() {
+    std::cout &lt;&lt; *p &lt;&lt; std::endl;  // 打印 42
+};
+</code></pre>
+<p>总结</p>
+<p>C++14 标准在 C++11 的基础上，做了许多实用性、可读性和性能方面的改进。其主要的目标是通过对语言和库的小幅更新，改善开发者体验，使得编写高效、简洁的 C++ 代码更加容易。C++14 的特性虽然没有 C++11 那样革命性，但它解决了一些开发者在使用 C++11 时遇到的实际问题，并为进一步的标准（如 C++17 和 C++20）奠定了基础。</p>
+<h2 id="c17标准"><a class="header" href="#c17标准">c++17标准</a></h2>
+<p>C++17 是 C++ 标准中的一个重要更新，带来了许多新的语言特性和库功能。相比 C++11 和 C++14，C++17 既包含了一些编译时和运行时的优化，也引入了更多便利开发者的功能。以下是 C++17 的主要新特性和改进：</p>
+<h3 id="1-结构化绑定structured-bindings"><a class="header" href="#1-结构化绑定structured-bindings">1. 结构化绑定（Structured Bindings）</a></h3>
+<p>C++17 引入了结构化绑定，可以将结构、元组或数组的元素直接绑定到局部变量中。这使得从复杂类型中解包数据变得更加简洁。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+std::tuple&lt;int, double, std::string&gt; t(1, 2.3, "C++17");
+auto [x, y, z] = t;  // 直接将 tuple 的元素解包到 x, y, z
+
+struct Point { int x; int y; };
+Point p { 10, 20 };
+auto [a, b] = p;  // 将 Point 的成员解包到 a 和 b
+</code></pre>
+<h3 id="2-if-constexpr"><a class="header" href="#2-if-constexpr">2. if constexpr</a></h3>
+<p>if constexpr 是 C++17 中对条件编译的改进，它允许在编译时根据条件选择执行代码。与普通的 if 不同，如果 if constexpr 的条件为 false，则其对应的代码块不会被编译，从而避免了无效代码的编译错误。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+template&lt;typename T&gt;
+void print(T t) {
+    if constexpr (std::is_integral&lt;T&gt;::value) {
+        std::cout &lt;&lt; t &lt;&lt; " is an integer" &lt;&lt; std::endl;
+    } else {
+        std::cout &lt;&lt; t &lt;&lt; " is not an integer" &lt;&lt; std::endl;
+    }
+}
+</code></pre>
+<p>这里 if constexpr 允许在编译时决定哪个分支会被执行，另一个分支则不会被编译，确保编译时的安全性和性能。</p>
+<h3 id="3-折叠表达式fold-expressions"><a class="header" href="#3-折叠表达式fold-expressions">3. 折叠表达式（Fold Expressions）</a></h3>
+<p>C++17 中的折叠表达式用于简化对参数包（variadic template）的处理。它允许使用参数包时的递归展开更直观和简洁。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+template&lt;typename... Args&gt;
+auto sum(Args... args) {
+    return (... + args);  // 折叠表达式，计算所有参数的和
+}
+
+std::cout &lt;&lt; sum(1, 2, 3, 4);  // 输出：10
+</code></pre>
+<p>在这里，(... + args) 是一个右折叠表达式，它自动展开成 1 + 2 + 3 + 4。</p>
+<h3 id="4-stdoptional"><a class="header" href="#4-stdoptional">4. std::optional</a></h3>
+<p>std::optional 是一个新的容器类型，用于表示一个值可能存在，也可能不存在。这种类型有助于避免空指针或无效状态，提供了更安全的 API。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+std::optional&lt;int&gt; find(int value) {
+    if (value == 42) {
+        return 42;  // 返回有效值
+    }
+    return std::nullopt;  // 返回无效值
+}
+
+auto result = find(42);
+if (result) {
+    std::cout &lt;&lt; "Found: " &lt;&lt; *result &lt;&lt; std::endl;
+} else {
+    std::cout &lt;&lt; "Not found" &lt;&lt; std::endl;
+}
+</code></pre>
+<p>std::optional 可以避免使用 nullptr 或 0 表示“无效值”的习惯，增强代码的可读性和安全性。</p>
+<h3 id="5-stdvariant"><a class="header" href="#5-stdvariant">5. std::variant</a></h3>
+<p>std::variant 是一种类型安全的联合体，它允许存储多种不同类型的值，但每次只能存储其中一种类型。它提供了比传统联合体（union）更安全的接口，并且支持类型检查。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+std::variant&lt;int, double, std::string&gt; v;
+v = 42;
+v = "Hello";
+
+if (std::holds_alternative&lt;std::string&gt;(v)) {
+    std::cout &lt;&lt; "Variant holds a string: " &lt;&lt; std::get&lt;std::string&gt;(v) &lt;&lt; std::endl;
+}
+</code></pre>
+<p>std::variant 非常适合需要在运行时存储多种类型但又不想牺牲类型安全的场景。</p>
+<h3 id="6-stdany"><a class="header" href="#6-stdany">6. std::any</a></h3>
+<p>std::any 是 C++17 引入的一个类型安全的容器，它可以存储任意类型的值，但与 std::variant 不同，std::any 并不限定存储的类型，允许存储任何类型，并在运行时通过 std::any_cast 来提取该值。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+std::any a = 1;
+a = std::string("C++17");
+
+try {
+    std::cout &lt;&lt; std::any_cast&lt;std::string&gt;(a) &lt;&lt; std::endl;  // 输出：C++17
+} catch (const std::bad_any_cast&amp; e) {
+    std::cout &lt;&lt; "Bad cast" &lt;&lt; std::endl;
+}
+</code></pre>
+<p>std::any 非常灵活，但也因此牺牲了一些类型安全，因此通常只在必须的时候使用。</p>
+<h3 id="7-平行算法parallel-algorithms"><a class="header" href="#7-平行算法parallel-algorithms">7. 平行算法（Parallel Algorithms）</a></h3>
+<p>C++17 的标准库中增加了对并行算法的支持，许多 STL 算法现在可以通过新引入的执行策略并行执行。执行策略包括顺序（std::execution::seq）、并行（std::execution::par）、以及并行且矢量化（std::execution::par_unseq）等。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+#include &lt;execution&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+std::vector&lt;int&gt; vec = {1, 2, 3, 4, 5};
+std::for_each(std::execution::par, vec.begin(), vec.end(), [](int&amp; n) {
+    n *= 2;  // 并行执行
+});
+</code></pre>
+<p>通过引入并行算法，C++17 提供了更高效的方式来处理大数据集和计算密集型任务。</p>
+<ol start="8">
+<li>constexpr 的改进
+C++17 对 constexpr 进行了进一步的增强，允许 constexpr 函数执行更多复杂操作，比如定义局部变量、条件语句、循环等，使得在编译时执行的计算更加灵活。</li>
+</ol>
+<p>示例：</p>
+<pre><code class="language-cpp">
+constexpr int factorial(int n) {
+    int result = 1;
+    for (int i = 2; i &lt;= n; ++i) {
+        result *= i;
+    }
+    return result;
+}
+
+static_assert(factorial(5) == 120, "Factorial calculation is wrong");
+</code></pre>
+<p>这使得编译时的常量计算功能更强大，可以更有效地优化代码。</p>
+<h3 id="9-内联变量inline-variables"><a class="header" href="#9-内联变量inline-variables">9. 内联变量（Inline Variables）</a></h3>
+<p>C++17 引入了内联变量（inline variables）的概念，允许在头文件中定义全局变量或静态成员变量，而不会引发链接错误。这解决了 C++98 和 C++11 中需要在 .cpp 文件中定义全局变量的痛点。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+struct MyClass {
+    static inline int value = 10;  // 内联静态成员变量
+};
+</code></pre>
+<p>内联变量可以定义在头文件中，并且可以在多个翻译单元中共享，而不必担心链接冲突。</p>
+<h3 id="10-标准库容器的改进"><a class="header" href="#10-标准库容器的改进">10. 标准库容器的改进</a></h3>
+<p>C++17 对标准库容器进行了若干改进，包括：</p>
+<p>std::vector 和 std::string 支持 data() 方法，用于返回底层数组的指针，这在处理与 C API 交互时尤其有用。
+std::map 和 std::set 的 insert 和 emplace 函数返回插入位置的迭代器，以简化代码。
+示例：</p>
+<pre><code class="language-cpp">
+std::vector&lt;int&gt; v = {1, 2, 3};
+int* p = v.data();  // 直接获取底层数组指针
+</code></pre>
+<h3 id="11-编译时静态断言消息改进"><a class="header" href="#11-编译时静态断言消息改进">11. 编译时静态断言消息改进</a></h3>
+<p>C++17 改进了静态断言（static_assert）的语法，使其可以省略错误消息。在 C++11 中，static_assert 必须提供一个错误消息，而 C++17 中可以直接省略消息。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+static_assert(sizeof(int) == 4);  // 不需要提供错误消息
+</code></pre>
+<h2 id="c20标准"><a class="header" href="#c20标准">c++20标准</a></h2>
+<p>C++20 是 C++ 标准中的一次重要更新，被认为是自 C++11 以来最具影响力的标准之一。它带来了大量新特性和改进，涵盖了语言、库、并发、编译时编程等多个方面。以下是 C++20 的一些关键特性及其详细解释。</p>
+<h3 id="1-概念-concepts"><a class="header" href="#1-概念-concepts">1. 概念 (Concepts)</a></h3>
+<p>概念（Concepts）是 C++20 中的一个核心特性，用于定义模板的约束条件。它们通过提供明确的接口要求，简化了模板编程，并在编译期间捕获模板参数的错误，从而提高了代码的可读性和安全性。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+template&lt;typename T&gt;
+concept Integral = std::is_integral_v&lt;T&gt;;
+
+template&lt;Integral T&gt;
+T add(T a, T b) {
+    return a + b;
+}
+
+int main() {
+    std::cout &lt;&lt; add(3, 4) &lt;&lt; std::endl;  // OK
+    // std::cout &lt;&lt; add(3.0, 4.0) &lt;&lt; std::endl;  // 编译错误，不满足 Integral 概念
+}
+</code></pre>
+<p>概念通过约束模板参数类型，避免了模板引发的晦涩错误，提供了更清晰的编译时信息。</p>
+<h3 id="2-协程-coroutines"><a class="header" href="#2-协程-coroutines">2. 协程 (Coroutines)</a></h3>
+<p>协程（Coroutines）是 C++20 中引入的一个高级语言特性，允许编写异步代码和生成器。协程通过 co_await、co_yield 和 co_return 关键字提供了暂停、恢复和异步操作的机制，使得异步编程和生成器的实现更加高效和简洁。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+#include &lt;coroutine&gt;
+#include &lt;iostream&gt;
+
+struct SimpleCoroutine {
+    struct promise_type {
+        SimpleCoroutine get_return_object() { return {}; }
+        std::suspend_never initial_suspend() { return {}; }
+        std::suspend_never final_suspend() noexcept { return {}; }
+        void return_void() {}
+        void unhandled_exception() { std::terminate(); }
+    };
+};
+
+SimpleCoroutine myCoroutine() {
+    std::cout &lt;&lt; "Hello from coroutine!" &lt;&lt; std::endl;
+    co_return;
+}
+
+int main() {
+    myCoroutine();
+}
+</code></pre>
+<p>协程可以在处理 I/O 密集型任务、游戏循环、并发编程等场景中大显身手，减少上下文切换的开销。</p>
+<h3 id="3-范围-ranges"><a class="header" href="#3-范围-ranges">3. 范围 (Ranges)</a></h3>
+<p>C++20 引入了新的 Ranges 库，这是对现有 STL 算法和迭代器的一次重大改进。Ranges 提供了一种更简洁、更安全的方式来操作集合。它支持基于管道操作符的懒计算链式调用，让代码更具表达性。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+#include &lt;ranges&gt;
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    std::vector&lt;int&gt; numbers = {1, 2, 3, 4, 5, 6};
+
+    auto result = numbers | std::views::filter([](int n) { return n % 2 == 0; })
+                          | std::views::transform([](int n) { return n * n; });
+
+    for (int n : result) {
+        std::cout &lt;&lt; n &lt;&lt; " ";  // 输出：4 16 36
+    }
+}
+</code></pre>
+<p>Ranges 库简化了数据流处理，减少了对迭代器的显式操作，极大提升了可读性和可维护性。</p>
+<h3 id="4-模块-modules"><a class="header" href="#4-模块-modules">4. 模块 (Modules)</a></h3>
+<p>模块（Modules）是对 C++ 代码的组织方式的一次重大变革，旨在替代传统的头文件机制。模块可以减少编译时间，避免头文件包含的冗余问题，并且改善代码的封装和安全性。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+// mymodule.ixx
+export module mymodule;
+
+export int add(int a, int b) {
+    return a + b;
+}
+
+// main.cpp
+import mymodule;
+
+int main() {
+    std::cout &lt;&lt; add(1, 2) &lt;&lt; std::endl;
+}
+</code></pre>
+<p>模块通过显式的导入（import）和导出（export），避免了头文件和实现文件之间的重复，并提升了大规模项目的编译速度。</p>
+<h3 id="5-三向比较-three-way-comparison-"><a class="header" href="#5-三向比较-three-way-comparison-">5. 三向比较 (Three-way Comparison, &lt;=&gt;)</a></h3>
+<p>C++20 引入了三向比较运算符，也叫“飞船运算符”（&lt;=&gt;），它可以自动生成比较函数，用于简化对象比较的实现。&lt;=&gt; 运算符返回一个结果，用于表示小于、等于或大于的关系。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+#include &lt;compare&gt;
+
+struct Point {
+    int x, y;
+    auto operator&lt;=&gt;(const Point&amp;) const = default;  // 自动生成比较操作
+};
+
+int main() {
+    Point p1{1, 2}, p2{1, 3};
+    std::cout &lt;&lt; std::boolalpha &lt;&lt; (p1 &lt; p2) &lt;&lt; std::endl;  // 输出：true
+}
+</code></pre>
+<p>三向比较运算符简化了多个比较运算符的编写，特别适用于需要排序的对象。</p>
+<h3 id="6-consteval-和-constinit"><a class="header" href="#6-consteval-和-constinit">6. consteval 和 constinit</a></h3>
+<p>C++20 引入了两个新的关键字：consteval 和 constinit，用于改进编译时常量表达式的处理。</p>
+<ul>
+<li>consteval：用于表示函数必须在编译时求值。</li>
+<li>constinit：用于确保变量的初始化在编译时完成。</li>
+</ul>
+<p>示例：</p>
+<pre><code class="language-cpp">
+consteval int square(int n) {
+    return n * n;
+}
+
+constinit int value = square(4);  // 确保在编译时初始化
+</code></pre>
+<p>这些特性增强了对常量表达式的控制，避免了潜在的运行时错误。</p>
+<h3 id="7-范围-for-循环的增强"><a class="header" href="#7-范围-for-循环的增强">7. 范围 for 循环的增强</a></h3>
+<p>C++20 对范围 for 循环做了进一步的增强，现在可以直接解包 pair 或结构体成员。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+#include &lt;map&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    std::map&lt;int, std::string&gt; m = {{1, "one"}, {2, "two"}};
+    
+    for (auto [key, value] : m) {
+        std::cout &lt;&lt; key &lt;&lt; ": " &lt;&lt; value &lt;&lt; std::endl;
+    }
+}
+</code></pre>
+<p>这种语法糖让代码更加简洁，适用于需要处理键值对或结构体的场景。</p>
+<h3 id="8-stdspan"><a class="header" href="#8-stdspan">8. std::span</a></h3>
+<p>std::span 是一种轻量级的非拥有类型视图，表示一段连续的内存块。它非常适合用于处理数组或容器的子集，而不需要复制数据。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+#include &lt;span&gt;
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
+
+void print_span(std::span&lt;int&gt; s) {
+    for (int n : s) {
+        std::cout &lt;&lt; n &lt;&lt; " ";
+    }
+    std::cout &lt;&lt; std::endl;
+}
+
+int main() {
+    std::vector&lt;int&gt; v = {1, 2, 3, 4, 5};
+    print_span(v);          // 输出：1 2 3 4 5
+    print_span(v.data());    // 输出：1
+}
+</code></pre>
+<p>std::span 在处理数组、容器的子集以及与 C 风格数组交互时非常有用，它不涉及数据所有权，提供了安全的边界检查。</p>
+<h3 id="9-范围-for-循环中的初始化"><a class="header" href="#9-范围-for-循环中的初始化">9. 范围 for 循环中的初始化</a></h3>
+<p>C++20 增加了在范围 for 循环中使用初始化的能力。这意味着可以在 for 循环的范围表达式之前引入一个初始化语句，从而简化代码结构。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+#include &lt;vector&gt;
+
+int main() {
+    for (std::vector&lt;int&gt; v = {1, 2, 3, 4}; auto n : v) {
+        std::cout &lt;&lt; n &lt;&lt; " ";
+    }
+}
+</code></pre>
+<p>这种增强使得代码的可读性和结构性得到了提升，尤其是在需要预处理数据的情况下。</p>
+<h3 id="10-stdformat"><a class="header" href="#10-stdformat">10. std::format</a></h3>
+<p>C++20 引入了 std::format，一个功能强大的字符串格式化库，类似于 Python 的 format 函数，取代了之前的 sprintf 和 std::ostringstream，提供了更现代的格式化机制。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+#include &lt;format&gt;
+#include &lt;iostream&gt;
+
+int main() {
+    std::string name = "C++20";
+    std::cout &lt;&lt; std::format("Hello, {}!", name) &lt;&lt; std::endl;  // 输出：Hello, C++20!
+}
+</code></pre>
+<p>std::format 提供了更简洁、安全的格式化方式，避免了传统 printf 风格带来的潜在安全问题。</p>
+<h3 id="11-异步任务的改进-stdjthread"><a class="header" href="#11-异步任务的改进-stdjthread">11. 异步任务的改进 (std::jthread)</a></h3>
+<p>C++20 引入了 std::jthread，一种改进版的 std::thread，它会在作用域结束时自动中止线程，避免了手动 join 的麻烦。</p>
+<p>示例：</p>
+<pre><code class="language-cpp">
+#include &lt;thread&gt;
+#include &lt;iostream&gt;
+
+void task() {
+    std::cout &lt;&lt; "Running in jthread" &lt;&lt; std::endl;
+}
+
+int main() {
+    std::jthread t(task);  // jthread 会自动 join
+}
+</code></pre>
+<p>std::jthread 通过简化线程管理，减少了编写并发代码时的错误风险。</p>
+<p>总结
+C++20 是对 C++ 语言标准的一个重大更新，涵盖了编译时编程、协程、模块、概念等众多领域。它不仅提升了代码的性能和表达能力，还显著提高了开发者的生产力。C++20 标准旨在让 C++ 编程更加现代、简洁和高效，适应未来的编程需求。</p>
+<h2 id="c23"><a class="header" href="#c23">c++23</a></h2>
+<p>C++23 是 C++ 语言的一个更新版本，作为 C++20 的继任者，它为开发者带来了一系列新特性、改进和 bug 修复。它延续了现代 C++ 的演进趋势，主要聚焦于提高语言的简洁性、功能性和性能。以下是 C++23 的一些重要更新和新特性。</p>
+<h3 id="1-语言特性改进"><a class="header" href="#1-语言特性改进">1. 语言特性改进</a></h3>
+<p>1.1 模块化 (Modules) 的完善
+C++20 引入了模块化系统，但还有许多未解决的问题。C++23 对其进行了多项改进，例如更好的跨模块优化、更简洁的编译和链接过程。模块有助于减少头文件的包含依赖性，降低编译时间。</p>
+<p><code>constexpr 的增强</code></p>
+<p>C++23 中进一步扩展了 constexpr 的适用性，使得更多函数、容器、算法可以在编译时执行。例如：</p>
+<p>动态分配的支持：允许 new 和 delete 在 constexpr 中使用。
+std::string 和其他标准库容器可以在 constexpr 环境下使用。
+这使得更多的编译时计算变得可能，进一步提高程序的性能。</p>
+<p><code>Pattern Matching（模式匹配）初步实现</code></p>
+<p>虽然完整的模式匹配尚未完全实现，但 C++23 引入了基础的结构化绑定和模式匹配功能。这让代码中对某些数据结构的拆解和访问更加简洁。例如，std::variant 和类似类型可以通过模式匹配进行简洁的类型匹配和处理。</p>
+<p><code>if consteval</code></p>
+<p>if consteval 是 C++23 引入的新语法，它允许在编译期选择执行路径。与 constexpr 类似，但针对编译时和运行时的行为区分更为明确。例如：</p>
+<pre><code class="language-cpp">
+void foo() {
+    if consteval {
+        // 编译时执行的代码
+    } else {
+        // 运行时执行的代码
+    }
+}
+</code></pre>
+<p>这种特性让开发者能更加细粒度地控制编译时和运行时的行为。</p>
+<h3 id="2-ranges-库的扩展"><a class="header" href="#2-ranges-库的扩展">2. Ranges 库的扩展</a></h3>
+<p>C++20 引入的 Ranges 库在 C++23 中得到了进一步扩展和完善。C++23 增加了更多与 Ranges 相关的算法，改进了 view 的操作，增加了范围适配器的灵活性。例如：</p>
+<p>新增 std::ranges::to，可以方便地将范围转换为容器。
+引入了 join_with 视图，可以将多个 range 连接成一个。
+lazy_split 允许延迟分割范围。
+这些改进让 Ranges 库在处理复杂数据流时更加自然和简洁。</p>
+<h3 id="3-stdexpected-类型"><a class="header" href="#3-stdexpected-类型">3. std::expected 类型</a></h3>
+<p>C++23 引入了 std::expected，用于处理可能失败的函数返回值。这是对 std::optional 和异常机制的补充，提供了另一种错误处理的模式。std::expected 可以显式表示函数成功或失败的结果，而无需抛出异常或使用 std::optional 表示缺值。</p>
+<p>使用示例：</p>
+<pre><code class="language-cpp">
+std::expected&lt;int, std::string&gt; get_value(bool succeed) {
+    if (succeed) {
+        return 42;
+    } else {
+        return std::unexpected("Error occurred");
+    }
+}
+</code></pre>
+<h3 id="4-stdflat_map-和-stdflat_set"><a class="header" href="#4-stdflat_map-和-stdflat_set">4. std::flat_map 和 std::flat_set</a></h3>
+<p>C++23 引入了 std::flat_map 和 std::flat_set 作为 std::map 和 std::set 的替代品。它们采用了平坦数组来存储数据，提供了比基于树结构的容器更好的缓存局部性，从而提高了性能，特别是在频繁的查找操作中。</p>
+<h3 id="5-stdprint"><a class="header" href="#5-stdprint">5. std::print</a></h3>
+<p>C++23 引入了 std::print 和 std::println，提供了一个简单的标准化打印函数，类似于其他语言中的 printf 或 println，避免了使用 std::cout 的复杂性。例如：</p>
+<pre><code class="language-cpp">
+std::print("Hello, World!\n");
+</code></pre>
+<p>这简化了基础的输出操作，避免了 iostream 的冗长语法。</p>
+<h3 id="6-并发和多线程支持"><a class="header" href="#6-并发和多线程支持">6. 并发和多线程支持</a></h3>
+<p><code>std::jthread 的改进</code></p>
+<p>std::jthread 是 C++20 中引入的类，它简化了线程的管理，自动加入线程而无需手动调用 join。C++23 对此类进行了进一步的增强，包括对线程中断（stop token）的更好支持，使得多线程编程更加安全和高效。</p>
+<p><code>std::atomic_ref</code></p>
+<p>C++23 引入了 std::atomic_ref，它允许对现有对象的原子操作，而无需将对象本身声明为 std::atomic。这为处理非原子对象的线程安全操作提供了更灵活的手段。</p>
+<h3 id="7-constexpr-动态内存管理"><a class="header" href="#7-constexpr-动态内存管理">7. constexpr 动态内存管理</a></h3>
+<p>C++23 允许在 constexpr 环境中动态分配内存，这极大增强了 constexpr 的能力，允许在编译时进行复杂的内存操作和管理。</p>
+<h3 id="8-基于-contract-的编程延期"><a class="header" href="#8-基于-contract-的编程延期">8. 基于 contract 的编程（延期）</a></h3>
+<p>C++20 原本计划引入的 contracts 机制，在 C++23 中仍然被推迟。Contracts 允许在函数定义中指定前置条件、后置条件和不变式，提供更强的约束条件和调试支持。然而由于设计复杂性，它仍未被引入。</p>
+<h3 id="9-占位符类型推导deducing-this"><a class="header" href="#9-占位符类型推导deducing-this">9. 占位符类型推导（deducing this）</a></h3>
+<p>C++23 引入了 deducing this 特性，允许通过占位符进行成员函数的类型推导。这简化了某些情况下成员函数模板的使用，尤其是在返回类型依赖于 this 的情况下。</p>
+<p>C++23 与 C++20 的对比, C++23 更加强调性能和编译期能力（如 constexpr 的增强）。模式匹配和 Ranges 库的改进进一步提升了代码的表达能力。C++23 更注重标准库的扩展，如 std::expected 和 std::flat_map，提供了更好的开发者工具。</p>
+<p>C++23 对并发的改进，使多线程编程变得更加易用和安全。总结来说，C++23 是 C++20 的自然进化版本，通过进一步增强编译期计算、标准库的功能、并发编程的支持，以及更简洁的语法，提升了开发者的编程体验和程序的性能。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../c++/index.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../c++/引用变量.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../c++/index.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../c++/引用变量.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src=".././theme/style.js"></script>
+        <script src="../clarity.js"></script>
+        <script src=".././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>
