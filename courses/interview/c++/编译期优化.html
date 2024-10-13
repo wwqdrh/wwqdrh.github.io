@@ -1,0 +1,518 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>编译期优化</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href=".././theme/style.css">
+    <link rel="stylesheet" href=".././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">面试指南</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/index.html"><strong aria-hidden="true">1.</strong> 数据结构与算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/index.html"><strong aria-hidden="true">1.1.</strong> 题库</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer1.html"><strong aria-hidden="true">1.1.1.</strong> 剑指offer1</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer2.html"><strong aria-hidden="true">1.1.2.</strong> 剑指offer2</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer3.html"><strong aria-hidden="true">1.1.3.</strong> 剑指offer3</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer4.html"><strong aria-hidden="true">1.1.4.</strong> 剑指offer4</a></li></ol></li><li class="chapter-item expanded "><a href="../数据结构与算法/短链系统设计.html"><strong aria-hidden="true">1.2.</strong> 短链系统设计</a></li></ol></li><li class="chapter-item expanded "><a href="../c++/index.html"><strong aria-hidden="true">2.</strong> c++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../c++/c++标准.html"><strong aria-hidden="true">2.1.</strong> c++标准</a></li><li class="chapter-item expanded "><a href="../c++/面向对象.html"><strong aria-hidden="true">2.2.</strong> 面向对象</a></li><li class="chapter-item expanded "><a href="../c++/lambda表达式.html"><strong aria-hidden="true">2.3.</strong> lambda表达式</a></li><li class="chapter-item expanded "><a href="../c++/常用库函数.html"><strong aria-hidden="true">2.4.</strong> 常用库函数</a></li><li class="chapter-item expanded "><a href="../c++/模板编程.html"><strong aria-hidden="true">2.5.</strong> 模板编程</a></li><li class="chapter-item expanded "><a href="../c++/移动语义.html"><strong aria-hidden="true">2.6.</strong> 移动语义</a></li><li class="chapter-item expanded "><a href="../c++/引用变量.html"><strong aria-hidden="true">2.7.</strong> 引用变量</a></li><li class="chapter-item expanded "><a href="../c++/编译期优化.html" class="active"><strong aria-hidden="true">2.8.</strong> 编译期优化</a></li><li class="chapter-item expanded "><a href="../c++/什么是虚函数.html"><strong aria-hidden="true">2.9.</strong> 什么是虚函数</a></li><li class="chapter-item expanded "><a href="../c++/指针.html"><strong aria-hidden="true">2.10.</strong> 指针</a></li><li class="chapter-item expanded "><a href="../c++/如何保证并发安全.html"><strong aria-hidden="true">2.11.</strong> 如何保证并发安全</a></li><li class="chapter-item expanded "><a href="../c++/常见对象的内存结构.html"><strong aria-hidden="true">2.12.</strong> 常见对象的内存结构</a></li><li class="chapter-item expanded "><a href="../c++/数据类型.html"><strong aria-hidden="true">2.13.</strong> 数据类型</a></li><li class="chapter-item expanded "><a href="../c++/内存模型.html"><strong aria-hidden="true">2.14.</strong> 内存模型</a></li></ol></li><li class="chapter-item expanded "><a href="../linux操作系统/index.html"><strong aria-hidden="true">3.</strong> linux操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux操作系统/cpu资源.html"><strong aria-hidden="true">3.1.</strong> cpu资源</a></li><li class="chapter-item expanded "><a href="../linux操作系统/内存资源.html"><strong aria-hidden="true">3.2.</strong> 内存资源</a></li><li class="chapter-item expanded "><a href="../linux操作系统/磁盘资源.html"><strong aria-hidden="true">3.3.</strong> 磁盘资源</a></li><li class="chapter-item expanded "><a href="../linux操作系统/进程结构与调度.html"><strong aria-hidden="true">3.4.</strong> 进程结构与调度</a></li><li class="chapter-item expanded "><a href="../linux操作系统/内存管理.html"><strong aria-hidden="true">3.5.</strong> 内存管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/资源管理.html"><strong aria-hidden="true">3.6.</strong> 资源管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/网络配置.html"><strong aria-hidden="true">3.7.</strong> 网络配置</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/interview-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+<style>
+    select.code-example {
+        color: var(--fg);
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--fg);
+        padding: 2px 10px 2px 10px;
+        border-radius: 5px;
+    }
+</style>
+<ul>
+<li><a href="#%E6%8C%87%E4%BB%A4%E6%8E%92%E5%BA%8F%E7%9B%B8%E5%85%B3">指令排序相关</a></li>
+<li><a href="#%E5%86%85%E8%81%94%E5%87%BD%E6%95%B0inline-functions">内联函数（Inline Functions）</a></li>
+<li><a href="#%E5%B8%B8%E9%87%8F%E8%A1%A8%E8%BE%BE%E5%BC%8Fconstexpr">常量表达式（constexpr）</a></li>
+<li><a href="#%E6%A8%A1%E6%9D%BF%E5%85%83%E7%BC%96%E7%A8%8Btemplate-metaprogramming">模板元编程（Template Metaprogramming）</a></li>
+<li><a href="#%E5%BE%AA%E7%8E%AF%E5%B1%95%E5%BC%80loop-unrolling">循环展开（Loop Unrolling）</a></li>
+<li><a href="#%E5%B8%B8%E9%87%8F%E6%8A%98%E5%8F%A0constant-folding">常量折叠（Constant Folding）</a></li>
+<li><a href="#%E6%9D%A1%E4%BB%B6%E4%BC%98%E5%8C%96compile-time-conditions">条件优化（Compile-time Conditions）</a></li>
+<li><a href="#%E9%9D%99%E6%80%81%E6%96%AD%E8%A8%80static_assert">静态断言（static_assert）</a></li>
+<li><a href="#consteval%E5%92%8Cconstinit">consteval和constinit</a></li>
+</ul>
+<h2 id="指令排序相关"><a class="header" href="#指令排序相关">指令排序相关</a></h2>
+<p><code>volatile</code></p>
+<blockquote>
+<p>关键字, 防止编译器对访问变量的指令进行优化，例如重新排序、合并或消除读取操作。</p>
+</blockquote>
+<pre><code class="language-cpp">volatile int x;
+</code></pre>
+<ul>
+<li>告诉编译器，每次访问 volatile 变量时，都必须从内存中重新读取，不能进行缓存或优化。</li>
+<li>主要用于多线程编程、硬件寄存器访问等场景，防止编译器假设变量不会被外部修改。</li>
+</ul>
+<p>在多线程环境下，多个线程可能同时访问或修改同一个变量，如果编译器优化了对这个变量的访问，可能导致数据不一致或行为异常。在嵌入式系统中，硬件寄存器的值可能会在后台发生变化，因此必须确保对这些寄存器的访问不会被编译器优化掉。</p>
+<p><code>memory_order + atomic</code></p>
+<blockquote>
+<p>控制内存屏障，保证多线程环境下的指令和内存操作顺序。</p>
+</blockquote>
+<pre><code class="language-cpp">#include &lt;atomic&gt;
+
+std::atomic&lt;int&gt; x(0);
+x.store(10, std::memory_order_relaxed);  // 使用不同的内存顺序
+</code></pre>
+<p>在多核处理器上，不同线程对共享变量的操作可能会被重新排序，导致不一致性。atomic 和 memory_order 确保了多线程环境下的内存可见性和执行顺序。</p>
+<p><code>内存屏障</code></p>
+<p>防止编译器和CPU对特定内存操作进行重新排序。</p>
+<pre><code class="language-cpp">#include &lt;atomic&gt;
+std::atomic_thread_fence(std::memory_order_seq_cst);  // 严格内存屏障
+</code></pre>
+<p>内存屏障可以阻止编译器或硬件对指令重新排序，确保操作的执行顺序符合预期，尤其在多线程和多核环境中。</p>
+<p><code>asm volatile</code></p>
+<p>防止编译器对特定的汇编指令进行优化或重新排序。</p>
+<pre><code class="language-cpp">asm volatile("nop");  // 禁止优化此指令
+</code></pre>
+<p><code>std::launder</code></p>
+<p>防止编译器对某些内存操作（特别是对象的重定位或placement new）进行优化。</p>
+<pre><code class="language-cpp">#include &lt;new&gt;
+
+int* p = new int(42);
+std::launder(p);
+</code></pre>
+<p>std::launder 用于避免编译器对可能被重定位或重新构造的对象进行不安全的优化操作。</p>
+<p>当使用 placement new 或其他低级内存操作时，编译器可能做出错误假设，std::launder 确保这些对象的合法访问。</p>
+<h2 id="内联函数inline-functions"><a class="header" href="#内联函数inline-functions">内联函数（Inline Functions）</a></h2>
+<p>内联函数通过在调用处直接展开函数体，避免了函数调用的开销（如参数传递、栈帧操作）。在性能关键的代码中，尤其是小型函数的多次调用时，内联可以显著提升效率。</p>
+<p>使用场景：</p>
+<ul>
+<li>小型的、频繁调用的函数。</li>
+<li>不适合大函数，因为会增大可执行文件的大小。</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+// 建议编译器内联
+inline int square(int x) {
+    return x * x;
+}
+
+__attribute__((noinline)) void bar() { /* ... */ }   // 明确禁止内联
+
+int main() {
+    int a = 5;
+    std::cout &lt;&lt; "Square of 5: " &lt;&lt; square(a) &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+<blockquote>
+<p>在编译时，square(a)会被替换为a * a，避免了函数调用的开销。</p>
+</blockquote>
+<ul>
+<li>inline 关键字提示编译器可以尝试内联函数，但并非强制。编译器可以根据实际情况决定是否内联。</li>
+<li>noinline 属性明确告诉编译器不允许内联，防止它对函数进行优化处理。</li>
+</ul>
+<h2 id="常量表达式constexpr"><a class="header" href="#常量表达式constexpr">常量表达式（constexpr）</a></h2>
+<p>constexpr是C++11引入的一种机制，用来在编译期计算表达式的值。它可以用于定义常量和函数，使得结果在编译期就已经确定。通过提前计算，可以减少运行时的计算负担。</p>
+<p>使用场景：</p>
+<ul>
+<li>需要在编译期确定的常量或运算。</li>
+<li>用于在模板元编程或编译期优化中提升效率。</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+constexpr int factorial(int n) {
+    return (n &lt;= 1) ? 1 : (n * factorial(n - 1));
+}
+
+int main() {
+    constexpr int result = factorial(5); // 在编译期计算
+    std::cout &lt;&lt; "Factorial of 5: " &lt;&lt; result &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+<blockquote>
+<p>factorial(5)的结果在编译期计算，避免了运行时计算，直接生成常量值。</p>
+</blockquote>
+<h2 id="模板元编程template-metaprogramming"><a class="header" href="#模板元编程template-metaprogramming">模板元编程（Template Metaprogramming）</a></h2>
+<p>模板元编程是C++的一种强大特性，允许在编译期执行复杂的运算。通过模板递归、constexpr和其他编译期机制，可以在编译期生成高效的代码，避免运行时开销。</p>
+<p>使用场景：</p>
+<ul>
+<li>需要进行编译期复杂运算或条件判断。</li>
+<li>用于生成高效、通用的代码，避免重复的代码实现。</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+template&lt;int N&gt;
+struct Factorial {
+    static const int value = N * Factorial&lt;N - 1&gt;::value;
+};
+
+template&lt;&gt;
+struct Factorial&lt;1&gt; {
+    static const int value = 1;
+};
+
+int main() {
+    std::cout &lt;&lt; "Factorial of 5: " &lt;&lt; Factorial&lt;5&gt;::value &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+<blockquote>
+<p>Factorial&lt;5&gt;::value在编译期递归展开，计算出结果120，避免了运行时计算。</p>
+</blockquote>
+<h2 id="循环展开loop-unrolling"><a class="header" href="#循环展开loop-unrolling">循环展开（Loop Unrolling）</a></h2>
+<p>循环展开是一种通过在编译期将循环体重复多次，减少循环控制逻辑的开销的优化技术。编译器会根据循环次数的固定性和大小，展开循环以减少分支跳转的代价。</p>
+<p>使用场景：</p>
+<ul>
+<li>循环次数较小且固定。</li>
+<li>需要减少循环的分支跳转开销。</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+void sumArray(const int* arr, int size) {
+    int sum = 0;
+    for (int i = 0; i &lt; size; i += 4) {
+        sum += arr[i];
+        sum += arr[i + 1];
+        sum += arr[i + 2];
+        sum += arr[i + 3];
+    }
+    std::cout &lt;&lt; "Sum: " &lt;&lt; sum &lt;&lt; std::endl;
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
+    sumArray(arr, 8);
+    return 0;
+}
+</code></pre>
+<blockquote>
+<p>通过手动展开循环，每次迭代处理多个元素，减少了循环跳转的次数，提高了处理效率。编译器有时也会自动进行循环展开。</p>
+</blockquote>
+<h2 id="常量折叠constant-folding"><a class="header" href="#常量折叠constant-folding">常量折叠（Constant Folding）</a></h2>
+<p>常量折叠是编译器在编译期计算常量表达式的值，并将结果直接嵌入生成的代码中，避免运行时的计算。</p>
+<p>使用场景：</p>
+<ul>
+<li>常量之间的运算。</li>
+<li>用于表达式中的值在编译期就可以确定的场景。</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+    int x = 2 * 3 + 5;  // 这个表达式会在编译期被计算
+    std::cout &lt;&lt; "Result: " &lt;&lt; x &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+<blockquote>
+<p>2 * 3 + 5的值在编译期直接计算为11，避免了运行时的计算。</p>
+</blockquote>
+<h2 id="条件优化compile-time-conditions"><a class="header" href="#条件优化compile-time-conditions">条件优化（Compile-time Conditions）</a></h2>
+<p>利用模板或constexpr进行条件选择，允许编译期根据条件生成不同的代码路径，避免不必要的分支判断。</p>
+<p>使用场景：</p>
+<ul>
+<li>条件判断可以在编译期确定。</li>
+<li>避免在运行时执行多余的分支判断。</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+template&lt;bool Condition&gt;
+constexpr int choose() {
+    if constexpr (Condition) {
+        return 42;
+    } else {
+        return 0;
+    }
+}
+
+int main() {
+    constexpr int result = choose&lt;true&gt;();  // 编译期选择
+    std::cout &lt;&lt; "Result: " &lt;&lt; result &lt;&lt; std::endl;
+    return 0;
+}
+</code></pre>
+<blockquote>
+<p>if constexpr允许在编译期选择分支，未选择的分支会被完全忽略，不会生成代码。</p>
+</blockquote>
+<h2 id="静态断言static_assert"><a class="header" href="#静态断言static_assert">静态断言（static_assert）</a></h2>
+<p>static_assert允许在编译期对某些条件进行验证，确保代码在编译阶段就捕获潜在的错误。这有助于提高代码的健壮性和优化编译期行为。</p>
+<p>使用场景：</p>
+<ul>
+<li>在编译期确保某些编译条件成立。</li>
+<li>防止无效类型或错误配置进入编译流程。</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+template&lt;typename T&gt;
+constexpr void checkType() {
+    static_assert(sizeof(T) &lt;= 4, "Type size is too large!");
+}
+
+int main() {
+    checkType&lt;int&gt;();   // 编译通过
+    // checkType&lt;double&gt;(); // 编译失败，double的大小超过4字节
+    return 0;
+}
+</code></pre>
+<blockquote>
+<p>static_assert在编译期进行类型检查，防止不符合要求的代码进入编译流程。</p>
+</blockquote>
+<h2 id="consteval和constinit"><a class="header" href="#consteval和constinit">consteval和constinit</a></h2>
+<p>C++20 引入了两个新的关键字：consteval 和 constinit，用于改进编译时常量表达式的处理。</p>
+<ul>
+<li>consteval：声明一个函数为 consteval，意味着这个函数只能在编译时被调用，任何试图在运行时调用它的行为都会导致编译错误。consteval 强调了编译时求值的必要性，确保调用该函数的所有表达式在编译时都能求值，增强了类型安全性。</li>
+<li>constinit：当使用 constinit 声明一个变量时，编译器会确保该变量在定义时初始化，并且只允许常量表达式作为其初始值。constinit 防止了可能的未初始化常量的运行时行为，确保在使用该变量之前，它已经被初始化并且是常量的。</li>
+</ul>
+<p>示例：</p>
+<pre><code class="language-cpp">consteval int square(int n) {
+    return n * n;
+}
+
+constinit int value = square(4);  // 确保在编译时初始化
+</code></pre>
+<p>这些特性增强了对常量表达式的控制，避免了潜在的运行时错误。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../c++/引用变量.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../c++/什么是虚函数.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../c++/引用变量.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../c++/什么是虚函数.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src=".././theme/style.js"></script>
+        <script src="../clarity.js"></script>
+        <script src=".././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>

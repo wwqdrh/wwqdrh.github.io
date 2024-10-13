@@ -1,0 +1,364 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>磁盘资源</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href=".././theme/style.css">
+    <link rel="stylesheet" href=".././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">面试指南</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/index.html"><strong aria-hidden="true">1.</strong> 数据结构与算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/index.html"><strong aria-hidden="true">1.1.</strong> 题库</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer1.html"><strong aria-hidden="true">1.1.1.</strong> 剑指offer1</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer2.html"><strong aria-hidden="true">1.1.2.</strong> 剑指offer2</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer3.html"><strong aria-hidden="true">1.1.3.</strong> 剑指offer3</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer4.html"><strong aria-hidden="true">1.1.4.</strong> 剑指offer4</a></li></ol></li><li class="chapter-item expanded "><a href="../数据结构与算法/短链系统设计.html"><strong aria-hidden="true">1.2.</strong> 短链系统设计</a></li></ol></li><li class="chapter-item expanded "><a href="../c++/index.html"><strong aria-hidden="true">2.</strong> c++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../c++/c++标准.html"><strong aria-hidden="true">2.1.</strong> c++标准</a></li><li class="chapter-item expanded "><a href="../c++/面向对象.html"><strong aria-hidden="true">2.2.</strong> 面向对象</a></li><li class="chapter-item expanded "><a href="../c++/lambda表达式.html"><strong aria-hidden="true">2.3.</strong> lambda表达式</a></li><li class="chapter-item expanded "><a href="../c++/常用库函数.html"><strong aria-hidden="true">2.4.</strong> 常用库函数</a></li><li class="chapter-item expanded "><a href="../c++/模板编程.html"><strong aria-hidden="true">2.5.</strong> 模板编程</a></li><li class="chapter-item expanded "><a href="../c++/移动语义.html"><strong aria-hidden="true">2.6.</strong> 移动语义</a></li><li class="chapter-item expanded "><a href="../c++/引用变量.html"><strong aria-hidden="true">2.7.</strong> 引用变量</a></li><li class="chapter-item expanded "><a href="../c++/编译期优化.html"><strong aria-hidden="true">2.8.</strong> 编译期优化</a></li><li class="chapter-item expanded "><a href="../c++/什么是虚函数.html"><strong aria-hidden="true">2.9.</strong> 什么是虚函数</a></li><li class="chapter-item expanded "><a href="../c++/指针.html"><strong aria-hidden="true">2.10.</strong> 指针</a></li><li class="chapter-item expanded "><a href="../c++/如何保证并发安全.html"><strong aria-hidden="true">2.11.</strong> 如何保证并发安全</a></li><li class="chapter-item expanded "><a href="../c++/常见对象的内存结构.html"><strong aria-hidden="true">2.12.</strong> 常见对象的内存结构</a></li><li class="chapter-item expanded "><a href="../c++/数据类型.html"><strong aria-hidden="true">2.13.</strong> 数据类型</a></li><li class="chapter-item expanded "><a href="../c++/内存模型.html"><strong aria-hidden="true">2.14.</strong> 内存模型</a></li></ol></li><li class="chapter-item expanded "><a href="../linux操作系统/index.html"><strong aria-hidden="true">3.</strong> linux操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux操作系统/cpu资源.html"><strong aria-hidden="true">3.1.</strong> cpu资源</a></li><li class="chapter-item expanded "><a href="../linux操作系统/内存资源.html"><strong aria-hidden="true">3.2.</strong> 内存资源</a></li><li class="chapter-item expanded "><a href="../linux操作系统/磁盘资源.html" class="active"><strong aria-hidden="true">3.3.</strong> 磁盘资源</a></li><li class="chapter-item expanded "><a href="../linux操作系统/进程结构与调度.html"><strong aria-hidden="true">3.4.</strong> 进程结构与调度</a></li><li class="chapter-item expanded "><a href="../linux操作系统/内存管理.html"><strong aria-hidden="true">3.5.</strong> 内存管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/资源管理.html"><strong aria-hidden="true">3.6.</strong> 资源管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/网络配置.html"><strong aria-hidden="true">3.7.</strong> 网络配置</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/interview-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+<style>
+    select.code-example {
+        color: var(--fg);
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--fg);
+        padding: 2px 10px 2px 10px;
+        border-radius: 5px;
+    }
+</style>
+<h2 id="主要指标"><a class="header" href="#主要指标">主要指标</a></h2>
+<ul>
+<li>磁盘空间使用率：每个挂载点的磁盘使用百分比，常用于判断磁盘是否即将耗尽。</li>
+<li>磁盘 IO 速率：磁盘的读写速率，过高的 IO 可能表示磁盘负载过重。</li>
+<li>I/O 等待（I/O wait）：CPU 等待磁盘 I/O 完成的时间，通常表示磁盘访问瓶颈。</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;sys/mount.h&gt; // macOS-specific header for statfs
+#include &lt;sys/statvfs.h&gt;
+
+void getDiskUsage(const char *path) {
+#ifdef __linux__
+  struct statvfs stat;
+
+  if (statvfs(path, &amp;stat) != 0) {
+    std::cerr &lt;&lt; "Error getting disk usage information (Linux)" &lt;&lt; std::endl;
+    return;
+  }
+
+  unsigned long total = stat.f_blocks * stat.f_frsize;
+  unsigned long free = stat.f_bfree * stat.f_frsize;
+  unsigned long available = stat.f_bavail * stat.f_frsize;
+  unsigned long used = total - free;
+
+  std::cout &lt;&lt; "Total Disk (Linux): " &lt;&lt; total / (1024 * 1024) &lt;&lt; " MB"
+            &lt;&lt; std::endl;
+  std::cout &lt;&lt; "Used Disk (Linux): " &lt;&lt; used / (1024 * 1024) &lt;&lt; " MB"
+            &lt;&lt; std::endl;
+  std::cout &lt;&lt; "Available Disk (Linux): " &lt;&lt; available / (1024 * 1024) &lt;&lt; " MB"
+            &lt;&lt; std::endl;
+#elif __APPLE__
+  struct statfs stat;
+
+  if (statfs(path, &amp;stat) != 0) {
+    std::cerr &lt;&lt; "Error getting disk usage information (macOS)" &lt;&lt; std::endl;
+    return;
+  }
+
+  unsigned long total = stat.f_blocks * stat.f_bsize;
+  unsigned long free = stat.f_bfree * stat.f_bsize;
+  unsigned long available = stat.f_bavail * stat.f_bsize;
+  unsigned long used = total - free;
+
+  std::cout &lt;&lt; "Total Disk (macOS): " &lt;&lt; total / (1024 * 1024) &lt;&lt; " MB"
+            &lt;&lt; std::endl;
+  std::cout &lt;&lt; "Used Disk (macOS): " &lt;&lt; used / (1024 * 1024) &lt;&lt; " MB"
+            &lt;&lt; std::endl;
+  std::cout &lt;&lt; "Available Disk (macOS): " &lt;&lt; available / (1024 * 1024) &lt;&lt; " MB"
+            &lt;&lt; std::endl;
+#endif
+}
+
+int main() {
+  getDiskUsage("/");
+  return 0;
+}
+</code></pre>
+<h2 id="命令行工具"><a class="header" href="#命令行工具">命令行工具</a></h2>
+<ul>
+<li>df：查看文件系统的磁盘使用情况。
+<ul>
+<li>优化分析：通过 df 查看各个挂载点的磁盘使用率，判断磁盘空间是否充足。</li>
+</ul>
+</li>
+<li>du：查看指定目录或文件的磁盘使用情况。
+<ul>
+<li>优化分析：通过 du 可以找到占用磁盘空间较大的文件或目录，方便进行清理。</li>
+</ul>
+</li>
+<li>iostat：显示磁盘的 I/O 性能，包括读取、写入速率。
+<ul>
+<li>优化分析：通过 iostat 可以判断磁盘是否存在 I/O 性能瓶颈，发现频繁访问磁盘的进程。</li>
+</ul>
+</li>
+<li>iotop：类似于 top 的磁盘 I/O 性能监控工具，显示各进程的磁盘 I/O 使用情况。
+<ul>
+<li>优化分析：通过 iotop 可以发现磁盘 I/O 负载重的进程，并进行优化。</li>
+</ul>
+</li>
+</ul>
+<h2 id="优化方案"><a class="header" href="#优化方案">优化方案</a></h2>
+<ul>
+<li>清理不必要的文件：通过 du 找到大文件，定期清理日志文件、缓存等，保持磁盘空间充足。</li>
+<li>磁盘分区管理：合理规划磁盘分区，避免单一分区空间过小导致磁盘使用过载。</li>
+<li>磁盘 I/O 优化：对于 I/O 密集型任务，可以使用 SSD 替代 HDD，或将频繁读写的数据放在更快的磁盘上。</li>
+<li>文件系统优化：选择合适的文件系统（如 ext4、xfs）和挂载选项来提高磁盘 I/O 性能。</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../linux操作系统/内存资源.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../linux操作系统/进程结构与调度.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../linux操作系统/内存资源.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../linux操作系统/进程结构与调度.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src=".././theme/style.js"></script>
+        <script src="../clarity.js"></script>
+        <script src=".././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>

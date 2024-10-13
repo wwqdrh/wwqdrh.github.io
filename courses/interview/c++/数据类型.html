@@ -1,0 +1,715 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>数据类型</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href=".././theme/style.css">
+    <link rel="stylesheet" href=".././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">面试指南</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/index.html"><strong aria-hidden="true">1.</strong> 数据结构与算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/index.html"><strong aria-hidden="true">1.1.</strong> 题库</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer1.html"><strong aria-hidden="true">1.1.1.</strong> 剑指offer1</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer2.html"><strong aria-hidden="true">1.1.2.</strong> 剑指offer2</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer3.html"><strong aria-hidden="true">1.1.3.</strong> 剑指offer3</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer4.html"><strong aria-hidden="true">1.1.4.</strong> 剑指offer4</a></li></ol></li><li class="chapter-item expanded "><a href="../数据结构与算法/短链系统设计.html"><strong aria-hidden="true">1.2.</strong> 短链系统设计</a></li></ol></li><li class="chapter-item expanded "><a href="../c++/index.html"><strong aria-hidden="true">2.</strong> c++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../c++/c++标准.html"><strong aria-hidden="true">2.1.</strong> c++标准</a></li><li class="chapter-item expanded "><a href="../c++/面向对象.html"><strong aria-hidden="true">2.2.</strong> 面向对象</a></li><li class="chapter-item expanded "><a href="../c++/lambda表达式.html"><strong aria-hidden="true">2.3.</strong> lambda表达式</a></li><li class="chapter-item expanded "><a href="../c++/常用库函数.html"><strong aria-hidden="true">2.4.</strong> 常用库函数</a></li><li class="chapter-item expanded "><a href="../c++/模板编程.html"><strong aria-hidden="true">2.5.</strong> 模板编程</a></li><li class="chapter-item expanded "><a href="../c++/移动语义.html"><strong aria-hidden="true">2.6.</strong> 移动语义</a></li><li class="chapter-item expanded "><a href="../c++/引用变量.html"><strong aria-hidden="true">2.7.</strong> 引用变量</a></li><li class="chapter-item expanded "><a href="../c++/编译期优化.html"><strong aria-hidden="true">2.8.</strong> 编译期优化</a></li><li class="chapter-item expanded "><a href="../c++/什么是虚函数.html"><strong aria-hidden="true">2.9.</strong> 什么是虚函数</a></li><li class="chapter-item expanded "><a href="../c++/指针.html"><strong aria-hidden="true">2.10.</strong> 指针</a></li><li class="chapter-item expanded "><a href="../c++/如何保证并发安全.html"><strong aria-hidden="true">2.11.</strong> 如何保证并发安全</a></li><li class="chapter-item expanded "><a href="../c++/常见对象的内存结构.html"><strong aria-hidden="true">2.12.</strong> 常见对象的内存结构</a></li><li class="chapter-item expanded "><a href="../c++/数据类型.html" class="active"><strong aria-hidden="true">2.13.</strong> 数据类型</a></li><li class="chapter-item expanded "><a href="../c++/内存模型.html"><strong aria-hidden="true">2.14.</strong> 内存模型</a></li></ol></li><li class="chapter-item expanded "><a href="../linux操作系统/index.html"><strong aria-hidden="true">3.</strong> linux操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux操作系统/cpu资源.html"><strong aria-hidden="true">3.1.</strong> cpu资源</a></li><li class="chapter-item expanded "><a href="../linux操作系统/内存资源.html"><strong aria-hidden="true">3.2.</strong> 内存资源</a></li><li class="chapter-item expanded "><a href="../linux操作系统/磁盘资源.html"><strong aria-hidden="true">3.3.</strong> 磁盘资源</a></li><li class="chapter-item expanded "><a href="../linux操作系统/进程结构与调度.html"><strong aria-hidden="true">3.4.</strong> 进程结构与调度</a></li><li class="chapter-item expanded "><a href="../linux操作系统/内存管理.html"><strong aria-hidden="true">3.5.</strong> 内存管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/资源管理.html"><strong aria-hidden="true">3.6.</strong> 资源管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/网络配置.html"><strong aria-hidden="true">3.7.</strong> 网络配置</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/interview-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+<style>
+    select.code-example {
+        color: var(--fg);
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--fg);
+        padding: 2px 10px 2px 10px;
+        border-radius: 5px;
+    }
+</style>
+<ul>
+<li><a href="#%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD">类型推断</a>
+<ul>
+<li><a href="#auto-%E5%85%B3%E9%94%AE%E5%AD%97">auto 关键字</a></li>
+<li><a href="#decltype-%E5%85%B3%E9%94%AE%E5%AD%97">decltype 关键字</a></li>
+<li><a href="#%E6%A8%A1%E6%9D%BF%E7%B1%BB%E5%9E%8B%E6%8E%A8%E6%96%AD">模板类型推断</a></li>
+</ul>
+</li>
+<li><a href="#initializer_list">initializer_list</a></li>
+<li><a href="#stl">STL</a>
+<ul>
+<li><a href="#stl%E4%B8%AD%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7%E9%98%9F%E5%88%97%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%9A%84">STL中的优先级队列是如何实现的？</a></li>
+<li><a href="#stl%E4%B8%AD%E5%B8%B8%E8%A7%81%E7%9A%84%E7%AE%97%E6%B3%95%E5%BA%93">STL中常见的算法库</a></li>
+<li><a href="#map%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0">map的底层实现</a></li>
+<li><a href="#set%E7%9A%84%E5%BA%95%E5%B1%82%E5%AE%9E%E7%8E%B0">set的底层实现</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="类型推断"><a class="header" href="#类型推断">类型推断</a></h2>
+<p>主要包括<code>auto</code>, <code>decltype</code>, 模板类型推断几种</p>
+<h3 id="auto-关键字"><a class="header" href="#auto-关键字">auto 关键字</a></h3>
+<p>auto是C++11引入的关键字，允许编译器根据右侧的表达式自动推断变量的类型。通过使用auto，我们可以避免显式地写出复杂的类型定义，编译器会根据表达式的类型来推断。</p>
+<p>特点：</p>
+<ul>
+<li>auto只能用于声明和定义，不能用作函数的参数类型。</li>
+<li>编译器根据初始化的表达式推断类型。</li>
+</ul>
+<p><code>auto 推导规则的特殊情况</code></p>
+<ul>
+<li>指针和引用：如果初始值是指针或引用，auto会保留它们的类型。</li>
+<li>数组与函数指针：auto不会直接推断为数组类型或函数类型，而是推断为指针。</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+    int x = 42;
+    int&amp; ref = x;
+    auto a = ref;  // a是int类型，而不是int&amp;类型
+    a = 100;
+    
+    std::cout &lt;&lt; "x: " &lt;&lt; x &lt;&lt; ", a: " &lt;&lt; a &lt;&lt; std::endl;  // 输出 x: 42, a: 100
+
+    return 0;
+}
+</code></pre>
+<p>推断返回类型</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;type_traits&gt;
+
+template &lt;typename T1, typename T2&gt;
+auto add(T1 a, T2 b) -&gt; decltype(a + b) {
+    return a + b;
+}
+
+int main() {
+    int x = 5;
+    double y = 10.5;
+
+    // 返回类型被推断为 decltype(x + y)，即 double
+    auto result = add(x, y);
+
+    std::cout &lt;&lt; "Result: " &lt;&lt; result &lt;&lt; std::endl;  // 输出 15.5
+}
+</code></pre>
+<p>C++14引入了一种新特性，即允许在函数返回值处使用auto，编译器会根据函数体中的返回语句自动推断返回类型。这对模板函数尤其有用，可以避免显式地指定返回类型。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+auto add(int x, int y) {
+    return x + y;  // 编译器推断返回类型为int
+}
+
+int main() {
+    auto result = add(5, 3);
+    std::cout &lt;&lt; "Result: " &lt;&lt; result &lt;&lt; std::endl;  // 输出Result: 8
+    return 0;
+}
+</code></pre>
+<p>C++17引入了结构化绑定，使得可以将多个值的返回结果通过auto绑定到多个变量中。这对于返回std::pair或std::tuple的函数特别有用。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;tuple&gt;
+
+std::tuple&lt;int, double, std::string&gt; getValues() {
+    return {42, 3.14, "Hello"};
+}
+
+int main() {
+    auto [x, y, z] = getValues();  // 结构化绑定
+    std::cout &lt;&lt; "x: " &lt;&lt; x &lt;&lt; ", y: " &lt;&lt; y &lt;&lt; ", z: " &lt;&lt; z &lt;&lt; std::endl;  // 输出 x: 42, y: 3.14, z: Hello
+    return 0;
+}
+</code></pre>
+<h3 id="decltype-关键字"><a class="header" href="#decltype-关键字">decltype 关键字</a></h3>
+<p>decltype也是C++11引入的，用于推断表达式的类型，但与auto不同，decltype不会对表达式进行求值，它只会根据表达式的类型来推断变量类型。</p>
+<p>特点：</p>
+<ul>
+<li>decltype可以用于任何表达式，推断该表达式的类型。</li>
+<li>在复杂场景下可以用来获取某个变量或表达式的精确类型。</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+int main() {
+    int a = 5;
+    decltype(a) b = a * 2;  // 推断b的类型为int
+    decltype((a)) c = a;    // 推断为int&amp;（左值引用）
+
+    std::cout &lt;&lt; "a: " &lt;&lt; a &lt;&lt; ", b: " &lt;&lt; b &lt;&lt; ", c: " &lt;&lt; c &lt;&lt; std::endl;
+
+    int x = 42;
+    double y = 3.14;
+    // 使用decltype推断表达式的类型，auto用于变量声明
+    decltype(x + y) result = x + y;  // 推断为double
+
+    return 0;
+}
+</code></pre>
+<h3 id="模板类型推断"><a class="header" href="#模板类型推断">模板类型推断</a></h3>
+<p>模板类型推断是C++的核心特性之一，允许编译器自动根据传入的模板参数推断类型。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+
+template&lt;typename T&gt;
+void printType(T x) {
+    std::cout &lt;&lt; "Type: " &lt;&lt; typeid(x).name() &lt;&lt; ", Value: " &lt;&lt; x &lt;&lt; std::endl;
+}
+
+int main() {
+    printType(42);           // 推断T为int
+    printType(3.14);         // 推断T为double
+    printType("Hello");      // 推断T为const char*
+    return 0;
+}
+</code></pre>
+<p>在C++11及以后，auto和decltype与模板结合使用，进一步简化了模板编程。</p>
+<pre><code class="language-cpp">
+</code></pre>
+<h2 id="initializer_list"><a class="header" href="#initializer_list">initializer_list</a></h2>
+<p>std::initializer_list 允许通过 {} 语法进行列表初始化。它常用于构造函数、函数参数，尤其适合简洁地传递一组值。常见的 C++ 标准容器和自定义类(<code>构造函数接受 std::initializer_list 作为参数的自定义类。</code>)都可以通过 std::initializer_list 支持列表初始化。</p>
+<p>std::initializer_list 的限制：</p>
+<ul>
+<li>只读性：std::initializer_list 内的元素是常量，不能被修改。如果需要可修改的列表，可以考虑使用其他容器（如 std::vector）。</li>
+<li>不支持动态大小：std::initializer_list 是不可变的，一旦创建，大小固定。</li>
+</ul>
+<p>std::initializer_list 是一个轻量级的类模板，通常由两个指针组成：一个指向元素数组的指针，元素数量的计数。这使得它非常高效，因为它只是持有指向数据的指针，并没有进行额外的拷贝或内存管理。元素可以通过迭代器访问。在编译时能够推导出类型。</p>
+<pre><code class="language-cpp">template&lt;class T&gt;
+class initializer_list {
+public:
+    // 返回指向数组的指针
+    const T* begin() const noexcept { return _array; }
+
+    // 返回数组末尾
+    const T* end() const noexcept { return _array + _size; }
+
+    // 返回元素个数
+    size_t size() const noexcept { return _size; }
+
+private:
+    const T* _array;
+    size_t _size;
+};
+</code></pre>
+<p><code>自定义类使用 std::initializer_list 构造函数</code></p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;initializer_list&gt;
+
+class MyClass {
+public:
+    std::initializer_list&lt;int&gt; values;
+
+    MyClass(std::initializer_list&lt;int&gt; list): values(list) {
+        for (int value : list) {
+            std::cout &lt;&lt; "Initializing with value: " &lt;&lt; value &lt;&lt; std::endl;
+        }
+    }
+
+    void printValues() const {
+        for (int value : values) {
+            std::cout &lt;&lt; value &lt;&lt; " ";
+        }
+        std::cout &lt;&lt; std::endl;
+    }
+};
+
+int main() {
+    MyClass obj = {5, 10, 15, 20};  // 使用std::initializer_list初始化
+    obj.printValues();               // 输出 5 10 15 20
+    return 0;
+}
+</code></pre>
+<h2 id="stl"><a class="header" href="#stl">STL</a></h2>
+<p>C++中的STL（标准模板库）是编程中非常重要的一个部分，STL不仅提供了丰富的数据结构和算法，同时也是泛型编程的重要应用。</p>
+<p>选择合适的STL容器通常取决于你对数据结构的需求，如访问速度、插入/删除操作的频率、内存使用等。以下是一些常见的选择标准：</p>
+<ul>
+<li>std::vector：当你需要频繁随机访问元素，且只在末尾插入/删除时。
+<ul>
+<li>push_back(const T&amp; value)：在末尾添加元素。</li>
+<li>pop_back()：移除末尾元素。</li>
+<li>size()：返回当前元素个数。</li>
+<li>capacity()：返回当前分配的内存大小（可以容纳多少元素）。</li>
+<li>reserve(size_t n)：预留至少 n 个元素的存储空间。</li>
+<li>resize(size_t n)：改变容器大小，增加的部分会默认初始化。</li>
+<li>at(size_t index)：访问指定索引处的元素，并进行范围检查。</li>
+<li>operator[]：通过索引访问元素，不进行范围检查。</li>
+<li>front()：返回第一个元素。</li>
+<li>back()：返回最后一个元素。</li>
+<li>clear()：清空所有元素。</li>
+<li>insert(iterator pos, const T&amp; value)：在指定位置插入元素。</li>
+<li>erase(iterator pos)：移除指定位置的元素。</li>
+<li>emplace_back(args...)：原地构造元素并添加到末尾。</li>
+</ul>
+</li>
+<li>std::deque：一个双端队列，支持在两端进行快速插入和删除。
+<ul>
+<li>push_back(const T&amp; value)：在末尾添加元素。</li>
+<li>push_front(const T&amp; value)：在开头添加元素。</li>
+<li>pop_back()：移除末尾元素。</li>
+<li>pop_front()：移除开头元素。</li>
+<li>size()：返回当前元素个数。</li>
+<li>at(size_t index)：访问指定索引处的元素，并进行范围检查。</li>
+<li>operator[]：通过索引访问元素，不进行范围检查。</li>
+<li>front()：返回第一个元素。</li>
+<li>back()：返回最后一个元素。</li>
+<li>clear()：清空所有元素。</li>
+<li>insert(iterator pos, const T&amp; value)：在指定位置插入元素。</li>
+<li>erase(iterator pos)：移除指定位置的元素。</li>
+</ul>
+</li>
+<li>std::array：固定大小数组</li>
+<li>std::forward_list：单向链表</li>
+<li>std::list：双向链表，支持高效的插入和删除操作，尤其是在中间或两端。
+<ul>
+<li>push_back(const T&amp; value)：在末尾添加元素。</li>
+<li>push_front(const T&amp; value)：在开头添加元素。</li>
+<li>pop_back()：移除末尾元素。</li>
+<li>pop_front()：移除开头元素。</li>
+<li>size()：返回当前元素个数。</li>
+<li>empty()：检查容器是否为空。</li>
+<li>front()：返回第一个元素。</li>
+<li>back()：返回最后一个元素。</li>
+<li>insert(iterator pos, const T&amp; value)：在指定位置插入元素。</li>
+<li>erase(iterator pos)：移除指定位置的元素。</li>
+<li>remove(const T&amp; value)：移除所有等于 value 的元素。</li>
+<li>sort()：对列表进行排序。</li>
+<li>reverse()：将列表元素顺序反转。</li>
+</ul>
+</li>
+<li>std::set：是一个不允许重复元素的有序集合，基于红黑树实现。
+<ul>
+<li>insert(const T&amp; value)：插入元素，元素会自动排序。</li>
+<li>erase(const T&amp; value)：移除指定元素。</li>
+<li>size()：返回当前元素个数。</li>
+<li>empty()：检查容器是否为空。</li>
+<li>find(const T&amp; value)：查找元素，返回指向该元素的迭代器。</li>
+<li>count(const T&amp; value)：检查是否包含某个元素（返回 1 或 0）。</li>
+<li>clear()：清空所有元素。</li>
+<li>begin()：返回指向第一个元素的迭代器。</li>
+<li>end()：返回指向最后一个元素之后的迭代器。</li>
+</ul>
+</li>
+<li>std::unordered_set: 一种基于哈希表实现的容器，用于存储唯一的无序元素。通过哈希表实现常数时间复杂度的插入、删除和查找操作。
+<ul>
+<li>insert(const T&amp; value)：向集合中插入元素。如果元素已存在，则不会插入新的值。</li>
+<li>erase(const T&amp; value)：从集合中移除等于 value 的元素，若不存在该元素则不做任何操作。</li>
+<li>clear()：清空集合中的所有元素。</li>
+<li>find(const T&amp; value)：查找元素，返回指向该元素的迭代器，如果未找到则返回 end() 迭代器。</li>
+<li>count(const T&amp; value)：检查集合中是否包含元素 value，如果包含则返回 1，否则返回 0。</li>
+<li>size()：返回集合中的元素个数。</li>
+<li>empty()：检查集合是否为空。</li>
+<li>begin()：返回指向第一个元素的迭代器。</li>
+<li>end()：返回指向容器末尾的迭代器（最后一个元素的下一个位置）。</li>
+<li>cbegin() 和 cend()：返回常量迭代器，保证迭代时集合内容不可修改。</li>
+<li>bucket_count()：返回当前哈希表中桶（bucket）的数量。</li>
+<li>max_bucket_count()：返回容器可能包含的最大桶数。</li>
+<li>load_factor()：返回当前哈希表的装载因子，即元素数量与桶数量的比值。</li>
+<li>rehash(size_t n)：重组容器，使其至少有 n 个桶。</li>
+<li>reserve(size_t n)：预留足够空间以容纳至少 n 个元素，并减少重哈希操作的次数。</li>
+</ul>
+</li>
+<li>std::multiset</li>
+<li>std::unordered_multiset</li>
+<li>std::multimap：允许存在重复的键，即相同的键可以关联多个值，一对多的关系。使用 find() 方法查找某个键时，只能返回第一个找到的键值对。如果需要找到该键对应的所有值，可以使用 equal_range() 或者 lower_bound() 和 upper_bound() 组合使用来获取一个范围。</li>
+<li>std::unordered_multimap</li>
+<li>std::map： 是一个基于键值对的有序关联容器，键是唯一的，一对一的关系。
+<ul>
+<li><code>insert(const std::pair&lt;K, V&gt;&amp; value)</code>：插入键值对。</li>
+<li>erase(const K&amp; key)：通过键删除元素。</li>
+<li>size()：返回当前元素个数。</li>
+<li>empty()：检查容器是否为空。</li>
+<li>find(const K&amp; key)：查找键值对，返回指向该元素的迭代器。</li>
+<li>count(const K&amp; key)：检查是否包含某个键。</li>
+<li>clear()：清空所有元素。</li>
+<li>operator[]：通过键访问或插入元素。</li>
+</ul>
+</li>
+<li>std::unordered_map: 是一个基于哈希表实现的映射，键是唯一的，且不保证顺序。
+<ul>
+<li><code>insert(const std::pair&lt;K, V&gt;&amp; value)</code>：插入键值对。</li>
+<li>erase(const K&amp; key)：通过键删除元素。`</li>
+<li>size()：返回当前元素个数。</li>
+<li>empty()：检查容器是否为空。</li>
+<li>find(const K&amp; key)：查找键值对，返回指向该元素的迭代器。</li>
+<li>count(const K&amp; key)：检查是否包含某个键。</li>
+<li>clear()：清空所有元素。</li>
+<li>operator[]：通过键访问或插入元素。</li>
+</ul>
+</li>
+<li>std::stack: 适合后进先出 (LIFO) 的数据结构。
+<ul>
+<li>push(const T&amp; value)：将元素压入栈顶。</li>
+<li>pop()：移除栈顶元素。</li>
+<li>top()：返回栈顶元素。</li>
+<li>size()：返回当前元素个数。</li>
+<li>empty()：检查容器是否为空。</li>
+</ul>
+</li>
+<li>std::queue: 一种适合先进先出 (FIFO) 的数据结构
+<ul>
+<li>push(const T&amp; value)：将元素添加到队尾。</li>
+<li>pop()：移除队首元素。</li>
+<li>front()：返回队首元素。</li>
+<li>back()：返回队尾元素。</li>
+<li>size()：返回当前元素个数。</li>
+<li>empty()：检查容器是否为空。</li>
+</ul>
+</li>
+<li>std::priority_queue, 是一种元素具有优先级的队列，默认情况下，最大元素会在队首。
+<ul>
+<li>push(const T&amp; value)：将元素插入队列。</li>
+<li>pop()：移除优先级最高的元素。</li>
+<li>top()：返回优先级最高的元素。</li>
+<li>size()：返回当前元素个数。</li>
+<li>empty()：检查容器是否为空。</li>
+</ul>
+</li>
+</ul>
+<p>STL容器本身不是线程安全的。多个线程同时读写同一个容器，或者同时修改容器状态（比如插入或删除元素）时，可能会导致数据竞争。因此，需要通过锁（如std::mutex）来确保线程安全。</p>
+<p>STL广泛采用了泛型编程，所有STL容器和算法都使用模板，使它们能够处理不同的数据类型。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+template &lt;typename T&gt;
+void print_vector(const std::vector&lt;T&gt;&amp; vec) {
+    for (const auto&amp; item : vec) {
+        std::cout &lt;&lt; item &lt;&lt; " ";
+    }
+    std::cout &lt;&lt; std::endl;
+}
+
+int main() {
+    std::vector&lt;int&gt; int_vec = {1, 2, 3};
+    std::vector&lt;double&gt; double_vec = {1.1, 2.2, 3.3};
+
+    print_vector(int_vec);
+    print_vector(double_vec);
+
+    return 0;
+}
+</code></pre>
+<p><code>RAII</code></p>
+<p>STL中，像std::vector、std::unique_ptr等容器和智能指针都遵循RAII原则。RAII（Resource Acquisition Is Initialization）是一种资源管理的原则。在C++中，RAII意味着对象的生命周期与资源的管理直接相关。当对象被创建时，资源被分配；当对象被销毁时，资源自动释放。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int main() {
+    {
+        std::vector&lt;int&gt; vec = {1, 2, 3};
+        // vec创建时分配内存，RAII管理其生命周期
+    }
+    // 离开作用域时，vec自动销毁，内存被释放
+
+    return 0;
+}
+</code></pre>
+<p><code>allocator</code></p>
+<p>Allocator是STL中用于管理内存分配的机制。STL中的所有容器都使用allocator来控制如何分配、释放和管理内存。这使得STL能够更灵活地适应不同的内存管理需求。</p>
+<p>默认的allocator是std::allocator，但用户可以自定义allocator来优化内存分配策略（比如用于嵌入式系统中的内存池）。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;memory&gt;
+
+int main() {
+    std::vector&lt;int, std::allocator&lt;int&gt;&gt; vec = {1, 2, 3};
+
+    return 0;
+}
+</code></pre>
+<h3 id="stl中的优先级队列是如何实现的"><a class="header" href="#stl中的优先级队列是如何实现的">STL中的优先级队列是如何实现的？</a></h3>
+<p>STL中的priority_queue是基于堆（heap）实现的。优先级队列默认是一个最大堆，即每次取出的元素都是当前队列中的最大值（或最小值，取决于定义）。堆的性质确保插入和删除的时间复杂度为O(log n)。</p>
+<p>代码示例：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;queue&gt;
+#include &lt;vector&gt;
+
+int main() {
+    std::priority_queue&lt;int&gt; pq;
+
+    pq.push(10);
+    pq.push(5);
+    pq.push(20);
+
+    while (!pq.empty()) {
+        std::cout &lt;&lt; pq.top() &lt;&lt; " ";  // 每次输出最大值
+        pq.pop();
+    }
+
+    return 0;
+}
+</code></pre>
+<p>这里，std::priority_queue是通过std::vector存储数据，并使用堆来维持顺序。内部使用std::make_heap()、std::push_heap()和std::pop_heap()等算法。</p>
+<h3 id="stl中常见的算法库"><a class="header" href="#stl中常见的算法库">STL中常见的算法库</a></h3>
+<p>STL中的算法库是其核心部分之一，包含了很多常见的算法，比如排序、查找、遍历等。以下是一些常见的算法：</p>
+<ul>
+<li>std::sort：快速排序，时间复杂度为O(n log n)。</li>
+<li>std::find：在范围内查找某个元素，线性时间复杂度。</li>
+<li>std::binary_search：二分查找，时间复杂度为O(log n)，需要排序数组。</li>
+<li>std::accumulate：用于计算区间内所有元素的累加值。</li>
+</ul>
+<p>代码示例：</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+int main() {
+    std::vector&lt;int&gt; vec = {1, 3, 5, 2, 4};
+
+    // 排序
+    std::sort(vec.begin(), vec.end());
+
+    // 查找
+    if (std::binary_search(vec.begin(), vec.end(), 3)) {
+        std::cout &lt;&lt; "找到元素3" &lt;&lt; std::endl;
+    }
+
+    return 0;
+}
+</code></pre>
+<h3 id="map的底层实现"><a class="header" href="#map的底层实现">map的底层实现</a></h3>
+<p>std::map的底层实现是红黑树，这是一种自平衡二叉搜索树。红黑树保证插入、删除、查找的时间复杂度为O(log n)。红黑树通过颜色标记和旋转操作保持平衡。</p>
+<h3 id="set的底层实现"><a class="header" href="#set的底层实现">set的底层实现</a></h3>
+<p>std::set的底层实现与std::map类似，也是基于红黑树。区别在于std::set只存储键，而不存储值。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../c++/常见对象的内存结构.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../c++/内存模型.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../c++/常见对象的内存结构.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../c++/内存模型.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src=".././theme/style.js"></script>
+        <script src="../clarity.js"></script>
+        <script src=".././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>

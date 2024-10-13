@@ -1,0 +1,502 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>指针</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href=".././theme/style.css">
+    <link rel="stylesheet" href=".././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">面试指南</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/index.html"><strong aria-hidden="true">1.</strong> 数据结构与算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/index.html"><strong aria-hidden="true">1.1.</strong> 题库</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer1.html"><strong aria-hidden="true">1.1.1.</strong> 剑指offer1</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer2.html"><strong aria-hidden="true">1.1.2.</strong> 剑指offer2</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer3.html"><strong aria-hidden="true">1.1.3.</strong> 剑指offer3</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer4.html"><strong aria-hidden="true">1.1.4.</strong> 剑指offer4</a></li></ol></li><li class="chapter-item expanded "><a href="../数据结构与算法/短链系统设计.html"><strong aria-hidden="true">1.2.</strong> 短链系统设计</a></li></ol></li><li class="chapter-item expanded "><a href="../c++/index.html"><strong aria-hidden="true">2.</strong> c++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../c++/c++标准.html"><strong aria-hidden="true">2.1.</strong> c++标准</a></li><li class="chapter-item expanded "><a href="../c++/面向对象.html"><strong aria-hidden="true">2.2.</strong> 面向对象</a></li><li class="chapter-item expanded "><a href="../c++/lambda表达式.html"><strong aria-hidden="true">2.3.</strong> lambda表达式</a></li><li class="chapter-item expanded "><a href="../c++/常用库函数.html"><strong aria-hidden="true">2.4.</strong> 常用库函数</a></li><li class="chapter-item expanded "><a href="../c++/模板编程.html"><strong aria-hidden="true">2.5.</strong> 模板编程</a></li><li class="chapter-item expanded "><a href="../c++/移动语义.html"><strong aria-hidden="true">2.6.</strong> 移动语义</a></li><li class="chapter-item expanded "><a href="../c++/引用变量.html"><strong aria-hidden="true">2.7.</strong> 引用变量</a></li><li class="chapter-item expanded "><a href="../c++/编译期优化.html"><strong aria-hidden="true">2.8.</strong> 编译期优化</a></li><li class="chapter-item expanded "><a href="../c++/什么是虚函数.html"><strong aria-hidden="true">2.9.</strong> 什么是虚函数</a></li><li class="chapter-item expanded "><a href="../c++/指针.html" class="active"><strong aria-hidden="true">2.10.</strong> 指针</a></li><li class="chapter-item expanded "><a href="../c++/如何保证并发安全.html"><strong aria-hidden="true">2.11.</strong> 如何保证并发安全</a></li><li class="chapter-item expanded "><a href="../c++/常见对象的内存结构.html"><strong aria-hidden="true">2.12.</strong> 常见对象的内存结构</a></li><li class="chapter-item expanded "><a href="../c++/数据类型.html"><strong aria-hidden="true">2.13.</strong> 数据类型</a></li><li class="chapter-item expanded "><a href="../c++/内存模型.html"><strong aria-hidden="true">2.14.</strong> 内存模型</a></li></ol></li><li class="chapter-item expanded "><a href="../linux操作系统/index.html"><strong aria-hidden="true">3.</strong> linux操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux操作系统/cpu资源.html"><strong aria-hidden="true">3.1.</strong> cpu资源</a></li><li class="chapter-item expanded "><a href="../linux操作系统/内存资源.html"><strong aria-hidden="true">3.2.</strong> 内存资源</a></li><li class="chapter-item expanded "><a href="../linux操作系统/磁盘资源.html"><strong aria-hidden="true">3.3.</strong> 磁盘资源</a></li><li class="chapter-item expanded "><a href="../linux操作系统/进程结构与调度.html"><strong aria-hidden="true">3.4.</strong> 进程结构与调度</a></li><li class="chapter-item expanded "><a href="../linux操作系统/内存管理.html"><strong aria-hidden="true">3.5.</strong> 内存管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/资源管理.html"><strong aria-hidden="true">3.6.</strong> 资源管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/网络配置.html"><strong aria-hidden="true">3.7.</strong> 网络配置</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/interview-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+<style>
+    select.code-example {
+        color: var(--fg);
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--fg);
+        padding: 2px 10px 2px 10px;
+        border-radius: 5px;
+    }
+</style>
+<h2 id="概览"><a class="header" href="#概览">概览</a></h2>
+<ul>
+<li>指针</li>
+<li>迭代器与普通指针有什么区别</li>
+<li>C++的智能指针及其原理</li>
+<li>悬挂指针和野指针有什么区别？</li>
+<li>指针常量和常量指针的区别</li>
+<li>指针和引用有什么区别呢？</li>
+<li>如何避免悬挂指针？</li>
+</ul>
+<hr />
+<h2 id="指针的基础概念"><a class="header" href="#指针的基础概念">指针的基础概念</a></h2>
+<p>指针是存储内存地址的变量。它指向一个特定类型的对象或变量，并且通过解引用操作（*）可以访问该地址上的值。</p>
+<p><code>示例</code>：</p>
+<pre><code class="language-cpp">int a = 10;
+int* p = &amp;a;  // p是指向a的指针
+std::cout &lt;&lt; *p;  // 解引用p，输出a的值：10
+</code></pre>
+<p>指针的用途很多，例如动态内存分配、函数参数传递、数组操作等。</p>
+<p><code>指针常量与常量指针</code></p>
+<ul>
+<li>指针常量（constant pointer）：指针本身是常量，指向的地址不能改变，但指向的内容可以改变。</li>
+<li>常量指针（pointer to constant）：指针指向的对象是常量，不能通过指针修改该对象的值，但可以改变指针指向的地址。</li>
+</ul>
+<pre><code class="language-cpp">int a = 5;
+int b = 10;
+
+// 指针常量：指向的地址不能改变
+int* const ptr1 = &amp;a;
+*ptr1 = 20;  // 可以修改a的值
+// ptr1 = &amp;b;  // 错误，ptr1不能改变指向
+
+// 常量指针：指向的值不能改变
+const int* ptr2 = &amp;a;
+ptr2 = &amp;b;  // 可以改变ptr2的指向
+// *ptr2 = 30;  // 错误，不能修改指向对象的值
+</code></pre>
+<p><code>指针和引用的区别</code></p>
+<ul>
+<li>指针可以为空，也可以重新指向其他对象；指针的大小是固定的。</li>
+<li>引用必须在定义时初始化，且不能重新绑定到其他对象。引用实际上是对象的别名，不占用额外内存。</li>
+</ul>
+<blockquote>
+<p>主要区别：指针更灵活，允许指向不同的对象；引用更简单，用于定义后不会变化的别名。</p>
+</blockquote>
+<pre><code class="language-cpp">int a = 5;
+int* ptr = &amp;a;  // 指针
+int&amp; ref = a;   // 引用
+
+ref = 10;  // 通过引用修改a的值
+ptr = nullptr;  // 指针可以为空
+// ref = &amp;b;  // 引用不能重新绑定
+</code></pre>
+<p><code>nullptr 的含义是什么？</code></p>
+<p>nullptr 是C++11引入的，用来统一表示“空指针”概念。它替代了之前使用的 NULL 宏定义。</p>
+<ul>
+<li>类型安全： 与旧的 NULL 不同，nullptr 有明确的类型，是 std::nullptr_t 类型的常量值，它可以自动转换为任何指针类型，但它不是整数（这避免了 NULL 被解释为整数的歧义）。nullptr 只能用于指针类型，不能用于非指针类型的场景。</li>
+<li>表示空指针： nullptr 代表一个明确的“空指针”，即它不指向任何有效的内存地址。</li>
+</ul>
+<h2 id="指针的基本注意事项"><a class="header" href="#指针的基本注意事项">指针的基本注意事项</a></h2>
+<ul>
+<li>解引用空指针：在解引用指针之前，确保它指向有效的内存，否则会导致运行时错误（如段错误）。</li>
+<li>初始化指针：指针必须初始化（如nullptr或指向有效内存），否则可能成为悬挂指针或野指针。</li>
+<li>动态内存管理：在使用new分配的内存时，必须记得用delete释放，防止内存泄漏。</li>
+</ul>
+<p><code>悬挂指针与野指针</code></p>
+<ul>
+<li>悬挂指针（dangling pointer）：指向已经被释放或销毁的内存地址。</li>
+<li>野指针（wild pointer）：未初始化的指针，指向随机的内存位置。</li>
+</ul>
+<pre><code class="language-cpp">int* ptr = new int(5);
+delete ptr;  // 释放内存
+// 此时ptr是悬挂指针，因为它指向的内存已经释放
+ptr = nullptr;  // 通过将指针置为nullptr避免悬挂指针
+</code></pre>
+<p><code>如何避免悬挂指针？</code></p>
+<ul>
+<li>使用智能指针：智能指针自动管理内存，避免悬挂指针。</li>
+<li>设置指针为nullptr：在释放内存后，将指针置为nullptr，避免误用。</li>
+<li>尽量减少使用原始指针：优先使用智能指针和引用，减少直接使用原始指针的场景。</li>
+<li>注意作用域：确保指针的作用域与其指向的对象保持一致，避免指向已经销毁的对象。</li>
+</ul>
+<pre><code class="language-cpp">int* ptr = new int(10);
+delete ptr;
+ptr = nullptr;  // 避免悬挂指针
+</code></pre>
+<h2 id="智能指针及其原理"><a class="header" href="#智能指针及其原理">智能指针及其原理</a></h2>
+<p>C++11引入了智能指针，它们自动管理内存，避免手动delete。主要有三种类型的智能指针：</p>
+<ul>
+<li>std::unique_ptr：独占所有权，指针不能共享，生命周期结束时自动释放内存。</li>
+<li>std::shared_ptr：允许多个智能指针共享同一个对象，使用引用计数来管理内存。引用计数为0时，自动释放内存。</li>
+<li>std::weak_ptr：与shared_ptr配合使用，不影响引用计数，防止循环引用。</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;memory&gt;
+
+std::unique_ptr&lt;int&gt; ptr1 = std::make_unique&lt;int&gt;(10);
+std::cout &lt;&lt; *ptr1 &lt;&lt; std::endl;  // 输出10
+
+std::shared_ptr&lt;int&gt; ptr2 = std::make_shared&lt;int&gt;(20);
+std::shared_ptr&lt;int&gt; ptr3 = ptr2;  // 引用计数增加
+std::cout &lt;&lt; *ptr3 &lt;&lt; std::endl;  // 输出20
+</code></pre>
+<p>原理：智能指针通过构造函数和析构函数控制指针的生命周期。当智能指针超出作用域或引用计数为0时，自动释放所管理的内存，避免内存泄漏。</p>
+<h3 id="unique_ptr"><a class="header" href="#unique_ptr">unique_ptr</a></h3>
+<ul>
+<li>独占所有权：某个对象只允许有一个智能指针来管理它，即对象的所有权是唯一的。当该指针被销毁时，所管理的对象会自动被释放。</li>
+<li>适合使用场景：动态分配的资源不需要共享，或希望确保资源的唯一性，例如RAII模式下的资源管理。</li>
+</ul>
+<p><code>注意事项</code></p>
+<ul>
+<li>不能复制：std::unique_ptr的所有权是独占的，不能进行复制操作，但可以通过移动语义转移所有权。</li>
+<li>适合动态分配对象时，避免忘记释放资源的情况。</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;memory&gt;
+
+class MyClass {
+public:
+    MyClass() { std::cout &lt;&lt; "MyClass constructor\n"; }
+    ~MyClass() { std::cout &lt;&lt; "MyClass destructor\n"; }
+    void display() { std::cout &lt;&lt; "MyClass::display\n"; }
+};
+
+int main() {
+    std::unique_ptr&lt;MyClass&gt; ptr1 = std::make_unique&lt;MyClass&gt;(); // 创建一个unique_ptr
+
+    ptr1-&gt;display();  // 通过ptr1调用对象的方法
+
+    // 不能复制unique_ptr，但可以移动
+    std::unique_ptr&lt;MyClass&gt; ptr2 = std::move(ptr1); // 移动所有权
+
+    if (ptr1 == nullptr) {
+        std::cout &lt;&lt; "ptr1 is now nullptr\n";  // 移动后，ptr1为空
+    }
+
+    ptr2-&gt;display();  // ptr2接管了对象的所有权
+
+    // ptr2被销毁时，自动释放MyClass对象
+    return 0;
+}
+</code></pre>
+<p><code>输出</code></p>
+<pre><code class="language-bash">MyClass constructor
+MyClass::display
+ptr1 is now nullptr
+MyClass::display
+MyClass destructor
+</code></pre>
+<h3 id="shared_ptr"><a class="header" href="#shared_ptr">shared_ptr</a></h3>
+<ul>
+<li>共享所有权：允许多个智能指针共享一个对象的所有权。当最后一个指针销毁时，所管理的对象才会被释放。</li>
+<li>适合使用场景：多个对象或函数需要共享同一资源，比如多个模块之间共享的缓存或数据。</li>
+</ul>
+<p><code>注意事项</code></p>
+<ul>
+<li>引用计数：std::shared_ptr会维护一个引用计数，当有新的shared_ptr指向对象时，计数增加；当一个shared_ptr销毁时，计数减少。只有当计数为0时，才释放对象。</li>
+<li>循环引用问题：当两个shared_ptr对象互相引用时，会导致引用计数无法归零，造成内存泄漏。需要搭配std::weak_ptr来避免循环引用。</li>
+</ul>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;memory&gt;
+
+class MyClass {
+public:
+    MyClass() { std::cout &lt;&lt; "MyClass constructor\n"; }
+    ~MyClass() { std::cout &lt;&lt; "MyClass destructor\n"; }
+    void display() { std::cout &lt;&lt; "MyClass::display\n"; }
+};
+
+int main() {
+    std::shared_ptr&lt;MyClass&gt; ptr1 = std::make_shared&lt;MyClass&gt;();  // 创建shared_ptr
+    {
+        std::shared_ptr&lt;MyClass&gt; ptr2 = ptr1;  // 共享所有权
+        std::cout &lt;&lt; "ptr1 use count: " &lt;&lt; ptr1.use_count() &lt;&lt; '\n'; // 查看引用计数
+        std::cout &lt;&lt; "ptr2 use count: " &lt;&lt; ptr2.use_count() &lt;&lt; '\n';
+
+        ptr2-&gt;display();  // 通过ptr2调用对象方法
+    }  // ptr2出了作用域，引用计数减1
+
+    std::cout &lt;&lt; "ptr1 use count after ptr2 goes out of scope: " &lt;&lt; ptr1.use_count() &lt;&lt; '\n';
+    
+    ptr1-&gt;display();  // ptr1仍然可以使用
+
+    // ptr1被销毁时，自动释放MyClass对象
+    return 0;
+}
+</code></pre>
+<p><code>输出</code></p>
+<pre><code class="language-bash">MyClass constructor
+ptr1 use count: 2
+ptr2 use count: 2
+MyClass::display
+ptr1 use count after ptr2 goes out of scope: 1
+MyClass::display
+MyClass destructor
+</code></pre>
+<h3 id="weak_ptr"><a class="header" href="#weak_ptr">weak_ptr</a></h3>
+<p>std::shared_ptr使用引用计数机制管理资源，但如果两个shared_ptr对象互相持有对方的引用，会形成循环引用，导致引用计数无法归零，资源永远无法释放。</p>
+<p><code>解决方案</code></p>
+<p>使用std::weak_ptr来打破循环引用。std::weak_ptr不参与引用计数，不会阻止所管理对象的销毁。它可以从shared_ptr构造，但不能直接使用，需要通过lock()方法临时提升为shared_ptr。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;memory&gt;
+
+class Node;
+
+class Node {
+public:
+    std::shared_ptr&lt;Node&gt; next;
+    std::weak_ptr&lt;Node&gt; prev;  // 使用weak_ptr打破循环引用
+    ~Node() { std::cout &lt;&lt; "Node destroyed\n"; }
+};
+
+int main() {
+    auto node1 = std::make_shared&lt;Node&gt;();
+    auto node2 = std::make_shared&lt;Node&gt;();
+
+    node1-&gt;next = node2;  // node1指向node2
+    node2-&gt;prev = node1;  // node2通过weak_ptr指向node1
+
+    return 0;  // node1和node2出了作用域，自动销毁
+}
+</code></pre>
+<p><code>输出</code></p>
+<pre><code class="language-bash">Node destroyed
+Node destroyed
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../c++/什么是虚函数.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../c++/如何保证并发安全.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../c++/什么是虚函数.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../c++/如何保证并发安全.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src=".././theme/style.js"></script>
+        <script src="../clarity.js"></script>
+        <script src=".././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>

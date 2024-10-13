@@ -1,0 +1,464 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="light" dir="ltr">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+    <title>模板编程</title>
+
+
+    <!-- Custom HTML head -->
+    
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="../favicon.svg">
+    <link rel="shortcut icon" href="../favicon.png">
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+    <link rel="stylesheet" href=".././theme/style.css">
+    <link rel="stylesheet" href=".././theme/mdbook-admonish.css">
+
+</head>
+
+<body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch (e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch (e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">面试指南</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/index.html"><strong aria-hidden="true">1.</strong> 数据结构与算法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/index.html"><strong aria-hidden="true">1.1.</strong> 题库</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer1.html"><strong aria-hidden="true">1.1.1.</strong> 剑指offer1</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer2.html"><strong aria-hidden="true">1.1.2.</strong> 剑指offer2</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer3.html"><strong aria-hidden="true">1.1.3.</strong> 剑指offer3</a></li><li class="chapter-item expanded "><a href="../数据结构与算法/题库/剑指offer4.html"><strong aria-hidden="true">1.1.4.</strong> 剑指offer4</a></li></ol></li><li class="chapter-item expanded "><a href="../数据结构与算法/短链系统设计.html"><strong aria-hidden="true">1.2.</strong> 短链系统设计</a></li></ol></li><li class="chapter-item expanded "><a href="../c++/index.html"><strong aria-hidden="true">2.</strong> c++</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../c++/c++标准.html"><strong aria-hidden="true">2.1.</strong> c++标准</a></li><li class="chapter-item expanded "><a href="../c++/面向对象.html"><strong aria-hidden="true">2.2.</strong> 面向对象</a></li><li class="chapter-item expanded "><a href="../c++/lambda表达式.html"><strong aria-hidden="true">2.3.</strong> lambda表达式</a></li><li class="chapter-item expanded "><a href="../c++/常用库函数.html"><strong aria-hidden="true">2.4.</strong> 常用库函数</a></li><li class="chapter-item expanded "><a href="../c++/模板编程.html" class="active"><strong aria-hidden="true">2.5.</strong> 模板编程</a></li><li class="chapter-item expanded "><a href="../c++/移动语义.html"><strong aria-hidden="true">2.6.</strong> 移动语义</a></li><li class="chapter-item expanded "><a href="../c++/引用变量.html"><strong aria-hidden="true">2.7.</strong> 引用变量</a></li><li class="chapter-item expanded "><a href="../c++/编译期优化.html"><strong aria-hidden="true">2.8.</strong> 编译期优化</a></li><li class="chapter-item expanded "><a href="../c++/什么是虚函数.html"><strong aria-hidden="true">2.9.</strong> 什么是虚函数</a></li><li class="chapter-item expanded "><a href="../c++/指针.html"><strong aria-hidden="true">2.10.</strong> 指针</a></li><li class="chapter-item expanded "><a href="../c++/如何保证并发安全.html"><strong aria-hidden="true">2.11.</strong> 如何保证并发安全</a></li><li class="chapter-item expanded "><a href="../c++/常见对象的内存结构.html"><strong aria-hidden="true">2.12.</strong> 常见对象的内存结构</a></li><li class="chapter-item expanded "><a href="../c++/数据类型.html"><strong aria-hidden="true">2.13.</strong> 数据类型</a></li><li class="chapter-item expanded "><a href="../c++/内存模型.html"><strong aria-hidden="true">2.14.</strong> 内存模型</a></li></ol></li><li class="chapter-item expanded "><a href="../linux操作系统/index.html"><strong aria-hidden="true">3.</strong> linux操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../linux操作系统/cpu资源.html"><strong aria-hidden="true">3.1.</strong> cpu资源</a></li><li class="chapter-item expanded "><a href="../linux操作系统/内存资源.html"><strong aria-hidden="true">3.2.</strong> 内存资源</a></li><li class="chapter-item expanded "><a href="../linux操作系统/磁盘资源.html"><strong aria-hidden="true">3.3.</strong> 磁盘资源</a></li><li class="chapter-item expanded "><a href="../linux操作系统/进程结构与调度.html"><strong aria-hidden="true">3.4.</strong> 进程结构与调度</a></li><li class="chapter-item expanded "><a href="../linux操作系统/内存管理.html"><strong aria-hidden="true">3.5.</strong> 内存管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/资源管理.html"><strong aria-hidden="true">3.6.</strong> 资源管理</a></li><li class="chapter-item expanded "><a href="../linux操作系统/网络配置.html"><strong aria-hidden="true">3.7.</strong> 网络配置</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor"
+                            title="Toggle Table of Contents" aria-label="Toggle Table of Contents"
+                            aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                            aria-label="Change theme" aria-haspopup="true" aria-expanded="false"
+                            aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                            aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                            aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://space.bilibili.com/538676331" target="_blank" title="B站" aria-label="B站">
+                            B站
+                        </a>
+                        <a href="/" target="_blank" title="home" aria-label="Git repository">
+                            <i id="git-home" class="fa fa-home"></i>
+                        </a>
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/wwqdrh/interview-book" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..."
+                            aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <script>
+const changeCodeExample = (tabClass, to) => {
+    // console.debug(to);
+    const tabs = document.getElementsByClassName(tabClass);
+    for (let i = 0; i < tabs.length; i++) {
+        tabs[i].style.display = "none";
+    }
+
+    const theTab = document.getElementById(to);
+    theTab.style.display = "block";
+}
+</script>
+<style>
+    select.code-example {
+        color: var(--fg);
+        background-color: var(--bg);
+        border: 1px solid;
+        border-color: var(--fg);
+        padding: 2px 10px 2px 10px;
+        border-radius: 5px;
+    }
+</style>
+<h2 id="基本概念"><a class="header" href="#基本概念">基本概念</a></h2>
+<p>C++中的模板编程是一种强大且灵活的编程技术，允许编写通用代码。模板通过参数化数据类型或操作，使得程序可以处理不同类型的数据，而无需重复编写类似代码。这种技术广泛应用于泛型编程，例如C++标准模板库（STL）中的容器、迭代器和算法就是基于模板实现的。</p>
+<p>函数模板允许编写适用于不同类型的通用函数。你可以用一个模板参数定义一个函数，而不必为每种类型重写函数。</p>
+<p><code>函数模板</code></p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+template &lt;typename T&gt;
+T add(T a, T b) {
+    return a + b;
+}
+
+int main() {
+    cout &lt;&lt; "Add integers: " &lt;&lt; add(5, 3) &lt;&lt; endl;      // 调用时推断 T 为 int
+    cout &lt;&lt; "Add doubles: " &lt;&lt; add(2.5, 3.1) &lt;&lt; endl;   // 调用时推断 T 为 double
+    return 0;
+}
+</code></pre>
+<ul>
+<li><code>template &lt;typename T&gt;</code>：这里T是一个类型模板参数，表示这个函数适用于任何类型T。</li>
+<li>函数add可以接收任意相同类型的两个参数，并返回它们的和。编译器会根据调用时的参数类型推导出T。</li>
+</ul>
+<p><code>类模板</code></p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+template &lt;typename T&gt;
+class Box {
+    T value;
+public:
+    Box(T val) : value(val) {}
+    T getValue() { return value; }
+};
+
+int main() {
+    Box&lt;int&gt; intBox(123);         // Box 类的 int 实例
+    Box&lt;string&gt; strBox("Hello");  // Box 类的 string 实例
+
+    cout &lt;&lt; "Int Box: " &lt;&lt; intBox.getValue() &lt;&lt; endl;
+    cout &lt;&lt; "String Box: " &lt;&lt; strBox.getValue() &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<h2 id="模板特化"><a class="header" href="#模板特化">模板特化</a></h2>
+<p>模板的一个强大功能是模板特化。模板特化允许针对某个特定类型进行特殊化处理，即可以为某个类型提供一个特殊的实现。</p>
+<p><code>全特化</code></p>
+<p>全特化是指对模板的特定类型进行完全特化处理。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+template &lt;typename T&gt;
+class Box {
+public:
+    T value;
+    Box(T val) : value(val) {}
+    void print() { cout &lt;&lt; "Value: " &lt;&lt; value &lt;&lt; endl; }
+};
+
+// 对 char* 类型进行特化
+template &lt;&gt;
+class Box&lt;char*&gt; {
+public:
+    char* value;
+    Box(char* val) : value(val) {}
+    void print() { cout &lt;&lt; "String: " &lt;&lt; value &lt;&lt; endl; }
+};
+
+int main() {
+    Box&lt;int&gt; intBox(123);
+    Box&lt;char*&gt; strBox("Hello Template");
+
+    intBox.print();
+    strBox.print();  // 调用特化版本
+    return 0;
+}
+</code></pre>
+<p><code>Box&lt;char*&gt;</code>是Box类的特化版本，针对<code>char*</code>类型的模板进行了不同的实现。这样可以在处理字符串时，提供与一般模板不同的行为。</p>
+<p><code>偏特化</code></p>
+<p>偏特化允许我们对某些模板参数进行特化，而不需要对所有模板参数进行特化。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+// 泛型类模板
+template &lt;typename T1, typename T2&gt;
+class Pair {
+public:
+    T1 first;
+    T2 second;
+    Pair(T1 f, T2 s) : first(f), second(s) {}
+    void print() { cout &lt;&lt; first &lt;&lt; ", " &lt;&lt; second &lt;&lt; endl; }
+};
+
+// 偏特化: 当两个类型相同时，采用特化版本
+template &lt;typename T&gt;
+class Pair&lt;T, T&gt; {
+public:
+    T first;
+    T second;
+    Pair(T f, T s) : first(f), second(s) {}
+    void print() { cout &lt;&lt; "Same type pair: " &lt;&lt; first &lt;&lt; ", " &lt;&lt; second &lt;&lt; endl; }
+};
+
+int main() {
+    Pair&lt;int, double&gt; p1(1, 2.5);
+    Pair&lt;int, int&gt; p2(3, 4);  // 调用偏特化版本
+
+    p1.print();
+    p2.print();  // 调用偏特化版本
+    return 0;
+}
+</code></pre>
+<h2 id="模板元编程"><a class="header" href="#模板元编程">模板元编程</a></h2>
+<p>模板不仅仅用于定义数据结构和函数，还可以进行编译期的计算，称为模板元编程。模板元编程允许通过递归模板在编译期执行逻辑运算，减少运行时的开销。</p>
+<p><code>编译期阶乘计算</code></p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+// 模板递归计算阶乘
+template &lt;int N&gt;
+struct Factorial {
+    enum { value = N * Factorial&lt;N - 1&gt;::value };
+};
+
+// 基例：Factorial&lt;0&gt; 为 1
+template &lt;&gt;
+struct Factorial&lt;0&gt; {
+    enum { value = 1 };
+};
+
+int main() {
+    cout &lt;&lt; "Factorial&lt;5&gt;::value = " &lt;&lt; Factorial&lt;5&gt;::value &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+<p><code>Factorial&lt;N&gt;</code>通过模板递归计算阶乘，直到基例<code>Factorial&lt;0&gt;</code>终止递归。这一计算是在编译时完成的，因此在运行时没有任何额外的开销。</p>
+<p><code>Factorial&lt;5&gt;::value</code>会展开成<code>5 * 4 * 3 * 2 * 1</code>，并在编译时得出结果。</p>
+<h2 id="变参模板"><a class="header" href="#变参模板">变参模板</a></h2>
+<p>变参模板允许传递任意数量的模板参数，使得模板更加灵活。</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+// 变参模板，处理多个参数
+template &lt;typename T, typename... Args&gt;
+void print(T first, Args... args) {
+    cout &lt;&lt; first &lt;&lt; " ";
+    if constexpr(sizeof...(args) &gt; 0) {
+        print(args...);  // 递归调用
+    }
+}
+
+int main() {
+    print(1, 2.5, "Hello", 'c');  // 传递多个不同类型的参数
+    return 0;
+}
+</code></pre>
+<p><code>template &lt;typename T, typename... Args&gt;</code>中的<code>Args...</code>表示可以接受多个模板参数。</p>
+<p>print函数递归处理每个参数，直到参数耗尽为止。</p>
+<h2 id="sfinaesubstitution-failure-is-not-an-error"><a class="header" href="#sfinaesubstitution-failure-is-not-an-error">SFINAE（Substitution Failure Is Not An Error）</a></h2>
+<p>SFINAE是C++模板元编程中非常重要的概念。当模板参数替换失败时，并不导致编译错误，而是选择其他可用的重载版本。这通常用于特性检测和选择性模板实例化。</p>
+<p><code>示例</code></p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;type_traits&gt;
+using namespace std;
+
+// 通用模板
+template &lt;typename T&gt;
+typename enable_if&lt;is_integral&lt;T&gt;::value, T&gt;::type
+foo(T t) {
+    cout &lt;&lt; "Integer type: " &lt;&lt; t &lt;&lt; endl;
+    return t;
+}
+
+// 重载版本，用于非整数类型
+template &lt;typename T&gt;
+typename enable_if&lt;!is_integral&lt;T&gt;::value, T&gt;::type
+foo(T t) {
+    cout &lt;&lt; "Non-integer type: " &lt;&lt; t &lt;&lt; endl;
+    return t;
+}
+
+int main() {
+    foo(10);        // 调用整数版本
+    foo(3.14);      // 调用非整数版本
+    return 0;
+}
+</code></pre>
+<p><code>enable_if</code>结合<code>is_integral</code>用于条件编译。根据传递的类型是否为整数类型，编译器会选择不同的模板实例化版本。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <a rel="prev" href="../c++/常用库函数.html" class="mobile-nav-chapters previous"
+                            title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+
+                        <a rel="next prefetch" href="../c++/移动语义.html" class="mobile-nav-chapters next"
+                            title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                <a rel="prev" href="../c++/常用库函数.html" class="nav-chapters previous" title="Previous chapter"
+                    aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+
+                <a rel="next prefetch" href="../c++/移动语义.html" class="nav-chapters next" title="Next chapter"
+                    aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src=".././theme/style.js"></script>
+        <script src="../clarity.js"></script>
+        <script src=".././theme/highlight.js"></script>
+
+
+    </div>
+</body>
+
+</html>
